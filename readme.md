@@ -4,5 +4,5 @@
 # Explanation
 - **yolo**  
     yolo文件夹是针对yolov5和yolov7的数据集处理脚本，具体可看[readme.md](https://github.com/z1069614715/objectdetection_script/blob/master/yolo/readme.md).  
-    视频教学地址：[]().  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1tM411a7it/).  
     博客地址: []().  
