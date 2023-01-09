@@ -8,7 +8,7 @@
     博客地址: []().  
 
 - **damo-yolo**  
-    damo-yolo文件夹是针对DAMO-YOLO的数据集处理脚本，具体可看[readme.md]().  
+    damo-yolo文件夹是针对DAMO-YOLO的数据集处理脚本，具体可看[readme.md](https://github.com/z1069614715/objectdetection_script/blob/master/damo-yolo/readme.md).  
     目前只支持voc转coco.  
     视频教学地址：[]().  
     博客地址: []().  
