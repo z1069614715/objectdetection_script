@@ -52,10 +52,9 @@ def convert(xml_list, json_file):
         tree = ET.parse(xml_f)
         root = tree.getroot()
         
-        filename = os.path.basename(xml_f)[:-4] + ".jpg"
+        filename = os.path.basename(xml_f)[:-4] + f".{postfix}"
             
         image_id = index
-#         print('filename is {}'.format(image_id))
         
         size = get_and_check(root, 'size', 1)
         width = int(get_and_check(size, 'width', 1).text)
@@ -111,6 +110,7 @@ def convert(xml_list, json_file):
  
  
 if __name__ == '__main__':
+    postfix = 'jpg'
  	# xml标注文件夹   
     xml_dir = './datasets/Annotations'
     # 训练数据的josn文件
