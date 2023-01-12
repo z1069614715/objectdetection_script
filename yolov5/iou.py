@@ -1,7 +1,7 @@
 import numpy as np
 import torch
 
-def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SIou=False, EIou=False, alpha=1, eps=1e-7):
+def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SIoU=False, EIoU=False, alpha=1, eps=1e-7):
     # Returns Intersection over Union (IoU) of box1(1,4) to box2(n,4)
 
     # Get the coordinates of bounding boxes
@@ -26,10 +26,10 @@ def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SIou=Fal
     # IoU
     # iou = inter / union # ori iou
     iou = torch.pow(inter/union + eps, alpha) # alpha iou
-    if CIoU or DIoU or GIoU or EIou or SIou:
+    if CIoU or DIoU or GIoU or EIoU or SIoU:
         cw = b1_x2.maximum(b2_x2) - b1_x1.minimum(b2_x1)  # convex (smallest enclosing box) width
         ch = b1_y2.maximum(b2_y2) - b1_y1.minimum(b2_y1)  # convex height
-        if CIoU or DIoU or EIou or SIou:  # Distance or Complete IoU https://arxiv.org/abs/1911.08287v1
+        if CIoU or DIoU or EIoU or SIoU:  # Distance or Complete IoU https://arxiv.org/abs/1911.08287v1
             c2 = (cw ** 2 + ch ** 2) ** alpha + eps  # convex diagonal squared
             rho2 = (((b2_x1 + b2_x2 - b1_x1 - b1_x2) ** 2 + (b2_y1 + b2_y2 - b1_y1 - b1_y2) ** 2) / 4) ** alpha  # center dist ** 2
             if CIoU:  # https://github.com/Zzh-tju/DIoU-SSD-pytorch/blob/master/utils/box/box_utils.py#L47
@@ -37,13 +37,13 @@ def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SIou=Fal
                 with torch.no_grad():
                     alpha_ciou = v / (v - iou + (1 + eps))
                 return iou - (rho2 / c2 + torch.pow(v * alpha_ciou + eps, alpha))  # CIoU
-            elif EIou:
+            elif EIoU:
                 rho_w2 = ((b2_x2 - b2_x1) - (b1_x2 - b1_x1)) ** 2
                 rho_h2 = ((b2_y2 - b2_y1) - (b1_y2 - b1_y1)) ** 2
                 cw2 = torch.pow(cw ** 2 + eps, alpha)
                 ch2 = torch.pow(ch ** 2 + eps, alpha)
                 return iou - (rho2 / c2 + rho_w2 / cw2 + rho_h2 / ch2) # EIou
-            elif SIou:
+            elif SIoU:
                 # SIoU Loss https://arxiv.org/pdf/2205.12740.pdf
                 s_cw = (b2_x1 + b2_x2 - b1_x1 - b1_x2) * 0.5 + eps
                 s_ch = (b2_y1 + b2_y2 - b1_y1 - b1_y2) * 0.5 + eps
