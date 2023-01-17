@@ -17,4 +17,4 @@
     yolov5文件夹是提供一些关于yolov5改进思路的源码，具体可看[readme.md](https://github.com/z1069614715/objectdetection_script/blob/master/yolov5/readme.md).   
 
 - **yolo-gradcam**  
-    yolov5文件夹是提供一些关于yolov5改进思路的源码，具体可看[readme.md](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-gradcam/readme.md).   
+    yolov5文件夹是提供一些关于yolov5改进思路的源码，具体可看[readme.md](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-gradcam/README.md).   
