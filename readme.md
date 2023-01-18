@@ -1,5 +1,5 @@
 # object detection script
-这个项目主要是提供一些关于目标检测和开源代码的处理脚本，以便快速上手，对源码进行训练和改进。
+这个项目主要是提供一些关于目标检测和开源代码的相关脚本.
 
 # Explanation
 - **yolo**  
@@ -17,4 +17,4 @@
     yolov5文件夹是提供一些关于yolov5改进思路的源码，具体可看[readme.md](https://github.com/z1069614715/objectdetection_script/blob/master/yolov5/readme.md).   
 
 - **yolo-gradcam**  
-    yolov5文件夹是提供一些关于yolov5改进思路的源码，具体可看[readme.md](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-gradcam/README.md).   
+    yolo-gradcam文件夹是提供一些关于可视化yolo模型的热力图的源码，具体可看[readme.md](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-gradcam/README.md).   
