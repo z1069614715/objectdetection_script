@@ -1,7 +1,7 @@
 import numpy as np
-import torch
+import torch, math
 
-def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SIoU=False, EIoU=False, alpha=1, eps=1e-7):
+def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SIoU=False, EIoU=False, Focal=False, alpha=1, gamma=0.5, eps=1e-7):
     # Returns Intersection over Union (IoU) of box1(1,4) to box2(n,4)
 
     # Get the coordinates of bounding boxes
@@ -25,7 +25,7 @@ def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SIoU=Fal
 
     # IoU
     # iou = inter / union # ori iou
-    iou = torch.pow(inter/union + eps, alpha) # alpha iou
+    iou = torch.pow(inter/(union + eps), alpha) # alpha iou
     if CIoU or DIoU or GIoU or EIoU or SIoU:
         cw = b1_x2.maximum(b2_x2) - b1_x1.minimum(b2_x1)  # convex (smallest enclosing box) width
         ch = b1_y2.maximum(b2_y2) - b1_y1.minimum(b2_y1)  # convex height
@@ -36,13 +36,19 @@ def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SIoU=Fal
                 v = (4 / math.pi ** 2) * (torch.atan(w2 / h2) - torch.atan(w1 / h1)).pow(2)
                 with torch.no_grad():
                     alpha_ciou = v / (v - iou + (1 + eps))
-                return iou - (rho2 / c2 + torch.pow(v * alpha_ciou + eps, alpha))  # CIoU
+                if Focal:
+                    return iou - (rho2 / c2 + torch.pow(v * alpha_ciou + eps, alpha)), torch.pow(iou, gamma)  # Focal_CIoU
+                else:
+                    return iou - (rho2 / c2 + torch.pow(v * alpha_ciou + eps, alpha))  # CIoU
             elif EIoU:
                 rho_w2 = ((b2_x2 - b2_x1) - (b1_x2 - b1_x1)) ** 2
                 rho_h2 = ((b2_y2 - b2_y1) - (b1_y2 - b1_y1)) ** 2
                 cw2 = torch.pow(cw ** 2 + eps, alpha)
                 ch2 = torch.pow(ch ** 2 + eps, alpha)
-                return iou - (rho2 / c2 + rho_w2 / cw2 + rho_h2 / ch2) # EIou
+                if Focal:
+                    return iou - (rho2 / c2 + rho_w2 / cw2 + rho_h2 / ch2), torch.pow(iou, gamma) # Focal_EIou
+                else:
+                    return iou - (rho2 / c2 + rho_w2 / cw2 + rho_h2 / ch2) # EIou
             elif SIoU:
                 # SIoU Loss https://arxiv.org/pdf/2205.12740.pdf
                 s_cw = (b2_x1 + b2_x2 - b1_x1 - b1_x2) * 0.5 + eps
@@ -60,8 +66,20 @@ def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SIoU=Fal
                 omiga_w = torch.abs(w1 - w2) / torch.max(w1, w2)
                 omiga_h = torch.abs(h1 - h2) / torch.max(h1, h2)
                 shape_cost = torch.pow(1 - torch.exp(-1 * omiga_w), 4) + torch.pow(1 - torch.exp(-1 * omiga_h), 4)
-                return iou - torch.pow(0.5 * (distance_cost + shape_cost) + eps, alpha) # SIou
-            return iou - rho2 / c2  # DIoU
+                if Focal:
+                    return iou - torch.pow(0.5 * (distance_cost + shape_cost) + eps, alpha), torch.pow(iou, gamma) # Focal_SIou
+                else:
+                    return iou - torch.pow(0.5 * (distance_cost + shape_cost) + eps, alpha) # SIou
+            if Focal:
+                return iou - rho2 / c2, torch.pow(iou, gamma)  # Focal_DIoU
+            else:
+                return iou - rho2 / c2  # DIoU
         c_area = cw * ch + eps  # convex area
-        return iou - torch.pow((c_area - union) / c_area + eps, alpha)  # GIoU https://arxiv.org/pdf/1902.09630.pdf
-    return iou  # IoU
+        if Focal:
+            return iou - torch.pow((c_area - union) / c_area + eps, alpha), torch.pow(iou, gamma)  # Focal_GIoU https://arxiv.org/pdf/1902.09630.pdf
+        else:
+            return iou - torch.pow((c_area - union) / c_area + eps, alpha)  # GIoU https://arxiv.org/pdf/1902.09630.pdf
+    if Focal:
+        return iou, torch.pow(iou, gamma)  # Focal_IoU
+    else:
+        return iou  # IoU
