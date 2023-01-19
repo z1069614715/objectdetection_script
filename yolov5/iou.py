@@ -37,7 +37,7 @@ def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SIoU=Fal
                 with torch.no_grad():
                     alpha_ciou = v / (v - iou + (1 + eps))
                 if Focal:
-                    return iou - (rho2 / c2 + torch.pow(v * alpha_ciou + eps, alpha)), torch.pow(iou, gamma)  # Focal_CIoU
+                    return iou - (rho2 / c2 + torch.pow(v * alpha_ciou + eps, alpha)), torch.pow(inter/(union + eps), gamma)  # Focal_CIoU
                 else:
                     return iou - (rho2 / c2 + torch.pow(v * alpha_ciou + eps, alpha))  # CIoU
             elif EIoU:
@@ -46,7 +46,7 @@ def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SIoU=Fal
                 cw2 = torch.pow(cw ** 2 + eps, alpha)
                 ch2 = torch.pow(ch ** 2 + eps, alpha)
                 if Focal:
-                    return iou - (rho2 / c2 + rho_w2 / cw2 + rho_h2 / ch2), torch.pow(iou, gamma) # Focal_EIou
+                    return iou - (rho2 / c2 + rho_w2 / cw2 + rho_h2 / ch2), torch.pow(inter/(union + eps), gamma) # Focal_EIou
                 else:
                     return iou - (rho2 / c2 + rho_w2 / cw2 + rho_h2 / ch2) # EIou
             elif SIoU:
@@ -67,19 +67,19 @@ def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SIoU=Fal
                 omiga_h = torch.abs(h1 - h2) / torch.max(h1, h2)
                 shape_cost = torch.pow(1 - torch.exp(-1 * omiga_w), 4) + torch.pow(1 - torch.exp(-1 * omiga_h), 4)
                 if Focal:
-                    return iou - torch.pow(0.5 * (distance_cost + shape_cost) + eps, alpha), torch.pow(iou, gamma) # Focal_SIou
+                    return iou - torch.pow(0.5 * (distance_cost + shape_cost) + eps, alpha), torch.pow(inter/(union + eps), gamma) # Focal_SIou
                 else:
                     return iou - torch.pow(0.5 * (distance_cost + shape_cost) + eps, alpha) # SIou
             if Focal:
-                return iou - rho2 / c2, torch.pow(iou, gamma)  # Focal_DIoU
+                return iou - rho2 / c2, torch.pow(inter/(union + eps), gamma)  # Focal_DIoU
             else:
                 return iou - rho2 / c2  # DIoU
         c_area = cw * ch + eps  # convex area
         if Focal:
-            return iou - torch.pow((c_area - union) / c_area + eps, alpha), torch.pow(iou, gamma)  # Focal_GIoU https://arxiv.org/pdf/1902.09630.pdf
+            return iou - torch.pow((c_area - union) / c_area + eps, alpha), torch.pow(inter/(union + eps), gamma)  # Focal_GIoU https://arxiv.org/pdf/1902.09630.pdf
         else:
             return iou - torch.pow((c_area - union) / c_area + eps, alpha)  # GIoU https://arxiv.org/pdf/1902.09630.pdf
     if Focal:
-        return iou, torch.pow(iou, gamma)  # Focal_IoU
+        return iou, torch.pow(inter/(union + eps), gamma)  # Focal_IoU
     else:
         return iou  # IoU
