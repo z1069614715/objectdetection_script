@@ -3,8 +3,9 @@
 
 # Explanation
 - **iou**  
-    添加EIOU，SIOU，ALPHA-IOU到yolov5的box_iou中.  
+    添加EIOU，SIOU，ALPHA-IOU, FocalEIOU到yolov5的box_iou中.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1KM411b7Sz/).  
+    博客地址：[CSDN](https://blog.csdn.net/qq_37706472/article/details/128737484?spm=1001.2014.3001.5501).
 - **yolov5-GFPN**  
     使用DAMO-YOLO中的GFPN替换YOLOV5中的Head.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1iR4y1a7bx/).  
