@@ -31,6 +31,6 @@ class SimAM(torch.nn.Module):
 
 if __name__ == '__main__':
     input = torch.randn(3, 64, 7, 7)
-    model = SimAM(64)
+    model = SimAM()
     outputs = model(input)
     print(outputs.shape)
