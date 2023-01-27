@@ -7,7 +7,7 @@ from collections import OrderedDict
 
 class ECAAttention(nn.Module):
 
-    def __init__(self, inc=None, outc=None, kernel_size=3):
+    def __init__(self, kernel_size=3):
         super().__init__()
         self.gap = nn.AdaptiveAvgPool2d(1)
         self.conv = nn.Conv1d(1, 1, kernel_size=kernel_size, padding=(kernel_size - 1) // 2)

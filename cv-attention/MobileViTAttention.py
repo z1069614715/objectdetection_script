@@ -74,7 +74,7 @@ class Transformer(nn.Module):
 
 
 class MobileViTAttention(nn.Module):
-    def __init__(self, channel=None, in_channel=3, dim=512, kernel_size=3, patch_size=7):
+    def __init__(self, in_channel=3, dim=512, kernel_size=3, patch_size=7):
         super().__init__()
         self.ph, self.pw = patch_size, patch_size
         self.conv1 = nn.Conv2d(in_channel, in_channel, kernel_size=kernel_size, padding=kernel_size // 2)

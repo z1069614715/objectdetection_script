@@ -22,7 +22,7 @@ class h_swish(nn.Module):
 
 
 class CoordAtt(nn.Module):
-    def __init__(self, inp, oup, reduction=32):
+    def __init__(self, inp, reduction=32):
         super(CoordAtt, self).__init__()
         self.pool_h = nn.AdaptiveAvgPool2d((None, 1))
         self.pool_w = nn.AdaptiveAvgPool2d((1, None))
@@ -33,8 +33,8 @@ class CoordAtt(nn.Module):
         self.bn1 = nn.BatchNorm2d(mip)
         self.act = h_swish()
 
-        self.conv_h = nn.Conv2d(mip, oup, kernel_size=1, stride=1, padding=0)
-        self.conv_w = nn.Conv2d(mip, oup, kernel_size=1, stride=1, padding=0)
+        self.conv_h = nn.Conv2d(mip, inp, kernel_size=1, stride=1, padding=0)
+        self.conv_w = nn.Conv2d(mip, inp, kernel_size=1, stride=1, padding=0)
 
     def forward(self, x):
         identity = x
@@ -60,6 +60,6 @@ class CoordAtt(nn.Module):
 
 if __name__ == '__main__':
     input = torch.randn(50, 512, 7, 7)
-    pna = CoordAtt(inp=512, oup=512)
+    pna = CoordAtt(inp=512)
     output = pna(input)
     print(output.shape)
