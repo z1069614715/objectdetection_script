@@ -11,8 +11,8 @@
     目前只支持voc转coco.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1M24y1v7Uf/).   
 
-- **yolov5**  
-    yolov5文件夹是提供一些关于yolov5改进思路的源码，具体可看[readme.md](https://github.com/z1069614715/objectdetection_script/blob/master/yolov5/readme.md).   
+- **yolo-improve**  
+    yolo-improve文件夹是提供一些关于yolo系列模型改进思路的源码，具体可看[readme.md](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/readme.md).   
 
 - **yolo-gradcam**  
     yolo-gradcam文件夹是提供一些关于可视化yolo模型的热力图的源码，具体可看[readme.md](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-gradcam/README.md).
