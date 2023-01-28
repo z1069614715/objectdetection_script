@@ -16,3 +16,5 @@
 - **yolov5-C2F**  
     使用yolov8中的C2F模块替换yolov5中的C3模块.(这个操作比较简单，因此就不提供代码，直接看视频操作一下即可)  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1rx4y1g7xt/).  
+- **yolov7-iou**  
+    添加EIOU，SIOU，ALPHA-IOU, FocalEIOU到yolov7的box_iou中.  
