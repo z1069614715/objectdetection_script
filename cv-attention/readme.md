@@ -16,6 +16,12 @@
 11. ECAAttention. https://arxiv.org/pdf/1910.03151.pdf
 12. ParNetAttention. https://arxiv.org/abs/2110.07641
 13. CoordAttention. https://arxiv.org/abs/2103.02907
+14. MHSA. Multi-Head-Self-Attention https://wuch15.github.io/paper/EMNLP2019-NRMS.pdf
+15. SGE. https://arxiv.org/pdf/1905.09646.pdf
+16. A2Attention. https://arxiv.org/pdf/1810.11579.pdf
+
+# Course
+1. [yolov5添加注意力哔哩哔哩视频教学链接](https://www.bilibili.com/video/BV1s84y1775U)
 
 # Reference
 https://github.com/xmu-xiaoma666/External-Attention-pytorch
