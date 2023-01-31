@@ -21,7 +21,9 @@
 16. A2Attention. https://arxiv.org/pdf/1810.11579.pdf
 
 # Course
-1. [yolov5添加注意力哔哩哔哩视频教学链接](https://www.bilibili.com/video/BV1s84y1775U)
+1. [yolov5添加注意力哔哩哔哩视频教学链接](https://www.bilibili.com/video/BV1s84y1775U) [yolov5添加注意力-补充事项-哔哩哔哩视频教学链接](https://www.bilibili.com/video/BV1hG4y1M71X)
+2. [yolov7添加注意力哔哩哔哩视频教学链接](https://www.bilibili.com/video/BV1pd4y1H7BK)
+3. [yolov8添加注意力哔哩哔哩视频教学链接](https://www.bilibili.com/video/BV1dv4y167rF)
 
 # Reference
 https://github.com/xmu-xiaoma666/External-Attention-pytorch

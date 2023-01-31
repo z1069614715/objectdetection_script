@@ -1,5 +1,5 @@
 # object detection script
-这个项目主要是提供一些关于目标检测和开源代码的相关脚本.
+这个项目主要是提供一些关于目标检测的代码和改进思路参考.
 
 # Explanation
 - **yolo**  
