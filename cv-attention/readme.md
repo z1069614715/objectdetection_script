@@ -32,5 +32,5 @@
 3. [yolov8添加注意力哔哩哔哩视频教学链接](https://www.bilibili.com/video/BV1dv4y167rF)
 
 # Reference
-https://github.com/xmu-xiaoma666/External-Attention-pytorch
+https://github.com/xmu-xiaoma666/External-Attention-pytorch  
 https://github.com/rwightman/pytorch-image-models
