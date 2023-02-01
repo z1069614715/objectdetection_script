@@ -19,7 +19,10 @@
 
 - **cv-attention**  
     cv-attention文件夹是关于CV的一些经典注意力机制，具体可看[readme.md](https://github.com/z1069614715/objectdetection_script/blob/master/cv-attention/readme.md).
-   
+    
+[![Forkers repo roster for @z1069614715/objectdetection_script](https://reporoster.com/forks/z1069614715/objectdetection_script)](https://github.com/z1069614715/objectdetection_script/network/members)
+[![Stargazers repo roster for @z1069614715/objectdetection_script](https://reporoster.com/stars/z1069614715/objectdetection_script)](https://github.com/z1069614715/objectdetection_script/stargazers)
+
 # Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=z1069614715/objectdetection_script&type=Date)](https://star-history.com/#z1069614715/objectdetection_script&Date)
