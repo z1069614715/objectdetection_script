@@ -19,6 +19,12 @@
 14. MHSA. Multi-Head-Self-Attention https://wuch15.github.io/paper/EMNLP2019-NRMS.pdf
 15. SGE. https://arxiv.org/pdf/1905.09646.pdf
 16. A2Attention. https://arxiv.org/pdf/1810.11579.pdf
+17. GC. Global Context Attention https://arxiv.org/abs/1904.11492
+18. EffectiveSE. Effective Squeeze-Excitation https://arxiv.org/abs/1911.06667
+19. GE. Gather-Excite Attention https://arxiv.org/abs/1810.12348
+
+# Install
+部分注意力需要安装timm. 如运行提示缺少timm安装即可. 安装命令:pip install timm
 
 # Course
 1. [yolov5添加注意力哔哩哔哩视频教学链接](https://www.bilibili.com/video/BV1s84y1775U) [yolov5添加注意力-补充事项-哔哩哔哩视频教学链接](https://www.bilibili.com/video/BV1hG4y1M71X)
@@ -27,3 +33,4 @@
 
 # Reference
 https://github.com/xmu-xiaoma666/External-Attention-pytorch
+https://github.com/rwightman/pytorch-image-models
