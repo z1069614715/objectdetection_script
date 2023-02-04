@@ -3,25 +3,32 @@
 目前代码格式主要用于yolov3,yolov5,yolov7,yolov8.
 
 # Supports
-1. BAM. https://arxiv.org/pdf/1807.06514.pdf
-2. CBAM. https://openaccess.thecvf.com/content_ECCV_2018/papers/Sanghyun_Woo_Convolutional_Block_Attention_ECCV_2018_paper.pdf
-3. SE. https://arxiv.org/abs/1709.01507
-4. CoTAttention. https://arxiv.org/abs/2107.12292
-5. MobileViTAttention. https://arxiv.org/abs/2110.02178
-6. SimAM. http://proceedings.mlr.press/v139/yang21o/yang21o.pdf
-7. SK. https://arxiv.org/pdf/1903.06586.pdf
-8. ShuffleAttention. https://arxiv.org/pdf/2102.00240.pdf
-9. S2Attention. https://arxiv.org/abs/2108.01072
-10. TripletAttention. https://arxiv.org/abs/2010.03045
-11. ECAAttention. https://arxiv.org/pdf/1910.03151.pdf
-12. ParNetAttention. https://arxiv.org/abs/2110.07641
-13. CoordAttention. https://arxiv.org/abs/2103.02907
-14. MHSA. Multi-Head-Self-Attention https://wuch15.github.io/paper/EMNLP2019-NRMS.pdf
-15. SGE. https://arxiv.org/pdf/1905.09646.pdf
-16. A2Attention. https://arxiv.org/pdf/1810.11579.pdf
-17. GC. Global Context Attention https://arxiv.org/abs/1904.11492
-18. EffectiveSE. Effective Squeeze-Excitation https://arxiv.org/abs/1911.06667
-19. GE. Gather-Excite Attention https://arxiv.org/abs/1810.12348
+| name | need_chaneel | paper |
+| :----:| :----: | :----: |
+| BAM | True | https://arxiv.org/pdf/1807.06514.pdf |
+| CBAM | True | https://openaccess.thecvf.com/content_ECCV_2018/papers/Sanghyun_Woo_Convolutional_Block_Attention_ECCV_2018_paper.pdf |
+| SE | True | https://arxiv.org/abs/1709.01507 |
+| CoTAttention | True | https://arxiv.org/abs/2107.12292 |
+| MobileViTAttention | True | https://arxiv.org/abs/2110.02178 |
+| SimAM | False | http://proceedings.mlr.press/v139/yang21o/yang21o.pdf |
+| SK | True | https://arxiv.org/pdf/1903.06586.pdf |
+| ShuffleAttention | True | https://arxiv.org/pdf/2102.00240.pdf |
+| S2Attention | True | https://arxiv.org/abs/2108.01072 |
+| TripletAttention | False | https://arxiv.org/abs/2010.03045 |
+| ECA | True | https://arxiv.org/pdf/1910.03151.pdf |
+| ParNetAttention | True | https://arxiv.org/abs/2110.07641 |
+| CoordAttention | True | https://arxiv.org/abs/2103.02907 |
+| MHSA<br>Multi-Head-Self-Attention | True | https://wuch15.github.io/paper/EMNLP2019-NRMS.pdf |
+| SGE | False | https://arxiv.org/pdf/1905.09646.pdf |
+| A2Attention | True | https://arxiv.org/pdf/1810.11579.pdf |
+| GC<br>Global Context Attention | True | https://arxiv.org/abs/1904.11492 |
+| EffectiveSE<br>Effective Squeeze-Excitation | True | https://arxiv.org/abs/1911.06667 |
+| GE<br>Gather-Excite Attention | True | https://arxiv.org/abs/1810.12348 |
+| CrissCrossAttention | True | https://arxiv.org/abs/1811.11721 |
+| Polarized Self-Attention | True | https://arxiv.org/abs/2107.00782 |
+| Sequential Self-Attention | True | https://arxiv.org/abs/2107.00782 |
+
+
 
 # Install
 部分注意力需要安装timm. 如运行提示缺少timm安装即可. 安装命令:pip install timm
