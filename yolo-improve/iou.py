@@ -3,9 +3,9 @@ import torch, math
 
 class WIoU_Scale:
     ''' monotonous: {
-            None: origin
-            True: monotonic FM
-            False: non-monotonic FM
+            None: origin v1
+            True: monotonic FM v2
+            False: non-monotonic FM v3
         }
         momentum: The momentum of running mean'''
     
