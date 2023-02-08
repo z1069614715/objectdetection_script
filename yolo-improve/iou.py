@@ -110,7 +110,7 @@ def bbox_iou(box1, box2, xywh=True, GIoU=False, DIoU=False, CIoU=False, SIoU=Fal
                 if Focal:
                     raise "WIoU do not support Focal."
                 elif scale:
-                    return getattr(WIoU_Scale, '_scaled_loss')(self), (1 - iou) * torch.exp((rho2 / c2)), None # WIoU https://arxiv.org/abs/2301.10051
+                    return getattr(WIoU_Scale, '_scaled_loss')(self), (1 - iou) * torch.exp((rho2 / c2)), iou # WIoU https://arxiv.org/abs/2301.10051
                 else:
                     return iou, torch.exp((rho2 / c2)) # WIoU v1
             if Focal:
@@ -135,3 +135,16 @@ if type(iou) is tuple:
         loss_iou = (iou[0] * iou[1] * weight).sum() / target_scores_sum
 else:
     loss_iou = ((1.0 - iou) * weight).sum() / target_scores_sum
+    
+### yolov5
+iou = bbox_iou(pbox, tbox[i], CIoU=True)
+if type(iou) is tuple:
+    if len(iou) == 2:
+        lbox += (iou[1].detach().squeeze() * (1 - iou[0].squeeze())).mean()
+        iou = iou[0].squeeze()
+    else:
+        lbox += (iou[0] * iou[1]).mean()
+        iou = iou[2].squeeze()
+else:
+    lbox += (1.0 - iou.squeeze()).mean()  # iou loss
+    iou = iou.squeeze()

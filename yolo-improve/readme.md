@@ -7,11 +7,13 @@
     1. yolov5
         视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1KM411b7Sz/).  
         博客地址：[CSDN](https://blog.csdn.net/qq_37706472/article/details/128737484?spm=1001.2014.3001.5501).
+
+        ### 2023-2-8 更新: 新增[Wise-IoU](https://arxiv.org/abs/2301.10051)
     2. yolov8
         视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1PY4y1o7Hm/).  
         博客地址：[CSDN](https://blog.csdn.net/qq_37706472/article/details/128743012?spm=1001.2014.3001.5502).
 
-        ### 2023-2-7 更新: 新增[Wise-IoU](https://arxiv.org/abs/2301.10051)
+        ### 2023-2-7 更新: 新增[Wise-IoU](https://arxiv.org/abs/2301.10051) 视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1De4y1N7Mb/).  
 - **yolov5-GFPN**  
     使用DAMO-YOLO中的GFPN替换YOLOV5中的Head.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1iR4y1a7bx/).  
