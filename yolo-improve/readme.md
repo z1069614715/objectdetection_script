@@ -24,7 +24,10 @@
     添加EIOU，SIOU，ALPHA-IOU, FocalEIOU, Wise-IOU到yolov7的box_iou中.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1zx4y177EF/).  
     博客地址：[CSDN](https://blog.csdn.net/qq_37706472/article/details/128780275?spm=1001.2014.3001.5502).  
-    #### 2023-2-11 更新: 新增[Wise-IoU](https://arxiv.org/abs/2301.10051)  
+    #### 2023-2-11 更新: 新增[Wise-IoU](https://arxiv.org/abs/2301.10051) 视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1yv4y147kf/).     
 - **yolov5-OTA**  
     添加Optimal Transport Assignment到yolov5的Loss中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1zx4y177EF/).  
+- **yolov5-DCN**  
+    添加Deformable convolution V2到yolov5中.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1zx4y177EF/).  
