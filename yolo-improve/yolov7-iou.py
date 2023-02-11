@@ -108,7 +108,7 @@ def bbox_iou(box1, box2, x1y1x2y2=True, GIoU=False, DIoU=False, CIoU=False, SIoU
                     return iou - torch.pow(0.5 * (distance_cost + shape_cost) + eps, alpha) # SIou
             elif WIoU:
                 if Focal:
-                    raise "WIoU do not support Focal."
+                    raise RuntimeError("WIoU do not support Focal.")
                 elif scale:
                     return getattr(WIoU_Scale, '_scaled_loss')(self), (1 - iou) * torch.exp((rho2 / c2)), iou # WIoU https://arxiv.org/abs/2301.10051
                 else:
