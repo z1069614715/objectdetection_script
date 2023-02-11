@@ -1,7 +1,40 @@
 import numpy as np
 import torch, math
 
-def bbox_iou(box1, box2, x1y1x2y2=True, GIoU=False, DIoU=False, CIoU=False, SIoU=False, EIoU=False, Focal=False, alpha=1, gamma=0.5, eps=1e-7):
+class WIoU_Scale:
+    ''' monotonous: {
+            None: origin v1
+            True: monotonic FM v2
+            False: non-monotonic FM v3
+        }
+        momentum: The momentum of running mean'''
+    
+    iou_mean = 1.
+    monotonous = False
+    _momentum = 1 - 0.5 ** (1 / 7000)
+    _is_train = True
+
+    def __init__(self, iou):
+        self.iou = iou
+        self._update(self)
+    
+    @classmethod
+    def _update(cls, self):
+        if cls._is_train: cls.iou_mean = (1 - cls._momentum) * cls.iou_mean + \
+                                         cls._momentum * self.iou.detach().mean().item()
+    
+    @classmethod
+    def _scaled_loss(cls, self, gamma=1.9, delta=3):
+        if isinstance(self.monotonous, bool):
+            if self.monotonous:
+                return (self.iou.detach() / self.iou_mean).sqrt()
+            else:
+                beta = self.iou.detach() / self.iou_mean
+                alpha = delta * torch.pow(gamma, beta - delta)
+                return beta / alpha
+        return 1
+
+def bbox_iou(box1, box2, x1y1x2y2=True, GIoU=False, DIoU=False, CIoU=False, SIoU=False, EIoU=False, WIoU=False, Focal=False, alpha=1, gamma=0.5, scale=False, eps=1e-7):
     # Returns the IoU of box1 to box2. box1 is 4, box2 is nx4
     box2 = box2.T
 
@@ -23,14 +56,16 @@ def bbox_iou(box1, box2, x1y1x2y2=True, GIoU=False, DIoU=False, CIoU=False, SIoU
     w1, h1 = b1_x2 - b1_x1, b1_y2 - b1_y1 + eps
     w2, h2 = b2_x2 - b2_x1, b2_y2 - b2_y1 + eps
     union = w1 * h1 + w2 * h2 - inter + eps
+    if scale:
+        self = WIoU_Scale(1 - (inter / union))
 
     # IoU
     # iou = inter / union # ori iou
     iou = torch.pow(inter/(union + eps), alpha) # alpha iou
-    if CIoU or DIoU or GIoU or EIoU or SIoU:
+    if CIoU or DIoU or GIoU or EIoU or SIoU or WIoU:
         cw = b1_x2.maximum(b2_x2) - b1_x1.minimum(b2_x1)  # convex (smallest enclosing box) width
         ch = b1_y2.maximum(b2_y2) - b1_y1.minimum(b2_y1)  # convex height
-        if CIoU or DIoU or EIoU or SIoU:  # Distance or Complete IoU https://arxiv.org/abs/1911.08287v1
+        if CIoU or DIoU or EIoU or SIoU or WIoU:  # Distance or Complete IoU https://arxiv.org/abs/1911.08287v1
             c2 = (cw ** 2 + ch ** 2) ** alpha + eps  # convex diagonal squared
             rho2 = (((b2_x1 + b2_x2 - b1_x1 - b1_x2) ** 2 + (b2_y1 + b2_y2 - b1_y1 - b1_y2) ** 2) / 4) ** alpha  # center dist ** 2
             if CIoU:  # https://github.com/Zzh-tju/DIoU-SSD-pytorch/blob/master/utils/box/box_utils.py#L47
@@ -71,6 +106,13 @@ def bbox_iou(box1, box2, x1y1x2y2=True, GIoU=False, DIoU=False, CIoU=False, SIoU
                     return iou - torch.pow(0.5 * (distance_cost + shape_cost) + eps, alpha), torch.pow(inter/(union + eps), gamma) # Focal_SIou
                 else:
                     return iou - torch.pow(0.5 * (distance_cost + shape_cost) + eps, alpha) # SIou
+            elif WIoU:
+                if Focal:
+                    raise "WIoU do not support Focal."
+                elif scale:
+                    return getattr(WIoU_Scale, '_scaled_loss')(self), (1 - iou) * torch.exp((rho2 / c2)), iou # WIoU https://arxiv.org/abs/2301.10051
+                else:
+                    return iou, torch.exp((rho2 / c2)) # WIoU v1
             if Focal:
                 return iou - rho2 / c2, torch.pow(inter/(union + eps), gamma)  # Focal_DIoU
             else:
@@ -84,3 +126,15 @@ def bbox_iou(box1, box2, x1y1x2y2=True, GIoU=False, DIoU=False, CIoU=False, SIoU
         return iou, torch.pow(inter/(union + eps), gamma)  # Focal_IoU
     else:
         return iou  # IoU
+
+
+### yolov7
+if type(iou) is tuple:
+    if len(iou) == 2:
+        lbox += (iou[1].detach() * (1 - iou[0])).mean()
+        iou = iou[0]
+    else:
+        lbox += (iou[0] * iou[1]).mean()
+        iou = iou[-1]
+else:
+    lbox += (1.0 - iou).mean()  # iou loss

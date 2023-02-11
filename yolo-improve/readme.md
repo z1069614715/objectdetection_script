@@ -21,9 +21,10 @@
     使用yolov8中的C2F模块替换yolov5中的C3模块.(这个操作比较简单，因此就不提供代码，直接看视频操作一下即可)  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1rx4y1g7xt/).  
 - **yolov7-iou**  
-    添加EIOU，SIOU，ALPHA-IOU, FocalEIOU到yolov7的box_iou中.  
+    添加EIOU，SIOU，ALPHA-IOU, FocalEIOU, Wise-IOU到yolov7的box_iou中.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1zx4y177EF/).  
     博客地址：[CSDN](https://blog.csdn.net/qq_37706472/article/details/128780275?spm=1001.2014.3001.5502).  
+    #### 2023-2-11 更新: 新增[Wise-IoU](https://arxiv.org/abs/2301.10051)  
 - **yolov5-OTA**  
     添加Optimal Transport Assignment到yolov5的Loss中.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1zx4y177EF/).  
