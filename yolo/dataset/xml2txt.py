@@ -31,7 +31,6 @@ def convert_annotation(xmlpath, xmlname):
         h, w = img.shape[:2]
         res = []
         for obj in root.iter('object'):
-            difficult = obj.find('difficult').text
             cls = obj.find('name').text
             if cls not in classes:
                 classes.append(cls)
