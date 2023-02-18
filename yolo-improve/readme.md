@@ -33,4 +33,7 @@
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1rT411Q76q/).  
 - **yolov8-DCN**  
     添加Deformable convolution V2到yolov8中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1rT411Q76q/).  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Fo4y1i7Mm/).  
+- **yolov7-DCN**  
+    添加Deformable convolution V2到yolov7中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Fo4y1i7Mm/).  

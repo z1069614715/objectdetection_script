@@ -27,6 +27,8 @@ class DCNv2(nn.Module):
             padding=self.padding,
             bias=True,
         )
+        self.bn = nn.BatchNorm2d(out_channels)
+        self.act = Conv.default_act
         self.reset_parameters()
 
     def forward(self, x):
@@ -47,6 +49,8 @@ class DCNv2(nn.Module):
             self.deformable_groups,
             True
         )
+        x = self.bn(x)
+        x = self.act(x)
         return x
 
     def reset_parameters(self):
