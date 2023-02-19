@@ -40,4 +40,4 @@
 - **yolov5-AUX**
     添加辅助训练分支到yolov5中.
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV17R4y1q7vr/).  
-    参考链接：[哔哩哔哩]()
+    原理参考链接：[知乎](https://zhuanlan.zhihu.com/p/588947172)
