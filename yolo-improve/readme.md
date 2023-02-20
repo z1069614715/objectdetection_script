@@ -38,6 +38,10 @@
     添加Deformable convolution V2到yolov7中.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV17R4y1q7vr/).  
 - **yolov5-AUX**
-    添加辅助训练分支到yolov5中.
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV17R4y1q7vr/).  
+    添加辅助训练分支到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Fo4y1v7bi/).  
     原理参考链接：[知乎](https://zhuanlan.zhihu.com/p/588947172)
+- **CAM**  
+    添加context augmentation module到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Fo4y1v7bi/).  
+    paper：[链接](https://openreview.net/pdf?id=q2ZaVU6bEsT)
