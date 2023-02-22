@@ -43,5 +43,5 @@
     原理参考链接：[知乎](https://zhuanlan.zhihu.com/p/588947172)
 - **CAM**  
     添加context augmentation module到yolov5中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Fo4y1v7bi/).  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV17b411d7ef/).  
     paper：[链接](https://openreview.net/pdf?id=q2ZaVU6bEsT)
