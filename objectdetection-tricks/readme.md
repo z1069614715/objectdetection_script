@@ -3,5 +3,5 @@
 
 # Explanation
 - **tricks_1**
-    可视化目标检测中的TP,FP,FN.  
+    可视化并统计目标检测中的TP,FP,FN.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV18M411c7jN/).  

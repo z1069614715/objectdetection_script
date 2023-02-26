@@ -44,47 +44,59 @@ if __name__ == '__main__':
         shutil.rmtree(save_path)
     os.makedirs(save_path, exist_ok=True)
 
-    for path in tqdm.tqdm(os.listdir(label_path)):
-        image = cv2.imread(f'{img_path}/{path[:-4]}.{postfix}')
-        if image is None:
-            print(f'image:{img_path}/{path[:-4]}.{postfix} not found.')
-        h, w = image.shape[:2]
-        
-        try:
-            with open(f'{predict_path}/{path}') as f:
-                pred = np.array(list(map(lambda x:np.array(x.strip().split(), dtype=np.float32), f.readlines())))
-                pred[:, 1:5] = xywh2xyxy(pred[:, 1:5])
-                pred[:, [1, 3]] *= w
-                pred[:, [2, 4]] *= h
-                pred = list(pred)
-        except:
-            pred = []
-        
-        with open(f'{label_path}/{path}') as f:
-            label = np.array(list(map(lambda x:np.array(x.strip().split(), dtype=np.float32), f.readlines())))
-            label[:, 1:] = xywh2xyxy(label[:, 1:])
-            label[:, [1, 3]] *= w
-            label[:, [2, 4]] *= h
-        
-        label_id, pred_id = list(range(label.shape[0])), [] if len(pred) == 0 else list(range(len(pred)))
-        for i in range(label.shape[0]):
-            if len(pred) == 0: break
-            ious = iou(label[i:i+1, 1:], np.array(pred)[:, 1:5])[0]
-            ious_argsort = ious.argsort()[::-1]
-            missing = True
-            for j in ious_argsort:
-                if ious[j] < iou_threshold: break
-                if label[i, 0] == pred[j][0]:
-                    image = draw_box(image, pred[j][1:5], detect_color)
-                    pred.pop(j)
-                    missing = False
-                    break
+    all_right_num, all_missing_num, all_error_num = 0, 0, 0
+    with open('result.txt', 'w') as f_w:
+        for path in tqdm.tqdm(os.listdir(label_path)):
+            image = cv2.imread(f'{img_path}/{path[:-4]}.{postfix}')
+            if image is None:
+                print(f'image:{img_path}/{path[:-4]}.{postfix} not found.', file=f_w)
+            h, w = image.shape[:2]
             
-            if missing: image = draw_box(image, label[i][1:5], missing_color)
-        
-        if len(pred):
-            for j in range(len(pred)):
-                image = draw_box(image, pred[j][1:5], error_color)
-        
-        cv2.imwrite(f'{save_path}/{path[:-4]}.{postfix}', image)
+            try:
+                with open(f'{predict_path}/{path}') as f:
+                    pred = np.array(list(map(lambda x:np.array(x.strip().split(), dtype=np.float32), f.readlines())))
+                    pred[:, 1:5] = xywh2xyxy(pred[:, 1:5])
+                    pred[:, [1, 3]] *= w
+                    pred[:, [2, 4]] *= h
+                    pred = list(pred)
+            except:
+                pred = []
             
+            try:
+                with open(f'{label_path}/{path}') as f:
+                    label = np.array(list(map(lambda x:np.array(x.strip().split(), dtype=np.float32), f.readlines())))
+                    label[:, 1:] = xywh2xyxy(label[:, 1:])
+                    label[:, [1, 3]] *= w
+                    label[:, [2, 4]] *= h
+            except:
+                print(f'label path:{label_path}/{path} (not found or no target).', file=f_w)
+            
+            right_num, missing_num, error_num = 0, 0, 0
+            label_id, pred_id = list(range(label.shape[0])), [] if len(pred) == 0 else list(range(len(pred)))
+            for i in range(label.shape[0]):
+                if len(pred) == 0: break
+                ious = iou(label[i:i+1, 1:], np.array(pred)[:, 1:5])[0]
+                ious_argsort = ious.argsort()[::-1]
+                missing = True
+                for j in ious_argsort:
+                    if ious[j] < iou_threshold: break
+                    if label[i, 0] == pred[j][0]:
+                        image = draw_box(image, pred[j][1:5], detect_color)
+                        pred.pop(j)
+                        missing = False
+                        right_num += 1
+                        break
+                
+                if missing:
+                    image = draw_box(image, label[i][1:5], missing_color)
+                    missing_num += 1
+            
+            if len(pred):
+                for j in range(len(pred)):
+                    image = draw_box(image, pred[j][1:5], error_color)
+                    error_num += 1
+            
+            all_right_num, all_missing_num, all_error_num = all_right_num + right_num, all_missing_num + missing_num, all_error_num + error_num
+            cv2.imwrite(f'{save_path}/{path[:-4]}.{postfix}', image)
+            print(f'name:{path[:-4]} right:{right_num} missing:{missing_num} error:{error_num}', file=f_w)
+        print(f'all_result: right:{all_right_num} missing:{all_missing_num} error:{all_error_num}', file=f_w)
