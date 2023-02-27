@@ -27,7 +27,7 @@
 | CrissCrossAttention | True | https://arxiv.org/abs/1811.11721 |
 | Polarized Self-Attention | True | https://arxiv.org/abs/2107.00782 |
 | Sequential Self-Attention | True | https://arxiv.org/abs/2107.00782 |
-
+| GAM | True | https://arxiv.org/pdf/2112.05561v1.pdf |
 
 
 # Install
