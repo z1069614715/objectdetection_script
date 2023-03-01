@@ -47,6 +47,11 @@
     paper：[链接](https://openreview.net/pdf?id=q2ZaVU6bEsT)
 - **yolov5-SAConv**  
     添加SAC到yolov5中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV17b411d7ef/).  
-    paper：[链接](https://arxiv.org/pdf/2006.02334.pdf)
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1xD4y1u7NU/).  
+    paper：[链接](https://arxiv.org/pdf/2006.02334.pdf)  
+    reference: [链接](https://github.com/joe-siyuan-qiao/DetectoRS)
+- **yolov7-SAConv**  
+    添加SAC到yolov7中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1xD4y1u7NU/).  
+    paper：[链接](https://arxiv.org/pdf/2006.02334.pdf)  
     reference: [链接](https://github.com/joe-siyuan-qiao/DetectoRS)
