@@ -55,3 +55,10 @@
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1xD4y1u7NU/).  
     paper：[链接](https://arxiv.org/pdf/2006.02334.pdf)  
     reference: [链接](https://github.com/joe-siyuan-qiao/DetectoRS)
+- **yolov5-CoordConv**  
+    添加CoordConv到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1xD4y1u7NU/).   
+    reference: [链接](https://blog.csdn.net/qq_35608277/article/details/125257225)
+- **yolov5-soft-nms**  
+    添加soft-nms(GIoU,DIoU,CIoU,EIoU,SIoU)到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1xD4y1u7NU/).  
