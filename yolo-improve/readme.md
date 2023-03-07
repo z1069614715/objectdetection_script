@@ -60,9 +60,12 @@
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1ng4y1E7rS/).   
     reference: [链接](https://blog.csdn.net/qq_35608277/article/details/125257225)
 - **yolov5-soft-nms**  
-    添加soft-nms(GIoU,DIoU,CIoU,EIoU,SIoU)到yolov5中.  
+    添加soft-nms(IoU,GIoU,DIoU,CIoU,EIoU,SIoU)到yolov5中.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1cM41147Ry/).  
 - **yolov7-CoordConv**  
     添加CoordConv到yolov7中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1ng4y1E7rS/).   
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1K54y1g7ye/).   
     reference: [链接](https://blog.csdn.net/qq_35608277/article/details/125257225)
+- **yolov7-soft-nms**  
+    添加soft-nms(IoU,GIoU,DIoU,CIoU,EIoU,SIoU)到yolov7中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1cM41147Ry/). 

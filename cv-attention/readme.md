@@ -15,7 +15,7 @@
 | ShuffleAttention | True | https://arxiv.org/pdf/2102.00240.pdf |
 | S2Attention | True | https://arxiv.org/abs/2108.01072 |
 | TripletAttention | False | https://arxiv.org/abs/2010.03045 |
-| ECA | True | https://arxiv.org/pdf/1910.03151.pdf |
+| ECA | False | https://arxiv.org/pdf/1910.03151.pdf |
 | ParNetAttention | True | https://arxiv.org/abs/2110.07641 |
 | CoordAttention | True | https://arxiv.org/abs/2103.02907 |
 | MHSA<br>Multi-Head-Self-Attention | True | https://wuch15.github.io/paper/EMNLP2019-NRMS.pdf |
