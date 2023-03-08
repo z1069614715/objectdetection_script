@@ -68,4 +68,9 @@
     reference: [链接](https://blog.csdn.net/qq_35608277/article/details/125257225)
 - **yolov7-soft-nms**  
     添加soft-nms(IoU,GIoU,DIoU,CIoU,EIoU,SIoU)到yolov7中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1cM41147Ry/). 
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1ZY41167iC/). 
+- **yolov5-DSConv**  
+    添加DSConv到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1K54y1g7ye/).   
+    paper: [链接](https://arxiv.org/abs/1901.01928)  
+    reference: [链接](https://github.com/ActiveVisionLab/DSConv)
