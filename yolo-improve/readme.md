@@ -71,6 +71,11 @@
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1ZY41167iC/). 
 - **yolov5-DSConv**  
     添加DSConv到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1iT411a7Mi/).   
+    paper: [链接](https://arxiv.org/abs/1901.01928)  
+    reference: [链接](https://github.com/ActiveVisionLab/DSConv)
+- **yolov7-DSConv**  
+    添加DSConv到yolov7中.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1K54y1g7ye/).   
     paper: [链接](https://arxiv.org/abs/1901.01928)  
     reference: [链接](https://github.com/ActiveVisionLab/DSConv)
