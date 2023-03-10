@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: DCNv3
+Version: 1.0
+Summary: PyTorch Wrapper for CUDA Functions of DCNv3
+Home-page: https://github.com/OpenGVLab/InternImage
+Author: InternImage
