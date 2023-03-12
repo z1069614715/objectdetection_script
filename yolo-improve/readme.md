@@ -81,7 +81,7 @@
     reference: [链接](https://github.com/ActiveVisionLab/DSConv)
 - **yolov5-DCNV3**  
     添加DCNV3到yolov5中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1K54y1g7ye/).   
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1LY411z7iE/).   
     paper: [链接](https://arxiv.org/abs/2211.05778)  
     reference: [链接](https://github.com/OpenGVLab/InternImage)  
 - **yolov5-NWD**  

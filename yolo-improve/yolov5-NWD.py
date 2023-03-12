@@ -1,4 +1,4 @@
-def wasserstein_loss(pred, target, eps=1e-7, mode='exp', gamma=1, constant=12.8):
+def wasserstein_loss(pred, target, eps=1e-7, constant=12.8):
     r"""`Implementation of paper `Enhancing Geometric Factors into
     Model Learning and Inference for Object Detection and Instance
     Segmentation <https://arxiv.org/abs/2005.03572>`_.
@@ -27,21 +27,12 @@ def wasserstein_loss(pred, target, eps=1e-7, mode='exp', gamma=1, constant=12.8)
     wh_distance = ((w1 - w2) ** 2 + (h1 - h2) ** 2) / 4
 
     wasserstein_2 = center_distance + wh_distance
+    return torch.exp(-torch.sqrt(wasserstein_2) / constant)
 
-    if mode == 'exp':
-        normalized_wasserstein = torch.exp(-torch.sqrt(wasserstein_2)/constant)
-        wloss = 1 - normalized_wasserstein
-    
-    if mode == 'sqrt':
-        wloss = torch.sqrt(wasserstein_2)
-    
-    if mode == 'log':
-        wloss = torch.log(wasserstein_2 + 1)
 
-    if mode == 'norm_sqrt':
-        wloss = 1 - 1 / (gamma + torch.sqrt(wasserstein_2))
+nwd = wasserstein_loss(pbox, tbox[i]).squeeze()
+iou_ratio = 0.5
+lbox += iou_ratio * (1.0 - nwd).mean() + (1 - iou_ratio) * (1.0 - iou).mean()  # iou loss
 
-    if mode == 'w2':
-        wloss = wasserstein_2
-
-    return wloss
+# Objectness
+iou = (iou.detach() * iou_ratio + nwd.detach() * (1 - iou_ratio)).clamp(0, 1).type(tobj.dtype)
