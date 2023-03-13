@@ -1,10 +1,10 @@
 from models.ops_dcnv3.modules import DCNv3
 class DCNV3_YoLo(nn.Module):
-    def __init__(self, inc, ouc, k=1, s=1, p=None, g=1, d=1, act=True):
+    def __init__(self, inc, ouc, k=1, s=1, p=None, g=1, act=True):
         super().__init__()
         
         self.conv = Conv(inc, ouc, k=1)
-        self.dcnv3 = DCNv3(ouc, kernel_size=k, stride=s, group=g, dilation=d)
+        self.dcnv3 = DCNv3(ouc, kernel_size=k, stride=s, group=g)
         self.bn = nn.BatchNorm2d(ouc)
         self.act = nn.SiLU() if act is True else (act if isinstance(act, nn.Module) else nn.Identity())
     
