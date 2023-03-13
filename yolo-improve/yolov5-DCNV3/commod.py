@@ -5,13 +5,16 @@ class DCNV3_YoLo(nn.Module):
         
         self.conv = Conv(inc, ouc, k=1)
         self.dcnv3 = DCNv3(ouc, kernel_size=k, stride=s, group=g, dilation=d)
-        self.bn = 
+        self.bn = nn.BatchNorm2d(ouc)
+        self.act = Conv.default_act
     
     def forward(self, x):
         x = self.conv(x)
         x = x.permute(0, 2, 3, 1)
         x = self.dcnv3(x)
-        return x.permute(0, 3, 1, 2)
+        x = x.permute(0, 3, 1, 2)
+        x = self.act(self.bn(x))
+        return x
 
 class Bottleneck_DCNV3(nn.Module):
     # Standard bottleneck
