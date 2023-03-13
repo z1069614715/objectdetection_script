@@ -5,6 +5,7 @@ class DCNV3_YoLo(nn.Module):
         
         self.conv = Conv(inc, ouc, k=1)
         self.dcnv3 = DCNv3(ouc, kernel_size=k, stride=s, group=g, dilation=d)
+        self.bn = 
     
     def forward(self, x):
         x = self.conv(x)
