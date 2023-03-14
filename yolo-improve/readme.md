@@ -82,6 +82,7 @@
 - **yolov5-DCNV3**  
     添加DCNV3到yolov5中.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1LY411z7iE/).   
+    补充事项-视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Dv4y1j7ij/).   
     paper: [链接](https://arxiv.org/abs/2211.05778)  
     reference: [链接](https://github.com/OpenGVLab/InternImage)  
 - **yolov5-NWD**  
@@ -94,3 +95,13 @@
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1LY411z7iE/).   
     paper: [链接](https://arxiv.org/abs/2211.05778)  
     reference: [链接](https://github.com/OpenGVLab/InternImage) 
+- **yolov7-DCNV3**  
+    添加DCNV3到yolov7中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1mk4y1h7us/).   
+    paper: [链接](https://arxiv.org/abs/2211.05778)  
+    reference: [链接](https://github.com/OpenGVLab/InternImage) 
+- **yolov5-DecoupledHead**  
+    添加Efficient-DecoupledHead到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1mk4y1h7us/).   
+    paper: [链接](https://arxiv.org/pdf/2301.05586.pdf)  
+    reference: [链接](https://github.com/meituan/YOLOv6/blob/main/yolov6/models/effidehead.py) 
