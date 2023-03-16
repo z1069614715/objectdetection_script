@@ -8,13 +8,13 @@
         视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1KM411b7Sz/).  
         博客地址：[CSDN](https://blog.csdn.net/qq_37706472/article/details/128737484?spm=1001.2014.3001.5501).
 
-        #### 2023-2-8 更新: 新增[Wise-IoU](https://arxiv.org/abs/2301.10051) 视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1tG4y1N7Gk/).  
+        #### 2023-2-8 更新: 新增[Wise-IoU](https://arxiv.org/abs/2301.10051) 视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1tG4y1N7Gk/). reference:[github](https://github.com/Instinct323/wiou)  
     2. yolov8
         视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1PY4y1o7Hm/).  
         博客地址：[CSDN](https://blog.csdn.net/qq_37706472/article/details/128743012?spm=1001.2014.3001.5502).
 
-        #### 2023-2-7 更新: 新增[Wise-IoU](https://arxiv.org/abs/2301.10051) 视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1De4y1N7Mb/).  
-- **yolov5-GFPN**  
+        #### 2023-2-7 更新: 新增[Wise-IoU](https://arxiv.org/abs/2301.10051) 视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1De4y1N7Mb/). reference:[github](https://github.com/Instinct323/wiou)   
+- **yolov5-GFPN**   
     使用DAMO-YOLO中的GFPN替换YOLOV5中的Head.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1iR4y1a7bx/).  
 - **yolov5-C2F**  
@@ -24,7 +24,7 @@
     添加EIOU，SIOU，ALPHA-IOU, FocalEIOU, Wise-IOU到yolov7的box_iou中.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1zx4y177EF/).  
     博客地址：[CSDN](https://blog.csdn.net/qq_37706472/article/details/128780275?spm=1001.2014.3001.5502).  
-    #### 2023-2-11 更新: 新增[Wise-IoU](https://arxiv.org/abs/2301.10051) 视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1yv4y147kf/).     
+    #### 2023-2-11 更新: 新增[Wise-IoU](https://arxiv.org/abs/2301.10051) 视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1yv4y147kf/). reference:[github](https://github.com/Instinct323/wiou)  
 - **yolov5-OTA**  
     添加Optimal Transport Assignment到yolov5的Loss中.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1zx4y177EF/).  
@@ -105,3 +105,8 @@
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1mk4y1h7us/).   
     paper: [链接](https://arxiv.org/pdf/2301.05586.pdf)  
     reference: [链接](https://github.com/meituan/YOLOv6/blob/main/yolov6/models/effidehead.py) 
+- **yolov5-FasterBlock**  
+    添加FasterNet中的Faster-Block到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1jv4y1774u/).   
+    paper: [链接](https://arxiv.org/abs/2303.03667)  
+    reference: [链接](https://github.com/JierunChen/FasterNet) 
