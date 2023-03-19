@@ -1,4 +1,4 @@
-import torch, time, math, thop, tqdm
+import torch, time, math, thop, tqdm, torchvision
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.nn.modules.conv import _ConvNd
@@ -179,17 +179,138 @@ class DSConv2D(Conv2D):
     def __str__(self):
         return 'DSConv2D'
 
+class Partial_conv3(nn.Module):
+    def __init__(self, dim, kernel_size, n_div=4, forward='split_cat'):
+        super().__init__()
+        self.dim_conv3 = dim // n_div
+        self.dim_untouched = dim - self.dim_conv3
+        self.partial_conv3 = nn.Conv2d(self.dim_conv3, self.dim_conv3, kernel_size, 1, autopad(kernel_size), bias=False)
+
+        if forward == 'slicing':
+            self.forward = self.forward_slicing
+        elif forward == 'split_cat':
+            self.forward = self.forward_split_cat
+        else:
+            raise NotImplementedError
+
+    def forward_slicing(self, x):
+        # only for inference
+        x = x.clone()   # !!! Keep the original input intact for the residual connection later
+        x[:, :self.dim_conv3, :, :] = self.partial_conv3(x[:, :self.dim_conv3, :, :])
+        return x
+
+    def forward_split_cat(self, x):
+        # for training/inference
+        x1, x2 = torch.split(x, [self.dim_conv3, self.dim_untouched], dim=1)
+        x1 = self.partial_conv3(x1)
+        x = torch.cat((x1, x2), 1)
+        return x
+
+class PConv(Conv2D):
+    def __init__(self, inc, ouc, kernel_size, g=1):
+        super().__init__(inc, ouc, kernel_size, g)
+        self.conv = Partial_conv3(inc, kernel_size)
+    
+    def __str__(self):
+        return 'PConv2D-FasterNet'
+
+class DCNV2(nn.Module):
+    def __init__(self, in_channels, out_channels, kernel_size, stride=1,
+                 padding=1, groups=1, act=True, dilation=1, deformable_groups=1):
+        super(DCNV2, self).__init__()
+
+        self.in_channels = in_channels
+        self.out_channels = out_channels
+        self.kernel_size = (kernel_size, kernel_size)
+        self.stride = (stride, stride)
+        self.padding = (autopad(kernel_size, padding), autopad(kernel_size, padding))
+        self.dilation = (dilation, dilation)
+        self.groups = groups
+        self.deformable_groups = deformable_groups
+
+        self.weight = nn.Parameter(
+            torch.empty(out_channels, in_channels, *self.kernel_size)
+        )
+        self.bias = nn.Parameter(torch.empty(out_channels))
+
+        out_channels_offset_mask = (self.deformable_groups * 3 *
+                                    self.kernel_size[0] * self.kernel_size[1])
+        self.conv_offset_mask = nn.Conv2d(
+            self.in_channels,
+            out_channels_offset_mask,
+            kernel_size=self.kernel_size,
+            stride=self.stride,
+            padding=self.padding,
+            bias=True,
+        )
+        self.bn = nn.BatchNorm2d(out_channels)
+        self.act = nn.SiLU() if act is True else (act if isinstance(act, nn.Module) else nn.Identity())
+        self.reset_parameters()
+
+    def forward(self, x):
+        offset_mask = self.conv_offset_mask(x)
+        o1, o2, mask = torch.chunk(offset_mask, 3, dim=1)
+        offset = torch.cat((o1, o2), dim=1)
+        mask = torch.sigmoid(mask)
+        x = torch.ops.torchvision.deform_conv2d(
+            x,
+            self.weight,
+            offset,
+            mask,
+            self.bias,
+            self.stride[0], self.stride[1],
+            self.padding[0], self.padding[1],
+            self.dilation[0], self.dilation[1],
+            self.groups,
+            self.deformable_groups,
+            True
+        )
+        x = self.bn(x)
+        x = self.act(x)
+        return x
+
+    def reset_parameters(self):
+        n = self.in_channels
+        for k in self.kernel_size:
+            n *= k
+        std = 1. / math.sqrt(n)
+        self.weight.data.uniform_(-std, std)
+        self.bias.data.zero_()
+        self.conv_offset_mask.weight.data.zero_()
+        self.conv_offset_mask.bias.data.zero_()
+
+    def __str__(self):
+        return 'DCNV2'
+
+from ops_dcnv3.modules import DCNv3
+class DCNV3(Conv2D):
+    def __init__(self, inc, ouc, k=1, s=1, p=None, g=1, d=1, act=True):
+        super().__init__(inc, ouc, k, g)
+        self.conv = DCNv3(inc, kernel_size=k, stride=s, group=g, dilation=d)
+    
+    def __str__(self):
+        return 'DCNV3'
+
+    def forward(self, x):
+        x = x.permute(0, 2, 3, 1)
+        x = self.conv(x)
+        x = x.permute(0, 3, 1, 2)
+        return self.act(self.bn(x))
+    
 if __name__ == '__main__':
     warmup, test_times = 1000, 3000
-    bs, h, w = 8, 512, 512
-    inc, ouc, kernel_size = 128, 256, 3
+    bs, h, w = 8, 256, 256
+    inc, ouc, kernel_size = 128, 128, 3
     cuda, half = True, True
     module_list = [
                    Conv2D(inc, ouc, kernel_size), 
                    DConv2D(inc, ouc, kernel_size), 
                    GhostConv2D(inc, ouc, kernel_size=1, ratio=2, dw_size=kernel_size), 
                    GSConv(inc, ouc, kernel_size),
-                   DSConv2D(inc, ouc, kernel_size)
+                   DSConv2D(inc, ouc, kernel_size),
+                   PConv(inc, ouc, kernel_size),
+                   DCNV2(inc, ouc, kernel_size),
+                   DCNV3(inc, ouc, kernel_size)
                    ]
     
     device = torch.device("cuda:0") if cuda else torch.device("cpu")
