@@ -29,8 +29,7 @@ def wasserstein_loss(pred, target, eps=1e-7, constant=12.8):
     wasserstein_2 = center_distance + wh_distance
     return torch.exp(-torch.sqrt(wasserstein_2) / constant)
 
-
-nwd = wasserstein_loss(pbox, tbox[i]).squeeze()
+nwd = wasserstein_loss(pbox, tbox[i])
 iou_ratio = 0.5
 lbox += (1 - iou_ratio) * (1.0 - nwd).mean() + iou_ratio * (1.0 - iou).mean()  # iou loss
 

@@ -107,6 +107,11 @@
     reference: [链接](https://github.com/meituan/YOLOv6/blob/main/yolov6/models/effidehead.py) 
 - **yolov5-FasterBlock**  
     添加FasterNet中的Faster-Block到yolov5中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1jv4y1774u/).   
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Bs4y1H7Ph/).   
     paper: [链接](https://arxiv.org/abs/2303.03667)  
     reference: [链接](https://github.com/JierunChen/FasterNet) 
+- **yolov7-NWD**  
+    添加Normalized Gaussian Wasserstein Distance到yolov7中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1zY4y197UP/).   
+    paper: [链接](https://arxiv.org/abs/2110.13389)  
+    reference: [链接](https://github.com/jwwangchn/NWD)
