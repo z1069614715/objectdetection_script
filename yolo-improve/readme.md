@@ -103,7 +103,7 @@
 - **yolov5-DecoupledHead**  
     添加Efficient-DecoupledHead到yolov5中.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1mk4y1h7us/).   
-    paper: [链接](https://arxiv.org/pdf/2301.05586.pdf)  
+    paper: [yolov6链接](https://arxiv.org/pdf/2301.05586.pdf)  
     reference: [链接](https://github.com/meituan/YOLOv6/blob/main/yolov6/models/effidehead.py) 
 - **yolov5-FasterBlock**  
     添加FasterNet中的Faster-Block到yolov5中.  
@@ -112,6 +112,11 @@
     reference: [链接](https://github.com/JierunChen/FasterNet) 
 - **yolov7-NWD**  
     添加Normalized Gaussian Wasserstein Distance到yolov7中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1zY4y197UP/).   
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1kM411H7g1/).   
     paper: [链接](https://arxiv.org/abs/2110.13389)  
     reference: [链接](https://github.com/jwwangchn/NWD)
+- **yolov7-DecoupledHead**  
+    添加具有隐式知识学习的Efficient-DecoupledHead到yolov7中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1mk4y1h7us/).   
+    paper: [yolov6链接](https://arxiv.org/pdf/2301.05586.pdf) [yolor链接](https://arxiv.org/abs/2105.04206) [yolor参考博客](https://blog.csdn.net/AaronYKing/article/details/123804988)  
+    reference: [链接](https://github.com/meituan/YOLOv6/blob/main/yolov6/models/effidehead.py) 
