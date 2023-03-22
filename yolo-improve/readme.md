@@ -117,6 +117,11 @@
     reference: [链接](https://github.com/jwwangchn/NWD)
 - **yolov7-DecoupledHead**  
     添加具有隐式知识学习的Efficient-DecoupledHead到yolov7中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1mk4y1h7us/).   
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1tg4y1x7ha/).   
     paper: [yolov6链接](https://arxiv.org/pdf/2301.05586.pdf) [yolor链接](https://arxiv.org/abs/2105.04206) [yolor参考博客](https://blog.csdn.net/AaronYKing/article/details/123804988)  
     reference: [链接](https://github.com/meituan/YOLOv6/blob/main/yolov6/models/effidehead.py) 
+- **yolov5-backbone**  
+    添加Timm支持的主干到yolov5中.  
+    需要安装timm库. 命令: pip install -i https://pypi.tuna.tsinghua.edu.cn/simple timm
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1kM411H7g1/).   
+    reference: [链接](https://github.com/huggingface/pytorch-image-models#:~:text=I%20missed%20anything.-,Models,-All%20model%20architecture)

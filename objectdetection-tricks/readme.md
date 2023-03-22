@@ -11,4 +11,4 @@
     视频教学地址：[3.8 哔哩哔哩](https://www.bilibili.com/video/BV15x4y1T7Ly/).  [3.19 哔哩哔哩](https://www.bilibili.com/video/BV1UL411R7Qr/).   
 - **tricks_3**
     yolov5中的FeatureMap可视化(热力图格式).  
-    视频教学地址：[哔哩哔哩]().  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1LV4y1R7w6/).  
