@@ -122,6 +122,11 @@
     reference: [链接](https://github.com/meituan/YOLOv6/blob/main/yolov6/models/effidehead.py) 
 - **yolov5-backbone**  
     添加Timm支持的主干到yolov5中.  
-    需要安装timm库. 命令: pip install -i https://pypi.tuna.tsinghua.edu.cn/simple timm
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1kM411H7g1/).   
+    需要安装timm库. 命令: pip install -i https://pypi.tuna.tsinghua.edu.cn/simple timm  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Mx4y1A7jy/).   
     reference: [链接](https://github.com/huggingface/pytorch-image-models#:~:text=I%20missed%20anything.-,Models,-All%20model%20architecture)
+- **yolov7-PConv**  
+    添加FasterNet中的PConv到yolov7中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Bs4y1H7Ph/).   
+    paper: [链接](https://arxiv.org/abs/2303.03667)  
+    reference: [链接](https://github.com/JierunChen/FasterNet) 
