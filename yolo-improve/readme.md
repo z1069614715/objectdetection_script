@@ -130,7 +130,7 @@
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Z84y137oi/).   
     paper: [链接](https://arxiv.org/abs/2303.03667)  
     reference: [链接](https://github.com/JierunChen/FasterNet) 
-- **yolov5-DecoupledHead**  
+- **yolov5-TSCODE**  
     添加Task-Specific Context Decoupling到yolov5中.  
     需要安装einops库. 命令: pip install -i https://pypi.tuna.tsinghua.edu.cn/simple einops  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1mk4y1h7us/).   
