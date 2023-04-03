@@ -28,10 +28,11 @@
 | Polarized Self-Attention | True | https://arxiv.org/abs/2107.00782 |
 | Sequential Self-Attention | True | https://arxiv.org/abs/2107.00782 |
 | GAM | True | https://arxiv.org/pdf/2112.05561v1.pdf |
+| Biformer | True | https://arxiv.org/abs/2303.08810 |
 
 
 # Install
-部分注意力需要安装timm. 如运行提示缺少timm安装即可. 安装命令:pip install timm
+安装命令:pip install timm einops -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 # Course
 1. [yolov5添加注意力哔哩哔哩视频教学链接](https://www.bilibili.com/video/BV1s84y1775U) [yolov5添加注意力-补充事项-哔哩哔哩视频教学链接](https://www.bilibili.com/video/BV1hG4y1M71X)
@@ -41,3 +42,4 @@
 # Reference
 https://github.com/xmu-xiaoma666/External-Attention-pytorch  
 https://github.com/rwightman/pytorch-image-models
+https://github.com/rayleizhu/BiFormer

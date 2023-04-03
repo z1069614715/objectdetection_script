@@ -14,4 +14,4 @@
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1LV4y1R7w6/).  
 - **tricks_4**
     用于yolov5和v7中的yolo格式转换coco格式的脚本.(如何在v5和v7中输出ap_small,ap_middle,ap_large coco指标)  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1LV4y1R7w6/).  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV14T411s7Ts/).  

@@ -1,0 +1,13 @@
+mlp_ratio: 2
+embed_dim: 144
+depths: [3, 4, 18, 3]
+feature_dim: 1280
+patch_size: 4
+patch_stride: 4
+patch_size2: 2
+patch_stride2: 2
+layer_scale_init_value: 0 # no layer scale
+drop_path_rate: 0.2
+norm_layer:  BN
+act_layer: RELU
+n_div: 4

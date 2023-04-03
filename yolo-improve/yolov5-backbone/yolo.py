@@ -18,7 +18,10 @@ def parse_model(d, ch):  # model_dict, input_channels(3)
             pass
         for j, a in enumerate(args):
             with contextlib.suppress(NameError):
-                args[j] = eval(a) if isinstance(a, str) else a  # eval strings
+                try:
+                    args[j] = eval(a) if isinstance(a, str) else a  # eval strings
+                except:
+                    args[j] = a
 
         n = n_ = max(round(n * gd), 1) if n > 1 else n  # depth gain
         if m in {
@@ -48,13 +51,16 @@ def parse_model(d, ch):  # model_dict, input_channels(3)
         elif m is Expand:
             c2 = ch[f] // args[0] ** 2
         elif isinstance(m, str):
-            is_backbone = True
             t = m
             m = timm.create_model(m, pretrained=args[0], features_only=True)
             c2 = m.feature_info.channels()
+        # elif m in {}:
+        #     m = m(*args)
+        #     c2 = m.channel
         else:
             c2 = ch[f]
         if isinstance(c2, list):
+            is_backbone = True
             m_ = m
             m_.backbone = True
         else:

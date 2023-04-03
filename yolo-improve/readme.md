@@ -135,3 +135,7 @@
     需要安装einops库. 命令: pip install -i https://pypi.tuna.tsinghua.edu.cn/simple einops  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1mk4y1h7us/).   
     paper: [yolov6链接](https://arxiv.org/pdf/2303.01047v1.pdf)  
+- **yolov5-backbone/fasternet**  
+    添加FasterNet主干到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Mx4y1A7jy/).   
+    reference: [链接](https://github.com/JierunChen/FasterNet)
