@@ -137,5 +137,9 @@
     paper: [yolov6链接](https://arxiv.org/pdf/2303.01047v1.pdf)  
 - **yolov5-backbone/fasternet**  
     添加FasterNet主干到yolov5中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Mx4y1A7jy/).   
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1ra4y1K77u/).   
     reference: [链接](https://github.com/JierunChen/FasterNet)
+- **yolov5-backbone/ODConv**  
+    添加Omni-Dimensional Dynamic Convolution主干(od_mobilenetv2,od_resnet)到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1ra4y1K77u/).   
+    reference: [链接](https://github.com/OSVAI/ODConv)
