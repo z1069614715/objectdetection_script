@@ -141,5 +141,8 @@
     reference: [链接](https://github.com/JierunChen/FasterNet)
 - **yolov5-backbone/ODConv**  
     添加Omni-Dimensional Dynamic Convolution主干(od_mobilenetv2,od_resnet)到yolov5中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1ra4y1K77u/).   
-    reference: [链接](https://github.com/OSVAI/ODConv)
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Jk4y1v7EW/).   
+    reference: [链接](https://github.com/OSVAI/ODConv)  
+- **yolov5-backbone/ODConvFuse**  
+    融合Omni-Dimensional Dynamic Convolution主干(od_mobilenetv2,od_resnet)中的Conv和BN.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Rs4y1N7fp/).   
