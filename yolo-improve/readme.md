@@ -146,3 +146,11 @@
 - **yolov5-backbone/ODConvFuse**  
     融合Omni-Dimensional Dynamic Convolution主干(od_mobilenetv2,od_resnet)中的Conv和BN.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Rs4y1N7fp/).   
+- **yolov5-CARAFE**  
+    添加轻量级上采样算子CARAFE到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Rs4y1N7fp/).  
+    reference: [链接](https://github.com/XiaLiPKU/CARAFE)  
+- **yolov5-EVC**
+    添加CFPNet中的EVC-Block到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Rs4y1N7fp/).  
+    reference: [链接](https://github.com/QY1994-0919/CFPNet)  
