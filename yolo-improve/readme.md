@@ -148,9 +148,19 @@
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Rs4y1N7fp/).   
 - **yolov5-CARAFE**  
     添加轻量级上采样算子CARAFE到yolov5中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Rs4y1N7fp/).  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1kj411c72a/).  [yolov7修改视频-哔哩哔哩](https://www.bilibili.com/video/BV1yc411p7wL/).  
     reference: [链接](https://github.com/XiaLiPKU/CARAFE)  
-- **yolov5-EVC**
+- **yolov5-EVC**  
     添加CFPNet中的EVC-Block到yolov5中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Rs4y1N7fp/).  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Pg4y1u7cM/).  
     reference: [链接](https://github.com/QY1994-0919/CFPNet)  
+- **yolov5-dyhead**  
+    添加基于注意力机制的目标检测头(DYHEAD)到yolov5中.  
+    安装命令:
+
+        pip install -U openmim
+        mim install mmengine
+        mim install "mmcv>=2.0.0"
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Pg4y1u7cM/).  
+    reference: [链接](https://github.com/open-mmlab/mmdetection/blob/main/mmdet/models/necks/dyhead.py)  
+    paper: [链接](https://arxiv.org/abs/2106.08322)  
