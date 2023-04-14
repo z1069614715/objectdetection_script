@@ -164,3 +164,8 @@
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1qs4y117Mx/).  
     reference: [链接](https://github.com/open-mmlab/mmdetection/blob/main/mmdet/models/necks/dyhead.py)  
     paper: [链接](https://arxiv.org/abs/2106.08322)  
+- **yolov5-backbone/inceptionnext**  
+    添加(2023年New)InceptionNeXt主干到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Rs4y1N7fp/).   
+    reference: [链接](https://github.com/sail-sg/inceptionnext)  
+    paper: [链接](https://arxiv.org/pdf/2303.16900.pdf)  
