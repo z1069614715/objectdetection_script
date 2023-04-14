@@ -161,6 +161,6 @@
         pip install -U openmim
         mim install mmengine
         mim install "mmcv>=2.0.0"
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Pg4y1u7cM/).  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1qs4y117Mx/).  
     reference: [链接](https://github.com/open-mmlab/mmdetection/blob/main/mmdet/models/necks/dyhead.py)  
     paper: [链接](https://arxiv.org/abs/2106.08322)  

@@ -226,3 +226,13 @@ class DyHeadBlock(nn.Module):
             outs.append(self.task_attn_module(sum_feat / summed_levels))
 
         return outs
+
+[17, 1, Conv, [128, 1, 1]],
+[20, 1, Conv, [128, 1, 1]],
+[23, 1, Conv, [128, 1, 1]],
+[[24, 25, 26], 1, Detect, [nc, anchors]],  # Detect(P3, P4, P5)
+
+
+self.dyhead = nn.Sequential(*[DyHeadBlock(ch[0]) for i in range(2)])
+for dyhead_layer in self.dyhead:
+    x = dyhead_layer(x)
