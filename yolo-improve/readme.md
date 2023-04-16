@@ -156,6 +156,7 @@
     reference: [链接](https://github.com/QY1994-0919/CFPNet)  
 - **yolov5-dyhead**  
     添加基于注意力机制的目标检测头(DYHEAD)到yolov5中.  
+    yolov7版本: [哔哩哔哩](https://www.bilibili.com/video/BV1qs4y117Mx/).  
     安装命令:
 
         pip install -U openmim
@@ -166,6 +167,6 @@
     paper: [链接](https://arxiv.org/abs/2106.08322)  
 - **yolov5-backbone/inceptionnext**  
     添加(2023年New)InceptionNeXt主干到yolov5中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Rs4y1N7fp/).   
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV12v4y1H7E1/).   
     reference: [链接](https://github.com/sail-sg/inceptionnext)  
     paper: [链接](https://arxiv.org/pdf/2303.16900.pdf)  
