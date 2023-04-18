@@ -42,7 +42,7 @@ class SpatialAttention(nn.Module):
 
 class CBAMBlock(nn.Module):
 
-    def __init__(self, channel=512, reduction=16, kernel_size=49):
+    def __init__(self, channel=512, reduction=16, kernel_size=7):
         super().__init__()
         self.ca = ChannelAttention(channel=channel, reduction=reduction)
         self.sa = SpatialAttention(kernel_size=kernel_size)
@@ -63,10 +63,9 @@ class CBAMBlock(nn.Module):
 
     def forward(self, x):
         b, c, _, _ = x.size()
-        residual = x
         out = x * self.ca(x)
         out = out * self.sa(out)
-        return out + residual
+        return out
 
 
 if __name__ == '__main__':
