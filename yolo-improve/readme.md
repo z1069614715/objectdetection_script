@@ -175,3 +175,8 @@
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1YV4y1Z7rV/).     
     reference: [链接](https://github.com/kemaloksuz/aLRPLoss)  
     paper: [链接](https://arxiv.org/abs/2009.13592)  
+- **yolov5-res2block**
+    结合Res2Net提出具有多尺度提取能力的C3模块.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV13X4y167VB/).     
+    reference: [链接](https://github.com/Res2Net/Res2Net-PretrainedModels)  
+    paper: [链接](https://arxiv.org/pdf/1904.01169.pdf)  
