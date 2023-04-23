@@ -182,5 +182,5 @@
     paper: [链接](https://arxiv.org/pdf/1904.01169.pdf)  
 - **yolov7-odconv**  
     添加Omni-Dimensional Dynamic Convolution到yolov7中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV13X4y167VB/).     
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1vh411j71Z/).     
     reference: [链接](https://github.com/OSVAI/ODConv)  

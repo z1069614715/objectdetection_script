@@ -80,8 +80,8 @@ class Attention(nn.Module):
 
 
 class ODConv2d(nn.Module):
-    def __init__(self, in_planes, out_planes, k, s=1, p=None, d=1, g=1,
-                 reduction=0.0625, kernel_num=1, act=True):
+    def __init__(self, in_planes, out_planes, k, s=1, p=None, g=1, act=True, d=1,
+                 reduction=0.0625, kernel_num=1):
         super(ODConv2d, self).__init__()
         self.in_planes = in_planes
         self.out_planes = out_planes
