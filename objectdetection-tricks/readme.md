@@ -18,3 +18,6 @@
 - **tricks_5**
     Segment Anything演示代码. 
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1hv4y1H7eg/).  
+- **tricks_6**
+    固定随机种子以便在同一个主机上进行复现结果. 
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1hv4y1H7eg/).  
