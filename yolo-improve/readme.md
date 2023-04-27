@@ -184,3 +184,8 @@
     添加Omni-Dimensional Dynamic Convolution到yolov7中.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1vh411j71Z/).     
     reference: [链接](https://github.com/OSVAI/ODConv)  
+- **yolov5-backbone/FocalNet**  
+    添加(2022年)FocalNet(transformer)主干到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV12v4y1H7E1/).   
+    reference: [链接](https://github.com/microsoft/FocalNet)  
+    paper: [链接](https://arxiv.org/abs/2203.11926)  

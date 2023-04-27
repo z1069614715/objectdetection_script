@@ -16,8 +16,8 @@
     用于yolov5和v7中的yolo格式转换coco格式的脚本.(如何在v5和v7中输出ap_small,ap_middle,ap_large coco指标)  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV14T411s7Ts/).  
 - **tricks_5**
-    Segment Anything演示代码. 
+    Segment Anything演示代码.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1hv4y1H7eg/).  
 - **tricks_6**
-    固定随机种子以便在同一个主机上进行复现结果. 
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1hv4y1H7eg/).  
+    固定随机种子以便在同一个主机上进行复现结果.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1bh4y1n7Yc/).  

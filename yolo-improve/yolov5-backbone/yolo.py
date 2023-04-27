@@ -75,7 +75,7 @@ def parse_model(d, ch):  # model_dict, input_channels(3)
             ch = []
         if isinstance(c2, list):
             ch.extend(c2)
-            if len(c2) == 4:
+            for _ in range(5 - len(ch)):
                 ch.insert(0, 0)
         else:
             ch.append(c2)
@@ -90,7 +90,7 @@ def _forward_once(self, x, profile=False, visualize=False):
             self._profile_one_layer(m, x, dt)
         if hasattr(m, 'backbone'):
             x = m(x)
-            if len(x) == 4:
+            for _ in range(5 - len(x)):
                 x.insert(0, None)
             for i_idx, i in enumerate(x):
                 if i_idx in self.save:
