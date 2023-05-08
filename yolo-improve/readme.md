@@ -191,6 +191,12 @@
     paper: [链接](https://arxiv.org/abs/2203.11926)  
 - **yolov5-backbone/EMO**  
     添加(2023年)EMO(transformer)主干到yolov5中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1ch411L7Dk/).   
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Dh4y1J7SV/).   
     reference: [链接](https://github.com/zhangzjn/EMO)  
     paper: [链接](https://arxiv.org/pdf/2301.01146.pdf)  
+- **yolov5-backbone/EfficientFormerV2**  
+    添加(2022年)EfficientFormerV2(transformer)主干到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Dh4y1J7SV/).   
+    reference: [链接](https://github.com/snap-research/EfficientFormer)  
+    paper: [链接](https://arxiv.org/pdf/2212.08059.pdf)  
+    weight_download: [百度网盘链接](https://pan.baidu.com/s/1I0Ygc3-6fNf2LdIJe290kw?pwd=yvc8)
