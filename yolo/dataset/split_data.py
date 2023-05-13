@@ -17,6 +17,7 @@ os.makedirs('labels/test', exist_ok=True)
 listdir = [i for i in os.listdir(txtpath) if 'txt' in i]
 train, test = train_test_split(listdir, test_size=test_size, shuffle=True, random_state=0)
 train, val = train_test_split(train, test_size=val_size, shuffle=True, random_state=0)
+print(f'train set size:{len(train)} val set size:{len(val)} test set size:{len(test)}')
 
 for i in train:
     shutil.copy('{}/{}.{}'.format(imgpath, i[:-4], postfix), 'images/train/{}.{}'.format(i[:-4], postfix))
