@@ -202,6 +202,12 @@
     weight_download: [百度网盘链接](https://pan.baidu.com/s/1I0Ygc3-6fNf2LdIJe290kw?pwd=yvc8)
 - **yolov5-backbone/PoolFormer**  
     添加(2022年CVPR)PoolFormer(transformer)主干到yolov5中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1da4y1g7KT/).   
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1eh411c7bz/).   
     reference: [链接](https://github.com/sail-sg/poolformer)  
     paper: [链接](https://arxiv.org/abs/2111.11418)  
+- **yolov5-backbone/EfficientViT**  
+    添加(2023年)EfficientViT(transformer)主干到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1da4y1g7KT/).   
+    reference: [链接](https://github.com/mit-han-lab/efficientvit)  
+    paper: [链接](https://arxiv.org/abs/2205.14756)  
+    weight_download: [百度网盘链接](https://pan.baidu.com/s/1dvwuQQBnRCr7aGReY8IEVw?pwd=74ad)
