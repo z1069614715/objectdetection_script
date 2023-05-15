@@ -387,9 +387,9 @@ class LiteMSA(nn.Module):
         )
         multi_scale_qkv = torch.transpose(multi_scale_qkv, -1, -2)
         q, k, v = (
-            multi_scale_qkv[..., 0 : self.dim],
-            multi_scale_qkv[..., self.dim : 2 * self.dim],
-            multi_scale_qkv[..., 2 * self.dim :],
+            multi_scale_qkv[..., 0 : self.dim].clone(),
+            multi_scale_qkv[..., self.dim : 2 * self.dim].clone(),
+            multi_scale_qkv[..., 2 * self.dim :].clone(),
         )
 
         # lightweight global attention
