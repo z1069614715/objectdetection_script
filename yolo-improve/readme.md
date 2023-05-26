@@ -213,5 +213,12 @@
     weight_download: [百度网盘链接](https://pan.baidu.com/s/1dvwuQQBnRCr7aGReY8IEVw?pwd=74ad)
 - **yolov5-ContextAggregation**  
     添加ContextAggregation到yolov5中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1vh411j71Z/).     
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Yk4y1s7Kx/).     
     reference: [链接](https://github.com/yeliudev/CATNet)  
+    paper: [链接](https://arxiv.org/abs/2111.11057)  
+- **yolov5-backbone/VanillaNet**  
+    添加(2023年)VanillaNet主干到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1xk4y1L7Gu/).   
+    reference: [链接](https://github.com/huawei-noah/VanillaNet)  
+    paper: [链接](https://arxiv.org/abs/2305.12972)  
+    weight_download: [百度网盘链接](https://pan.baidu.com/s/1EBAiOtDVMhvQqu2NWoFSIg?pwd=ofx9)  
