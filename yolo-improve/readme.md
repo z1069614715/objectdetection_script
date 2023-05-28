@@ -218,7 +218,11 @@
     paper: [链接](https://arxiv.org/abs/2111.11057)  
 - **yolov5-backbone/VanillaNet**  
     添加(2023年)VanillaNet主干到yolov5中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1xk4y1L7Gu/).   
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1os4y1v7Du/).   
     reference: [链接](https://github.com/huawei-noah/VanillaNet)  
     paper: [链接](https://arxiv.org/abs/2305.12972)  
     weight_download: [百度网盘链接](https://pan.baidu.com/s/1EBAiOtDVMhvQqu2NWoFSIg?pwd=ofx9)  
+- **yolov7-EVC**  
+    添加CFPNet中的EVC-Block到yolov7中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Pg4y1u7cM/).  
+    reference: [链接](https://github.com/QY1994-0919/CFPNet)  
