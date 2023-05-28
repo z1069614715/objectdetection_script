@@ -1,6 +1,9 @@
 # Object Detection Script
 这个项目主要是提供一些关于目标检测的代码和改进思路参考.
 
+# Project [AliPay](#0)
+1. 基于整合yolov7的项目.(12.9¥)[项目详解](https://t.bilibili.com/798697826625257472#reply245141740)  
+
 # Advertising Board
 人工智能-工作室长期对外接单，范围主要是:
 1. 目标检测.
@@ -46,3 +49,8 @@
 # Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=z1069614715/objectdetection_script&type=Date)](https://star-history.com/#z1069614715/objectdetection_script&Date)
+
+<a id="0"></a>
+
+# Alipay(付款的时候需要备注一下你的qq号,然后请加QQ:1069614715,通过后麻烦把付款截图也发下,谢谢合作!)
+![Alipay](images/ZFB.jpg)  
