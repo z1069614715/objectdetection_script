@@ -45,12 +45,13 @@ class activation(nn.ReLU):
         return kernel * t, beta + (0 - running_mean) * gamma / std
     
     def switch_to_deploy(self):
-        kernel, bias = self._fuse_bn_tensor(self.weight, self.bn)
-        self.weight.data = kernel
-        self.bias = torch.nn.Parameter(torch.zeros(self.dim))
-        self.bias.data = bias
-        self.__delattr__('bn')
-        self.deploy = True
+        if not self.deploy:
+            kernel, bias = self._fuse_bn_tensor(self.weight, self.bn)
+            self.weight.data = kernel
+            self.bias = torch.nn.Parameter(torch.zeros(self.dim))
+            self.bias.data = bias
+            self.__delattr__('bn')
+            self.deploy = True
 
 
 class Block(nn.Module):
@@ -102,18 +103,19 @@ class Block(nn.Module):
         return kernel * t, beta + (bias - running_mean) * gamma / std
     
     def switch_to_deploy(self):
-        kernel, bias = self._fuse_bn_tensor(self.conv1[0], self.conv1[1])
-        self.conv1[0].weight.data = kernel
-        self.conv1[0].bias.data = bias
-        # kernel, bias = self.conv2[0].weight.data, self.conv2[0].bias.data
-        kernel, bias = self._fuse_bn_tensor(self.conv2[0], self.conv2[1])
-        self.conv = self.conv2[0]
-        self.conv.weight.data = torch.matmul(kernel.transpose(1,3), self.conv1[0].weight.data.squeeze(3).squeeze(2)).transpose(1,3)
-        self.conv.bias.data = bias + (self.conv1[0].bias.data.view(1,-1,1,1)*kernel).sum(3).sum(2).sum(1)
-        self.__delattr__('conv1')
-        self.__delattr__('conv2')
-        self.act.switch_to_deploy()
-        self.deploy = True
+        if not self.deploy:
+            kernel, bias = self._fuse_bn_tensor(self.conv1[0], self.conv1[1])
+            self.conv1[0].weight.data = kernel
+            self.conv1[0].bias.data = bias
+            # kernel, bias = self.conv2[0].weight.data, self.conv2[0].bias.data
+            kernel, bias = self._fuse_bn_tensor(self.conv2[0], self.conv2[1])
+            self.conv = self.conv2[0]
+            self.conv.weight.data = torch.matmul(kernel.transpose(1,3), self.conv1[0].weight.data.squeeze(3).squeeze(2)).transpose(1,3)
+            self.conv.bias.data = bias + (self.conv1[0].bias.data.view(1,-1,1,1)*kernel).sum(3).sum(2).sum(1)
+            self.__delattr__('conv1')
+            self.__delattr__('conv2')
+            self.act.switch_to_deploy()
+            self.deploy = True
     
 
 class VanillaNet(nn.Module):
@@ -188,30 +190,22 @@ class VanillaNet(nn.Module):
         return kernel * t, beta + (bias - running_mean) * gamma / std
     
     def switch_to_deploy(self):
-        self.stem2[2].switch_to_deploy()
-        kernel, bias = self._fuse_bn_tensor(self.stem1[0], self.stem1[1])
-        self.stem1[0].weight.data = kernel
-        self.stem1[0].bias.data = bias
-        kernel, bias = self._fuse_bn_tensor(self.stem2[0], self.stem2[1])
-        self.stem1[0].weight.data = torch.einsum('oi,icjk->ocjk', kernel.squeeze(3).squeeze(2), self.stem1[0].weight.data)
-        self.stem1[0].bias.data = bias + (self.stem1[0].bias.data.view(1,-1,1,1)*kernel).sum(3).sum(2).sum(1)
-        self.stem = torch.nn.Sequential(*[self.stem1[0], self.stem2[2]])
-        self.__delattr__('stem1')
-        self.__delattr__('stem2')
+        if not self.deploy:
+            self.stem2[2].switch_to_deploy()
+            kernel, bias = self._fuse_bn_tensor(self.stem1[0], self.stem1[1])
+            self.stem1[0].weight.data = kernel
+            self.stem1[0].bias.data = bias
+            kernel, bias = self._fuse_bn_tensor(self.stem2[0], self.stem2[1])
+            self.stem1[0].weight.data = torch.einsum('oi,icjk->ocjk', kernel.squeeze(3).squeeze(2), self.stem1[0].weight.data)
+            self.stem1[0].bias.data = bias + (self.stem1[0].bias.data.view(1,-1,1,1)*kernel).sum(3).sum(2).sum(1)
+            self.stem = torch.nn.Sequential(*[self.stem1[0], self.stem2[2]])
+            self.__delattr__('stem1')
+            self.__delattr__('stem2')
 
-        for i in range(self.depth):
-            self.stages[i].switch_to_deploy()
+            for i in range(self.depth):
+                self.stages[i].switch_to_deploy()
 
-        kernel, bias = self._fuse_bn_tensor(self.cls1[2], self.cls1[3])
-        self.cls1[2].weight.data = kernel
-        self.cls1[2].bias.data = bias
-        kernel, bias = self.cls2[0].weight.data, self.cls2[0].bias.data
-        self.cls1[2].weight.data = torch.matmul(kernel.transpose(1,3), self.cls1[2].weight.data.squeeze(3).squeeze(2)).transpose(1,3)
-        self.cls1[2].bias.data = bias + (self.cls1[2].bias.data.view(1,-1,1,1)*kernel).sum(3).sum(2).sum(1)
-        self.cls = torch.nn.Sequential(*self.cls1[0:3])
-        self.__delattr__('cls1')
-        self.__delattr__('cls2')
-        self.deploy = True
+            self.deploy = True
 
 def update_weight(model_dict, weight_dict):
     idx, temp_dict = 0, {}
@@ -322,8 +316,8 @@ def vanillanet_13_x1_5_ada_pool(pretrained='', in_22k=False, **kwargs):
 if __name__ == '__main__':
     inputs = torch.randn((1, 3, 640, 640))
     model = vanillanet_5()
-    weights = torch.load('vanillanet_5.pth')['model_ema']
-    model.load_state_dict(update_weight(model.state_dict(), weights))
+    # weights = torch.load('vanillanet_5.pth')['model_ema']
+    # model.load_state_dict(update_weight(model.state_dict(), weights))
     pred = model(inputs)
     for i in pred:
         print(i.size())
