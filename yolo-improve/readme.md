@@ -226,3 +226,6 @@
     添加CFPNet中的EVC-Block到yolov7中.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV12u4y1f7np/).  
     reference: [链接](https://github.com/QY1994-0919/CFPNet)  
+- **yolov7-head**  
+    P2,P6检测层在YOLOV7中的添加.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV12u4y1f7np/).  
