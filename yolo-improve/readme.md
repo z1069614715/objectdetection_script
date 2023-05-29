@@ -224,5 +224,5 @@
     weight_download: [百度网盘链接](https://pan.baidu.com/s/1EBAiOtDVMhvQqu2NWoFSIg?pwd=ofx9)  
 - **yolov7-EVC**  
     添加CFPNet中的EVC-Block到yolov7中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Pg4y1u7cM/).  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV12u4y1f7np/).  
     reference: [链接](https://github.com/QY1994-0919/CFPNet)  

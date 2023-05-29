@@ -35,27 +35,28 @@ head:
    [-1, 1, Conv, [128, 1, 1, None, 1, nn.LeakyReLU(0.1)]], 
    [-1, 1, nn.Upsample, [None, 2, 'nearest']],
    [6, 1, Conv, [128, 1, 1, None, 1, nn.LeakyReLU(0.1)]], # route backbone P4
+   [-1, 1, EVCBlock, []],
    [[-1, -2], 1, Concat, [1]],
-   [-1, 1, Yolov7_Tiny_E_ELAN, [128, 64, nn.LeakyReLU(0.1)]], # 14
+   [-1, 1, Yolov7_Tiny_E_ELAN, [128, 64, nn.LeakyReLU(0.1)]], # 15
 
    [-1, 1, Conv, [64, 1, 1, None, 1, nn.LeakyReLU(0.1)]],
    [-1, 1, nn.Upsample, [None, 2, 'nearest']],
    [4, 1, Conv, [64, 1, 1, None, 1, nn.LeakyReLU(0.1)]], # route backbone P3
    [[-1, -2], 1, Concat, [1]],
-   [-1, 1, Yolov7_Tiny_E_ELAN, [64, 32, nn.LeakyReLU(0.1)]], # 19
+   [-1, 1, Yolov7_Tiny_E_ELAN, [64, 32, nn.LeakyReLU(0.1)]], # 20
    
    [-1, 1, Conv, [128, 3, 2, None, 1, nn.LeakyReLU(0.1)]],
-   [[-1, 14], 1, Concat, [1]],
-   [-1, 1, Yolov7_Tiny_E_ELAN, [128, 64, nn.LeakyReLU(0.1)]], # 22
+   [[-1, 15], 1, Concat, [1]],
+   [-1, 1, Yolov7_Tiny_E_ELAN, [128, 64, nn.LeakyReLU(0.1)]], # 23
    
    [-1, 1, Conv, [256, 3, 2, None, 1, nn.LeakyReLU(0.1)]],
    [[-1, 9], 1, Concat, [1]],
    
-   [-1, 1, Yolov7_Tiny_E_ELAN, [256, 128, nn.LeakyReLU(0.1)]], # 25
+   [-1, 1, Yolov7_Tiny_E_ELAN, [256, 128, nn.LeakyReLU(0.1)]], # 26
 
-   [19, 1, Conv, [128, 3, 1, None, 1, nn.LeakyReLU(0.1)]], # 26-P3
-   [22, 1, Conv, [256, 3, 1, None, 1, nn.LeakyReLU(0.1)]], # 27-P4
-   [25, 1, Conv, [512, 3, 1, None, 1, nn.LeakyReLU(0.1)]], # 28-P5
+   [20, 1, Conv, [128, 3, 1, None, 1, nn.LeakyReLU(0.1)]], # 27-P3
+   [23, 1, Conv, [256, 3, 1, None, 1, nn.LeakyReLU(0.1)]], # 28-P4
+   [26, 1, Conv, [512, 3, 1, None, 1, nn.LeakyReLU(0.1)]], # 29-P5
 
-   [[26, 27, 28], 1, IDetect, [nc, anchors]],   # Detect(P3, P4, P5)
+   [[27, 28, 29], 1, IDetect, [nc, anchors]],   # Detect(P3, P4, P5)
   ]
