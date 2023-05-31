@@ -228,4 +228,8 @@
     reference: [链接](https://github.com/QY1994-0919/CFPNet)  
 - **yolov7-head**  
     P2,P6检测层在YOLOV7中的添加.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1LX4y1a72m/).  
+- **yolov7-slimneck**  
+    使用VOVGSCSP轻量化yolov7的Neck.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV12u4y1f7np/).  
+    reference: [链接](https://github.com/AlanLi1997/slim-neck-by-gsconv)  
