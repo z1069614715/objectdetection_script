@@ -231,5 +231,5 @@
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1LX4y1a72m/).  
 - **yolov7-slimneck**  
     使用VOVGSCSP轻量化yolov7的Neck.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV12u4y1f7np/).  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV14m4y147PC/).  
     reference: [链接](https://github.com/AlanLi1997/slim-neck-by-gsconv)  

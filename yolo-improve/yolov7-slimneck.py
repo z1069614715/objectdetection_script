@@ -1,10 +1,11 @@
 class GSConv(nn.Module):
     # GSConv https://github.com/AlanLi1997/slim-neck-by-gsconv
-    def __init__(self, c1, c2, k=1, s=1, g=1, act=True):
+    # act参数在yolov7-tiny上记得修改为nn.LeakyReLU(0.1)
+    def __init__(self, c1, c2, k=1, s=1, p=None, g=1, act=True):
         super().__init__()
         c_ = c2 // 2
-        self.cv1 = Conv(c1, c_, k, s, None, g, act)
-        self.cv2 = Conv(c_, c_, 5, 1, None, c_, act)
+        self.cv1 = Conv(c1, c_, k, s, p, g, act)
+        self.cv2 = Conv(c_, c_, 5, 1, p, c_, act)
 
     def forward(self, x):
         x1 = self.cv1(x)
