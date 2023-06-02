@@ -235,6 +235,6 @@
     reference: [链接](https://github.com/AlanLi1997/slim-neck-by-gsconv)  
 - **yolov5-SwinTransformer**  
     添加SwinTransformer-Tiny主干到yolov5中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV14m4y147PC/).  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1WX4y1a7ea/).  
     reference: [链接](https://github.com/microsoft/Swin-Transformer)  
     weight_download: [SwinTransformer-Tiny百度链接](https://pan.baidu.com/s/1vct0VYwwQQ8PYkBjwSSBZQ?pwd=swin)  

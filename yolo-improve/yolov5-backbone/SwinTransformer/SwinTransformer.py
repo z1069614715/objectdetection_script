@@ -218,7 +218,7 @@ class SwinTransformerBlock(nn.Module):
         # cyclic shift
         if self.shift_size > 0:
             shifted_x = torch.roll(x, shifts=(-self.shift_size, -self.shift_size), dims=(1, 2))
-            attn_mask = mask_matrix
+            attn_mask = mask_matrix.type(x.dtype)
         else:
             shifted_x = x
             attn_mask = None
@@ -592,9 +592,11 @@ def SwinTransformer_Tiny(weights=''):
     return model
 
 if __name__ == '__main__':
-    model = SwinTransformer()
+    device = torch.device('cuda:0')
+    model = SwinTransformer().to(device)
+    model.half()
     # model.load_state_dict(update_weight(model.state_dict(), torch.load('swin_tiny_patch4_window7_224_22k.pth')['model']))
-    inputs = torch.randn((1, 3, 640, 512))
+    inputs = torch.randn((1, 3, 640, 512)).to(device).half()
     res = model(inputs)
     for i in res:
         print(i.size())

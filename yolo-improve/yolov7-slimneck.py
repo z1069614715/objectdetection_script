@@ -15,7 +15,7 @@ class GSConv(nn.Module):
         # y = y.permute(0, 2, 1, 3, 4)
         # return y.reshape(y.shape[0], -1, y.shape[3], y.shape[4])
 
-        b, n, h, w = x2.data.size()
+        b, n, h, w = x2.size()
         b_n = b * n // 2
         y = x2.reshape(b_n, 2, h * w)
         y = y.permute(1, 0, 2)
