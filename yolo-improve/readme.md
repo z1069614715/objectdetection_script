@@ -237,4 +237,9 @@
     添加SwinTransformer-Tiny主干到yolov5中.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1WX4y1a7ea/).  
     reference: [链接](https://github.com/microsoft/Swin-Transformer)  
-    weight_download: [SwinTransformer-Tiny百度链接](https://pan.baidu.com/s/1vct0VYwwQQ8PYkBjwSSBZQ?pwd=swin)  
+    weight_download: [SwinTransformer-Tiny百度云链接](https://pan.baidu.com/s/1vct0VYwwQQ8PYkBjwSSBZQ?pwd=swin)  
+- **yolov5-NextViT**  
+    添加(2022年)NextViT主干到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1WX4y1a7ea/).  
+    reference: [链接](https://github.com/bytedance/Next-ViT)  
+    weight_download: [百度云链接](https://pan.baidu.com/s/18IHKssf9kN8Ej7zIWBKfcw?pwd=houj)  
