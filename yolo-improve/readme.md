@@ -1,5 +1,6 @@
 # YOLO-Improve
-这个项目主要是提供一些关于yolo系列模型的改进思路，效果因数据集和参数而异，仅作参考。
+这个项目主要是提供一些关于yolo系列模型的改进思路，效果因数据集和参数而异，仅作参考。  
+
 
 # Explanation
 - **iou**  
@@ -240,6 +241,10 @@
     weight_download: [SwinTransformer-Tiny百度云链接](https://pan.baidu.com/s/1vct0VYwwQQ8PYkBjwSSBZQ?pwd=swin)  
 - **yolov5-NextViT**  
     添加(2022年)NextViT主干到yolov5中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1WX4y1a7ea/).  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1im4y1i7Ht/).  
     reference: [链接](https://github.com/bytedance/Next-ViT)  
     weight_download: [百度云链接](https://pan.baidu.com/s/18IHKssf9kN8Ej7zIWBKfcw?pwd=houj)  
+- **yolov5-ConvNextV2**  
+    添加(2023年)ConvNextV2主干到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1im4y1i7Ht/).  
+    reference: [链接](https://github.com/facebookresearch/ConvNeXt-V2)  

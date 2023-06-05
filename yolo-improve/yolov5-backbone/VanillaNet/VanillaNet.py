@@ -164,18 +164,22 @@ class VanillaNet(nn.Module):
         self.act_learn = m
 
     def forward(self, x):
-        res = []
+        input_size = x.size(2)
+        scale = [4, 8, 16, 32]
+        features = [None, None, None, None]
         if self.deploy:
             x = self.stem(x)
         else:
             x = self.stem1(x)
             x = torch.nn.functional.leaky_relu(x,self.act_learn)
             x = self.stem2(x)
-        res.append(x)
+        if input_size // x.size(2) in scale:
+            features[scale.index(input_size // x.size(2))] = x
         for i in range(self.depth):
             x = self.stages[i](x)
-            res.append(x)
-        return res
+            if input_size // x.size(2) in scale:
+                features[scale.index(input_size // x.size(2))] = x
+        return features
 
     def _fuse_bn_tensor(self, conv, bn):
         kernel = conv.weight
@@ -315,7 +319,7 @@ def vanillanet_13_x1_5_ada_pool(pretrained='', in_22k=False, **kwargs):
 
 if __name__ == '__main__':
     inputs = torch.randn((1, 3, 640, 640))
-    model = vanillanet_5()
+    model = vanillanet_10()
     # weights = torch.load('vanillanet_5.pth')['model_ema']
     # model.load_state_dict(update_weight(model.state_dict(), weights))
     pred = model(inputs)

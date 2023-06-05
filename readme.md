@@ -4,6 +4,8 @@
 # Project [AliPay](#0)
 1. 基于整合yolov7的项目.(12.9¥)[项目详解](https://t.bilibili.com/798697826625257472#reply245141740)  
 
+        YOLOV5-Backbone中的主干基本都支持到我个人整合的v7代码中,并且整合后的v7配置文件非常简洁,方便进行改进,购买了本项目联系我qq,我会拉你进一个交流群,详细可看[哔哩哔哩链接](https://www.bilibili.com/opus/798697826625257472?spm_id_from=333.999.0.0)
+
 # Advertising Board
 人工智能-工作室长期对外接单，范围主要是:
 1. 目标检测.
