@@ -246,5 +246,10 @@
     weight_download: [百度云链接](https://pan.baidu.com/s/18IHKssf9kN8Ej7zIWBKfcw?pwd=houj)  
 - **yolov5-ConvNextV2**  
     添加(2023年)ConvNextV2主干到yolov5中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1im4y1i7Ht/).  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1es4y1e7b9/).  
     reference: [链接](https://github.com/facebookresearch/ConvNeXt-V2)  
+- **yolov5-RIFormer**  
+    添加(2023年)RIFormer主干到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1es4y1e7b9/).  
+    reference: [mmpretrain链接](https://github.com/open-mmlab/mmpretrain/blob/main/mmpretrain/models/backbones/riformer.py)  
+    weight_download: [mmpretrain链接](https://github.com/open-mmlab/mmpretrain/tree/main/configs/riformer)
