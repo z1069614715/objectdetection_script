@@ -250,6 +250,10 @@
     reference: [链接](https://github.com/facebookresearch/ConvNeXt-V2)  
 - **yolov5-RIFormer**  
     添加(2023年)RIFormer主干到yolov5中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1es4y1e7b9/).  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1bW4y1X7Lo/).  
     reference: [mmpretrain链接](https://github.com/open-mmlab/mmpretrain/blob/main/mmpretrain/models/backbones/riformer.py)  
     weight_download: [mmpretrain链接](https://github.com/open-mmlab/mmpretrain/tree/main/configs/riformer)
+- **yolov5-C3RFEM** 
+    Scale-Aware RFE与C3结合而成的C3RFEM添加到yolov5中.
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1bW4y1X7Lo/).  
+    reference: [链接](https://github.com/Krasjet-Yu/YOLO-FaceV2)  
