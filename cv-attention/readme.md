@@ -29,7 +29,7 @@
 | Sequential Self-Attention | True | https://arxiv.org/abs/2107.00782 |
 | GAM | True | https://arxiv.org/pdf/2112.05561v1.pdf |
 | Biformer | True | https://arxiv.org/abs/2303.08810 |
-
+| EMA | True | https://arxiv.org/abs/2305.13563v2 |
 
 # Install
 安装命令:pip install timm einops -i https://pypi.tuna.tsinghua.edu.cn/simple
@@ -41,5 +41,6 @@
 
 # Reference
 https://github.com/xmu-xiaoma666/External-Attention-pytorch  
-https://github.com/rwightman/pytorch-image-models
-https://github.com/rayleizhu/BiFormer
+https://github.com/rwightman/pytorch-image-models  
+https://github.com/rayleizhu/BiFormer  
+https://arxiv.org/abs/2305.13563v2

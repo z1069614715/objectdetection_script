@@ -36,7 +36,7 @@ head:
    [-1, 1, nn.Upsample, [None, 2, 'nearest']],
    [6, 1, Conv, [128, 1, 1, None, 1, nn.LeakyReLU(0.1)]], # route backbone P4
    [-1, 1, EVCBlock, []],
-   [[-1, -2], 1, Concat, [1]],
+   [[-1, -3], 1, Concat, [1]],
    [-1, 1, Yolov7_Tiny_E_ELAN, [128, 64, nn.LeakyReLU(0.1)]], # 15
 
    [-1, 1, Conv, [64, 1, 1, None, 1, nn.LeakyReLU(0.1)]],

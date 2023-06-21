@@ -1,4 +1,6 @@
-import os, shutil
+import os, shutil, random
+random.seed(0)
+import numpy as np
 from sklearn.model_selection import train_test_split
 
 val_size = 0.1
@@ -14,9 +16,9 @@ os.makedirs('labels/train', exist_ok=True)
 os.makedirs('labels/val', exist_ok=True)
 os.makedirs('labels/test', exist_ok=True)
 
-listdir = [i for i in os.listdir(txtpath) if 'txt' in i]
-train, test = train_test_split(listdir, test_size=test_size, shuffle=True, random_state=0)
-train, val = train_test_split(train, test_size=val_size, shuffle=True, random_state=0)
+listdir = np.array([i for i in os.listdir(txtpath) if 'txt' in i])
+random.shuffle(listdir)
+train, val, test = listdir[:int(len(listdir) * (1 - val_size - test_size))], listdir[int(len(listdir) * (1 - val_size - test_size)):int(len(listdir) * (1 - test_size))], listdir[int(len(listdir) * (1 - test_size)):]
 print(f'train set size:{len(train)} val set size:{len(val)} test set size:{len(test)}')
 
 for i in train:
