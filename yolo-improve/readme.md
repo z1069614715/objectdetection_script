@@ -257,3 +257,7 @@
     Scale-Aware RFE与C3结合而成的C3RFEM添加到yolov5中.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Gj411D7Pf/).  
     reference: [链接](https://github.com/Krasjet-Yu/YOLO-FaceV2)  
+- **yolov7-RFEM** 
+    Scale-Aware RFE添加到yolov7中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Gj411D7Pf/).  
+    reference: [链接](https://github.com/Krasjet-Yu/YOLO-FaceV2)  

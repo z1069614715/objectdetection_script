@@ -104,59 +104,69 @@ class RFEM(nn.Module):
         out = self.act(self.bn(out))
         return out
 
-class C3RFEM(C3):
-    # C3 module with RFEM
-    def __init__(self, c1, c2, n=1, shortcut=False, g=1, e=0.5):
-        super().__init__(c1, c2, n, shortcut, g, e)
-        c_ = int(c2 * e)
-        self.m = nn.Sequential(*(RFEM(c_, c_, n=1, e=e) for _ in range(n)))
-
-# YOLOv5 🚀 by Ultralytics, AGPL-3.0 license
-
-# Parameters
+# Yolov7-REFM
+# parameters
 nc: 80  # number of classes
-depth_multiple: 0.33  # model depth multiple
-width_multiple: 0.25  # layer channel multiple
-anchors:
-  - [10,13, 16,30, 33,23]  # P3/8
-  - [30,61, 62,45, 59,119]  # P4/16
-  - [116,90, 156,198, 373,326]  # P5/32
+depth_multiple: 1.0  # model depth multiple
+width_multiple: 1.0  # layer channel multiple
 
-# YOLOv5 v6.0 backbone
+# anchors
+anchors:
+  - [12,16, 19,36, 40,28]  # P3/8
+  - [36,75, 76,55, 72,146]  # P4/16
+  - [142,110, 192,243, 459,401]  # P5/32
+
+# yolov7 backbone
 backbone:
   # [from, number, module, args]
-  [[-1, 1, Conv, [64, 6, 2, 2]],  # 0-P1/2
-   [-1, 1, Conv, [128, 3, 2]],  # 1-P2/4
-   [-1, 3, C3, [128]],
-   [-1, 1, Conv, [256, 3, 2]],  # 3-P3/8
-   [-1, 6, C3, [256]],
-   [-1, 1, Conv, [512, 3, 2]],  # 5-P4/16
-   [-1, 9, C3, [512]],
-   [-1, 1, Conv, [1024, 3, 2]],  # 7-P5/32
-   [-1, 3, C3, [1024]],
-   [-1, 1, SPPF, [1024, 5]],  # 9
-   [-1, 1, C3RFEM, [1024]] # 10
+  [[-1, 1, Conv, [32, 3, 1]],  # 0
+  
+   [-1, 1, Conv, [64, 3, 2]],  # 1-P1/2      
+   [-1, 1, Conv, [64, 3, 1]],
+   
+   [-1, 1, Conv, [128, 3, 2]],  # 3-P2/4  
+   [-1, 1, Yolov7_E_ELAN, [256, 64]], # 4
+         
+   [-1, 1, V7DownSampling, [128]],  # 5-P3/8  
+   [-1, 1, Yolov7_E_ELAN, [512, 128]], # 6
+         
+   [-1, 1, V7DownSampling, [256]],  # 7-P4/16  
+   [-1, 1, Yolov7_E_ELAN, [1024, 256]], # 8
+         
+   [-1, 1, V7DownSampling, [512]],  # 9-P5/32  
+   [-1, 1, Yolov7_E_ELAN, [1024, 256]],  # 10
   ]
 
-# YOLOv5 v6.0 head
+# yolov7 head
 head:
-  [[-1, 1, Conv, [512, 1, 1]],
-   [-1, 1, nn.Upsample, [None, 2, 'nearest']],
-   [[-1, 6], 1, Concat, [1]],  # cat backbone P4
-   [-1, 3, C3, [512, False]],  # 14
+  [[-1, 1, SPPCSPC, [512]], # 11
+   [-1, 1, RFEM, [512]], # 12
 
    [-1, 1, Conv, [256, 1, 1]],
    [-1, 1, nn.Upsample, [None, 2, 'nearest']],
-   [[-1, 4], 1, Concat, [1]],  # cat backbone P3
-   [-1, 3, C3, [256, False]],  # 18 (P3/8-small)
+   [8, 1, Conv, [256, 1, 1]], # 15 route backbone P4
+   [[-1, -2], 1, Concat, [1]], # 16
+   
+   [-1, 1, Yolov7_E_ELAN_NECK, [256, 128]], # 17
+   
+   [-1, 1, Conv, [128, 1, 1]],
+   [-1, 1, nn.Upsample, [None, 2, 'nearest']],
+   [6, 1, Conv, [128, 1, 1]], # 20 route backbone P3
+   [[-1, -2], 1, Concat, [1]], # 21
+   
+   [-1, 1, Yolov7_E_ELAN_NECK, [128, 64]], # 22
+      
+   [[-1, 17], 1, V7DownSampling_Neck, [128]], # 23
+   
+   [-1, 1, Yolov7_E_ELAN_NECK, [256, 128]], # 24
+      
+   [[-1, 12], 1, V7DownSampling_Neck, [256]], # 25
+   
+   [-1, 1, Yolov7_E_ELAN_NECK, [512, 256]], # 26
+   
+   [22, 1, RepConv, [256, 3, 1]], # 27-P3
+   [24, 1, RepConv, [512, 3, 1]], # 28-P4
+   [26, 1, RepConv, [1024, 3, 1]], # 29-P5
 
-   [-1, 1, Conv, [256, 3, 2]],
-   [[-1, 15], 1, Concat, [1]],  # cat head P4
-   [-1, 3, C3, [512, False]],  # 21 (P4/16-medium)
-
-   [-1, 1, Conv, [512, 3, 2]],
-   [[-1, 11], 1, Concat, [1]],  # cat head P5
-   [-1, 3, C3, [1024, False]],  # 24 (P5/32-large)
-
-   [[18, 21, 24], 1, Detect, [nc, anchors]],  # Detect(P3, P4, P5)
-  ]
+   [[27, 28, 29], 1, IDetect, [nc, anchors]],   # Detect(P3, P4, P5)
+]
