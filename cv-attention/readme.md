@@ -43,4 +43,4 @@
 https://github.com/xmu-xiaoma666/External-Attention-pytorch  
 https://github.com/rwightman/pytorch-image-models  
 https://github.com/rayleizhu/BiFormer  
-https://arxiv.org/abs/2305.13563v2
+https://github.com/XiaLiPKU/EMANet
