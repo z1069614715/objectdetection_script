@@ -263,9 +263,9 @@
     reference: [链接](https://github.com/Krasjet-Yu/YOLO-FaceV2)  
 - **yolov5-DBB**  
     把重参数结构DiverseBranchBlock与C3融合成C3-DBB添加到yolov5中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Gj411D7Pf/).  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1sM4y177Cn/).  
     reference: [链接](https://github.com/DingXiaoH/DiverseBranchBlock)  
 - **yolov7-DBB**  
     把重参数结构DiverseBranchBlock添加到yolov7中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Gj411D7Pf/).  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV14u411b7kL/).  
     reference: [链接](https://github.com/DingXiaoH/DiverseBranchBlock)  
