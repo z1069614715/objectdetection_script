@@ -9,6 +9,7 @@
 
 2. 基于整合yolov8的项目.(目前55.9¥)[项目详解](https://www.bilibili.com/opus/804136088201330745?spm_id_from=333.999)
     
+    [目前已有的改进方案](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/yolov8-preject.md)
     项目简单介绍，详情请看项目详解.
     1. 基于源代码的基础上再封装一层，使其使用方式与v5,v7使用类似，并提供较为详细的使用说明，方便用户进行训练，测试，推理，跟踪。
     2. 后续的改进方案都会基于这个项目更新进行发布，在群公告进行更新百度云链接。
