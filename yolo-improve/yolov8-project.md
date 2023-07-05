@@ -15,6 +15,13 @@
 
     在ultralytics/yolo/utils/loss.py中的class v8DetectionLoss中自行选择对应的self.assigner即可.  
     此ATSS匹配策略目前占用显存比较大,因此使用的时候需要设置更小的batch,后续会进行优化这一功能.
+5. Asymptotic Feature Pyramid Network[reference](https://github.com/gyyang23/AFPN/tree/master)
+
+    a. ultralytics/models/v5/yolov5-AFPN-P345.yaml  
+    b. ultralytics/models/v5/yolov5-AFPN-P345-Custom.yaml  
+    c. ultralytics/models/v5/yolov5-AFPN-P2345.yaml  
+    d. ultralytics/models/v5/yolov5-AFPN-P2345-Custom.yaml  
+    其中Custom中的block支持:C2f, C2f_Faster, C2f_ODConv, C2f-Faster-EMA, C2f-DBB, VoVGSCSP, VoVGSCSPC, C3(default), C3Ghost
 
 ### YOLOV8
 1. ultralytics/models/v8/yolov8-efficientViT.yaml
@@ -40,7 +47,7 @@
         其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default)  
         其中weight, adaptive, concat出自[paper链接-Figure 3](https://openreview.net/pdf?id=q2ZaVU6bEsT)
     2. node_mode  
-        其中目前(后续会更新喔)支持这些结构选择: C2f(default), C2f_Faster, C2f_ODConv, C2f-Faster-EMA, C2f-DBB, VoVGSCSP, VoVGSCSPC
+        其中目前(后续会更新喔)支持这些结构选择: C2f(default), C2f_Faster, C2f_ODConv, C2f-Faster-EMA, C2f-DBB, VoVGSCSP, VoVGSCSPC, C3, C3Ghost
     3. head_channel  
         BIFPN中的通道数,默认设置为256.
 7. ultralytics/models/v8/yolov8-C2f-Faster.yaml
@@ -72,3 +79,11 @@
 
     可以看项目视频-如何在yaml配置文件中添加注意力层  
     多种注意力机制在yolov8中的使用. [多种注意力机制github地址](https://github.com/z1069614715/objectdetection_script/tree/master/cv-attention)
+
+15. Asymptotic Feature Pyramid Network[reference](https://github.com/gyyang23/AFPN/tree/master)
+
+    a. ultralytics/models/v8/yolov8-AFPN-P345.yaml  
+    b. ultralytics/models/v8/yolov8-AFPN-P345-Custom.yaml  
+    c. ultralytics/models/v8/yolov8-AFPN-P2345.yaml  
+    d. ultralytics/models/v8/yolov8-AFPN-P2345-Custom.yaml  
+    其中Custom中的block支持:C2f(default), C2f_Faster, C2f_ODConv, C2f-Faster-EMA, C2f-DBB, VoVGSCSP, VoVGSCSPC, C3, C3Ghost
