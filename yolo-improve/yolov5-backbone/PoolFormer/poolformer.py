@@ -21,9 +21,8 @@ import torch.nn as nn
 import numpy as np
 
 from timm.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
-from timm.models.layers import DropPath, trunc_normal_
+from timm.models.layers import DropPath, trunc_normal_, to_2tuple
 from timm.models.registry import register_model
-from timm.models.layers.helpers import to_2tuple
 
 __all__ = ['poolformer_s12', 'poolformer_s24', 'poolformer_s36', 'poolformer_m48', 'poolformer_m36']
 

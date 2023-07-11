@@ -10,8 +10,7 @@ import math
 from typing import Dict
 import itertools
 import numpy as np
-from timm.models.layers import DropPath, trunc_normal_
-from timm.models.layers.helpers import to_2tuple
+from timm.models.layers import DropPath, trunc_normal_, to_2tuple
 
 __all__ = ['efficientformerv2_s0', 'efficientformerv2_s1', 'efficientformerv2_s2', 'efficientformerv2_l']
 

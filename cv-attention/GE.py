@@ -4,7 +4,7 @@ import torch.nn.functional as F
 
 from timm.models.layers.create_act import create_act_layer, get_act_layer
 from timm.models.layers.create_conv2d import create_conv2d
-from timm.models.layers.helpers import make_divisible
+from timm.models.layers import make_divisible
 from timm.models.layers.mlp import ConvMlp
 
 

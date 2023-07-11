@@ -1,5 +1,7 @@
 # 目前自带的一些改进方案(持续更新)
 
+# 为了感谢各位对V8项目的支持,本项目的赠品是yolov5-PAGCP通道剪枝算法.[具体使用教程](https://www.bilibili.com/video/BV1yh4y1Z7vz/)
+
 ### YOLOV5 (AnchorFree+DFL+TAL) [官方预训练权重github链接](https://github.com/ultralytics/assets/releases)
 #### YOLOV5的使用方式跟YOLOV8一样,就是选择配置文件选择v5的即可.
 1. ultralytics/models/v5/yolov5-fasternet.yaml
