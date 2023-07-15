@@ -23,12 +23,24 @@
     b. ultralytics/models/v5/yolov5-AFPN-P345-Custom.yaml  
     c. ultralytics/models/v5/yolov5-AFPN-P2345.yaml  
     d. ultralytics/models/v5/yolov5-AFPN-P2345-Custom.yaml  
-    其中Custom中的block支持:C2f, C2f_Faster, C2f_ODConv, C2f-Faster-EMA, C2f-DBB, VoVGSCSP, VoVGSCSPC, C3(default), C3Ghost
+    其中Custom中的block支持:C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, VoVGSCSP, VoVGSCSPC, C3(default), C3Ghost
+
+6. ultralytics/models/v5/yolov5-bifpn.yaml
+
+    添加BIFPN到yolov5中.  
+    其中BIFPN中有三个可选参数：
+    1. Fusion  
+        其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default)  
+        其中weight, adaptive, concat出自[paper链接-Figure 3](https://openreview.net/pdf?id=q2ZaVU6bEsT)
+    2. node_mode  
+        其中目前(后续会更新喔)支持这些结构选择: C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, VoVGSCSP, VoVGSCSPC, C3(default), C3Ghost
+    3. head_channel  
+        BIFPN中的通道数,默认设置为256.
 
 ### YOLOV8
 1. ultralytics/models/v8/yolov8-efficientViT.yaml
 
-    efficientViT替换yolov8主干,训练时候如果出现nan,需要在训练的时候加上--unamp关闭AMP混合精度训练.
+    (CVPR2023)efficientViT替换yolov8主干.
 2. ultralytics/models/v8/yolov8-fasternet.yaml
 
     fasternet替换yolov8主干.
@@ -49,7 +61,7 @@
         其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default)  
         其中weight, adaptive, concat出自[paper链接-Figure 3](https://openreview.net/pdf?id=q2ZaVU6bEsT)
     2. node_mode  
-        其中目前(后续会更新喔)支持这些结构选择: C2f(default), C2f_Faster, C2f_ODConv, C2f-Faster-EMA, C2f-DBB, VoVGSCSP, VoVGSCSPC, C3, C3Ghost
+        其中目前(后续会更新喔)支持这些结构选择: C2f(default), C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, VoVGSCSP, VoVGSCSPC, C3, C3Ghost
     3. head_channel  
         BIFPN中的通道数,默认设置为256.
 7. ultralytics/models/v8/yolov8-C2f-Faster.yaml
@@ -88,4 +100,56 @@
     b. ultralytics/models/v8/yolov8-AFPN-P345-Custom.yaml  
     c. ultralytics/models/v8/yolov8-AFPN-P2345.yaml  
     d. ultralytics/models/v8/yolov8-AFPN-P2345-Custom.yaml  
-    其中Custom中的block支持:C2f(default), C2f_Faster, C2f_ODConv, C2f-Faster-EMA, C2f-DBB, VoVGSCSP, VoVGSCSPC, C3, C3Ghost
+    其中Custom中的block支持:C2f(default), C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, VoVGSCSP, VoVGSCSPC, C3, C3Ghost
+
+16. ultralytics/models/v8/yolov8-vanillanet.yaml
+
+    vanillanet替换yolov8主干.
+
+17. ultralytics/models/v8/yolov8-C2f-CloAtt.yaml
+
+    使用C2f-CloAtt替换C2f.(使用CloFormer中的具有全局和局部特征的注意力机制添加到C2f中的Bottleneck中)
+
+# 更新公告
+
+- **20230620-yolov8-v1.1**
+    1. 增加EMA,C2f-Faster-EMA.
+    2. val.py增加batch选择.
+    3. train.py增加resume断点续训.
+
+- **20230625-yolov8-v1.2**
+    1. 使用说明和视频增加断点续训教程.
+    2. 增加 使用C2f-DBB替换C2f.(使用DiverseBranchBlock替换C2f中的Bottleneck中的Conv) C2f-DBB同样可以用在bifpn中的node.
+    3. 使用说明中增加常见错误以及解决方案.
+
+- **20230627-yolov8-v1.3**
+    1. 增加Adaptive Training Sample Selection匹配策略.
+    2. val.py增加save_txt参数.
+    3. 更新使用教程.
+
+- **20230701-yolov8-v1.4**
+    1. val.py中增加imgsz参数，可以自定义val时候的图片尺寸，默认为640.
+    2. 增加plot_result.py，用于绘制对比曲线图，详细请看使用说明13点.
+    3. 支持计算COCO评价指标.详细请看使用说明12点.
+    4. 增加yolov8-slimneck.其中VoVGSCSP\VoVGSCSPC支持在bifpn中使用,支持GSConv的替换.
+
+- **20230703-yolov8-v1.5**
+    1. 修正计算gflops.
+    2. 增加YOLOV5-AnchorFree改进，详细可看使用教程.md
+    3. 增加yolov8-attention.yaml，并附带视频如何在yaml中添加注意力层
+    4. 更新train.py --info参数的功能，增加打印每一层的参数，增加模型融合前后的层数，参数量，计算量对比。
+
+- **20230705-yolov8-v1.6**
+    1. yolov5和yolov8 支持 Asymptotic Feature Pyramid Network.
+
+- **20230714-yolov8-v1.7**
+    1. 把添加的所有模块全部转移到ultralytics/nn/extra_modules，以便后面进行同步代码。
+    2. 增加yolov5-bifpn。
+    3. 修正ultralytics/models/v8/yolov8-efficientViT.yaml，经粉丝反映，EfficientViT存在同名论文，本次更新的EfficientViT更适合目标检测，之前的efficientViT的原文是在语义分割上进行提出的。
+    4. 更新使用教程。
+    5. 更新import逻辑，现在不需要安装mmcv也可以进行使用，但是没有安装mmcv的使用dyhead会进行报错，降低上手难度。
+
+- **20230715-yolov8-v1.8**
+    1. 修正vanillanet主干进行fuse后没法计算GFLOPs的bug.
+    2. 添加yolov8-C2f-CloAtt.
+    3. yolov8-vanillanet.yaml

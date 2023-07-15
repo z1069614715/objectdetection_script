@@ -269,3 +269,9 @@
     把重参数结构DiverseBranchBlock添加到yolov7中.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV14u411b7kL/).  
     reference: [链接](https://github.com/DingXiaoH/DiverseBranchBlock)  
+- **yolov5-backbone/CVPR2023-EfficientViT**  
+    添加(2023CVPR)EfficientViT(transformer)主干到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1xk4y1L7Gu/).   
+    reference: [链接](https://github.com/microsoft/Cream/tree/main/EfficientViT)  
+    paper: [链接](https://arxiv.org/pdf/2305.07027.pdf)  
+    weight: [github链接](https://github.com/xinyuliu-jeffrey/EfficientViT_Model_Zoo/releases/tag/v1.0)
