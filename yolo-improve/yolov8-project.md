@@ -152,4 +152,4 @@
 - **20230715-yolov8-v1.8**
     1. 修正vanillanet主干进行fuse后没法计算GFLOPs的bug.
     2. 添加yolov8-C2f-CloAtt.
-    3. yolov8-vanillanet.yaml
+    3. 添加yolov8-vanillanet.yaml
