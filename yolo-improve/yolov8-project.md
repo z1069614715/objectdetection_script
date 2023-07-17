@@ -23,7 +23,7 @@
     b. ultralytics/models/v5/yolov5-AFPN-P345-Custom.yaml  
     c. ultralytics/models/v5/yolov5-AFPN-P2345.yaml  
     d. ultralytics/models/v5/yolov5-AFPN-P2345-Custom.yaml  
-    其中Custom中的block支持:C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, VoVGSCSP, VoVGSCSPC, C3(default), C3Ghost
+    其中Custom中的block支持:C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, VoVGSCSP, VoVGSCSPC, C3(default), C3Ghost, C3_CloAtt
 
 6. ultralytics/models/v5/yolov5-bifpn.yaml
 
@@ -33,9 +33,13 @@
         其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default)  
         其中weight, adaptive, concat出自[paper链接-Figure 3](https://openreview.net/pdf?id=q2ZaVU6bEsT)
     2. node_mode  
-        其中目前(后续会更新喔)支持这些结构选择: C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, VoVGSCSP, VoVGSCSPC, C3(default), C3Ghost
+        其中目前(后续会更新喔)支持这些结构选择: C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, VoVGSCSP, VoVGSCSPC, C3(default), C3Ghost, C3_CloAtt
     3. head_channel  
         BIFPN中的通道数,默认设置为256.
+
+7. ultralytics/models/v5/yolov5-C3-CloAtt.yaml
+
+    使用C3-CloAtt替换C3.(使用CloFormer中的具有全局和局部特征的注意力机制添加到C3中的Bottleneck中)
 
 ### YOLOV8
 1. ultralytics/models/v8/yolov8-efficientViT.yaml
@@ -61,7 +65,7 @@
         其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default)  
         其中weight, adaptive, concat出自[paper链接-Figure 3](https://openreview.net/pdf?id=q2ZaVU6bEsT)
     2. node_mode  
-        其中目前(后续会更新喔)支持这些结构选择: C2f(default), C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, VoVGSCSP, VoVGSCSPC, C3, C3Ghost
+        其中目前(后续会更新喔)支持这些结构选择: C2f(default), C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, VoVGSCSP, VoVGSCSPC, C3, C3Ghost, C3_CloAtt
     3. head_channel  
         BIFPN中的通道数,默认设置为256.
 7. ultralytics/models/v8/yolov8-C2f-Faster.yaml
@@ -100,7 +104,7 @@
     b. ultralytics/models/v8/yolov8-AFPN-P345-Custom.yaml  
     c. ultralytics/models/v8/yolov8-AFPN-P2345.yaml  
     d. ultralytics/models/v8/yolov8-AFPN-P2345-Custom.yaml  
-    其中Custom中的block支持:C2f(default), C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, VoVGSCSP, VoVGSCSPC, C3, C3Ghost
+    其中Custom中的block支持:C2f(default), C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, VoVGSCSP, VoVGSCSPC, C3, C3Ghost, C3_CloAtt
 
 16. ultralytics/models/v8/yolov8-vanillanet.yaml
 
@@ -149,7 +153,7 @@
     4. 更新使用教程。
     5. 更新import逻辑，现在不需要安装mmcv也可以进行使用，但是没有安装mmcv的使用dyhead会进行报错，降低上手难度。
 
-- **20230715-yolov8-v1.8**
+- **20230717-yolov8-v1.8**
     1. 修正vanillanet主干进行fuse后没法计算GFLOPs的bug.
-    2. 添加yolov8-C2f-CloAtt.
+    2. 添加yolov8-C2f-CloAtt,yolov5-C3-CloAtt.
     3. 添加yolov8-vanillanet.yaml
