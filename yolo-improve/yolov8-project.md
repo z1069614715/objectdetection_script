@@ -162,3 +162,5 @@
     1. 利用(ICLR2023)Reversible Column Networks对yolov5,yolov8的结构进行重设计.
     2. 支持旋转目标检测2023SOTA的LSKNet主干.
     3. 支持旋转目标检测2023SOTA的LSKNet主干中的LSKBlock注意力机制.
+    4. 更新使用教程中的常见错误.
+    5. 使用教程中增加常见疑问.
