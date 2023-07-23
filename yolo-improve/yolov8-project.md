@@ -156,4 +156,9 @@
 - **20230717-yolov8-v1.8**
     1. 修正vanillanet主干进行fuse后没法计算GFLOPs的bug.
     2. 添加yolov8-C2f-CloAtt,yolov5-C3-CloAtt.
-    3. 添加yolov8-vanillanet.yaml
+    3. 添加yolov8-vanillanet.yaml.
+
+- **20230717-yolov8-v1.9**
+    1. 利用(ICLR2023)Reversible Column Networks对yolov5,yolov8的结构进行重设计.
+    2. 支持旋转目标检测2023SOTA的LSKNet主干.
+    3. 支持旋转目标检测2023SOTA的LSKNet主干中的LSKBlock注意力机制.

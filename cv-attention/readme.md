@@ -31,6 +31,7 @@
 | Biformer | True | https://arxiv.org/abs/2303.08810 |
 | EMA | True | https://arxiv.org/abs/2305.13563v2 |
 | CloAttention | True | https://arxiv.org/abs/2303.17803 |
+| LSKBlock | True | https://arxiv.org/pdf/2303.09030.pdf |
 
 # Install
 安装命令:pip install timm einops efficientnet_pytorch -i https://pypi.tuna.tsinghua.edu.cn/simple
@@ -46,3 +47,4 @@ https://github.com/rwightman/pytorch-image-models
 https://github.com/rayleizhu/BiFormer  
 https://github.com/XiaLiPKU/EMANet  
 https://github.com/qhfan/CloFormer/tree/main
+https://github.com/zcablii/LSKNet

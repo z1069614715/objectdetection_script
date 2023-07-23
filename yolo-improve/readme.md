@@ -28,7 +28,7 @@
     #### 2023-2-11 更新: 新增[Wise-IoU](https://arxiv.org/abs/2301.10051) 视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1yv4y147kf/). reference:[github](https://github.com/Instinct323/wiou)  
 - **yolov5-OTA**  
     添加Optimal Transport Assignment到yolov5的Loss中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1zx4y177EF/).  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1xD4y1J76n/).  
 - **yolov5-DCN**  
     添加Deformable convolution V2到yolov5中.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1rT411Q76q/).  
@@ -275,3 +275,8 @@
     reference: [链接](https://github.com/microsoft/Cream/tree/main/EfficientViT)  
     paper: [链接](https://arxiv.org/pdf/2305.07027.pdf)  
     weight: [github链接](https://github.com/xinyuliu-jeffrey/EfficientViT_Model_Zoo/releases/tag/v1.0)
+- **yolov5-backbone/LSKNet**  
+    添加(2023旋转目标检测SOTA)LSKNet主干到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1xk4y1L7Gu/).   
+    reference: [链接](https://github.com/zcablii/LSKNet)  
+    paper: [链接](https://arxiv.org/pdf/2303.09030.pdf)  
