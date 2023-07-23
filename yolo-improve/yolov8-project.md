@@ -41,6 +41,14 @@
 
     使用C3-CloAtt替换C3.(使用CloFormer中的具有全局和局部特征的注意力机制添加到C3中的Bottleneck中)
 
+8. ultralytics/models/v5/yolov5-RevCol.yaml
+
+    使用(ICLR2023)Reversible Column Networks对yolov5主干进行重设计.
+
+9. ultralytics/models/v5/yolov5-LSKNet.yaml
+
+    LSKNet(2023旋转目标检测SOTA的主干)替换yolov5主干.
+
 ### YOLOV8
 1. ultralytics/models/v8/yolov8-efficientViT.yaml
 
@@ -114,6 +122,14 @@
 
     使用C2f-CloAtt替换C2f.(使用CloFormer中的具有全局和局部特征的注意力机制添加到C2f中的Bottleneck中)
 
+18. ultralytics/models/v8/yolov8-RevCol.yaml
+
+    使用(ICLR2023)Reversible Column Networks对yolov8主干进行重设计.
+
+19. ultralytics/models/v8/yolov8-LSKNet.yaml
+
+    LSKNet(2023旋转目标检测SOTA的主干)替换yolov8主干.
+
 # 更新公告
 
 - **20230620-yolov8-v1.1**
@@ -158,7 +174,7 @@
     2. 添加yolov8-C2f-CloAtt,yolov5-C3-CloAtt.
     3. 添加yolov8-vanillanet.yaml.
 
-- **20230717-yolov8-v1.9**
+- **20230723-yolov8-v1.9**
     1. 利用(ICLR2023)Reversible Column Networks对yolov5,yolov8的结构进行重设计.
     2. 支持旋转目标检测2023SOTA的LSKNet主干.
     3. 支持旋转目标检测2023SOTA的LSKNet主干中的LSKBlock注意力机制.
