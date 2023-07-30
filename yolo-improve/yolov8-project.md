@@ -180,3 +180,9 @@
     3. 支持旋转目标检测2023SOTA的LSKNet主干中的LSKBlock注意力机制.
     4. 更新使用教程中的常见错误.
     5. 使用教程中增加常见疑问.
+
+- **20230730-yolov8-v1.10**
+    1. 增加yolov8-C2f-SCConv,yolov5-C3-SCConv.(CVPR 2020 http://mftp.mmcheng.net/Papers/20cvprSCNet.pdf)
+    2. 增加yolov8-C2f-ScConv,yolov5-C3-ScConv.(CVPR 2023 https://openaccess.thecvf.com/content/CVPR2023/papers/Li_SCConv_Spatial_and_Channel_Reconstruction_Convolution_for_Feature_Redundancy_CVPR_2023_paper.pdf)
+    3. 更新使用教程.
+    4. 更新视频百度云链接,增加SCConv和ScConv的使用教程.
