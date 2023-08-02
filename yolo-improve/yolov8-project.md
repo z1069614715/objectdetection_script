@@ -190,3 +190,7 @@
 - **20230730-yolov8-v1.11**
     1. yolov8-C2f-ScConv,yolov5-C3-ScConv分别更名为yolov8-C2f-SCcConv,yolov5-C3-SCcConv,因为在windows下命名不会区分大小写,导致解压的时候会出现覆盖请求.
     2. 支持MPDiou,具体修改方法请看使用教程.
+
+- **20230802-yolov8-v1.11.1**
+    1. 去除dataloader中的drop_last(ultralytics/yolo/data/build.py, build_dataloader func).
+    2. 修正MPDiou.
