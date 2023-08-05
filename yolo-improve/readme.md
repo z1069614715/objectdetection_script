@@ -280,3 +280,11 @@
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1xk4y1L7Gu/).   
     reference: [链接](https://github.com/zcablii/LSKNet)  
     paper: [链接](https://arxiv.org/pdf/2303.09030.pdf)  
+- **yolov5-MPDiou**  
+    添加(2023最新IoU度量算法)MPDiou到yolov5中.(视频教学地址中为详细从头手把手教学,因此本项没有提供代码)  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV19P41147gJ/).   
+    paper: [链接](https://arxiv.org/pdf/2307.07662v1.pdf)  
+- **yolov7-MPDiou**  
+    添加(2023最新IoU度量算法)MPDiou到yolov7中.
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV19P41147gJ/).   
+    paper: [链接](https://arxiv.org/pdf/2307.07662v1.pdf)  
