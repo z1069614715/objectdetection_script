@@ -49,6 +49,23 @@
 
     LSKNet(2023旋转目标检测SOTA的主干)替换yolov5主干.
 
+10. ultralytics/models/v5/yolov5-C3-SCConv.yaml
+
+    SCConv(CVPR2020 http://mftp.mmcheng.net/Papers/20cvprSCNet.pdf)与C3融合.
+
+11. ultralytics/models/v5/yolov5-C3-SCcConv.yaml
+
+    ScConv(CVPR2023 https://openaccess.thecvf.com/content/CVPR2023/papers/Li_SCConv_Spatial_and_Channel_Reconstruction_Convolution_for_Feature_Redundancy_CVPR_2023_paper.pdf)与C3融合.  
+    (取名为SCcConv的原因是在windows下命名是不区分大小写的)
+
+12. MPDiou.[论文链接](https://arxiv.org/pdf/2307.07662v1.pdf)
+
+    在ultralytics/yolo/utils/loss.py中的BboxLoss class中的forward函数里面进行更换对应的iou计算方式.
+
+13. ultralytics/models/v5/yolov5-LAWDS.yaml
+
+    Light Adaptive-weight downsampling.自研模块,具体讲解请看百度云链接中的视频.
+
 ### YOLOV8
 1. ultralytics/models/v8/yolov8-efficientViT.yaml
 
@@ -130,6 +147,23 @@
 
     LSKNet(2023旋转目标检测SOTA的主干)替换yolov8主干.
 
+20. ultralytics/models/v8/yolov8-C2f-SCConv.yaml
+
+    SCConv(CVPR2020 http://mftp.mmcheng.net/Papers/20cvprSCNet.pdf)与C2f融合.
+
+21. ultralytics/models/v8/yolov8-C2f-SCcConv.yaml
+
+    ScConv(CVPR2023 https://openaccess.thecvf.com/content/CVPR2023/papers/Li_SCConv_Spatial_and_Channel_Reconstruction_Convolution_for_Feature_Redundancy_CVPR_2023_paper.pdf)与C2f融合.  
+    (取名为SCcConv的原因是在windows下命名是不区分大小写的)
+
+22. MPDiou.[论文链接](https://arxiv.org/pdf/2307.07662v1.pdf)
+
+    在ultralytics/yolo/utils/loss.py中的BboxLoss class中的forward函数里面进行更换对应的iou计算方式.
+
+23. ultralytics/models/v8/yolov8-LAWDS.yaml
+
+    Light Adaptive-weight downsampling.自研模块,具体讲解请看百度云链接中的视频.
+
 # 更新公告
 
 - **20230620-yolov8-v1.1**
@@ -194,3 +228,6 @@
 - **20230802-yolov8-v1.11.1**
     1. 去除dataloader中的drop_last(ultralytics/yolo/data/build.py, build_dataloader func).
     2. 修正MPDiou.
+
+- **20230802-yolov8-v1.12**
+    1. 添加全新自研模块(Light Adaptive-weight downsampling),具体可看使用教程.
