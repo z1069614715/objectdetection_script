@@ -66,6 +66,18 @@
 
     Light Adaptive-weight downsampling.自研模块,具体讲解请看百度云链接中的视频.
 
+14. ultralytics/models/v5/yolov5-C3-EMSC.yaml
+
+    Efficient Multi-Scale Conv.自研模块,具体讲解请看百度云链接中的视频.
+
+15. ultralytics/models/v5/yolov5-C3-EMSCP.yaml
+
+    Efficient Multi-Scale Conv Plus.自研模块,具体讲解请看百度云链接中的视频.
+
+16. ultralytics/models/v5/yolov5-RCSOSA.yaml
+
+    使用[RCS-YOLO](https://github.com/mkang315/RCS-YOLO/tree/main)中的RCSOSA替换C3.
+
 ### YOLOV8
 1. ultralytics/models/v8/yolov8-efficientViT.yaml
 
@@ -164,6 +176,18 @@
 
     Light Adaptive-weight downsampling.自研模块,具体讲解请看百度云链接中的视频.
 
+24. ultralytics/models/v8/yolov8-C2f-EMSC.yaml
+
+    Efficient Multi-Scale Conv.自研模块,具体讲解请看百度云链接中的视频.
+
+25. ultralytics/models/v8/yolov8-C2f-EMSCP.yaml
+
+    Efficient Multi-Scale Conv Plus.自研模块,具体讲解请看百度云链接中的视频.
+
+26. ultralytics/models/v8/yolov8-RCSOSA.yaml
+
+    使用[RCS-YOLO](https://github.com/mkang315/RCS-YOLO/tree/main)中的RCSOSA替换C2f.
+
 # 更新公告
 
 - **20230620-yolov8-v1.1**
@@ -229,5 +253,10 @@
     1. 去除dataloader中的drop_last(ultralytics/yolo/data/build.py, build_dataloader func).
     2. 修正MPDiou.
 
-- **20230802-yolov8-v1.12**
+- **20230806-yolov8-v1.12**
     1. 添加全新自研模块(Light Adaptive-weight downsampling),具体可看使用教程.
+
+- **20230808-yolov8-v1.12**
+    1. 添加全新自研模块(EMSC, EMSCP),具体可看使用教程.
+    2. 添加RSC-YOLO中的RCSOSA到yolov5和yolov8中.
+    3. 更新使用教程.
