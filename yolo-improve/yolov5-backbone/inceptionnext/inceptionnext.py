@@ -10,7 +10,7 @@ import torch.nn as nn
 import numpy as np
 
 from timm.data import IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD
-from timm.models.helpers import checkpoint_seq, to_2tuple
+from timm.models import checkpoint_seq, to_2tuple
 from timm.models.layers import trunc_normal_, DropPath
 from timm.models.registry import register_model
 
