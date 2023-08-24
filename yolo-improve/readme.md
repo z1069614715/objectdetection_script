@@ -289,7 +289,7 @@
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV19P41147gJ/).   
     paper: [链接](https://arxiv.org/pdf/2307.07662v1.pdf)  
 - **yolov5-SlideLoss**  
-    添加Yolo-Face-V2中SlideLoss的到yolov5中.
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1W14y1i79U/).   
-    reference: [链接](https://github.com/Krasjet-Yu/YOLO-FaceV2/blob/master/utils/loss.py) 
+    添加Yolo-Face-V2中SlideLoss的到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1W14y1i79U/).    
+    reference: [链接](https://github.com/Krasjet-Yu/YOLO-FaceV2/blob/master/utils/loss.py)  
     paper: [链接](https://arxiv.org/abs/2208.02019)  

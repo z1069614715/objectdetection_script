@@ -256,7 +256,14 @@
 - **20230806-yolov8-v1.12**
     1. 添加全新自研模块(Light Adaptive-weight downsampling),具体可看使用教程.
 
-- **20230808-yolov8-v1.12**
+- **20230808-yolov8-v1.13**
     1. 添加全新自研模块(EMSC, EMSCP),具体可看使用教程.
     2. 添加RSC-YOLO中的RCSOSA到yolov5和yolov8中.
     3. 更新使用教程.
+
+- **20230808-yolov8-v1.14**
+    1. 支持SlideLoss和EMASlideLoss(利用Exponential Moving Average优化mean iou,可当自研创新模块),使用方式具体看使用教程.
+    2. 支持KernelWarehouse:Towards Parameter-Efficient Dynamic Convolution(2023最新发布的动态卷积).
+    3. 支持最新可变形卷积-Dynamic Snake Convolution.
+    4. 支持Normalized Gaussian Wasserstein Distance(NWD).
+    5. 增加CPCANet中的CPCA注意力机制.
