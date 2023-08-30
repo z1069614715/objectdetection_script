@@ -108,6 +108,10 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     [DySnakeConv](https://github.com/YaoleiQi/DSCNet)与C3融合.
 
+21. ultralytics/models/v5/yolov5-EfficientHead.yaml
+
+    对检测头进行重设计,支持10种轻量化检测头.详细请看ultralytics/nn/extra_modules/head.py中的Detect_Efficient class.
+
 ### YOLOV8
 1. ultralytics/models/v8/yolov8-efficientViT.yaml
 
@@ -233,6 +237,10 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 30. ultralytics/models/v8/yolov8-C2f-DySnakeConv.yaml
 
     [DySnakeConv](https://github.com/YaoleiQi/DSCNet)与C2f融合.
+
+31. ultralytics/models/v8/yolov8-EfficientHead.yaml
+
+    对检测头进行重设计,支持10种轻量化检测头.详细请看ultralytics/nn/extra_modules/head.py中的Detect_Efficient class.
 
 # 更新公告
 
