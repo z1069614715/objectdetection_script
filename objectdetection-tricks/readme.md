@@ -21,3 +21,6 @@
 - **tricks_6**
     固定随机种子以便在同一个主机上进行复现结果.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1bh4y1n7Yc/).  
+- **tricks_7**
+    计算yolov5推理时间和FPS的脚本.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1bh4y1n7Yc/).  
