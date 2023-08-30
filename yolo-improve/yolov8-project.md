@@ -314,3 +314,6 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     4. 支持Normalized Gaussian Wasserstein Distance(NWD).
     5. 增加CPCANet中的CPCA注意力机制.
     6. 更新使用教程.
+
+- **20230830-yolov8-v1.15**
+    1. 对检测头进行重设计,支持10种(参数量和计算量更低的)检测头,详细请看使用教程.
