@@ -21,10 +21,12 @@ import torch.utils.data
 import yaml
 from torch.cuda import amp
 from torch.nn.parallel import DistributedDataParallel as DDP
+from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm
 
+from models.experimental import attempt_load
+from models.yolo import Model
 from utils.torch_utils import select_device
-from models.common import DetectMultiBackend
 
 def get_weight_size(path):
     stats = os.stat(path)
@@ -36,8 +38,8 @@ if __name__ == '__main__':
     parser.add_argument('--batch', type=int, default=1, help='total batch size for all GPUs')
     parser.add_argument('--imgs', nargs='+', type=int, default=[640, 640], help='[height, width] image sizes')
     parser.add_argument('--device', default='', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
-    parser.add_argument('--warmup', default=500, type=int, help='warmup time')
-    parser.add_argument('--testtime', default=2000, type=int, help='test time')
+    parser.add_argument('--warmup', default=200, type=int, help='warmup time')
+    parser.add_argument('--testtime', default=1000, type=int, help='test time')
     parser.add_argument('--half', action='store_true', default=False, help='fp16 mode.')
     opt = parser.parse_args()
     
@@ -47,7 +49,13 @@ if __name__ == '__main__':
     weights = opt.weights
     pretrained = weights.endswith('.pt')
     if pretrained:
-        model = DetectMultiBackend(weights, device=device)
+        model = torch.load(weights, map_location=device)
+        if model['ema']:
+           model = model['ema'].float()
+        else:
+            model = model['model'].float()
+        model.fuse()
+        model.info(img_size=opt.imgs[0])
         print(f'Loaded {weights}')  # report
     else:
         assert weights.endswith('.pt'), "compress need weights."
