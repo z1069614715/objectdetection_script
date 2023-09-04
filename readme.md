@@ -7,7 +7,7 @@
         YOLOV5-Backbone中的主干基本都支持到我个人整合的v7代码中,并且整合后的v7配置文件非常简洁,方便进行改进
         购买了本项目联系我qq,我会拉你进一个交流群,详细可看[哔哩哔哩链接](https://www.bilibili.com/opus/798697826625257472?spm_id_from=333.999.0.0)
 
-2. 基于整合yolov8的项目.(目前55.9¥)[项目详解](https://www.bilibili.com/opus/804136088201330745?spm_id_from=333.999)
+2. 基于整合yolov8的项目.(目前69.9¥)[项目详解](https://www.bilibili.com/opus/804136088201330745?spm_id_from=333.999)
     
     [目前已有的改进方案和更新详细公告](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/yolov8-project.md)  
     项目简单介绍，详情请看项目详解.

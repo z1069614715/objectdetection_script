@@ -26,4 +26,4 @@
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Uu4y1C714/).  
 - **tricks_8**
     计算yolov7推理时间和FPS的脚本.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1bh4y1n7Yc/).  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV17p4y177Pe/).  

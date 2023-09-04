@@ -5,8 +5,8 @@
 <a id="b"></a>
 
 #### 目前支持的一些block (yolov5默认C3,yolov8默认C2f) (部分block可能会与主结构有冲突,具体以是否能运行为主)
-C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, C2f_SCConv, C2f_ScConv, C2f_EMSC, C2f_EMSCP, C2f_KW  
-C3, C3Ghost, C3_CloAtt, C3_SCConv, C3_ScConv, C3_EMSC, C3_EMSCP, C3_KW  
+C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, C2f_SCConv, C2f_ScConv, C2f_EMSC, C2f_EMSCP, C2f_KW, C2f_DCNv2, C2f_DCNv3  
+C3, C3Ghost, C3_CloAtt, C3_SCConv, C3_ScConv, C3_EMSC, C3_EMSCP, C3_KW, C3_ODConv, C3_Faster, C3_Faster_EMA, C3_DCNv2, C3_DCNv3  
 VoVGSCSP, VoVGSCSPC, RCSOSA  
 
 <a id="c"></a>
@@ -19,16 +19,20 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 1. ultralytics/models/v5/yolov5-fasternet.yaml
 
     fasternet替换yolov5主干.
+
 2. ultralytics/models/v5/yolov5-timm.yaml
 
     使用timm支持的主干网络替换yolov5主干.
+
 3. ultralytics/models/v5/yolov5-dyhead.yaml
 
     添加基于注意力机制的目标检测头到yolov5中.
+
 4. 增加Adaptive Training Sample Selection匹配策略.
 
     在ultralytics/yolo/utils/loss.py中的class v8DetectionLoss中自行选择对应的self.assigner即可.  
     此ATSS匹配策略目前占用显存比较大,因此使用的时候需要设置更小的batch,后续会进行优化这一功能.
+
 5. Asymptotic Feature Pyramid Network[reference](https://github.com/gyyang23/AFPN/tree/master)
 
     a. ultralytics/models/v5/yolov5-AFPN-P345.yaml  
@@ -112,22 +116,59 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     对检测头进行重设计,支持10种轻量化检测头.详细请看ultralytics/nn/extra_modules/head.py中的Detect_Efficient class.
 
+22. ultralytics/models/v5/yolov5-AuxHead.yaml
+
+    参考YOLOV7-Aux对YOLOV5添加额外辅助训练头,在训练阶段参与训练,在最终推理阶段去掉.  
+    其中辅助训练头的损失权重系数可在ultralytics/yolo/utils/loss.py中的class v8DetectionLoss中的__init__函数中的self.aux_loss_ratio设定,默认值参考yolov7为0.25.
+
+23. ultralytics/models/v5/yolov5-C3-DCNV2.yaml
+
+    使用C3-DCNV2替换C3.(DCNV2为可变形卷积V2)
+
+24. ultralytics/models/v5/yolov5-C3-DCNV3.yaml
+
+    使用C3-DCNV3替换C3.([DCNV3](https://github.com/OpenGVLab/InternImage)为可变形卷积V3(CVPR2023,众多排行榜的SOTA))  
+    官方中包含了一些指定版本的DCNV3 whl包,下载后直接pip install xxx即可.具体和安装DCNV3可看百度云链接中的视频.
+
+25. ultralytics/models/v5/yolov5-C3-Faster.yaml
+
+    使用C3-Faster替换C3.(使用FasterNet中的FasterBlock替换C3中的Bottleneck)
+
+26. ultralytics/models/v5/yolov5-C3-ODConv.yaml
+
+    使用C3-ODConv替换C3.(使用ODConv替换C3中的Bottleneck中的Conv)
+
+27. ultralytics/models/v5/yolov5-C3-Faster-EMA.yaml
+
+    使用C3-Faster-EMA替换C3.(C3-Faster-EMA推荐可以放在主干上,Neck和head部分可以选择C3-Faster)
+
+28. ultralytics/models/v5/yolov5-dyhead-DCNV3.yaml
+
+    使用[DCNV3](https://github.com/OpenGVLab/InternImage)替换DyHead中的DCNV2.
+
+https://github.com/OpenGVLab/InternImage/releases/tag/whl_files
+
 ### YOLOV8
 1. ultralytics/models/v8/yolov8-efficientViT.yaml
 
     (CVPR2023)efficientViT替换yolov8主干.
+
 2. ultralytics/models/v8/yolov8-fasternet.yaml
 
-    fasternet替换yolov8主干.
+    (CVPR2023)fasternet替换yolov8主干.
+
 3. ultralytics/models/v8/yolov8-timm.yaml
 
     使用timm支持的主干网络替换yolov8主干.
+
 4. ultralytics/models/v8/yolov8-convnextv2.yaml
 
     使用convnextv2网络替换yolov8主干.
+
 5. ultralytics/models/v8/yolov8-dyhead.yaml
 
     添加基于注意力机制的目标检测头到yolov8中.
+
 6. ultralytics/models/v8/yolov8-bifpn.yaml
 
     添加BIFPN到yolov8中.  
@@ -139,28 +180,35 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
         其中目前(后续会更新喔)支持这些[结构](#b)
     3. head_channel  
         BIFPN中的通道数,默认设置为256.
+
 7. ultralytics/models/v8/yolov8-C2f-Faster.yaml
 
     使用C2f-Faster替换C2f.(使用FasterNet中的FasterBlock替换C2f中的Bottleneck)
+
 8. ultralytics/models/v8/yolov8-C2f-ODConv.yaml
 
     使用C2f-ODConv替换C2f.(使用ODConv替换C2f中的Bottleneck中的Conv)
+
 9. ultralytics/models/v8/yolov8-EfficientFormerV2.yaml
 
     使用EfficientFormerV2网络替换yolov8主干.(需要看[常见错误和解决方案的第五点](#a))  
 10. ultralytics/models/v8/yolov8-C2f-Faster-EMA.yaml
 
     使用C2f-Faster-EMA替换C2f.(C2f-Faster-EMA推荐可以放在主干上,Neck和head部分可以选择C2f-Faster)
+    
 11. ultralytics/models/v8/yolov8-C2f-DBB.yaml
 
     使用C2f-DBB替换C2f.(使用DiverseBranchBlock替换C2f中的Bottleneck中的Conv)
+
 12. 增加Adaptive Training Sample Selection匹配策略.
 
     在ultralytics/yolo/utils/loss.py中的class v8DetectionLoss中自行选择对应的self.assigner即可.  
     此ATSS匹配策略目前占用显存比较大,因此使用的时候需要设置更小的batch,后续会进行优化这一功能.
+
 13. ultralytics/models/v8/yolov8-slimneck.yaml
 
     使用VoVGSCSP\VoVGSCSPC和GSConv替换yolov8 neck中的C2f和Conv.
+
 14. ultralytics/models/v8/yolov8-attention.yaml
 
     可以看项目视频-如何在yaml配置文件中添加注意力层  
@@ -241,6 +289,24 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 31. ultralytics/models/v8/yolov8-EfficientHead.yaml
 
     对检测头进行重设计,支持10种轻量化检测头.详细请看ultralytics/nn/extra_modules/head.py中的Detect_Efficient class.
+
+32. ultralytics/models/v8/yolov8-AuxHead.yaml
+
+    参考YOLOV7-Aux对YOLOV8添加额外辅助训练头,在训练阶段参与训练,在最终推理阶段去掉.  
+    其中辅助训练头的损失权重系数可在ultralytics/yolo/utils/loss.py中的class v8DetectionLoss中的__init__函数中的self.aux_loss_ratio设定,默认值参考yolov7为0.25.
+
+33. ultralytics/models/v8/yolov8-C2f-DCNV2.yaml
+
+    使用C2f-DCNV2替换C2f.(DCNV2为可变形卷积V2)
+
+34. ultralytics/models/v8/yolov8-C2f-DCNV3.yaml
+
+    使用C2f-DCNV3替换C2f.([DCNV3](https://github.com/OpenGVLab/InternImage)为可变形卷积V3(CVPR2023,众多排行榜的SOTA))  
+    官方中包含了一些指定版本的DCNV3 whl包,下载后直接pip install xxx即可.具体和安装DCNV3可看百度云链接中的视频.
+
+35. ultralytics/models/v8/yolov8-dyhead-DCNV3.yaml
+
+    使用[DCNV3](https://github.com/OpenGVLab/InternImage)替换DyHead中的DCNV2.
 
 # 更新公告
 
@@ -325,3 +391,12 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
 - **20230830-yolov8-v1.15**
     1. 对检测头进行重设计,支持10种(参数量和计算量更低的)检测头,详细请看使用教程.
+
+- **20230830-yolov8-v1.16**
+    1. 支持DCNV2,DCNV3.详细请看项目百度云视频.
+    2. 使用DCNV3改进DyHead.(ultralytics/models/v5/yolov5-dyhead-DCNV3.yaml,ultralytics/models/v8/yolov8-dyhead-DCNV3.yaml)
+    3. 根据YOLOV7-AUX辅助训练头思想,改进YOLOV8,增加辅助训练头,训练时候参与训练,检测时候去掉.(ultralytics/models/v5/yolov5-AuxHead.yaml, ultralytics/models/v8/yolov8-AuxHead.yaml)
+    4. 增加C3-Faster(ultralytics/models/v5/yolov5-C3-Faster.yaml).
+    5. 增加C3-ODConv(ultralytics/models/v5/yolov5-C3-ODConv.yaml).
+    6. 增加C3-Faster-EMA(ultralytics/models/v5/yolov5-C3-Faster-EMA.yaml).
+    7. 更新使用教程.
