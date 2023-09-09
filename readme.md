@@ -15,6 +15,10 @@
     2. 后续的改进方案都会基于这个项目更新进行发布，在群公告进行更新百度云链接。
     3. 购买了yolov8项目的都会赠送yolov5-PAGCP通道剪枝算法代码和相关实验参数命令。
 
+3. 基于YOLOV5,YOLOV7的剪枝项目.(目前99.9)[项目详解](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/yolov5v7-prune.md)
+
+    模型轻量化,部署必备之一!
+
 # Advertising Board
 人工智能-工作室长期对外接单，范围主要是:
 1. 目标检测.

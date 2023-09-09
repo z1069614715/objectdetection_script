@@ -392,7 +392,7 @@ https://github.com/OpenGVLab/InternImage/releases/tag/whl_files
 - **20230830-yolov8-v1.15**
     1. 对检测头进行重设计,支持10种(参数量和计算量更低的)检测头,详细请看使用教程.
 
-- **20230830-yolov8-v1.16**
+- **20230904-yolov8-v1.16**
     1. 支持DCNV2,DCNV3.详细请看项目百度云视频.
     2. 使用DCNV3改进DyHead.(ultralytics/models/v5/yolov5-dyhead-DCNV3.yaml,ultralytics/models/v8/yolov8-dyhead-DCNV3.yaml)
     3. 根据YOLOV7-AUX辅助训练头思想,改进YOLOV8,增加辅助训练头,训练时候参与训练,检测时候去掉.(ultralytics/models/v5/yolov5-AuxHead.yaml, ultralytics/models/v8/yolov8-AuxHead.yaml)
@@ -400,3 +400,9 @@ https://github.com/OpenGVLab/InternImage/releases/tag/whl_files
     5. 增加C3-ODConv(ultralytics/models/v5/yolov5-C3-ODConv.yaml).
     6. 增加C3-Faster-EMA(ultralytics/models/v5/yolov5-C3-Faster-EMA.yaml).
     7. 更新使用教程.
+
+- **20230909-yolov8-v1.17**
+    1. 优化辅助训练头部分代码.
+    2. 修复多卡训练中的一些bug.
+    3. 更新使用教程.(百度云视频中增加关于C3-XXX和C2f-XXX移植到官方yolov5上的讲解)
+    4. 支持TAL标签分配策略中使用NWD(具体可看使用教程).
