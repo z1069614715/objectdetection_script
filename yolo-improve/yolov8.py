@@ -1,5 +1,8 @@
 from ultralytics import YOLO
 
+# 安装命令
+# python setup.py develop
+
 # 数据集示例百度云链接
 # 链接：https://pan.baidu.com/s/19FM7XnKEFC83vpiRdtNA8A?pwd=n93i 
 # 提取码：n93i 
