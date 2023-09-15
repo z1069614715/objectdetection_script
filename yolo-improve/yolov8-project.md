@@ -5,8 +5,12 @@
 <a id="b"></a>
 
 #### 目前支持的一些block (yolov5默认C3,yolov8默认C2f) (部分block可能会与主结构有冲突,具体以是否能运行为主)
-C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, C2f_SCConv, C2f_ScConv, C2f_EMSC, C2f_EMSCP, C2f_KW, C2f_DCNv2, C2f_DCNv3  
-C3, C3Ghost, C3_CloAtt, C3_SCConv, C3_ScConv, C3_EMSC, C3_EMSCP, C3_KW, C3_ODConv, C3_Faster, C3_Faster_EMA, C3_DCNv2, C3_DCNv3  
+
+##### C2f系列
+C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, C2f_SCConv, C2f_ScConv, C2f_EMSC, C2f_EMSCP, C2f_KW, C2f_DCNv2, C2f_DCNv3, C2f_OREPA, C2f_REPVGGOREPA, C2f_EMSC_OREPA, C2f_EMSCP_OREPA  
+##### C3系列  
+C3, C3Ghost, C3_CloAtt, C3_SCConv, C3_ScConv, C3_EMSC, C3_EMSCP, C3_KW, C3_ODConv, C3_Faster, C3_Faster_EMA, C3_DCNv2, C3_DCNv3, C3_DBB, C3_OREPA, C3_REPVGGOREPA, C3_EMSC_OREPA, C3_EMSCP_OREPA  
+##### 其他系列
 VoVGSCSP, VoVGSCSPC, RCSOSA  
 
 <a id="c"></a>
@@ -101,8 +105,12 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
 18. Normalized Gaussian Wasserstein Distance.[论文链接](https://arxiv.org/abs/2110.13389)
 
-    在ultralytics/yolo/utils/loss.py中的BboxLoss class中的__init__函数里面设置self.nwd_loss为True.  
-    比例系数调整self.iou_ratio, self.iou_ratio代表iou的占比,(1-self.iou_ratio)为代表nwd的占比. 
+    在Loss中使用:
+        在ultralytics/yolo/utils/loss.py中的BboxLoss class中的__init__函数里面设置self.nwd_loss为True.  
+        比例系数调整self.iou_ratio, self.iou_ratio代表iou的占比,(1-self.iou_ratio)为代表nwd的占比.  
+    在TAL标签分配中使用:
+        在ultralytics/yolo/utils/tal.py中的def get_box_metrics函数中进行更换即可.
+    以上这两可以配合使用,也可以单独使用.
 
 19. SlideLoss and EMASlideLoss.[Yolo-Face V2](https://github.com/Krasjet-Yu/YOLO-FaceV2/blob/master/utils/loss.py)
 
@@ -146,7 +154,37 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     使用[DCNV3](https://github.com/OpenGVLab/InternImage)替换DyHead中的DCNV2.
 
-https://github.com/OpenGVLab/InternImage/releases/tag/whl_files
+29. ultralytics/models/v5/yolov5-FocalModulation.yaml
+
+    使用[Focal Modulation](https://github.com/microsoft/FocalNet)替换SPPF.
+
+30. ultralytics/models/v5/yolov5-C3-DBB.yaml
+
+    使用C3-DBB替换C3.(使用DiverseBranchBlock替换C3中的Bottleneck中的Conv)
+
+31. ultralytics/models/v5/yolov5-C3-OREPA.yaml
+
+    使用C3-OREPA替换C2f.[Online Convolutional Re-parameterization (CVPR2022)](https://github.com/JUGGHM/OREPA_CVPR2022/tree/main)
+
+32. ultralytics/models/v5/yolov5-C3-REPVGGOREPA.yaml
+
+    使用C3-REPVGGOREPA替换C3.[Online Convolutional Re-parameterization (CVPR2022)](https://github.com/JUGGHM/OREPA_CVPR2022/tree/main)
+
+33. ultralytics/models/v5/yolov5-swintransformer.yaml
+
+    SwinTransformer-Tiny替换yolov5主干.
+
+34. ultralytics/models/v5/yolov5-repvit.yaml
+
+    [RepViT](https://github.com/THU-MIG/RepViT/tree/main)替换yolov5主干.
+
+35. ultralytics/models/v5/yolov5-C3-EMSC-OREPA.yaml
+
+    Efficient Multi-Scale Conv With OREPA.自研模块,具体讲解请看百度云链接中的视频.
+
+36. ultralytics/models/v5/yolov5-C3-EMSCP-OREPA.yaml
+
+    Efficient Multi-Scale Conv Plus With OREPA.自研模块,具体讲解请看百度云链接中的视频.
 
 ### YOLOV8
 1. ultralytics/models/v8/yolov8-efficientViT.yaml
@@ -275,8 +313,12 @@ https://github.com/OpenGVLab/InternImage/releases/tag/whl_files
 
 28. Normalized Gaussian Wasserstein Distance.[论文链接](https://arxiv.org/abs/2110.13389)
 
-    在ultralytics/yolo/utils/loss.py中的BboxLoss class中的__init__函数里面设置self.nwd_loss为True.  
-    比例系数调整self.iou_ratio, self.iou_ratio代表iou的占比,(1-self.iou_ratio)为代表nwd的占比. 
+    在Loss中使用:
+        在ultralytics/yolo/utils/loss.py中的BboxLoss class中的__init__函数里面设置self.nwd_loss为True.  
+        比例系数调整self.iou_ratio, self.iou_ratio代表iou的占比,(1-self.iou_ratio)为代表nwd的占比.  
+    在TAL标签分配中使用:
+        在ultralytics/yolo/utils/tal.py中的def get_box_metrics函数中进行更换即可.
+    以上这两可以配合使用,也可以单独使用.
 
 29. SlideLoss and EMASlideLoss.[Yolo-Face V2](https://github.com/Krasjet-Yu/YOLO-FaceV2/blob/master/utils/loss.py)
 
@@ -307,6 +349,34 @@ https://github.com/OpenGVLab/InternImage/releases/tag/whl_files
 35. ultralytics/models/v8/yolov8-dyhead-DCNV3.yaml
 
     使用[DCNV3](https://github.com/OpenGVLab/InternImage)替换DyHead中的DCNV2.
+
+36. ultralytics/models/v8/yolov8-FocalModulation.yaml
+
+    使用[Focal Modulation](https://github.com/microsoft/FocalNet)替换SPPF.
+
+37. ultralytics/models/v8/yolov8-C2f-OREPA.yaml
+
+    使用C2f-OREPA替换C2f.[Online Convolutional Re-parameterization (CVPR2022)](https://github.com/JUGGHM/OREPA_CVPR2022/tree/main)
+
+38. ultralytics/models/v8/yolov8-C2f-REPVGGOREPA.yaml
+
+    使用C2f-REPVGGOREPA替换C2f.[Online Convolutional Re-parameterization (CVPR2022)](https://github.com/JUGGHM/OREPA_CVPR2022/tree/main)
+
+39. ultralytics/models/v8/yolov8-swintransformer.yaml
+
+    SwinTransformer-Tiny替换yolov8主干.
+
+40. ultralytics/models/v8/yolov8-repvit.yaml
+
+    [RepViT](https://github.com/THU-MIG/RepViT/tree/main)替换yolov8主干.
+
+41. ultralytics/models/v8/yolov8-C2f-EMSC-OREPA.yaml
+
+    Efficient Multi-Scale Conv With OREPA.自研模块,具体讲解请看百度云链接中的视频.
+
+42. ultralytics/models/v8/yolov8-C2f-EMSCP-OREPA.yaml
+
+    Efficient Multi-Scale Conv Plus With OREPA.自研模块,具体讲解请看百度云链接中的视频.
 
 # 更新公告
 
@@ -406,3 +476,10 @@ https://github.com/OpenGVLab/InternImage/releases/tag/whl_files
     2. 修复多卡训练中的一些bug.
     3. 更新使用教程.(百度云视频中增加关于C3-XXX和C2f-XXX移植到官方yolov5上的讲解)
     4. 支持TAL标签分配策略中使用NWD(具体可看使用教程).
+
+- **20230915-yolov8-v1.18**
+    1. 新增Online Convolutional Re-parameterization (CVPR2022).(超越DBB和RepVGG) (C3-OREPA,C3-REPVGGOREPA,C2f-OREPA,C2f-REPVGGOREPA)
+    2. 新增FocalModulation.
+    3. 支持RepViT和SwinTransformer-Tiny主干.
+    4. 利用OREPA优化自研模块(EMSC,EMSCP).
+    5. 更新使用教程和百度云视频.
