@@ -295,6 +295,6 @@
     paper: [链接](https://arxiv.org/abs/2208.02019)  
 - **yolov5-backbone/CVPR2023-RepViT**  
     添加RepViT(transformer)主干到yolov5中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1xk4y1L7Gu/).   
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1PH4y1S7mf/).   
     reference: [链接](https://github.com/THU-MIG/RepViT)  
     paper: [链接](https://arxiv.org/abs/2307.09283)  

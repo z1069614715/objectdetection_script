@@ -483,3 +483,8 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     3. 支持RepViT和SwinTransformer-Tiny主干.
     4. 利用OREPA优化自研模块(EMSC,EMSCP).
     5. 更新使用教程和百度云视频.
+
+- **20230916-yolov8-v1.19**
+    1. 去除OREPA_1x1,该结构会让模型无法收敛或者NAN.
+    2. 新增yolov8-fasternet-bifpn和yolov5-fasternet-bifpn.
+    3. 更新使用教程和百度云视频.(更新OREPA的视频和增加如何看懂代码结构-以C2f-Faster-EMA为例).
