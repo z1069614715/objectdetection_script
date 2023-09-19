@@ -7,9 +7,9 @@
 #### 目前支持的一些block (yolov5默认C3,yolov8默认C2f) (部分block可能会与主结构有冲突,具体以是否能运行为主)
 
 ##### C2f系列
-C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, C2f_SCConv, C2f_ScConv, C2f_EMSC, C2f_EMSCP, C2f_KW, C2f_DCNv2, C2f_DCNv3, C2f_OREPA, C2f_REPVGGOREPA, C2f_EMSC_OREPA, C2f_EMSCP_OREPA  
+C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, C2f_SCConv, C2f_ScConv, C2f_EMSC, C2f_EMSCP, C2f_KW, C2f_DCNv2, C2f_DCNv3, C2f_OREPA, C2f_REPVGGOREPA   
 ##### C3系列  
-C3, C3Ghost, C3_CloAtt, C3_SCConv, C3_ScConv, C3_EMSC, C3_EMSCP, C3_KW, C3_ODConv, C3_Faster, C3_Faster_EMA, C3_DCNv2, C3_DCNv3, C3_DBB, C3_OREPA, C3_REPVGGOREPA, C3_EMSC_OREPA, C3_EMSCP_OREPA  
+C3, C3Ghost, C3_CloAtt, C3_SCConv, C3_ScConv, C3_EMSC, C3_EMSCP, C3_KW, C3_ODConv, C3_Faster, C3_Faster_EMA, C3_DCNv2, C3_DCNv3, C3_DBB, C3_OREPA, C3_REPVGGOREPA  
 ##### 其他系列
 VoVGSCSP, VoVGSCSPC, RCSOSA  
 
@@ -178,13 +178,17 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     [RepViT](https://github.com/THU-MIG/RepViT/tree/main)替换yolov5主干.
 
-35. ultralytics/models/v5/yolov5-C3-EMSC-OREPA.yaml
+35. ultralytics/models/v5/yolov5-fasternet-bifpn.yaml
 
-    Efficient Multi-Scale Conv With OREPA.自研模块,具体讲解请看百度云链接中的视频.
-
-36. ultralytics/models/v5/yolov5-C3-EMSCP-OREPA.yaml
-
-    Efficient Multi-Scale Conv Plus With OREPA.自研模块,具体讲解请看百度云链接中的视频.
+    fasternet与bifpn的结合.  
+    其中BIFPN中有三个可选参数：
+    1. Fusion  
+        其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default)  
+        其中weight, adaptive, concat出自[paper链接-Figure 3](https://openreview.net/pdf?id=q2ZaVU6bEsT)
+    2. node_mode  
+        其中目前(后续会更新喔)支持这些[结构](#b)
+    3. head_channel  
+        BIFPN中的通道数,默认设置为256.
 
 ### YOLOV8
 1. ultralytics/models/v8/yolov8-efficientViT.yaml
@@ -370,13 +374,17 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     [RepViT](https://github.com/THU-MIG/RepViT/tree/main)替换yolov8主干.
 
-41. ultralytics/models/v8/yolov8-C2f-EMSC-OREPA.yaml
+41. ultralytics/models/v8/yolov8-fasternet-bifpn.yaml
 
-    Efficient Multi-Scale Conv With OREPA.自研模块,具体讲解请看百度云链接中的视频.
-
-42. ultralytics/models/v8/yolov8-C2f-EMSCP-OREPA.yaml
-
-    Efficient Multi-Scale Conv Plus With OREPA.自研模块,具体讲解请看百度云链接中的视频.
+    fasternet与bifpn的结合.  
+    其中BIFPN中有三个可选参数：
+    1. Fusion  
+        其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default)  
+        其中weight, adaptive, concat出自[paper链接-Figure 3](https://openreview.net/pdf?id=q2ZaVU6bEsT)
+    2. node_mode  
+        其中目前(后续会更新喔)支持这些[结构](#b)
+    3. head_channel  
+        BIFPN中的通道数,默认设置为256.
 
 # 更新公告
 
@@ -488,3 +496,10 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     1. 去除OREPA_1x1,该结构会让模型无法收敛或者NAN.
     2. 新增yolov8-fasternet-bifpn和yolov5-fasternet-bifpn.
     3. 更新使用教程和百度云视频.(更新OREPA的视频和增加如何看懂代码结构-以C2f-Faster-EMA为例).
+
+- **20230919-yolov8-v1.19.1**
+    1. 修复C2f-ODConv在20epochs后精度异常问题.
+    2. 修复BAM注意力机制中的padding问题.
+    3. 修复EfficientAttention(CloFormer中的注意力)注意力机制不能在配置文件添加的问题.
+    4. 去除C2f-EMSP-OREPA,C2f-EMSCP-OREPA,C3-EMSP-OREPA,C3-EMSCP-OREPA,这部分不稳定,容易出现NAN.
+    5. 群公告中增加使用前必看的百度云视频链接.
