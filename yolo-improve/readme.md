@@ -298,3 +298,8 @@
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1PH4y1S7mf/).   
     reference: [链接](https://github.com/THU-MIG/RepViT)  
     paper: [链接](https://arxiv.org/abs/2307.09283)  
+- **yolov5-GOLDYOLO**
+    利用华为2023最新GOLD-YOLO中的Gatherand-Distribute进行改进YOLOV5中的特征融合模块.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1PH4y1S7mf/).   
+    reference: [链接](https://github.com/huawei-noah/Efficient-Computing/tree/master/Detection/Gold-YOLO)  
+    paper: [链接](https://arxiv.org/abs/2309.11331)  
