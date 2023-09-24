@@ -153,7 +153,9 @@ def get_avg_pool():
 class SimFusion_3in(nn.Module):
     def __init__(self, in_channel_list, out_channels):
         super().__init__()
-        self.cv1 = Conv(in_channel_list[0], out_channels, act=nn.ReLU())
+        self.cv1 = Conv(in_channel_list[0], out_channels, act=nn.ReLU()) if in_channel_list[0] != out_channels else nn.Identity()
+        self.cv2 = Conv(in_channel_list[1], out_channels, act=nn.ReLU()) if in_channel_list[1] != out_channels else nn.Identity()
+        self.cv3 = Conv(in_channel_list[2], out_channels, act=nn.ReLU()) if in_channel_list[2] != out_channels else nn.Identity()
         self.cv_fuse = Conv(out_channels * 3, out_channels, act=nn.ReLU())
         self.downsample = nn.functional.adaptive_avg_pool2d
     
@@ -166,8 +168,8 @@ class SimFusion_3in(nn.Module):
             output_size = np.array([H, W])
         
         x0 = self.cv1(self.downsample(x[0], output_size))
-        x1 = x[1]
-        x2 = F.interpolate(x[2], size=(H, W), mode='bilinear', align_corners=False)
+        x1 = self.cv2(x[1])
+        x2 = self.cv3(F.interpolate(x[2], size=(H, W), mode='bilinear', align_corners=False))
         return self.cv_fuse(torch.cat((x0, x1, x2), dim=1))
 
 class SimFusion_4in(nn.Module):
