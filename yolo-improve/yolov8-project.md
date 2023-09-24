@@ -503,3 +503,9 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     3. 修复EfficientAttention(CloFormer中的注意力)注意力机制不能在配置文件添加的问题.
     4. 去除C2f-EMSP-OREPA,C2f-EMSCP-OREPA,C3-EMSP-OREPA,C3-EMSCP-OREPA,这部分不稳定,容易出现NAN.
     5. 群公告中增加使用前必看的百度云视频链接.
+
+- **20230924-yolov8-v1.20**
+    1. 增加自研注意力机制MPCA(基于CVPR2021 CA注意力机制).详细可看百度云视频.
+    2. 使用自研注意力机制MPCA强化DCNV2中的offset和mask生成.详细可看百度云视频和使用教程.
+    3. 把timm配置文件的预训练权重参数改为False,也即是默认不下载和使用预训练权重.
+    4. 利用华为2023最新GOLD-YOLO中的Gatherand-Distribute进行改进特征融合模块.
