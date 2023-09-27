@@ -7,16 +7,16 @@
 #### 目前支持的一些block (yolov5默认C3,yolov8默认C2f) (部分block可能会与主结构有冲突,具体以是否能运行为主)
 
 ##### C2f系列
-C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, C2f_SCConv, C2f_ScConv, C2f_EMSC, C2f_EMSCP, C2f_KW, C2f_DCNv2, C2f_DCNv3, C2f_OREPA, C2f_REPVGGOREPA   
+C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, C2f_SCConv, C2f_ScConv, C2f_EMSC, C2f_EMSCP, C2f_KW, C2f_DCNv2, C2f_DCNv3, C2f_OREPA, C2f_REPVGGOREPA, C2f_DCNv2_Dynamic, C2f_MSBlock, C2f_ContextGuided
 ##### C3系列  
-C3, C3Ghost, C3_CloAtt, C3_SCConv, C3_ScConv, C3_EMSC, C3_EMSCP, C3_KW, C3_ODConv, C3_Faster, C3_Faster_EMA, C3_DCNv2, C3_DCNv3, C3_DBB, C3_OREPA, C3_REPVGGOREPA  
+C3, C3Ghost, C3_CloAtt, C3_SCConv, C3_ScConv, C3_EMSC, C3_EMSCP, C3_KW, C3_ODConv, C3_Faster, C3_Faster_EMA, C3_DCNv2, C3_DCNv3, C3_DBB, C3_OREPA, C3_REPVGGOREPA, C3_DCNv2_Dynamic, C3_MSBlock, C3_ContextGuided
 ##### 其他系列
 VoVGSCSP, VoVGSCSPC, RCSOSA  
 
 <a id="c"></a>
 
 #### 目前整合的一些注意力机制 还需要别的注意力机制可从[github](https://github.com/z1069614715/objectdetection_script/tree/master/cv-attention)拉取对应的代码到ultralytics/nn/extra_modules/attention.py即可. 视频教程可看项目视频中的(如何在yaml配置文件中添加注意力层)
-EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttention_nchw, TripletAttention, CoordAtt, BAMBlock, EfficientAttention, LSKBlock, SEAttention, CPCA
+EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttention_nchw, TripletAttention, CoordAtt, BAMBlock, EfficientAttention(CloFormer中的注意力), LSKBlock, SEAttention, CPCA
 
 ### YOLOV5 (AnchorFree+DFL+TAL) [官方预训练权重github链接](https://github.com/ultralytics/assets/releases)
 #### YOLOV5的使用方式跟YOLOV8一样,就是选择配置文件选择v5的即可.
@@ -189,6 +189,26 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
         其中目前(后续会更新喔)支持这些[结构](#b)
     3. head_channel  
         BIFPN中的通道数,默认设置为256.
+
+36. ultralytics/models/v5/yolov5-C3-DCNV2-Dynamic.yaml
+
+    利用自研注意力机制MPCA强化DCNV2中的offset和mask.
+
+37. ultralytics/models/v5/yolov5-goldyolo.yaml
+
+    利用华为2023最新GOLD-YOLO中的Gatherand-Distribute进行改进特征融合模块
+
+38. ultralytics/models/v5/yolov5-C3-ContextGuided.yaml
+
+    使用[GCNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided改进C3.
+
+39. ultralytics/models/v5/yolov5-ContextGuidedDown.yaml
+
+    使用[GCNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided DownSample进行下采样.
+
+40. ultralytics/models/v5/yolov5-C3-MSBlock.yaml
+
+    使用[YOLO-MS](https://github.com/FishAndWasabi/YOLO-MS/tree/main)中的MSBlock改进C3.
 
 ### YOLOV8
 1. ultralytics/models/v8/yolov8-efficientViT.yaml
@@ -386,6 +406,26 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     3. head_channel  
         BIFPN中的通道数,默认设置为256.
 
+42. ultralytics/models/v8/yolov8-C2f-DCNV2-Dynamic.yaml
+
+    利用自研注意力机制MPCA强化DCNV2中的offset和mask.
+
+43. ultralytics/models/v8/yolov8-goldyolo.yaml
+
+    利用华为2023最新GOLD-YOLO中的Gatherand-Distribute进行改进特征融合模块
+
+44. ultralytics/models/v8/yolov8-C2f-ContextGuided.yaml
+
+    使用[GCNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided改进C2f.
+
+45. ultralytics/models/v8/yolov8-ContextGuidedDown.yaml
+
+    使用[GCNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided DownSample进行下采样.
+
+46. ultralytics/models/v8/yolov8-C2f-MSBlock.yaml
+
+    使用[YOLO-MS](https://github.com/FishAndWasabi/YOLO-MS/tree/main)中的MSBlock改进C2f.
+
 # 更新公告
 
 - **20230620-yolov8-v1.1**
@@ -509,3 +549,8 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     2. 使用自研注意力机制MPCA强化DCNV2中的offset和mask生成.详细可看百度云视频和使用教程.
     3. 把timm配置文件的预训练权重参数改为False,也即是默认不下载和使用预训练权重.
     4. 利用华为2023最新GOLD-YOLO中的Gatherand-Distribute进行改进特征融合模块.
+
+- **20230927-yolov8-v1.21**
+    1. 使用YOLO-MS中的MSBlock改进C2f和C3模块,具体请看使用教程.
+    2. 使用GCNet中的Light-weight Context Guided改进C2f和C3模块,具体请看使用教程.
+    3. 使用GCNet中的Light-weight Context Guided Down替换YOLO中的下采样模块,具体请看使用教程.

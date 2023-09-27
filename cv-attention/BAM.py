@@ -3,6 +3,13 @@ import torch
 from torch import nn
 from torch.nn import init
 
+def autopad(k, p=None, d=1):  # kernel, padding, dilation
+    """Pad to 'same' shape outputs."""
+    if d > 1:
+        k = d * (k - 1) + 1 if isinstance(k, int) else [d * (x - 1) + 1 for x in k]  # actual kernel-size
+    if p is None:
+        p = k // 2 if isinstance(k, int) else [x // 2 for x in k]  # auto-pad
+    return p
 
 class Flatten(nn.Module):
     def forward(self, x):
@@ -42,7 +49,7 @@ class SpatialAttention(nn.Module):
         self.sa.add_module('relu_reduce1', nn.ReLU())
         for i in range(num_layers):
             self.sa.add_module('conv_%d' % i, nn.Conv2d(kernel_size=3, in_channels=channel // reduction,
-                                                        out_channels=channel // reduction, padding=1, dilation=dia_val))
+                                                        out_channels=channel // reduction, padding=autopad(3, None, dia_val), dilation=dia_val))
             self.sa.add_module('bn_%d' % i, nn.BatchNorm2d(channel // reduction))
             self.sa.add_module('relu_%d' % i, nn.ReLU())
         self.sa.add_module('last_conv', nn.Conv2d(channel // reduction, 1, kernel_size=1))
