@@ -14,10 +14,12 @@
     1. 基于源代码的基础上再封装一层，使其使用方式与v5,v7使用类似，并提供较为详细的使用说明，方便用户进行训练，测试，推理，跟踪。
     2. 后续的改进方案都会基于这个项目更新进行发布，在群公告进行更新百度云链接。
     3. 购买了yolov8项目的都会赠送yolov5-PAGCP通道剪枝算法代码和相关实验参数命令。
+    4. 购买后进YOLOV8交流群(代码视频均在群公告),群里可交流代码和论文相关,目前1500+人,气氛活跃。
 
-3. 基于YOLOV5,YOLOV7的(剪枝+知识蒸馏)项目.(目前优惠价99.9到9月28号,原价149.9)[项目详解](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/yolov5v7-light.md)
+3. 基于YOLOV5,YOLOV7的(剪枝+知识蒸馏)项目.(129.9¥)[项目详解](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/yolov5v7-light.md)
 
-    模型轻量化,部署必备之一!
+    1. 模型轻量化,部署必备之一!
+    2. 购买后进YOLOV5V7轻量化交流群(代码视频均在群公告),轻量化问题都可在群交流,因为剪枝问题比较困难,所以剪枝问题可以群里问,我都会群里回复相关问题.
 
 # Advertising Board
 人工智能-工作室长期对外接单，范围主要是:
