@@ -7,16 +7,16 @@
 #### 目前支持的一些block (yolov5默认C3,yolov8默认C2f) (部分block可能会与主结构有冲突,具体以是否能运行为主)
 
 ##### C2f系列
-C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, C2f_SCConv, C2f_ScConv, C2f_EMSC, C2f_EMSCP, C2f_KW, C2f_DCNv2, C2f_DCNv3, C2f_OREPA, C2f_REPVGGOREPA, C2f_DCNv2_Dynamic, C2f_MSBlock, C2f_ContextGuided
+C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, C2f_SCConv, C2f_ScConv, C2f_EMSC, C2f_EMSCP, C2f_KW, C2f_DCNv2, C2f_DCNv3, C2f_OREPA, C2f_REPVGGOREPA, C2f_DCNv2_Dynamic, C2f_MSBlock, C2f_ContextGuided, C2f_DLKA, C2f_EMBC
 ##### C3系列  
-C3, C3Ghost, C3_CloAtt, C3_SCConv, C3_ScConv, C3_EMSC, C3_EMSCP, C3_KW, C3_ODConv, C3_Faster, C3_Faster_EMA, C3_DCNv2, C3_DCNv3, C3_DBB, C3_OREPA, C3_REPVGGOREPA, C3_DCNv2_Dynamic, C3_MSBlock, C3_ContextGuided
+C3, C3Ghost, C3_CloAtt, C3_SCConv, C3_ScConv, C3_EMSC, C3_EMSCP, C3_KW, C3_ODConv, C3_Faster, C3_Faster_EMA, C3_DCNv2, C3_DCNv3, C3_DBB, C3_OREPA, C3_REPVGGOREPA, C3_DCNv2_Dynamic, C3_MSBlock, C3_ContextGuided, C3_DLKA, C3_EMBC
 ##### 其他系列
 VoVGSCSP, VoVGSCSPC, RCSOSA  
 
 <a id="c"></a>
 
 #### 目前整合的一些注意力机制 还需要别的注意力机制可从[github](https://github.com/z1069614715/objectdetection_script/tree/master/cv-attention)拉取对应的代码到ultralytics/nn/extra_modules/attention.py即可. 视频教程可看项目视频中的(如何在yaml配置文件中添加注意力层)
-EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttention_nchw, TripletAttention, CoordAtt, BAMBlock, EfficientAttention(CloFormer中的注意力), LSKBlock, SEAttention, CPCA
+EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttention_nchw, TripletAttention, CoordAtt, BAMBlock, EfficientAttention(CloFormer中的注意力), LSKBlock, SEAttention, CPCA, deformable_LKA, EffectiveSEModule
 
 ### YOLOV5 (AnchorFree+DFL+TAL) [官方预训练权重github链接](https://github.com/ultralytics/assets/releases)
 #### YOLOV5的使用方式跟YOLOV8一样,就是选择配置文件选择v5的即可.
@@ -200,15 +200,35 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
 38. ultralytics/models/v5/yolov5-C3-ContextGuided.yaml
 
-    使用[GCNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided改进C3.
+    使用[CGNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided改进C3.
 
 39. ultralytics/models/v5/yolov5-ContextGuidedDown.yaml
 
-    使用[GCNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided DownSample进行下采样.
+    使用[CGNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided DownSample进行下采样.
 
 40. ultralytics/models/v5/yolov5-C3-MSBlock.yaml
 
     使用[YOLO-MS](https://github.com/FishAndWasabi/YOLO-MS/tree/main)中的MSBlock改进C3.
+
+41. ultralytics/models/v5/yolov5-C3-DLKA.yaml
+
+    使用[deformableLKA](https://github.com/xmindflow/deformableLKA)改进C3.
+
+42. ultralytics/models/v5/yolov5-GFPN.yaml
+
+    使用[DAMO-YOLO](https://github.com/tinyvision/DAMO-YOLO)中的RepGFPN改进Neck.
+
+43. ultralytics/models/v5/yolov5-SPDConv.yaml
+
+    使用[SPDConv](https://github.com/LabSAINT/SPD-Conv/tree/main)进行下采样.
+
+44. ultralytics/models/v5/yolov5-EfficientRepBiPAN.yaml
+
+    使用[YOLOV6](https://github.com/meituan/YOLOv6/tree/main)中的EfficientRepBiPAN改进Neck.
+
+45. ultralytics/models/v5/yolov5-C3-EMBC.yaml
+
+    使用[Efficientnet](https://blog.csdn.net/weixin_43334693/article/details/131114618?spm=1001.2014.3001.5501)中的MBConv与EffectiveSE改进C3.
 
 ### YOLOV8
 1. ultralytics/models/v8/yolov8-efficientViT.yaml
@@ -416,15 +436,35 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
 44. ultralytics/models/v8/yolov8-C2f-ContextGuided.yaml
 
-    使用[GCNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided改进C2f.
+    使用[CGNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided改进C2f.
 
 45. ultralytics/models/v8/yolov8-ContextGuidedDown.yaml
 
-    使用[GCNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided DownSample进行下采样.
+    使用[CGNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided DownSample进行下采样.
 
 46. ultralytics/models/v8/yolov8-C2f-MSBlock.yaml
 
     使用[YOLO-MS](https://github.com/FishAndWasabi/YOLO-MS/tree/main)中的MSBlock改进C2f.
+
+47. ultralytics/models/v8/yolov8-C2f-DLKA.yaml
+
+    使用[deformableLKA](https://github.com/xmindflow/deformableLKA)改进C2f.
+
+48. ultralytics/models/v8/yolov8-GFPN.yaml
+
+    使用[DAMO-YOLO](https://github.com/tinyvision/DAMO-YOLO)中的RepGFPN改进Neck.
+
+49. ultralytics/models/v8/yolov8-SPDConv.yaml
+
+    使用[SPDConv](https://github.com/LabSAINT/SPD-Conv/tree/main)进行下采样.
+
+50. ultralytics/models/v8/yolov8-EfficientRepBiPAN.yaml
+
+    使用[YOLOV6](https://github.com/meituan/YOLOv6/tree/main)中的EfficientRepBiPAN改进Neck.
+
+51. ultralytics/models/v8/yolov8-C2f-EMBC.yaml
+
+    使用[Efficientnet](https://blog.csdn.net/weixin_43334693/article/details/131114618?spm=1001.2014.3001.5501)中的MBConv与EffectiveSE改进C2f.
 
 # 更新公告
 
@@ -554,3 +594,12 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     1. 使用YOLO-MS中的MSBlock改进C2f和C3模块,具体请看使用教程.
     2. 使用GCNet中的Light-weight Context Guided改进C2f和C3模块,具体请看使用教程.
     3. 使用GCNet中的Light-weight Context Guided Down替换YOLO中的下采样模块,具体请看使用教程.
+
+- **20230927-yolov8-v1.22**
+    1. RepViT同步官方源码.
+    2. 经实验发现网络全使用C2f-MSBlock和C3-MSBlock不稳定,因此在Neck部分还是使用C2f或C3,具体可参看对应的配置文件.
+    3. 支持deformableLKA注意力机制,并进行改进C2f和C3,提出C2f_DLKA,C3_LKA.
+    4. 使用DAMO-YOLO中的RepGFPN改进yolov8中的Neck.
+    5. 使用YOLOV6中的EfficientRepBiPAN改进yolov8中的Neck.
+    6. 新增支持SPDConv进行下采样.
+    7. 使用Efficientnet中的MBConv与EffectiveSE改进C2f和C3.
