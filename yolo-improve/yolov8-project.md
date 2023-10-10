@@ -595,10 +595,10 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     2. 使用GCNet中的Light-weight Context Guided改进C2f和C3模块,具体请看使用教程.
     3. 使用GCNet中的Light-weight Context Guided Down替换YOLO中的下采样模块,具体请看使用教程.
 
-- **20230927-yolov8-v1.22**
+- **20231010-yolov8-v1.22**
     1. RepViT同步官方源码.
     2. 经实验发现网络全使用C2f-MSBlock和C3-MSBlock不稳定,因此在Neck部分还是使用C2f或C3,具体可参看对应的配置文件.
-    3. 支持deformableLKA注意力机制,并进行改进C2f和C3,提出C2f_DLKA,C3_LKA.
+    3. 支持deformableLKA注意力机制,并进行改进C2f和C3,提出C2f_DLKA,C3_DLKA.
     4. 使用DAMO-YOLO中的RepGFPN改进yolov8中的Neck.
     5. 使用YOLOV6中的EfficientRepBiPAN改进yolov8中的Neck.
     6. 新增支持SPDConv进行下采样.
