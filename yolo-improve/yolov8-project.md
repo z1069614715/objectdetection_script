@@ -16,7 +16,7 @@ VoVGSCSP, VoVGSCSPC, RCSOSA
 <a id="c"></a>
 
 #### 目前整合的一些注意力机制 还需要别的注意力机制可从[github](https://github.com/z1069614715/objectdetection_script/tree/master/cv-attention)拉取对应的代码到ultralytics/nn/extra_modules/attention.py即可. 视频教程可看项目视频中的(如何在yaml配置文件中添加注意力层)
-EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttention_nchw, TripletAttention, CoordAtt, BAMBlock, EfficientAttention(CloFormer中的注意力), LSKBlock, SEAttention, CPCA, deformable_LKA, EffectiveSEModule
+EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttention_nchw, TripletAttention, CoordAtt, CBAM, BAMBlock, EfficientAttention(CloFormer中的注意力), LSKBlock, SEAttention, CPCA, deformable_LKA, EffectiveSEModule, LSKA, SegNext_Attention, DAttention(Vision Transformer with Deformable Attention CVPR2022)
 
 ### YOLOV5 (AnchorFree+DFL+TAL) [官方预训练权重github链接](https://github.com/ultralytics/assets/releases)
 #### YOLOV5的使用方式跟YOLOV8一样,就是选择配置文件选择v5的即可.
@@ -229,6 +229,15 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 45. ultralytics/models/v5/yolov5-C3-EMBC.yaml
 
     使用[Efficientnet](https://blog.csdn.net/weixin_43334693/article/details/131114618?spm=1001.2014.3001.5501)中的MBConv与EffectiveSE改进C3.
+
+46. ultralytics/models/v5/yolov5-SPPF-LSKA.yaml
+
+    使用[LSKA](https://github.com/StevenLauHKHK/Large-Separable-Kernel-Attention)注意力机制改进SPPF,增强多尺度特征提取能力.
+
+47. ultralytics/models/v5/yolov5-C3-DAttention.yaml
+
+    使用[Vision Transformer with Deformable Attention(CVPR2022)](https://github.com/LeapLabTHU/DAT)改进C2f.  
+    使用注意点请看百度云视频.
 
 ### YOLOV8
 1. ultralytics/models/v8/yolov8-efficientViT.yaml
@@ -466,6 +475,15 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     使用[Efficientnet](https://blog.csdn.net/weixin_43334693/article/details/131114618?spm=1001.2014.3001.5501)中的MBConv与EffectiveSE改进C2f.
 
+52. ultralytics/models/v8/yolov8-SPPF-LSKA.yaml
+
+    使用[LSKA](https://github.com/StevenLauHKHK/Large-Separable-Kernel-Attention)注意力机制改进SPPF,增强多尺度特征提取能力.
+
+53. ultralytics/models/v8/yolov8-C2f-DAttention.yaml
+
+    使用[Vision Transformer with Deformable Attention(CVPR2022)](https://github.com/LeapLabTHU/DAT)改进C2f.  
+    使用注意点请看百度云视频.
+
 # 更新公告
 
 - **20230620-yolov8-v1.1**
@@ -603,3 +621,9 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     5. 使用YOLOV6中的EfficientRepBiPAN改进yolov8中的Neck.
     6. 新增支持SPDConv进行下采样.
     7. 使用Efficientnet中的MBConv与EffectiveSE改进C2f和C3.
+
+- **20231010-yolov8-v1.23**
+    1. 更新使用教程和百度云视频.(更新DAttention使用说明视频).
+    2. 增加LSKA, SegNext_Attention, DAttention(Vision Transformer with Deformable Attention CVPR2022).
+    3. 使用LSKA改进SPPF,增强多尺度特征提取能力.
+    4. 使用[Vision Transformer with Deformable Attention(CVPR2022)]改进C2f,C3.

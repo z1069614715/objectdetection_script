@@ -113,6 +113,15 @@
 | GroupSl (Sparse) 2.0x Exp2 | 2,060,599(31.6%) | 5.6(49.6%) | 4.4m(34.1%) | 0.761(+0.046) | 0.407(+0.024) | 0.056s | 
 | GroupSl (Sparse) 3.0x Exp2 | 1,283,982(19.7%) | 3.7(32.7%) | 2.9m(22.5%) | 0.679(-0.036) | 0.342(-0.041) | 0.041s | 
 
+#### Mode:Distill+Prune Dataset:VisDrone(训练集只用了百分之20的数据,验证集和测试集用了全量的数据) Teacher:Yolov7-Tiny
+| model | Parameters | GFLOPs | Model Size | mAP50 | mAP50-95 | Inference Time(bs:32) |
+| :----: | :----: | :----: | :----: | :----: | :----: | :----: |
+| BaseLine(Yolov7-Tiny) | 6,031,950 | 13.1 | 11.7m | 0.189 | 0.0948 | 0.00121s | 
+| LAMP 2.0x | 1,309,098 | 6.5 | 2.7m | 0.186(-0.003) | 0.0903(-0.0045) | 0.00089s | 
+| LAMP 3.0x | 615,877 | 4.3 | 1.4m | 0.151(-0.038) | 0.0691(-0.0257) | 0.00070s | 
+| LAMP 3.0x + CWD exp1 | 615,877 | 4.3 | 1.4m | 0.158(-0.031) | 0.0715(-0.0233) | 0.00070s | 
+| LAMP 3.0x + CWD exp2 | 615,877 | 4.3 | 1.4m | 0.155(-0.034)  | 0.0686(-0.0262) | 0.00070s | 
+
 ### Yolov5 相关实验
 #### Mode:Prune Dataset:CrowdHuman 20%  Model:Yolov5n
 | model | Parameters | GFLOPs | Model Size | mAP50 | mAP50-95 | Inference Time(bs:32) |
