@@ -622,7 +622,7 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     6. 新增支持SPDConv进行下采样.
     7. 使用Efficientnet中的MBConv与EffectiveSE改进C2f和C3.
 
-- **20231010-yolov8-v1.23**
+- **20231020-yolov8-v1.23**
     1. 更新使用教程和百度云视频.(更新DAttention使用说明视频).
     2. 增加LSKA, SegNext_Attention, DAttention(Vision Transformer with Deformable Attention CVPR2022).
     3. 使用LSKA改进SPPF,增强多尺度特征提取能力.
