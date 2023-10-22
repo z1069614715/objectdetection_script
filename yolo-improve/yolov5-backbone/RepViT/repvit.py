@@ -3,7 +3,7 @@ import numpy as np
 from timm.models.layers import SqueezeExcite
 import torch
 
-__all__ = ['repvit_m1', 'repvit_m2', 'repvit_m3']
+__all__ = ['repvit_m0_9', 'repvit_m1_0', 'repvit_m1_1', 'repvit_m1_5', 'repvit_m2_3']
 
 def replace_batchnorm(net):
     for child_name, child in net.named_children():
@@ -91,21 +91,21 @@ class Residual(torch.nn.Module):
         else:
             return self
 
-
 class RepVGGDW(torch.nn.Module):
     def __init__(self, ed) -> None:
         super().__init__()
         self.conv = Conv2d_BN(ed, ed, 3, 1, 1, groups=ed)
-        self.conv1 = Conv2d_BN(ed, ed, 1, 1, 0, groups=ed)
+        self.conv1 = torch.nn.Conv2d(ed, ed, 1, 1, 0, groups=ed)
         self.dim = ed
+        self.bn = torch.nn.BatchNorm2d(ed)
     
     def forward(self, x):
-        return self.conv(x) + self.conv1(x) + x
+        return self.bn((self.conv(x) + self.conv1(x)) + x)
     
     @torch.no_grad()
     def fuse_self(self):
         conv = self.conv.fuse_self()
-        conv1 = self.conv1.fuse_self()
+        conv1 = self.conv1
         
         conv_w = conv.weight
         conv_b = conv.bias
@@ -121,8 +121,15 @@ class RepVGGDW(torch.nn.Module):
 
         conv.weight.data.copy_(final_conv_w)
         conv.bias.data.copy_(final_conv_b)
-        return conv
 
+        bn = self.bn
+        w = bn.weight / (bn.running_var + bn.eps)**0.5
+        w = conv.weight * w[:, None, None, None]
+        b = bn.bias + (conv.bias - bn.running_mean) * bn.weight / \
+            (bn.running_var + bn.eps)**0.5
+        conv.weight.data.copy_(w)
+        conv.bias.data.copy_(b)
+        return conv
 
 class RepViTBlock(nn.Module):
     def __init__(self, inp, hidden_dim, oup, kernel_size, stride, use_se, use_hs):
@@ -207,7 +214,7 @@ def update_weight(model_dict, weight_dict):
     print(f'loading weights... {idx}/{len(model_dict)} items')
     return model_dict
 
-def repvit_m1(weights=''):
+def repvit_m0_9(weights=''):
     """
     Constructs a MobileNetV3-Large model
     """
@@ -245,7 +252,45 @@ def repvit_m1(weights=''):
         model.load_state_dict(update_weight(model.state_dict(), torch.load(weights)['model']))
     return model
 
-def repvit_m2(weights=''):
+def repvit_m1_0(weights=''):
+    """
+    Constructs a MobileNetV3-Large model
+    """
+    cfgs = [
+        # k, t, c, SE, HS, s 
+        [3,   2,  56, 1, 0, 1],
+        [3,   2,  56, 0, 0, 1],
+        [3,   2,  56, 0, 0, 1],
+        [3,   2,  112, 0, 0, 2],
+        [3,   2,  112, 1, 0, 1],
+        [3,   2,  112, 0, 0, 1],
+        [3,   2,  112, 0, 0, 1],
+        [3,   2,  224, 0, 1, 2],
+        [3,   2,  224, 1, 1, 1],
+        [3,   2,  224, 0, 1, 1],
+        [3,   2,  224, 1, 1, 1],
+        [3,   2, 224, 0, 1, 1],
+        [3,   2, 224, 1, 1, 1],
+        [3,   2, 224, 0, 1, 1],
+        [3,   2, 224, 1, 1, 1],
+        [3,   2, 224, 0, 1, 1],
+        [3,   2, 224, 1, 1, 1],
+        [3,   2, 224, 0, 1, 1],
+        [3,   2, 224, 1, 1, 1],
+        [3,   2, 224, 0, 1, 1],
+        [3,   2, 224, 1, 1, 1],
+        [3,   2, 224, 0, 1, 1],
+        [3,   2, 224, 0, 1, 1],
+        [3,   2, 448, 0, 1, 2],
+        [3,   2, 448, 1, 1, 1],
+        [3,   2, 448, 0, 1, 1]
+    ]
+    model = RepViT(cfgs)
+    if weights:
+        model.load_state_dict(update_weight(model.state_dict(), torch.load(weights)['model']))
+    return model
+
+def repvit_m1_1(weights=''):
     """
     Constructs a MobileNetV3-Large model
     """
@@ -281,7 +326,7 @@ def repvit_m2(weights=''):
         model.load_state_dict(update_weight(model.state_dict(), torch.load(weights)['model']))
     return model
 
-def repvit_m3(weights=''):
+def repvit_m1_5(weights=''):
     """
     Constructs a MobileNetV3-Large model
     """
@@ -317,10 +362,88 @@ def repvit_m3(weights=''):
         [3,   2, 256, 0, 1, 1],
         [3,   2, 256, 1, 1, 1],
         [3,   2, 256, 0, 1, 1],
+        [3,   2, 256, 1, 1, 1],
+        [3,   2, 256, 0, 1, 1],
+        [3,   2, 256, 1, 1, 1],
+        [3,   2, 256, 0, 1, 1],
+        [3,   2, 256, 1, 1, 1],
+        [3,   2, 256, 0, 1, 1],
         [3,   2, 256, 0, 1, 1],
         [3,   2, 512, 0, 1, 2],
         [3,   2, 512, 1, 1, 1],
+        [3,   2, 512, 0, 1, 1],
+        [3,   2, 512, 1, 1, 1],
         [3,   2, 512, 0, 1, 1]
+    ]
+    model = RepViT(cfgs)
+    if weights:
+        model.load_state_dict(update_weight(model.state_dict(), torch.load(weights)['model']))
+    return model
+
+def repvit_m2_3(weights=''):
+    """
+    Constructs a MobileNetV3-Large model
+    """
+    cfgs = [
+        # k, t, c, SE, HS, s 
+        [3,   2,  80, 1, 0, 1],
+        [3,   2,  80, 0, 0, 1],
+        [3,   2,  80, 1, 0, 1],
+        [3,   2,  80, 0, 0, 1],
+        [3,   2,  80, 1, 0, 1],
+        [3,   2,  80, 0, 0, 1],
+        [3,   2,  80, 0, 0, 1],
+        [3,   2,  160, 0, 0, 2],
+        [3,   2,  160, 1, 0, 1],
+        [3,   2,  160, 0, 0, 1],
+        [3,   2,  160, 1, 0, 1],
+        [3,   2,  160, 0, 0, 1],
+        [3,   2,  160, 1, 0, 1],
+        [3,   2,  160, 0, 0, 1],
+        [3,   2,  160, 0, 0, 1],
+        [3,   2,  320, 0, 1, 2],
+        [3,   2,  320, 1, 1, 1],
+        [3,   2,  320, 0, 1, 1],
+        [3,   2,  320, 1, 1, 1],
+        [3,   2,  320, 0, 1, 1],
+        [3,   2,  320, 1, 1, 1],
+        [3,   2,  320, 0, 1, 1],
+        [3,   2,  320, 1, 1, 1],
+        [3,   2, 320, 0, 1, 1],
+        [3,   2, 320, 1, 1, 1],
+        [3,   2, 320, 0, 1, 1],
+        [3,   2, 320, 1, 1, 1],
+        [3,   2, 320, 0, 1, 1],
+        [3,   2, 320, 1, 1, 1],
+        [3,   2, 320, 0, 1, 1],
+        [3,   2, 320, 1, 1, 1],
+        [3,   2, 320, 0, 1, 1],
+        [3,   2, 320, 1, 1, 1],
+        [3,   2, 320, 0, 1, 1],
+        [3,   2, 320, 1, 1, 1],
+        [3,   2, 320, 0, 1, 1],
+        [3,   2, 320, 1, 1, 1],
+        [3,   2, 320, 0, 1, 1],
+        [3,   2, 320, 1, 1, 1],
+        [3,   2, 320, 0, 1, 1],
+        [3,   2, 320, 1, 1, 1],
+        [3,   2, 320, 0, 1, 1],
+        [3,   2, 320, 1, 1, 1],
+        [3,   2, 320, 0, 1, 1],
+        [3,   2, 320, 1, 1, 1],
+        [3,   2, 320, 0, 1, 1],
+        [3,   2, 320, 1, 1, 1],
+        [3,   2, 320, 0, 1, 1],
+        [3,   2, 320, 1, 1, 1],
+        [3,   2, 320, 0, 1, 1],
+        # [3,   2, 320, 1, 1, 1],
+        # [3,   2, 320, 0, 1, 1],
+        [3,   2, 320, 0, 1, 1],
+        [3,   2, 640, 0, 1, 2],
+        [3,   2, 640, 1, 1, 1],
+        [3,   2, 640, 0, 1, 1],
+        # [3,   2, 640, 1, 1, 1],
+        # [3,   2, 640, 0, 1, 1]
     ]
     model = RepViT(cfgs)
     if weights:
@@ -328,7 +451,7 @@ def repvit_m3(weights=''):
     return model
 
 if __name__ == '__main__':
-    model = repvit_m1('repvit_m1_distill_300.pth')
+    model = repvit_m2_3('repvit_m2_3_distill_450e.pth')
     inputs = torch.randn((1, 3, 640, 640))
     res = model(inputs)
     for i in res:
