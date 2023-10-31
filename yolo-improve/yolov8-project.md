@@ -7,9 +7,9 @@
 #### 目前支持的一些block (yolov5默认C3,yolov8默认C2f) (部分block可能会与主结构有冲突,具体以是否能运行为主)
 
 ##### C2f系列
-C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, C2f_SCConv, C2f_ScConv, C2f_EMSC, C2f_EMSCP, C2f_KW, C2f_DCNv2, C2f_DCNv3, C2f_OREPA, C2f_REPVGGOREPA, C2f_DCNv2_Dynamic, C2f_MSBlock, C2f_ContextGuided, C2f_DLKA, C2f_EMBC
+C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, C2f_SCConv, C2f_ScConv, C2f_EMSC, C2f_EMSCP, C2f_KW, C2f_DCNv2, C2f_DCNv3, C2f_OREPA, C2f_REPVGGOREPA, C2f_DCNv2_Dynamic, C2f_MSBlock, C2f_ContextGuided, C2f_DLKA, C2f_EMBC, C2f_Parc, C2f_DWR
 ##### C3系列  
-C3, C3Ghost, C3_CloAtt, C3_SCConv, C3_ScConv, C3_EMSC, C3_EMSCP, C3_KW, C3_ODConv, C3_Faster, C3_Faster_EMA, C3_DCNv2, C3_DCNv3, C3_DBB, C3_OREPA, C3_REPVGGOREPA, C3_DCNv2_Dynamic, C3_MSBlock, C3_ContextGuided, C3_DLKA, C3_EMBC
+C3, C3Ghost, C3_CloAtt, C3_SCConv, C3_ScConv, C3_EMSC, C3_EMSCP, C3_KW, C3_ODConv, C3_Faster, C3_Faster_EMA, C3_DCNv2, C3_DCNv3, C3_DBB, C3_OREPA, C3_REPVGGOREPA, C3_DCNv2_Dynamic, C3_MSBlock, C3_ContextGuided, C3_DLKA, C3_EMBC, C3_Parc, C3_DWR
 ##### 其他系列
 VoVGSCSP, VoVGSCSPC, RCSOSA  
 
@@ -20,32 +20,32 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
 ### YOLOV5 (AnchorFree+DFL+TAL) [官方预训练权重github链接](https://github.com/ultralytics/assets/releases)
 #### YOLOV5的使用方式跟YOLOV8一样,就是选择配置文件选择v5的即可.
-1. ultralytics/models/v5/yolov5-fasternet.yaml
+1. ultralytics/cfg/models/v5/yolov5-fasternet.yaml
 
     fasternet替换yolov5主干.
 
-2. ultralytics/models/v5/yolov5-timm.yaml
+2. ultralytics/cfg/models/v5/yolov5-timm.yaml
 
     使用timm支持的主干网络替换yolov5主干.
 
-3. ultralytics/models/v5/yolov5-dyhead.yaml
+3. ultralytics/cfg/models/v5/yolov5-dyhead.yaml
 
     添加基于注意力机制的目标检测头到yolov5中.
 
 4. 增加Adaptive Training Sample Selection匹配策略.
 
-    在ultralytics/yolo/utils/loss.py中的class v8DetectionLoss中自行选择对应的self.assigner即可.  
+    在ultralytics/utils/loss.py中的class v8DetectionLoss中自行选择对应的self.assigner即可.  
     此ATSS匹配策略目前占用显存比较大,因此使用的时候需要设置更小的batch,后续会进行优化这一功能.
 
 5. Asymptotic Feature Pyramid Network[reference](https://github.com/gyyang23/AFPN/tree/master)
 
-    a. ultralytics/models/v5/yolov5-AFPN-P345.yaml  
-    b. ultralytics/models/v5/yolov5-AFPN-P345-Custom.yaml  
-    c. ultralytics/models/v5/yolov5-AFPN-P2345.yaml  
-    d. ultralytics/models/v5/yolov5-AFPN-P2345-Custom.yaml  
+    a. ultralytics/cfg/models/v5/yolov5-AFPN-P345.yaml  
+    b. ultralytics/cfg/models/v5/yolov5-AFPN-P345-Custom.yaml  
+    c. ultralytics/cfg/models/v5/yolov5-AFPN-P2345.yaml  
+    d. ultralytics/cfg/models/v5/yolov5-AFPN-P2345-Custom.yaml  
     其中Custom中的block具体支持[链接](#b)
 
-6. ultralytics/models/v5/yolov5-bifpn.yaml
+6. ultralytics/cfg/models/v5/yolov5-bifpn.yaml
 
     添加BIFPN到yolov5中.  
     其中BIFPN中有三个可选参数：
@@ -57,48 +57,48 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     3. head_channel  
         BIFPN中的通道数,默认设置为256.
 
-7. ultralytics/models/v5/yolov5-C3-CloAtt.yaml
+7. ultralytics/cfg/models/v5/yolov5-C3-CloAtt.yaml
 
     使用C3-CloAtt替换C3.(使用CloFormer中的具有全局和局部特征的注意力机制添加到C3中的Bottleneck中)(需要看[常见错误和解决方案的第五点](#a))  
 
-8. ultralytics/models/v5/yolov5-RevCol.yaml
+8. ultralytics/cfg/models/v5/yolov5-RevCol.yaml
 
     使用(ICLR2023)Reversible Column Networks对yolov5主干进行重设计.
 
-9. ultralytics/models/v5/yolov5-LSKNet.yaml
+9. ultralytics/cfg/models/v5/yolov5-LSKNet.yaml
 
     LSKNet(2023旋转目标检测SOTA的主干)替换yolov5主干.
 
-10. ultralytics/models/v5/yolov5-C3-SCConv.yaml
+10. ultralytics/cfg/models/v5/yolov5-C3-SCConv.yaml
 
     SCConv(CVPR2020 http://mftp.mmcheng.net/Papers/20cvprSCNet.pdf)与C3融合.
 
-11. ultralytics/models/v5/yolov5-C3-SCcConv.yaml
+11. ultralytics/cfg/models/v5/yolov5-C3-SCcConv.yaml
 
     ScConv(CVPR2023 https://openaccess.thecvf.com/content/CVPR2023/papers/Li_SCConv_Spatial_and_Channel_Reconstruction_Convolution_for_Feature_Redundancy_CVPR_2023_paper.pdf)与C3融合.  
     (取名为SCcConv的原因是在windows下命名是不区分大小写的)
 
 12. MPDiou.[论文链接](https://arxiv.org/pdf/2307.07662v1.pdf)
 
-    在ultralytics/yolo/utils/loss.py中的BboxLoss class中的forward函数里面进行更换对应的iou计算方式.
+    在ultralytics/utils/loss.py中的BboxLoss class中的forward函数里面进行更换对应的iou计算方式.
 
-13. ultralytics/models/v5/yolov5-LAWDS.yaml
+13. ultralytics/cfg/models/v5/yolov5-LAWDS.yaml
 
     Light Adaptive-weight downsampling.自研模块,具体讲解请看百度云链接中的视频.
 
-14. ultralytics/models/v5/yolov5-C3-EMSC.yaml
+14. ultralytics/cfg/models/v5/yolov5-C3-EMSC.yaml
 
     Efficient Multi-Scale Conv.自研模块,具体讲解请看百度云链接中的视频.
 
-15. ultralytics/models/v5/yolov5-C3-EMSCP.yaml
+15. ultralytics/cfg/models/v5/yolov5-C3-EMSCP.yaml
 
     Efficient Multi-Scale Conv Plus.自研模块,具体讲解请看百度云链接中的视频.
 
-16. ultralytics/models/v5/yolov5-RCSOSA.yaml
+16. ultralytics/cfg/models/v5/yolov5-RCSOSA.yaml
 
     使用[RCS-YOLO](https://github.com/mkang315/RCS-YOLO/tree/main)中的RCSOSA替换C3.
 
-17. ultralytics/models/v5/yolov5-KernelWarehouse.yaml
+17. ultralytics/cfg/models/v5/yolov5-KernelWarehouse.yaml
     
     使用[Towards Parameter-Efficient Dynamic Convolution](https://github.com/OSVAI/KernelWarehouse)添加到yolov5中.  
     使用此模块需要注意,在epoch0-20的时候精度会非常低,过了20epoch会正常.
@@ -106,79 +106,79 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 18. Normalized Gaussian Wasserstein Distance.[论文链接](https://arxiv.org/abs/2110.13389)
 
     在Loss中使用:
-        在ultralytics/yolo/utils/loss.py中的BboxLoss class中的__init__函数里面设置self.nwd_loss为True.  
+        在ultralytics/utils/loss.py中的BboxLoss class中的__init__函数里面设置self.nwd_loss为True.  
         比例系数调整self.iou_ratio, self.iou_ratio代表iou的占比,(1-self.iou_ratio)为代表nwd的占比.  
     在TAL标签分配中使用:
-        在ultralytics/yolo/utils/tal.py中的def get_box_metrics函数中进行更换即可.
+        在ultralytics/utils/tal.py中的def get_box_metrics函数中进行更换即可.
     以上这两可以配合使用,也可以单独使用.
 
 19. SlideLoss and EMASlideLoss.[Yolo-Face V2](https://github.com/Krasjet-Yu/YOLO-FaceV2/blob/master/utils/loss.py)
 
-    在ultralytics/yolo/utils/loss.py中的class v8DetectionLoss进行设定.
+    在ultralytics/utils/loss.py中的class v8DetectionLoss进行设定.
 
-20. ultralytics/models/v5/yolov5-C3-DySnakeConv.yaml
+20. ultralytics/cfg/models/v5/yolov5-C3-DySnakeConv.yaml
 
     [DySnakeConv](https://github.com/YaoleiQi/DSCNet)与C3融合.
 
-21. ultralytics/models/v5/yolov5-EfficientHead.yaml
+21. ultralytics/cfg/models/v5/yolov5-EfficientHead.yaml
 
     对检测头进行重设计,支持10种轻量化检测头.详细请看ultralytics/nn/extra_modules/head.py中的Detect_Efficient class.
 
-22. ultralytics/models/v5/yolov5-AuxHead.yaml
+22. ultralytics/cfg/models/v5/yolov5-AuxHead.yaml
 
     参考YOLOV7-Aux对YOLOV5添加额外辅助训练头,在训练阶段参与训练,在最终推理阶段去掉.  
-    其中辅助训练头的损失权重系数可在ultralytics/yolo/utils/loss.py中的class v8DetectionLoss中的__init__函数中的self.aux_loss_ratio设定,默认值参考yolov7为0.25.
+    其中辅助训练头的损失权重系数可在ultralytics/utils/loss.py中的class v8DetectionLoss中的__init__函数中的self.aux_loss_ratio设定,默认值参考yolov7为0.25.
 
-23. ultralytics/models/v5/yolov5-C3-DCNV2.yaml
+23. ultralytics/cfg/models/v5/yolov5-C3-DCNV2.yaml
 
     使用C3-DCNV2替换C3.(DCNV2为可变形卷积V2)
 
-24. ultralytics/models/v5/yolov5-C3-DCNV3.yaml
+24. ultralytics/cfg/models/v5/yolov5-C3-DCNV3.yaml
 
     使用C3-DCNV3替换C3.([DCNV3](https://github.com/OpenGVLab/InternImage)为可变形卷积V3(CVPR2023,众多排行榜的SOTA))  
     官方中包含了一些指定版本的DCNV3 whl包,下载后直接pip install xxx即可.具体和安装DCNV3可看百度云链接中的视频.
 
-25. ultralytics/models/v5/yolov5-C3-Faster.yaml
+25. ultralytics/cfg/models/v5/yolov5-C3-Faster.yaml
 
     使用C3-Faster替换C3.(使用FasterNet中的FasterBlock替换C3中的Bottleneck)
 
-26. ultralytics/models/v5/yolov5-C3-ODConv.yaml
+26. ultralytics/cfg/models/v5/yolov5-C3-ODConv.yaml
 
     使用C3-ODConv替换C3.(使用ODConv替换C3中的Bottleneck中的Conv)
 
-27. ultralytics/models/v5/yolov5-C3-Faster-EMA.yaml
+27. ultralytics/cfg/models/v5/yolov5-C3-Faster-EMA.yaml
 
     使用C3-Faster-EMA替换C3.(C3-Faster-EMA推荐可以放在主干上,Neck和head部分可以选择C3-Faster)
 
-28. ultralytics/models/v5/yolov5-dyhead-DCNV3.yaml
+28. ultralytics/cfg/models/v5/yolov5-dyhead-DCNV3.yaml
 
     使用[DCNV3](https://github.com/OpenGVLab/InternImage)替换DyHead中的DCNV2.
 
-29. ultralytics/models/v5/yolov5-FocalModulation.yaml
+29. ultralytics/cfg/models/v5/yolov5-FocalModulation.yaml
 
     使用[Focal Modulation](https://github.com/microsoft/FocalNet)替换SPPF.
 
-30. ultralytics/models/v5/yolov5-C3-DBB.yaml
+30. ultralytics/cfg/models/v5/yolov5-C3-DBB.yaml
 
     使用C3-DBB替换C3.(使用DiverseBranchBlock替换C3中的Bottleneck中的Conv)
 
-31. ultralytics/models/v5/yolov5-C3-OREPA.yaml
+31. ultralytics/cfg/models/v5/yolov5-C3-OREPA.yaml
 
     使用C3-OREPA替换C2f.[Online Convolutional Re-parameterization (CVPR2022)](https://github.com/JUGGHM/OREPA_CVPR2022/tree/main)
 
-32. ultralytics/models/v5/yolov5-C3-REPVGGOREPA.yaml
+32. ultralytics/cfg/models/v5/yolov5-C3-REPVGGOREPA.yaml
 
     使用C3-REPVGGOREPA替换C3.[Online Convolutional Re-parameterization (CVPR2022)](https://github.com/JUGGHM/OREPA_CVPR2022/tree/main)
 
-33. ultralytics/models/v5/yolov5-swintransformer.yaml
+33. ultralytics/cfg/models/v5/yolov5-swintransformer.yaml
 
     SwinTransformer-Tiny替换yolov5主干.
 
-34. ultralytics/models/v5/yolov5-repvit.yaml
+34. ultralytics/cfg/models/v5/yolov5-repvit.yaml
 
     [RepViT](https://github.com/THU-MIG/RepViT/tree/main)替换yolov5主干.
 
-35. ultralytics/models/v5/yolov5-fasternet-bifpn.yaml
+35. ultralytics/cfg/models/v5/yolov5-fasternet-bifpn.yaml
 
     fasternet与bifpn的结合.  
     其中BIFPN中有三个可选参数：
@@ -190,77 +190,94 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     3. head_channel  
         BIFPN中的通道数,默认设置为256.
 
-36. ultralytics/models/v5/yolov5-C3-DCNV2-Dynamic.yaml
+36. ultralytics/cfg/models/v5/yolov5-C3-DCNV2-Dynamic.yaml
 
     利用自研注意力机制MPCA强化DCNV2中的offset和mask.
 
-37. ultralytics/models/v5/yolov5-goldyolo.yaml
+37. ultralytics/cfg/models/v5/yolov5-goldyolo.yaml
 
     利用华为2023最新GOLD-YOLO中的Gatherand-Distribute进行改进特征融合模块
 
-38. ultralytics/models/v5/yolov5-C3-ContextGuided.yaml
+38. ultralytics/cfg/models/v5/yolov5-C3-ContextGuided.yaml
 
     使用[CGNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided改进C3.
 
-39. ultralytics/models/v5/yolov5-ContextGuidedDown.yaml
+39. ultralytics/cfg/models/v5/yolov5-ContextGuidedDown.yaml
 
     使用[CGNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided DownSample进行下采样.
 
-40. ultralytics/models/v5/yolov5-C3-MSBlock.yaml
+40. ultralytics/cfg/models/v5/yolov5-C3-MSBlock.yaml
 
     使用[YOLO-MS](https://github.com/FishAndWasabi/YOLO-MS/tree/main)中的MSBlock改进C3.
 
-41. ultralytics/models/v5/yolov5-C3-DLKA.yaml
+41. ultralytics/cfg/models/v5/yolov5-C3-DLKA.yaml
 
     使用[deformableLKA](https://github.com/xmindflow/deformableLKA)改进C3.
 
-42. ultralytics/models/v5/yolov5-GFPN.yaml
+42. ultralytics/cfg/models/v5/yolov5-GFPN.yaml
 
     使用[DAMO-YOLO](https://github.com/tinyvision/DAMO-YOLO)中的RepGFPN改进Neck.
 
-43. ultralytics/models/v5/yolov5-SPDConv.yaml
+43. ultralytics/cfg/models/v5/yolov5-SPDConv.yaml
 
     使用[SPDConv](https://github.com/LabSAINT/SPD-Conv/tree/main)进行下采样.
 
-44. ultralytics/models/v5/yolov5-EfficientRepBiPAN.yaml
+44. ultralytics/cfg/models/v5/yolov5-EfficientRepBiPAN.yaml
 
     使用[YOLOV6](https://github.com/meituan/YOLOv6/tree/main)中的EfficientRepBiPAN改进Neck.
 
-45. ultralytics/models/v5/yolov5-C3-EMBC.yaml
+45. ultralytics/cfg/models/v5/yolov5-C3-EMBC.yaml
 
     使用[Efficientnet](https://blog.csdn.net/weixin_43334693/article/details/131114618?spm=1001.2014.3001.5501)中的MBConv与EffectiveSE改进C3.
 
-46. ultralytics/models/v5/yolov5-SPPF-LSKA.yaml
+46. ultralytics/cfg/models/v5/yolov5-SPPF-LSKA.yaml
 
     使用[LSKA](https://github.com/StevenLauHKHK/Large-Separable-Kernel-Attention)注意力机制改进SPPF,增强多尺度特征提取能力.
 
-47. ultralytics/models/v5/yolov5-C3-DAttention.yaml
+47. ultralytics/cfg/models/v5/yolov5-C3-DAttention.yaml
 
     使用[Vision Transformer with Deformable Attention(CVPR2022)](https://github.com/LeapLabTHU/DAT)改进C2f.  
     使用注意点请看百度云视频.
 
+48. ultralytics/cfg/models/v5/yolov5-CSwinTransformer.yaml
+
+    使用[CSWin-Transformer(CVPR2022)](https://github.com/microsoft/CSWin-Transformer/tree/main)替换yolov5主干.
+
+49. ultralytics/cfg/models/v5/yolov5-AIFI.yaml
+
+    使用[RT-DETR](https://arxiv.org/pdf/2304.08069.pdf)中的Attention-based Intrascale Feature Interaction(AIFI)改进yolov5.
+
+50. ultralytics/cfg/models/v5/yolov5-C3-Parc.yaml
+
+    使用[ParC-Net](https://github.com/hkzhang-git/ParC-Net/tree/main)中的ParC_Operator改进C3.(需要看[常见错误和解决方案的第五点](#a))  
+    使用注意点请看百度云视频.(20231031更新说明)  
+
+51. ultralytics/cfg/models/v5/yolov5-C3-DWR.yaml
+
+    使用[DWRSeg](https://arxiv.org/abs/2212.01173)中的Dilation-wise Residual(DWR)模块,加强从网络高层的可扩展感受野中提取特征.
+
 ### YOLOV8
-1. ultralytics/models/v8/yolov8-efficientViT.yaml
+1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
 
     (CVPR2023)efficientViT替换yolov8主干.
 
-2. ultralytics/models/v8/yolov8-fasternet.yaml
+2. ultralytics/cfg/models/v8/yolov8-fasternet.yaml
 
     (CVPR2023)fasternet替换yolov8主干.
 
-3. ultralytics/models/v8/yolov8-timm.yaml
+3. ultralytics/cfg/models/v8/yolov8-timm.yaml
 
     使用timm支持的主干网络替换yolov8主干.
 
-4. ultralytics/models/v8/yolov8-convnextv2.yaml
+4. ultralytics/cfg/models/v8/yolov8-convnextv2.yaml
 
     使用convnextv2网络替换yolov8主干.
 
-5. ultralytics/models/v8/yolov8-dyhead.yaml
+5. ultralytics/cfg/models/v8/yolov8-dyhead.yaml
 
     添加基于注意力机制的目标检测头到yolov8中.
 
-6. ultralytics/models/v8/yolov8-bifpn.yaml
+6. ultralytics/cfg/models/v8/yolov8-bifpn.yaml
 
     添加BIFPN到yolov8中.  
     其中BIFPN中有三个可选参数：
@@ -272,35 +289,35 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     3. head_channel  
         BIFPN中的通道数,默认设置为256.
 
-7. ultralytics/models/v8/yolov8-C2f-Faster.yaml
+7. ultralytics/cfg/models/v8/yolov8-C2f-Faster.yaml
 
     使用C2f-Faster替换C2f.(使用FasterNet中的FasterBlock替换C2f中的Bottleneck)
 
-8. ultralytics/models/v8/yolov8-C2f-ODConv.yaml
+8. ultralytics/cfg/models/v8/yolov8-C2f-ODConv.yaml
 
     使用C2f-ODConv替换C2f.(使用ODConv替换C2f中的Bottleneck中的Conv)
 
-9. ultralytics/models/v8/yolov8-EfficientFormerV2.yaml
+9. ultralytics/cfg/models/v8/yolov8-EfficientFormerV2.yaml
 
     使用EfficientFormerV2网络替换yolov8主干.(需要看[常见错误和解决方案的第五点](#a))  
-10. ultralytics/models/v8/yolov8-C2f-Faster-EMA.yaml
+10. ultralytics/cfg/models/v8/yolov8-C2f-Faster-EMA.yaml
 
     使用C2f-Faster-EMA替换C2f.(C2f-Faster-EMA推荐可以放在主干上,Neck和head部分可以选择C2f-Faster)
     
-11. ultralytics/models/v8/yolov8-C2f-DBB.yaml
+11. ultralytics/cfg/models/v8/yolov8-C2f-DBB.yaml
 
     使用C2f-DBB替换C2f.(使用DiverseBranchBlock替换C2f中的Bottleneck中的Conv)
 
 12. 增加Adaptive Training Sample Selection匹配策略.
 
-    在ultralytics/yolo/utils/loss.py中的class v8DetectionLoss中自行选择对应的self.assigner即可.  
+    在ultralytics/utils/loss.py中的class v8DetectionLoss中自行选择对应的self.assigner即可.  
     此ATSS匹配策略目前占用显存比较大,因此使用的时候需要设置更小的batch,后续会进行优化这一功能.
 
-13. ultralytics/models/v8/yolov8-slimneck.yaml
+13. ultralytics/cfg/models/v8/yolov8-slimneck.yaml
 
     使用VoVGSCSP\VoVGSCSPC和GSConv替换yolov8 neck中的C2f和Conv.
 
-14. ultralytics/models/v8/yolov8-attention.yaml
+14. ultralytics/cfg/models/v8/yolov8-attention.yaml
 
     可以看项目视频-如何在yaml配置文件中添加注意力层  
     多种注意力机制在yolov8中的使用. [多种注意力机制github地址](https://github.com/z1069614715/objectdetection_script/tree/master/cv-attention)  
@@ -308,58 +325,58 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
 15. Asymptotic Feature Pyramid Network[reference](https://github.com/gyyang23/AFPN/tree/master)
 
-    a. ultralytics/models/v8/yolov8-AFPN-P345.yaml  
-    b. ultralytics/models/v8/yolov8-AFPN-P345-Custom.yaml  
-    c. ultralytics/models/v8/yolov8-AFPN-P2345.yaml  
-    d. ultralytics/models/v8/yolov8-AFPN-P2345-Custom.yaml  
+    a. ultralytics/cfg/models/v8/yolov8-AFPN-P345.yaml  
+    b. ultralytics/cfg/models/v8/yolov8-AFPN-P345-Custom.yaml  
+    c. ultralytics/cfg/models/v8/yolov8-AFPN-P2345.yaml  
+    d. ultralytics/cfg/models/v8/yolov8-AFPN-P2345-Custom.yaml  
     其中Custom中的block支持这些[结构](#b)
 
-16. ultralytics/models/v8/yolov8-vanillanet.yaml
+16. ultralytics/cfg/models/v8/yolov8-vanillanet.yaml
 
     vanillanet替换yolov8主干.
 
-17. ultralytics/models/v8/yolov8-C2f-CloAtt.yaml
+17. ultralytics/cfg/models/v8/yolov8-C2f-CloAtt.yaml
 
     使用C2f-CloAtt替换C2f.(使用CloFormer中的具有全局和局部特征的注意力机制添加到C2f中的Bottleneck中)(需要看[常见错误和解决方案的第五点](#a))  
 
-18. ultralytics/models/v8/yolov8-RevCol.yaml
+18. ultralytics/cfg/models/v8/yolov8-RevCol.yaml
 
     使用(ICLR2023)Reversible Column Networks对yolov8主干进行重设计.
 
-19. ultralytics/models/v8/yolov8-LSKNet.yaml
+19. ultralytics/cfg/models/v8/yolov8-LSKNet.yaml
 
     LSKNet(2023旋转目标检测SOTA的主干)替换yolov8主干.
 
-20. ultralytics/models/v8/yolov8-C2f-SCConv.yaml
+20. ultralytics/cfg/models/v8/yolov8-C2f-SCConv.yaml
 
     SCConv(CVPR2020 http://mftp.mmcheng.net/Papers/20cvprSCNet.pdf)与C2f融合.
 
-21. ultralytics/models/v8/yolov8-C2f-SCcConv.yaml
+21. ultralytics/cfg/models/v8/yolov8-C2f-SCcConv.yaml
 
     ScConv(CVPR2023 https://openaccess.thecvf.com/content/CVPR2023/papers/Li_SCConv_Spatial_and_Channel_Reconstruction_Convolution_for_Feature_Redundancy_CVPR_2023_paper.pdf)与C2f融合.  
     (取名为SCcConv的原因是在windows下命名是不区分大小写的)
 
 22. MPDiou.[论文链接](https://arxiv.org/pdf/2307.07662v1.pdf)
 
-    在ultralytics/yolo/utils/loss.py中的BboxLoss class中的forward函数里面进行更换对应的iou计算方式.
+    在ultralytics/utils/loss.py中的BboxLoss class中的forward函数里面进行更换对应的iou计算方式.
 
-23. ultralytics/models/v8/yolov8-LAWDS.yaml
+23. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
 
     Light Adaptive-weight downsampling.自研模块,具体讲解请看百度云链接中的视频.
 
-24. ultralytics/models/v8/yolov8-C2f-EMSC.yaml
+24. ultralytics/cfg/models/v8/yolov8-C2f-EMSC.yaml
 
     Efficient Multi-Scale Conv.自研模块,具体讲解请看百度云链接中的视频.
 
-25. ultralytics/models/v8/yolov8-C2f-EMSCP.yaml
+25. ultralytics/cfg/models/v8/yolov8-C2f-EMSCP.yaml
 
     Efficient Multi-Scale Conv Plus.自研模块,具体讲解请看百度云链接中的视频.
 
-26. ultralytics/models/v8/yolov8-RCSOSA.yaml
+26. ultralytics/cfg/models/v8/yolov8-RCSOSA.yaml
 
     使用[RCS-YOLO](https://github.com/mkang315/RCS-YOLO/tree/main)中的RCSOSA替换C2f.
 
-27. ultralytics/models/v8/yolov8-KernelWarehouse.yaml
+27. ultralytics/cfg/models/v8/yolov8-KernelWarehouse.yaml
     
     使用[Towards Parameter-Efficient Dynamic Convolution](https://github.com/OSVAI/KernelWarehouse)添加到yolov8中.  
     使用此模块需要注意,在epoch0-20的时候精度会非常低,过了20epoch会正常.
@@ -367,63 +384,63 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 28. Normalized Gaussian Wasserstein Distance.[论文链接](https://arxiv.org/abs/2110.13389)
 
     在Loss中使用:
-        在ultralytics/yolo/utils/loss.py中的BboxLoss class中的__init__函数里面设置self.nwd_loss为True.  
+        在ultralytics/utils/loss.py中的BboxLoss class中的__init__函数里面设置self.nwd_loss为True.  
         比例系数调整self.iou_ratio, self.iou_ratio代表iou的占比,(1-self.iou_ratio)为代表nwd的占比.  
     在TAL标签分配中使用:
-        在ultralytics/yolo/utils/tal.py中的def get_box_metrics函数中进行更换即可.
+        在ultralytics/utils/tal.py中的def get_box_metrics函数中进行更换即可.
     以上这两可以配合使用,也可以单独使用.
 
 29. SlideLoss and EMASlideLoss.[Yolo-Face V2](https://github.com/Krasjet-Yu/YOLO-FaceV2/blob/master/utils/loss.py)
 
-    在ultralytics/yolo/utils/loss.py中的class v8DetectionLoss进行设定.
+    在ultralytics/utils/loss.py中的class v8DetectionLoss进行设定.
 
-30. ultralytics/models/v8/yolov8-C2f-DySnakeConv.yaml
+30. ultralytics/cfg/models/v8/yolov8-C2f-DySnakeConv.yaml
 
     [DySnakeConv](https://github.com/YaoleiQi/DSCNet)与C2f融合.
 
-31. ultralytics/models/v8/yolov8-EfficientHead.yaml
+31. ultralytics/cfg/models/v8/yolov8-EfficientHead.yaml
 
     对检测头进行重设计,支持10种轻量化检测头.详细请看ultralytics/nn/extra_modules/head.py中的Detect_Efficient class.
 
-32. ultralytics/models/v8/yolov8-AuxHead.yaml
+32. ultralytics/cfg/models/v8/yolov8-AuxHead.yaml
 
     参考YOLOV7-Aux对YOLOV8添加额外辅助训练头,在训练阶段参与训练,在最终推理阶段去掉.  
-    其中辅助训练头的损失权重系数可在ultralytics/yolo/utils/loss.py中的class v8DetectionLoss中的__init__函数中的self.aux_loss_ratio设定,默认值参考yolov7为0.25.
+    其中辅助训练头的损失权重系数可在ultralytics/utils/loss.py中的class v8DetectionLoss中的__init__函数中的self.aux_loss_ratio设定,默认值参考yolov7为0.25.
 
-33. ultralytics/models/v8/yolov8-C2f-DCNV2.yaml
+33. ultralytics/cfg/models/v8/yolov8-C2f-DCNV2.yaml
 
     使用C2f-DCNV2替换C2f.(DCNV2为可变形卷积V2)
 
-34. ultralytics/models/v8/yolov8-C2f-DCNV3.yaml
+34. ultralytics/cfg/models/v8/yolov8-C2f-DCNV3.yaml
 
     使用C2f-DCNV3替换C2f.([DCNV3](https://github.com/OpenGVLab/InternImage)为可变形卷积V3(CVPR2023,众多排行榜的SOTA))  
     官方中包含了一些指定版本的DCNV3 whl包,下载后直接pip install xxx即可.具体和安装DCNV3可看百度云链接中的视频.
 
-35. ultralytics/models/v8/yolov8-dyhead-DCNV3.yaml
+35. ultralytics/cfg/models/v8/yolov8-dyhead-DCNV3.yaml
 
     使用[DCNV3](https://github.com/OpenGVLab/InternImage)替换DyHead中的DCNV2.
 
-36. ultralytics/models/v8/yolov8-FocalModulation.yaml
+36. ultralytics/cfg/models/v8/yolov8-FocalModulation.yaml
 
     使用[Focal Modulation](https://github.com/microsoft/FocalNet)替换SPPF.
 
-37. ultralytics/models/v8/yolov8-C2f-OREPA.yaml
+37. ultralytics/cfg/models/v8/yolov8-C2f-OREPA.yaml
 
     使用C2f-OREPA替换C2f.[Online Convolutional Re-parameterization (CVPR2022)](https://github.com/JUGGHM/OREPA_CVPR2022/tree/main)
 
-38. ultralytics/models/v8/yolov8-C2f-REPVGGOREPA.yaml
+38. ultralytics/cfg/models/v8/yolov8-C2f-REPVGGOREPA.yaml
 
     使用C2f-REPVGGOREPA替换C2f.[Online Convolutional Re-parameterization (CVPR2022)](https://github.com/JUGGHM/OREPA_CVPR2022/tree/main)
 
-39. ultralytics/models/v8/yolov8-swintransformer.yaml
+39. ultralytics/cfg/models/v8/yolov8-swintransformer.yaml
 
     SwinTransformer-Tiny替换yolov8主干.
 
-40. ultralytics/models/v8/yolov8-repvit.yaml
+40. ultralytics/cfg/models/v8/yolov8-repvit.yaml
 
     [RepViT](https://github.com/THU-MIG/RepViT/tree/main)替换yolov8主干.
 
-41. ultralytics/models/v8/yolov8-fasternet-bifpn.yaml
+41. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
     fasternet与bifpn的结合.  
     其中BIFPN中有三个可选参数：
@@ -435,54 +452,71 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     3. head_channel  
         BIFPN中的通道数,默认设置为256.
 
-42. ultralytics/models/v8/yolov8-C2f-DCNV2-Dynamic.yaml
+42. ultralytics/cfg/models/v8/yolov8-C2f-DCNV2-Dynamic.yaml
 
     利用自研注意力机制MPCA强化DCNV2中的offset和mask.
 
-43. ultralytics/models/v8/yolov8-goldyolo.yaml
+43. ultralytics/cfg/models/v8/yolov8-goldyolo.yaml
 
     利用华为2023最新GOLD-YOLO中的Gatherand-Distribute进行改进特征融合模块
 
-44. ultralytics/models/v8/yolov8-C2f-ContextGuided.yaml
+44. ultralytics/cfg/models/v8/yolov8-C2f-ContextGuided.yaml
 
     使用[CGNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided改进C2f.
 
-45. ultralytics/models/v8/yolov8-ContextGuidedDown.yaml
+45. ultralytics/cfg/models/v8/yolov8-ContextGuidedDown.yaml
 
     使用[CGNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided DownSample进行下采样.
 
-46. ultralytics/models/v8/yolov8-C2f-MSBlock.yaml
+46. ultralytics/cfg/models/v8/yolov8-C2f-MSBlock.yaml
 
     使用[YOLO-MS](https://github.com/FishAndWasabi/YOLO-MS/tree/main)中的MSBlock改进C2f.
 
-47. ultralytics/models/v8/yolov8-C2f-DLKA.yaml
+47. ultralytics/cfg/models/v8/yolov8-C2f-DLKA.yaml
 
     使用[deformableLKA](https://github.com/xmindflow/deformableLKA)改进C2f.
 
-48. ultralytics/models/v8/yolov8-GFPN.yaml
+48. ultralytics/cfg/models/v8/yolov8-GFPN.yaml
 
     使用[DAMO-YOLO](https://github.com/tinyvision/DAMO-YOLO)中的RepGFPN改进Neck.
 
-49. ultralytics/models/v8/yolov8-SPDConv.yaml
+49. ultralytics/cfg/models/v8/yolov8-SPDConv.yaml
 
     使用[SPDConv](https://github.com/LabSAINT/SPD-Conv/tree/main)进行下采样.
 
-50. ultralytics/models/v8/yolov8-EfficientRepBiPAN.yaml
+50. ultralytics/cfg/models/v8/yolov8-EfficientRepBiPAN.yaml
 
     使用[YOLOV6](https://github.com/meituan/YOLOv6/tree/main)中的EfficientRepBiPAN改进Neck.
 
-51. ultralytics/models/v8/yolov8-C2f-EMBC.yaml
+51. ultralytics/cfg/models/v8/yolov8-C2f-EMBC.yaml
 
     使用[Efficientnet](https://blog.csdn.net/weixin_43334693/article/details/131114618?spm=1001.2014.3001.5501)中的MBConv与EffectiveSE改进C2f.
 
-52. ultralytics/models/v8/yolov8-SPPF-LSKA.yaml
+52. ultralytics/cfg/models/v8/yolov8-SPPF-LSKA.yaml
 
     使用[LSKA](https://github.com/StevenLauHKHK/Large-Separable-Kernel-Attention)注意力机制改进SPPF,增强多尺度特征提取能力.
 
-53. ultralytics/models/v8/yolov8-C2f-DAttention.yaml
+53. ultralytics/cfg/models/v8/yolov8-C2f-DAttention.yaml
 
     使用[Vision Transformer with Deformable Attention(CVPR2022)](https://github.com/LeapLabTHU/DAT)改进C2f.  
     使用注意点请看百度云视频.
+
+54. ultralytics/cfg/models/v8/yolov8-CSwinTransformer.yaml
+
+    使用[CSWin-Transformer(CVPR2022)](https://github.com/microsoft/CSWin-Transformer/tree/main)替换yolov8主干.
+
+55. ultralytics/cfg/models/v8/yolov8-AIFI.yaml
+
+    使用[RT-DETR](https://arxiv.org/pdf/2304.08069.pdf)中的Attention-based Intrascale Feature Interaction(AIFI)改进yolov8.
+
+56. ultralytics/cfg/models/v8/yolov8-C2f-Parc.yaml
+
+    使用[ParC-Net](https://github.com/hkzhang-git/ParC-Net/tree/main)中的ParC_Operator改进C2f.(需要看[常见错误和解决方案的第五点](#a))  
+    使用注意点请看百度云视频.(20231031更新说明)    
+
+57. ultralytics/cfg/models/v8/yolov8-C2f-DWR.yaml
+
+    使用[DWRSeg](https://arxiv.org/abs/2212.01173)中的Dilation-wise Residual(DWR)模块,加强从网络高层的可扩展感受野中提取特征.
 
 # 更新公告
 
@@ -627,3 +661,12 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     2. 增加LSKA, SegNext_Attention, DAttention(Vision Transformer with Deformable Attention CVPR2022).
     3. 使用LSKA改进SPPF,增强多尺度特征提取能力.
     4. 使用[Vision Transformer with Deformable Attention(CVPR2022)]改进C2f,C3.
+
+- **20231030-yolov8-v1.24**
+    1. 新增CVPR2023-CSwinTransformer主干.
+    2. 新增yolov5-AIFI.yaml,yolov8-AIFI.yaml.
+    3. 新增使用ParC-Net中的位置感知循环卷积改进C3,C2f.
+    4. 新增使用DWRSeg中的Dilation-wise Residual(DWR)模块,加强从网络高层的可扩展感受野中提取特征.(yolov5-C3-DWR.yaml,yolov8-C2f-DWR.yaml)
+    5. 把当前所有的改进同步到ultralytics-8.0.202版本上.
+    6. 更新新版百度云链接视频.
+    7. 新增热力图、FPS脚本.
