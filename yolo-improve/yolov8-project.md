@@ -7,9 +7,9 @@
 #### 目前支持的一些block (yolov5默认C3,yolov8默认C2f) (部分block可能会与主结构有冲突,具体以是否能运行为主)
 
 ##### C2f系列
-C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, C2f_SCConv, C2f_ScConv, C2f_EMSC, C2f_EMSCP, C2f_KW, C2f_DCNv2, C2f_DCNv3, C2f_OREPA, C2f_REPVGGOREPA, C2f_DCNv2_Dynamic, C2f_MSBlock, C2f_ContextGuided, C2f_DLKA, C2f_EMBC, C2f_Parc, C2f_DWR
+C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, C2f_SCConv, C2f_ScConv, C2f_EMSC, C2f_EMSCP, C2f_KW, C2f_DCNv2, C2f_DCNv3, C2f_OREPA, C2f_REPVGGOREPA, C2f_DCNv2_Dynamic, C2f_MSBlock, C2f_ContextGuided, C2f_DLKA, C2f_EMBC, C2f_Parc, C2f_DWR, C2f_RFAConv, C2f_RFCBAMConv, C2f_RFCAConv
 ##### C3系列  
-C3, C3Ghost, C3_CloAtt, C3_SCConv, C3_ScConv, C3_EMSC, C3_EMSCP, C3_KW, C3_ODConv, C3_Faster, C3_Faster_EMA, C3_DCNv2, C3_DCNv3, C3_DBB, C3_OREPA, C3_REPVGGOREPA, C3_DCNv2_Dynamic, C3_MSBlock, C3_ContextGuided, C3_DLKA, C3_EMBC, C3_Parc, C3_DWR
+C3, C3Ghost, C3_CloAtt, C3_SCConv, C3_ScConv, C3_EMSC, C3_EMSCP, C3_KW, C3_ODConv, C3_Faster, C3_Faster_EMA, C3_DCNv2, C3_DCNv3, C3_DBB, C3_OREPA, C3_REPVGGOREPA, C3_DCNv2_Dynamic, C3_MSBlock, C3_ContextGuided, C3_DLKA, C3_EMBC, C3_Parc, C3_DWR, C3_RFAConv, C3_RFCBAMConv, C3_RFCAConv
 ##### 其他系列
 VoVGSCSP, VoVGSCSPC, RCSOSA  
 
@@ -109,38 +109,38 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
         在ultralytics/utils/loss.py中的BboxLoss class中的__init__函数里面设置self.nwd_loss为True.  
         比例系数调整self.iou_ratio, self.iou_ratio代表iou的占比,(1-self.iou_ratio)为代表nwd的占比.  
     在TAL标签分配中使用:
-        在ultralytics/utils/tal.py中的def get_box_metrics函数中进行更换即可.
-    以上这两可以配合使用,也可以单独使用.
+        在ultralytics/utils/tal.py中的def get_box_metrics函数中进行更换即可.  
+    以上这两可以配合使用,也可以单独使用.  
 
 19. SlideLoss and EMASlideLoss.[Yolo-Face V2](https://github.com/Krasjet-Yu/YOLO-FaceV2/blob/master/utils/loss.py)
 
-    在ultralytics/utils/loss.py中的class v8DetectionLoss进行设定.
+    在ultralytics/utils/loss.py中的class v8DetectionLoss进行设定.  
 
 20. ultralytics/cfg/models/v5/yolov5-C3-DySnakeConv.yaml
 
-    [DySnakeConv](https://github.com/YaoleiQi/DSCNet)与C3融合.
+    [DySnakeConv](https://github.com/YaoleiQi/DSCNet)与C3融合.  
 
 21. ultralytics/cfg/models/v5/yolov5-EfficientHead.yaml
 
-    对检测头进行重设计,支持10种轻量化检测头.详细请看ultralytics/nn/extra_modules/head.py中的Detect_Efficient class.
+    对检测头进行重设计,支持10种轻量化检测头.详细请看ultralytics/nn/extra_modules/head.py中的Detect_Efficient class.  
 
 22. ultralytics/cfg/models/v5/yolov5-AuxHead.yaml
 
     参考YOLOV7-Aux对YOLOV5添加额外辅助训练头,在训练阶段参与训练,在最终推理阶段去掉.  
-    其中辅助训练头的损失权重系数可在ultralytics/utils/loss.py中的class v8DetectionLoss中的__init__函数中的self.aux_loss_ratio设定,默认值参考yolov7为0.25.
+    其中辅助训练头的损失权重系数可在ultralytics/utils/loss.py中的class v8DetectionLoss中的__init__函数中的self.aux_loss_ratio设定,默认值参考yolov7为0.25.  
 
 23. ultralytics/cfg/models/v5/yolov5-C3-DCNV2.yaml
 
-    使用C3-DCNV2替换C3.(DCNV2为可变形卷积V2)
+    使用C3-DCNV2替换C3.(DCNV2为可变形卷积V2)  
 
 24. ultralytics/cfg/models/v5/yolov5-C3-DCNV3.yaml
 
-    使用C3-DCNV3替换C3.([DCNV3](https://github.com/OpenGVLab/InternImage)为可变形卷积V3(CVPR2023,众多排行榜的SOTA))  
-    官方中包含了一些指定版本的DCNV3 whl包,下载后直接pip install xxx即可.具体和安装DCNV3可看百度云链接中的视频.
+    使用C3-DCNV3替换C3.([DCNV3](https://github.com/OpenGVLab/InternImage)为可变形卷积V3(CVPR2023,众多排行榜的SOTA))    
+    官方中包含了一些指定版本的DCNV3 whl包,下载后直接pip install xxx即可.具体和安装DCNV3可看百度云链接中的视频.  
 
 25. ultralytics/cfg/models/v5/yolov5-C3-Faster.yaml
 
-    使用C3-Faster替换C3.(使用FasterNet中的FasterBlock替换C3中的Bottleneck)
+    使用C3-Faster替换C3.(使用FasterNet中的FasterBlock替换C3中的Bottleneck)  
 
 26. ultralytics/cfg/models/v5/yolov5-C3-ODConv.yaml
 
@@ -241,7 +241,7 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
 48. ultralytics/cfg/models/v5/yolov5-CSwinTransformer.yaml
 
-    使用[CSWin-Transformer(CVPR2022)](https://github.com/microsoft/CSWin-Transformer/tree/main)替换yolov5主干.
+    使用[CSWin-Transformer(CVPR2022)](https://github.com/microsoft/CSWin-Transformer/tree/main)替换yolov5主干.(需要看[常见错误和解决方案的第五点](#a))
 
 49. ultralytics/cfg/models/v5/yolov5-AIFI.yaml
 
@@ -255,6 +255,30 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 51. ultralytics/cfg/models/v5/yolov5-C3-DWR.yaml
 
     使用[DWRSeg](https://arxiv.org/abs/2212.01173)中的Dilation-wise Residual(DWR)模块,加强从网络高层的可扩展感受野中提取特征.
+
+52. ultralytics/cfg/models/v5/yolov5-C3-RFAConv.yaml
+
+    使用[RFAConv](https://github.com/Liuchen1997/RFAConv/tree/main)中的RFAConv改进yolov5.
+
+53. ultralytics/cfg/models/v5/yolov5-C3-RFCBAMConv.yaml
+
+    使用[RFAConv](https://github.com/Liuchen1997/RFAConv/tree/main)中的RFCBAMConv改进yolov5.
+
+54. ultralytics/cfg/models/v8/yolov5-C3-RFCAConv.yaml
+
+    使用[RFAConv](https://github.com/Liuchen1997/RFAConv/tree/main)中的RFCAConv改进yolov5.
+
+55. ultralytics/cfg/models/v5/yolov5-HGNetV2.yaml
+
+    使用HGNetV2作为YOLOV5的backbone.
+
+56. ultralytics/cfg/models/v5/yolov5-GhostHGNetV2.yaml
+
+    使用Ghost_HGNetV2作为YOLOV5的backbone.
+
+57. ultralytics/cfg/models/v5/yolov5-RepHGNetV2.yaml
+
+    使用Rep_HGNetV2作为YOLOV5的backbone.
 
 ### YOLOV8
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
@@ -503,7 +527,7 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
 54. ultralytics/cfg/models/v8/yolov8-CSwinTransformer.yaml
 
-    使用[CSWin-Transformer(CVPR2022)](https://github.com/microsoft/CSWin-Transformer/tree/main)替换yolov8主干.
+    使用[CSWin-Transformer(CVPR2022)](https://github.com/microsoft/CSWin-Transformer/tree/main)替换yolov8主干.(需要看[常见错误和解决方案的第五点](#a))
 
 55. ultralytics/cfg/models/v8/yolov8-AIFI.yaml
 
@@ -517,6 +541,34 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 57. ultralytics/cfg/models/v8/yolov8-C2f-DWR.yaml
 
     使用[DWRSeg](https://arxiv.org/abs/2212.01173)中的Dilation-wise Residual(DWR)模块,加强从网络高层的可扩展感受野中提取特征.
+
+58. ultralytics/cfg/models/v8/yolov8-C2f-RFAConv.yaml
+
+    使用[RFAConv](https://github.com/Liuchen1997/RFAConv/tree/main)中的RFAConv改进yolov8.
+
+59. ultralytics/cfg/models/v8/yolov8-C2f-RFCBAMConv.yaml
+
+    使用[RFAConv](https://github.com/Liuchen1997/RFAConv/tree/main)中的RFCBAMConv改进yolov8.
+
+60. ultralytics/cfg/models/v8/yolov8-C2f-RFCAConv.yaml
+
+    使用[RFAConv](https://github.com/Liuchen1997/RFAConv/tree/main)中的RFCAConv改进yolov8.
+
+61. ultralytics/cfg/models/v8/yolov8-HGNetV2.yaml
+
+    使用HGNetV2作为YOLOV8的backbone.
+
+62. ultralytics/cfg/models/v8/yolov8-GhostHGNetV2.yaml
+
+    使用Ghost_HGNetV2作为YOLOV8的backbone.
+
+63. ultralytics/cfg/models/v8/yolov8-RepHGNetV2.yaml
+
+    使用Rep_HGNetV2作为YOLOV8的backbone.
+
+64. ultralytics/cfg/models/v8/yolov8-seg-EfficientHead.yaml(实例分割)
+
+    对检测头进行重设计,支持10种轻量化检测头.详细请看ultralytics/nn/extra_modules/head.py中的Detect_Efficient class.  
 
 # 更新公告
 
@@ -663,10 +715,16 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     4. 使用[Vision Transformer with Deformable Attention(CVPR2022)]改进C2f,C3.
 
 - **20231030-yolov8-v1.24**
-    1. 新增CVPR2023-CSwinTransformer主干.
+    1. 新增CVPR2022-CSwinTransformer主干.
     2. 新增yolov5-AIFI.yaml,yolov8-AIFI.yaml.
     3. 新增使用ParC-Net中的位置感知循环卷积改进C3,C2f.
     4. 新增使用DWRSeg中的Dilation-wise Residual(DWR)模块,加强从网络高层的可扩展感受野中提取特征.(yolov5-C3-DWR.yaml,yolov8-C2f-DWR.yaml)
     5. 把当前所有的改进同步到ultralytics-8.0.202版本上.
     6. 更新新版百度云链接视频.
     7. 新增热力图、FPS脚本.
+
+- **20231030-yolov8-v1.25**
+    1. 新增RFAConv,RFCBAMConv,RFCAConv.
+    2. 新增HGNetV2作为backbone,并在HGNetV2的基础上使用GhostConv和RepConv进行改进,得到GhostHGNetV2,RepHGNetV2.
+    3. 新增yolov8-seg-EfficientHead.yaml(轻量化实例分割检测头).
+    4. 更新百度云链接视频-20231107版本更新说明.
