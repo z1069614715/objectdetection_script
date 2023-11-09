@@ -129,6 +129,6 @@
     1. 修复断点训练不能正常使用的bug.
     2. 优化get_FPS.py中的模型导入方法.
     3. 增加以yolov5和yolov8为基准模型更换为RTDETR的Head,后续也会提供yolov5-detr,yolov8-detr相关的改进.
-    4. 新增百度云视频-20231109使用说明视频和替换主干说明视频.
+    4. 新增百度云视频-20231109更新说明视频和替换主干说明视频.
     5. 新增GhostHGNetV2,RepHGNetV2,详细请看使用教程中的RT-DETR改进方案.
     6. 新增使用DWRSeg中的Dilation-wise Residual(DWR)模块,加强从网络高层的可扩展感受野中提取特征,详细请看使用教程中的RT-DETR改进方案.
