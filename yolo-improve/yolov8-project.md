@@ -16,7 +16,7 @@ VoVGSCSP, VoVGSCSPC, RCSOSA
 <a id="c"></a>
 
 #### 目前整合的一些注意力机制 还需要别的注意力机制可从[github](https://github.com/z1069614715/objectdetection_script/tree/master/cv-attention)拉取对应的代码到ultralytics/nn/extra_modules/attention.py即可. 视频教程可看项目视频中的(如何在yaml配置文件中添加注意力层)
-EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttention_nchw, TripletAttention, CoordAtt, CBAM, BAMBlock, EfficientAttention(CloFormer中的注意力), LSKBlock, SEAttention, CPCA, deformable_LKA, EffectiveSEModule, LSKA, SegNext_Attention, DAttention(Vision Transformer with Deformable Attention CVPR2022)
+EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttention_nchw, TripletAttention, CoordAtt, CBAM, BAMBlock, EfficientAttention(CloFormer中的注意力), LSKBlock, SEAttention, CPCA, deformable_LKA, EffectiveSEModule, LSKA, SegNext_Attention, DAttention(Vision Transformer with Deformable Attention CVPR2022), FocusedLinearAttention(ICCV2023)
 
 ### YOLOV5 (AnchorFree+DFL+TAL) [官方预训练权重github链接](https://github.com/ultralytics/assets/releases)
 #### YOLOV5的使用方式跟YOLOV8一样,就是选择配置文件选择v5的即可.
@@ -237,7 +237,7 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 47. ultralytics/cfg/models/v5/yolov5-C3-DAttention.yaml
 
     使用[Vision Transformer with Deformable Attention(CVPR2022)](https://github.com/LeapLabTHU/DAT)改进C2f.  
-    使用注意点请看百度云视频.
+    使用注意点请看百度云视频.使用注意点请看百度云视频.(DAttention(Vision Transformer with Deformable Attention CVPR2022)使用注意说明.)
 
 48. ultralytics/cfg/models/v5/yolov5-CSwinTransformer.yaml
 
@@ -279,6 +279,23 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 57. ultralytics/cfg/models/v5/yolov5-RepHGNetV2.yaml
 
     使用Rep_HGNetV2作为YOLOV5的backbone.
+
+58. ultralytics/cfg/models/v5/yolov5-C3-FocusedLinearAttention.yaml
+
+    使用[FLatten Transformer(ICCV2023)](https://github.com/LeapLabTHU/FLatten-Transformer)中的FocusedLinearAttention改进C3. 
+    使用注意点请看百度云视频.(20231114版本更新说明.)
+
+59. IoU,GIoU,DIoU,CIoU,EIoU,SIoU更换方法.
+
+    请看百度云视频.(20231114版本更新说明.)
+
+60. Inner-IoU,Inner-GIoU,Inner-DIoU,Inner-CIoU,Inner-EIoU,Inner-SIoU更换方法.
+
+    请看百度云视频.(20231114版本更新说明.)
+
+61. Inner-MPDIoU更换方法.
+
+    请看百度云视频.(20231114版本更新说明.)
 
 ### YOLOV8
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
@@ -523,7 +540,7 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 53. ultralytics/cfg/models/v8/yolov8-C2f-DAttention.yaml
 
     使用[Vision Transformer with Deformable Attention(CVPR2022)](https://github.com/LeapLabTHU/DAT)改进C2f.  
-    使用注意点请看百度云视频.
+    使用注意点请看百度云视频.(DAttention(Vision Transformer with Deformable Attention CVPR2022)使用注意说明.)
 
 54. ultralytics/cfg/models/v8/yolov8-CSwinTransformer.yaml
 
@@ -569,6 +586,23 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 64. ultralytics/cfg/models/v8/yolov8-seg-EfficientHead.yaml(实例分割)
 
     对检测头进行重设计,支持10种轻量化检测头.详细请看ultralytics/nn/extra_modules/head.py中的Detect_Efficient class.  
+
+65. ultralytics/cfg/models/v8/yolov8-C2f-FocusedLinearAttention.yaml
+
+    使用[FLatten Transformer(ICCV2023)](https://github.com/LeapLabTHU/FLatten-Transformer)中的FocusedLinearAttention改进C2f.  
+    使用注意点请看百度云视频.(20231114版本更新说明.)
+
+66. IoU,GIoU,DIoU,CIoU,EIoU,SIoU更换方法.
+
+    请看百度云视频.(20231114版本更新说明.)
+
+67. Inner-IoU,Inner-GIoU,Inner-DIoU,Inner-CIoU,Inner-EIoU,Inner-SIoU更换方法.
+
+    请看百度云视频.(20231114版本更新说明.)
+
+68. Inner-MPDIoU更换方法.
+
+    请看百度云视频.(20231114版本更新说明.)
 
 # 更新公告
 
@@ -714,7 +748,7 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     3. 使用LSKA改进SPPF,增强多尺度特征提取能力.
     4. 使用[Vision Transformer with Deformable Attention(CVPR2022)]改进C2f,C3.
 
-- **20231030-yolov8-v1.24**
+- **20231107-yolov8-v1.24**
     1. 新增CVPR2022-CSwinTransformer主干.
     2. 新增yolov5-AIFI.yaml,yolov8-AIFI.yaml.
     3. 新增使用ParC-Net中的位置感知循环卷积改进C3,C2f.
@@ -723,8 +757,10 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     6. 更新新版百度云链接视频.
     7. 新增热力图、FPS脚本.
 
-- **20231030-yolov8-v1.25**
-    1. 新增RFAConv,RFCBAMConv,RFCAConv.
-    2. 新增HGNetV2作为backbone,并在HGNetV2的基础上使用GhostConv和RepConv进行改进,得到GhostHGNetV2,RepHGNetV2.
-    3. 新增yolov8-seg-EfficientHead.yaml(轻量化实例分割检测头).
-    4. 更新百度云链接视频-20231107版本更新说明.
+- **20231114-yolov8-v1.25**
+    1. 新增EIou,SIou.
+    2. 新增Inner-IoU,Inner-GIoU,Inner-DIoU,Inner-CIoU,Inner-EIoU,Inner-SIoU.
+    3. 使用今年最新的MPDIoU与Inner-IoU相结合得到Inner-MPDIoU.
+    4. 新增[FLatten Transformer(ICCV2023)](https://github.com/LeapLabTHU/FLatten-Transformer)中的FocusedLinearAttention改进C3,C2f.
+    5. 更新get_FPS脚本中的模型导入方式,避免一些device报错.
+    6. 更新百度云链接视频-20231114版本更新说明.
