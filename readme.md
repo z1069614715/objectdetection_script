@@ -7,7 +7,7 @@
         YOLOV5-Backbone中的主干基本都支持到我个人整合的v7代码中,并且整合后的v7配置文件非常简洁,方便进行改进
         购买了本项目联系我qq,我会拉你进一个交流群,详细可看[哔哩哔哩链接](https://www.bilibili.com/opus/798697826625257472?spm_id_from=333.999.0.0)
 
-2. 基于整合yolov8的项目.(目前69.9¥)[项目详解](https://www.bilibili.com/opus/804136088201330745?spm_id_from=333.999)
+2. 基于整合yolov8的项目.(目前69.9¥)
     
     [目前已有的改进方案和更新详细公告](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/yolov8-project.md)  
     项目简单介绍，详情请看项目详解.
@@ -23,7 +23,7 @@
     2. 项目里面配套几个剪枝和蒸馏的示例,并且都配有视频讲解,供大家理解如何进行剪枝和蒸馏.
     3. 购买后进YOLOV5V7轻量化交流群(代码视频均在群公告),轻量化问题都可在群交流,因为剪枝问题比较困难,所以剪枝蒸馏问题可以群里提问,我都会群里回复相关问题.
 
-4. 基于Ultralytics的RT-DETR改进项目.(目前优惠价79.9¥,入手过(项目二、三)的再各优惠10¥,优惠期至11.15)
+4. 基于Ultralytics的RT-DETR改进项目.(89.9¥)
 
     [目前已有的改进方案和更新详细公告](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/rtdetr-project.md)  
     项目简单介绍，详情请看项目详解.
@@ -32,6 +32,7 @@
     3. 购买了RT-DETR项目的都会赠送yolov5-PAGCP通道剪枝算法代码和相关实验参数命令.
     4. 购买后进RT-DETR交流群(代码视频均在群公告),群里可交流代码和论文相关.
     5. 项目因为(价格问题)不附带一对一私人答疑服务,平时私聊问点小问题和群里的问题,有空我都会回复.
+    6. RT-DETR项目包含多种基准模型改进方案(RT-DETR-R18,RT-DETR-L,Yolov8-Detr,Yolov5-Detr),具体可点击[目前已有的改进方案和更新详细公告](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/rtdetr-project.md)看详细.
 
 # Advertising Board
 人工智能-工作室长期对外接单，范围主要是:
