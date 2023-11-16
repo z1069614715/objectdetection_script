@@ -764,3 +764,7 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     4. 新增[FLatten Transformer(ICCV2023)](https://github.com/LeapLabTHU/FLatten-Transformer)中的FocusedLinearAttention改进C3,C2f.
     5. 更新get_FPS脚本中的模型导入方式,避免一些device报错.
     6. 更新百度云链接视频-20231114版本更新说明.
+
+- **20231114-yolov8-v1.26**
+    1. 修正MPDIOU中的mpdiou_hw参数.
+    2. 更新使用教程.
