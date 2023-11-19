@@ -23,6 +23,8 @@
 6. LAMP 
 7. GroupSL 
 8. GroupReg
+9. GroupHessian
+10. GroupTaylor
 
 ### 其中prune系列还有一些细节：
 1. 支持稀疏训练时候可视化BN稀疏程度和数值。

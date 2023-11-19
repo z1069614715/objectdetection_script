@@ -303,27 +303,27 @@
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1PH4y1S7mf/).   
     reference: [链接](https://github.com/huawei-noah/Efficient-Computing/tree/master/Detection/Gold-YOLO)  
     paper: [链接](https://arxiv.org/abs/2309.11331)  
-- **yolov7-GOLDYOLO(文件在yolov5-GOLDYOLO的文件夹中)**
+- **yolov7-GOLDYOLO(文件在yolov5-GOLDYOLO的文件夹中)**  
     利用华为2023最新GOLD-YOLO中的Gatherand-Distribute进行改进YOLOV7中的特征融合模块.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV14V411c7H1/).   
     reference: [链接](https://github.com/huawei-noah/Efficient-Computing/tree/master/Detection/Gold-YOLO)  
     paper: [链接](https://arxiv.org/abs/2309.11331)  
-- **yolov5-DySnakeConv**
+- **yolov5-DySnakeConv**  
     利用动态蛇形卷积改进YOLOV5.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Qu411K7Hw/).   
     reference: [链接](https://github.com/YaoleiQi/DSCNet)  
     paper: [链接](https://arxiv.org/abs/2307.08388)  
-- **yolov7-DySnakeConv**
+- **yolov7-DySnakeConv**  
     利用动态蛇形卷积改进YOLOV7.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Wj411x7fq/).   
     reference: [链接](https://github.com/YaoleiQi/DSCNet)  
     paper: [链接](https://arxiv.org/abs/2307.08388)  
-- **yolov5-AIFI**
+- **yolov5-AIFI**  
     利用带有位置信息编码的AIFI自注意力机制改进YOLOV5.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV14V411c7H1/).   
     reference: [链接](https://github.com/lyuwenyu/RT-DETR)  
     paper: [链接](https://arxiv.org/pdf/2304.08069.pdf)  
-- **yolov7-AIFI**
+- **yolov7-AIFI**  
     利用带有位置信息编码的AIFI自注意力机制改进YOLOV7.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV14V411c7H1/).   
     reference: [链接](https://github.com/lyuwenyu/RT-DETR)  
