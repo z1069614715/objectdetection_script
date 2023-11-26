@@ -89,11 +89,11 @@
 
 13. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
-    使用LearnedPositionalEncoding改进AIFI中的位置编码生成.
+    使用LearnedPositionalEncoding改进AIFI中的位置编码生成.(详细介绍请看百度云视频-20231119更新说明)
 
 14. ultralytics/cfg/models/rt-detr/rtdetr-Ortho.yaml
 
-    使用[OrthoNets](https://github.com/hady1011/OrthoNets/tree/main)中的正交通道注意力改进resnet18-backbone中的BasicBlock.
+    使用[OrthoNets](https://github.com/hady1011/OrthoNets/tree/main)中的正交通道注意力改进resnet18-backbone中的BasicBlock.(详细介绍请看百度云视频-20231119更新说明)
 
 15. ultralytics/cfg/models/rt-detr/rtdetr-DCNV2.yaml
 
@@ -101,7 +101,7 @@
 
 16. ultralytics/cfg/models/rt-detr/rtdetr-DCNV3.yaml
 
-    使用可变形卷积[DCNV3 CVPR2023](https://github.com/OpenGVLab/InternImage)改进resnet18-backbone中的BasicBlock.
+    使用可变形卷积[DCNV3 CVPR2023](https://github.com/OpenGVLab/InternImage)改进resnet18-backbone中的BasicBlock.(安装教程请看百度云视频-20231119更新说明)
 
 17. ultralytics/cfg/models/rt-detr/rtdetr-DCNV2-Dynamic.yaml
 
@@ -109,21 +109,53 @@
 
 18. ultralytics/cfg/models/rt-detr/rtdetr-iRMB.yaml
 
-    使用[EMO ICCV2023](https://github.com/zhangzjn/EMO)中的iRMB改进resnet18-backbone中的BasicBlock.
+    使用[EMO ICCV2023](https://github.com/zhangzjn/EMO)中的iRMB改进resnet18-backbone中的BasicBlock.(详细介绍请看百度云视频-20231119更新说明)
 
 19. ultralytics/cfg/models/rt-detr/rtdetr-iRMB-Cascaded.yaml
 
-    使用[EfficientViT CVPR2023](https://github.com/microsoft/Cream/tree/main/EfficientViT)中的CascadedGroupAttention对[EMO ICCV2023](https://github.com/zhangzjn/EMO)中的iRMB进行二次创新来改进resnet18-backbone中的BasicBlock.
+    使用[EfficientViT CVPR2023](https://github.com/microsoft/Cream/tree/main/EfficientViT)中的CascadedGroupAttention对[EMO ICCV2023](https://github.com/zhangzjn/EMO)中的iRMB进行二次创新来改进resnet18-backbone中的BasicBlock.(详细介绍请看百度云视频-20231119更新说明)
 
 20. ultralytics/cfg/models/rt-detr/rtdetr-attention.yaml
 
     添加注意力模块到resnet18-backbone中的BasicBlock中.(手把手教程请看百度云视频-手把手添加注意力教程)
 
+21. ultralytics/cfg/models/rt-detr/rtdetr-p2.yaml
+
+    添加小目标检测头P2到TransformerDecoderHead中.
+
+22. ultralytics/cfg/models/rt-detr/rtdetr-DySnake.yaml
+
+    添加[DySnakeConv](https://github.com/YaoleiQi/DSCNet)到resnet18-backbone中的BasicBlock中.
+
+23. ultralytics/cfg/models/rt-detr/rtdetr-PConv.yaml
+
+    使用[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的PConv改进resnet18-backbone中的BasicBlock.
+
+24. ultralytics/cfg/models/rt-detr/rtdetr-PConv-Rep.yaml
+
+    使用[RepVGG CVPR2021](https://github.com/DingXiaoH/RepVGG)中的RepConv对[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的PConv进行二次创新后改进resnet18-backbone中的BasicBlock.
+
+25. ultralytics/cfg/models/rt-detr/rtdetr-Faster.yaml
+
+    使用[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的Faster-Block改进resnet18-backbone中的BasicBlock.
+
+26. ultralytics/cfg/models/rt-detr/rtdetr-Faster-Rep.yaml
+
+    使用[RepVGG CVPR2021](https://github.com/DingXiaoH/RepVGG)中的RepConv对[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的Faster-Block进行二次创新后改进resnet18-backbone中的BasicBlock.
+
+27. ultralytics/cfg/models/rt-detr/rtdetr-Faster-EMA.yaml
+
+    使用[EMA ICASSP2023](https://arxiv.org/abs/2305.13563v1)对[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的Faster-Block进行二次创新后改进resnet18-backbone中的BasicBlock.
+
+28. ultralytics/cfg/models/rt-detr/rtdetr-Faster-Rep-EMA.yaml
+    
+    使用[RepVGG CVPR2021](https://github.com/DingXiaoH/RepVGG)中的RepConv和[EMA ICASSP2023](https://arxiv.org/abs/2305.13563v1)对[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的Faster-Block进行二次创新后改进resnet18-backbone中的BasicBlock.
+
 ### 以RT-DETR-R50为基准模型的改进方案
 
 1. ultralytics/cfg/models/rt-detr/rtdetr-r50-Ortho.yaml
 
-    使用[OrthoNets](https://github.com/hady1011/OrthoNets/tree/main)中的正交通道注意力改进resnet50-backbone中的BottleNeck.
+    使用[OrthoNets](https://github.com/hady1011/OrthoNets/tree/main)中的正交通道注意力改进resnet50-backbone中的BottleNeck.(详细介绍请看百度云视频-20231119更新说明)
 
 2. ultralytics/cfg/models/rt-detr/rtdetr-r50-DCNV2.yaml
 
@@ -131,7 +163,7 @@
 
 3. ultralytics/cfg/models/rt-detr/rtdetr-r50-DCNV3.yaml
 
-    使用可变形卷积[DCNV3 CVPR2023](https://github.com/OpenGVLab/InternImage)改进resnet50-backbone中的BottleNeck.
+    使用可变形卷积[DCNV3 CVPR2023](https://github.com/OpenGVLab/InternImage)改进resnet50-backbone中的BottleNeck.(安装教程请看百度云视频-20231119更新说明)
 
 4. ultralytics/cfg/models/rt-detr/rtdetr-r50-DCNV2-Dynamic.yaml
 
@@ -139,20 +171,49 @@
 
 5. ultralytics/cfg/models/rt-detr/rtdetr-r50-iRMB.yaml
 
-    使用[EMO ICCV2023](https://github.com/zhangzjn/EMO)中的iRMB改进resnet50-backbone中的BottleNeck.
+    使用[EMO ICCV2023](https://github.com/zhangzjn/EMO)中的iRMB改进resnet50-backbone中的BottleNeck.(详细介绍请看百度云视频-20231119更新说明)
 
 6. ultralytics/cfg/models/rt-detr/rtdetr-r50-iRMB-Cascaded.yaml
 
-    使用[EfficientViT CVPR2023](https://github.com/microsoft/Cream/tree/main/EfficientViT)中的CascadedGroupAttention对[EMO ICCV2023](https://github.com/zhangzjn/EMO)中的iRMB进行二次创新来改进resnet50-backbone中的BottleNeck.
+    使用[EfficientViT CVPR2023](https://github.com/microsoft/Cream/tree/main/EfficientViT)中的CascadedGroupAttention对[EMO ICCV2023](https://github.com/zhangzjn/EMO)中的iRMB进行二次创新来改进resnet50-backbone中的BottleNeck.(详细介绍请看百度云视频-20231119更新说明)
 
 7. ultralytics/cfg/models/rt-detr/rtdetr-r50-attention.yaml
 
     添加注意力模块到resnet50-backbone中的BottleNeck.(手把手教程请看百度云视频-手把手添加注意力教程)
 
+8. ultralytics/cfg/models/rt-detr/rtdetr-r50-DySnake.yaml
+
+    添加[DySnakeConv](https://github.com/YaoleiQi/DSCNet)到resnet50-backbone中的BottleNeck中.
+
+9. ultralytics/cfg/models/rt-detr/rtdetr-r50-PConv.yaml
+
+    使用[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的PConv改进resnet50-backbone中的BottleNeck.
+
+10. ultralytics/cfg/models/rt-detr/rtdetr-r50-PConv-Rep.yaml
+
+    使用[RepVGG CVPR2021](https://github.com/DingXiaoH/RepVGG)中的RepConv对[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的PConv进行二次创新后改进resnet50-backbone中的BottleNeck.
+
+11. ultralytics/cfg/models/rt-detr/rtdetr-r50-Faster.yaml
+
+    使用[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的Faster-Block改进resnet50-backbone中的BottleNeck.
+
+12. ultralytics/cfg/models/rt-detr/rtdetr-r50-Faster-Rep.yaml
+
+    使用[RepVGG CVPR2021](https://github.com/DingXiaoH/RepVGG)中的RepConv对[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的Faster-Block进行二次创新后改进resnet50-backbone中的BottleNeck.
+
+13. ultralytics/cfg/models/rt-detr/rtdetr-r50-Faster-EMA.yaml
+
+    使用[EMA ICASSP2023](https://arxiv.org/abs/2305.13563v1)对[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的Faster-Block进行二次创新后改进resnet50-backbone中的BottleNeck.
+
+14. ultralytics/cfg/models/rt-detr/rtdetr-r50-Faster-Rep-EMA.yaml
+    
+    使用[RepVGG CVPR2021](https://github.com/DingXiaoH/RepVGG)中的RepConv和[EMA ICASSP2023](https://arxiv.org/abs/2305.13563v1)对[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的Faster-Block进行二次创新后改进resnet50-backbone中的BottleNeck.
+
 ### 以RT-DETR-L为基准模型的改进方案
 1. ultralytics/cfg/models/rt-detr/rtdetr-l-GhostHGNetV2.yaml
 
     使用GhostConv改进HGNetV2.(详细介绍请看百度云视频-20231109更新说明)
+
 2. ultralytics/cfg/models/rt-detr/rtdetr-l-RepHGNetV2.yaml
 
     使用RepConv改进HGNetV2.(详细介绍请看百度云视频-20231109更新说明)
@@ -176,7 +237,7 @@
 
 4. ultralytics/cfg/models/yolo-detr/yolov8-detr-AIFI-LPE.yaml
 
-    使用RT-DETR中的TransformerDecoderHead和LearnedPositionalEncoding改进yolov8.
+    使用RT-DETR中的TransformerDecoderHead和LearnedPositionalEncoding改进yolov8.(详细介绍请看百度云视频-20231119更新说明)
 
 5. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-DCNV2.yaml
 
@@ -184,7 +245,7 @@
 
 6. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-DCNV3.yaml
 
-    使用RT-DETR中的TransformerDecoderHead和可变形卷积[DCNV3 CVPR2023](https://github.com/OpenGVLab/InternImage)改进yolov8.
+    使用RT-DETR中的TransformerDecoderHead和可变形卷积[DCNV3 CVPR2023](https://github.com/OpenGVLab/InternImage)改进yolov8.(安装教程请看百度云视频-20231119更新说明)
 
 7. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-DCNV2-Dynamic.yaml
 
@@ -192,11 +253,35 @@
 
 8. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-Ortho.yaml
 
-    使用RT-DETR中的TransformerDecoderHead和[OrthoNets](https://github.com/hady1011/OrthoNets/tree/main)中的正交通道注意力改进yolov8.
+    使用RT-DETR中的TransformerDecoderHead和[OrthoNets](https://github.com/hady1011/OrthoNets/tree/main)中的正交通道注意力改进yolov8.(详细介绍请看百度云视频-20231119更新说明)
 
 9. ultralytics/cfg/models/yolo-detr/yolov8-detr-attention.yaml
 
     添加注意力到基于RTDETR-Head中的yolov8中.(手把手教程请看百度云视频-手把手添加注意力教程)
+
+10. ultralytics/cfg/models/yolo-detr/yolov8-detr-p2.yaml
+
+    添加小目标检测头P2到TransformerDecoderHead中.
+
+11. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-DySnake.yaml
+
+    [DySnakeConv](https://github.com/YaoleiQi/DSCNet)与C2f融合.  
+
+12. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-Faster.yaml
+
+    使用RT-DETR中的TransformerDecoderHead和[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的Faster-Block改进yolov8.
+
+13. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-Faster-Rep.yaml
+
+    使用RT-DETR中的TransformerDecoderHead和[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中与[RepVGG CVPR2021](https://github.com/DingXiaoH/RepVGG)中的RepConv二次创新后的Faster-Block-Rep改进yolov8.
+
+14. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-Faster-EMA.yaml
+
+    使用RT-DETR中的TransformerDecoderHead和[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中与[EMA ICASSP2023](https://arxiv.org/abs/2305.13563v1)二次创新后的Faster-Block-EMA的Faster-Block-EMA改进yolov8.
+
+15. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-Faster-Rep-EMA.yaml
+
+    使用RT-DETR中的TransformerDecoderHead和[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中与[RepVGG CVPR2021](https://github.com/DingXiaoH/RepVGG)中的RepConv、[EMA ICASSP2023](https://arxiv.org/abs/2305.13563v1)二次创新后的Faster-Block改进yolov8.
 
 ### 以Yolov5为基准模型的改进方案
 1. ultralytics/cfg/models/yolo-detr/yolov5-detr.yaml
@@ -213,7 +298,7 @@
 
 4. ultralytics/cfg/models/yolo-detr/yolov5-detr-AIFI-LPE.yaml
 
-    使用RT-DETR中的TransformerDecoderHead和LearnedPositionalEncoding改进yolov5.
+    使用RT-DETR中的TransformerDecoderHead和LearnedPositionalEncoding改进yolov5.(详细介绍请看百度云视频-20231119更新说明)
 
 5. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-DCNV2.yaml
 
@@ -221,19 +306,51 @@
 
 6. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-DCNV3.yaml
 
-    使用RT-DETR中的TransformerDecoderHead和可变形卷积[DCNV3 CVPR2023](https://github.com/OpenGVLab/InternImage)改进yolov5.
+    使用RT-DETR中的TransformerDecoderHead和可变形卷积[DCNV3 CVPR2023](https://github.com/OpenGVLab/InternImage)改进yolov5.(安装教程请看百度云视频-20231119更新说明)
 
 7. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-DCNV2-Dynamic.yaml
 
     使用RT-DETR中的TransformerDecoderHead和自研可变形卷积DCNV2-Dynamic改进yolov5.(详细介绍请看百度云视频-MPCA与DCNV2_Dynamic的说明)
 
-8. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-Ortho.yaml
+8. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-Ortho.yaml(详细介绍请看百度云视频-20231119更新说明)
 
     使用RT-DETR中的TransformerDecoderHead和[OrthoNets](https://github.com/hady1011/OrthoNets/tree/main)中的正交通道注意力改进yolov5.
 
 9. ultralytics/cfg/models/yolo-detr/yolov5-detr-attention.yaml
 
     添加注意力到基于RTDETR-Head中的yolov5中.(手把手教程请看百度云视频-手把手添加注意力教程)
+
+10. ultralytics/cfg/models/yolo-detr/yolov5-detr-p2.yaml
+
+    添加小目标检测头P2到TransformerDecoderHead中.
+
+11. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-DySnake.yaml
+
+    [DySnakeConv](https://github.com/YaoleiQi/DSCNet)与C3融合.  
+
+12. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-Faster.yaml
+
+    使用RT-DETR中的TransformerDecoderHead和[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的Faster-Block改进yolov5.
+
+13. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-Faster-Rep.yaml
+
+    使用RT-DETR中的TransformerDecoderHead和[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中与[RepVGG CVPR2021](https://github.com/DingXiaoH/RepVGG)中的RepConv二次创新后的Faster-Block-Rep改进yolov5.
+
+14. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-Faster-EMA.yaml
+
+    使用RT-DETR中的TransformerDecoderHead和[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中与[EMA ICASSP2023](https://arxiv.org/abs/2305.13563v1)二次创新后的Faster-Block-EMA的Faster-Block-EMA改进yolov5.
+
+15. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-Faster-Rep-EMA.yaml
+
+    使用RT-DETR中的TransformerDecoderHead和[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中与[RepVGG CVPR2021](https://github.com/DingXiaoH/RepVGG)中的RepConv、[EMA ICASSP2023](https://arxiv.org/abs/2305.13563v1)二次创新后的Faster-Block改进yolov5.
+
+### IoU系列
+
+1. IoU,GIoU,DIoU,CIoU,EIoU,SIoU
+2. MPDIoU[论文链接](https://arxiv.org/pdf/2307.07662.pdf)
+3. Inner-IoU,Inner-GIoU,Inner-DIoU,Inner-CIoU,Inner-EIoU,Inner-SIoU[论文链接](https://arxiv.org/abs/2311.02877)
+4. Inner-MPDIoU(利用Inner-Iou与MPDIou进行二次创新)
+5. Normalized Gaussian Wasserstein Distance.[论文链接](https://arxiv.org/abs/2110.13389)
 
 # 更新公告
 - **20231105-rtdetr-v1.0**
@@ -254,3 +371,14 @@
     4. 增加EMO模型中的iRMB模块,并使用(EfficientViT-CVPR2023)中的CascadedAttention对其二次创新得到iRMB_Cascaded,详细请看使用教程中的RT-DETR改进方案.
     5. 百度云视频增加1119更新说明和手把手添加注意力机制视频教学.
     6. 更新使用教程.
+
+- **20231119-rtdetr-v1.3**
+    1. 支持IoU,GIoU,DIoU,CIoU,EIoU,SIoU.
+    2. 支持MPDIoU,Inner-IoU,Inner-MPDIoU.
+    3. 支持Normalized Gaussian Wasserstein Distance.
+    4. 支持小目标检测层P2.
+    5. 支持DySnakeConv.
+    6. 新增Pconv,PConv-Rep(二次创新)优化rtdetr-r18与rtdetr-r50.
+    7. 新增Faster-Block,Faster-Block-Rep(二次创新),Faster-Block-EMA(二次创新),Faster-Block-Rep-EMA(二次创新)优化rtdetr-r18、rtdetr-r50、yolov5-detr、yolov8-retr.
+    8. 更新使用教程.
+    9. 百度云视频增加1126更新说明.
