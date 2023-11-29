@@ -34,6 +34,13 @@
     5. 项目因为(价格问题)不附带一对一私人答疑服务,平时私聊问点小问题和群里的问题,有空我都会回复.
     6. RT-DETR项目包含多种基准模型改进方案(RT-DETR-R18,RT-DETR-L,Yolov8-Detr,Yolov5-Detr),具体可点击[目前已有的改进方案和更新详细公告](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/rtdetr-project.md)看详细.
 
+5. 基于YOLOV8的剪枝蒸馏项目.(蒸馏目前还在开发..)
+
+    剪枝:[项目详解 项目将于12月3号发布](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/yolov8-compress.md)(定价89.9,目前优惠期间11.29~12.17,入手过项目二和项目三的的各优惠10¥)
+    1. 模型轻量化,部署必备之一!
+    2. 项目里面配套剪枝示例,并且都配有视频讲解,供大家理解如何进行剪枝.
+    3. 购买后进YOLOV8剪枝交流群(代码视频均在群公告),因为剪枝操作有一定的难度,所以剪枝问题可以群里提问,我都会群里回复相关问题.
+
 # Advertising Board
 人工智能-工作室长期对外接单，范围主要是:
 1. 目标检测.

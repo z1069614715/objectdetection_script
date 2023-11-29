@@ -29,6 +29,11 @@
 大家关心最多的一个问题就是，我的结构能不能剪之类的，剪枝对模型复杂度的要求比较高，目前剪枝都是基于Torch_Pruning库进行剪枝，prune系列的可以跳过一些不能剪枝的层(某些复杂的结构可能在构建动态图的时候失败,这些就只能换结构)，这个项目会有比较多的示例和视频教程教大家如何去剪自己的结构,注意点在哪里等等。这个剪枝项目是没办法保证所有的结构都能剪，有一定的风险，是否入手请自行考虑！  
 [yolov5v7剪枝](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/yolov5v7-light.md)这里面的结构都经过实验是可剪的.
 
+### 那些人群建议入手剪枝
+1. 原始的算法精度很高,没办法再提升精度,只能走轻量化路线,这种建议配合一些轻量化模块+剪枝来增加你的工作量和创新度.
+2. 需要部署到嵌入式或者手机端等低算力设备,这类本身模型就不能太复杂,而且以轻量化为主,剪枝是非常适合的.
+3. 以后需从事深度学习方面的工作,模型轻量化(蒸馏、量化、剪枝)基本是必须要会的技能.
+
 ### Yolov8 相关实验 GPU-Device:RTX3090
 #### Dataset:VisDrone 30%TrainingData Model:Yolov8n
 | model | Parameters | GFLOPs | Model Size | mAP50 | mAP50-95 | Inference Time(bs:32) |
