@@ -372,7 +372,7 @@
     5. 百度云视频增加1119更新说明和手把手添加注意力机制视频教学.
     6. 更新使用教程.
 
-- **20231119-rtdetr-v1.3**
+- **20231126-rtdetr-v1.3**
     1. 支持IoU,GIoU,DIoU,CIoU,EIoU,SIoU.
     2. 支持MPDIoU,Inner-IoU,Inner-MPDIoU.
     3. 支持Normalized Gaussian Wasserstein Distance.
