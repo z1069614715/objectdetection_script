@@ -768,3 +768,9 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 - **20231114-yolov8-v1.26**
     1. 修正MPDIOU中的mpdiou_hw参数.
     2. 更新使用教程.
+
+- **20231129-yolov8-v1.27**
+    1. 新增Mixed Local Channel Attention改进C2f和C3.
+    2. 新增AKConv改进C2f和C3.
+    3. 更新使用教程.
+    4. 更新百度云链接视频-20231129版本更新说明.
