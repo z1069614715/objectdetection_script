@@ -1,4 +1,4 @@
-import math
+import math, torch
 from torch import nn
 import torch.nn.functional as F
 
@@ -28,17 +28,18 @@ class MLCA(nn.Module):
         b,c,m,n = x.shape
         b_local, c_local, m_local, n_local = local_arv.shape
 
-        # (b,c,local_size,local_size) -> (b,c,local_size*local_size)-> (b,local_size*local_size,c)-> (b,1,local_size*local_size*c)
+        # (b,c,local_size,local_size) -> (b,c,local_size*local_size) -> (b,local_size*local_size,c) -> (b,1,local_size*local_size*c)
         temp_local= local_arv.view(b, c_local, -1).transpose(-1, -2).reshape(b, 1, -1)
+        # (b,c,1,1) -> (b,c,1) -> (b,1,c)
         temp_global = global_arv.view(b, c, -1).transpose(-1, -2)
 
         y_local = self.conv_local(temp_local)
         y_global = self.conv(temp_global)
 
-
         # (b,c,local_size,local_size) <- (b,c,local_size*local_size)<-(b,local_size*local_size,c) <- (b,1,local_size*local_size*c)
-        y_local_transpose=y_local.reshape(b, self.local_size * self.local_size,c).transpose(-1,-2).view(b,c, self.local_size , self.local_size)
-        y_global_transpose = y_global.view(b, -1).transpose(-1, -2).unsqueeze(-1)
+        y_local_transpose=y_local.reshape(b, self.local_size * self.local_size,c).transpose(-1,-2).view(b, c, self.local_size , self.local_size)
+        # (b,1,c) -> (b,c) -> (c,b,1,1)
+        y_global_transpose = y_global.transpose(-1,-2).unsqueeze(-1)
 
         # 反池化
         att_local = y_local_transpose.sigmoid()
@@ -47,3 +48,9 @@ class MLCA(nn.Module):
 
         x = x * att_all
         return x
+
+if __name__ == '__main__':
+    attention = MLCA(in_size=256)
+    inputs = torch.randn((2, 256, 16, 16))
+    result = attention(inputs)
+    print(result.size())
