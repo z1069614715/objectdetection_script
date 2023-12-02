@@ -38,7 +38,7 @@ class MLCA(nn.Module):
 
         # (b,c,local_size,local_size) <- (b,c,local_size*local_size)<-(b,local_size*local_size,c) <- (b,1,local_size*local_size*c)
         y_local_transpose=y_local.reshape(b, self.local_size * self.local_size,c).transpose(-1,-2).view(b, c, self.local_size , self.local_size)
-        # (b,1,c) -> (b,c,1) -> (c,b,1,1)
+        # (b,1,c) -> (b,c,1) -> (b,c,1,1)
         y_global_transpose = y_global.transpose(-1,-2).unsqueeze(-1)
 
         # 反池化

@@ -382,3 +382,11 @@
     7. 新增Faster-Block,Faster-Block-Rep(二次创新),Faster-Block-EMA(二次创新),Faster-Block-Rep-EMA(二次创新)优化rtdetr-r18、rtdetr-r50、yolov5-detr、yolov8-retr.
     8. 更新使用教程.
     9. 百度云视频增加1126更新说明.
+
+- **20231202-rtdetr-v1.4**
+    1. 支持AKConv(具有任意采样形状和任意数目参数的卷积核).
+    2. 支持RFAConv,RFCAConv,RFCBAMConv(感受野注意力卷积).
+    3. 支持UniRepLKNet(大核CNNRepLK正统续作).
+    4. 使用CVPR2022 DAttention改进AIFI.
+    4. 更新使用教程.
+    5. 百度云视频增加1202更新说明.
