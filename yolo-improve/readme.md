@@ -328,3 +328,9 @@
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV14V411c7H1/).   
     reference: [链接](https://github.com/lyuwenyu/RT-DETR)  
     paper: [链接](https://arxiv.org/pdf/2304.08069.pdf)  
+- **yolov5-backbone/UniRepLKNet**  
+    添加UniRepLKNet主干到yolov5中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1PH4y1S7mf/).   
+    reference: [链接](https://github.com/AILab-CVC/UniRepLKNet)  
+    paper: [链接](https://arxiv.org/abs/2311.15599)  
+    weights-download: [百度云链接](https://pan.baidu.com/s/1Gk48Xa6cWKAVJgsF5cqk1g?pwd=b55v)
