@@ -7,16 +7,16 @@
 #### 目前支持的一些block (yolov5默认C3,yolov8默认C2f) (部分block可能会与主结构有冲突,具体以是否能运行为主)
 
 ##### C2f系列
-C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, C2f_SCConv, C2f_ScConv, C2f_EMSC, C2f_EMSCP, C2f_KW, C2f_DCNv2, C2f_DCNv3, C2f_OREPA, C2f_REPVGGOREPA, C2f_DCNv2_Dynamic, C2f_MSBlock, C2f_ContextGuided, C2f_DLKA, C2f_EMBC, C2f_Parc, C2f_DWR, C2f_RFAConv, C2f_RFCBAMConv, C2f_RFCAConv
+C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, C2f_SCConv, C2f_ScConv, C2f_EMSC, C2f_EMSCP, C2f_KW, C2f_DCNv2, C2f_DCNv3, C2f_OREPA, C2f_REPVGGOREPA, C2f_DCNv2_Dynamic, C2f_MSBlock, C2f_ContextGuided, C2f_DLKA, C2f_EMBC, C2f_Parc, C2f_DWR, C2f_RFAConv, C2f_RFCBAMConv, C2f_RFCAConv, C2f_MLCA, C2f_AKConv, C2f_UniRepLKNetBlock, C2f_DRB, C2f_DWR_DRB
 ##### C3系列  
-C3, C3Ghost, C3_CloAtt, C3_SCConv, C3_ScConv, C3_EMSC, C3_EMSCP, C3_KW, C3_ODConv, C3_Faster, C3_Faster_EMA, C3_DCNv2, C3_DCNv3, C3_DBB, C3_OREPA, C3_REPVGGOREPA, C3_DCNv2_Dynamic, C3_MSBlock, C3_ContextGuided, C3_DLKA, C3_EMBC, C3_Parc, C3_DWR, C3_RFAConv, C3_RFCBAMConv, C3_RFCAConv
+C3, C3Ghost, C3_CloAtt, C3_SCConv, C3_ScConv, C3_EMSC, C3_EMSCP, C3_KW, C3_ODConv, C3_Faster, C3_Faster_EMA, C3_DCNv2, C3_DCNv3, C3_DBB, C3_OREPA, C3_REPVGGOREPA, C3_DCNv2_Dynamic, C3_MSBlock, C3_ContextGuided, C3_DLKA, C3_EMBC, C3_Parc, C3_DWR, C3_RFAConv, C3_RFCBAMConv, C3_RFCAConv, C3_MLCA, C3_AKConv, C3_UniRepLKNetBlock, C3_DRB, C3_DWR_DRB
 ##### 其他系列
 VoVGSCSP, VoVGSCSPC, RCSOSA  
 
 <a id="c"></a>
 
 #### 目前整合的一些注意力机制 还需要别的注意力机制可从[github](https://github.com/z1069614715/objectdetection_script/tree/master/cv-attention)拉取对应的代码到ultralytics/nn/extra_modules/attention.py即可. 视频教程可看项目视频中的(如何在yaml配置文件中添加注意力层)
-EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttention_nchw, TripletAttention, CoordAtt, CBAM, BAMBlock, EfficientAttention(CloFormer中的注意力), LSKBlock, SEAttention, CPCA, deformable_LKA, EffectiveSEModule, LSKA, SegNext_Attention, DAttention(Vision Transformer with Deformable Attention CVPR2022), FocusedLinearAttention(ICCV2023)
+EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttention_nchw, TripletAttention, CoordAtt, CBAM, BAMBlock, EfficientAttention(CloFormer中的注意力), LSKBlock, SEAttention, CPCA, deformable_LKA, EffectiveSEModule, LSKA, SegNext_Attention, DAttention(Vision Transformer with Deformable Attention CVPR2022), FocusedLinearAttention(ICCV2023), MLCA
 
 ### YOLOV5 (AnchorFree+DFL+TAL) [官方预训练权重github链接](https://github.com/ultralytics/assets/releases)
 #### YOLOV5的使用方式跟YOLOV8一样,就是选择配置文件选择v5的即可.
@@ -236,7 +236,7 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
 47. ultralytics/cfg/models/v5/yolov5-C3-DAttention.yaml
 
-    使用[Vision Transformer with Deformable Attention(CVPR2022)](https://github.com/LeapLabTHU/DAT)改进C2f.  
+    使用[Vision Transformer with Deformable Attention(CVPR2022)](https://github.com/LeapLabTHU/DAT)改进C2f.(需要看[常见错误和解决方案的第五点](#a))  
     使用注意点请看百度云视频.使用注意点请看百度云视频.(DAttention(Vision Transformer with Deformable Attention CVPR2022)使用注意说明.)
 
 48. ultralytics/cfg/models/v5/yolov5-CSwinTransformer.yaml
@@ -282,7 +282,7 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
 58. ultralytics/cfg/models/v5/yolov5-C3-FocusedLinearAttention.yaml
 
-    使用[FLatten Transformer(ICCV2023)](https://github.com/LeapLabTHU/FLatten-Transformer)中的FocusedLinearAttention改进C3. 
+    使用[FLatten Transformer(ICCV2023)](https://github.com/LeapLabTHU/FLatten-Transformer)中的FocusedLinearAttention改进C3.(需要看[常见错误和解决方案的第五点](#a)) 
     使用注意点请看百度云视频.(20231114版本更新说明.)
 
 59. IoU,GIoU,DIoU,CIoU,EIoU,SIoU更换方法.
@@ -296,6 +296,30 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 61. Inner-MPDIoU更换方法.
 
     请看百度云视频.(20231114版本更新说明.)
+
+62. ultralytics/cfg/models/v5/yolov5-C3-MLCA.yaml
+
+    使用[Mixed Local Channel Attention 2023](https://github.com/wandahangFY/MLCA/tree/master)改进C3.(用法请看百度云视频-20231129版本更新说明)
+
+63. ultralytics/cfg/models/v5/yolov5-C3-AKConv.yaml
+
+    使用[AKConv 2023](https://github.com/CV-ZhangXin/AKConv)改进C3.(用法请看百度云视频-20231129版本更新说明)
+
+64. ultralytics/cfg/models/v5/yolov5-unireplknet.yaml
+
+    使用[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)替换yolov5主干.
+
+65. ultralytics/cfg/models/v5/yolov5-C3-UniRepLKNetBlock.yaml
+
+    使用[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的UniRepLKNetBlock改进C3.
+
+66. ultralytics/cfg/models/v5/yolov5-C3-DRB.yaml
+
+    使用[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的DilatedReparamBlock改进C3.
+
+67. ultralytics/cfg/models/v5/yolov5-C3-DWR-DRB.yaml
+
+    使用[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的DilatedReparamBlock对[DWRSeg](https://arxiv.org/abs/2212.01173)中的Dilation-wise Residual(DWR)的模块进行二次创新后改进C3.
 
 ### YOLOV8
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
@@ -539,7 +563,7 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
 53. ultralytics/cfg/models/v8/yolov8-C2f-DAttention.yaml
 
-    使用[Vision Transformer with Deformable Attention(CVPR2022)](https://github.com/LeapLabTHU/DAT)改进C2f.  
+    使用[Vision Transformer with Deformable Attention(CVPR2022)](https://github.com/LeapLabTHU/DAT)改进C2f.(需要看[常见错误和解决方案的第五点](#a))  
     使用注意点请看百度云视频.(DAttention(Vision Transformer with Deformable Attention CVPR2022)使用注意说明.)
 
 54. ultralytics/cfg/models/v8/yolov8-CSwinTransformer.yaml
@@ -589,7 +613,7 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
 65. ultralytics/cfg/models/v8/yolov8-C2f-FocusedLinearAttention.yaml
 
-    使用[FLatten Transformer(ICCV2023)](https://github.com/LeapLabTHU/FLatten-Transformer)中的FocusedLinearAttention改进C2f.  
+    使用[FLatten Transformer(ICCV2023)](https://github.com/LeapLabTHU/FLatten-Transformer)中的FocusedLinearAttention改进C2f.(需要看[常见错误和解决方案的第五点](#a))    
     使用注意点请看百度云视频.(20231114版本更新说明.)
 
 66. IoU,GIoU,DIoU,CIoU,EIoU,SIoU更换方法.
@@ -603,6 +627,30 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 68. Inner-MPDIoU更换方法.
 
     请看百度云视频.(20231114版本更新说明.)
+
+69. ultralytics/cfg/models/v8/yolov8-C2f-MLCA.yaml
+
+    使用[Mixed Local Channel Attention 2023](https://github.com/wandahangFY/MLCA/tree/master)改进C2f.(用法请看百度云视频-20231129版本更新说明)
+
+70. ultralytics/cfg/models/v8/yolov8-C2f-AKConv.yaml
+
+    使用[AKConv 2023](https://github.com/CV-ZhangXin/AKConv)改进C2f.(用法请看百度云视频-20231129版本更新说明)
+
+71. ultralytics/cfg/models/v8/yolov8-unireplknet.yaml
+
+    使用[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)替换yolov8主干.
+
+72. ultralytics/cfg/models/v8/yolov8-C2f-UniRepLKNetBlock.yaml
+
+    使用[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的UniRepLKNetBlock改进C2f.
+
+73. ultralytics/cfg/models/v8/yolov8-C2f-DRB.yaml
+
+    使用[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的DilatedReparamBlock改进C2f.
+
+74. ultralytics/cfg/models/v8/yolov8-C2f-DWR-DRB.yaml
+
+    使用[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的DilatedReparamBlock对[DWRSeg](https://arxiv.org/abs/2212.01173)中的Dilation-wise Residual(DWR)的模块进行二次创新后改进C2f.
 
 # 更新公告
 
@@ -774,3 +822,11 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     2. 新增AKConv改进C2f和C3.
     3. 更新使用教程.
     4. 更新百度云链接视频-20231129版本更新说明.
+
+- **20231207-yolov8-v1.28**
+    1. 新增支持2023最新大卷积核CNN架构RepLKNet升级版-UniRepLKNet.
+    2. 新增UniRepLKNet中的[UniRepLKNetBlock, DilatedReparamBlock]改进C3和C2f.
+    3. 使用UniRepLKNet中的DilatedReparamBlock对DWRSeg中的Dilation-wise Residual(DWR)模块进行二次创新后改进C3和C2f.
+    4. 修复get_FPS.py测速前没有进行fuse的问题.
+    5. 更新使用教程.
+    6. 更新百度云链接视频-20231207版本更新说明.
