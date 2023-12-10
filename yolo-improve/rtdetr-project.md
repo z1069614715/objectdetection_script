@@ -531,7 +531,7 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     5. 百度云视频增加1202更新说明.
     6. 解决训练过程中由于指标出现的nan问题导致best.pt没办法正常保存.
 
-- **20231210-rtdetr-v1.4**
+- **20231210-rtdetr-v1.5**
     1. 支持来自Swift Parameter-free Attention Network中的重参数化Conv3XC模块.
     2. 支持UniRepLKNet中的DilatedReparamBlock.
     3. 支持UniRepLKNet中的DilatedReparamBlock对DWRSeg中的Dilation-wise Residual(DWR)模块进行二次创新的DWR_DRB.
