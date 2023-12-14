@@ -320,12 +320,12 @@
     paper: [链接](https://arxiv.org/abs/2307.08388)  
 - **yolov5-AIFI**  
     利用带有位置信息编码的AIFI自注意力机制改进YOLOV5.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV14V411c7H1/).   
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1nu4y1h7eS/).   
     reference: [链接](https://github.com/lyuwenyu/RT-DETR)  
     paper: [链接](https://arxiv.org/pdf/2304.08069.pdf)  
 - **yolov7-AIFI**  
     利用带有位置信息编码的AIFI自注意力机制改进YOLOV7.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV14V411c7H1/).   
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1rj411a7s4/).   
     reference: [链接](https://github.com/lyuwenyu/RT-DETR)  
     paper: [链接](https://arxiv.org/pdf/2304.08069.pdf)  
 - **yolov5-backbone/UniRepLKNet**  
@@ -334,3 +334,8 @@
     reference: [链接](https://github.com/AILab-CVC/UniRepLKNet)  
     paper: [链接](https://arxiv.org/abs/2311.15599)  
     weights-download: [百度云链接](https://pan.baidu.com/s/1Gk48Xa6cWKAVJgsF5cqk1g?pwd=b55v)
+- **yolov5-asf** 
+    添加Attentional Scale Sequence Fusion到yolov5中.
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1PH4y1S7mf/).   
+    reference: [链接](https://github.com/mkang315/ASF-YOLO)  
+    paper: [链接](https://arxiv.org/abs/2312.06458)  
