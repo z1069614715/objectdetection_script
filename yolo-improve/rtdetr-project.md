@@ -53,7 +53,7 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 ### 以RT-DETR-R18为基准模型的改进方案
 1. ultralytics/cfg/models/rt-detr/rt-detr-timm.yaml
 
-    使用[timm](https://github.com/huggingface/pytorch-image-models)库系列的主干替换rtdetr的backbone.
+    使用[timm](https://github.com/huggingface/pytorch-image-models)库系列的主干替换rtdetr的backbone.(基本支持现有CNN模型)
 2. ultralytics/cfg/models/rt-detr/rt-detr-fasternet.yaml
 
     使用[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)替换rtdetr的backbone.
@@ -186,13 +186,33 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     使用[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的DilatedReparamBlock改进resnet18-backbone中的BasicBlock.
 
-37. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-FocusedLinearAttention.yaml
-
-    使用[FLatten Transformer(ICCV2023)](https://github.com/LeapLabTHU/FLatten-Transformer)中的FocusedLinearAttention改进AIFI.
-
-38. ultralytics/cfg/models/rt-detr/rtdetr-DWRC3_DRB.yaml
+37. ultralytics/cfg/models/rt-detr/rtdetr-DWRC3-DRB.yaml
 
     使用[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的DilatedReparamBlock对[DWRSeg](https://arxiv.org/abs/2212.01173)中的Dilation-wise Residual(DWR)进行二次创新改进rtdetr.
+
+38. ultralytics/cfg/models/rt-detr/rtdetr-Conv3XCC3.yaml
+
+    使用[Swift Parameter-free Attention Network](https://github.com/hongyuanyu/SPAN/tree/main)中的Conv3XC改进RepC3.
+
+39. ultralytics/cfg/models/rt-detr/rtdetr-DRBC3.yaml
+
+    使用[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的DilatedReparamBlock改进RepC3.
+
+40. ultralytics/cfg/models/rt-detr/rtdetr-DBBC3.yaml
+
+    使用[DiverseBranchBlock CVPR2021](https://github.com/DingXiaoH/DiverseBranchBlock)改进RepC3.
+
+41. ultralytics/cfg/models/rt-detr/rtdetr-DBB.yaml
+
+    使用[DiverseBranchBlock CVPR2021](https://github.com/DingXiaoH/DiverseBranchBlock)改进resnet18-backbone中的BasicBlock.
+
+42. ultralytics/cfg/models/rt-detr/rtdetr-DualConv.yaml
+
+    使用[DualConv](https://github.com/ChipsGuardian/DualConv)改进resnet18-backbone中的BasicBlock.
+
+43. ultralytics/cfg/models/rt-detr/rtdetr-ASF.yaml
+
+    使用[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion来改进rtdetr.
 
 ### 以RT-DETR-R50为基准模型的改进方案
 
@@ -275,6 +295,18 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 20. ultralytics/cfg/models/rt-detr/rtdetr-r50-DRB.yaml
 
     使用[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的DilatedReparamBlock改进resnet50-backbone中的BottleNeck.
+
+21. ultralytics/cfg/models/rt-detr/rtdetr-r50-DBB.yaml
+
+    使用[DiverseBranchBlock CVPR2021](https://github.com/DingXiaoH/DiverseBranchBlock)改进resnet50-backbone中的BottleNeck.
+
+22. ultralytics/cfg/models/rt-detr/rtdetr-r50-DualConv.yaml
+
+    使用[DualConv](https://github.com/ChipsGuardian/DualConv)改进resnet50-backbone中的BottleNeck.
+
+23. ultralytics/cfg/models/rt-detr/rtdetr-r50-ASF.yaml
+
+    使用[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion来改进rtdetr.
 
 ### 以RT-DETR-L为基准模型的改进方案
 1. ultralytics/cfg/models/rt-detr/rtdetr-l-GhostHGNetV2.yaml
@@ -376,15 +408,27 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
 22. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-DRB.yaml
 
-    使用RT-DETR中的TransformerDecoderHead和[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的DilatedReparamBlock改进改进yolov8.
+    使用RT-DETR中的TransformerDecoderHead和[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的DilatedReparamBlock改进yolov8.
 
 23. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-UniRepLKNetBlock.yaml
 
-    使用RT-DETR中的TransformerDecoderHead和[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的UniRepLKNetBlock改进改进yolov8.
+    使用RT-DETR中的TransformerDecoderHead和[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的UniRepLKNetBlock改进yolov8.
 
 24. ultralytics/cfg/models/yolo-detr/yolov8-detr-DWR-DRB.yaml
 
     使用[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的DilatedReparamBlock对[DWRSeg](https://arxiv.org/abs/2212.01173)中的Dilation-wise Residual(DWR)进行二次创新改进yolov8.
+
+25. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-DBB.yaml
+
+    使用RT-DETR中的TransformerDecoderHead和[DiverseBranchBlock CVPR2021](https://github.com/DingXiaoH/DiverseBranchBlock)改进yolov8.
+
+26. ultralytics/cfg/models/yolo-detr/yolov8-detr-CSP-EDLAN.yaml
+
+    使用RT-DETR中的TransformerDecoderHead和[DualConv](https://github.com/ChipsGuardian/DualConv)打造CSP Efficient Dual Layer Aggregation Networks改进yolov8.
+
+27. ultralytics/cfg/models/yolo-detr/yolov8-detr-ASF.yaml
+
+    使用RT-DETR中的TransformerDecoderHead和[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion改进yolov8.
 
 ### 以Yolov5为基准模型的改进方案
 1. ultralytics/cfg/models/yolo-detr/yolov5-detr.yaml
@@ -483,8 +527,21 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     使用[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的DilatedReparamBlock对[DWRSeg](https://arxiv.org/abs/2212.01173)中的Dilation-wise Residual(DWR)进行二次创新改进yolov5.
 
+25. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-DBB.yaml
+
+    使用RT-DETR中的TransformerDecoderHead和[DiverseBranchBlock CVPR2021](https://github.com/DingXiaoH/DiverseBranchBlock)改进yolov5.
+
+26. ultralytics/cfg/models/yolo-detr/yolov5-detr-CSP-EDLAN.yaml
+
+    使用RT-DETR中的TransformerDecoderHead和[DualConv](https://github.com/ChipsGuardian/DualConv)打造CSP Efficient Dual Layer Aggregation Networks改进yolov5.
+
+27. ultralytics/cfg/models/yolo-detr/yolov5-detr-ASF.yaml
+
+    使用RT-DETR中的TransformerDecoderHead和[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion改进yolov5.
+
 ### IoU系列
 
+更换教程可看(百度云视频-20231126更新说明)
 1. IoU,GIoU,DIoU,CIoU,EIoU,SIoU
 2. MPDIoU[论文链接](https://arxiv.org/pdf/2307.07662.pdf)
 3. Inner-IoU,Inner-GIoU,Inner-DIoU,Inner-CIoU,Inner-EIoU,Inner-SIoU[论文链接](https://arxiv.org/abs/2311.02877)
@@ -538,3 +595,11 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     4. 使用ICCV2023 FLatten Transformer中的FocusedLinearAttention改进AIFI.
     5. 更新使用教程.
     6. 百度云视频增加1210更新说明.
+
+- **20231214-rtdetr-v1.6**
+    1. 支持DiverseBranchBlock.
+    2. 利用DualConv打造CSP Efficient Dual Layer Aggregation Networks(仅支持yolov5-detr和yolov8-detr).
+    3. 使用Swift Parameter-free Attention Network中的重参数化Conv3XC和DiverseBranchBlock改进RepC3.
+    4. 支持最新的ASF-YOLO中的Attentional Scale Sequence Fusion.
+    5. 更新使用教程.
+    6. 百度云视频增加1214更新说明.
