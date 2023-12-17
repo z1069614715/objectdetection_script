@@ -830,3 +830,9 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     4. 修复get_FPS.py测速前没有进行fuse的问题.
     5. 更新使用教程.
     6. 更新百度云链接视频-20231207版本更新说明.
+
+- **20231217-yolov-v1.29**
+    1. 新增ASF-YOLO中的Attentional Scale Sequence Fusion,并在其基础上增加P2检测层并进行优化网络结构.
+    2. 新增使用DualConv打造CSP Efficient Dual Layer Aggregation Networks.
+    3. 更新使用教程.
+    4. 更新百度云链接视频-20231217版本更新说明.
