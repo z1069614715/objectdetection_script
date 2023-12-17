@@ -124,7 +124,7 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     对检测头进行重设计,支持10种轻量化检测头.详细请看ultralytics/nn/extra_modules/head.py中的Detect_Efficient class.  
 
-22. ultralytics/cfg/models/v5/yolov5-AuxHead.yaml
+22. ultralytics/cfg/models/v5/yolov5-aux.yaml
 
     参考YOLOV7-Aux对YOLOV5添加额外辅助训练头,在训练阶段参与训练,在最终推理阶段去掉.  
     其中辅助训练头的损失权重系数可在ultralytics/utils/loss.py中的class v8DetectionLoss中的__init__函数中的self.aux_loss_ratio设定,默认值参考yolov7为0.25.  
@@ -321,6 +321,18 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     使用[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的DilatedReparamBlock对[DWRSeg](https://arxiv.org/abs/2212.01173)中的Dilation-wise Residual(DWR)的模块进行二次创新后改进C3.
 
+68. ultralytics/cfg/models/v5/yolov5-ASF.yaml
+
+    使用使用[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion改进yolov5.
+
+69. ultralytics/cfg/models/v5/yolov5-ASF-P2.yaml
+
+    在ultralytics/cfg/models/v8/yolov8-ASF.yaml的基础上进行二次创新，引入P2检测层并对网络结构进行优化.
+
+70. ultralytics/cfg/models/v5/yolov5-CSP-EDLAN.yaml
+
+    使用[DualConv](https://github.com/ChipsGuardian/DualConv)打造CSP Efficient Dual Layer Aggregation Networks改进yolov5.
+
 ### YOLOV8
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
 
@@ -467,7 +479,7 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     对检测头进行重设计,支持10种轻量化检测头.详细请看ultralytics/nn/extra_modules/head.py中的Detect_Efficient class.
 
-32. ultralytics/cfg/models/v8/yolov8-AuxHead.yaml
+32. ultralytics/cfg/models/v8/yolov8-aux.yaml
 
     参考YOLOV7-Aux对YOLOV8添加额外辅助训练头,在训练阶段参与训练,在最终推理阶段去掉.  
     其中辅助训练头的损失权重系数可在ultralytics/utils/loss.py中的class v8DetectionLoss中的__init__函数中的self.aux_loss_ratio设定,默认值参考yolov7为0.25.
@@ -651,6 +663,18 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 74. ultralytics/cfg/models/v8/yolov8-C2f-DWR-DRB.yaml
 
     使用[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的DilatedReparamBlock对[DWRSeg](https://arxiv.org/abs/2212.01173)中的Dilation-wise Residual(DWR)的模块进行二次创新后改进C2f.
+
+75. ultralytics/cfg/models/v8/yolov8-ASF.yaml
+
+    使用[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion改进yolov8.
+
+76. ultralytics/cfg/models/v8/yolov8-ASF-P2.yaml
+
+    在ultralytics/cfg/models/v8/yolov8-ASF.yaml的基础上进行二次创新，引入P2检测层并对网络结构进行优化.
+
+77. ultralytics/cfg/models/v8/yolov8-CSP-EDLAN.yaml
+
+    使用[DualConv](https://github.com/ChipsGuardian/DualConv)打造CSP Efficient Dual Layer Aggregation Networks改进yolov8.
 
 # 更新公告
 
