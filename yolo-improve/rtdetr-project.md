@@ -214,6 +214,18 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     使用[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion来改进rtdetr.
 
+44. ultralytics/cfg/models/rt-detr/rtdetr-ASF-P2.yaml
+
+    在ultralytics/cfg/models/rt-detr/rtdetr-ASF.yaml的基础上进行二次创新，引入P2检测层并对网络结构进行优化.
+
+45. ultralytics/cfg/models/rt-detr/rtdetr-slimneck.yaml
+
+    使用[SlimNeck](https://github.com/AlanLi1997/slim-neck-by-gsconv)中的VoVGSCSP\VoVGSCSPC和GSConv改进rtdetr中的CCFM.
+
+46. ultralytics/cfg/models/rt-detr/rtdetr-slimneck-ASF.yaml
+
+    使用[SlimNeck](https://github.com/AlanLi1997/slim-neck-by-gsconv)中的VoVGSCSP\VoVGSCSPC和GSConv和[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion改进rtdetr中的CCFM.
+
 ### 以RT-DETR-R50为基准模型的改进方案
 
 1. ultralytics/cfg/models/rt-detr/rtdetr-r50-Ortho.yaml
@@ -430,6 +442,18 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     使用RT-DETR中的TransformerDecoderHead和[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion改进yolov8.
 
+28. ultralytics/cfg/models/yolo-detr/yolov8-detr-ASF-P2.yaml
+
+    在ultralytics/cfg/models/yolo-detr/yolov8-detr-ASF.yaml的基础上进行二次创新，引入P2检测层并对网络结构进行优化.
+
+29. ultralytics/cfg/models/yolo-detr/yolov8-detr-slimneck.yaml
+
+    使用RT-DETR中的TransformerDecoderHead和[SlimNeck](https://github.com/AlanLi1997/slim-neck-by-gsconv)中VoVGSCSP\VoVGSCSPC和GSConv改进yolov8的neck.
+
+30. ultralytics/cfg/models/yolo-detr/yolov8-detr-slimneck-asf.yaml
+
+    在ultralytics/cfg/models/yolo-detr/yolov8-detr-slimneck.yaml使用[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion进行二次创新.
+
 ### 以Yolov5为基准模型的改进方案
 1. ultralytics/cfg/models/yolo-detr/yolov5-detr.yaml
 
@@ -538,6 +562,18 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 27. ultralytics/cfg/models/yolo-detr/yolov5-detr-ASF.yaml
 
     使用RT-DETR中的TransformerDecoderHead和[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion改进yolov5.
+
+28. ultralytics/cfg/models/yolo-detr/yolov5-detr-ASF-P2.yaml
+
+    在ultralytics/cfg/models/yolo-detr/yolov5-detr-ASF.yaml的基础上进行二次创新，引入P2检测层并对网络结构进行优化.
+
+29. ultralytics/cfg/models/yolo-detr/yolov5-detr-slimneck.yaml
+
+    使用RT-DETR中的TransformerDecoderHead和[SlimNeck](https://github.com/AlanLi1997/slim-neck-by-gsconv)中VoVGSCSP\VoVGSCSPC和GSConv改进yolov5的neck.
+
+30. ultralytics/cfg/models/yolo-detr/yolov5-detr-slimneck-asf.yaml
+
+    在ultralytics/cfg/models/yolo-detr/yolov5-detr-slimneck.yaml使用[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion进行二次创新.
 
 ### IoU系列
 
