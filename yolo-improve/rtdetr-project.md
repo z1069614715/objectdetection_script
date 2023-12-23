@@ -603,3 +603,12 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     4. 支持最新的ASF-YOLO中的Attentional Scale Sequence Fusion.
     5. 更新使用教程.
     6. 百度云视频增加1214更新说明.
+
+- **20231223-rtdetr-v1.7**
+    1. 增加rtdetr-r18-asf-p2.yaml,使用ASF-YOLO中的Attentional Scale Sequence Fusion与Small Object Detection Head进行二次创新.
+    2. 新增rtdetr-slimneck.yaml和rtdetr-slimneck-ASF.yaml.
+    3. 新增yolov8-detr-slimneck.yaml,yolov8-detr-slimneck-asf.yaml.
+    4. 新增yolov5-detr-slimneck.yaml,yolov5-detr-slimneck-asf.yaml.
+    5. 修正热力图计算中预处理.
+    6. 更新使用教程.
+    7. 百度云视频增加1223更新说明.
