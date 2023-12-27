@@ -7,11 +7,11 @@
 #### 目前支持的一些block (yolov5默认C3,yolov8默认C2f) (部分block可能会与主结构有冲突,具体以是否能运行为主)
 
 ##### C2f系列
-C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, C2f_SCConv, C2f_ScConv, C2f_EMSC, C2f_EMSCP, C2f_KW, C2f_DCNv2, C2f_DCNv3, C2f_OREPA, C2f_REPVGGOREPA, C2f_DCNv2_Dynamic, C2f_MSBlock, C2f_ContextGuided, C2f_DLKA, C2f_EMBC, C2f_Parc, C2f_DWR, C2f_RFAConv, C2f_RFCBAMConv, C2f_RFCAConv, C2f_MLCA, C2f_AKConv, C2f_UniRepLKNetBlock, C2f_DRB, C2f_DWR_DRB
+C2f, C2f_Faster, C2f_ODConv, C2f_Faster_EMA, C2f_DBB, C2f_CloAtt, C2f_SCConv, C2f_ScConv, C2f_EMSC, C2f_EMSCP, C2f_KW, C2f_DCNv2, C2f_DCNv3, C2f_OREPA, C2f_REPVGGOREPA, C2f_DCNv2_Dynamic, C2f_MSBlock, C2f_ContextGuided, C2f_DLKA, C2f_EMBC, C2f_Parc, C2f_DWR, C2f_RFAConv, C2f_RFCBAMConv, C2f_RFCAConv, C2f_MLCA, C2f_AKConv, C2f_UniRepLKNetBlock, C2f_DRB, C2f_DWR_DRB, C2f_AggregatedAtt
 ##### C3系列  
-C3, C3Ghost, C3_CloAtt, C3_SCConv, C3_ScConv, C3_EMSC, C3_EMSCP, C3_KW, C3_ODConv, C3_Faster, C3_Faster_EMA, C3_DCNv2, C3_DCNv3, C3_DBB, C3_OREPA, C3_REPVGGOREPA, C3_DCNv2_Dynamic, C3_MSBlock, C3_ContextGuided, C3_DLKA, C3_EMBC, C3_Parc, C3_DWR, C3_RFAConv, C3_RFCBAMConv, C3_RFCAConv, C3_MLCA, C3_AKConv, C3_UniRepLKNetBlock, C3_DRB, C3_DWR_DRB
+C3, C3Ghost, C3_CloAtt, C3_SCConv, C3_ScConv, C3_EMSC, C3_EMSCP, C3_KW, C3_ODConv, C3_Faster, C3_Faster_EMA, C3_DCNv2, C3_DCNv3, C3_DBB, C3_OREPA, C3_REPVGGOREPA, C3_DCNv2_Dynamic, C3_MSBlock, C3_ContextGuided, C3_DLKA, C3_EMBC, C3_Parc, C3_DWR, C3_RFAConv, C3_RFCBAMConv, C3_RFCAConv, C3_MLCA, C3_AKConv, C3_UniRepLKNetBlock, C3_DRB, C3_DWR_DRB, C3_AggregatedAtt
 ##### 其他系列
-VoVGSCSP, VoVGSCSPC, RCSOSA  
+VoVGSCSP, VoVGSCSPC, RCSOSA, CSP_EDLAN
 
 <a id="c"></a>
 
@@ -50,8 +50,8 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     添加BIFPN到yolov5中.  
     其中BIFPN中有三个可选参数：
     1. Fusion  
-        其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default)  
-        其中weight, adaptive, concat出自[paper链接-Figure 3](https://openreview.net/pdf?id=q2ZaVU6bEsT)
+        其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default), SDI  
+        其中weight, adaptive, concat出自[paper链接-Figure 3](https://openreview.net/pdf?id=q2ZaVU6bEsT), SDI出自[U-NetV2](https://github.com/yaoppeng/U-Net_v2)
     2. node_mode  
         其中目前(后续会更新喔)支持这些[结构](#b)
     3. head_channel  
@@ -183,8 +183,8 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     fasternet与bifpn的结合.  
     其中BIFPN中有三个可选参数：
     1. Fusion  
-        其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default)  
-        其中weight, adaptive, concat出自[paper链接-Figure 3](https://openreview.net/pdf?id=q2ZaVU6bEsT)
+        其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default), SDI  
+        其中weight, adaptive, concat出自[paper链接-Figure 3](https://openreview.net/pdf?id=q2ZaVU6bEsT), SDI出自[U-NetV2](https://github.com/yaoppeng/U-Net_v2)
     2. node_mode  
         其中目前(后续会更新喔)支持这些[结构](#b)
     3. head_channel  
@@ -333,6 +333,26 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     使用[DualConv](https://github.com/ChipsGuardian/DualConv)打造CSP Efficient Dual Layer Aggregation Networks改进yolov5.
 
+71. ultralytics/cfg/models/v5/yolov5-TransNeXt.yaml
+
+    使用[TransNeXt](https://github.com/DaiShiResearch/TransNeXt)改进yolov5的backbone.(需要看[常见错误和解决方案的第五点](#a))   
+
+72. ultralytics/cfg/models/v5/yolov5-AggregatedAttention.yaml
+
+    使用[TransNeXt](https://github.com/DaiShiResearch/TransNeXt)中的聚合感知注意力改进yolov5的backbone.(需要看[常见错误和解决方案的第五点](#a))   
+
+73. ultralytics/cfg/models/v5/yolov5-C3-AggregatedAtt.yaml
+
+    使用[TransNeXt](https://github.com/DaiShiResearch/TransNeXt)中的聚合感知注意力改进C3.(需要看[常见错误和解决方案的第五点](#a))   
+
+74. ultralytics/cfg/models/v5/yolov5-bifpn-SDI.yaml
+
+    使用[U-NetV2](https://github.com/yaoppeng/U-Net_v2)中的 Semantics and Detail Infusion Module对BIFPN进行二次创新.
+
+75. ultralytics/cfg/models/v5/yolov5-SDI.yaml
+
+    使用[U-NetV2](https://github.com/yaoppeng/U-Net_v2)中的 Semantics and Detail Infusion Module对yolov5中的feature fusion部分进行重设计.
+
 ### YOLOV8
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
 
@@ -359,8 +379,8 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     添加BIFPN到yolov8中.  
     其中BIFPN中有三个可选参数：
     1. Fusion  
-        其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default)  
-        其中weight, adaptive, concat出自[paper链接-Figure 3](https://openreview.net/pdf?id=q2ZaVU6bEsT)
+        其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default), SDI  
+        其中weight, adaptive, concat出自[paper链接-Figure 3](https://openreview.net/pdf?id=q2ZaVU6bEsT), SDI出自[U-NetV2](https://github.com/yaoppeng/U-Net_v2)
     2. node_mode  
         其中目前(后续会更新喔)支持这些[结构](#b)
     3. head_channel  
@@ -522,8 +542,8 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     fasternet与bifpn的结合.  
     其中BIFPN中有三个可选参数：
     1. Fusion  
-        其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default)  
-        其中weight, adaptive, concat出自[paper链接-Figure 3](https://openreview.net/pdf?id=q2ZaVU6bEsT)
+        其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default), SDI  
+        其中weight, adaptive, concat出自[paper链接-Figure 3](https://openreview.net/pdf?id=q2ZaVU6bEsT), SDI出自[U-NetV2](https://github.com/yaoppeng/U-Net_v2)
     2. node_mode  
         其中目前(后续会更新喔)支持这些[结构](#b)
     3. head_channel  
@@ -675,6 +695,26 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 77. ultralytics/cfg/models/v8/yolov8-CSP-EDLAN.yaml
 
     使用[DualConv](https://github.com/ChipsGuardian/DualConv)打造CSP Efficient Dual Layer Aggregation Networks改进yolov8.
+
+78. ultralytics/cfg/models/v8/yolov8-TransNeXt.yaml
+
+    使用[TransNeXt](https://github.com/DaiShiResearch/TransNeXt)改进yolov8的backbone.(需要看[常见错误和解决方案的第五点](#a))   
+
+79. ultralytics/cfg/models/v8/yolov8-AggregatedAttention.yaml
+
+    使用[TransNeXt](https://github.com/DaiShiResearch/TransNeXt)中的聚合感知注意力改进yolov8的backbone.(需要看[常见错误和解决方案的第五点](#a))   
+
+80. ultralytics/cfg/models/v8/yolov8-C2f-AggregatedAtt.yaml
+
+    使用[TransNeXt](https://github.com/DaiShiResearch/TransNeXt)中的聚合感知注意力改进C2f.(需要看[常见错误和解决方案的第五点](#a))   
+
+81. ultralytics/cfg/models/v8/yolov8-bifpn-SDI.yaml
+
+    使用[U-NetV2](https://github.com/yaoppeng/U-Net_v2)中的 Semantics and Detail Infusion Module对BIFPN进行二次创新.
+
+82. ultralytics/cfg/models/v8/yolov8-SDI.yaml
+
+    使用[U-NetV2](https://github.com/yaoppeng/U-Net_v2)中的 Semantics and Detail Infusion Module对yolov8中的feature fusion部分进行重设计.
 
 # 更新公告
 
