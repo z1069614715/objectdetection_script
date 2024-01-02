@@ -7,7 +7,7 @@
         YOLOV5-Backbone中的主干基本都支持到我个人整合的v7代码中,并且整合后的v7配置文件非常简洁,方便进行改进
         购买了本项目联系我qq,我会拉你进一个交流群,详细可看[哔哩哔哩链接](https://www.bilibili.com/opus/798697826625257472?spm_id_from=333.999.0.0)
 
-2. 基于整合yolov8的项目.(目前69.9¥)
+2. 基于整合yolov8的项目.(69.9¥)
     
     [目前已有的改进方案和更新详细公告](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/yolov8-project.md)  
     项目简单介绍，详情请看项目详解.
@@ -32,9 +32,9 @@
     3. 购买了RT-DETR项目的都会赠送yolov5-PAGCP通道剪枝算法代码和相关实验参数命令.
     4. 购买后进RT-DETR交流群(代码视频均在群公告),群里可交流代码和论文相关.
     5. 项目因为(价格问题)不附带一对一私人答疑服务,平时私聊问点小问题和群里的问题,有空我都会回复.
-    6. RT-DETR项目包含多种基准模型改进方案(RT-DETR-R18,RT-DETR-L,Yolov8-Detr,Yolov5-Detr),具体可点击[目前已有的改进方案和更新详细公告](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/rtdetr-project.md)看详细.
+    6. RT-DETR项目包含多种基准模型改进方案(RT-DETR-R18,RT-DETR-R50,RT-DETR-L,Yolov8-Detr,Yolov5-Detr),具体可点击[目前已有的改进方案和更新详细公告](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/rtdetr-project.md)看详细.
 
-5. 基于YOLOV8的剪枝蒸馏项目.(蒸馏目前还在开发..)
+5. 基于YOLOV8的剪枝蒸馏项目.
 
     剪枝:[项目详解](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/yolov8-compress.md)(89.9¥)
     1. 模型轻量化,部署必备之一!
@@ -43,6 +43,13 @@
     4. 本次项目就直接提供几个文件，到时候会提供教程，自行复制到项目二上即可跑，原理上其他版本应该也可以跑，但是开发的时候我是基于项目二的8.0.202上开发的，附近的版本的话应该也可以跑，但是没办法一一验证，所以需自行考虑!
     5. 目前只支持目标检测，不支持segment和pose，不是目标检测的先不用购买。
     6. 此项目只包含剪枝，不包含蒸馏。
+
+    蒸馏:[项目详解](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/yolov8-distill.md)(89.9¥,目前优惠期(2024/1/2~2024/1/28),购买过项目二、项目三、项目五的剪枝各优惠10,最多叠加2次)
+    1. 模型轻量化,部署必备之一!
+    2. 项目里面配套蒸馏示例(部分示例中是基于项目二的改进代码进行蒸馏,如没有入手项目二是不包含这部分代码的,但对你理解蒸馏操作没影响),并且都配有视频讲解,供大家理解如何进行蒸馏.
+    3. 购买后进YOLOV8蒸馏交流群(代码视频均在群公告),因为蒸馏操作有一定的难度,所以蒸馏操作问题可以群里提问,我都会群里回复相关问题.
+    4. 本次项目就直接提供几个文件，到时候会提供教程，自行复制到项目二上即可跑，原理上其他版本应该也可以跑，但是开发的时候我是基于项目二的8.0.202上开发的，附近的版本的话应该也可以跑，但是没办法一一验证，所以需自行考虑!
+    5. 目前只支持目标检测，不支持segment和pose，不是目标检测的先不用购买。
 
 # Advertising Board
 人工智能-工作室长期对外接单，范围主要是:
