@@ -915,7 +915,7 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     3. 更新使用教程.
     4. 更新百度云链接视频-20231227版本更新说明.
 
-- **20231227-yolov8-v1.31**
+- **20240104-yolov8-v1.31**
     1. 新增Shape-IoU,Inner-Shape-IoU.
     2. 更新使用教程.
     3. 更新百度云链接视频-20230104版本更新说明.
