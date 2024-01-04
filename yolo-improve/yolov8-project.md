@@ -353,6 +353,10 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     使用[U-NetV2](https://github.com/yaoppeng/U-Net_v2)中的 Semantics and Detail Infusion Module对yolov5中的feature fusion部分进行重设计.
 
+76. Shape-IoU,Inner-Shape-IoU更换方法.
+
+    请看百度云视频.(20240104版本更新说明.)
+
 ### YOLOV8
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
 
@@ -716,6 +720,10 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     使用[U-NetV2](https://github.com/yaoppeng/U-Net_v2)中的 Semantics and Detail Infusion Module对yolov8中的feature fusion部分进行重设计.
 
+83. Shape-IoU,Inner-Shape-IoU更换方法.
+
+    请看百度云视频.(20240104版本更新说明.)
+
 # 更新公告
 
 - **20230620-yolov8-v1.1**
@@ -906,3 +914,8 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     2. 新增U-NetV2中的Semantics and Detail Infusion Module,分别对BIFPN和PAFPN中的feature fusion部分进行二次创新.
     3. 更新使用教程.
     4. 更新百度云链接视频-20231227版本更新说明.
+
+- **20231227-yolov8-v1.31**
+    1. 新增Shape-IoU,Inner-Shape-IoU.
+    2. 更新使用教程.
+    3. 更新百度云链接视频-20230104版本更新说明.
