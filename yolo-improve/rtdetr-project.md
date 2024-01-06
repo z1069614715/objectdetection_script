@@ -648,3 +648,11 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     5. 修正热力图计算中预处理.
     6. 更新使用教程.
     7. 百度云视频增加1223更新说明.
+
+- **20240106-rtdetr-v1.8**
+    1. 新增Shape-IoU,Inner-Shape-IoU.
+    2. 新增支持TransNeXt主干和TransNeXt中的聚焦感知注意力机制.
+    3. 新增U-NetV2中的Semantics and Detail Infusion Module对RTDETR的CCFM进行创新.
+    4. ASF系列支持attention_add.
+    5. 更新使用教程.
+    6. 百度云视频增加20240106更新说明.
