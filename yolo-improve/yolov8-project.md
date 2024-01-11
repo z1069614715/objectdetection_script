@@ -357,6 +357,18 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     请看百度云视频.(20240104版本更新说明.)
 
+77. FocalLoss,VarifocalLoss,QualityfocalLoss更换方法.
+
+    请看百度云视频.(20240111版本更新说明.)
+
+78. Wise-IoU(v1,v2,v3)系列(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU,ShapeIoU)更换方法.
+
+    请看百度云视频.(20240111版本更新说明.)
+
+79. Inner-Wise-IoU(v1,v2,v3)系列(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU,ShapeIoU)更换方法.
+
+    请看百度云视频.(20240111版本更新说明.)
+
 ### YOLOV8
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
 
@@ -724,6 +736,27 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     请看百度云视频.(20240104版本更新说明.)
 
+84. FocalLoss,VarifocalLoss,QualityfocalLoss更换方法.
+
+    请看百度云视频.(20240111版本更新说明.)
+
+85. Wise-IoU(v1,v2,v3)系列(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU,ShapeIoU)更换方法.
+
+    请看百度云视频.(20240111版本更新说明.)
+
+86. Inner-Wise-IoU(v1,v2,v3)系列(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU,ShapeIoU)更换方法.
+
+    请看百度云视频.(20240111版本更新说明.)
+
+# 目前支持的Loss系列总结
+
+1. SlideLoss,EMASlideLoss.(可动态调节正负样本的系数,让模型更加注重难分类,错误分类的样本上)
+2. IoU,GIoU,DIoU,CIoU,EIoU,SIoU,MPDIoU,ShapeIoU.
+3. Inner-IoU,Inner-GIoU,Inner-DIoU,Inner-CIoU,Inner-EIoU,Inner-SIoU,Inner-ShapeIoU.
+4. Wise-IoU(v1,v2,v3)系列(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU,ShapeIoU).
+5. Inner-Wise-IoU(v1,v2,v3)系列(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU,ShapeIoU).
+6. FocalLoss,VarifocalLoss,QualityfocalLoss
+
 # 更新公告
 
 - **20230620-yolov8-v1.1**
@@ -919,3 +952,10 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     1. 新增Shape-IoU,Inner-Shape-IoU.
     2. 更新使用教程.
     3. 更新百度云链接视频-20230104版本更新说明.
+
+- **20240111-yolov8-v1.32**
+    1. 支持FocalLoss,VarifocalLoss,QualityfocalLoss.
+    2. 支持Wise-IoU(v1,v2,v3)系列(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU).
+    3. 支持Inner-Wise-IoU(v1,v2,v3)系列(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU).
+    4. 更新使用教程.
+    5. 更新百度云链接视频-20230111版本更新说明.
