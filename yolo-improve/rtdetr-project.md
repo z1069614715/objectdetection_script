@@ -24,16 +24,16 @@
 
 # RT-DETR基准模型
 
-1. ultralytics/cfg/models/rt-detr/rtdetr-r18.yaml(有预训练权重)
+1. ultralytics/cfg/models/rt-detr/rtdetr-r18.yaml(有预训练权重COCO+Objects365,来自RTDETR-Pytorch版本的移植)
 
     rtdetr-r18 summary: 421 layers, 20184464 parameters, 20184464 gradients, 58.6 GFLOPs
-2. ultralytics/cfg/models/rt-detr/rtdetr-r34.yaml
+2. ultralytics/cfg/models/rt-detr/rtdetr-r34.yaml(有预训练权重COCO,来自RTDETR-Pytorch版本的移植)
 
-    rtdetr-r34 summary: 501 layers, 30292624 parameters, 30292624 gradients, 88.9 GFLOPs
-3. ultralytics/cfg/models/rt-detr/rtdetr-r50-m.yaml
+    rtdetr-r34 summary: 525 layers, 31441668 parameters, 31441668 gradients, 90.6 GFLOPs
+3. ultralytics/cfg/models/rt-detr/rtdetr-r50-m.yaml(有预训练权重COCO,来自RTDETR-Pytorch版本的移植)
 
     rtdetr-r50-m summary: 637 layers, 36647020 parameters, 36647020 gradients, 98.3 GFLOPs
-4. ultralytics/cfg/models/rt-detr/rtdetr-r50.yaml(有预训练权重)
+4. ultralytics/cfg/models/rt-detr/rtdetr-r50.yaml(有预训练权重COCO+Objects365,来自RTDETR-Pytorch版本的移植)
 
     rtdetr-r50 summary: 629 layers, 42944620 parameters, 42944620 gradients, 134.8 GFLOPs
 5. ultralytics/cfg/models/rt-detr/rtdetr-r101.yaml
@@ -226,6 +226,26 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     使用[SlimNeck](https://github.com/AlanLi1997/slim-neck-by-gsconv)中的VoVGSCSP\VoVGSCSPC和GSConv和[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion改进rtdetr中的CCFM.
 
+47. ultralytics/cfg/models/rt-detr/rtdetr-TransNeXt.yaml
+
+    使用[TransNeXt](https://github.com/DaiShiResearch/TransNeXt)改进yolov8的backbone.
+
+48. ultralytics/cfg/models/rt-detr/rtdetr-AggregatedAtt.yaml
+
+    使用[TransNeXt](https://github.com/DaiShiResearch/TransNeXt)中的聚合感知注意力改进resnet18中的BasicBlock.(百度云视频-20240106更新说明)
+
+49. ultralytics/cfg/models/rt-detr/rtdetr-SDI.yaml
+
+    使用[U-NetV2](https://github.com/yaoppeng/U-Net_v2)中的 Semantics and Detail Infusion Module对CCFM中的feature fusion进行改进.
+
+50. ultralytics/cfg/models/rt-detr/rtdetr-goldyolo.yaml
+
+    利用华为2023最新GOLD-YOLO中的Gatherand-Distribute进行改进特征融合模块.
+
+51. ultralytics/cfg/models/rt-detr/rtdetr-goldyolo-asf.yaml
+
+    利用华为2023最新GOLD-YOLO中的Gatherand-Distribute和[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion进行改进特征融合模块.
+
 ### 以RT-DETR-R50为基准模型的改进方案
 
 1. ultralytics/cfg/models/rt-detr/rtdetr-r50-Ortho.yaml
@@ -319,6 +339,10 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 23. ultralytics/cfg/models/rt-detr/rtdetr-r50-ASF.yaml
 
     使用[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion来改进rtdetr.
+
+24. ultralytics/cfg/models/rt-detr/rtdetr-r50-AggregatedAtt.yaml
+
+    使用[TransNeXt](https://github.com/DaiShiResearch/TransNeXt)中的聚合感知注意力改进resnet50中的BottleNeck.(百度云视频-20240106更新说明)
 
 ### 以RT-DETR-L为基准模型的改进方案
 1. ultralytics/cfg/models/rt-detr/rtdetr-l-GhostHGNetV2.yaml
@@ -454,6 +478,22 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     在ultralytics/cfg/models/yolo-detr/yolov8-detr-slimneck.yaml使用[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion进行二次创新.
 
+31. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-AggregatedAtt.yaml
+
+    使用RT-DETR中的TransformerDecoderHead和[TransNeXt](https://github.com/DaiShiResearch/TransNeXt)中的聚合感知注意力改进C2f.(百度云视频-20240106更新说明)
+
+32. ultralytics/cfg/models/yolo-detr/yolov8-detr-SDI.yaml
+
+    使用RT-DETR中的TransformerDecoderHead和[U-NetV2](https://github.com/yaoppeng/U-Net_v2)中的 Semantics and Detail Infusion Module对yolov8中的feature fusion进行改进.
+
+33. ultralytics/cfg/models/yolo-detr/yolov8-detr-goldyolo.yaml
+
+    利用RT-DETR中的TransformerDecoderHead和华为2023最新GOLD-YOLO中的Gatherand-Distribute进行改进特征融合模块.
+
+34. ultralytics/cfg/models/yolo-detr/yolov8-detr-goldyolo-asf.yaml
+
+    利用RT-DETR中的TransformerDecoderHead和华为2023最新GOLD-YOLO中的Gatherand-Distribute和[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion进行改进特征融合模块.
+
 ### 以Yolov5为基准模型的改进方案
 1. ultralytics/cfg/models/yolo-detr/yolov5-detr.yaml
 
@@ -575,14 +615,34 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     在ultralytics/cfg/models/yolo-detr/yolov5-detr-slimneck.yaml使用[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion进行二次创新.
 
+31. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-AggregatedAtt.yaml
+
+    使用RT-DETR中的TransformerDecoderHead和[TransNeXt](https://github.com/DaiShiResearch/TransNeXt)中的聚合感知注意力改进C3.(百度云视频-20240106更新说明)
+
+32. ultralytics/cfg/models/yolo-detr/yolov5-detr-SDI.yaml
+
+    使用RT-DETR中的TransformerDecoderHead和[U-NetV2](https://github.com/yaoppeng/U-Net_v2)中的 Semantics and Detail Infusion Module对yolov5中的feature fusion进行改进.
+
+33. ultralytics/cfg/models/yolo-detr/yolov8-detr-goldyolo.yaml
+
+    利用RT-DETR中的TransformerDecoderHead和华为2023最新GOLD-YOLO中的Gatherand-Distribute进行改进特征融合模块.
+
+34. ultralytics/cfg/models/yolo-detr/yolov8-detr-goldyolo-asf.yaml
+
+    利用RT-DETR中的TransformerDecoderHead和华为2023最新GOLD-YOLO中的Gatherand-Distribute和[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion进行改进特征融合模块.
+
 ### IoU系列
 
-更换教程可看(百度云视频-20231126更新说明)
-1. IoU,GIoU,DIoU,CIoU,EIoU,SIoU
-2. MPDIoU[论文链接](https://arxiv.org/pdf/2307.07662.pdf)
-3. Inner-IoU,Inner-GIoU,Inner-DIoU,Inner-CIoU,Inner-EIoU,Inner-SIoU[论文链接](https://arxiv.org/abs/2311.02877)
-4. Inner-MPDIoU(利用Inner-Iou与MPDIou进行二次创新)
-5. Normalized Gaussian Wasserstein Distance.[论文链接](https://arxiv.org/abs/2110.13389)
+更换教程可看
+1. IoU,GIoU,DIoU,CIoU,EIoU,SIoU(百度云视频-20231125更新说明)
+2. MPDIoU[论文链接](https://arxiv.org/pdf/2307.07662.pdf)(百度云视频-20231125更新说明)
+3. Inner-IoU,Inner-GIoU,Inner-DIoU,Inner-CIoU,Inner-EIoU,Inner-SIoU[论文链接](https://arxiv.org/abs/2311.02877)(百度云视频-20231125更新说明)
+4. Inner-MPDIoU(利用Inner-Iou与MPDIou进行二次创新)(百度云视频-20231125更新说明)
+5. Normalized Gaussian Wasserstein Distance.[论文链接](https://arxiv.org/abs/2110.13389)(百度云视频-20231125更新说明)
+6. Shape-IoU,Inner-Shape-IoU[论文链接](https://arxiv.org/abs/2110.13389)(百度云视频-20240106更新说明)
+7. SlideLoss,EMASlideLoss[创新思路](https://www.bilibili.com/video/BV1W14y1i79U/?vd_source=c8452371e7ca510979593165c8d7ac27).[Yolo-Face V2](https://github.com/Krasjet-Yu/YOLO-FaceV2/blob/master/utils/loss.py)(百度云视频-20240113更新说明)
+8. Wise-IoU(v1,v2,v3)系列(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU,ShapeIoU)(百度云视频-20240113更新说明)
+9. Inner-Wise-IoU(v1,v2,v3)系列(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU,ShapeIoU)(百度云视频-20240113更新说明)
 
 # 更新公告
 - **20231105-rtdetr-v1.0**
