@@ -656,3 +656,13 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     4. ASF系列支持attention_add.
     5. 更新使用教程.
     6. 百度云视频增加20240106更新说明.
+
+- **20240113-rtdetr-v1.9**
+    1. 支持Wise-IoU(v1,v2,v3)系列(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU,ShapeIoU).
+    2. 支持Inner-Wise-IoU(v1,v2,v3)系列(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU,ShapeIoU).
+    3. 支持SlideLoss,EMASlideLoss(利用Exponential Moving Average优化mean iou,可当自研创新模块).
+    4. 使用华为2023最新GOLD-YOLO中的Gatherand-Distribute进行改进特征融合模块.
+    5. 使用ASF-YOLO中Attentional Scale Sequence Fusion与GOLD-YOLO中的Gatherand-Distribute进行二次创新结合.
+    6. 修正rtdetr-r34中检测头参数错误的问题,增加rtdetr-r34,rtdetr-r50-m的预训练权重.
+    7. 更新使用教程.
+    8. 百度云视频增加20240113更新说明.
