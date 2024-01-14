@@ -26,7 +26,7 @@
 5. 支持正常训练模型时候进行蒸馏和剪枝后finetune蒸馏.
 
 # 实验示例结果.(以下示例实验相关命令,视频教程,实验数据都在项目里面)
-#### Dataset:VisDrone(训练集只用了百分之20的数据,验证集和测试集用了全量的数据) Teacher:yolov8s Student:yolov8n
+#### Dataset:VisDrone(训练集只用了百分之30的数据,验证集和测试集用了全量的数据) Teacher:yolov8s Student:yolov8n (no pretrained weight)
 | model | GFLOPs | mAP50(test set) | mAP50-95(test set) |
 | :----: | :----: | :----: | :----: |
 | yolov8n | 8.1 | 0.202 | 0.108 |
@@ -45,3 +45,28 @@
 | yolov8n BCKD+CWD Exp2 | 8.1 | 0.214(+0.012) | 0.115(+0.007) |
 | yolov8n BCKD+CWD Exp3 | 8.1 | 0.21(+0.008) | 0.114(+0.006) |
 | yolov8n BCKD+CWD Exp4 | 8.1 | 0.208(+0.006) | 0.113(+0.005) |
+
+#### Dataset:VisDrone(训练集只用了百分之30的数据,验证集和测试集用了全量的数据) Teacher:yolov8s Student:yolov8n-lamp (use pretrained weight)
+| model | GFLOPs | mAP50(test set) | mAP50-95(test set) |
+| :----: | :----: | :----: | :----: |
+| yolov8n | 8.1 | 0.225 | 0.124 |
+| yolov8n-lamp | 3.2 | 0.225 | 0.123(-0.001) |
+| yolov8s | 28.5 | 0.259 | 0.146 |
+| yolov8n-lamp cwd exp1 | 3.2 | 0.23(+0.005) | 0.124(0.0) |
+
+#### Dataset:VisDrone(训练集只用了百分之30的数据,验证集和测试集用了全量的数据) Teacher:yolov8s-asf-p2 Student:yolov8s-asf-p2
+| model | GFLOPs | mAP50(test set) | mAP50-95(test set) |
+| :----: | :----: | :----: | :----: |
+| yolov8n-asf-p2 | 12.0 | 0.237 | 0.127 |
+| yolov8s-asf-p2 | 35.8 | 0.282 | 0.155 |
+| yolov8n-asf-p2 cwd exp1 | 12.0 | 0.24(+0.003) | 0.129(+0.002) |
+| yolov8n-asf-p2 cwd exp2 | 12.0 | 0.239(+0.002) | 0.128(+0.001) |
+| yolov8n-asf-p2 cwd exp3 | 12.0 | 0.236(-0.001) | 0.125(-0.002) |
+| yolov8n-asf-p2 cwd exp4 | 12.0 | 0.239(+0.002) | 0.128(+0.001) |
+| yolov8n-asf-p2 cwd exp5 | 12.0 | 0.234(-0.004) | 0.125(-0.002) |
+| yolov8n-asf-p2 mgd exp1 | 12.0 | 0.234(-0.004) | 0.125(-0.002) |
+| yolov8n-asf-p2 mgd exp2 | 12.0 | 0.238(+0.001) | 0.127(0.0) |
+| yolov8n-asf-p2 BCKD exp1 | 12.0 | 0.241(+0.004) | 0.131(+0.004) |
+| yolov8n-asf-p2 BCKD exp2 | 12.0 | 0.24(+0.003) | 0.13(+0.003) |
+| yolov8n-asf-p2 cwd+BCKD exp1 | 12.0 | 0.241(+0.004) | 0.131(+0.004) |
+| yolov8n-asf-p2 cwd+BCKD exp2 | 12.0 | 0.239(+0.002) | 0.128(+0.001) |
