@@ -369,6 +369,18 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     请看百度云视频.(20240111版本更新说明.)
 
+80. ultralytics/cfg/models/v8/yolov8-goldyolo-asf.yaml
+
+    利用华为2023最新GOLD-YOLO中的Gatherand-Distribute与[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion进行二次创新改进yolov8的neck.
+
+81. ultralytics/cfg/models/v5/yolov5-C2-DCNV4.yaml
+
+    使用[DCNV4](https://github.com/OpenGVLab/DCNv4)改进C3.(请关闭AMP进行训练,使用教程请看20240116版本更新说明)
+
+82. ultralytics/cfg/models/v5/yolov5-dyhead-DCNV4.yaml
+
+    使用[DCNV4](https://github.com/OpenGVLab/DCNv4)对DyHead进行二次创新.(请关闭AMP进行训练,使用教程请看20240116版本更新说明)
+
 ### YOLOV8
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
 
@@ -748,6 +760,18 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     请看百度云视频.(20240111版本更新说明.)
 
+87. ultralytics/cfg/models/v8/yolov8-goldyolo-asf.yaml
+
+    利用华为2023最新GOLD-YOLO中的Gatherand-Distribute与[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion进行二次创新改进yolov8的neck.
+
+88. ultralytics/cfg/models/v8/yolov8-C2f-DCNV4.yaml
+
+    使用[DCNV4](https://github.com/OpenGVLab/DCNv4)改进C2f.(请关闭AMP进行训练,使用教程请看20240116版本更新说明)
+
+89. ultralytics/cfg/models/v8/yolov8-dyhead-DCNV4.yaml
+
+    使用[DCNV4](https://github.com/OpenGVLab/DCNv4)对DyHead进行二次创新.(请关闭AMP进行训练,使用教程请看20240116版本更新说明)
+
 # 目前支持的Loss系列总结
 
 1. SlideLoss,EMASlideLoss.(可动态调节正负样本的系数,让模型更加注重难分类,错误分类的样本上)
@@ -959,3 +983,10 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     3. 支持Inner-Wise-IoU(v1,v2,v3)系列(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU,ShapeIoU).
     4. 更新使用教程.
     5. 更新百度云链接视频-20230111版本更新说明.
+
+- **20240116-yolov8-v1.33**
+    1. 使用ASF-YOLO中Attentional Scale Sequence Fusion与GOLD-YOLO中的Gatherand-Distribute进行二次创新结合.
+    2. 支持最新的DCNV4,C2f-DCNV4,C3-DCNV4,并使用DCNV4对DyHead进行二次创新(DyHead_DCNV4).
+    3. 修复不使用wise的情况下断点续训的bug.
+    4. 更新使用教程.
+    5. 更新百度云链接视频-20230116版本更新说明.
