@@ -246,6 +246,22 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     利用华为2023最新GOLD-YOLO中的Gatherand-Distribute和[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion进行改进特征融合模块.
 
+52. ultralytics/cfg/models/rt-detr/rtdetr-DCNV4.yaml
+
+    使用[DCNV4](https://github.com/OpenGVLab/DCNv4)改进resnet18中的BasicBlock.
+
+53. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-HiLo.yaml
+
+    使用[LITv2](https://github.com/ziplab/LITv2)中具有提取高低频信息的高效注意力对AIFI进行二次改进.
+
+54. ultralytics/cfg/models/rt-detr/rtdetr-HSFPN.yaml
+
+    使用[MFDS-DETR](https://github.com/JustlfC03/MFDS-DETR)中的HS-FPN改进RTDETR中的CCFM.
+
+55. ultralytics/cfg/models/rt-detr/rtdetr-HSPAN.yaml
+
+    对[MFDS-DETR](https://github.com/JustlfC03/MFDS-DETR)中的HS-FPN进行二次创新后得到HSPAN改进RTDETR中的CCFM.
+
 ### 以RT-DETR-R50为基准模型的改进方案
 
 1. ultralytics/cfg/models/rt-detr/rtdetr-r50-Ortho.yaml
@@ -343,6 +359,10 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 24. ultralytics/cfg/models/rt-detr/rtdetr-r50-AggregatedAtt.yaml
 
     使用[TransNeXt](https://github.com/DaiShiResearch/TransNeXt)中的聚合感知注意力改进resnet50中的BottleNeck.(百度云视频-20240106更新说明)
+
+25. ultralytics/cfg/models/rt-detr/rtdetr-r50-DCNV4.yaml
+
+    使用[DCNV4](https://github.com/OpenGVLab/DCNv4)改进resnet50中的BottleNeck.
 
 ### 以RT-DETR-L为基准模型的改进方案
 1. ultralytics/cfg/models/rt-detr/rtdetr-l-GhostHGNetV2.yaml
@@ -494,6 +514,18 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     利用RT-DETR中的TransformerDecoderHead和华为2023最新GOLD-YOLO中的Gatherand-Distribute和[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion进行改进特征融合模块.
 
+35. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-DCNV4.yaml
+
+    使用[DCNV4](https://github.com/OpenGVLab/DCNv4)改进C2f.
+
+36. ultralytics/cfg/models/yolo-detr/yolov8-detr-HSFPN.yaml
+
+    利用RT-DETR中的TransformerDecoderHead和使用[MFDS-DETR](https://github.com/JustlfC03/MFDS-DETR)中的HS-FPN改进YOLOV8中的PAN.
+
+37. ultralytics/cfg/models/yolo-detr/yolov8-detr-HSPAN.yaml
+
+    利用RT-DETR中的TransformerDecoderHead和对[MFDS-DETR](https://github.com/JustlfC03/MFDS-DETR)中的HS-FPN进行二次创新后得到HSPAN改进YOLOV8中的PAN.
+
 ### 以Yolov5为基准模型的改进方案
 1. ultralytics/cfg/models/yolo-detr/yolov5-detr.yaml
 
@@ -623,13 +655,25 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     使用RT-DETR中的TransformerDecoderHead和[U-NetV2](https://github.com/yaoppeng/U-Net_v2)中的 Semantics and Detail Infusion Module对yolov5中的feature fusion进行改进.
 
-33. ultralytics/cfg/models/yolo-detr/yolov8-detr-goldyolo.yaml
+33. ultralytics/cfg/models/yolo-detr/yolov5-detr-goldyolo.yaml
 
     利用RT-DETR中的TransformerDecoderHead和华为2023最新GOLD-YOLO中的Gatherand-Distribute进行改进特征融合模块.
 
-34. ultralytics/cfg/models/yolo-detr/yolov8-detr-goldyolo-asf.yaml
+34. ultralytics/cfg/models/yolo-detr/yolov5-detr-goldyolo-asf.yaml
 
     利用RT-DETR中的TransformerDecoderHead和华为2023最新GOLD-YOLO中的Gatherand-Distribute和[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion进行改进特征融合模块.
+
+35. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-DCNV4.yaml
+
+    使用[DCNV4](https://github.com/OpenGVLab/DCNv4)改进C3.
+
+36. ultralytics/cfg/models/yolo-detr/yolov5-detr-HSFPN.yaml
+
+    利用RT-DETR中的TransformerDecoderHead和使用[MFDS-DETR](https://github.com/JustlfC03/MFDS-DETR)中的HS-FPN改进YOLOV5中的PAN.
+
+37. ultralytics/cfg/models/yolo-detr/yolov5-detr-HSPAN.yaml
+
+    利用RT-DETR中的TransformerDecoderHead和对[MFDS-DETR](https://github.com/JustlfC03/MFDS-DETR)中的HS-FPN进行二次创新后得到HSPAN改进YOLOV5中的PAN.
 
 ### IoU系列
 
