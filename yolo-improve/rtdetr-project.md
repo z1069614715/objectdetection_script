@@ -726,3 +726,13 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     6. 修正rtdetr-r34中检测头参数错误的问题,增加rtdetr-r34,rtdetr-r50-m的预训练权重.
     7. 更新使用教程.
     8. 百度云视频增加20240113更新说明.
+
+- **20240120-rtdetr-v1.10**
+    1. 新增DCNV4.
+    2. 使用[LITv2](https://github.com/ziplab/LITv2)中具有提取高低频信息的高效注意力对AIFI进行二次改进.
+    3. 使用[MFDS-DETR](https://github.com/JustlfC03/MFDS-DETR)中的HS-FPN改进RTDETR中的CCFM和YOLOV5-DETR、YOLOV8-DETR中的Neck.
+    4. 对[MFDS-DETR](https://github.com/JustlfC03/MFDS-DETR)中的HS-FPN进行二次创新后得到HSPAN改进RTDETR中的CCFM和YOLOV5-DETR、YOLOV8-DETR中的Neck.
+    5. 修复没有使用wiou时候断点续寻的bug.
+    6. 修复plot_result.py画结果图中乱码的问题.
+    7. 更新使用教程.
+    8. 百度云视频增加20240120更新说明.
