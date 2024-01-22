@@ -381,6 +381,30 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     使用[DCNV4](https://github.com/OpenGVLab/DCNv4)对DyHead进行二次创新.(请关闭AMP进行训练,使用教程请看20240116版本更新说明)
 
+83. ultralytics/cfg/models/v5/yolov5-HSFPN.yaml
+
+    使用[MFDS-DETR](https://github.com/JustlfC03/MFDS-DETR)中的HS-FPN改进yolov5的neck.
+
+84. ultralytics/cfg/models/v5/yolov5-HSPAN.yaml
+
+    对[MFDS-DETR](https://github.com/JustlfC03/MFDS-DETR)中的HS-FPN进行二次创新后得到HSPAN改进yolov5的neck.
+
+85. soft-nms(IoU,GIoU,DIoU,CIoU,EIoU,SIoU,ShapeIoU)
+
+    soft-nms替换nms.(建议:仅在val.py时候使用,具体替换请看20240122版本更新说明)
+
+86. ultralytics/cfg/models/v5/yolov5-dysample.yaml
+
+    使用[ICCV2023 DySample](https://arxiv.org/abs/2308.15085)改进yolov5-neck中的上采样.
+
+87. ultralytics/cfg/models/v5/yolov5-CARAFE.yaml
+
+    使用[ICCV2019 CARAFE](https://arxiv.org/abs/1905.02188)改进yolov5-neck中的上采样.
+
+88. ultralytics/cfg/models/v5/yolov5-HWD.yaml
+
+    使用[Haar wavelet downsampling](https://www.sciencedirect.com/science/article/abs/pii/S0031320323005174)改进yolov5的下采样.
+
 ### YOLOV8
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
 
@@ -772,6 +796,30 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     使用[DCNV4](https://github.com/OpenGVLab/DCNv4)对DyHead进行二次创新.(请关闭AMP进行训练,使用教程请看20240116版本更新说明)
 
+90. ultralytics/cfg/models/v8/yolov8-HSFPN.yaml
+
+    使用[MFDS-DETR](https://github.com/JustlfC03/MFDS-DETR)中的HS-FPN改进yolov8的neck.
+
+91. ultralytics/cfg/models/v8/yolov8-HSPAN.yaml
+
+    对[MFDS-DETR](https://github.com/JustlfC03/MFDS-DETR)中的HS-FPN进行二次创新后得到HSPAN改进yolov8的neck.
+
+92. soft-nms(IoU,GIoU,DIoU,CIoU,EIoU,SIoU,ShapeIoU)
+
+    soft-nms替换nms.(建议:仅在val.py时候使用,具体替换请看20240122版本更新说明)
+
+93. ultralytics/cfg/models/v8/yolov8-dysample.yaml
+
+    使用[ICCV2023 DySample](https://arxiv.org/abs/2308.15085)改进yolov8-neck中的上采样.
+
+94. ultralytics/cfg/models/v8/yolov8-CARAFE.yaml
+
+    使用[ICCV2019 CARAFE](https://arxiv.org/abs/1905.02188)改进yolov8-neck中的上采样.
+
+95. ultralytics/cfg/models/v8/yolov8-HWD.yaml
+
+    使用[Haar wavelet downsampling](https://www.sciencedirect.com/science/article/abs/pii/S0031320323005174)改进yolov8的下采样.
+
 # 目前支持的Loss系列总结
 
 1. SlideLoss,EMASlideLoss.(可动态调节正负样本的系数,让模型更加注重难分类,错误分类的样本上)
@@ -990,3 +1038,13 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     3. 修复不使用wise的情况下断点续训的bug.
     4. 更新使用教程.
     5. 更新百度云链接视频-20230116版本更新说明.
+
+- **20240122-yolov8-v1.34**
+    1. 使用[MFDS-DETR](https://github.com/JustlfC03/MFDS-DETR)中的HS-FPN改进YOLOV5、YOLOV8中的Neck.
+    2. 对[MFDS-DETR](https://github.com/JustlfC03/MFDS-DETR)中的HS-FPN进行二次创新后得到HSPAN改进YOLOV5、YOLOV8中的Neck.
+    3. 增加CARAFE轻量化上采样算子.
+    4. 增加DySample(ICCV2023)动态上采样算子.
+    5. 增加Haar wavelet downsampling下采样算子.
+    6. 支持soft-nms.(IoU,GIoU,DIoU,CIoU,EIoU,SIoU,ShapeIoU)
+    7. 更新使用教程.
+    8. 更新百度云链接视频-20230122版本更新说明.
