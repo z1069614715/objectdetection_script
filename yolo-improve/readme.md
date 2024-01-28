@@ -339,3 +339,8 @@
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1PH4y1S7mf/).   
     reference: [链接](https://github.com/mkang315/ASF-YOLO)  
     paper: [链接](https://arxiv.org/abs/2312.06458)  
+- **yolov5-ccfm**
+    添加cross-scale feature-fusion到yolov5中.
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1PH4y1S7mf/).   
+    reference: [链接](https://github.com/ultralytics/ultralytics)  
+    paper: [链接](https://arxiv.org/pdf/2304.08069.pdf)  

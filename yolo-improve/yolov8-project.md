@@ -1048,3 +1048,6 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     6. 支持soft-nms.(IoU,GIoU,DIoU,CIoU,EIoU,SIoU,ShapeIoU)
     7. 更新使用教程.
     8. 更新百度云链接视频-20230122版本更新说明.
+
+- **20240128-yolov8-v1.35**
+    1. 
