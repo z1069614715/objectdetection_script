@@ -262,6 +262,22 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     对[MFDS-DETR](https://github.com/JustlfC03/MFDS-DETR)中的HS-FPN进行二次创新后得到HSPAN改进RTDETR中的CCFM.
 
+56. ultralytics/cfg/models/rt-detr/rtdetr-DySample.yaml
+
+    使用[ICCV2023 DySample](https://arxiv.org/abs/2308.15085)改进CCFM中的上采样.
+
+57. ultralytics/cfg/models/rt-detr/rtdetr-CARAFE.yaml
+
+    使用[ICCV2019 CARAFE](https://arxiv.org/abs/1905.02188)改进CCFM中的上采样.
+
+58. ultralytics/cfg/models/rt-detr/rtdetr-HWD.yaml
+
+    使用[Haar wavelet downsampling](https://www.sciencedirect.com/science/article/abs/pii/S0031320323005174)改进CCFM的下采样.
+
+59. ultralytics/cfg/models/rt-detr/rtdetr-ASF-Dynamic.yaml
+
+    使用[ICCV2023 DySample](https://arxiv.org/abs/2308.15085)改进[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion的上采样模块得到Dynamic Sample Attentional Scale Sequence Fusion改进CCFM.
+
 ### 以RT-DETR-R50为基准模型的改进方案
 
 1. ultralytics/cfg/models/rt-detr/rtdetr-r50-Ortho.yaml
@@ -526,6 +542,22 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     利用RT-DETR中的TransformerDecoderHead和对[MFDS-DETR](https://github.com/JustlfC03/MFDS-DETR)中的HS-FPN进行二次创新后得到HSPAN改进YOLOV8中的PAN.
 
+38. ultralytics/cfg/models/yolo-detr/yolov5-detr-Dysample.yaml
+
+    使用[ICCV2023 DySample](https://arxiv.org/abs/2308.15085)改进yolov5-detr neck中的上采样.
+
+39. ultralytics/cfg/models/yolo-detr/yolov5-detr-CARAFE.yaml
+
+    使用[ICCV2019 CARAFE](https://arxiv.org/abs/1905.02188)改进yolov5-detr neck中的上采样.
+
+40. ultralytics/cfg/models/yolo-detr/yolov5-detr-HWD.yaml
+
+    使用[Haar wavelet downsampling](https://www.sciencedirect.com/science/article/abs/pii/S0031320323005174)改进yolov5-detr neck的下采样.
+
+41. ultralytics/cfg/models/yolo-detr/yolov8-detr-ASF-Dynamic.yaml
+
+    使用[ICCV2023 DySample](https://arxiv.org/abs/2308.15085)改进[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion的上采样模块得到Dynamic Sample Attentional Scale Sequence Fusion改进yolov8-detr中的neck.
+
 ### 以Yolov5为基准模型的改进方案
 1. ultralytics/cfg/models/yolo-detr/yolov5-detr.yaml
 
@@ -675,6 +707,22 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
     利用RT-DETR中的TransformerDecoderHead和对[MFDS-DETR](https://github.com/JustlfC03/MFDS-DETR)中的HS-FPN进行二次创新后得到HSPAN改进YOLOV5中的PAN.
 
+38. ultralytics/cfg/models/yolo-detr/yolov8-detr-Dysample.yaml
+
+    使用[ICCV2023 DySample](https://arxiv.org/abs/2308.15085)改进yolov8-detr neck中的上采样.
+
+39. ultralytics/cfg/models/yolo-detr/yolov8-detr-CARAFE.yaml
+
+    使用[ICCV2019 CARAFE](https://arxiv.org/abs/1905.02188)改进yolov8-detr neck中的上采样.
+
+40. ultralytics/cfg/models/yolo-detr/yolov8-detr-HWD.yaml
+
+    使用[Haar wavelet downsampling](https://www.sciencedirect.com/science/article/abs/pii/S0031320323005174)改进yolov8-detr neck的下采样.
+
+41. ultralytics/cfg/models/yolo-detr/yolov5-detr-ASF-Dynamic.yaml
+
+    使用[ICCV2023 DySample](https://arxiv.org/abs/2308.15085)改进[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion的上采样模块得到Dynamic Sample Attentional Scale Sequence Fusion改进yolov5-detr中的neck.
+
 ### IoU系列
 
 更换教程可看
@@ -687,6 +735,8 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 7. SlideLoss,EMASlideLoss[创新思路](https://www.bilibili.com/video/BV1W14y1i79U/?vd_source=c8452371e7ca510979593165c8d7ac27).[Yolo-Face V2](https://github.com/Krasjet-Yu/YOLO-FaceV2/blob/master/utils/loss.py)(百度云视频-20240113更新说明)
 8. Wise-IoU(v1,v2,v3)系列(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU,ShapeIoU)(百度云视频-20240113更新说明)
 9. Inner-Wise-IoU(v1,v2,v3)系列(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU,ShapeIoU)(百度云视频-20240113更新说明)
+10. Focaler-IoU,Focaler-GIoU,Focaler-DIoU,Focaler-CIoU,Focaler-EIoU,Focaler-SIoU,Focaler-Shape-IoU,Focaler-MPDIoU[论文链接](https://arxiv.org/abs/2401.10525)(百度云视频-20240128更新说明)
+11. Focaler-Wise-IoU(v1,v2,v3)(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU,ShapeIoU)[论文链接](https://arxiv.org/abs/2401.10525)(百度云视频-20240128更新说明)
 
 # 更新公告
 - **20231105-rtdetr-v1.0**
@@ -780,3 +830,13 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     6. 修复plot_result.py画结果图中乱码的问题.
     7. 更新使用教程.
     8. 百度云视频增加20240120更新说明.
+
+- **20240128-rtdetr-v1.11**
+    1. 增加CARAFE轻量化上采样算子.
+    2. 增加DySample(ICCV2023)动态上采样算子.
+    3. 增加Haar wavelet downsampling下采样算子.
+    4. 增加Focaler-IoU,Focaler-GIoU,Focaler-DIoU,Focaler-CIoU,Focaler-EIoU,Focaler-SIoU,Focaler-Shape-IoU,Focaler-MPDIoU.
+    5. 增加Focaler-Wise-IoU(v1,v2,v3)(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU,ShapeIoU).
+    6. 使用DySample(ICCV2023)动态上采样算子对ASF-YOLO中的Attentional Scale Sequence Fusion进行二次创新.
+    7. 更新使用教程.
+    8. 百度云视频增加20240128更新说明.
