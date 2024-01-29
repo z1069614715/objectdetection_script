@@ -1,4 +1,3 @@
-# common.py
 import torch.nn.functional as F
 class Zoom_cat(nn.Module):
     def __init__(self):
@@ -16,6 +15,7 @@ class Zoom_cat(nn.Module):
 class ScalSeq(nn.Module):
     def __init__(self, inc, channel):
         super(ScalSeq, self).__init__()
+        self.conv0 = Conv(inc[0], channel, 1)
         self.conv1 =  Conv(inc[1], channel,1)
         self.conv2 =  Conv(inc[2], channel,1)
         self.conv3d = nn.Conv3d(channel,channel,kernel_size=(1,1,1))
@@ -25,6 +25,7 @@ class ScalSeq(nn.Module):
 
     def forward(self, x):
         p3, p4, p5 = x[0],x[1],x[2]
+        p3 = self.conv0(p3)
         p4_2 = self.conv1(p4)
         p4_2 = F.interpolate(p4_2, p3.size()[2:], mode='nearest')
         p5_2 = self.conv2(p5)
@@ -112,7 +113,6 @@ class attention_model(nn.Module):
         x = self.local_att(x)
         return x
 
-# yolo.py
 elif m is Zoom_cat:
     c2 = sum(ch[x] for x in f)
 elif m is Add:
@@ -125,55 +125,131 @@ elif m is ScalSeq:
     c2 = make_divisible(args[0] * gw, 8)
     args = [c1, c2]
 
-
-# YOLOv5 🚀 by Ultralytics, AGPL-3.0 license
-
-# Parameters
+##################################################### YOLOV7-TINY #####################################################
+# parameters
 nc: 80  # number of classes
-depth_multiple: 0.33  # model depth multiple
-width_multiple: 0.25  # layer channel multiple
+depth_multiple: 1.0  # model depth multiple
+width_multiple: 1.0  # layer channel multiple
+
+# anchors
 anchors:
   - [10,13, 16,30, 33,23]  # P3/8
   - [30,61, 62,45, 59,119]  # P4/16
   - [116,90, 156,198, 373,326]  # P5/32
 
-# YOLOv5 v6.0 backbone
+# yolov7-tiny backbone
 backbone:
-  # [from, number, module, args]
-  [[-1, 1, Conv, [64, 6, 2, 2]],  # 0-P1/2
-   [-1, 1, Conv, [128, 3, 2]],  # 1-P2/4
-   [-1, 3, C3, [128]],
-   [-1, 1, Conv, [256, 3, 2]],  # 3-P3/8
-   [-1, 6, C3, [256]],
-   [-1, 1, Conv, [512, 3, 2]],  # 5-P4/16
-   [-1, 9, C3, [512]],
-   [-1, 1, Conv, [1024, 3, 2]],  # 7-P5/32
-   [-1, 3, C3, [1024]],
-   [-1, 1, SPPF, [1024, 5]],  # 9
+  # [from, number, module, args] c2, k=1, s=1, p=None, g=1, act=True
+  [[-1, 1, Conv, [32, 3, 2, None, 1, nn.LeakyReLU(0.1)]],  # 0-P1/2  
+  
+   [-1, 1, Conv, [64, 3, 2, None, 1, nn.LeakyReLU(0.1)]],  # 1-P2/4    
+
+   [-1, 1, Yolov7_Tiny_E_ELAN, [64, 32, nn.LeakyReLU(0.1)]], # 2
+
+   [-1, 1, MP, []],  # 3-P3/8
+   [-1, 1, Yolov7_Tiny_E_ELAN, [128, 64, nn.LeakyReLU(0.1)]], # 4
+
+   [-1, 1, MP, []],  # 5-P4/16
+   [-1, 1, Yolov7_Tiny_E_ELAN, [256, 128, nn.LeakyReLU(0.1)]], # 6
+
+   [-1, 1, MP, []],  # 7-P5/32
+   [-1, 1, Yolov7_Tiny_E_ELAN, [512, 256, nn.LeakyReLU(0.1)]], # 8
   ]
 
-# YOLOv5 v6.0 head
+# yolov7-tiny head
 head:
-  [[-1, 1, Conv, [512, 1, 1]], #10
-   [4, 1, Conv, [512, 1, 1]], #11
-   [[-1, 6, -2], 1, Zoom_cat, []],  # 12 cat backbone P4
-   [-1, 3, C3, [512, False]],  # 13
+  [[-1, 1, Yolov7_Tiny_SPP, [256, nn.LeakyReLU(0.1)]], # 9-Yolov7-tiny-spp
+   
+   [-1, 1, Conv, [256, 1, 1, None, 1, nn.LeakyReLU(0.1)]], 
+   [4, 1, Conv, [256, 1, 1, None, 1, nn.LeakyReLU(0.1)]],
+   [[-1, 6, -2], 1, Zoom_cat, []], # route backbone P4
+   [-1, 1, Yolov7_Tiny_E_ELAN, [128, 64, nn.LeakyReLU(0.1)]], # 13
 
-   [-1, 1, Conv, [256, 1, 1]], #14
-   [2, 1, Conv, [256, 1, 1]], #15
-   [[-1, 4, -2], 1, Zoom_cat, []],  #16  cat backbone P3
-   [-1, 3, C3, [256, False]],  # 17 (P3/8-small)
+   [-1, 1, Conv, [128, 1, 1, None, 1, nn.LeakyReLU(0.1)]],
+   [2, 1, Conv, [128, 1, 1, None, 1, nn.LeakyReLU(0.1)]], # 15
+   [[-1, 4, -2], 1, Zoom_cat, []],
+   [-1, 1, Yolov7_Tiny_E_ELAN, [64, 32, nn.LeakyReLU(0.1)]], # 17
+   
+   [-1, 1, Conv, [128, 3, 2, None, 1, nn.LeakyReLU(0.1)]], # 18
+   [[-1, 13], 1, Concat, [1]],
+   [-1, 1, Yolov7_Tiny_E_ELAN, [128, 64, nn.LeakyReLU(0.1)]], # 20
 
-   [-1, 1, Conv, [256, 3, 2]], #18
-   [[-1, 14], 1, Concat, [1]],  #19 cat head P4
-   [-1, 3, C3, [512, False]],  # 20 (P4/16-medium)
+   [-1, 1, Conv, [256, 3, 2, None, 1, nn.LeakyReLU(0.1)]],
+   [[-1, 9], 1, Concat, [1]],
+   [-1, 1, Yolov7_Tiny_E_ELAN, [256, 128, nn.LeakyReLU(0.1)]], # 23
 
-   [-1, 1, Conv, [512, 3, 2]], #21
-   [[-1, 10], 1, Concat, [1]],  #22 cat head P5
-   [-1, 3, C3, [1024, False]],  # 23 (P5/32-large)
-
-   [[4, 6, 8], 1, ScalSeq, [256]], #24 args[inchane]
+   [[4, 6, 8], 1, ScalSeq, [64]], #24 args[inchane]
    [[17, -1], 1, attention_model, []], #25
 
-   [[25, 20, 23], 1, Detect, [nc, anchors]],  # Detect(P3, P4, P5)
+   [25, 1, Conv, [128, 3, 1, None, 1, nn.LeakyReLU(0.1)]], # 26-P3
+   [23, 1, Conv, [256, 3, 1, None, 1, nn.LeakyReLU(0.1)]], # 27-P4
+   [20, 1, Conv, [512, 3, 1, None, 1, nn.LeakyReLU(0.1)]], # 28-P5
+
+   [[26,27,28], 1, IDetect, [nc, anchors]],   # Detect(P3, P4, P5)
+  ]
+
+
+##################################################### YOLOV7 #####################################################
+# parameters
+nc: 80  # number of classes
+depth_multiple: 1.0  # model depth multiple
+width_multiple: 1.0  # layer channel multiple
+
+# anchors
+anchors:
+  - [12,16, 19,36, 40,28]  # P3/8
+  - [36,75, 76,55, 72,146]  # P4/16
+  - [142,110, 192,243, 459,401]  # P5/32
+
+# yolov7 backbone
+backbone:
+  # [from, number, module, args]
+  [[-1, 1, Conv, [32, 3, 1]],  # 0
+  
+   [-1, 1, Conv, [64, 3, 2]],  # 1-P1/2      
+   [-1, 1, Conv, [64, 3, 1]],
+   
+   [-1, 1, Conv, [128, 3, 2]],  # 3-P2/4  
+   [-1, 1, Yolov7_E_ELAN, [256, 64]], # 4
+         
+   [-1, 1, V7DownSampling, [128]],  # 5-P3/8  
+   [-1, 1, Yolov7_E_ELAN, [512, 128]], # 6
+         
+   [-1, 1, V7DownSampling, [256]],  # 7-P4/16  
+   [-1, 1, Yolov7_E_ELAN, [1024, 256]], # 8
+         
+   [-1, 1, V7DownSampling, [512]],  # 9-P5/32  
+   [-1, 1, Yolov7_E_ELAN, [1024, 256]],  # 10
+  ]
+
+# yolov7 head
+head:
+  [[-1, 1, SPPCSPC, [512]], # 11
+
+   [-1, 1, Conv, [1024, 1, 1, None, 1, nn.LeakyReLU(0.1)]], 
+   [6, 1, Conv, [1024, 1, 1, None, 1, nn.LeakyReLU(0.1)]],
+   [[-1, 8, -2], 1, Zoom_cat, []], # route backbone P4
+   [-1, 1, Yolov7_E_ELAN_NECK, [256, 128]], # 15
+   
+   [-1, 1, Conv, [512, 1, 1, None, 1, nn.LeakyReLU(0.1)]],
+   [4, 1, Conv, [512, 1, 1, None, 1, nn.LeakyReLU(0.1)]], # 17
+   [[-1, 6, -2], 1, Zoom_cat, []], # 18
+   [-1, 1, Yolov7_E_ELAN_NECK, [128, 64]], # 19
+      
+   [[-1, 15], 1, V7DownSampling_Neck, [128]], # 20
+   
+   [-1, 1, Yolov7_E_ELAN_NECK, [256, 128]], # 21
+      
+   [[-1, 11], 1, V7DownSampling_Neck, [256]], # 22
+   
+   [-1, 1, Yolov7_E_ELAN_NECK, [512, 256]], # 23
+   
+   [[6, 8, 10], 1, ScalSeq, [128]], #24 args[inchane]
+   [[19, -1], 1, attention_model, []], #25
+
+   [25, 1, RepConv, [256, 3, 1]], # 26-P3
+   [21, 1, RepConv, [512, 3, 1]], # 27-P4
+   [23, 1, RepConv, [1024, 3, 1]], # 28-P5
+
+   [[26, 27, 28], 1, IDetect, [nc, anchors]],   # Detect(P3, P4, P5)
   ]

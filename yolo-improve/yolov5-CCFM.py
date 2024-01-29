@@ -1,14 +1,3 @@
-# YOLOv5 🚀 by Ultralytics, AGPL-3.0 license
-
-# Parameters
-nc: 80  # number of classes
-depth_multiple: 0.33  # model depth multiple
-width_multiple: 0.25  # layer channel multiple
-anchors:
-  - [10,13, 16,30, 33,23]  # P3/8
-  - [30,61, 62,45, 59,119]  # P4/16
-  - [116,90, 156,198, 373,326]  # P5/32
-
 class RepConv(nn.Module):
     """
     RepConv is a basic rep-style block, including training and deploy status.
@@ -124,6 +113,16 @@ class RepC3(nn.Module):
         """Forward pass of RT-DETR neck layer."""
         return self.cv3(self.m(self.cv1(x)) + self.cv2(x))
 
+# YOLOv5 🚀 by Ultralytics, AGPL-3.0 license
+
+# Parameters
+nc: 80  # number of classes
+depth_multiple: 0.33  # model depth multiple
+width_multiple: 0.25  # layer channel multiple
+anchors:
+  - [10,13, 16,30, 33,23]  # P3/8
+  - [30,61, 62,45, 59,119]  # P4/16
+  - [116,90, 156,198, 373,326]  # P5/32
 
 # YOLOv5 v6.0 backbone
 backbone:
