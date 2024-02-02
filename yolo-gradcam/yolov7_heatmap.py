@@ -152,8 +152,9 @@ class yolov7_heatmap:
         grayscale_cam = grayscale_cam[0, :]
         cam_image = show_cam_on_image(img, grayscale_cam, use_rgb=True)
         
-        pred = self.model(tensor)
-        pred = self.post_process(pred[0])
+        with torch.no_grad():
+            pred = self.model(tensor)
+            pred = self.post_process(pred[0])
         if self.renormalize:
             cam_image = self.renormalize_cam_in_bounding_boxes(pred[:, :4].cpu().detach().numpy().astype(np.int32), img, grayscale_cam)
         if self.show_box:
