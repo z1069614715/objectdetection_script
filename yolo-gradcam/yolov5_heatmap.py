@@ -82,10 +82,10 @@ class yolov5_target(torch.nn.Module):
         post_result, pre_post_boxes = data
         result = []
         for i in trange(int(post_result.size(0) * self.ratio)):
-            if float(post_result[i].max()) < self.conf:
+            if float(post_result[i, 1:].max()) < self.conf:
                 break
             if self.ouput_type == 'class' or self.ouput_type == 'all':
-                result.append(post_result[i].max())
+                result.append(post_result[i, 1:].max())
             elif self.ouput_type == 'box' or self.ouput_type == 'all':
                 for j in range(4):
                     result.append(pre_post_boxes[i, j])
@@ -178,7 +178,7 @@ def get_params():
         'device': 'cuda:0',
         'method': 'XGradCAM', # GradCAMPlusPlus, GradCAM, XGradCAM, EigenCAM, HiResCAM, LayerCAM, RandomCAM, EigenGradCAM
         'layer': [16, 19, 21],
-        'backward_type': 'class', # class or conf
+        'backward_type': 'all', # class, box, all
         'conf_threshold': 0.2, # 0.6
         'ratio': 0.02, # 0.02-0.1
         'show_box': False,
