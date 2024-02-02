@@ -7,7 +7,7 @@ np.random.seed(0)
 import matplotlib.pyplot as plt
 from tqdm import trange
 from PIL import Image
-from ultralytics.nn.tasks import DetectionModel as Model
+from ultralytics.nn.tasks import attempt_load_weights
 from ultralytics.utils.torch_utils import intersect_dicts
 from ultralytics.utils.ops import xywh2xyxy, non_max_suppression
 from pytorch_grad_cam import GradCAMPlusPlus, GradCAM, XGradCAM, EigenCAM, HiResCAM, LayerCAM, RandomCAM, EigenGradCAM
@@ -122,16 +122,15 @@ class yolov8_target(torch.nn.Module):
         return sum(result)
 
 class yolov8_heatmap:
-    def __init__(self, weight, cfg, device, method, layer, backward_type, conf_threshold, ratio, show_box, renormalize):
+    def __init__(self, weight, device, method, layer, backward_type, conf_threshold, ratio, show_box, renormalize):
         device = torch.device(device)
         ckpt = torch.load(weight)
         model_names = ckpt['model'].names
-        csd = ckpt['model'].float().state_dict()  # checkpoint state_dict as FP32
-        model = Model(cfg, ch=3, nc=len(model_names)).to(device)
-        csd = intersect_dicts(csd, model.state_dict(), exclude=['anchor'])  # intersect
-        model.load_state_dict(csd, strict=False)  # load
+        model = attempt_load_weights(weight, device)
+        model.info()
+        for p in model.parameters():
+            p.requires_grad_(True)
         model.eval()
-        print(f'Transferred {len(csd)}/{len(model.state_dict())} items')
         
         target = yolov8_target(backward_type, conf_threshold, ratio)
         target_layers = [model.model[l] for l in layer]
@@ -207,12 +206,11 @@ class yolov8_heatmap:
 def get_params():
     params = {
         'weight': 'runs/train/exp2/weights/best.pt',
-        'cfg': 'ultralytics/cfg/models/v8/yolov8n.yaml',
         'device': 'cuda:0',
-        'method': 'GradCAM', # GradCAMPlusPlus, GradCAM, XGradCAM, EigenCAM, HiResCAM, LayerCAM, RandomCAM, EigenGradCAM
+        'method': 'HiResCAM', # GradCAMPlusPlus, GradCAM, XGradCAM, EigenCAM, HiResCAM, LayerCAM, RandomCAM, EigenGradCAM
         'layer': [10, 12, 14, 16, 18],
         'backward_type': 'class', # class, box, all
-        'conf_threshold': 0.2, # 0.6
+        'conf_threshold': 0.2, # 0.2
         'ratio': 0.02, # 0.02-0.1
         'show_box': False,
         'renormalize': True
@@ -221,5 +219,5 @@ def get_params():
 
 if __name__ == '__main__':
     model = yolov8_heatmap(**get_params())
-    # model(r'/home/hjj/Desktop/dataset/dataset_visdrone/VisDrone2019-DET-test-dev/images/0000063_05000_d_0000006.jpg', 'result')
+    # model(r'/home/hjj/Desktop/dataset/dataset_visdrone/VisDrone2019-DET-test-dev/images/9999947_00000_d_0000026.jpg', 'result')
     model(r'/home/hjj/Desktop/dataset/dataset_visdrone/VisDrone2019-DET-test-dev/images', 'result')
