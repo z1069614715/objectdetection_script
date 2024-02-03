@@ -1104,5 +1104,6 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     3. 增加ASF-YOLO中的ASSF与DySample的二次创新组合.
     4. 增加HS-PAN与DySample的二次创新组合.
     5. 使用遮挡感知注意力SEAM,MultiSEAM改进Head,得到具有遮挡感知识别的SEAMHead,MultiSEAMHead.
-    6. 更新使用教程.
-    7. 更新百度云链接视频-20230203版本更新说明.
+    6. 优化plot_result.py,使用线性插值来填充inf或者nan的数据,降低出现乱码问题的概率.
+    7. 更新使用教程.
+    8. 更新百度云链接视频-20230203版本更新说明.
