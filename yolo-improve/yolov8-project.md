@@ -1049,5 +1049,11 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     7. 更新使用教程.
     8. 更新百度云链接视频-20230122版本更新说明.
 
-- **20240128-yolov8-v1.35**
-    1. 
+- **20240203-yolov8-v1.35**
+    1. 增加Focaler-IoU(IoU,GIoU,DIoU,CIoU,EIoU,SIoU,WIoU,MPDIoU,ShapeIoU).
+    2. 增加RepGFPN与DySample的二次创新组合.
+    3. 增加ASF-YOLO中的ASSF与DySample的二次创新组合.
+    4. 增加HS-PAN与DySample的二次创新组合.
+    5. 使用遮挡感知注意力SEAM,MultiSEAM改进Head,得到具有遮挡感知识别的SEAMHead,MultiSEAMHead.
+    6. 更新使用教程.
+    7. 更新百度云链接视频-20230203版本更新说明.
