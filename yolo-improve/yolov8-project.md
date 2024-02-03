@@ -403,7 +403,31 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
 88. ultralytics/cfg/models/v5/yolov5-HWD.yaml
 
-    使用[Haar wavelet downsampling](https://www.sciencedirect.com/science/article/abs/pii/S0031320323005174)改进yolov5的下采样.
+    使用[Haar wavelet downsampling](https://www.sciencedirect.com/science/article/abs/pii/S0031320323005174)改进yolov5的下采样.(请关闭AMP情况下使用)
+
+89. Focaler-IoU系列(IoU,GIoU,DIoU,CIoU,EIoU,SIoU,WIoU,MPDIoU,ShapeIoU)
+
+    请看百度云视频.
+
+90. ultralytics/cfg/models/v5/yolov5-GDFPN.yaml
+
+    使用[DAMO-YOLO](https://github.com/tinyvision/DAMO-YOLO)中的RepGFPN与[ICCV2023 DySample](https://arxiv.org/abs/2308.15085)进行二次创新改进Neck.
+
+91. ultralytics/cfg/models/v5/yolov5-HSPAN-DySample.yaml
+
+    对[MFDS-DETR](https://github.com/JustlfC03/MFDS-DETR)中的HS-FPN进行二次创新后得到HSPAN再进行创新,使用[ICCV2023 DySample](https://arxiv.org/abs/2308.15085)改进其上采样模块.
+
+92. ultralytics/cfg/models/v5/yolov5-ASF-DySample.yaml
+
+    使用[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion与[ICCV2023 DySample](https://arxiv.org/abs/2308.15085)组合得到Dynamic Sample Attentional Scale Sequence Fusion.
+
+93. ultralytics/cfg/models/v5/yolov5-SEAMHead.yaml
+
+    使用[YOLO-Face V2](https://arxiv.org/pdf/2208.02019v2.pdf)中的遮挡感知注意力改进Head,使其有效地处理遮挡场景.
+
+94. ultralytics/cfg/models/v5/yolov5-MultiSEAMHead.yaml
+
+    使用[YOLO-Face V2](https://arxiv.org/pdf/2208.02019v2.pdf)中的遮挡感知注意力改进Head,使其有效地处理遮挡场景.
 
 ### YOLOV8
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
@@ -818,7 +842,31 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 
 95. ultralytics/cfg/models/v8/yolov8-HWD.yaml
 
-    使用[Haar wavelet downsampling](https://www.sciencedirect.com/science/article/abs/pii/S0031320323005174)改进yolov8的下采样.
+    使用[Haar wavelet downsampling](https://www.sciencedirect.com/science/article/abs/pii/S0031320323005174)改进yolov8的下采样.(请关闭AMP情况下使用)
+
+96. Focaler-IoU系列(IoU,GIoU,DIoU,CIoU,EIoU,SIoU,WIoU,MPDIoU,ShapeIoU)
+
+    请看百度云视频.(20240203更新说明)
+
+97. ultralytics/cfg/models/v8/yolov8-GDFPN.yaml
+
+    使用[DAMO-YOLO](https://github.com/tinyvision/DAMO-YOLO)中的RepGFPN与[ICCV2023 DySample](https://arxiv.org/abs/2308.15085)进行二次创新改进Neck.
+
+98. ultralytics/cfg/models/v8/yolov8-HSPAN-DySample.yaml
+
+    对[MFDS-DETR](https://github.com/JustlfC03/MFDS-DETR)中的HS-FPN进行二次创新后得到HSPAN再进行创新,使用[ICCV2023 DySample](https://arxiv.org/abs/2308.15085)改进其上采样模块.
+
+99. ultralytics/cfg/models/v8/yolov8-ASF-DySample.yaml
+
+    使用[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion与[ICCV2023 DySample](https://arxiv.org/abs/2308.15085)组合得到Dynamic Sample Attentional Scale Sequence Fusion.
+
+100. ultralytics/cfg/models/v8/yolov8-SEAMHead.yaml
+
+    使用[YOLO-Face V2](https://arxiv.org/pdf/2208.02019v2.pdf)中的遮挡感知注意力改进Head,使其有效地处理遮挡场景.
+
+101. ultralytics/cfg/models/v8/yolov8-MultiSEAMHead.yaml
+
+    使用[YOLO-Face V2](https://arxiv.org/pdf/2208.02019v2.pdf)中的遮挡感知注意力改进Head,使其有效地处理遮挡场景.
 
 # 目前支持的Loss系列总结
 
@@ -828,6 +876,7 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
 4. Wise-IoU(v1,v2,v3)系列(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU,ShapeIoU).
 5. Inner-Wise-IoU(v1,v2,v3)系列(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU,ShapeIoU).
 6. FocalLoss,VarifocalLoss,QualityfocalLoss
+7. Focaler-IoU系列(IoU,GIoU,DIoU,CIoU,EIoU,SIoU,WIoU,MPDIoU,ShapeIoU)
 
 # 更新公告
 
