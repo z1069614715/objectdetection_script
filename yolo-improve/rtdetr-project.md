@@ -840,3 +840,10 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     6. 使用DySample(ICCV2023)动态上采样算子对ASF-YOLO中的Attentional Scale Sequence Fusion进行二次创新.
     7. 更新使用教程.
     8. 百度云视频增加20240128更新说明.
+
+- **20240206-rtdetr-v1.12**
+    1. 新增Shift-ConvNets相关改进内容.(rtdetr-SWC.yaml,rtdetr-R50-SWC.yaml,yolov8-detr-C2f-SWC.yaml,yolov5-detr-C3-SWC.yaml)
+    2. 使用UniRepLKNet中的DilatedReparamBlock对EMO中的iRMB进行二次创新.
+    3. 使用Shift-ConvNets中的具有移位操作的卷积对EMO中的iRMB进行二次创新.
+    4. 更新使用教程.
+    5. 百度云视频增加20240206更新说明.
