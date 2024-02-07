@@ -1107,3 +1107,6 @@ EMA, SimAM, SpatialGroupEnhance, BiLevelRoutingAttention, BiLevelRoutingAttentio
     6. 优化plot_result.py,使用线性插值来填充inf或者nan的数据,降低出现乱码问题的概率.
     7. 更新使用教程.
     8. 更新百度云链接视频-20230203版本更新说明.
+
+- **20240208-yolov8-v1.36**
+    将所有改进代码同步到8.1.6上.
