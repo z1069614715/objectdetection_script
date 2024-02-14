@@ -93,11 +93,6 @@
     reference: [链接](https://github.com/jwwangchn/NWD)  
 - **yolov7-DCNV3**  
     添加DCNV3到yolov7中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1LY411z7iE/).   
-    paper: [链接](https://arxiv.org/abs/2211.05778)  
-    reference: [链接](https://github.com/OpenGVLab/InternImage) 
-- **yolov7-DCNV3**  
-    添加DCNV3到yolov7中.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1mk4y1h7us/).   
     paper: [链接](https://arxiv.org/abs/2211.05778)  
     reference: [链接](https://github.com/OpenGVLab/InternImage) 
@@ -286,7 +281,7 @@
     paper: [链接](https://arxiv.org/pdf/2307.07662v1.pdf)  
 - **yolov7-MPDiou**  
     添加(2023最新IoU度量算法)MPDiou到yolov7中.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV19P41147gJ/).   
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Qh4y1r7D3/).   
     paper: [链接](https://arxiv.org/pdf/2307.07662v1.pdf)  
 - **yolov5-SlideLoss**  
     添加Yolo-Face-V2中SlideLoss的到yolov5中.  

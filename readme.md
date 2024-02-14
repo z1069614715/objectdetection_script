@@ -1,6 +1,8 @@
 # Object Detection Script
 这个项目主要是提供一些关于目标检测的代码和改进思路参考.
 
+### [BiliBili视频指南](https://github.com/z1069614715/objectdetection_script/blob/master/bilibili-guide.md)
+
 # Project <需要入手请加企鹅1615905974/1069614715,如添加不上可bilibili私聊直发企鹅号码,最好好友请求也设置不需要验证就可以加上>
 1. 基于整合yolov7的项目.(12.9¥)[项目详解](https://t.bilibili.com/798697826625257472#reply245141740)  
 
@@ -16,12 +18,13 @@
     3. 购买了yolov8项目的都会赠送yolov5-PAGCP通道剪枝算法代码和相关实验参数命令.
     4. 购买后进YOLOV8交流群(代码视频均在群公告),群里可交流代码和论文相关,目前2900+人,气氛活跃.
     5. 项目因为(价格问题)不附带一对一私人答疑服务,平时私聊问点小问题和群里的问题,有空我都会回复.
+    6. 里面配备使用说明(部分改进点使用复杂度高、二次创新、原创的模块都会有对应的视频进行说明)
 
 3. 基于YOLOV5,YOLOV7的(剪枝+知识蒸馏)项目.(129.9¥)[项目详解](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/yolov5v7-light.md)
 
     1. 模型轻量化,部署必备之一!
     2. 项目里面配套几个剪枝和蒸馏的示例,并且都配有视频讲解,供大家理解如何进行剪枝和蒸馏.
-    3. 购买后进YOLOV5V7轻量化交流群(代码视频均在群公告),轻量化问题都可在群交流,因为剪枝问题比较困难,所以剪枝蒸馏问题可以群里提问,我都会群里回复相关问题.
+    3. 购买后进YOLOV5V7轻量化交流群(代码视频均在群公告),轻量化问题都可在群交流,因为剪枝蒸馏问题比较困难,所以剪枝蒸馏问题可以群里提问,我都会群里回复相关问题.
 
 4. 基于Ultralytics的RT-DETR改进项目.(89.9¥)
 
@@ -33,6 +36,7 @@
     4. 购买后进RT-DETR交流群(代码视频均在群公告),群里可交流代码和论文相关.
     5. 项目因为(价格问题)不附带一对一私人答疑服务,平时私聊问点小问题和群里的问题,有空我都会回复.
     6. RT-DETR项目包含多种基准模型改进方案(RT-DETR-R18,RT-DETR-R50,RT-DETR-L,Yolov8-Detr,Yolov5-Detr),具体可点击[目前已有的改进方案和更新详细公告](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/rtdetr-project.md)看详细.
+    7. 里面配备使用说明(部分改进点使用复杂度高、二次创新、原创的模块都会有对应的视频进行说明)
 
 5. 基于YOLOV8的剪枝蒸馏项目.  
     注意:
@@ -63,9 +67,8 @@
 9. 模型创新. 
 10. 目标跟踪.
 
-等等. 价格公道,三年TB老店,TB付款安全可靠.  
-有需要的可加企鹅 1615905974详聊.  
-另外也有有偿指导答疑.  
+等等. 硕博团队为您服务,四年TB老店,TB付款安全可靠.  
+有需要的可加企鹅(1615905974/1069614715)后直接提供(具体需求+时间+预算,我们会根据您的需求安排最适合您的工程师).  
 
 # Explanation
 - **yolo**  
@@ -97,6 +100,3 @@
 [![Star History Chart](https://api.star-history.com/svg?repos=z1069614715/objectdetection_script&type=Date)](https://star-history.com/#z1069614715/objectdetection_script&Date)
 
 <a id="0"></a>
-
-# Alipay(需要购买直接加我QQ:1615905974(添加不上请在B站上私信发我qq号))
-<!-- ![Alipay](images/ZFB.jpg)   -->
