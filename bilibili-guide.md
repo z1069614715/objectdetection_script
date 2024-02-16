@@ -6,6 +6,8 @@
 3. [探究深度学习中预训练权重对改进和精度的影响!](https://www.bilibili.com/video/BV1FH4y1o7GL/)
 4. [什么？你说你不会画模型结构图？行吧，那你进来看看吧，手把手教你画YAML结构图！](https://www.bilibili.com/video/BV1X94y1K76Z/)
 5. [探究深度学习中训练中的可重现性](https://www.bilibili.com/video/BV1Nu4y1s7sc/)
+6. [什么？你说你更换主干后看不懂配置文件也不懂画结构图？那你快点进来看看了！](https://www.bilibili.com/video/BV1WA4m1V7nQ/)
+7. [从三个角度分析，什么条件才算是一个合格的改进专栏！](https://www.bilibili.com/video/BV1E6421g7eb/)
 
 ### YOLOV5,V7-PYQT5项目讲解
 1. [哔哩哔哩合集地址](https://space.bilibili.com/286900343/channel/collectiondetail?sid=917275)
@@ -131,3 +133,4 @@
 4. [最新~YOLOV8手把手教学配置文件添加注意力机制!一看就会!](https://www.bilibili.com/video/BV1RH4y1D7CY/)
 5. [YOLOV8改进-手把手带你学会注意力机制进阶用法](https://www.bilibili.com/video/BV1ZQ4y1J7oC/)
 6. [YOLOV8可视化-可视化并统计每张图的True Positive、False Positive、False Negative](https://www.bilibili.com/video/BV1RA4m1L79K/)
+7. [YOLOV8-基于VisDrone的TaskAlignedAssigner任务对齐分配策略的调参实验](https://www.bilibili.com/video/BV1XJ4m1x7eJ/)
