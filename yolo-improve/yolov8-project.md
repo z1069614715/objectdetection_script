@@ -53,6 +53,23 @@
 16. ultralytics/cfg/models/v8/yolov8-ASF-DySample.yaml
 
     使用[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion与[ICCV2023 DySample](https://arxiv.org/abs/2308.15085)组合得到Dynamic Sample Attentional Scale Sequence Fusion.
+
+17. ultralytics/cfg/models/v8/yolov8-C2f-DCNV2-Dynamic.yaml
+
+    利用自研注意力机制MPCA强化DCNV2中的offset和mask.
+
+18. ultralytics/cfg/models/v8/yolov8-C2f-iRMB-Cascaded.yaml
+
+    使用[EfficientViT CVPR2023](https://github.com/microsoft/Cream/tree/main/EfficientViT)中的CascadedGroupAttention对[EMO ICCV2023](https://github.com/zhangzjn/EMO)中的iRMB进行二次创新来改进C2f.
+
+19. ultralytics/cfg/models/v8/yolov8-C2f-iRMB-DRB.yaml
+
+    使用[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的DilatedReparamBlock对[EMO ICCV2023](https://github.com/zhangzjn/EMO)中的iRMB进行二次创新来改进C2f.
+
+20. ultralytics/cfg/models/v8/yolov8-C2f-iRMB-SWC.yaml
+
+    使用[shift-wise conv](https://arxiv.org/abs/2401.12736)对[EMO ICCV2023](https://github.com/zhangzjn/EMO)中的iRMB进行二次创新来改进C2f.
+
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
 
@@ -255,9 +272,9 @@
 14. ultralytics/cfg/models/v8/yolov8-C2f-REPVGGOREPA.yaml
 
     使用C2f-REPVGGOREPA替换C2f.[Online Convolutional Re-parameterization (CVPR2022)](https://github.com/JUGGHM/OREPA_CVPR2022/tree/main)
-15. ultralytics/cfg/models/v8/yolov8-C2f-DCNV2-Dynamic.yaml
+15. ultralytics/cfg/models/v8/yolov8-C2f-DCNV4.yaml
 
-    利用自研注意力机制MPCA强化DCNV2中的offset和mask.
+    使用[DCNV4](https://github.com/OpenGVLab/DCNv4)改进C2f.(请关闭AMP进行训练,使用教程请看20240116版本更新说明)
 16. ultralytics/cfg/models/v8/yolov8-C2f-ContextGuided.yaml
 
     使用[CGNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided改进C2f.
@@ -307,9 +324,15 @@
 30. ultralytics/cfg/models/v8/yolov8-C2f-AggregatedAtt.yaml
 
     使用[TransNeXt](https://github.com/DaiShiResearch/TransNeXt)中的聚合感知注意力改进C2f.(需要看[常见错误和解决方案的第五点](#a))   
-31. ultralytics/cfg/models/v8/yolov8-C2f-DCNV4.yaml
 
-    使用[DCNV4](https://github.com/OpenGVLab/DCNv4)改进C2f.(请关闭AMP进行训练,使用教程请看20240116版本更新说明)
+31. ultralytics/cfg/models/v8/yolov8-C2f-SWC.yaml
+
+    使用[shift-wise conv](https://arxiv.org/abs/2401.12736)改进yolov8中的C2f.
+
+32. ultralytics/cfg/models/v8/yolov8-C2f-iRMB.yaml
+
+    使用[EMO ICCV2023](https://github.com/zhangzjn/EMO)中的iRMB改进C2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -344,6 +367,7 @@
 18. FocusedLinearAttention(ICCV2023)
 19. MLCA
 20. TransNeXt_AggregatedAttention
+21. LocalWindowAttention(EfficientViT中的CascadedGroupAttention注意力)
 
 ### Loss系列
 1. SlideLoss,EMASlideLoss.(可动态调节正负样本的系数,让模型更加注重难分类,错误分类的样本上)
@@ -585,4 +609,13 @@
     8. 更新百度云链接视频-20230203版本更新说明.
 
 - **20240208-yolov8-v1.36**
-    将所有改进代码同步到8.1.6上.
+    1. 将所有改进代码同步到8.1.9上.
+
+- **20240216-yolov8-v1.37**
+    1. 增加EMO模型中的iRMB模块,并使用(EfficientViT-CVPR2023)中的CascadedAttention对其二次创新得到iRMB_Cascaded.
+    2. 新增Shift-ConvNets相关改进内容.(rtdetr-SWC.yaml,rtdetr-R50-SWC.yaml,yolov8-detr-C2f-SWC.yaml,yolov5-detr-C3-SWC.yaml)
+    3. 使用UniRepLKNet中的DilatedReparamBlock对EMO中的iRMB进行二次创新.
+    4. 使用Shift-ConvNets中的具有移位操作的卷积对EMO中的iRMB进行二次创新.
+    5. 修复一些已知问题.
+    6. 更新使用教程.
+    8. 百度云视频增加20240216更新说明.
