@@ -241,6 +241,9 @@
 18. ultralytics/cfg/models/rt-detr/rtdetr-SWC.yaml
 
     使用[shift-wise conv](https://arxiv.org/abs/2401.12736)改进resnet18中的BasicBlock.
+19. ultralytics/cfg/models/rt-detr/rtdetr-VSS.yaml
+
+    使用最新的Mamba架构[Mamba-UNet中的VSS](https://github.com/ziyangwang007/Mamba-UNet)改进resnet18-backbone中的BasicBlock.
 
 ### 上下采样算子系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-DySample.yaml
@@ -301,6 +304,7 @@
 9. Inner-Wise-IoU(v1,v2,v3)系列(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU,ShapeIoU)(百度云视频-20240113更新说明)
 10. Focaler-IoU,Focaler-GIoU,Focaler-DIoU,Focaler-CIoU,Focaler-EIoU,Focaler-SIoU,Focaler-Shape-IoU,Focaler-MPDIoU[论文链接](https://arxiv.org/abs/2401.10525)(百度云视频-20240128更新说明)
 11. Focaler-Wise-IoU(v1,v2,v3)(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU,ShapeIoU)[论文链接](https://arxiv.org/abs/2401.10525)(百度云视频-20240128更新说明)
+12. Powerful-IoU,Powerful-IoUV2,Inner-Powerful-IoU,Inner-Powerful-IoUV2,Focaler-Powerful-IoU,Focaler-Powerful-IoUV2,Wise-Powerful-IoU(v1,v2,v3),Wise-Powerful-IoUV2(v1,v2,v3)[论文链接](https://www.sciencedirect.com/science/article/abs/pii/S0893608023006640)
 
 ### 以Yolov8为基准模型的改进方案
 1. ultralytics/cfg/models/yolo-detr/yolov8-detr.yaml
@@ -479,6 +483,14 @@
 
     使用[shift-wise conv](https://arxiv.org/abs/2401.12736)对[EMO ICCV2023](https://github.com/zhangzjn/EMO)中的iRMB进行二次创新来改进yolov8-detr中的C2f.
 
+45. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-VSS.yaml
+
+    使用最新的Mamba架构[Mamba-UNet中的VSS](https://github.com/ziyangwang007/Mamba-UNet)对C2f中的BottleNeck进行改进,使其能更有效地捕获图像中的复杂细节和更广泛的语义上下文.
+
+46. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-LVMB.yaml
+
+    使用最新的Mamba架构[Mamba-UNet中的VSS](https://github.com/ziyangwang007/Mamba-UNet)与Cross Stage Partial进行结合,使其能更有效地捕获图像中的复杂细节和更广泛的语义上下文.
+
 ### 以Yolov5为基准模型的改进方案
 1. ultralytics/cfg/models/yolo-detr/yolov5-detr.yaml
 
@@ -656,6 +668,13 @@
 
     使用[shift-wise conv](https://arxiv.org/abs/2401.12736)对[EMO ICCV2023](https://github.com/zhangzjn/EMO)中的iRMB进行二次创新来改进yolov5-detr中的C2f.
 
+45. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-VSS.yaml
+
+    使用最新的Mamba架构[Mamba-UNet中的VSS](https://github.com/ziyangwang007/Mamba-UNet)对C3中的BottleNeck进行改进,使其能更有效地捕获图像中的复杂细节和更广泛的语义上下文.
+
+46. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-LVMB.yaml
+
+    使用最新的Mamba架构[Mamba-UNet中的VSS](https://github.com/ziyangwang007/Mamba-UNet)与Cross Stage Partial进行结合,使其能更有效地捕获图像中的复杂细节和更广泛的语义上下文.
 
 # 更新公告
 - **20231105-rtdetr-v1.0**
@@ -766,3 +785,11 @@
     3. 使用Shift-ConvNets中的具有移位操作的卷积对EMO中的iRMB进行二次创新.
     4. 更新使用教程.
     5. 百度云视频增加20240206更新说明.
+
+- **20240219-rtdetr-v1.13**
+    1. 使用最新的Mamba架构(号称超越Transformer的新架构)改进rtdetr-r18,rtdetr-r50,yolov5-detr,yolov8-detr.
+    2. 新增Powerful-IoU,Powerful-IoUV2,Inner-Powerful-IoU,Inner-Powerful-IoUV2,Focaler-Powerful-IoU,Focaler-Powerful-IoUV2,Wise-Powerful-IoU(v1,v2,v3),Wise-Powerful-IoUV2(v1,v2,v3)系列.
+    3. 更新热力图脚本,使用方式可参考最新发的yolov5v7-gradcam的视频.
+    4. 更新COCO脚本,增加其他指标输出.
+    5. 更新使用教程.
+    6. 百度云视频增加20240219更新说明.
