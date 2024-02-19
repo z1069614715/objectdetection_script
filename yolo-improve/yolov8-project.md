@@ -333,6 +333,14 @@
 
     使用[EMO ICCV2023](https://github.com/zhangzjn/EMO)中的iRMB改进C2f.
 
+33. ultralytics/cfg/models/v8/yolov8-C2f-VSS.yaml
+
+    使用最新的Mamba架构[Mamba-UNet中的VSS](https://github.com/ziyangwang007/Mamba-UNet)对C2f中的BottleNeck进行改进,使其能更有效地捕获图像中的复杂细节和更广泛的语义上下文.
+
+34. ultralytics/cfg/models/v8/yolov8-C2f-LVMB.yaml
+
+    使用最新的Mamba架构[Mamba-UNet中的VSS](https://github.com/ziyangwang007/Mamba-UNet)与Cross Stage Partial进行结合,使其能更有效地捕获图像中的复杂细节和更广泛的语义上下文.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -377,6 +385,7 @@
 5. Inner-Wise-IoU(v1,v2,v3)系列(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU,ShapeIoU).
 6. FocalLoss,VarifocalLoss,QualityfocalLoss
 7. Focaler-IoU系列(IoU,GIoU,DIoU,CIoU,EIoU,SIoU,WIoU,MPDIoU,ShapeIoU)
+8. Powerful-IoU,Powerful-IoUV2,Inner-Powerful-IoU,Inner-Powerful-IoUV2,Focaler-Powerful-IoU,Focaler-Powerful-IoUV2,Wise-Powerful-IoU(v1,v2,v3),Wise-Powerful-IoUV2(v1,v2,v3)[论文链接](https://www.sciencedirect.com/science/article/abs/pii/S0893608023006640)
 
 # 更新公告
 
@@ -619,3 +628,10 @@
     5. 修复一些已知问题.
     6. 更新使用教程.
     8. 百度云视频增加20240216更新说明.
+
+- **20240219-yolov8-v1.38**
+    1. 使用最新的Mamba架构(号称超越Transformer的新架构)改进C2f(提供两种改进方式).
+    2. 新增Powerful-IoU,Powerful-IoUV2,Inner-Powerful-IoU,Inner-Powerful-IoUV2,Focaler-Powerful-IoU,Focaler-Powerful-IoUV2,Wise-Powerful-IoU(v1,v2,v3),Wise-Powerful-IoUV2(v1,v2,v3)系列.
+    3. 修复一些已知问题.
+    4. 更新使用教程.
+    5. 百度云视频增加20240219更新说明.

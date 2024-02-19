@@ -8,6 +8,7 @@
 5. [探究深度学习中训练中的可重现性](https://www.bilibili.com/video/BV1Nu4y1s7sc/)
 6. [什么？你说你更换主干后看不懂配置文件也不懂画结构图？那你快点进来看看了！](https://www.bilibili.com/video/BV1WA4m1V7nQ/)
 7. [从三个角度分析，什么条件才算是一个合格的改进专栏！](https://www.bilibili.com/video/BV1E6421g7eb/)
+8. [都2024了，你写论文不会还只用p,r,map这些指标分析目标检测模型吧？](https://www.bilibili.com/video/BV1wF4m177JQ/)
 
 ### YOLOV5,V7-PYQT5项目讲解
 1. [哔哩哔哩合集地址](https://space.bilibili.com/286900343/channel/collectiondetail?sid=917275)
@@ -134,3 +135,4 @@
 5. [YOLOV8改进-手把手带你学会注意力机制进阶用法](https://www.bilibili.com/video/BV1ZQ4y1J7oC/)
 6. [YOLOV8可视化-可视化并统计每张图的True Positive、False Positive、False Negative](https://www.bilibili.com/video/BV1RA4m1L79K/)
 7. [YOLOV8-基于VisDrone的TaskAlignedAssigner任务对齐分配策略的调参实验](https://www.bilibili.com/video/BV1XJ4m1x7eJ/)
+8. [YOLOV8-不会把多个改进整合到一个yaml配置文件里面？那来看看这个吧！从简到难手把手带你整合三个yaml](https://www.bilibili.com/video/BV15H4y1Y7a2/)
