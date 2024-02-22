@@ -70,6 +70,18 @@
 
     使用[shift-wise conv](https://arxiv.org/abs/2401.12736)对[EMO ICCV2023](https://github.com/zhangzjn/EMO)中的iRMB进行二次创新来改进C2f.
 
+21. ultralytics/cfg/models/v8/yolov8-DBBNCSPELAN.yaml
+
+    使用[Diverse Branch Block CVPR2021](https://arxiv.org/abs/2103.13425)对[YOLOV9](https://github.com/WongKinYiu/yolov9)中的RepNCSPELAN进行二次创新后改进yolov8.
+
+22. ultralytics/cfg/models/v8/yolov8-OREPANCSPELAN.yaml
+
+    使用[Online Convolutional Re-parameterization (CVPR2022)](https://github.com/JUGGHM/OREPA_CVPR2022/tree/main)对[YOLOV9](https://github.com/WongKinYiu/yolov9)中的RepNCSPELAN进行二次创新后改进yolov8.
+
+23. ultralytics/cfg/models/v8/yolov8-DRBNCSPELAN.yaml
+
+    使用[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的DilatedReparamBlock对[YOLOV9](https://github.com/WongKinYiu/yolov9)中的RepNCSPELAN进行二次创新后改进yolov8.
+
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
 
@@ -340,6 +352,10 @@
 34. ultralytics/cfg/models/v8/yolov8-C2f-LVMB.yaml
 
     使用最新的Mamba架构[Mamba-UNet中的VSS](https://github.com/ziyangwang007/Mamba-UNet)与Cross Stage Partial进行结合,使其能更有效地捕获图像中的复杂细节和更广泛的语义上下文.
+
+35. ultralytics/cfg/models/v8/yolov8-RepNCSPELAN.yaml
+
+    使用[YOLOV9](https://github.com/WongKinYiu/yolov9)中的RepNCSPELAN进行改进yolov8.
 
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
@@ -635,3 +651,9 @@
     3. 修复一些已知问题.
     4. 更新使用教程.
     5. 百度云视频增加20240219更新说明.
+
+- **20240222-yolov8-v1.39**
+    1. 新增YOLOV9中的RepNCSPELAN模块.
+    2. 使用DBB,OREPA,DilatedReparamBlock对YOLOV9中的RepNCSPELAN模块进行二次创新.
+    3. 更新使用教程.
+    4. 百度云视频增加20240222更新说明.
