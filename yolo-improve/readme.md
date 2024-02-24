@@ -346,11 +346,11 @@
     paper: [链接](https://arxiv.org/abs/2312.06458)  
 - **yolov5-RepNCSPELAN**
     添加yolov9中的RepNCSPELAN到yolov5中.
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1PH4y1S7mf/).   
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV17y421z73k/).   
     reference: [链接](https://github.com/WongKinYiu/yolov9)  
     paper: [链接](https://arxiv.org/abs/2402.13616)
 - **yolov7-RepNCSPELAN**
     添加yolov9中的RepNCSPELAN到yolov7中.
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1PH4y1S7mf/).   
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1UA4m137hz/).   
     reference: [链接](https://github.com/WongKinYiu/yolov9)  
     paper: [链接](https://arxiv.org/abs/2402.13616)

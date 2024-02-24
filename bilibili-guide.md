@@ -101,6 +101,7 @@
 49. [添加Attentional Scale Sequence Fusion到yolov5中](https://www.bilibili.com/video/BV1PH4y1S7mf/)
 50. [添加cross-scale feature-fusion到yolov5中](https://www.bilibili.com/video/BV1Tb4y1P7yd/)
 51. [添加对小目标有效的BiFormer注意力机制到yolov5中](https://www.bilibili.com/video/BV15g4y1g7bM/)
+52. [引入最新SOTA(YOLOV9)中的RepNCSPELAN模块](https://www.bilibili.com/video/BV17y421z73k/)
 #### YOLOV7
 1. [添加EIOU，SIOU，ALPHA-IOU, FocalEIOU到yolov5的box_iou中](https://www.bilibili.com/video/BV1zx4y177EF/)
 2. [Wise-IoU](https://www.bilibili.com/video/BV1yv4y147kf/)
@@ -127,6 +128,7 @@
 23. [利用动态蛇形卷积改进YOLOV7](https://www.bilibili.com/video/BV1Wj411x7fq/)
 24. [利用带有位置信息编码的AIFI自注意力机制改进YOLOV7](https://www.bilibili.com/video/BV1rj411a7s4/)
 25. [添加Attentional Scale Sequence Fusion到yolov7中](https://www.bilibili.com/video/BV1PH4y1S7mf/)
+26. [引入最新SOTA(YOLOV9)中的RepNCSPELAN模块](https://www.bilibili.com/video/BV1UA4m137hz/)
 #### YOLOV8
 1. [添加EIOU，SIOU，ALPHA-IOU, FocalEIOU到yolov5,yolov8的box_iou中](https://www.bilibili.com/video/BV1PY4y1o7Hm/)
 2. [Wise-IoU](https://www.bilibili.com/video/BV1De4y1N7Mb/)
@@ -136,3 +138,6 @@
 6. [YOLOV8可视化-可视化并统计每张图的True Positive、False Positive、False Negative](https://www.bilibili.com/video/BV1RA4m1L79K/)
 7. [YOLOV8-基于VisDrone的TaskAlignedAssigner任务对齐分配策略的调参实验](https://www.bilibili.com/video/BV1XJ4m1x7eJ/)
 8. [YOLOV8-不会把多个改进整合到一个yaml配置文件里面？那来看看这个吧！从简到难手把手带你整合三个yaml](https://www.bilibili.com/video/BV15H4y1Y7a2/)
+9. [YOLOV8下游任务系列-一步一步DEBUG保姆式带你完成目标计数](https://www.bilibili.com/video/BV17H4y1J7DD/)
+#### YOLOV9
+1. [YOLOV9-VisDrone实验对比结果来啦！YOLOV9-C模型VisDrone测试集精度为39.7！有兴趣进来看看具体啦！](https://www.bilibili.com/video/BV1Yy42187A3/)
