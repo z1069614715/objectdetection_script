@@ -92,19 +92,19 @@
     使用[shift-wise conv](https://arxiv.org/abs/2401.12736)对[EMO ICCV2023](https://github.com/zhangzjn/EMO)中的iRMB进行二次创新来改进resnet18-backbone中的BasicBlock.
 15. ultralytics/cfg/models/rt-detr/rtdetr-DBBNCSPELAN.yaml
 
-    在rtdetr-RepNCSPELAN.yaml使用[Diverse Branch Block CVPR2021](https://arxiv.org/abs/2103.13425)进行二次创新.
+    在rtdetr-RepNCSPELAN.yaml使用[Diverse Branch Block CVPR2021](https://arxiv.org/abs/2103.13425)进行二次创新.(详细介绍请看百度云视频-20240225更新说明)
 
 16. ultralytics/cfg/models/rt-detr/rtdetr-OREPANCSPELAN.yaml
 
-    在rtdetr-RepNCSPELAN.yaml使用[Online Convolutional Re-parameterization (CVPR2022)](https://github.com/JUGGHM/OREPA_CVPR2022/tree/main)进行二次创新.
+    在rtdetr-RepNCSPELAN.yaml使用[Online Convolutional Re-parameterization (CVPR2022)](https://github.com/JUGGHM/OREPA_CVPR2022/tree/main)进行二次创新.(详细介绍请看百度云视频-20240225更新说明)
 
 17. ultralytics/cfg/models/rt-detr/rtdetr-DRBNCSPELAN.yaml
 
-    在rtdetr-RepNCSPELAN.yaml使用[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的DilatedReparamBlock进行二次创新.
+    在rtdetr-RepNCSPELAN.yaml使用[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的DilatedReparamBlock进行二次创新.(详细介绍请看百度云视频-20240225更新说明)
 
-18. ultralytics/cfg/models/rt-detr/rtdetr-RepNCSPELAN.yaml
+18. ultralytics/cfg/models/rt-detr/rtdetr-Conv3XCNCSPELAN.yaml
 
-    在rtdetr-RepNCSPELAN.yaml使用[Swift Parameter-free Attention Network](https://github.com/hongyuanyu/SPAN/tree/main)中的Conv3XC进行二次创新.
+    在rtdetr-RepNCSPELAN.yaml使用[Swift Parameter-free Attention Network](https://github.com/hongyuanyu/SPAN/tree/main)中的Conv3XC进行二次创新.(详细介绍请看百度云视频-20240225更新说明)
 
 ### 自研系列
 待更新
@@ -823,4 +823,4 @@
     1. 新增YOLOV9中的RepNCSPELAN模块.
     2. 使用DBB,OREPA,DilatedReparamBlock,Conv3XC对YOLOV9中的RepNCSPELAN模块进行二次创新.
     3. 更新使用教程.
-    4. 百度云视频增加20240222更新说明.
+    4. 百度云视频增加20240225更新说明.
