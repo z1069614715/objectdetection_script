@@ -209,6 +209,9 @@
 6. ultralytics/cfg/models/v8/yolov8-MultiSEAMHead.yaml
 
     使用[YOLO-Face V2](https://arxiv.org/pdf/2208.02019v2.pdf)中的遮挡感知注意力改进Head,使其有效地处理遮挡场景.
+7. ultralytics/cfg/models/v8/yolov8-PGI.yaml
+
+    使用[YOLOV9](https://github.com/WongKinYiu/yolov9)的programmable gradient information改进YOLOV8.(PGI模块可在训练结束后去掉)
 
 ### Label Assign系列
 1. Adaptive Training Sample Selection匹配策略.
@@ -238,6 +241,15 @@
 5. ultralytics/cfg/models/v8/yolov8-HWD.yaml
 
     使用[Haar wavelet downsampling](https://www.sciencedirect.com/science/article/abs/pii/S0031320323005174)改进yolov8的下采样.(请关闭AMP情况下使用)
+
+6. ultralytics/cfg/models/v8/yolov8-v7DS.yaml
+
+    使用[YOLOV7 CVPR2023](https://arxiv.org/abs/2207.02696)的下采样结构改进YOLOV8中的下采样.
+
+7. ultralytics/cfg/models/v8/yolov8-ADown.yaml
+
+    使用[YOLOV9](https://github.com/WongKinYiu/yolov9)的下采样结构改进YOLOV8中的下采样.
+
 ### YOLOV8-C2f系列
 1. ultralytics/cfg/models/v8/yolov8-C2f-Faster.yaml
 
@@ -657,3 +669,10 @@
     2. 使用DBB,OREPA,DilatedReparamBlock对YOLOV9中的RepNCSPELAN模块进行二次创新.
     3. 更新使用教程.
     4. 百度云视频增加20240222更新说明.
+
+- **20240229-yolov8-v1.40**
+    1. 新增YOLOV9中的ADown下采样模块.
+    2. 新增YOLOV7中的下采样模块.
+    3. 新增YOLOV9中的programmable gradient information,并且PGI模块可以在训练后去除.
+    4. 更新使用教程.
+    5. 百度云视频增加20240229更新说明.

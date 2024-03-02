@@ -141,3 +141,5 @@
 9. [YOLOV8下游任务系列-一步一步DEBUG保姆式带你完成目标计数](https://www.bilibili.com/video/BV17H4y1J7DD/)
 #### YOLOV9
 1. [YOLOV9-VisDrone实验对比结果来啦！YOLOV9-C模型VisDrone测试集精度为39.7！有兴趣进来看看具体啦！](https://www.bilibili.com/video/BV1Yy42187A3/)
+2. [从源码分析YOLOV9比YOLOV7多了什么内容！](https://www.bilibili.com/video/BV1v1421f7rN/)
+3. [YOLOV9n VS YOLOV8n，在VisDrone数据集上精度有2.4个点的提升!](https://www.bilibili.com/video/BV16m411f78L/)

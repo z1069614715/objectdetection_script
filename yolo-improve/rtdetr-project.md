@@ -180,6 +180,17 @@
 5. ultralytics/cfg/models/rt-detr/rtdetr-HSFPN.yaml
 
     使用[MFDS-DETR](https://github.com/JustlfC03/MFDS-DETR)中的HS-FPN改进RTDETR中的CCFM.
+6. ultralytics/cfg/models/rt-detr/rtdetr-bifpn.yaml
+
+    添加BIFPN到rtdetr-r18中.  
+    其中BIFPN中有三个可选参数：
+    1. Fusion  
+        其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default), SDI  
+        其中weight, adaptive, concat出自[paper链接-Figure 3](https://openreview.net/pdf?id=q2ZaVU6bEsT), SDI出自[U-NetV2](https://github.com/yaoppeng/U-Net_v2)
+    2. node_mode  
+        block模块选择,具体可看对应百度云视频-20240302更新公告.
+    3. head_channel  
+        BIFPN中的通道数,默认设置为256.
 
 ### Head系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-p2.yaml
@@ -261,7 +272,9 @@
 19. ultralytics/cfg/models/rt-detr/rtdetr-VSS.yaml
 
     使用最新的Mamba架构[Mamba-UNet中的VSS](https://github.com/ziyangwang007/Mamba-UNet)改进resnet18-backbone中的BasicBlock.
+20. ultralytics/cfg/models/rt-detr/rtdetr-ContextGuided.yaml
 
+    使用[CGNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided和Light-weight Context Guided DownSample改进rtdetr-r18.
 ### 上下采样算子系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-DySample.yaml
 
@@ -272,6 +285,9 @@
 3. ultralytics/cfg/models/rt-detr/rtdetr-HWD.yaml
 
     使用[Haar wavelet downsampling](https://www.sciencedirect.com/science/article/abs/pii/S0031320323005174)改进CCFM的下采样.
+4. ultralytics/cfg/models/rt-detr/rtdetr-ContextGuidedDown.yaml
+
+    使用[CGNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided DownSample改进rtdetr-r18.
 
 ### RT-DETR-L改进系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-l-GhostHGNetV2.yaml
@@ -322,6 +338,7 @@
 10. Focaler-IoU,Focaler-GIoU,Focaler-DIoU,Focaler-CIoU,Focaler-EIoU,Focaler-SIoU,Focaler-Shape-IoU,Focaler-MPDIoU[论文链接](https://arxiv.org/abs/2401.10525)(百度云视频-20240128更新说明)
 11. Focaler-Wise-IoU(v1,v2,v3)(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU,ShapeIoU)[论文链接](https://arxiv.org/abs/2401.10525)(百度云视频-20240128更新说明)
 12. Powerful-IoU,Powerful-IoUV2,Inner-Powerful-IoU,Inner-Powerful-IoUV2,Focaler-Powerful-IoU,Focaler-Powerful-IoUV2,Wise-Powerful-IoU(v1,v2,v3),Wise-Powerful-IoUV2(v1,v2,v3)[论文链接](https://www.sciencedirect.com/science/article/abs/pii/S0893608023006640)
+13. SlideVarifocalLoss,EMASlideVarifocalLoss[创新思路](https://www.bilibili.com/video/BV1W14y1i79U/?vd_source=c8452371e7ca510979593165c8d7ac27).[Yolo-Face V2](https://github.com/Krasjet-Yu/YOLO-FaceV2/blob/master/utils/loss.py)(百度云视频-20240302更新说明)
 
 ### 以Yolov8为基准模型的改进方案
 1. ultralytics/cfg/models/yolo-detr/yolov8-detr.yaml
@@ -512,6 +529,22 @@
 
     使用[YOLOV9](https://github.com/WongKinYiu/yolov9)中的RepNCSPELAN进行改进yolov8-detr.
 
+48. ultralytics/cfg/models/yolo-detr/yolov5-detr-bifpn.yaml
+
+    添加BIFPN到yolov5中.  
+    其中BIFPN中有三个可选参数：
+    1. Fusion  
+        其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default), SDI  
+        其中weight, adaptive, concat出自[paper链接-Figure 3](https://openreview.net/pdf?id=q2ZaVU6bEsT), SDI出自[U-NetV2](https://github.com/yaoppeng/U-Net_v2)
+    2. node_mode  
+        block模块选择,具体可看对应百度云视频-20240302更新公告.
+    3. head_channel  
+        BIFPN中的通道数,默认设置为256.
+
+49. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-ContextGuided.yaml
+
+    使用[CGNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided和Light-weight Context Guided DownSample改进yolov5-detr.
+
 ### 以Yolov5为基准模型的改进方案
 1. ultralytics/cfg/models/yolo-detr/yolov5-detr.yaml
 
@@ -701,6 +734,22 @@
 
     使用[YOLOV9](https://github.com/WongKinYiu/yolov9)中的RepNCSPELAN进行改进yolov5-detr.
 
+48. ultralytics/cfg/models/yolo-detr/yolov8-detr-bifpn.yaml
+
+    添加BIFPN到yolov8中.  
+    其中BIFPN中有三个可选参数：
+    1. Fusion  
+        其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default), SDI  
+        其中weight, adaptive, concat出自[paper链接-Figure 3](https://openreview.net/pdf?id=q2ZaVU6bEsT), SDI出自[U-NetV2](https://github.com/yaoppeng/U-Net_v2)
+    2. node_mode  
+        block模块选择,具体可看对应百度云视频-20240302更新公告.
+    3. head_channel  
+        BIFPN中的通道数,默认设置为256.
+
+49. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-ContextGuided.yaml
+
+    使用[CGNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided和Light-weight Context Guided DownSample改进yolov8-detr.
+
 # 更新公告
 - **20231105-rtdetr-v1.0**
     1. 初版项目发布.
@@ -824,3 +873,9 @@
     2. 使用DBB,OREPA,DilatedReparamBlock,Conv3XC对YOLOV9中的RepNCSPELAN模块进行二次创新.
     3. 更新使用教程.
     4. 百度云视频增加20240225更新说明.
+
+- **20240302-rtdetr-v1.15**
+    1. 新增CGNet中的Light-weight Context Guided和Light-weight Context Guided DownSample模块.
+    2. Neck模块新增BIFPN,并对其进行创新,支持替换不同的block
+    3. 更新使用教程.
+    4. 百度云视频增加20240302更新说明.
