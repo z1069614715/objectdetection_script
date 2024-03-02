@@ -876,6 +876,7 @@
 
 - **20240302-rtdetr-v1.15**
     1. 新增CGNet中的Light-weight Context Guided和Light-weight Context Guided DownSample模块.
-    2. Neck模块新增BIFPN,并对其进行创新,支持替换不同的block
-    3. 更新使用教程.
-    4. 百度云视频增加20240302更新说明.
+    2. Neck模块新增BIFPN,并对其进行创新,支持替换不同的block.
+    3. 为RTDETR定制SlideVarifocalLoss,EMASlideVarifocalLoss.
+    4. 更新使用教程.
+    5. 百度云视频增加20240302更新说明.
