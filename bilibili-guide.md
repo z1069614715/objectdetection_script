@@ -9,6 +9,7 @@
 6. [什么？你说你更换主干后看不懂配置文件也不懂画结构图？那你快点进来看看了！](https://www.bilibili.com/video/BV1WA4m1V7nQ/)
 7. [从三个角度分析，什么条件才算是一个合格的改进专栏！](https://www.bilibili.com/video/BV1E6421g7eb/)
 8. [都2024了，你写论文不会还只用p,r,map这些指标分析目标检测模型吧？](https://www.bilibili.com/video/BV1wF4m177JQ/)
+9. 
 
 ### YOLOV5,V7-PYQT5项目讲解
 1. [哔哩哔哩合集地址](https://space.bilibili.com/286900343/channel/collectiondetail?sid=917275)

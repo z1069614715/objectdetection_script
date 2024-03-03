@@ -82,6 +82,10 @@
 
     使用[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的DilatedReparamBlock对[YOLOV9](https://github.com/WongKinYiu/yolov9)中的RepNCSPELAN进行二次创新后改进yolov8.
 
+24. ultralytics/cfg/models/v8/yolov8-DynamicHGNetV2.yaml
+
+    使用[CVPR2024 parameternet](https://arxiv.org/pdf/2306.14525v2.pdf)中的DynamicConv对[CVPR2024 RTDETR](https://arxiv.org/abs/2304.08069)中的HGBlokc进行二次创新.
+
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
 
@@ -151,7 +155,7 @@
     添加BIFPN到yolov8中.  
     其中BIFPN中有三个可选参数：
     1. Fusion  
-        其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default), SDI  
+        其中BIFPN中的Fusion模块支持五种: weight, adaptive, concat, bifpn(default), SDI  
         其中weight, adaptive, concat出自[paper链接-Figure 3](https://openreview.net/pdf?id=q2ZaVU6bEsT), SDI出自[U-NetV2](https://github.com/yaoppeng/U-Net_v2)
     2. node_mode  
         支持大部分C2f-XXX结构.
@@ -369,13 +373,21 @@
 
     使用[YOLOV9](https://github.com/WongKinYiu/yolov9)中的RepNCSPELAN进行改进yolov8.
 
+36. ultralytics/cfg/models/v8/yolov8-C2f-DynamicConv.yaml
+
+    使用[CVPR2024 parameternet](https://arxiv.org/pdf/2306.14525v2.pdf)中的DynamicConv改进C2f.
+
+37. ultralytics/cfg/models/v8/yolov8-C2f-GhostDynamicConv.yaml
+
+    使用[CVPR2024 parameternet](https://arxiv.org/pdf/2306.14525v2.pdf)中的GhostModule改进C2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
     fasternet与bifpn的结合.  
     其中BIFPN中有三个可选参数：
     1. Fusion  
-        其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default), SDI  
+        其中BIFPN中的Fusion模块支持五种: weight, adaptive, concat, bifpn(default), SDI  
         其中weight, adaptive, concat出自[paper链接-Figure 3](https://openreview.net/pdf?id=q2ZaVU6bEsT), SDI出自[U-NetV2](https://github.com/yaoppeng/U-Net_v2)
     2. node_mode  
         其中目前(后续会更新喔)支持这些[结构](#b)
@@ -676,3 +688,9 @@
     3. 新增YOLOV9中的programmable gradient information,并且PGI模块可以在训练后去除.
     4. 更新使用教程.
     5. 百度云视频增加20240229更新说明.
+
+- **20240303-yolov8-v1.41**
+    1. 新增CVPR2024-parameternet中的GhostModule与DynamicConv.
+    2. 使用CVPR2024-parameternet中的DynamicConv对CVPR2024-RTDETR中的HGBlokc进行二次创新.
+    3. 更新使用教程.
+    4. 百度云视频增加20240303更新说明.
