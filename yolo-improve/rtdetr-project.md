@@ -536,21 +536,29 @@
 
     使用[YOLOV9](https://github.com/WongKinYiu/yolov9)中的RepNCSPELAN进行改进yolov8-detr.
 
-48. ultralytics/cfg/models/yolo-detr/yolov5-detr-bifpn.yaml
+48. ultralytics/cfg/models/yolo-detr/yolov8-detr-bifpn.yaml
 
-    添加BIFPN到yolov5中.  
+    添加BIFPN到yolov8中.  
     其中BIFPN中有三个可选参数：
     1. Fusion  
-        其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default), SDI  
+        其中BIFPN中的Fusion模块支持五种: weight, adaptive, concat, bifpn(default), SDI  
         其中weight, adaptive, concat出自[paper链接-Figure 3](https://openreview.net/pdf?id=q2ZaVU6bEsT), SDI出自[U-NetV2](https://github.com/yaoppeng/U-Net_v2)
     2. node_mode  
         block模块选择,具体可看对应百度云视频-20240302更新公告.
     3. head_channel  
         BIFPN中的通道数,默认设置为256.
 
-49. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-ContextGuided.yaml
+49. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-ContextGuided.yaml
 
-    使用[CGNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided和Light-weight Context Guided DownSample改进yolov5-detr.
+    使用[CGNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided和Light-weight Context Guided DownSample改进yolov8-detr.
+
+50. ultralytics/cfg/models/yolo-detr/yolov8-detr-PACAPN.yaml
+
+    自研结构, Parallel Atrous Convolution Attention Pyramid Network, PAC-APN
+
+51. ultralytics/cfg/models/yolo-detr/yolov8-detr-DGCST.yaml
+
+    使用[Lightweight Object Detection](https://arxiv.org/abs/2403.01736)中的Dynamic Group Convolution Shuffle Transformer改进yolov8-detr.
 
 ### 以Yolov5为基准模型的改进方案
 1. ultralytics/cfg/models/yolo-detr/yolov5-detr.yaml
@@ -741,21 +749,29 @@
 
     使用[YOLOV9](https://github.com/WongKinYiu/yolov9)中的RepNCSPELAN进行改进yolov5-detr.
 
-48. ultralytics/cfg/models/yolo-detr/yolov8-detr-bifpn.yaml
+48. ultralytics/cfg/models/yolo-detr/yolov5-detr-bifpn.yaml
 
     添加BIFPN到yolov8中.  
     其中BIFPN中有三个可选参数：
     1. Fusion  
-        其中BIFPN中的Fusion模块支持四种: weight, adaptive, concat, bifpn(default), SDI  
+        其中BIFPN中的Fusion模块支持五种: weight, adaptive, concat, bifpn(default), SDI  
         其中weight, adaptive, concat出自[paper链接-Figure 3](https://openreview.net/pdf?id=q2ZaVU6bEsT), SDI出自[U-NetV2](https://github.com/yaoppeng/U-Net_v2)
     2. node_mode  
         block模块选择,具体可看对应百度云视频-20240302更新公告.
     3. head_channel  
         BIFPN中的通道数,默认设置为256.
 
-49. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-ContextGuided.yaml
+49. ultralytics/cfg/models/yolo-detr/yolov5-detr-C2f-ContextGuided.yaml
 
-    使用[CGNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided和Light-weight Context Guided DownSample改进yolov8-detr.
+    使用[CGNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided和Light-weight Context Guided DownSample改进yolov5-detr.
+
+50. ultralytics/cfg/models/yolo-detr/yolov5-detr-PACAPN.yaml
+
+    自研结构, Parallel Atrous Convolution Attention Pyramid Network, PAC-APN
+
+51. ultralytics/cfg/models/yolo-detr/yolov5-detr-DGCST.yaml
+
+    使用[Lightweight Object Detection](https://arxiv.org/abs/2403.01736)中的Dynamic Group Convolution Shuffle Transformer改进yolov5-detr.
 
 # 更新公告
 - **20231105-rtdetr-v1.0**
