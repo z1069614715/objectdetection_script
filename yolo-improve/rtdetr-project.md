@@ -217,6 +217,9 @@
 5. ultralytics/cfg/models/rt-detr/rtdetr-DGCST.yaml
 
     使用[Lightweight Object Detection](https://arxiv.org/abs/2403.01736)中的Dynamic Group Convolution Shuffle Transformer改进rtdetr-r18.
+6. ultralytics/cfg/models/rt-detr/rtdetr-DGCST2.yaml
+
+    使用[Lightweight Object Detection](https://arxiv.org/abs/2403.01736)中的Dynamic Group Convolution Shuffle Transformer与Dynamic Group Convolution Shuffle Module进行结合改进rtdetr-r18.
 
 ### ResNet主干中的BasicBlock/BottleNeck改进系列(以下改进BottleNeck基本都有,就不再重复标注)
 1. ultralytics/cfg/models/rt-detr/rtdetr-Ortho.yaml
