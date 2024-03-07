@@ -107,7 +107,11 @@
     在rtdetr-RepNCSPELAN.yaml使用[Swift Parameter-free Attention Network](https://github.com/hongyuanyu/SPAN/tree/main)中的Conv3XC进行二次创新.(详细介绍请看百度云视频-20240225更新说明)
 
 ### 自研系列
-待更新
+1. ultralytics/cfg/models/rt-detr/rtdetr-PACAPN.yaml
+
+    自研结构, Parallel Atrous Convolution Attention Pyramid Network, PAC-APN
+    1. 并行(上/下)采样分支可为网络提供多条特征提取途径，丰富特征表达的多样性、再结合gate机制对采样后的特征进行特征选择，强化更有意义的特征，抑制冗余或不相关的特征，提升特征表达的有效性。
+    2. PAC模块通过使用具有不同膨胀率的并行空洞卷积，能够有效地提取不同尺度的特征。这使得网络能够捕捉数据中局部和上下文信息，提高其表示复杂模式的能力。
 
 ### BackBone系列
 1. ultralytics/cfg/models/rt-detr/rt-detr-timm.yaml
@@ -210,6 +214,9 @@
 4. ultralytics/cfg/models/rt-detr/rtdetr-DBBC3.yaml
 
     使用[DiverseBranchBlock CVPR2021](https://github.com/DingXiaoH/DiverseBranchBlock)改进RepC3.
+5. ultralytics/cfg/models/rt-detr/rtdetr-DGCST.yaml
+
+    使用[Lightweight Object Detection](https://arxiv.org/abs/2403.01736)中的Dynamic Group Convolution Shuffle Transformer改进rtdetr-r18.
 
 ### ResNet主干中的BasicBlock/BottleNeck改进系列(以下改进BottleNeck基本都有,就不再重复标注)
 1. ultralytics/cfg/models/rt-detr/rtdetr-Ortho.yaml
@@ -880,3 +887,9 @@
     3. 为RTDETR定制SlideVarifocalLoss,EMASlideVarifocalLoss.
     4. 更新使用教程.
     5. 百度云视频增加20240302更新说明.
+
+- **20240307-rtdetr-v1.16**
+    1. 新增自研Neck结构Parallel Atrous Convolution Attention Pyramid Network, PAC-APN.附带模块内结构图
+    2. 复现Lightweight Object Detection中的Dynamic Group Convolution Shuffle Transformer.
+    3. 更新使用教程.
+    4. 百度云视频增加20240307更新说明.

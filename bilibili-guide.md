@@ -9,7 +9,7 @@
 6. [什么？你说你更换主干后看不懂配置文件也不懂画结构图？那你快点进来看看了！](https://www.bilibili.com/video/BV1WA4m1V7nQ/)
 7. [从三个角度分析，什么条件才算是一个合格的改进专栏！](https://www.bilibili.com/video/BV1E6421g7eb/)
 8. [都2024了，你写论文不会还只用p,r,map这些指标分析目标检测模型吧？](https://www.bilibili.com/video/BV1wF4m177JQ/)
-9. 
+9. [从简到难手把手教你画Pytorch模块内的结构图！](https://www.bilibili.com/video/BV1dC411p7H7/)
 
 ### YOLOV5,V7-PYQT5项目讲解
 1. [哔哩哔哩合集地址](https://space.bilibili.com/286900343/channel/collectiondetail?sid=917275)
@@ -140,6 +140,7 @@
 7. [YOLOV8-基于VisDrone的TaskAlignedAssigner任务对齐分配策略的调参实验](https://www.bilibili.com/video/BV1XJ4m1x7eJ/)
 8. [YOLOV8-不会把多个改进整合到一个yaml配置文件里面？那来看看这个吧！从简到难手把手带你整合三个yaml](https://www.bilibili.com/video/BV15H4y1Y7a2/)
 9. [YOLOV8下游任务系列-一步一步DEBUG保姆式带你完成目标计数](https://www.bilibili.com/video/BV17H4y1J7DD/)
+10. [YOLOV8改进-带你分析V8的检测头并重设计10种结构轻量化检测头](https://www.bilibili.com/video/BV1cu411K7FE/)
 #### YOLOV9
 1. [YOLOV9-VisDrone实验对比结果来啦！YOLOV9-C模型VisDrone测试集精度为39.7！有兴趣进来看看具体啦！](https://www.bilibili.com/video/BV1Yy42187A3/)
 2. [从源码分析YOLOV9比YOLOV7多了什么内容！](https://www.bilibili.com/video/BV1v1421f7rN/)
