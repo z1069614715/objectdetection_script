@@ -86,6 +86,10 @@
 
     使用[CVPR2024 parameternet](https://arxiv.org/pdf/2306.14525v2.pdf)中的DynamicConv对[CVPR2024 RTDETR](https://arxiv.org/abs/2304.08069)中的HGBlokc进行二次创新.
 
+25. ultralytics/cfg/models/v8/yolov8-C2f-RVB-EMA.yaml
+
+    使用[CVPR2024 RepViT](https://github.com/THU-MIG/RepViT/tree/main)中的RepViTBlock和EMA注意力机制改进C2f.
+
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
 
@@ -96,6 +100,17 @@
 3. ultralytics/cfg/models/v8/yolov8-C2f-EMSCP.yaml
 
     Efficient Multi-Scale Conv Plus.自研模块,具体讲解请看百度云链接中的视频.
+4. Lightweight Shared Convolutional Detection Head
+
+    自研轻量化检测头.
+    detect:ultralytics/cfg/models/v8/yolov8-LSCD.yaml
+    seg:ultralytics/cfg/models/v8/yolov8-seg-LSCD.yaml
+    pose:ultralytics/cfg/models/v8/yolov8-pose-LSCD.yaml
+    obb:ultralytics/cfg/models/v8/yolov8-obb-LSCD.yaml
+    1. GroupNorm在FOCS论文中已经证实可以提升检测头定位和分类的性能.
+    2. 通过使用共享卷积，可以大幅减少参数数量，这使得模型更轻便，特别是在资源受限的设备上.
+    3. 在使用共享卷积的同时，为了应对每个检测头所检测的目标尺度不一致的问题，使用Scale层对特征进行缩放.
+    综合以上，我们可以让检测头做到参数量更少、计算量更少的情况下，尽可能减少精度的损失.
 
 ### BackBone系列
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
@@ -380,6 +395,14 @@
 37. ultralytics/cfg/models/v8/yolov8-C2f-GhostDynamicConv.yaml
 
     使用[CVPR2024 parameternet](https://arxiv.org/pdf/2306.14525v2.pdf)中的GhostModule改进C2f.
+
+38. ultralytics/cfg/models/v8/yolov8-C2f-RVB.yaml
+
+    使用[CVPR2024 RepViT](https://github.com/THU-MIG/RepViT/tree/main)中的RepViTBlock改进C2f.
+
+39. ultralytics/cfg/models/v8/yolov8-DGCST.yaml
+
+    使用[Lightweight Object Detection](https://arxiv.org/abs/2403.01736)中的Dynamic Group Convolution Shuffle Transformer改进yolov8.
 
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
@@ -694,3 +717,10 @@
     2. 使用CVPR2024-parameternet中的DynamicConv对CVPR2024-RTDETR中的HGBlokc进行二次创新.
     3. 更新使用教程.
     4. 百度云视频增加20240303更新说明.
+
+- **20240309-yolov8-v1.42**
+    1. 新增拆分CVPR2024 RepVIT里面的block,提出C2f-RVB、C2f-RVB-EMA.
+    2. 新增Lightweight Object Detection论文中的Dynamic Group Convolution Shuffle Transformer.
+    3. 新增自研Lightweight Shared Convolutional Detection Head,支持Detect、Seg、Pose、Obb.
+    4. 更新使用教程.
+    5. 百度云视频增加20240309更新说明.
