@@ -94,12 +94,15 @@
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
 
     Light Adaptive-weight downsampling.自研模块,具体讲解请看百度云链接中的视频.
+
 2. ultralytics/cfg/models/v8/yolov8-C2f-EMSC.yaml
 
     Efficient Multi-Scale Conv.自研模块,具体讲解请看百度云链接中的视频.
+
 3. ultralytics/cfg/models/v8/yolov8-C2f-EMSCP.yaml
 
     Efficient Multi-Scale Conv Plus.自研模块,具体讲解请看百度云链接中的视频.
+
 4. Lightweight Shared Convolutional Detection Head
 
     自研轻量化检测头.
@@ -111,6 +114,17 @@
     2. 通过使用共享卷积，可以大幅减少参数数量，这使得模型更轻便，特别是在资源受限的设备上.
     3. 在使用共享卷积的同时，为了应对每个检测头所检测的目标尺度不一致的问题，使用Scale层对特征进行缩放.
     综合以上，我们可以让检测头做到参数量更少、计算量更少的情况下，尽可能减少精度的损失.
+
+5. Task Align Dynamic Detection Head
+
+    自研任务对齐动态检测头.
+    detect:ultralytics/cfg/models/v8/yolov8-TADDH.yaml
+    seg:ultralytics/cfg/models/v8/yolov8-seg-TADDH.yaml
+    pose:ultralytics/cfg/models/v8/yolov8-pose-TADDH.yaml
+    obb:ultralytics/cfg/models/v8/yolov8-obb-TADDH.yaml
+    1. GroupNorm在FCOS论文中已经证实可以提升检测头定位和分类的性能.
+    2. 通过使用共享卷积，可以大幅减少参数数量，这使得模型更轻便，特别是在资源受限的设备上.并且在使用共享卷积的同时，为了应对每个检测头所检测的目标尺度不一致的问题，使用Scale层对特征进行缩放.
+    3. 参照TOOD的思想,除了标签分配策略上的任务对齐,我们也在检测头上进行定制任务对齐的结构,现有的目标检测器头部通常使用独立的分类和定位分支,这会导致两个任务之间缺乏交互,TADDH通过特征提取器从多个卷积层中学习任务交互特征,得到联合特征,定位分支使用DCNV2和交互特征生成DCNV2的offset和mask,分类分支使用交互特征进行动态特征选择.
 
 ### BackBone系列
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
@@ -724,3 +738,9 @@
     3. 新增自研Lightweight Shared Convolutional Detection Head,支持Detect、Seg、Pose、Obb.
     4. 更新使用教程.
     5. 百度云视频增加20240309更新说明.
+
+- **20240314-yolov8-v1.43**
+    1. 新增自研Task Align Dynamic Detection Head,支持Detect、Seg、Pose、Obb.
+    2. 更新使用教程，新增几个常见疑问回答.
+    3. 修复shapeiou调用不生效的问题.
+    4. 百度云视频增加20240314更新说明.
