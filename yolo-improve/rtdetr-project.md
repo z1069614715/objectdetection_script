@@ -106,6 +106,14 @@
 
     在rtdetr-RepNCSPELAN.yaml使用[Swift Parameter-free Attention Network](https://github.com/hongyuanyu/SPAN/tree/main)中的Conv3XC进行二次创新.(详细介绍请看百度云视频-20240225更新说明)
 
+19. ultralytics/cfg/models/rt-detr/rtdetr-ELA-HSFPN.yaml
+
+    使用[Efficient Local Attention](https://arxiv.org/abs/2403.01123)改进HSFPN.
+
+20. ultralytics/cfg/models/rt-detr/rtdetr-CA-HSFPN.yaml
+
+    使用[Coordinate Attention CVPR2021](https://github.com/houqb/CoordAttention)改进HSFPN.
+
 ### 自研系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-PACAPN.yaml
 
@@ -153,7 +161,9 @@
 13. ultralytics/cfg/models/rt-detr/rtdetr-RepNCSPELAN.yaml
 
     使用[YOLOV9](https://github.com/WongKinYiu/yolov9)中的RepNCSPELAN和ADown进行改进RTDETR-R18.
+14. ultralytics/cfg/models/rt-detr/rtdetr-rmt.yaml
 
+    使用[CVPR2024 RMT](https://arxiv.org/abs/2309.11523)改进rtdetr的主干.
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -220,7 +230,9 @@
 6. ultralytics/cfg/models/rt-detr/rtdetr-DGCST2.yaml
 
     使用[Lightweight Object Detection](https://arxiv.org/abs/2403.01736)中的Dynamic Group Convolution Shuffle Transformer与Dynamic Group Convolution Shuffle Module进行结合改进rtdetr-r18.
+7. ultralytics/cfg/models/rt-detr/rtdetr-RetBlockC3.yaml
 
+    使用[CVPR2024 RMT](https://arxiv.org/abs/2309.11523)中的RetBlock改进RepC3.
 ### ResNet主干中的BasicBlock/BottleNeck改进系列(以下改进BottleNeck基本都有,就不再重复标注)
 1. ultralytics/cfg/models/rt-detr/rtdetr-Ortho.yaml
 
@@ -912,3 +924,10 @@
     2. 复现Lightweight Object Detection中的Dynamic Group Convolution Shuffle Transformer.
     3. 更新使用教程.
     4. 百度云视频增加20240307更新说明.
+
+- **20240321-rtdetr-v1.17**
+    1. 新增CVPR2024-RMT主干,并支持RetBlock改进RepC3.
+    2. 新增2024年新出的Efficient Local Attention,并用其对HSFPN进行二次创新.
+    3. 使用CVPR2021-CoordAttention对HSFPN进行二次创新.
+    4. 更新使用教程,增加多个常见疑问解答.
+    5. 百度云视频增加20240321更新说明.
