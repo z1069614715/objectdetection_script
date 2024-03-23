@@ -10,6 +10,7 @@
 7. [从三个角度分析，什么条件才算是一个合格的改进专栏！](https://www.bilibili.com/video/BV1E6421g7eb/)
 8. [都2024了，你写论文不会还只用p,r,map这些指标分析目标检测模型吧？](https://www.bilibili.com/video/BV1wF4m177JQ/)
 9. [从简到难手把手教你画Pytorch模块内的结构图！](https://www.bilibili.com/video/BV1dC411p7H7/)
+10. [深度学习论文实验中的其中一大注意点-预训练权重究竟加还是不加？](https://www.bilibili.com/video/BV1Q1421Q7Zw/)
 
 ### YOLOV5,V7-PYQT5项目讲解
 1. [哔哩哔哩合集地址](https://space.bilibili.com/286900343/channel/collectiondetail?sid=917275)

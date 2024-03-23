@@ -90,6 +90,14 @@
 
     使用[CVPR2024 RepViT](https://github.com/THU-MIG/RepViT/tree/main)中的RepViTBlock和EMA注意力机制改进C2f.
 
+26. ultralytics/cfg/models/v8/yolov8-ELA-HSFPN.yaml
+
+    使用[Efficient Local Attention](https://arxiv.org/abs/2403.01123)改进HSFPN.
+
+27. ultralytics/cfg/models/v8/yolov8-CA-HSFPN.yaml
+
+    使用[Coordinate Attention CVPR2021](https://github.com/houqb/CoordAttention)改进HSFPN.
+
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
 
@@ -167,6 +175,10 @@
 13. ultralytics/cfg/models/v8/yolov8-TransNeXt.yaml
 
     使用[TransNeXt](https://github.com/DaiShiResearch/TransNeXt)改进yolov8的backbone.(需要看[常见错误和解决方案的第五点](#a))   
+14. ultralytics/cfg/models/rt-detr/yolov8-rmt.yaml
+
+    使用[CVPR2024 RMT](https://arxiv.org/abs/2309.11523)改进rtdetr的主干.
+
 ### SPPF系列
 1. ultralytics/cfg/models/v8/yolov8-FocalModulation.yaml
 
@@ -418,6 +430,10 @@
 
     使用[Lightweight Object Detection](https://arxiv.org/abs/2403.01736)中的Dynamic Group Convolution Shuffle Transformer改进yolov8.
 
+40. ultralytics/cfg/models/v8/yolov8-C2f-RetBlock.yaml
+
+    使用[CVPR2024 RMT](https://arxiv.org/abs/2309.11523)中的RetBlock改进C2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -430,6 +446,10 @@
         其中目前(后续会更新喔)支持这些[结构](#b)
     3. head_channel  
         BIFPN中的通道数,默认设置为256.
+
+2. ultralytics/cfg/models/v8/yolov8-ELA-HSFPN-TADDH.yaml
+
+    使用[Efficient Local Attention](https://arxiv.org/abs/2403.01123)改进HSFPN,使用自研动态动态对齐检测头改进Head.
 
 ### 注意力系列
 1. EMA
@@ -453,6 +473,7 @@
 19. MLCA
 20. TransNeXt_AggregatedAttention
 21. LocalWindowAttention(EfficientViT中的CascadedGroupAttention注意力)
+22. Efficient Local Attention
 
 ### Loss系列
 1. SlideLoss,EMASlideLoss.(可动态调节正负样本的系数,让模型更加注重难分类,错误分类的样本上)
@@ -744,3 +765,10 @@
     2. 更新使用教程，新增几个常见疑问回答.
     3. 修复shapeiou调用不生效的问题.
     4. 百度云视频增加20240314更新说明.
+
+- **20240323-yolov8-v1.44**
+    1. 新增CVPR2024-RMT主干,并支持RetBlock改进C3、C2f.
+    2. 新增2024年新出的Efficient Local Attention,并用其对HSFPN进行二次创新，并加入自研检测头TADDH.
+    3. 使用CVPR2021-CoordAttention对HSFPN进行二次创新.
+    4. 更新使用教程,增加多个常见疑问解答.
+    5. 百度云视频增加20240323更新说明.
