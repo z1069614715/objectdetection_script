@@ -39,7 +39,7 @@ if __name__ == '__main__':
         model_weights=Path('osnet_x1_0_msmt17_256x128_amsgrad_ep150_stp60_lr0.0015_b64_fb10_softmax_labelsmooth_flip.pt'), # which ReID model to use
         device='cuda:0',
         fp16=False,
-    )
+        )
         # tracker = BoTSORT(
         #     model_weights=Path('osnet_x1_0_msmt17_256x128_amsgrad_ep150_stp60_lr0.0015_b64_fb10_softmax_labelsmooth_flip.pt'), # which ReID model to use
         #     device='cuda:0',
