@@ -98,6 +98,10 @@
 
     使用[Coordinate Attention CVPR2021](https://github.com/houqb/CoordAttention)改进HSFPN.
 
+28. ultralytics/cfg/models/v8/yolov8-CAA-HSFPN.yaml
+
+    使用[CVPR2024 PKINet](https://github.com/PKINet/PKINet)中的CAA模块HSFPN.
+
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
 
@@ -178,6 +182,9 @@
 14. ultralytics/cfg/models/rt-detr/yolov8-rmt.yaml
 
     使用[CVPR2024 RMT](https://arxiv.org/abs/2309.11523)改进rtdetr的主干.
+15. ultralytics/cfg/models/v8/yolov8-pkinet.yaml
+
+    使用[CVPR2024 PKINet](https://github.com/PKINet/PKINet)改进backbone.(需要安装mmcv和mmengine)
 
 ### SPPF系列
 1. ultralytics/cfg/models/v8/yolov8-FocalModulation.yaml
@@ -433,6 +440,14 @@
 40. ultralytics/cfg/models/v8/yolov8-C2f-RetBlock.yaml
 
     使用[CVPR2024 RMT](https://arxiv.org/abs/2309.11523)中的RetBlock改进C2f.
+
+41. ultralytics/cfg/models/v8/yolov8-C2f-PKI.yaml
+
+    使用[CVPR2024 PKINet](https://github.com/PKINet/PKINet)中的PKIModule和CAA模块改进C2f.
+
+42. ultralytics/cfg/models/v8/yolov8-RepNCSPELAN_CAA.yaml
+
+    使用[CVPR2024 PKINet](https://github.com/PKINet/PKINet)中的CAA模块改进RepNCSPELAN.
 
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
@@ -772,3 +787,10 @@
     3. 使用CVPR2021-CoordAttention对HSFPN进行二次创新.
     4. 更新使用教程,增加多个常见疑问解答.
     5. 百度云视频增加20240323更新说明.
+
+- **20240330-yolov8-v1.45**
+    1. 新增CVPR2024 PKINet主干.
+    2. 新增CVPR2024 PKINet中的PKIModule和CAA模块,提出C2f-PKI.
+    3. 使用CVPR2024 PKINet中的Context Anchor Attention改进RepNCSPELAN、HSFPN.
+    4. 更新使用教程
+    5. 百度云视频增加20240330更新说明.

@@ -32,6 +32,7 @@
 2. [best.pt究竟是根据什么指标来保存的?](https://www.bilibili.com/video/BV1jN411M7MA/)
 3. [数据增强在yolov8中的应用](https://www.bilibili.com/video/BV1aQ4y1g7ah/)
 4. [如何添加FPS计算代码和FPS的相关的一些疑问](https://www.bilibili.com/video/BV1Sw411g7DD/)
+5. [预测框粗细颜色修改与精度小数位修改](https://www.bilibili.com/video/BV12K421a7rH/)
 
 ### 目标检测干活系列
 1. [深入了解目标检测中的检测头](https://www.bilibili.com/video/BV1AQ4y1j7Cr/)
