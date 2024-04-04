@@ -16,7 +16,7 @@
 1. [哔哩哔哩合集地址](https://space.bilibili.com/286900343/channel/collectiondetail?sid=917275)
 2. [项目github地址](https://github.com/z1069614715/yolov7-pyqt)
 
-### YOLOV5、V7、V8 热力图源码
+### YOLOV5、V7、V8、V9 热力图源码
 1. [哔哩哔哩合集地址](https://space.bilibili.com/286900343/channel/collectiondetail?sid=1080305)
 2. [项目github地址](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-gradcam)
 
