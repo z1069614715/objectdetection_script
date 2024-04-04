@@ -977,5 +977,6 @@
     2. 新增CVPR2024 PKINet中的PKIModule和CAA模块,提出C2f-PKI.
     3. 使用CVPR2024 PKINet中的Context Anchor Attention改进RepNCSPELAN、HSFPN.
     4. 新增CVPR2024 Frequency-Adaptive Dilated Convolution.
-    5. 更新使用教程
-    6. 百度云视频增加20240404更新说明.
+    5. 增加有效感受野可视化脚本.
+    6. 更新使用教程
+    7. 百度云视频增加20240404更新说明.
