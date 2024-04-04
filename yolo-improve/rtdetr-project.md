@@ -21,6 +21,8 @@
     计算COCO指标的脚本
 9. plot_result.py
     绘制曲线对比图的脚本
+10. get_model_erf.py
+    绘制模型的有效感受野.[视频链接](https://www.bilibili.com/video/BV1Gx4y1v7ZZ/)
 
 # RT-DETR基准模型
 
@@ -114,6 +116,14 @@
 
     使用[Coordinate Attention CVPR2021](https://github.com/houqb/CoordAttention)改进HSFPN.
 
+21. ultralytics/cfg/models/rt-detr/rtdetr-RepNCSPELAN-CAA.yaml
+
+    使用[CVPR2024 PKINet](https://github.com/PKINet/PKINet)中的CAA模块改进RepNCSPELAN.
+
+22. ultralytics/cfg/models/rt-detr/rtdetr-CAA-HSFPN.yaml
+
+    使用[CVPR2024 PKINet](https://github.com/PKINet/PKINet)中的CAA模块HSFPN.
+
 ### 自研系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-PACAPN.yaml
 
@@ -164,6 +174,9 @@
 14. ultralytics/cfg/models/rt-detr/rtdetr-rmt.yaml
 
     使用[CVPR2024 RMT](https://arxiv.org/abs/2309.11523)改进rtdetr的主干.
+15. ultralytics/cfg/models/rt-detr/rtdetr-C2f-PKI.yaml
+
+    使用[CVPR2024 PKINet](https://github.com/PKINet/PKINet)中的PKIModule和CAA模块和C2f改进backbone.
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -297,6 +310,9 @@
 20. ultralytics/cfg/models/rt-detr/rtdetr-ContextGuided.yaml
 
     使用[CGNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided和Light-weight Context Guided DownSample改进rtdetr-r18.
+21. ultralytics/cfg/models/rt-detr/rtdetr-fadc.yaml
+
+    使用[CVPR2024 Frequency-Adaptive Dilated Convolution](https://github.com/Linwei-Chen/FADC)改进resnet18-basicblock.
 ### 上下采样算子系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-DySample.yaml
 
@@ -575,6 +591,18 @@
 
     使用[Lightweight Object Detection](https://arxiv.org/abs/2403.01736)中的Dynamic Group Convolution Shuffle Transformer改进yolov8-detr.
 
+52. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-RetBlock.yaml
+
+    使用[CVPR2024 RMT](https://arxiv.org/abs/2309.11523)中的RetBlock改进C2f.
+
+53. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-PKI.yaml
+
+    使用[CVPR2024 PKINet](https://github.com/PKINet/PKINet)中的PKIModule和CAA模块改进C2f.
+
+54. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-fadc.yaml
+
+    使用[CVPR2024 Frequency-Adaptive Dilated Convolution](https://github.com/Linwei-Chen/FADC)改进C2f.
+
 ### 以Yolov5为基准模型的改进方案
 1. ultralytics/cfg/models/yolo-detr/yolov5-detr.yaml
 
@@ -788,6 +816,18 @@
 
     使用[Lightweight Object Detection](https://arxiv.org/abs/2403.01736)中的Dynamic Group Convolution Shuffle Transformer改进yolov5-detr.
 
+52. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-RetBlock.yaml
+
+    使用[CVPR2024 RMT](https://arxiv.org/abs/2309.11523)中的RetBlock改进C3.
+
+53. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-PKI.yaml
+
+    使用[CVPR2024 PKINet](https://github.com/PKINet/PKINet)中的PKIModule和CAA模块改进C3.
+
+54. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-fadc.yaml
+
+    使用[CVPR2024 Frequency-Adaptive Dilated Convolution](https://github.com/Linwei-Chen/FADC)改进C3.
+
 # 更新公告
 - **20231105-rtdetr-v1.0**
     1. 初版项目发布.
@@ -931,3 +971,11 @@
     3. 使用CVPR2021-CoordAttention对HSFPN进行二次创新.
     4. 更新使用教程,增加多个常见疑问解答.
     5. 百度云视频增加20240321更新说明.
+
+- **20240404-rtdetr-v1.18**
+    1. 新增CVPR2024 PKINet主干.
+    2. 新增CVPR2024 PKINet中的PKIModule和CAA模块,提出C2f-PKI.
+    3. 使用CVPR2024 PKINet中的Context Anchor Attention改进RepNCSPELAN、HSFPN.
+    4. 新增CVPR2024 Frequency-Adaptive Dilated Convolution.
+    5. 更新使用教程
+    6. 百度云视频增加20240404更新说明.

@@ -33,6 +33,7 @@
 3. [数据增强在yolov8中的应用](https://www.bilibili.com/video/BV1aQ4y1g7ah/)
 4. [如何添加FPS计算代码和FPS的相关的一些疑问](https://www.bilibili.com/video/BV1Sw411g7DD/)
 5. [预测框粗细颜色修改与精度小数位修改](https://www.bilibili.com/video/BV12K421a7rH/)
+6. [导出改进/剪枝的onnx模型和讲解onnx-opset和onnxsim的作用](https://www.bilibili.com/video/BV1CK421e7Y3/)
 
 ### 目标检测干活系列
 1. [深入了解目标检测中的检测头](https://www.bilibili.com/video/BV1AQ4y1j7Cr/)
@@ -143,6 +144,7 @@
 8. [YOLOV8-不会把多个改进整合到一个yaml配置文件里面？那来看看这个吧！从简到难手把手带你整合三个yaml](https://www.bilibili.com/video/BV15H4y1Y7a2/)
 9. [YOLOV8下游任务系列-一步一步DEBUG保姆式带你完成目标计数](https://www.bilibili.com/video/BV17H4y1J7DD/)
 10. [YOLOV8改进-带你分析V8的检测头并重设计10种结构轻量化检测头](https://www.bilibili.com/video/BV1cu411K7FE/)
+11. [从CVPR2022-RepLKNet分析有效感受野，并提供YOLOV8可视化感受野的脚本和讲解~](https://www.bilibili.com/video/BV1Gx4y1v7ZZ/)
 #### YOLOV9
 1. [YOLOV9-VisDrone实验对比结果来啦！YOLOV9-C模型VisDrone测试集精度为39.7！有兴趣进来看看具体啦！](https://www.bilibili.com/video/BV1Yy42187A3/)
 2. [从源码分析YOLOV9比YOLOV7多了什么内容！](https://www.bilibili.com/video/BV1v1421f7rN/)
