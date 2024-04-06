@@ -138,6 +138,13 @@
     2. 通过使用共享卷积，可以大幅减少参数数量，这使得模型更轻便，特别是在资源受限的设备上.并且在使用共享卷积的同时，为了应对每个检测头所检测的目标尺度不一致的问题，使用Scale层对特征进行缩放.
     3. 参照TOOD的思想,除了标签分配策略上的任务对齐,我们也在检测头上进行定制任务对齐的结构,现有的目标检测器头部通常使用独立的分类和定位分支,这会导致两个任务之间缺乏交互,TADDH通过特征提取器从多个卷积层中学习任务交互特征,得到联合特征,定位分支使用DCNV2和交互特征生成DCNV2的offset和mask,分类分支使用交互特征进行动态特征选择.
 
+6. ultralytics/cfg/models/v8/yolov8-FDPN.yaml
+
+    自研特征聚焦扩散金字塔网络(Focusing Diffusion Pyramid Network)
+    1. 通过定制的特征聚焦模块与特征扩散机制，能让每个尺度的特征都具有详细的上下文信息，更有利于后续目标的检测与分类。
+    2. 定制的特征聚焦模块可以接受三个尺度的输入，其内部包含一个Inception-Style的模块，其利用一组并行深度卷积来捕获丰富的跨多个尺度的信息。
+    3. 通过扩散机制使具有丰富的上下文信息的特征进行扩散到各个检测尺度.
+
 ### BackBone系列
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
     
@@ -448,6 +455,10 @@
 42. ultralytics/cfg/models/v8/yolov8-RepNCSPELAN_CAA.yaml
 
     使用[CVPR2024 PKINet](https://github.com/PKINet/PKINet)中的CAA模块改进RepNCSPELAN.
+
+43. ultralytics/cfg/models/v8/yolov8-C2f-fadc.yaml
+
+    使用[CVPR2024 Frequency-Adaptive Dilated Convolution](https://github.com/Linwei-Chen/FADC)改进C2f.
 
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
@@ -794,3 +805,9 @@
     3. 使用CVPR2024 PKINet中的Context Anchor Attention改进RepNCSPELAN、HSFPN.
     4. 更新使用教程
     5. 百度云视频增加20240330更新说明.
+
+- **20240406-yolov8-v1.46**
+    1. 新增CVPR2024 Frequency-Adaptive Dilated Convolution.
+    2. 新增自研Focusing Diffusion Pyramid Network.
+    3. 更新使用教程
+    4. 百度云视频增加20240406更新说明.
