@@ -145,6 +145,10 @@
     2. 定制的特征聚焦模块可以接受三个尺度的输入，其内部包含一个Inception-Style的模块，其利用一组并行深度卷积来捕获丰富的跨多个尺度的信息。
     3. 通过扩散机制使具有丰富的上下文信息的特征进行扩散到各个检测尺度.
 
+7. ultralytics/cfg/models/v8/yolov8-FDPN-DASI.yaml
+
+    使用[HCFNet](https://github.com/zhengshuchen/HCFNet)中的Dimension-Aware Selective Integration Module对自研的Focusing Diffusion Pyramid Network再次创新.
+
 ### BackBone系列
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
     
@@ -460,6 +464,10 @@
 
     使用[CVPR2024 Frequency-Adaptive Dilated Convolution](https://github.com/Linwei-Chen/FADC)改进C2f.
 
+44. ultralytics/cfg/models/v8/yolov8-C2f-PPA.yaml
+
+    使用[HCFNet](https://github.com/zhengshuchen/HCFNet)中的Parallelized Patch-Aware Attention Module改进C2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -476,6 +484,12 @@
 2. ultralytics/cfg/models/v8/yolov8-ELA-HSFPN-TADDH.yaml
 
     使用[Efficient Local Attention](https://arxiv.org/abs/2403.01123)改进HSFPN,使用自研动态动态对齐检测头改进Head.
+
+3. ultralytics/cfg/models/v8/yolov8-FDPN-TADDH.yaml
+
+    自研结构的融合.
+    1. 自研特征聚焦扩散金字塔网络(Focusing Diffusion Pyramid Network)
+    2. 自研任务对齐动态检测头(Task Align Dynamic Detection Head)
 
 ### 注意力系列
 1. EMA
@@ -500,6 +514,7 @@
 20. TransNeXt_AggregatedAttention
 21. LocalWindowAttention(EfficientViT中的CascadedGroupAttention注意力)
 22. Efficient Local Attention
+23. CAA(CVPR2024 PKINet中的注意力)
 
 ### Loss系列
 1. SlideLoss,EMASlideLoss.(可动态调节正负样本的系数,让模型更加注重难分类,错误分类的样本上)
@@ -811,3 +826,11 @@
     2. 新增自研Focusing Diffusion Pyramid Network.
     3. 更新使用教程
     4. 百度云视频增加20240406更新说明.
+
+- **20240408-yolov8-v1.47**
+    1. 修复自研Focusing Diffusion Pyramid Network的一个小bug.
+    2. 新增使用自研特征聚焦扩散金字塔网络和自研任务对齐动态检测头相结合的配置文件yolov8-FDPN-TADDH.yaml
+    3. 新增HCFNet针对小目标分割的Parallelized Patch-Aware Attention Module改进C2f.
+    4. 新增HCFNet针对小目标分割的Dimension-Aware Selective Integration Module对自研Focusing Diffusion Pyramid Network再次进行创新.
+    5. 更新使用教程
+    6. 百度云视频增加20240408更新说明.
