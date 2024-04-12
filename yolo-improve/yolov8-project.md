@@ -102,6 +102,12 @@
 
     使用[CVPR2024 PKINet](https://github.com/PKINet/PKINet)中的CAA模块HSFPN.
 
+29. ultralytics/cfg/models/v8/yolov8-CSMHSA.yaml
+
+    对Mutil-Head Self-Attention进行创新得到Cross-Scale Mutil-Head Self-Attention.
+    1. 由于高维通常包含更高级别的语义信息，而低维包含更多细节信息，因此高维信息作为query，而低维信息作为key和Value，将两者结合起来可以利用高维的特征帮助低维的特征进行精细过滤，可以实现更全面和丰富的特征表达。
+    2. 通过使用高维的上采样信息进行Query操作，可以更好地捕捉到目标的全局信息，从而有助于增强模型对目标的识别和定位能力。
+
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
 
