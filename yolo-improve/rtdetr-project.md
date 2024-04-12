@@ -131,6 +131,17 @@
     1. 并行(上/下)采样分支可为网络提供多条特征提取途径，丰富特征表达的多样性、再结合gate机制对采样后的特征进行特征选择，强化更有意义的特征，抑制冗余或不相关的特征，提升特征表达的有效性。
     2. PAC模块通过使用具有不同膨胀率的并行空洞卷积，能够有效地提取不同尺度的特征。这使得网络能够捕捉数据中局部和上下文信息，提高其表示复杂模式的能力。
 
+2. ultralytics/cfg/models/rt-detr/rtdetr-FDPN.yaml
+
+    自研特征聚焦扩散金字塔网络(Focusing Diffusion Pyramid Network)
+    1. 通过定制的特征聚焦模块与特征扩散机制，能让每个尺度的特征都具有详细的上下文信息，更有利于后续目标的检测与分类。
+    2. 定制的特征聚焦模块可以接受三个尺度的输入，其内部包含一个Inception-Style的模块，其利用一组并行深度卷积来捕获丰富的跨多个尺度的信息。
+    3. 通过扩散机制使具有丰富的上下文信息的特征进行扩散到各个检测尺度.
+
+3. ultralytics/cfg/models/rt-detr/rtdetr-FDPN-DASI.yaml
+
+    使用[HCFNet](https://github.com/zhengshuchen/HCFNet)中的Dimension-Aware Selective Integration Module对自研的Focusing Diffusion Pyramid Network再次创新.
+
 ### BackBone系列
 1. ultralytics/cfg/models/rt-detr/rt-detr-timm.yaml
 
@@ -177,6 +188,9 @@
 15. ultralytics/cfg/models/rt-detr/rtdetr-C2f-PKI.yaml
 
     使用[CVPR2024 PKINet](https://github.com/PKINet/PKINet)中的PKIModule和CAA模块和C2f改进backbone.
+16. ultralytics/cfg/models/rt-detr/rtdetr-C2f-PPA.yaml
+
+    使用[HCFNet](https://github.com/zhengshuchen/HCFNet)中的Parallelized Patch-Aware Attention Module改进C2f.
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -603,6 +617,21 @@
 
     使用[CVPR2024 Frequency-Adaptive Dilated Convolution](https://github.com/Linwei-Chen/FADC)改进C2f.
 
+55. ultralytics/cfg/models/yolo-detr/yolov8-detr-FDPN.yaml
+
+    自研特征聚焦扩散金字塔网络(Focusing Diffusion Pyramid Network)
+    1. 通过定制的特征聚焦模块与特征扩散机制，能让每个尺度的特征都具有详细的上下文信息，更有利于后续目标的检测与分类。
+    2. 定制的特征聚焦模块可以接受三个尺度的输入，其内部包含一个Inception-Style的模块，其利用一组并行深度卷积来捕获丰富的跨多个尺度的信息。
+    3. 通过扩散机制使具有丰富的上下文信息的特征进行扩散到各个检测尺度.
+
+56. ultralytics/cfg/models/yolo-detr/yolov8-detr-FDPN-DASI.yaml
+
+    使用[HCFNet](https://github.com/zhengshuchen/HCFNet)中的Dimension-Aware Selective Integration Module对自研的Focusing Diffusion Pyramid Network再次创新.
+
+57. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-PPA.yaml
+
+    使用[HCFNet](https://github.com/zhengshuchen/HCFNet)中的Parallelized Patch-Aware Attention Module改进C2f.
+
 ### 以Yolov5为基准模型的改进方案
 1. ultralytics/cfg/models/yolo-detr/yolov5-detr.yaml
 
@@ -828,6 +857,21 @@
 
     使用[CVPR2024 Frequency-Adaptive Dilated Convolution](https://github.com/Linwei-Chen/FADC)改进C3.
 
+55. ultralytics/cfg/models/yolo-detr/yolov5-detr-FDPN.yaml
+
+    自研特征聚焦扩散金字塔网络(Focusing Diffusion Pyramid Network)
+    1. 通过定制的特征聚焦模块与特征扩散机制，能让每个尺度的特征都具有详细的上下文信息，更有利于后续目标的检测与分类。
+    2. 定制的特征聚焦模块可以接受三个尺度的输入，其内部包含一个Inception-Style的模块，其利用一组并行深度卷积来捕获丰富的跨多个尺度的信息。
+    3. 通过扩散机制使具有丰富的上下文信息的特征进行扩散到各个检测尺度.
+
+56. ultralytics/cfg/models/yolo-detr/yolov5-detr-FDPN-DASI.yaml
+
+    使用[HCFNet](https://github.com/zhengshuchen/HCFNet)中的Dimension-Aware Selective Integration Module对自研的Focusing Diffusion Pyramid Network再次创新.
+
+57. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-PPA.yaml
+
+    使用[HCFNet](https://github.com/zhengshuchen/HCFNet)中的Parallelized Patch-Aware Attention Module改进C3.
+
 # 更新公告
 - **20231105-rtdetr-v1.0**
     1. 初版项目发布.
@@ -980,3 +1024,10 @@
     5. 增加有效感受野可视化脚本.
     6. 更新使用教程
     7. 百度云视频增加20240404更新说明.
+
+- **20240412-rtdetr-v1.19**
+    1. 新增自研Focusing Diffusion Pyramid Network.
+    2. 新增HCFNet针对小目标分割的Parallelized Patch-Aware Attention Module改进C2f.
+    3. 新增HCFNet针对小目标分割的Dimension-Aware Selective Integration Module对自研Focusing Diffusion Pyramid Network再次进行创新.
+    4. 更新使用教程.
+    5. 百度云视频增加20240412更新说明.

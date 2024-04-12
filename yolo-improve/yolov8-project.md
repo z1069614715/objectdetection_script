@@ -818,13 +818,13 @@
     1. 新增CVPR2024 PKINet主干.
     2. 新增CVPR2024 PKINet中的PKIModule和CAA模块,提出C2f-PKI.
     3. 使用CVPR2024 PKINet中的Context Anchor Attention改进RepNCSPELAN、HSFPN.
-    4. 更新使用教程
+    4. 更新使用教程.
     5. 百度云视频增加20240330更新说明.
 
 - **20240406-yolov8-v1.46**
     1. 新增CVPR2024 Frequency-Adaptive Dilated Convolution.
     2. 新增自研Focusing Diffusion Pyramid Network.
-    3. 更新使用教程
+    3. 更新使用教程.
     4. 百度云视频增加20240406更新说明.
 
 - **20240408-yolov8-v1.47**
@@ -832,5 +832,10 @@
     2. 新增使用自研特征聚焦扩散金字塔网络和自研任务对齐动态检测头相结合的配置文件yolov8-FDPN-TADDH.yaml
     3. 新增HCFNet针对小目标分割的Parallelized Patch-Aware Attention Module改进C2f.
     4. 新增HCFNet针对小目标分割的Dimension-Aware Selective Integration Module对自研Focusing Diffusion Pyramid Network再次进行创新.
-    5. 更新使用教程
+    5. 更新使用教程.
     6. 百度云视频增加20240408更新说明.
+
+- **20240408-yolov8-v1.48**
+    1. 新增Cross-Scale Mutil-Head Self-Attention,对Mutil-Head Self-Attention进行二次创新.
+    2. 更新使用教程.
+    3. 百度云视频增加20240412更新说明.
