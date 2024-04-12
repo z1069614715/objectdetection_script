@@ -841,7 +841,7 @@
     5. 更新使用教程.
     6. 百度云视频增加20240408更新说明.
 
-- **20240408-yolov8-v1.48**
+- **20240412-yolov8-v1.48**
     1. 新增Cross-Scale Mutil-Head Self-Attention,对Mutil-Head Self-Attention进行二次创新.
     2. 更新使用教程.
     3. 百度云视频增加20240412更新说明.
