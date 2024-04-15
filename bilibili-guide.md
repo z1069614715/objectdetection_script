@@ -52,6 +52,9 @@
 7. [计算yolov5推理时间和FPS的脚本](https://www.bilibili.com/video/BV1Uu4y1C714/)
 8. [计算yolov7推理时间和FPS的脚本](https://www.bilibili.com/video/BV17p4y177Pe/)
 
+### MMDet系列教程
+1. [一库打尽目标检测对比实验！mmdetection环境、训练、测试手把手教程！](https://www.bilibili.com/video/BV1xA4m1c7H8/)
+
 ### YOLO系列(YOLOV5,YOLOV7,YOLOV8)模型改进大合集
 #### YOLOV5(主干系列修改V7同样也适用)
 1. [添加EIOU，SIOU，ALPHA-IOU, FocalEIOU到yolov5的box_iou中](https://www.bilibili.com/video/BV1KM411b7Sz/)
