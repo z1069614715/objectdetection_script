@@ -8,6 +8,21 @@
 pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu121
 4. https://mmdetection.readthedocs.io/zh-cn/latest/user_guides/train.html#id7
 
+### mmdet运行命令
+
+1. 训练
+    python tools/train.py <your-config-file>
+2. 测试
+    python tools/test.py <your-config-file> <your-model-weights-file> --out <save-pickle-path>
+3. 计算量、参数量计算脚本
+    python tools/analysis_tools/get_flops.py <your-config-file>
+4. 推理时间、fps、gpu memory计算脚本
+    python tools/analysis_tools/benchmark.py <your-config-file> --checkpoint <your-model-weights-file> --task inference --fuse-conv-bn
+5. 绘制曲线图脚本
+    python tools/analysis_tools/analyze_logs.py plot_curve <train-json-file> --keys <keys> --legend <legend> --out <save-path>
+6. 结果分析脚本
+    python tools/analysis_tools/analyze_results.py <your-config-file> <test-pickle-path> <save-path>
+
 ### mmdet视频教程链接(可按顺序观看)
 
 1. [一库打尽目标检测对比实验！mmdetection环境、训练、测试手把手教程！](https://www.bilibili.com/video/BV1xA4m1c7H8/)
