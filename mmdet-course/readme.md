@@ -10,17 +10,17 @@ pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https
 
 ### mmdet运行命令
 
-1. 训练
+1. 训练  
     python tools/train.py <your-config-file>
-2. 测试
+2. 测试  
     python tools/test.py <your-config-file> <your-model-weights-file> --out <save-pickle-path>
-3. 计算量、参数量计算脚本
+3. 计算量、参数量计算脚本  
     python tools/analysis_tools/get_flops.py <your-config-file>
-4. 推理时间、fps、gpu memory计算脚本
+4. 推理时间、fps、gpu memory计算脚本  
     python tools/analysis_tools/benchmark.py <your-config-file> --checkpoint <your-model-weights-file> --task inference --fuse-conv-bn
-5. 绘制曲线图脚本
+5. 绘制曲线图脚本  
     python tools/analysis_tools/analyze_logs.py plot_curve <train-json-file> --keys <keys> --legend <legend> --out <save-path>
-6. 结果分析脚本
+6. 结果分析脚本  
     python tools/analysis_tools/analyze_results.py <your-config-file> <test-pickle-path> <save-path>
 
 ### mmdet视频教程链接(可按顺序观看)
