@@ -257,6 +257,9 @@
 10. ultralytics/cfg/models/v8/yolov8-HSFPN.yaml
 
     使用[MFDS-DETR](https://github.com/JustlfC03/MFDS-DETR)中的HS-FPN改进yolov8的neck.
+11. ultralytics/cfg/models/v8/yolov8-CSFCN.yaml
+
+    使用[Context and Spatial Feature Calibration for Real-Time Semantic Segmentation](https://github.com/kaigelee/CSFCN/tree/main)中的Context and Spatial Feature Calibration模块改进yolov8.
 
 ### Head系列
 1. ultralytics/cfg/models/v8/yolov8-dyhead.yaml
@@ -318,6 +321,10 @@
 7. ultralytics/cfg/models/v8/yolov8-ADown.yaml
 
     使用[YOLOV9](https://github.com/WongKinYiu/yolov9)的下采样结构改进YOLOV8中的下采样.
+
+8. ultralytics/cfg/models/v8/yolov8-SRFD.yaml
+
+    使用[A Robust Feature Downsampling Module for Remote Sensing Visual Tasks](https://ieeexplore.ieee.org/document/10142024)改进yolov8的下采样.
 
 ### YOLOV8-C2f系列
 1. ultralytics/cfg/models/v8/yolov8-C2f-Faster.yaml
@@ -844,4 +851,10 @@
 - **20240414-yolov8-v1.48**
     1. 新增Cross-Scale Mutil-Head Self-Attention,对Mutil-Head Self-Attention进行二次创新.
     2. 更新使用教程.
-    3. 百度云视频增加20240412更新说明.
+    3. 百度云视频增加20240414更新说明.
+
+- **20240420-yolov8-v1.49**
+    1. 新增A Robust Feature Downsampling Module for Remote Sensing Visual Tasks中的下采样.
+    2. 新增Context and Spatial Feature Calibration for Real-Time Semantic Segmentation中的Context and Spatial Feature Calibration.
+    3. 更新使用教程.
+    4. 百度云视频增加20240420更新说明.
