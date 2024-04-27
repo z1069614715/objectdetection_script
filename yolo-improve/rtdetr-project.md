@@ -191,6 +191,10 @@
 16. ultralytics/cfg/models/rt-detr/rtdetr-C2f-PPA.yaml
 
     使用[HCFNet](https://github.com/zhengshuchen/HCFNet)中的Parallelized Patch-Aware Attention Module改进C2f.
+17. ultralytics/cfg/models/rt-detr/rtdetr-mobilenetv4.yaml
+
+    使用[MobileNetV4](https://github.com/jaiwei98/MobileNetV4-pytorch/tree/main)改进rtdetr-backbone.
+
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -232,6 +236,9 @@
         block模块选择,具体可看对应百度云视频-20240302更新公告.
     3. head_channel  
         BIFPN中的通道数,默认设置为256.
+7. ultralytics/cfg/models/rt-detr/rtdetr-CSFCN.yaml
+
+    使用[Context and Spatial Feature Calibration for Real-Time Semantic Segmentation](https://github.com/kaigelee/CSFCN/tree/main)中的Context and Spatial Feature Calibration模块改进rtdetr-neck.
 
 ### Head系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-p2.yaml
@@ -340,6 +347,9 @@
 4. ultralytics/cfg/models/rt-detr/rtdetr-ContextGuidedDown.yaml
 
     使用[CGNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided DownSample改进rtdetr-r18.
+5. ultralytics/cfg/models/rt-detr/rtdetr-SRFD.yaml
+
+    使用[A Robust Feature Downsampling Module for Remote Sensing Visual Tasks](https://ieeexplore.ieee.org/document/10142024)改进rtdetr的下采样.
 
 ### RT-DETR-L改进系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-l-GhostHGNetV2.yaml
@@ -632,6 +642,14 @@
 
     使用[HCFNet](https://github.com/zhengshuchen/HCFNet)中的Parallelized Patch-Aware Attention Module改进C2f.
 
+58. ultralytics/cfg/models/yolo-detr/yolov8-detr-SRFD.yaml
+
+    使用[A Robust Feature Downsampling Module for Remote Sensing Visual Tasks](https://ieeexplore.ieee.org/document/10142024)改进yolov8的下采样.
+
+59. ultralytics/cfg/models/yolo-detr/yolov8-detr-CSFCN.yaml
+
+    使用[Context and Spatial Feature Calibration for Real-Time Semantic Segmentation](https://github.com/kaigelee/CSFCN/tree/main)中的Context and Spatial Feature Calibration模块改进yolov8.
+
 ### 以Yolov5为基准模型的改进方案
 1. ultralytics/cfg/models/yolo-detr/yolov5-detr.yaml
 
@@ -872,6 +890,14 @@
 
     使用[HCFNet](https://github.com/zhengshuchen/HCFNet)中的Parallelized Patch-Aware Attention Module改进C3.
 
+58. ultralytics/cfg/models/yolo-detr/yolov5-detr-SRFD.yaml
+
+    使用[A Robust Feature Downsampling Module for Remote Sensing Visual Tasks](https://ieeexplore.ieee.org/document/10142024)改进yolov5的下采样.
+
+59. ultralytics/cfg/models/yolo-detr/yolov5-detr-CSFCN.yaml
+
+    使用[Context and Spatial Feature Calibration for Real-Time Semantic Segmentation](https://github.com/kaigelee/CSFCN/tree/main)中的Context and Spatial Feature Calibration模块改进yolov5.
+
 # 更新公告
 - **20231105-rtdetr-v1.0**
     1. 初版项目发布.
@@ -1031,3 +1057,10 @@
     3. 新增HCFNet针对小目标分割的Dimension-Aware Selective Integration Module对自研Focusing Diffusion Pyramid Network再次进行创新.
     4. 更新使用教程.
     5. 百度云视频增加20240412更新说明.
+
+- **20240427-rtdetr-v1.20**
+    1. 新增mobilenetv4-backbone.
+    2. 新增A Robust Feature Downsampling Module for Remote Sensing Visual Tasks中的下采样.
+    3. 新增Context and Spatial Feature Calibration for Real-Time Semantic Segmentation中的Context and Spatial Feature Calibration.
+    4. 更新使用教程.
+    5. 百度云视频增加20240427更新说明.

@@ -11,6 +11,7 @@
 8. [都2024了，你写论文不会还只用p,r,map这些指标分析目标检测模型吧？](https://www.bilibili.com/video/BV1wF4m177JQ/)
 9. [从简到难手把手教你画Pytorch模块内的结构图！](https://www.bilibili.com/video/BV1dC411p7H7/)
 10. [深度学习论文实验中的其中一大注意点-预训练权重究竟加还是不加？](https://www.bilibili.com/video/BV1Q1421Q7Zw/)
+11. [深度学习改进实验必看！基于YOLOV8的WIDER-FACE改进(轻量化+提点)实验思路讲解](https://www.bilibili.com/video/BV1QJ4m1H7DJ/)
 
 ### YOLOV5,V7-PYQT5项目讲解
 1. [哔哩哔哩合集地址](https://space.bilibili.com/286900343/channel/collectiondetail?sid=917275)
@@ -54,6 +55,7 @@
 
 ### MMDet系列教程
 1. [一库打尽目标检测对比实验！mmdetection环境、训练、测试手把手教程！](https://www.bilibili.com/video/BV1xA4m1c7H8/)
+2. [一库打尽目标检测对比实验！mmdetection参数量、计算量、FPS、绘制logs手把手教程](https://www.bilibili.com/video/BV17C41137dW/)
 
 ### YOLO系列(YOLOV5,YOLOV7,YOLOV8)模型改进大合集
 #### YOLOV5(主干系列修改V7同样也适用)
