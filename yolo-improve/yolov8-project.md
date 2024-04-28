@@ -108,6 +108,10 @@
     1. 由于高维通常包含更高级别的语义信息，而低维包含更多细节信息，因此高维信息作为query，而低维信息作为key和Value，将两者结合起来可以利用高维的特征帮助低维的特征进行精细过滤，可以实现更全面和丰富的特征表达。
     2. 通过使用高维的上采样信息进行Query操作，可以更好地捕捉到目标的全局信息，从而有助于增强模型对目标的识别和定位能力。
 
+30. ultralytics/cfg/models/v8/yolov8-CAFMFusion.yaml
+
+    利用具有[HCANet](https://github.com/summitgao/HCANet)中的CAFM，其具有获取全局和局部信息的注意力机制进行二次改进content-guided attention fusion.
+
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
 
@@ -202,7 +206,9 @@
 15. ultralytics/cfg/models/v8/yolov8-pkinet.yaml
 
     使用[CVPR2024 PKINet](https://github.com/PKINet/PKINet)改进backbone.(需要安装mmcv和mmengine)
+16. ultralytics/cfg/models/v8/yolov8-mobilenetv4.yaml
 
+    使用[MobileNetV4](https://github.com/jaiwei98/MobileNetV4-pytorch/tree/main)改进yolov8-backbone.
 ### SPPF系列
 1. ultralytics/cfg/models/v8/yolov8-FocalModulation.yaml
 
@@ -260,6 +266,9 @@
 11. ultralytics/cfg/models/v8/yolov8-CSFCN.yaml
 
     使用[Context and Spatial Feature Calibration for Real-Time Semantic Segmentation](https://github.com/kaigelee/CSFCN/tree/main)中的Context and Spatial Feature Calibration模块改进yolov8.
+12. ultralytics/cfg/models/v8/yolov8-CGAFusion.yaml
+
+    使用[DEA-Net](https://github.com/cecret3350/DEA-Net)中的content-guided attention fusion改进yolov8-neck.
 
 ### Head系列
 1. ultralytics/cfg/models/v8/yolov8-dyhead.yaml
@@ -528,6 +537,7 @@
 21. LocalWindowAttention(EfficientViT中的CascadedGroupAttention注意力)
 22. Efficient Local Attention
 23. CAA(CVPR2024 PKINet中的注意力)
+24. CAFM
 
 ### Loss系列
 1. SlideLoss,EMASlideLoss.(可动态调节正负样本的系数,让模型更加注重难分类,错误分类的样本上)
@@ -858,3 +868,11 @@
     2. 新增Context and Spatial Feature Calibration for Real-Time Semantic Segmentation中的Context and Spatial Feature Calibration.
     3. 更新使用教程.
     4. 百度云视频增加20240420更新说明.
+
+- **20240428-yolov8-v1.50**
+    1. 修复20240420更新中的Context and Spatial Feature Calibration序号错误问题.
+    2. 新增支持mobilenetv4-backbone.
+    3. 新增支持content-guided attention fusion改进yolov8-neck.
+    4. 新增支持使用CAFM对CGAFusion进行二次改进,得到CAFMFusion改进yolov8-neck.
+    5. 更新使用教程.
+    6. 百度云视频增加20240428更新说明.
