@@ -27,3 +27,6 @@
 - **tricks_8**
     计算yolov7推理时间和FPS的脚本.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV17p4y177Pe/).  
+- **tricks_9**
+    深度学习小实验-YOLO-Block家族(fps,flops,param)对比实验.  
+    目前支持:C3(Yolov5),ELAN(Yolov7),C2f(Yolov8)RepNCSPELAN(Yolov9).  
