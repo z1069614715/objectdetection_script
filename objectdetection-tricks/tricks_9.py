@@ -10,6 +10,35 @@ def time_synchronized():
         torch.cuda.synchronize()
     return time.time()
 
+def fuse_conv_and_bn(conv, bn):
+    """Fuse Conv2d() and BatchNorm2d() layers https://tehnokv.com/posts/fusing-batchnorm-and-conv/."""
+    fusedconv = (
+        nn.Conv2d(
+            conv.in_channels,
+            conv.out_channels,
+            kernel_size=conv.kernel_size,
+            stride=conv.stride,
+            padding=conv.padding,
+            dilation=conv.dilation,
+            groups=conv.groups,
+            bias=True,
+        )
+        .requires_grad_(False)
+        .to(conv.weight.device)
+    )
+
+    # Prepare filters
+    w_conv = conv.weight.clone().view(conv.out_channels, -1)
+    w_bn = torch.diag(bn.weight.div(torch.sqrt(bn.eps + bn.running_var)))
+    fusedconv.weight.copy_(torch.mm(w_bn, w_conv).view(fusedconv.weight.shape))
+
+    # Prepare spatial bias
+    b_conv = torch.zeros(conv.weight.shape[0], device=conv.weight.device) if conv.bias is None else conv.bias
+    b_bn = bn.bias - bn.weight.mul(bn.running_mean).div(torch.sqrt(bn.running_var + bn.eps))
+    fusedconv.bias.copy_(torch.mm(w_bn, b_conv.reshape(-1, 1)).reshape(-1) + b_bn)
+
+    return fusedconv
+
 def autopad(k, p=None, d=1):  # kernel, padding, dilation
     """Pad to 'same' shape outputs."""
     if d > 1:
@@ -279,6 +308,29 @@ class RepNCSPELAN4(nn.Module):
     def __str__(self):
         return 'RepNCSPELAN'
 
+class RepNCSPELAN4_Att(nn.Module):
+    # csp-elan
+    def __init__(self, c1, c2, c3, c4, c5=1, act=True):  # ch_in, ch_out, number, shortcut, groups, expansion
+        super().__init__()
+        self.c = c3//2
+        self.cv1 = Conv(c1, c3, 1, 1, act=act)
+        self.cv2 = nn.Sequential(RepNCSP(c3//2, c4, c5, act=act), Conv(c4, c4, 3, 1, act=act))
+        self.cv3 = nn.Sequential(RepNCSP(c4, c4, c5, act=act), Conv(c4, c4, 3, 1, act=act))
+        self.cv4 = Conv(c3+(2*c4), c2, 1, 1, act=act)
+
+    def forward(self, x):
+        y = list(self.cv1(x).chunk(2, 1))
+        y.extend((m(y[-1])) for m in [self.cv2, self.cv3])
+        return self.cv4(torch.cat(y, 1))
+
+    def forward_split(self, x):
+        y = list(self.cv1(x).split((self.c, self.c), 1))
+        y.extend(m(y[-1]) for m in [self.cv2, self.cv3])
+        return self.cv4(torch.cat(y, 1))
+    
+    def __str__(self):
+        return 'RepNCSPELAN_Att'
+
 if __name__ == '__main__':
     warmup, test_times = 1000, 2000
     bs, h, w = 1, 128, 128
@@ -288,7 +340,7 @@ if __name__ == '__main__':
                    C3(channel, channel),
                    ELAN(channel, channel, channel // 2),
                    C2f(channel, channel),
-                   RepNCSPELAN4(channel, channel, channel // 2, channel // 4, 1)
+                   RepNCSPELAN4(channel, channel, channel // 2, channel // 4, 1),
                    ]
     
     device = torch.device("cuda:0") if cuda else torch.device("cpu")
@@ -299,6 +351,15 @@ if __name__ == '__main__':
     table.title = 'Yolo Block Family Speed'
     table.field_names = ['Name', 'All_Time', 'Mean_Time', 'FPS', "FLOPs", "Params"]
     for module in module_list:
+        for m in module.modules():
+            if isinstance(m, (Conv,)) and hasattr(m, "bn"):
+                    m.conv = fuse_conv_and_bn(m.conv, m.bn)  # update conv
+                    delattr(m, "bn")  # remove batchnorm
+                    m.forward = m.forward_fuse  # update forward
+            if isinstance(m, RepConvN):
+                    m.fuse_convs()
+                    m.forward = m.forward_fuse  # update forward
+        
         module = module.to(device)
         if half:
             module = module.half()
