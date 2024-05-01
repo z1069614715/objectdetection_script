@@ -159,6 +159,13 @@
 
     使用[HCFNet](https://github.com/zhengshuchen/HCFNet)中的Dimension-Aware Selective Integration Module对自研的Focusing Diffusion Pyramid Network再次创新.
 
+8. ultralytics/cfg/models/v8/yolov8-RGCSPELAN.yaml
+
+    自研RepGhostCSPELAN.
+    1. 参考GhostNet中的思想(主流CNN计算的中间特征映射存在广泛的冗余)，采用廉价的操作生成一部分冗余特征图，以此来降低计算量和参数量。
+    2. 舍弃yolov5与yolov8中常用的BottleNeck，为了弥补舍弃残差块所带来的性能损失，在梯度流通分支上使用RepConv，以此来增强特征提取和梯度流通的能力，并且RepConv可以在推理的时候进行融合，一举两得。
+    3. 可以通过缩放因子控制RGCSPELAN的大小，使其可以兼顾小模型和大模型。
+
 ### BackBone系列
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
     
@@ -876,3 +883,9 @@
     4. 新增支持使用CAFM对CGAFusion进行二次改进,得到CAFMFusion改进yolov8-neck.
     5. 更新使用教程.
     6. 百度云视频增加20240428更新说明.
+
+- **20240501-yolov8-v1.51**
+    1. get_FPS.py脚本新增可以通过yaml测试推理速度.
+    2. 新增自研RGCSPELAN,其比C3、ELAN、C2f、RepNCSPELAN更低参数量和计算量更快推理速度.
+    3. 更新使用教程.
+    4. 百度云视频增加20240501更新说明.
