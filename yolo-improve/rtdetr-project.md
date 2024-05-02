@@ -124,6 +124,10 @@
 
     使用[CVPR2024 PKINet](https://github.com/PKINet/PKINet)中的CAA模块HSFPN.
 
+23. ultralytics/cfg/models/rt-detr/rtdetr-CAFMFusion.yaml
+
+    利用具有[HCANet](https://github.com/summitgao/HCANet)中的CAFM，其具有获取全局和局部信息的注意力机制进行二次改进content-guided attention fusion.
+
 ### 自研系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-PACAPN.yaml
 
@@ -141,6 +145,13 @@
 3. ultralytics/cfg/models/rt-detr/rtdetr-FDPN-DASI.yaml
 
     使用[HCFNet](https://github.com/zhengshuchen/HCFNet)中的Dimension-Aware Selective Integration Module对自研的Focusing Diffusion Pyramid Network再次创新.
+
+4. ultralytics/cfg/models/rt-detr/rtdetr-RGCSPELAN.yaml
+
+    自研RepGhostCSPELAN.
+    1. 参考GhostNet中的思想(主流CNN计算的中间特征映射存在广泛的冗余)，采用廉价的操作生成一部分冗余特征图，以此来降低计算量和参数量。
+    2. 舍弃yolov5与yolov8中常用的BottleNeck，为了弥补舍弃残差块所带来的性能损失，在梯度流通分支上使用RepConv，以此来增强特征提取和梯度流通的能力，并且RepConv可以在推理的时候进行融合，一举两得。
+    3. 可以通过缩放因子控制RGCSPELAN的大小，使其可以兼顾小模型和大模型。
 
 ### BackBone系列
 1. ultralytics/cfg/models/rt-detr/rt-detr-timm.yaml
@@ -239,6 +250,9 @@
 7. ultralytics/cfg/models/rt-detr/rtdetr-CSFCN.yaml
 
     使用[Context and Spatial Feature Calibration for Real-Time Semantic Segmentation](https://github.com/kaigelee/CSFCN/tree/main)中的Context and Spatial Feature Calibration模块改进rtdetr-neck.
+8. ultralytics/cfg/models/rt-detr/rtdetr-CGAFusion.yaml
+
+    使用[DEA-Net](https://github.com/cecret3350/DEA-Net)中的content-guided attention fusion改进rtdetr-neck.
 
 ### Head系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-p2.yaml
@@ -650,6 +664,21 @@
 
     使用[Context and Spatial Feature Calibration for Real-Time Semantic Segmentation](https://github.com/kaigelee/CSFCN/tree/main)中的Context and Spatial Feature Calibration模块改进yolov8.
 
+60. ultralytics/cfg/models/yolo-detr/yolov8-detr-CGAFusion.yaml
+
+    使用[DEA-Net](https://github.com/cecret3350/DEA-Net)中的content-guided attention fusion改进yolov8-neck.
+
+61. ultralytics/cfg/models/yolo-detr/yolov8-detr-CAFMFusion.yaml
+
+    利用具有[HCANet](https://github.com/summitgao/HCANet)中的CAFM，其具有获取全局和局部信息的注意力机制进行二次改进content-guided attention fusion.
+ 
+62. ultralytics/cfg/models/yolo-detr/yolov8-detr-RGCSPELAN.yaml
+
+    自研RepGhostCSPELAN.
+    1. 参考GhostNet中的思想(主流CNN计算的中间特征映射存在广泛的冗余)，采用廉价的操作生成一部分冗余特征图，以此来降低计算量和参数量。
+    2. 舍弃yolov5与yolov8中常用的BottleNeck，为了弥补舍弃残差块所带来的性能损失，在梯度流通分支上使用RepConv，以此来增强特征提取和梯度流通的能力，并且RepConv可以在推理的时候进行融合，一举两得。
+    3. 可以通过缩放因子控制RGCSPELAN的大小，使其可以兼顾小模型和大模型。
+
 ### 以Yolov5为基准模型的改进方案
 1. ultralytics/cfg/models/yolo-detr/yolov5-detr.yaml
 
@@ -898,6 +927,21 @@
 
     使用[Context and Spatial Feature Calibration for Real-Time Semantic Segmentation](https://github.com/kaigelee/CSFCN/tree/main)中的Context and Spatial Feature Calibration模块改进yolov5.
 
+60. ultralytics/cfg/models/yolo-detr/yolov5-detr-CGAFusion.yaml
+
+    使用[DEA-Net](https://github.com/cecret3350/DEA-Net)中的content-guided attention fusion改进yolov5-neck.
+
+61. ultralytics/cfg/models/yolo-detr/yolov5-detr-CAFMFusion.yaml
+
+    利用具有[HCANet](https://github.com/summitgao/HCANet)中的CAFM，其具有获取全局和局部信息的注意力机制进行二次改进content-guided attention fusion.
+ 
+62. ultralytics/cfg/models/yolo-detr/yolov5-detr-RGCSPELAN.yaml
+
+    自研RepGhostCSPELAN.
+    1. 参考GhostNet中的思想(主流CNN计算的中间特征映射存在广泛的冗余)，采用廉价的操作生成一部分冗余特征图，以此来降低计算量和参数量。
+    2. 舍弃yolov5与yolov8中常用的BottleNeck，为了弥补舍弃残差块所带来的性能损失，在梯度流通分支上使用RepConv，以此来增强特征提取和梯度流通的能力，并且RepConv可以在推理的时候进行融合，一举两得。
+    3. 可以通过缩放因子控制RGCSPELAN的大小，使其可以兼顾小模型和大模型。
+
 # 更新公告
 - **20231105-rtdetr-v1.0**
     1. 初版项目发布.
@@ -1064,3 +1108,11 @@
     3. 新增Context and Spatial Feature Calibration for Real-Time Semantic Segmentation中的Context and Spatial Feature Calibration.
     4. 更新使用教程.
     5. 百度云视频增加20240427更新说明.
+
+- **20240502-rtdetr-v1.21**
+    1. 新增支持content-guided attention fusion改进rtdetr-neck.
+    2. 新增支持使用CAFM对CGAFusion进行二次改进,得到CAFMFusion改进rtdetr-neck.
+    3. get_FPS.py脚本新增可以通过yaml测试推理速度.
+    4. 新增自研RGCSPELAN,其比C3、ELAN、C2f、RepNCSPELAN更低参数量和计算量更快推理速度.
+    5. 更新使用教程.
+    6. 百度云视频增加20240502更新说明.
