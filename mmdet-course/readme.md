@@ -49,7 +49,7 @@ CPU:i7-12700K
 RAM:32G  
 GPU:RTX3090  
 
-##### VisDrone2019-testset
+#### VisDrone2019-testset
 
 | model | Input Shape | GFlops | Params | coco/bbox_mAP | coco/bbox_mAP_50 | coco/bbox_mAP_s | coco/bbox_mAP_m | coco/bbox_mAP_l |
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
@@ -60,3 +60,4 @@ GPU:RTX3090
 | DINO | (750, 1333) | 274G | 47.56M | 0.253 | 0.445 | 0.150 | 0.371 | 0.503 |
 | DDQ | (768, 1333) | - | - | 0.268 | 0.463 | 0.159 | 0.390 | 0.526 |
 | YOLOX-Tiny | (640, 640) | 7.578G | 5.035M | 0.148 | 0.278 | 0.076 | 0.221 | 0.278 |
+| GFL | (768, 1344) | 206G | 32.279M | 0.193 | 0.321 | 0.094 | 0.300 | 0.409 |
