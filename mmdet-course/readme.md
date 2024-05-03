@@ -32,6 +32,7 @@ pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https
 ### mmdet视频教程链接(可按顺序观看)
 
 1. [一库打尽目标检测对比实验！mmdetection环境、训练、测试手把手教程！](https://www.bilibili.com/video/BV1xA4m1c7H8/)
+2. [一库打尽目标检测对比实验！mmdetection参数量、计算量、FPS、绘制logs手把手教程](https://www.bilibili.com/video/BV17C41137dW/)
 
 ### mmdet实验数据(指标均为COCO指标)
 
@@ -58,3 +59,4 @@ GPU:RTX3090
 | TOOD-R50 | (768, 1344) | 199G | 32.04M | 0.204 | 0.339 | 0.102 | 0.317 | 0.403 |
 | DINO | (750, 1333) | 274G | 47.56M | 0.253 | 0.445 | 0.150 | 0.371 | 0.503 |
 | DDQ | (768, 1333) | - | - | 0.268 | 0.463 | 0.159 | 0.390 | 0.526 |
+| YOLOX-Tiny | (640, 640) | 7.578G | 5.035M | 0.148 | 0.278 | 0.076 | 0.221 | 0.278 |
