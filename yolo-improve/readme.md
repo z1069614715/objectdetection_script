@@ -354,3 +354,5 @@
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1UA4m137hz/).   
     reference: [链接](https://github.com/WongKinYiu/yolov9)  
     paper: [链接](https://arxiv.org/abs/2402.13616)
+- **yolo-improve/yolov9-backbone**  
+    添加各种backbone到yolov9中.
