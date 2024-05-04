@@ -27,6 +27,7 @@
 3. [YOLOV5-快速上手教程](https://www.bilibili.com/video/BV1tM411a7it/?spm_id_from=333.999.0.0)
 4. [YOLOV8-OBB详细教学视频(包含如何把DOTA数据集分割成小图进行训练)](https://www.bilibili.com/video/BV1xK4y117fg/)
 5. [EfficientTeacher半监督-详细教学和调参注意事项](https://www.bilibili.com/video/BV1494y1v7hF/)
+6. [YOLOV9保姆级别教程来啦~包含环境配置、数据集转换、训练、测试、推理环节~一看就懂！](https://www.bilibili.com/video/BV1d1421z7XW/)
 
 ### YOLOV8源码常见疑问解答小课堂
 1. [关于配置文件中Optimizer参数为auto的时候，究竟Optimizer会怎么选用呢？](https://www.bilibili.com/video/BV1K34y1w7cZ/)
@@ -154,3 +155,4 @@
 1. [YOLOV9-VisDrone实验对比结果来啦！YOLOV9-C模型VisDrone测试集精度为39.7！有兴趣进来看看具体啦！](https://www.bilibili.com/video/BV1Yy42187A3/)
 2. [从源码分析YOLOV9比YOLOV7多了什么内容！](https://www.bilibili.com/video/BV1v1421f7rN/)
 3. [YOLOV9n VS YOLOV8n，在VisDrone数据集上精度有2.4个点的提升!](https://www.bilibili.com/video/BV16m411f78L/)
+4. [YOLOV9改进-更换轻量化王者MobilenetV4-Backbone](https://www.bilibili.com/video/BV1Ax4y1B7Ln/)
