@@ -33,6 +33,11 @@
 | CloAttention | True | https://arxiv.org/abs/2303.17803 |
 | LSKBlock | True | https://arxiv.org/pdf/2303.09030.pdf |
 | MLCA | True | https://www.sciencedirect.com/science/article/pii/S0952197623006267 |
+| LSKA | True | https://arxiv.org/abs/2309.01439 |
+| DAttention | True | https://openaccess.thecvf.com/content/CVPR2022/html/Xia_Vision_Transformer_With_Deformable_Attention_CVPR_2022_paper.html |
+| ELA | True | https://arxiv.org/abs/2403.01123 |
+| CAA | True | https://arxiv.org/pdf/2403.06258 |
+| CPCA | True | https://arxiv.org/abs/2306.05196 |
 
 # Install
 安装命令:pip install timm einops efficientnet_pytorch -i https://pypi.tuna.tsinghua.edu.cn/simple
@@ -47,6 +52,10 @@ https://github.com/xmu-xiaoma666/External-Attention-pytorch
 https://github.com/rwightman/pytorch-image-models  
 https://github.com/rayleizhu/BiFormer  
 https://github.com/XiaLiPKU/EMANet  
-https://github.com/qhfan/CloFormer/tree/main
-https://github.com/zcablii/LSKNet
-https://github.com/wandahangFY/MLCA
+https://github.com/qhfan/CloFormer/tree/main  
+https://github.com/zcablii/LSKNet  
+https://github.com/wandahangFY/MLCA  
+https://github.com/StevenLauHKHK/Large-Separable-Kernel-Attention  
+https://github.com/LeapLabTHU/DAT  
+https://github.com/NUST-Machine-Intelligence-Laboratory/PKINet  
+https://github.com/Cuthbert-Huang/CPCANet  
