@@ -112,6 +112,10 @@
 
     利用具有[HCANet](https://github.com/summitgao/HCANet)中的CAFM，其具有获取全局和局部信息的注意力机制进行二次改进content-guided attention fusion.
 
+31. ultralytics/cfg/models/v8/yolov8-C2f-Faster-CGLU.yaml
+
+    使用[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU对CVPR2023中的FasterNet进行二次创新.
+
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
 
@@ -300,6 +304,13 @@
 7. ultralytics/cfg/models/v8/yolov8-PGI.yaml
 
     使用[YOLOV9](https://github.com/WongKinYiu/yolov9)的programmable gradient information改进YOLOV8.(PGI模块可在训练结束后去掉)
+8. Lightweight Asymmetric Detection Head
+
+    detect:ultralytics/cfg/models/v8/yolov8-LADH.yaml
+    segment:ultralytics/cfg/models/v8/yolov8-seg-LADH.yaml
+    pose:ultralytics/cfg/models/v8/yolov8-pose-LADH.yaml
+    obb:ultralytics/cfg/models/v8/yolov8-obb-LADH.yaml
+    使用[Faster and Lightweight: An Improved YOLOv5 Object Detector for Remote Sensing Images](https://www.mdpi.com/2072-4292/15/20/4974)中的Lightweight Asymmetric Detection Head改进yolov8-head.
 
 ### Label Assign系列
 1. Adaptive Training Sample Selection匹配策略.
@@ -889,3 +900,9 @@
     2. 新增自研RGCSPELAN,其比C3、ELAN、C2f、RepNCSPELAN更低参数量和计算量更快推理速度.
     3. 更新使用教程.
     4. 百度云视频增加20240501更新说明.
+
+- **20240505-yolov8-v1.52**
+    1. 新增LADH.(Lightweight Asymmetric Detection Head).
+    2. 使用CVPR2024-TransNext中的Convolutional GLU对CVPR2023-FasterBlock进行二次创新.
+    3. 更新使用教程.
+    4. 百度云视频增加20240505更新说明.
