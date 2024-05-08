@@ -8,6 +8,7 @@ if __name__ == '__main__':
 
     model = YOLO(r'ultralytics/cfg/models/yolov8/yolov8n.yaml').model # select your model.pt path
     # model = RTDETR(r'ultralytics/cfg/models/rt-detr/rtdetr-resnet50.yaml').model
+    model.fuse()
     input = torch.randn(batch_size, 3, height, width)
     total_flops, total_params, layers = profile(model, [input], verbose=True, ret_layer_info=True)
     FLOPs, Params = thop.clever_format([total_flops * 2 / batch_size, total_params], "%.3f")
