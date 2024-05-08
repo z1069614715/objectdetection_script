@@ -30,4 +30,7 @@
 - **tricks_9**  
     深度学习小实验-YOLO-Block家族(fps,flops,param)对比实验.  
     目前支持:C3(Yolov5),ELAN(Yolov7),C2f(Yolov8)RepNCSPELAN(Yolov9).  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV17p4y177Pe/).  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV17H4y1V7s9/).  
+- **tricks_10**  
+    输出YOLOV8、RTDETR各个层的计算量和参数量.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV17H4y1V7s9/).  
