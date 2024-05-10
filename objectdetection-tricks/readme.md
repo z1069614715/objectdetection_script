@@ -33,4 +33,7 @@
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV17H4y1V7s9/).  
 - **tricks_10**  
     输出YOLOV8、RTDETR各个层的计算量和参数量.  
-    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV17H4y1V7s9/).  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1tb421b7aB/).  
+- **tricks_11**  
+    以YOLOV8为例，保存多个模型的PR曲线的数据并进行读取绘制到一张图上.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1tb421b7aB/).  

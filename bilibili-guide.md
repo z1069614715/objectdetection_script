@@ -53,6 +53,8 @@
 6. [固定随机种子在同一个主机上极可能地复现结果](https://www.bilibili.com/video/BV1bh4y1n7Yc/)
 7. [计算yolov5推理时间和FPS的脚本](https://www.bilibili.com/video/BV1Uu4y1C714/)
 8. [计算yolov7推理时间和FPS的脚本](https://www.bilibili.com/video/BV17p4y177Pe/)
+9. [深度学习小实验-YOLO-Block家族(fps,flops,param)对比实验.](https://www.bilibili.com/video/BV17H4y1V7s9/)
+10. [输出YOLOV8、RTDETR各个层的计算量和参数量.](https://www.bilibili.com/video/BV1tb421b7aB/)
 
 ### MMDet系列教程
 1. [一库打尽目标检测对比实验！mmdetection环境、训练、测试手把手教程！](https://www.bilibili.com/video/BV1xA4m1c7H8/)
