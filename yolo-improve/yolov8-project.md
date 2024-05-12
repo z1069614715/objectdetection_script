@@ -170,6 +170,15 @@
     2. 舍弃yolov5与yolov8中常用的BottleNeck，为了弥补舍弃残差块所带来的性能损失，在梯度流通分支上使用RepConv，以此来增强特征提取和梯度流通的能力，并且RepConv可以在推理的时候进行融合，一举两得。
     3. 可以通过缩放因子控制RGCSPELAN的大小，使其可以兼顾小模型和大模型。
 
+9. Lightweight Shared Convolutional Separamter BN Detection Head
+
+    基于自研轻量化检测头上，参考NASFPN的设计思路把GN换成BN，并且BN层参数不共享.
+    detect:ultralytics/cfg/models/v8/yolov8-LSCSBD.yaml
+    seg:ultralytics/cfg/models/v8/yolov8-seg-LSCSBD.yaml
+    pose:ultralytics/cfg/models/v8/yolov8-pose-LSCSBD.yaml
+    obb:ultralytics/cfg/models/v8/yolov8-obb-LSCSBD.yaml
+    1. 由于不同层级之间特征的统计量仍存在差异，Normalization layer依然是必须的，由于直接在共享参数的检测头中引入BN会导致其滑动平均值产生误差，而引入 GN 又会增加推理时的开销，因此我们参考NASFPN的做法，让检测头共享卷积层，而BN则分别独立计算。
+
 ### BackBone系列
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
     
@@ -280,6 +289,13 @@
 12. ultralytics/cfg/models/v8/yolov8-CGAFusion.yaml
 
     使用[DEA-Net](https://github.com/cecret3350/DEA-Net)中的content-guided attention fusion改进yolov8-neck.
+13. ultralytics/cfg/models/v8/yolov8-SDFM.yaml
+
+    使用[PSFusion](https://github.com/Linfeng-Tang/PSFusion)中的superficial detail fusion module改进yolov8-neck.
+
+14. ultralytics/cfg/models/v8/yolov8-PSFM.yaml
+
+    使用[PSFusion](https://github.com/Linfeng-Tang/PSFusion)中的profound semantic fusion module改进yolov8-neck.
 
 ### Head系列
 1. ultralytics/cfg/models/v8/yolov8-dyhead.yaml
@@ -566,6 +582,7 @@
 6. FocalLoss,VarifocalLoss,QualityfocalLoss
 7. Focaler-IoU系列(IoU,GIoU,DIoU,CIoU,EIoU,SIoU,WIoU,MPDIoU,ShapeIoU)
 8. Powerful-IoU,Powerful-IoUV2,Inner-Powerful-IoU,Inner-Powerful-IoUV2,Focaler-Powerful-IoU,Focaler-Powerful-IoUV2,Wise-Powerful-IoU(v1,v2,v3),Wise-Powerful-IoUV2(v1,v2,v3)[论文链接](https://www.sciencedirect.com/science/article/abs/pii/S0893608023006640)
+9. Normalized Gaussian Wasserstein Distance.
 
 # 更新公告
 
@@ -906,3 +923,9 @@
     2. 使用CVPR2024-TransNext中的Convolutional GLU对CVPR2023-FasterBlock进行二次创新.
     3. 更新使用教程.
     4. 百度云视频增加20240505更新说明.
+
+- **20240512-yolov8-v1.53**
+    1. 基于LSCD自研轻量化检测头再次进行改进得到LSCSBD.
+    2. 新增PSFusion中的superficial detail fusion module、profound semantic fusion module改进yolov8-neck.
+    3. 更新使用教程.
+    4. 百度云视频增加20240512更新说明.
