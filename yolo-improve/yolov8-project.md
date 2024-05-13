@@ -116,6 +116,10 @@
 
     使用[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU对CVPR2023中的FasterNet进行二次创新.
 
+32. ultralytics/cfg/models/v8/yolov8-C2f-Star-CAA.yaml
+
+    使用[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)中的StarBlock和[CVPR2024 PKINet](https://github.com/PKINet/PKINet)中的CAA改进C2f.
+
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
 
@@ -229,6 +233,10 @@
 16. ultralytics/cfg/models/v8/yolov8-mobilenetv4.yaml
 
     使用[MobileNetV4](https://github.com/jaiwei98/MobileNetV4-pytorch/tree/main)改进yolov8-backbone.
+17. ultralytics/cfg/models/v8/yolov8-starnet.yaml
+
+    使用[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)改进yolov8-backbone.
+
 ### SPPF系列
 1. ultralytics/cfg/models/v8/yolov8-FocalModulation.yaml
 
@@ -524,6 +532,10 @@
 
     使用[HCFNet](https://github.com/zhengshuchen/HCFNet)中的Parallelized Patch-Aware Attention Module改进C2f.
 
+45. ultralytics/cfg/models/v8/yolov8-C2f-Star.yaml
+
+    使用[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)中的StarBlock改进C2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -546,6 +558,13 @@
     自研结构的融合.
     1. 自研特征聚焦扩散金字塔网络(Focusing Diffusion Pyramid Network)
     2. 自研任务对齐动态检测头(Task Align Dynamic Detection Head)
+
+4. ultralytics/cfg/models/v8/yolov8-starnet-C2f-Star-LSCD.yaml
+
+    轻量化模型组合.
+    1. CVPR2024-StarNet Backbone.
+    2. C2f-Star.
+    3. Lightweight Shared Convolutional Detection Head.
 
 ### 注意力系列
 1. EMA
