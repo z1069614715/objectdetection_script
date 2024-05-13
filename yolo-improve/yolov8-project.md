@@ -929,3 +929,11 @@
     2. 新增PSFusion中的superficial detail fusion module、profound semantic fusion module改进yolov8-neck.
     3. 更新使用教程.
     4. 百度云视频增加20240512更新说明.
+
+- **20240513-yolov8-v1.54**
+    1. 支持CVPR2024-StarNet,新一代SOTA轻量化模型.
+    2. 使用CVPR2024-StarNet对C2f进行创新得到C2f-Star.
+    3. 使用CVPR2024-StarNet与CVPR2024-PKINet进行组合创新得到C2f-Star-CAA.
+    4. 增加轻量化模型组合配置文件,融合StarNet、C2f-Star、LSCD.
+    5. 更新使用教程.
+    6. 百度云视频增加20240513更新说明.
