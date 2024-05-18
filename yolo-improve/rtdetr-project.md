@@ -700,6 +700,27 @@
     2. 舍弃yolov5与yolov8中常用的BottleNeck，为了弥补舍弃残差块所带来的性能损失，在梯度流通分支上使用RepConv，以此来增强特征提取和梯度流通的能力，并且RepConv可以在推理的时候进行融合，一举两得。
     3. 可以通过缩放因子控制RGCSPELAN的大小，使其可以兼顾小模型和大模型。
 
+63. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-Faster-CGLU.yaml
+
+    使用[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU对CVPR2023中的FasterNet进行二次创新.
+
+64. ultralytics/cfg/models/yolo-detr/yolov8-detr-SDFM.yaml
+
+    使用[PSFusion](https://github.com/Linfeng-Tang/PSFusion)中的superficial detail fusion module改进yolov8-neck.
+
+65. ultralytics/cfg/models/yolo-detr/yolov8-detr-PSFM.yaml
+
+    使用[PSFusion](https://github.com/Linfeng-Tang/PSFusion)中的profound semantic fusion module改进yolov8-neck.
+
+66. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-Star.yaml
+
+    使用[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)中的StarBlock改进C2f.
+
+67. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-Star-CAA.yaml
+
+    使用[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)中的StarBlock和[CVPR2024 PKINet](https://github.com/PKINet/PKINet)中的CAA改进C2f.
+
+
 ### 以Yolov5为基准模型的改进方案
 1. ultralytics/cfg/models/yolo-detr/yolov5-detr.yaml
 
@@ -962,6 +983,27 @@
     1. 参考GhostNet中的思想(主流CNN计算的中间特征映射存在广泛的冗余)，采用廉价的操作生成一部分冗余特征图，以此来降低计算量和参数量。
     2. 舍弃yolov5与yolov8中常用的BottleNeck，为了弥补舍弃残差块所带来的性能损失，在梯度流通分支上使用RepConv，以此来增强特征提取和梯度流通的能力，并且RepConv可以在推理的时候进行融合，一举两得。
     3. 可以通过缩放因子控制RGCSPELAN的大小，使其可以兼顾小模型和大模型。
+
+63. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-Faster-CGLU.yaml
+
+    使用[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU对CVPR2023中的FasterNet进行二次创新.
+
+64. ultralytics/cfg/models/yolo-detr/yolov5-detr-SDFM.yaml
+
+    使用[PSFusion](https://github.com/Linfeng-Tang/PSFusion)中的superficial detail fusion module改进yolov5-neck.
+
+65. ultralytics/cfg/models/yolo-detr/yolov5-detr-PSFM.yaml
+
+    使用[PSFusion](https://github.com/Linfeng-Tang/PSFusion)中的profound semantic fusion module改进yolov5-neck.
+
+66. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-Star.yaml
+
+    使用[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)中的StarBlock改进C3.
+
+67. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-Star-CAA.yaml
+
+    使用[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)中的StarBlock和[CVPR2024 PKINet](https://github.com/PKINet/PKINet)中的CAA改进C3.
+
 
 # 更新公告
 - **20231105-rtdetr-v1.0**
