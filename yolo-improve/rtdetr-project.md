@@ -128,6 +128,10 @@
 
     利用具有[HCANet](https://github.com/summitgao/HCANet)中的CAFM，其具有获取全局和局部信息的注意力机制进行二次改进content-guided attention fusion.
 
+24. ultralytics/cfg/models/rt-detr/rtdetr-faster-CGLU.yaml
+
+    使用[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU对CVPR2023中的FasterNet进行二次创新.
+
 ### 自研系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-PACAPN.yaml
 
@@ -205,6 +209,9 @@
 17. ultralytics/cfg/models/rt-detr/rtdetr-mobilenetv4.yaml
 
     使用[MobileNetV4](https://github.com/jaiwei98/MobileNetV4-pytorch/tree/main)改进rtdetr-backbone.
+18. ultralytics/cfg/models/rt-detr/rtdetr-starnet.yaml
+
+    使用[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)改进yolov8-backbone.
 
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
@@ -253,6 +260,13 @@
 8. ultralytics/cfg/models/rt-detr/rtdetr-CGAFusion.yaml
 
     使用[DEA-Net](https://github.com/cecret3350/DEA-Net)中的content-guided attention fusion改进rtdetr-neck.
+9. ultralytics/cfg/models/rt-detr/rtdetr-SDFM.yaml
+
+    使用[PSFusion](https://github.com/Linfeng-Tang/PSFusion)中的superficial detail fusion module改进rtdetr-neck.
+
+10. ultralytics/cfg/models/rt-detr/rtdetr-PSFM.yaml
+
+    使用[PSFusion](https://github.com/Linfeng-Tang/PSFusion)中的profound semantic fusion module改进yolov8-neck.
 
 ### Head系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-p2.yaml
@@ -348,6 +362,9 @@
 21. ultralytics/cfg/models/rt-detr/rtdetr-fadc.yaml
 
     使用[CVPR2024 Frequency-Adaptive Dilated Convolution](https://github.com/Linwei-Chen/FADC)改进resnet18-basicblock.
+22. ultralytics/cfg/models/rt-detr/rtdetr-Star.yaml
+
+    使用[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)中的StarBlock改进resnet18-basicblock.
 ### 上下采样算子系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-DySample.yaml
 
@@ -400,6 +417,10 @@
 19. MLCA
 20. TransNeXt_AggregatedAttention
 21. HiLo
+22. LocalWindowAttention(EfficientViT中的CascadedGroupAttention注意力)
+23. Efficient Local Attention
+24. CAA(CVPR2024 PKINet中的注意力)
+25. CAFM
 
 ### IoU系列
 1. IoU,GIoU,DIoU,CIoU,EIoU,SIoU(百度云视频-20231125更新说明)
@@ -1116,3 +1137,10 @@
     4. 新增自研RGCSPELAN,其比C3、ELAN、C2f、RepNCSPELAN更低参数量和计算量更快推理速度.
     5. 更新使用教程.
     6. 百度云视频增加20240502更新说明.
+
+- **20240518-rtdetr-v1.22**
+    1. 新增CVPR2024-StarNet-Backbone以及其衍生的改进(C3-Star、C3-Star-CAA、C2f-Star、C2f-Star-CAA、BasicBlock_Star、BottleNeck_Star).
+    2. 使用CVPR2024-TransNext中的Convolutional GLU对CVPR2023-FasterBlock进行二次创新(C3_Faster_CGLU, C2f_Faster_CGLU, BasicBlock_Faster_Block_CGLU, BottleNeck_Faster_Block_CGLU).
+    3. 新增PSFusion中的superficial detail fusion module、profound semantic fusion module.
+    4. 更新使用教程.
+    5. 百度云视频增加20240518更新说明.
