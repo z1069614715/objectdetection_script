@@ -12,6 +12,7 @@
 9. [从简到难手把手教你画Pytorch模块内的结构图！](https://www.bilibili.com/video/BV1dC411p7H7/)
 10. [深度学习论文实验中的其中一大注意点-预训练权重究竟加还是不加？](https://www.bilibili.com/video/BV1Q1421Q7Zw/)
 11. [深度学习改进实验必看！基于YOLOV8的WIDER-FACE改进(轻量化+提点)实验思路讲解](https://www.bilibili.com/video/BV1QJ4m1H7DJ/)
+12. [YOLOV8-硬塞注意力机制？这样做没创新！想知道注意力怎么用才有创新那赶快来看看！](https://www.bilibili.com/video/BV1bm421K7tf/)
 
 ### YOLOV5,V7-PYQT5项目讲解
 1. [哔哩哔哩合集地址](https://space.bilibili.com/286900343/channel/collectiondetail?sid=917275)
@@ -154,6 +155,7 @@
 9. [YOLOV8下游任务系列-一步一步DEBUG保姆式带你完成目标计数](https://www.bilibili.com/video/BV17H4y1J7DD/)
 10. [YOLOV8改进-带你分析V8的检测头并重设计10种结构轻量化检测头](https://www.bilibili.com/video/BV1cu411K7FE/)
 11. [从CVPR2022-RepLKNet分析有效感受野，并提供YOLOV8可视化感受野的脚本和讲解~](https://www.bilibili.com/video/BV1Gx4y1v7ZZ/)
+12. [YOLOV8-不会把PR曲线的数据保存并绘制到一张图？不用怕，手把手教程来啦~](https://www.bilibili.com/video/BV1uC41177oE/)
 #### YOLOV9
 1. [YOLOV9-VisDrone实验对比结果来啦！YOLOV9-C模型VisDrone测试集精度为39.7！有兴趣进来看看具体啦！](https://www.bilibili.com/video/BV1Yy42187A3/)
 2. [从源码分析YOLOV9比YOLOV7多了什么内容！](https://www.bilibili.com/video/BV1v1421f7rN/)

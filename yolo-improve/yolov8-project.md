@@ -536,6 +536,16 @@
 
     使用[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)中的StarBlock改进C2f.
 
+46. ultralytics/cfg/models/v8/yolov8-C2f-KAN.yaml
+
+    KAN In! Mamba Out! Kolmogorov-Arnold Networks.
+    目前支持:
+    1. FastKANConv2DLayer
+    2. KANConv2DLayer
+    3. KALNConv2DLayer
+    4. KACNConv2DLayer
+    5. KAGNConv2DLayer
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -956,3 +966,10 @@
     4. 增加轻量化模型组合配置文件,融合StarNet、C2f-Star、LSCD.
     5. 更新使用教程.
     6. 百度云视频增加20240513更新说明.
+
+- **20240523-yolov8-v1.55**
+    1. KAN In! Mamba Out!,集成pytorch-kan-conv.
+    2. 同步DCNV4-CVPR2024最新代码.
+    3. 修复AIFI在某些组合会报错的问题.
+    4. 更新使用教程.
+    5. 百度云视频增加20240523更新说明.

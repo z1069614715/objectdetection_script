@@ -354,5 +354,9 @@
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1UA4m137hz/).   
     reference: [链接](https://github.com/WongKinYiu/yolov9)  
     paper: [链接](https://arxiv.org/abs/2402.13616)
-- **yolo-improve/yolov9-backbone**  
-    添加各种backbone到yolov9中.
+- **yolov9-backbone**  
+    添加各种backbone到yolov9中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Ax4y1B7Ln/).   
+- **yolov5-backbone/CVPR2024-StarNet**  
+    添加CVPR2024-StarNet到yolov5、yolov7、yolov9中.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Ax4y1B7Ln/).   
