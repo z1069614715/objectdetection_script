@@ -968,7 +968,7 @@
     6. 百度云视频增加20240513更新说明.
 
 - **20240523-yolov8-v1.55**
-    1. KAN In! Mamba Out!,集成pytorch-kan-conv.
+    1. KAN In! Mamba Out!,集成pytorch-kan-conv，支持多种KAN变种！
     2. 同步DCNV4-CVPR2024最新代码.
     3. 修复AIFI在某些组合会报错的问题.
     4. 更新使用教程.
