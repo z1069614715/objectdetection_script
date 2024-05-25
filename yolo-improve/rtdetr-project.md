@@ -295,6 +295,15 @@
 7. ultralytics/cfg/models/rt-detr/rtdetr-RetBlockC3.yaml
 
     使用[CVPR2024 RMT](https://arxiv.org/abs/2309.11523)中的RetBlock改进RepC3.
+8. ultralytics/cfg/models/rt-detr/rtdetr-KANC3.yaml
+
+    使用[Pytorch-Conv-KAN](https://github.com/IvanDrokin/torch-conv-kan)的KAN卷积算子改进RepC3.
+    目前支持:
+    1. FastKANConv2DLayer
+    2. KANConv2DLayer
+    3. KALNConv2DLayer
+    4. KACNConv2DLayer
+    5. KAGNConv2DLayer
 ### ResNet主干中的BasicBlock/BottleNeck改进系列(以下改进BottleNeck基本都有,就不再重复标注)
 1. ultralytics/cfg/models/rt-detr/rtdetr-Ortho.yaml
 
@@ -365,6 +374,15 @@
 22. ultralytics/cfg/models/rt-detr/rtdetr-Star.yaml
 
     使用[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)中的StarBlock改进resnet18-basicblock.
+23. ultralytics/cfg/models/rt-detr/rtdetr-KAN.yaml
+
+    使用[Pytorch-Conv-KAN](https://github.com/IvanDrokin/torch-conv-kan)的KAN卷积算子改进resnet18-basicblock.
+    目前支持:
+    1. FastKANConv2DLayer
+    2. KANConv2DLayer
+    3. KALNConv2DLayer
+    4. KACNConv2DLayer
+    5. KAGNConv2DLayer
 ### 上下采样算子系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-DySample.yaml
 
@@ -720,6 +738,15 @@
 
     使用[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)中的StarBlock和[CVPR2024 PKINet](https://github.com/PKINet/PKINet)中的CAA改进C2f.
 
+68. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-KAN.yaml
+
+    使用[Pytorch-Conv-KAN](https://github.com/IvanDrokin/torch-conv-kan)的KAN卷积算子改进C2f.
+    目前支持:
+    1. FastKANConv2DLayer
+    2. KANConv2DLayer
+    3. KALNConv2DLayer
+    4. KACNConv2DLayer
+    5. KAGNConv2DLayer
 
 ### 以Yolov5为基准模型的改进方案
 1. ultralytics/cfg/models/yolo-detr/yolov5-detr.yaml
@@ -1004,6 +1031,15 @@
 
     使用[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)中的StarBlock和[CVPR2024 PKINet](https://github.com/PKINet/PKINet)中的CAA改进C3.
 
+68. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-KAN.yaml
+
+    使用[Pytorch-Conv-KAN](https://github.com/IvanDrokin/torch-conv-kan)的KAN卷积算子改进C3.
+    目前支持:
+    1. FastKANConv2DLayer
+    2. KANConv2DLayer
+    3. KALNConv2DLayer
+    4. KACNConv2DLayer
+    5. KAGNConv2DLayer
 
 # 更新公告
 - **20231105-rtdetr-v1.0**
@@ -1186,3 +1222,9 @@
     3. 新增PSFusion中的superficial detail fusion module、profound semantic fusion module.
     4. 更新使用教程.
     5. 百度云视频增加20240518更新说明.
+
+- **20240525-rtdetr-v1.23**
+    1. KAN In! Mamba Out!,集成pytorch-kan-conv，支持多种KAN变种！
+    2. 同步DCNV4-CVPR2024最新代码.
+    3. 更新使用教程.
+    4. 百度云视频增加20240525更新说明.
