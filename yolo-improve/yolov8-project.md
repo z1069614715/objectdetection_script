@@ -183,6 +183,19 @@
     obb:ultralytics/cfg/models/v8/yolov8-obb-LSCSBD.yaml
     1. 由于不同层级之间特征的统计量仍存在差异，Normalization layer依然是必须的，由于直接在共享参数的检测头中引入BN会导致其滑动平均值产生误差，而引入 GN 又会增加推理时的开销，因此我们参考NASFPN的做法，让检测头共享卷积层，而BN则分别独立计算。
 
+10. ultralytics/cfg/models/v8/yolov8-EIEStem.yaml
+
+    1. 通过SobelConv分支，可以提取图像的边缘信息。由于Sobel滤波器可以检测图像中强度的突然变化，因此可以很好地捕捉图像的边缘特征。这些边缘特征在许多计算机视觉任务中都非常重要，例如图像分割和物体检测。
+    2. EIEStem模块还结合空间信息，除了边缘信息，EIEStem还通过池化分支提取空间信息，保留重要的空间信息。结合边缘信息和空间信息，可以帮助模型更好地理解图像内容。
+    3. 通过3D组卷积高效实现Sobel算子。
+
+11. ultralytics/cfg/models/v8/yolov8-C2f-EIEM.yaml
+
+    提出了一种新的EIEStem模块，旨在作为图像识别任务中的高效前端模块。该模块结合了提取边缘信息的SobelConv分支和提取空间信息的卷积分支，能够学习到更加丰富的图像特征表示。
+    1. 边缘信息学习: 卷积神经网络 (CNN)通常擅长学习空间信息，但是对于提取图像中的边缘信息可能稍显不足。EIEStem 模块通过SobelConv分支，显式地提取图像的边缘特征。Sobel滤波器是一种经典的边缘检测滤波器，可以有效地捕捉图像中强度的突然变化，从而获得重要的边缘信息。
+    2. 空间信息保留: 除了边缘信息，图像中的空间信息也同样重要。EIEStem模块通过一个额外的卷积分支 (conv_branch) 来提取空间信息。与SobelCon 分支不同，conv_branch提取的是原始图像的特征，可以保留丰富的空间细节。
+    3. 特征融合: EIEStem模块将来自SobelConv分支和conv_branch提取的特征进行融合 (concatenate)。 这种融合操作使得学习到的特征表示既包含了丰富的边缘信息，又包含了空间信息，能够更加全面地刻画图像内容。
+
 ### BackBone系列
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
     
@@ -345,6 +358,10 @@
 1. soft-nms(IoU,GIoU,DIoU,CIoU,EIoU,SIoU,ShapeIoU)
 
     soft-nms替换nms.(建议:仅在val.py时候使用,具体替换请看20240122版本更新说明)
+
+2. ultralytics/cfg/models/v8/yolov8-nmsfree.yaml
+
+    仿照yolov10的思想采用双重标签分配和一致匹配度量进行训练,后处理不需要NMS!
 
 ### 上下采样算子
 1. ultralytics/cfg/models/v8/yolov8-ContextGuidedDown.yaml
@@ -973,3 +990,9 @@
     3. 修复AIFI在某些组合会报错的问题.
     4. 更新使用教程.
     5. 百度云视频增加20240523更新说明.
+
+- **20240526-yolov8-v1.56**
+    1. 支持YOLOV8-NMSFree，仿照yolov10的思想采用双重标签分配和一致匹配度量进行训练,后处理不需要NMS!
+    2. 新增边缘信息增强模块自研模块，EIEStem、EIEM。
+    3. 更新使用教程.
+    4. 百度云视频增加20240526更新说明.
