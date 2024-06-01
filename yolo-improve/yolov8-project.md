@@ -196,6 +196,30 @@
     2. 空间信息保留: 除了边缘信息，图像中的空间信息也同样重要。EIEStem模块通过一个额外的卷积分支 (conv_branch) 来提取空间信息。与SobelCon 分支不同，conv_branch提取的是原始图像的特征，可以保留丰富的空间细节。
     3. 特征融合: EIEStem模块将来自SobelConv分支和conv_branch提取的特征进行融合 (concatenate)。 这种融合操作使得学习到的特征表示既包含了丰富的边缘信息，又包含了空间信息，能够更加全面地刻画图像内容。
 
+12. ultralytics/cfg/models/v8/yolov8-ContextGuideFPN.yaml
+
+    Context Guide Fusion Module（CGFM）是一个创新的特征融合模块，旨在改进YOLOv8中的特征金字塔网络（FPN）。该模块的设计考虑了多尺度特征融合过程中上下文信息的引导和自适应调整。
+    1. 上下文信息的有效融合：通过SE注意力机制，模块能够在特征融合过程中捕捉并利用重要的上下文信息，从而增强特征表示的有效性，并有效引导模型学习检测目标的信息，从而提高模型的检测精度。
+    2. 特征增强：通过权重化的特征重组操作，模块能够增强重要特征，同时抑制不重要特征，提升特征图的判别能力。
+    3. 简单高效：模块结构相对简单，不会引入过多的计算开销，适合在实时目标检测任务中应用。
+    这期视频讲解在B站:https://www.bilibili.com/video/BV1Vx4y1n7hZ/
+
+13. ultralytics/cfg/models/v8/yolov8-LSDECD.yaml
+
+    基于自研轻量化检测头上(LSCD)，使用detail-enhanced convolution进一步改进，提高检测头的细节捕获能力，进一步改善检测精度.
+    detect:ultralytics/cfg/models/v8/yolov8-LSDECD.yaml
+    segment:ultralytics/cfg/models/v8/yolov8-seg-LSDECD.yaml
+    pose:ultralytics/cfg/models/v8/yolov8-pose-LSDECD.yaml
+    obb:ultralytics/cfg/models/v8/yolov8-obb-LSDECD.yaml
+    1. DEA-Net中设计了一个细节增强卷积（DEConv），具体来说DEConv将先验信息整合到普通卷积层，以增强表征和泛化能力。然后，通过使用重参数化技术，DEConv等效地转换为普通卷积，不需要额外的参数和计算成本。
+
+14. ultralytics/cfg/models/v8/yolov8-C2f-SMPCGLU.yaml
+
+    Self-moving Point Convolutional GLU模型改进C2f.
+    SMP来源于[CVPR2023-SMPConv](https://github.com/sangnekim/SMPConv),Convolutional GLU来源于[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt).
+    1. 普通的卷积在面对数据中的多样性和复杂性时，可能无法捕捉到有效的特征，因此我们采用了SMPConv，其具备最新的自适应点移动机制，从而更好地捕捉局部特征，提高特征提取的灵活性和准确性。
+    2. 在SMPConv后添加CGLU，Convolutional GLU 结合了卷积和门控机制，能够选择性地通过信息通道，提高了特征提取的有效性和灵活性。
+
 ### BackBone系列
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
     
@@ -562,6 +586,10 @@
     3. KALNConv2DLayer
     4. KACNConv2DLayer
     5. KAGNConv2DLayer
+
+47. ultralytics/cfg/models/v8/yolov8-C2f-DEConv.yaml
+
+    使用[DEA-Net](https://github.com/cecret3350/DEA-Net)中的detail-enhanced convolution改进C2f.
 
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
@@ -996,3 +1024,11 @@
     2. 新增边缘信息增强模块自研模块，EIEStem、EIEM。
     3. 更新使用教程.
     4. 百度云视频增加20240526更新说明.
+
+- **20240601-yolov8-v1.57**
+    1. 新增自研ContextGuideFPN.
+    2. 新增detail-enhanced convolution改进c2f.
+    3. 新增自研LSDECD，在LSCD的基础上引入可重参数化的detail-enhanced convolution.
+    4. 新增自研SMPCGLU，里面的模块分别来自CVPR2023和CVPR2024.
+    5. 更新使用教程.
+    6. 百度云视频增加20240601更新说明.

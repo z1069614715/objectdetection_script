@@ -13,6 +13,7 @@
 10. [深度学习论文实验中的其中一大注意点-预训练权重究竟加还是不加？](https://www.bilibili.com/video/BV1Q1421Q7Zw/)
 11. [深度学习改进实验必看！基于YOLOV8的WIDER-FACE改进(轻量化+提点)实验思路讲解](https://www.bilibili.com/video/BV1QJ4m1H7DJ/)
 12. [YOLOV8-硬塞注意力机制？这样做没创新！想知道注意力怎么用才有创新那赶快来看看！](https://www.bilibili.com/video/BV1bm421K7tf/)
+13. [YOLOV8改进-还硬塞注意力机制？这期用注意力机制手把手给大家自研一个ContextGuideFPN！创新真的不难，需要找对方法！](https://www.bilibili.com/video/BV1Vx4y1n7hZ/)
 
 ### YOLOV5,V7-PYQT5项目讲解
 1. [哔哩哔哩合集地址](https://space.bilibili.com/286900343/channel/collectiondetail?sid=917275)
@@ -156,8 +157,13 @@
 10. [YOLOV8改进-带你分析V8的检测头并重设计10种结构轻量化检测头](https://www.bilibili.com/video/BV1cu411K7FE/)
 11. [从CVPR2022-RepLKNet分析有效感受野，并提供YOLOV8可视化感受野的脚本和讲解~](https://www.bilibili.com/video/BV1Gx4y1v7ZZ/)
 12. [YOLOV8-不会把PR曲线的数据保存并绘制到一张图？不用怕，手把手教程来啦~](https://www.bilibili.com/video/BV1uC41177oE/)
+13. [YOLOV8应用NMS-Free效果怎么样？在Visdrone2019数据集上进行实验，效果不错！后处理时间为0.0ms！](https://www.bilibili.com/video/BV1bt421N7ob/)
+14. [YOLOV8-NMSFree|更多公开数据集测试！VisDrone、VOC、PCB](https://www.bilibili.com/video/BV1nZ421x7jr/)
 #### YOLOV9
 1. [YOLOV9-VisDrone实验对比结果来啦！YOLOV9-C模型VisDrone测试集精度为39.7！有兴趣进来看看具体啦！](https://www.bilibili.com/video/BV1Yy42187A3/)
 2. [从源码分析YOLOV9比YOLOV7多了什么内容！](https://www.bilibili.com/video/BV1v1421f7rN/)
 3. [YOLOV9n VS YOLOV8n，在VisDrone数据集上精度有2.4个点的提升!](https://www.bilibili.com/video/BV16m411f78L/)
 4. [YOLOV9改进-更换轻量化王者MobilenetV4-Backbone](https://www.bilibili.com/video/BV1Ax4y1B7Ln/)
+5. [YOLOV9改进-CVPR2024-StarNet、DRepCSPELAN](https://www.bilibili.com/video/BV1BU411o7rz/)
+6. [YOLOV9改进-CVPR2023-FasterNet以及其FasterBlock、PConv的改进](https://www.bilibili.com/video/BV18y411a74y/)
+7. [YOLOV9改进-DySnakeConv动态蛇形卷积、针对长条形不规则物体！](https://www.bilibili.com/video/BV1gi421S77X/)
