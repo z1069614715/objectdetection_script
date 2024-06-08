@@ -157,6 +157,21 @@
     2. 舍弃yolov5与yolov8中常用的BottleNeck，为了弥补舍弃残差块所带来的性能损失，在梯度流通分支上使用RepConv，以此来增强特征提取和梯度流通的能力，并且RepConv可以在推理的时候进行融合，一举两得。
     3. 可以通过缩放因子控制RGCSPELAN的大小，使其可以兼顾小模型和大模型。
 
+5. ultralytics/cfg/models/rt-detr/rtdetr-ContextGuideFPN.yaml
+
+    Context Guide Fusion Module（CGFM）是一个创新的特征融合模块，旨在改进YOLOv8中的特征金字塔网络（FPN）。该模块的设计考虑了多尺度特征融合过程中上下文信息的引导和自适应调整。
+    1. 上下文信息的有效融合：通过SE注意力机制，模块能够在特征融合过程中捕捉并利用重要的上下文信息，从而增强特征表示的有效性，并有效引导模型学习检测目标的信息，从而提高模型的检测精度。
+    2. 特征增强：通过权重化的特征重组操作，模块能够增强重要特征，同时抑制不重要特征，提升特征图的判别能力。
+    3. 简单高效：模块结构相对简单，不会引入过多的计算开销，适合在实时目标检测任务中应用。
+    这期视频讲解在B站:https://www.bilibili.com/video/BV1Vx4y1n7hZ/
+
+6. ultralytics/cfg/models/rt-detr/rtdetr-C2f-SMPCGLU.yaml
+
+    Self-moving Point Convolutional GLU模型改进C2f.
+    SMP来源于[CVPR2023-SMPConv](https://github.com/sangnekim/SMPConv),Convolutional GLU来源于[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt).
+    1. 普通的卷积在面对数据中的多样性和复杂性时，可能无法捕捉到有效的特征，因此我们采用了SMPConv，其具备最新的自适应点移动机制，从而更好地捕捉局部特征，提高特征提取的灵活性和准确性。
+    2. 在SMPConv后添加CGLU，Convolutional GLU 结合了卷积和门控机制，能够选择性地通过信息通道，提高了特征提取的有效性和灵活性。
+
 ### BackBone系列
 1. ultralytics/cfg/models/rt-detr/rt-detr-timm.yaml
 
@@ -383,6 +398,10 @@
     3. KALNConv2DLayer
     4. KACNConv2DLayer
     5. KAGNConv2DLayer
+24. ultralytics/cfg/models/rt-detr/rtdetr-DEConv.yaml
+
+    使用[DEA-Net](https://github.com/cecret3350/DEA-Net)中的detail-enhanced convolution改进resnet18-basicblock.
+    关于DEConv在运行的时候重参数化后比重参数化前的计算量还要大的问题:是因为重参数化前thop库其计算不准的问题,看重参数化后的参数即可.
 ### 上下采样算子系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-DySample.yaml
 
@@ -748,6 +767,26 @@
     4. KACNConv2DLayer
     5. KAGNConv2DLayer
 
+69. ultralytics/cfg/models/yolo-detr/yolov8-detr-ContextGuideFPN.yaml
+
+    Context Guide Fusion Module（CGFM）是一个创新的特征融合模块，旨在改进YOLOv8中的特征金字塔网络（FPN）。该模块的设计考虑了多尺度特征融合过程中上下文信息的引导和自适应调整。
+    1. 上下文信息的有效融合：通过SE注意力机制，模块能够在特征融合过程中捕捉并利用重要的上下文信息，从而增强特征表示的有效性，并有效引导模型学习检测目标的信息，从而提高模型的检测精度。
+    2. 特征增强：通过权重化的特征重组操作，模块能够增强重要特征，同时抑制不重要特征，提升特征图的判别能力。
+    3. 简单高效：模块结构相对简单，不会引入过多的计算开销，适合在实时目标检测任务中应用。
+    这期视频讲解在B站:https://www.bilibili.com/video/BV1Vx4y1n7hZ/
+
+70. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-DEConv.yaml
+
+    使用[DEA-Net](https://github.com/cecret3350/DEA-Net)中的detail-enhanced convolution改进C2f.
+    关于DEConv在运行的时候重参数化后比重参数化前的计算量还要大的问题:是因为重参数化前thop库其计算不准的问题,看重参数化后的参数即可.
+
+71. ultralytics/cfg/models/yolo-detr/yolov8-detr-C2f-SMPCGLU.yaml
+
+    Self-moving Point Convolutional GLU模型改进C2f.
+    SMP来源于[CVPR2023-SMPConv](https://github.com/sangnekim/SMPConv),Convolutional GLU来源于[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt).
+    1. 普通的卷积在面对数据中的多样性和复杂性时，可能无法捕捉到有效的特征，因此我们采用了SMPConv，其具备最新的自适应点移动机制，从而更好地捕捉局部特征，提高特征提取的灵活性和准确性。
+    2. 在SMPConv后添加CGLU，Convolutional GLU 结合了卷积和门控机制，能够选择性地通过信息通道，提高了特征提取的有效性和灵活性。
+
 ### 以Yolov5为基准模型的改进方案
 1. ultralytics/cfg/models/yolo-detr/yolov5-detr.yaml
 
@@ -1041,6 +1080,26 @@
     4. KACNConv2DLayer
     5. KAGNConv2DLayer
 
+69. ultralytics/cfg/models/yolo-detr/yolov5-detr-ContextGuideFPN.yaml
+
+    Context Guide Fusion Module（CGFM）是一个创新的特征融合模块，旨在改进YOLOv8中的特征金字塔网络（FPN）。该模块的设计考虑了多尺度特征融合过程中上下文信息的引导和自适应调整。
+    1. 上下文信息的有效融合：通过SE注意力机制，模块能够在特征融合过程中捕捉并利用重要的上下文信息，从而增强特征表示的有效性，并有效引导模型学习检测目标的信息，从而提高模型的检测精度。
+    2. 特征增强：通过权重化的特征重组操作，模块能够增强重要特征，同时抑制不重要特征，提升特征图的判别能力。
+    3. 简单高效：模块结构相对简单，不会引入过多的计算开销，适合在实时目标检测任务中应用。
+    这期视频讲解在B站:https://www.bilibili.com/video/BV1Vx4y1n7hZ/
+
+70. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-DEConv.yaml
+
+    使用[DEA-Net](https://github.com/cecret3350/DEA-Net)中的detail-enhanced convolution改进C3.
+    关于DEConv在运行的时候重参数化后比重参数化前的计算量还要大的问题:是因为重参数化前thop库其计算不准的问题,看重参数化后的参数即可.
+
+71. ultralytics/cfg/models/yolo-detr/yolov5-detr-C3-SMPCGLU.yaml
+
+    Self-moving Point Convolutional GLU模型改进C3.
+    SMP来源于[CVPR2023-SMPConv](https://github.com/sangnekim/SMPConv),Convolutional GLU来源于[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt).
+    1. 普通的卷积在面对数据中的多样性和复杂性时，可能无法捕捉到有效的特征，因此我们采用了SMPConv，其具备最新的自适应点移动机制，从而更好地捕捉局部特征，提高特征提取的灵活性和准确性。
+    2. 在SMPConv后添加CGLU，Convolutional GLU 结合了卷积和门控机制，能够选择性地通过信息通道，提高了特征提取的有效性和灵活性。
+
 # 更新公告
 - **20231105-rtdetr-v1.0**
     1. 初版项目发布.
@@ -1228,3 +1287,10 @@
     2. 同步DCNV4-CVPR2024最新代码.
     3. 更新使用教程.
     4. 百度云视频增加20240525更新说明.
+
+- **20240608-rtdetr-v1.24**
+    1. 新增自研ContextGuideFPN.
+    2. 新增detail-enhanced convolution改进RTDETR.
+    3. 新增自研SMPCGLU，里面的模块分别来自CVPR2023和CVPR2024.
+    4. 更新使用教程.
+    5. 百度云视频增加20240608更新说明.
