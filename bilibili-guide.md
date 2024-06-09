@@ -14,6 +14,7 @@
 11. [深度学习改进实验必看！基于YOLOV8的WIDER-FACE改进(轻量化+提点)实验思路讲解](https://www.bilibili.com/video/BV1QJ4m1H7DJ/)
 12. [YOLOV8-硬塞注意力机制？这样做没创新！想知道注意力怎么用才有创新那赶快来看看！](https://www.bilibili.com/video/BV1bm421K7tf/)
 13. [YOLOV8改进-还硬塞注意力机制？这期用注意力机制手把手给大家自研一个ContextGuideFPN！创新真的不难，需要找对方法！](https://www.bilibili.com/video/BV1Vx4y1n7hZ/)
+14. [长达46分钟的肺腑之言！给以后想从事图像算法工程师、小白入门深度学习路线的总结！](https://www.bilibili.com/video/BV16y411h7T9/)
 
 ### YOLOV5,V7-PYQT5项目讲解
 1. [哔哩哔哩合集地址](https://space.bilibili.com/286900343/channel/collectiondetail?sid=917275)

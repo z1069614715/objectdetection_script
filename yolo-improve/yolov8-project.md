@@ -220,6 +220,16 @@
     1. 普通的卷积在面对数据中的多样性和复杂性时，可能无法捕捉到有效的特征，因此我们采用了SMPConv，其具备最新的自适应点移动机制，从而更好地捕捉局部特征，提高特征提取的灵活性和准确性。
     2. 在SMPConv后添加CGLU，Convolutional GLU 结合了卷积和门控机制，能够选择性地通过信息通道，提高了特征提取的有效性和灵活性。
 
+15. Re-CalibrationFPN
+
+    为了加强浅层和深层特征的相互交互能力，推出重校准特征金字塔网络(Re-CalibrationFPN).
+    P2345：ultralytics/cfg/models/v8/yolov8-ReCalibrationFPN-P2345.yaml(带有小目标检测头的ReCalibrationFPN)
+    P345：ultralytics/cfg/models/v8/yolov8-ReCalibrationFPN-P345.yaml
+    P3456：ultralytics/cfg/models/v8/yolov8-ReCalibrationFPN-P3456.yaml(带有大目标检测头的ReCalibrationFPN)
+    1. 浅层语义较少，但细节丰富，有更明显的边界和减少失真。此外，深层蕴藏着丰富的物质语义信息。因此，直接融合低级具有高级特性的特性可能导致冗余和不一致。为了解决这个问题，我们提出了SBA模块，它有选择地聚合边界信息和语义信息来描绘更细粒度的物体轮廓和重新校准物体的位置。
+    2. 相比传统的FPN结构，SBA模块引入了高分辨率和低分辨率特征之间的双向融合机制，使得特征之间的信息传递更加充分，进一步提升了多尺度特征融合的效果。
+    3. SBA模块通过自适应的注意力机制，根据特征图的不同分辨率和内容，自适应地调整特征的权重，从而更好地捕捉目标的多尺度特征。
+
 ### BackBone系列
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
     
@@ -590,6 +600,10 @@
 47. ultralytics/cfg/models/v8/yolov8-C2f-DEConv.yaml
 
     使用[DEA-Net](https://github.com/cecret3350/DEA-Net)中的detail-enhanced convolution改进C2f.
+
+48. ultralytics/cfg/models/v8/yolov8-C2f-Heat.yaml
+
+    使用[vHeat](https://github.com/MzeroMiko/vHeat/tree/main)中的HeatBlock改进C2f.
 
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
@@ -1032,3 +1046,9 @@
     4. 新增自研SMPCGLU，里面的模块分别来自CVPR2023和CVPR2024.
     5. 更新使用教程.
     6. 百度云视频增加20240601更新说明.
+
+- **20240609-yolov8-v1.58**
+    1. 新增支持物理传热启发的视觉表征模型vHeat中的vHeatBlock.
+    2. 新增自研重校准特征金字塔网络(Re-CalibrationFPN),推出多个版本(P2345,P345,P3456).
+    3. 更新使用教程.
+    4. 百度云视频增加20240609更新说明.
