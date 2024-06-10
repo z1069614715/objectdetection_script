@@ -160,6 +160,7 @@
 12. [YOLOV8-不会把PR曲线的数据保存并绘制到一张图？不用怕，手把手教程来啦~](https://www.bilibili.com/video/BV1uC41177oE/)
 13. [YOLOV8应用NMS-Free效果怎么样？在Visdrone2019数据集上进行实验，效果不错！后处理时间为0.0ms！](https://www.bilibili.com/video/BV1bt421N7ob/)
 14. [YOLOV8-NMSFree|更多公开数据集测试！VisDrone、VOC、PCB](https://www.bilibili.com/video/BV1nZ421x7jr/)
+15. [YOLOV8模型详细讲解(包含该如何改进YOLOV8)(刚入门小白，需要改进YOLOV8的同学必看！)](https://www.bilibili.com/video/BV1Ms421u7VH/)
 #### YOLOV9
 1. [YOLOV9-VisDrone实验对比结果来啦！YOLOV9-C模型VisDrone测试集精度为39.7！有兴趣进来看看具体啦！](https://www.bilibili.com/video/BV1Yy42187A3/)
 2. [从源码分析YOLOV9比YOLOV7多了什么内容！](https://www.bilibili.com/video/BV1v1421f7rN/)

@@ -43,6 +43,8 @@
     1. Mimic
     2. [Masked Generative Distillation](https://link.zhihu.com/?target=https%3A//arxiv.org/pdf/2205.01529.pdf) (ECCV 2022)
     3. [Channel-wise Distillation](https://arxiv.org/pdf/2011.13256.pdf) (ICCV 2021)
+    4. [ChSimLoss Distillation](https://openaccess.thecvf.com/content/ICCV2021/html/Liu_Exploring_Inter-Channel_Correlation_for_Diversity-Preserved_Knowledge_Distillation_ICCV_2021_paper.html) (ICCV2021)
+    5. [SPKDLoss Distillation](https://arxiv.org/pdf/1907.09682.pdf) (ICCV2019)
 
 ### 知识蒸馏的一些细节(具体项目会提供视频讲解)
 1. Feature蒸馏可以自定义选择层进行蒸馏.
