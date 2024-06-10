@@ -17,6 +17,8 @@
     1. Mimic
     2. [Masked Generative Distillation](https://link.zhihu.com/?target=https%3A//arxiv.org/pdf/2205.01529.pdf) (ECCV 2022)
     3. [Channel-wise Distillation](https://arxiv.org/pdf/2011.13256.pdf) (ICCV 2021)
+    4. [ChSimLoss Distillation](https://openaccess.thecvf.com/content/ICCV2021/html/Liu_Exploring_Inter-Channel_Correlation_for_Diversity-Preserved_Knowledge_Distillation_ICCV_2021_paper.html) (ICCV2021)
+    5. [SPKDLoss Distillation](https://arxiv.org/pdf/1907.09682.pdf) (ICCV2019)
 
 ### 知识蒸馏的一些细节(具体项目会提供视频讲解)
 1. Feature蒸馏可以自定义选择层进行蒸馏.
@@ -24,6 +26,7 @@
 3. 支持Logical和Feature一起使用.
 4. 过程中会输出Logical和Feature的损失,让用户可以及时调整对应的损失系数.
 5. 支持正常训练模型时候进行蒸馏和剪枝后finetune蒸馏.
+6. 支持自蒸馏.
 
 # 实验示例结果.(以下示例实验相关命令,视频教程,实验数据都在项目里面)
 #### Dataset:VisDrone(训练集只用了百分之30的数据,验证集和测试集用了全量的数据) Teacher:yolov8s Student:yolov8n (no pretrained weight)
