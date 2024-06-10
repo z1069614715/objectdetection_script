@@ -37,3 +37,6 @@
 - **tricks_11**  
     以YOLOV8为例，保存多个模型的PR曲线的数据并进行读取绘制到一张图上.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1tb421b7aB/).  
+- **tricks_12**  
+    yolov5、v7、v8、v9、v10曲线对比图、推理时间vs精度对比图绘制手把手教程.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1tb421b7aB/).  
