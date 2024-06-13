@@ -230,6 +230,16 @@
     2. 相比传统的FPN结构，SBA模块引入了高分辨率和低分辨率特征之间的双向融合机制，使得特征之间的信息传递更加充分，进一步提升了多尺度特征融合的效果。
     3. SBA模块通过自适应的注意力机制，根据特征图的不同分辨率和内容，自适应地调整特征的权重，从而更好地捕捉目标的多尺度特征。
 
+16. ultralytics/cfg/models/v8/yolov8-CSP-PTB.yaml
+
+    Cross Stage Partial - Partially Transformer Block
+    在计算机视觉任务中，Transformer结构因其强大的全局特征提取能力而受到广泛关注。然而，由于Transformer结构的计算复杂度较高，直接将其应用于所有通道会导致显著的计算开销。为了在保证高效特征提取的同时降低计算成本，我们设计了一种混合结构，将输入特征图分为两部分，分别由CNN和Transformer处理，结合了卷积神经网络(CNN)和Transformer机制的模块，旨在增强特征提取的能力。
+    我们提出了一种名为CSP_PTB(Cross Stage Partial - Partially Transformer Block)的模块，旨在结合CNN和Transformer的优势，通过对输入通道进行部分分配来优化计算效率和特征提取能力。
+    1. 融合局部和全局特征：多项研究表明，CNN的感受野大小较少，导致其只能提取局部特征，但Transformer的MHSA能够提取全局特征，能够同时利用两者的优势。
+    2. 保证高效特征提取的同时降低计算成本：为了能引入Transformer结构来提取全局特征又不想大幅度增加计算复杂度，因此提出Partially Transformer Block，只对部分通道使用TransformerBlock。
+    3. MHSA_CGLU包含Mutil-Head-Self-Attention和[ConvolutionalGLU(TransNext CVPR2024)](https://github.com/DaiShiResearch/TransNeXt)，其中Mutil-Head-Self-Attention负责提取全局特征，ConvolutionalGLU用于增强非线性特征表达能力，ConvolutionalGLU相比于传统的FFN，具有更强的性能。
+    4. 可以根据不同的模型大小和具体的运行情况调节用于Transformer的通道数。
+
 ### BackBone系列
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
     
@@ -427,6 +437,10 @@
 8. ultralytics/cfg/models/v8/yolov8-SRFD.yaml
 
     使用[A Robust Feature Downsampling Module for Remote Sensing Visual Tasks](https://ieeexplore.ieee.org/document/10142024)改进yolov8的下采样.
+
+9. ultralytics/cfg/models/v8/yolov8-WaveletPool.yaml
+
+    使用[Wavelet Pooling](https://openreview.net/forum?id=rkhlb8lCZ)改进YOLOV8的上采样和下采样。
 
 ### YOLOV8-C2f系列
 1. ultralytics/cfg/models/v8/yolov8-C2f-Faster.yaml
@@ -1052,3 +1066,9 @@
     2. 新增自研重校准特征金字塔网络(Re-CalibrationFPN),推出多个版本(P2345,P345,P3456).
     3. 更新使用教程.
     4. 百度云视频增加20240609更新说明.
+
+- **20240613-yolov8-v1.59**
+    1. 新增WaveletPool改进上采样和下采样.
+    2. 新增自研Cross Stage Partial - Partially Transformer Block模块.
+    3. 更新使用教程.
+    4. 百度云视频增加20240613更新说明.
