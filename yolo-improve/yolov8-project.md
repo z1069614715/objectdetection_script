@@ -120,6 +120,10 @@
 
     使用[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)中的StarBlock和[CVPR2024 PKINet](https://github.com/PKINet/PKINet)中的CAA改进C2f.
 
+33. ultralytics/cfg/models/v8/yolov8-bifpn-GLSA.yaml
+
+    使用[GLSA](https://github.com/Barrett-python/DuAT)模块对bifpn进行二次创新.
+
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
 
@@ -361,6 +365,10 @@
 14. ultralytics/cfg/models/v8/yolov8-PSFM.yaml
 
     使用[PSFusion](https://github.com/Linfeng-Tang/PSFusion)中的profound semantic fusion module改进yolov8-neck.
+
+15. ultralytics/cfg/models/v8/yolov8-GLSA.yaml
+
+    使用[GLSA](https://github.com/Barrett-python/DuAT)模块改进yolov8的neck.
 
 ### Head系列
 1. ultralytics/cfg/models/v8/yolov8-dyhead.yaml
@@ -648,6 +656,16 @@
     1. CVPR2024-StarNet Backbone.
     2. C2f-Star.
     3. Lightweight Shared Convolutional Detection Head.
+
+
+### Mamba-YOLO
+1. [Mamba-YOLO](https://github.com/HZAI-ZJNU/Mamba-YOLO)
+
+    集成Mamba-YOLO.(需要编译请看百度云视频-20240619版本更新说明)
+    ultralytics/cfg/models/mamba-yolo/Mamba-YOLO-T.yaml
+    ultralytics/cfg/models/mamba-yolo/Mamba-YOLO-B.yaml
+    ultralytics/cfg/models/mamba-yolo/Mamba-YOLO-L.yaml
+    ultralytics/cfg/models/mamba-yolo/yolo-mamba-seg.yaml
 
 ### 注意力系列
 1. EMA
@@ -1072,3 +1090,10 @@
     2. 新增自研Cross Stage Partial - Partially Transformer Block模块.
     3. 更新使用教程.
     4. 百度云视频增加20240613更新说明.
+
+- **20240619-yolov8-v1.60**
+    1. 集成mamba-yolo.
+    2. 新增GLSA改进yolov8-neck.
+    3. 新增GLSA对BIFPN进行二次创新.
+    4. 更新使用教程.
+    5. 百度云视频增加20240619更新说明.
