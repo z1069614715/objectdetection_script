@@ -132,6 +132,10 @@
 
     使用[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU对CVPR2023中的FasterNet进行二次创新.
 
+25. ultralytics/cfg/models/rt-detr/rtdetr-bifpn-GLSA.yaml
+
+    使用[GLSA](https://github.com/Barrett-python/DuAT)模块对bifpn进行二次创新.
+
 ### 自研系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-PACAPN.yaml
 
@@ -297,6 +301,10 @@
 
     使用[PSFusion](https://github.com/Linfeng-Tang/PSFusion)中的profound semantic fusion module改进yolov8-neck.
 
+11. ultralytics/cfg/models/rt-detr/rtdetr-GLSA.yaml
+
+    使用[GLSA](https://github.com/Barrett-python/DuAT)模块改进rtdetr的neck.
+
 ### Head系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-p2.yaml
 
@@ -449,6 +457,12 @@
 3. ultralytics/cfg/models/rt-detr/rtdetr-l-attention.yaml
 
     添加注意力模块到HGBlock中.(手把手教程请看百度云视频-手把手添加注意力教程)
+
+### RT-DETR-Mamba
+    集成Mamba-YOLO,并把head改为RTDETR-Head.(需要编译，请看百度云视频)
+    ultralytics/cfg/models/rt-detr/rtdetr-mamba-T.yaml
+    ultralytics/cfg/models/rt-detr/rtdetr-mamba-B.yaml
+    ultralytics/cfg/models/rt-detr/rtdetr-mamba-L.yaml
 
 ### 注意力系列
 1. EMA
@@ -1319,3 +1333,10 @@
     3. 新增WaveletPool改进上采样和下采样.
     4. 更新使用教程.
     5. 百度云视频增加20240618更新说明.
+
+- **20240622-rtdetr-v1.26**
+    1. 新增RtDetr-Mamba.
+    2. 新增GLSA改进rtdetr-neck.
+    3. 新增GLSA对BIFPN进行二次创新.
+    4. 更新使用教程.
+    5. 百度云视频增加20240622更新说明.
