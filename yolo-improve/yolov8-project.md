@@ -244,6 +244,10 @@
     3. MHSA_CGLU包含Mutil-Head-Self-Attention和[ConvolutionalGLU(TransNext CVPR2024)](https://github.com/DaiShiResearch/TransNeXt)，其中Mutil-Head-Self-Attention负责提取全局特征，ConvolutionalGLU用于增强非线性特征表达能力，ConvolutionalGLU相比于传统的FFN，具有更强的性能。
     4. 可以根据不同的模型大小和具体的运行情况调节用于Transformer的通道数。
 
+17. ultralytics/cfg/models/v8/yolov8-SOEP.yaml  
+    
+    小目标在正常的P3、P4、P5检测层上略显吃力，比较传统的做法是加上P2检测层来提升小目标的检测能力，但是同时也会带来一系列的问题，例如加上P2检测层后计算量过大、后处理更加耗时等问题，日益激发需要开发新的针对小目标有效的特征金字塔，我们基于原本的PAFPN上进行改进，提出SmallObjectEnhancePyramid，相对于传统的添加P2检测层，我们使用P2特征层经过SPDConv得到富含小目标信息的特征给到P3进行融合，然后使用CSP思想和基于[AAAI2024的OmniKernel](https://ojs.aaai.org/index.php/AAAI/article/view/27907)进行改进得到CSP-OmniKernel进行特征整合，OmniKernel模块由三个分支组成，即三个分支，即全局分支、大分支和局部分支、以有效地学习从全局到局部的特征表征，最终从而提高小目标的检测性能。(该模块需要在train.py中关闭amp和half)
+
 ### BackBone系列
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
     
@@ -369,6 +373,14 @@
 15. ultralytics/cfg/models/v8/yolov8-GLSA.yaml
 
     使用[GLSA](https://github.com/Barrett-python/DuAT)模块改进yolov8的neck.
+
+16. ultralytics/cfg/models/v8/yolov8-CTrans.yaml
+
+    使用[[AAAI2022] UCTransNet](https://github.com/McGregorWwww/UCTransNet/tree/main)中的ChannelTransformer改进yolov8-neck.(需要看[常见错误和解决方案的第五点](#a))  
+
+17. ultralytics/cfg/models/v8/yolov8-p6-CTrans.yaml
+
+    使用[[AAAI2022] UCTransNet](https://github.com/McGregorWwww/UCTransNet/tree/main)中的ChannelTransformer改进yolov8-neck.(带有p6版本)(需要看[常见错误和解决方案的第五点](#a))  
 
 ### Head系列
 1. ultralytics/cfg/models/v8/yolov8-dyhead.yaml
@@ -1097,3 +1109,9 @@
     3. 新增GLSA对BIFPN进行二次创新.
     4. 更新使用教程.
     5. 百度云视频增加20240619更新说明.
+
+- **20240627-yolov8-v1.61**
+    1. 新增UCTransNet中的ChannelTransformer改进yolov8-neck.
+    2. 新增自研SmallObjectEnhancePyramid.
+    3. 更新使用教程.
+    4. 百度云视频增加20240627更新说明.
