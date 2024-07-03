@@ -186,6 +186,10 @@
     2. 相比传统的FPN结构，[SBA](https://github.com/Barrett-python/DuAT)模块引入了高分辨率和低分辨率特征之间的双向融合机制，使得特征之间的信息传递更加充分，进一步提升了多尺度特征融合的效果。
     3. [SBA](https://github.com/Barrett-python/DuAT)模块通过自适应的注意力机制，根据特征图的不同分辨率和内容，自适应地调整特征的权重，从而更好地捕捉目标的多尺度特征。
 
+8. ultralytics/cfg/models/rt-detr/rtdetr-SOEP.yaml
+
+    小目标在正常的P3、P4、P5检测层上略显吃力，比较传统的做法是加上P2检测层来提升小目标的检测能力，但是同时也会带来一系列的问题，例如加上P2检测层后计算量过大、后处理更加耗时等问题，日益激发需要开发新的针对小目标有效的特征金字塔，我们基于原本的PAFPN上进行改进，提出SmallObjectEnhancePyramid，相对于传统的添加P2检测层，我们使用P2特征层经过SPDConv得到富含小目标信息的特征给到P3进行融合，然后使用CSP思想和基于[AAAI2024的OmniKernel](https://ojs.aaai.org/index.php/AAAI/article/view/27907)进行改进得到CSP-OmniKernel进行特征整合，OmniKernel模块由三个分支组成，即三个分支，即全局分支、大分支和局部分支、以有效地学习从全局到局部的特征表征，最终从而提高小目标的检测性能。
+
 ### BackBone系列
 1. ultralytics/cfg/models/rt-detr/rt-detr-timm.yaml
 
@@ -259,6 +263,9 @@
 4. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-HiLo.yaml
 
     使用[LITv2](https://github.com/ziplab/LITv2)中具有提取高低频信息的高效注意力对AIFI进行二次改进.
+5. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-EfficientAdditive.yaml
+
+    使用[ICCV2023 SwiftFormer](https://github.com/Amshaker/SwiftFormer/tree/main)中的EfficientAdditiveAttention改进AIFI.
 
 ### Neck系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-ASF.yaml
@@ -305,6 +312,14 @@
 
     使用[GLSA](https://github.com/Barrett-python/DuAT)模块改进rtdetr的neck.
 
+12. ultralytics/cfg/models/rt-detr/rtdetr-CTrans.yaml
+
+    使用[[AAAI2022] UCTransNet](https://github.com/McGregorWwww/UCTransNet/tree/main)中的ChannelTransformer改进rtdetr-neck.
+
+13. ultralytics/cfg/models/rt-detr/rtdetr-p6-CTrans.yaml
+
+    使用[[AAAI2022] UCTransNet](https://github.com/McGregorWwww/UCTransNet/tree/main)中的ChannelTransformer改进rtdetr-neck.(带有p6版本)
+
 ### Head系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-p2.yaml
 
@@ -341,6 +356,7 @@
     3. KALNConv2DLayer
     4. KACNConv2DLayer
     5. KAGNConv2DLayer
+
 ### ResNet主干中的BasicBlock/BottleNeck改进系列(以下改进BottleNeck基本都有,就不再重复标注)
 1. ultralytics/cfg/models/rt-detr/rtdetr-Ortho.yaml
 
@@ -1340,3 +1356,10 @@
     3. 新增GLSA对BIFPN进行二次创新.
     4. 更新使用教程.
     5. 百度云视频增加20240622更新说明.
+
+- **20240703-rtdetr-v1.27**
+    1. 新增UCTransNet中的ChannelTransformer改进rtdetr-neck.
+    2. 新增自研SmallObjectEnhancePyramid.
+    3. 新增SwiftFormer的EfficientAdditiveAttention改进AIFI.
+    4. 更新使用教程.
+    5. 百度云视频增加20240703更新说明.
