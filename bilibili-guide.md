@@ -15,6 +15,21 @@
 12. [YOLOV8-硬塞注意力机制？这样做没创新！想知道注意力怎么用才有创新那赶快来看看！](https://www.bilibili.com/video/BV1bm421K7tf/)
 13. [YOLOV8改进-还硬塞注意力机制？这期用注意力机制手把手给大家自研一个ContextGuideFPN！创新真的不难，需要找对方法！](https://www.bilibili.com/video/BV1Vx4y1n7hZ/)
 14. [长达46分钟的肺腑之言！给以后想从事图像算法工程师、小白入门深度学习路线的总结！](https://www.bilibili.com/video/BV16y411h7T9/)
+15. [提升多少才能发paper？轻量化需要看什么指标？需要轻量化到什么程度才能发paper？这期给大家一一解答！](https://www.bilibili.com/video/BV1QZ421M7gu/)
+16. [深度学习实验部分常见疑问解答！(小白刚入门必看！少走弯路！少自我内耗！)](https://www.bilibili.com/video/BV1Bz421B7pC/)
+    ```
+    1. 如何衡量自己的所做的工作量够不够？
+    2. 为什么别人的论文说这个模块对xxx有作用，但是我自己用的时候还掉点了？
+    3. 提升是和什么模型相比呢 比如和yolov8这种基础模型比还是和别人提出的目前最好的模型比
+    4. 对比不同的模型的时候，输入尺寸，学习率，学习次数这些是否需要一致？
+    ```
+17. [深度学习实验部分常见疑问解答二！(小白刚入门必看！少走弯路！少自我内耗！)](https://www.bilibili.com/video/BV1ZM4m1m785/)
+    ```
+    1. 为什么我用yolov8自带的coco8、coco128训练出来的效果很差？
+    2. 我的数据集很大，机器跑得慢，我是否可以用数据集的百分之10的数据去测试这个改进点是否有效？有效再跑整个数据集？
+    ```
+18. [深度学习实验部分常见疑问解答三！(怎么判断模型是否收敛？模型过拟合怎么办？)](https://www.bilibili.com/video/BV11S421d76P/)
+19. [YOLO系列模型训练结果详细解答！(训练过程的一些疑问，该放哪个文件运行出来的结果、参数量计算量在哪里看..等等问题)](https://www.bilibili.com/video/BV11b421J7Vx/)
 
 ### YOLOV5,V7-PYQT5项目讲解
 1. [哔哩哔哩合集地址](https://space.bilibili.com/286900343/channel/collectiondetail?sid=917275)
@@ -39,6 +54,7 @@
 4. [如何添加FPS计算代码和FPS的相关的一些疑问](https://www.bilibili.com/video/BV1Sw411g7DD/)
 5. [预测框粗细颜色修改与精度小数位修改](https://www.bilibili.com/video/BV12K421a7rH/)
 6. [导出改进/剪枝的onnx模型和讲解onnx-opset和onnxsim的作用](https://www.bilibili.com/video/BV1CK421e7Y3/)
+7. [YOLOV8模型详细讲解(包含该如何改进YOLOV8)(刚入门小白，需要改进YOLOV8的同学必看！)](https://www.bilibili.com/video/BV1Ms421u7VH/)
 
 ### 目标检测干活系列
 1. [深入了解目标检测中的检测头](https://www.bilibili.com/video/BV1AQ4y1j7Cr/)
@@ -59,6 +75,7 @@
 9. [深度学习小实验-YOLO-Block家族(fps,flops,param)对比实验.](https://www.bilibili.com/video/BV17H4y1V7s9/)
 10. [输出YOLOV8、RTDETR各个层的计算量和参数量.](https://www.bilibili.com/video/BV1tb421b7aB/)
 11. [YOLOV8-不会把PR曲线的数据保存并绘制到一张图？不用怕，手把手教程来啦~](https://www.bilibili.com/video/BV1uC41177oE/)
+12. [yolov5、v7、v8、v9、v10曲线对比图、推理时间vs精度对比图绘制手把手教程！](https://www.bilibili.com/video/BV1yf421X7t5/)
 
 ### MMDet系列教程
 1. [一库打尽目标检测对比实验！mmdetection环境、训练、测试手把手教程！](https://www.bilibili.com/video/BV1xA4m1c7H8/)
