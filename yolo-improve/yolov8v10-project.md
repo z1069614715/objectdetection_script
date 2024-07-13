@@ -1,9 +1,12 @@
+# [基于Ultralytics的YOLOV8改进项目.(69.9¥)](https://github.com/z1069614715/objectdetection_script)
+
 # 目前自带的一些改进方案(持续更新)
 
 # 为了感谢各位对V8项目的支持,本项目的赠品是yolov5-PAGCP通道剪枝算法.[具体使用教程](https://www.bilibili.com/video/BV1yh4y1Z7vz/)
 
 # 专栏改进汇总
 
+## YOLOV8系列
 ### 二次创新系列
 1. ultralytics/cfg/models/v8/yolov8-RevCol.yaml
 
@@ -669,8 +672,131 @@
     2. C2f-Star.
     3. Lightweight Shared Convolutional Detection Head.
 
+## YOLOV10系列
+#### 以下配置文件都基于v10n，如果需要使用其他大小的模型(s,m,b,l,x)可以看项目视频百度云链接-YOLOV10模型大小切换教程.
 
-### Mamba-YOLO
+### 二次创新系列
+
+
+### 自研系列
+
+1. ultralytics/cfg/models/v10/yolov10n-C2f-EMSC.yaml
+
+    Efficient Multi-Scale Conv.自研模块,具体讲解请看百度云链接中的视频.
+
+2. ultralytics/cfg/models/v10/yolov10n-C2f-EMSCP.yaml
+
+    Efficient Multi-Scale Conv Plus.自研模块,具体讲解请看百度云链接中的视频.
+
+3. ultralytics/cfg/models/v10/yolov10n-LAWDS.yaml
+
+    Light Adaptive-weight downsampling.自研模块,具体讲解请看百度云链接中的视频.
+
+4. ultralytics/cfg/models/v10/yolov10n-LSCD.yaml
+
+    自研轻量化检测头.(Lightweight Shared Convolutional Detection Head)
+    1. GroupNorm在FCOS论文中已经证实可以提升检测头定位和分类的性能.
+    2. 通过使用共享卷积，可以大幅减少参数数量，这使得模型更轻便，特别是在资源受限的设备上.
+    3. 在使用共享卷积的同时，为了应对每个检测头所检测的目标尺度不一致的问题，使用Scale层对特征进行缩放.
+    综合以上，我们可以让检测头做到参数量更少、计算量更少的情况下，尽可能减少精度的损失.
+
+### BackBone系列
+
+1. ultralytics/cfg/models/v10/yolov10n-efficientViT.yaml
+
+    (CVPR2023)efficientViT替换yolov10主干.
+
+2. ultralytics/cfg/models/v10/yolov10n-fasternet.yaml
+
+    (CVPR2023)fasternet替换yolov10主干.
+
+3. ultralytics/cfg/models/v10/yolov10n-timm.yaml
+
+    使用timm支持的主干网络替换yolov10主干.
+
+4. ultralytics/cfg/models/v10/yolov10n-convnextv2.yaml
+
+    使用convnextv2网络替换yolov10主干.
+
+5. ultralytics/cfg/models/v10/yolov10n-EfficientFormerV2.yaml
+
+    使用EfficientFormerV2网络替换yolov10主干.(需要看[常见错误和解决方案的第五点](#a))  
+
+6. ultralytics/cfg/models/v10/yolov10n-vanillanet.yaml
+
+    vanillanet替换yolov10主干.
+
+7. ultralytics/cfg/models/v10/yolov10n-LSKNet.yaml
+
+    LSKNet(2023旋转目标检测SOTA的主干)替换yolov10主干.
+
+8. ultralytics/cfg/models/v10/yolov10n-swintransformer.yaml
+
+    SwinTransformer-Tiny替换yolov10主干.
+
+9. ultralytics/cfg/models/v10/yolov10n-repvit.yaml
+
+    [CVPR2024 RepViT](https://github.com/THU-MIG/RepViT/tree/main)替换yolov10主干.
+
+10. ultralytics/cfg/models/v10/yolov10n-CSwinTransformer.yaml
+
+    使用[CSWin-Transformer(CVPR2022)](https://github.com/microsoft/CSWin-Transformer/tree/main)替换yolov10主干.(需要看[常见错误和解决方案的第五点](#a))
+
+11. ultralytics/cfg/models/v10/yolov10n-HGNetV2.yaml
+
+    使用HGNetV2作为YOLOV10的backbone.
+
+12. ultralytics/cfg/models/v10/yolov10n-unireplknet.yaml
+
+    使用[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)替换yolov10主干.
+
+13. ultralytics/cfg/models/v10/yolov10n-TransNeXt.yaml
+
+    使用[TransNeXt](https://github.com/DaiShiResearch/TransNeXt)改进yolov10的backbone.(需要看[常见错误和解决方案的第五点](#a))   
+
+14. ultralytics/cfg/models/v10/yolov10n-rmt.yaml
+
+    使用[CVPR2024 RMT](https://arxiv.org/abs/2309.11523)改进yolov10的主干.
+
+15. ultralytics/cfg/models/v10/yolov10n-pkinet.yaml
+
+    使用[CVPR2024 PKINet](https://github.com/PKINet/PKINet)改进backbone.(需要安装mmcv和mmengine)
+
+16. ultralytics/cfg/models/v10/yolov10n-mobilenetv4.yaml
+
+    使用[MobileNetV4](https://github.com/jaiwei98/MobileNetV4-pytorch/tree/main)改进yolov10的backbone.
+
+17. ultralytics/cfg/models/v10/yolov10n-starnet.yaml
+
+    使用[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)改进yolov10-backbone.
+
+### SPPF系列
+### Neck系列
+
+1. ultralytics/cfg/models/v10/yolov10n-bifpn.yaml
+
+    添加BIFPN到yolov10中.  
+    其中BIFPN中有三个可选参数：
+    1. Fusion  
+        其中BIFPN中的Fusion模块支持五种: weight, adaptive, concat, bifpn(default), SDI  
+        其中weight, adaptive, concat出自[paper链接-Figure 3](https://openreview.net/pdf?id=q2ZaVU6bEsT), SDI出自[U-NetV2](https://github.com/yaoppeng/U-Net_v2)
+    2. node_mode  
+        其中支持这些[结构](#b)
+    3. head_channel  
+        BIFPN中的通道数,默认设置为256.
+
+### Head系列
+### Label Assign系列
+### PostProcess系列
+### 上下采样算子
+### C2f系列
+### 组合系列
+
+1. ultralytics/cfg/models/v10/yolov10n-starnet-bifpn.yaml
+
+    使用[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)和bifpn改进yolov10.
+
+# Mamba-YOLO
 1. [Mamba-YOLO](https://github.com/HZAI-ZJNU/Mamba-YOLO)
 
     集成Mamba-YOLO.(需要编译请看百度云视频-20240619版本更新说明)
@@ -679,7 +805,7 @@
     ultralytics/cfg/models/mamba-yolo/Mamba-YOLO-L.yaml
     ultralytics/cfg/models/mamba-yolo/yolo-mamba-seg.yaml
 
-### 注意力系列
+# 注意力系列
 1. EMA
 2. SimAM
 3. SpatialGroupEnhance
@@ -705,7 +831,7 @@
 23. CAA(CVPR2024 PKINet中的注意力)
 24. CAFM
 
-### Loss系列
+# Loss系列
 1. SlideLoss,EMASlideLoss.(可动态调节正负样本的系数,让模型更加注重难分类,错误分类的样本上)
 2. IoU,GIoU,DIoU,CIoU,EIoU,SIoU,MPDIoU,ShapeIoU.
 3. Inner-IoU,Inner-GIoU,Inner-DIoU,Inner-CIoU,Inner-EIoU,Inner-SIoU,Inner-ShapeIoU.
@@ -1118,3 +1244,11 @@
 
 - **20240707-yolov8-v1.62**
     1. 更新使用教程,增加常见疑问.  
+
+- **20240713-ultralytics-v1.63**
+    1. ultralytics版本已更新至8.2.50，后续会更新YOLOv8、YOLOv10的改进方案.
+    2. 新增YOLOV10改进、后续会一步一步更新V10的配置文件.（目前更新了backbone系列,一些自研系列的改进到v10中）
+    3. 更新使用教程.
+    4. 百度云视频增加20240713更新说明.
+    5. 百度云视频更新(断点续训教程、计算COCO指标教程、plot_result.py使用教程、项目使用教程必看系列、YOLOV10版本切换教程一)
+    6. 补充了EMSC和EMSCP的结构图.
