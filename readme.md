@@ -96,7 +96,10 @@
 
 - **mmdet-course**
     mmdet-course文件夹是提供mmdet教程相关资料，具体可看[readme.md](https://github.com/z1069614715/objectdetection_script/blob/master/mmdet-course/readme.md)
-    
+
+- **data-offline-aug**
+    data-offline-aug文件夹是关于图像任务的离线数据增强脚本，具体可看[readme.md](https://github.com/z1069614715/objectdetection_script/blob/master/data-offline-aug/readme.md)
+
 [![Forkers repo roster for @z1069614715/objectdetection_script](https://reporoster.com/forks/z1069614715/objectdetection_script)](https://github.com/z1069614715/objectdetection_script/network/members)
 [![Stargazers repo roster for @z1069614715/objectdetection_script](https://reporoster.com/stars/z1069614715/objectdetection_script)](https://github.com/z1069614715/objectdetection_script/stargazers)
 
