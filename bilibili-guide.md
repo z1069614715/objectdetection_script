@@ -81,6 +81,9 @@
 1. [一库打尽目标检测对比实验！mmdetection环境、训练、测试手把手教程！](https://www.bilibili.com/video/BV1xA4m1c7H8/)
 2. [一库打尽目标检测对比实验！mmdetection参数量、计算量、FPS、绘制logs手把手教程](https://www.bilibili.com/video/BV17C41137dW/)
 
+### 离线数据增强教程
+1. [目标检测数据集离线数据增强教程，包含对目标框、多种变换、天气变化等等增强！](https://www.bilibili.com/video/BV1bT421k7iq/)
+
 ### YOLO系列(YOLOV5,YOLOV7,YOLOV8)模型改进大合集
 #### YOLOV5(主干系列修改V7同样也适用)
 1. [添加EIOU，SIOU，ALPHA-IOU, FocalEIOU到yolov5的box_iou中](https://www.bilibili.com/video/BV1KM411b7Sz/)

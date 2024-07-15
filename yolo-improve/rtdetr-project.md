@@ -190,6 +190,13 @@
 
     小目标在正常的P3、P4、P5检测层上略显吃力，比较传统的做法是加上P2检测层来提升小目标的检测能力，但是同时也会带来一系列的问题，例如加上P2检测层后计算量过大、后处理更加耗时等问题，日益激发需要开发新的针对小目标有效的特征金字塔，我们基于原本的PAFPN上进行改进，提出SmallObjectEnhancePyramid，相对于传统的添加P2检测层，我们使用P2特征层经过SPDConv得到富含小目标信息的特征给到P3进行融合，然后使用CSP思想和基于[AAAI2024的OmniKernel](https://ojs.aaai.org/index.php/AAAI/article/view/27907)进行改进得到CSP-OmniKernel进行特征整合，OmniKernel模块由三个分支组成，即三个分支，即全局分支、大分支和局部分支、以有效地学习从全局到局部的特征表征，最终从而提高小目标的检测性能。
 
+9. ultralytics/cfg/models/rt-detr/rtdetr-CGRFPN.yaml
+
+    Context-Guided Spatial Feature Reconstruction Feature Pyramid Network.
+    1. 借鉴[ECCV2024-CGRSeg](https://github.com/nizhenliang/CGRSeg)中的Rectangular Self-Calibration Module经过精心设计,用于空间特征重建和金字塔上下文提取,它在水平和垂直方向上捕获全局上下文，并获得轴向全局上下文来显式地建模矩形关键区域.
+    2. PyramidContextExtraction Module使用金字塔上下文提取模块（PyramidContextExtraction），有效整合不同层级的特征信息，提升模型的上下文感知能力。
+    3. FuseBlockMulti 和 DynamicInterpolationFusion 这些模块用于多尺度特征的融合，通过动态插值和多特征融合，进一步提高了模型的多尺度特征表示能力和提升模型对复杂背景下目标的识别能力。
+
 ### BackBone系列
 1. ultralytics/cfg/models/rt-detr/rt-detr-timm.yaml
 
@@ -440,6 +447,11 @@
 
     使用[DEA-Net](https://github.com/cecret3350/DEA-Net)中的detail-enhanced convolution改进resnet18-basicblock.
     关于DEConv在运行的时候重参数化后比重参数化前的计算量还要大的问题:是因为重参数化前thop库其计算不准的问题,看重参数化后的参数即可.
+
+25. ultralytics/cfg/models/rt-detr/rtdetr-WTConv.yaml
+
+    使用[ECCV2024 Wavelet Convolutions for Large Receptive Fields](https://github.com/BGU-CS-VIL/WTConv)中的WTConv改进BasicBlock.
+
 ### 上下采样算子系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-DySample.yaml
 
@@ -1363,3 +1375,10 @@
     3. 新增SwiftFormer的EfficientAdditiveAttention改进AIFI.
     4. 更新使用教程.
     5. 百度云视频增加20240703更新说明.
+
+- **20240715-rtdetr-v1.28**
+    1. 新增自研Context-Guided Spatial Feature Reconstruction Feature Pyramid Network.
+    2. 新增Wavelet Convolutions for Large Receptive Fields中的WTConv改进BasicBlock.
+    3. 新增UBRFC-Net中的Adaptive Fine-Grained Channel Attention.
+    4. 更新使用教程.
+    5. 百度云视频增加20240715更新说明.
