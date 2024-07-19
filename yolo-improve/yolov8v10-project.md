@@ -1,8 +1,8 @@
-# [基于Ultralytics的YOLOV8改进项目.(69.9¥)](https://github.com/z1069614715/objectdetection_script)
+# [基于Ultralytics的YOLOV8V10改进项目.(69.9¥)](https://github.com/z1069614715/objectdetection_script)
 
 # 目前自带的一些改进方案(持续更新)
 
-# 为了感谢各位对V8项目的支持,本项目的赠品是yolov5-PAGCP通道剪枝算法.[具体使用教程](https://www.bilibili.com/video/BV1yh4y1Z7vz/)
+# 为了感谢各位对本项目的支持,本项目的赠品是yolov5-PAGCP通道剪枝算法.[具体使用教程](https://www.bilibili.com/video/BV1yh4y1Z7vz/)
 
 # 专栏改进汇总
 
@@ -249,7 +249,15 @@
 
 17. ultralytics/cfg/models/v8/yolov8-SOEP.yaml  
     
-    小目标在正常的P3、P4、P5检测层上略显吃力，比较传统的做法是加上P2检测层来提升小目标的检测能力，但是同时也会带来一系列的问题，例如加上P2检测层后计算量过大、后处理更加耗时等问题，日益激发需要开发新的针对小目标有效的特征金字塔，我们基于原本的PAFPN上进行改进，提出SmallObjectEnhancePyramid，相对于传统的添加P2检测层，我们使用P2特征层经过SPDConv得到富含小目标信息的特征给到P3进行融合，然后使用CSP思想和基于[AAAI2024的OmniKernel](https://ojs.aaai.org/index.php/AAAI/article/view/27907)进行改进得到CSP-OmniKernel进行特征整合，OmniKernel模块由三个分支组成，即三个分支，即全局分支、大分支和局部分支、以有效地学习从全局到局部的特征表征，最终从而提高小目标的检测性能。(该模块需要在train.py中关闭amp和half)
+    小目标在正常的P3、P4、P5检测层上略显吃力，比较传统的做法是加上P2检测层来提升小目标的检测能力，但是同时也会带来一系列的问题，例如加上P2检测层后计算量过大、后处理更加耗时等问题，日益激发需要开发新的针对小目标有效的特征金字塔，我们基于原本的PAFPN上进行改进，提出SmallObjectEnhancePyramid，相对于传统的添加P2检测层，我们使用P2特征层经过SPDConv得到富含小目标信息的特征给到P3进行融合，然后使用CSP思想和基于[AAAI2024的OmniKernel](https://ojs.aaai.org/index.php/AAAI/article/view/27907)进行改进得到CSP-OmniKernel进行特征整合，OmniKernel模块由三个分支组成，即三个分支，即全局分支、大分支和局部分支、以有效地学习从全局到局部的特征表征，最终从而提高小目标的检测性能。(该模块需要在train.py中关闭amp、且在ultralytics/engine/validator.py 115行附近的self.args.half设置为False、跑其余改进记得修改回去！)
+    出现这个报错的:RuntimeError: cuFFT error: CUFFT_INTERNAL_ERROR,如果你是40系显卡,需要更新torch大于2.0，并且cuda大于12.0.
+
+18. ultralytics/cfg/models/v8/yolov8-CGRFPN.yaml
+
+    Context-Guided Spatial Feature Reconstruction Feature Pyramid Network.
+    1. 借鉴[ECCV2024-CGRSeg](https://github.com/nizhenliang/CGRSeg)中的Rectangular Self-Calibration Module经过精心设计,用于空间特征重建和金字塔上下文提取,它在水平和垂直方向上捕获全局上下文，并获得轴向全局上下文来显式地建模矩形关键区域.
+    2. PyramidContextExtraction Module使用金字塔上下文提取模块（PyramidContextExtraction），有效整合不同层级的特征信息，提升模型的上下文感知能力。
+    3. FuseBlockMulti 和 DynamicInterpolationFusion 这些模块用于多尺度特征的融合，通过动态插值和多特征融合，进一步提高了模型的多尺度特征表示能力和提升模型对复杂背景下目标的识别能力。
 
 ### BackBone系列
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
@@ -642,6 +650,10 @@
 
     使用[vHeat](https://github.com/MzeroMiko/vHeat/tree/main)中的HeatBlock改进C2f.
 
+49. ultralytics/cfg/models/v8/yolov8-C2f-WTConv.yaml
+
+    使用[ECCV2024 Wavelet Convolutions for Large Receptive Fields](https://github.com/BGU-CS-VIL/WTConv)中的WTConv改进C2f-BottleNeck.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -676,7 +688,13 @@
 #### 以下配置文件都基于v10n，如果需要使用其他大小的模型(s,m,b,l,x)可以看项目视频百度云链接-YOLOV10模型大小切换教程.
 
 ### 二次创新系列
+1. SlideLoss and EMASlideLoss.[Yolo-Face V2](https://github.com/Krasjet-Yu/YOLO-FaceV2/blob/master/utils/loss.py)
 
+    在ultralytics/utils/loss.py中的class v8DetectionLoss进行设定.
+
+2. ultralytics/cfg/models/v10/yolov10n-RevCol.yaml
+
+    使用[(ICLR2023)Reversible Column Networks](https://github.com/megvii-research/RevCol)对yolov10主干进行重设计,里面的支持更换不同的C2f-Block.
 
 ### 自研系列
 
@@ -699,6 +717,13 @@
     2. 通过使用共享卷积，可以大幅减少参数数量，这使得模型更轻便，特别是在资源受限的设备上.
     3. 在使用共享卷积的同时，为了应对每个检测头所检测的目标尺度不一致的问题，使用Scale层对特征进行缩放.
     综合以上，我们可以让检测头做到参数量更少、计算量更少的情况下，尽可能减少精度的损失.
+
+5. ultralytics/cfg/models/v10/yolov10n-CGRFPN.yaml
+
+    Context-Guided Spatial Feature Reconstruction Feature Pyramid Network.
+    1. 借鉴[ECCV2024-CGRSeg](https://github.com/nizhenliang/CGRSeg)中的Rectangular Self-Calibration Module经过精心设计,用于空间特征重建和金字塔上下文提取,它在水平和垂直方向上捕获全局上下文，并获得轴向全局上下文来显式地建模矩形关键区域.
+    2. PyramidContextExtraction Module使用金字塔上下文提取模块（PyramidContextExtraction），有效整合不同层级的特征信息，提升模型的上下文感知能力。
+    3. FuseBlockMulti 和 DynamicInterpolationFusion 这些模块用于多尺度特征的融合，通过动态插值和多特征融合，进一步提高了模型的多尺度特征表示能力和提升模型对复杂背景下目标的识别能力。
 
 ### BackBone系列
 
@@ -771,6 +796,15 @@
     使用[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)改进yolov10-backbone.
 
 ### SPPF系列
+
+1. ultralytics/cfg/models/v10/yolov10n-FocalModulation.yaml
+
+    使用[Focal Modulation](https://github.com/microsoft/FocalNet)替换SPPF.
+
+2. ultralytics/cfg/models/v10/yolov10n-SPPF-LSKA.yaml
+
+    使用[LSKA](https://github.com/StevenLauHKHK/Large-Separable-Kernel-Attention)注意力机制改进SPPF,增强多尺度特征提取能力.
+
 ### Neck系列
 
 1. ultralytics/cfg/models/v10/yolov10n-bifpn.yaml
@@ -785,11 +819,63 @@
     3. head_channel  
         BIFPN中的通道数,默认设置为256.
 
+2. ultralytics/cfg/models/v10/yolov10n-slimneck.yaml
+
+    使用[VoVGSCSP\VoVGSCSPC和GSConv](https://github.com/AlanLi1997/slim-neck-by-gsconv)替换yolov10 neck中的C2f和Conv.
+
 ### Head系列
 ### Label Assign系列
 ### PostProcess系列
 ### 上下采样算子
+
+1. ultralytics/cfg/models/v10/yolov10n-ContextGuidedDown.yaml
+
+    使用[CGNet](https://github.com/wutianyiRosun/CGNet/tree/master)中的Light-weight Context Guided DownSample进行下采样.
+
+2. ultralytics/cfg/models/v10/yolov10n-SPDConv.yaml
+
+    使用[SPDConv](https://github.com/LabSAINT/SPD-Conv/tree/main)进行下采样.
+
+3. ultralytics/cfg/models/v10/yolov10n-dysample.yaml
+
+    使用[ICCV2023 DySample](https://arxiv.org/abs/2308.15085)改进yolov10-neck中的上采样.
+
+4. ultralytics/cfg/models/v10/yolov10n-CARAFE.yaml
+
+    使用[ICCV2019 CARAFE](https://arxiv.org/abs/1905.02188)改进yolov10-neck中的上采样.
+
+5. ultralytics/cfg/models/v10/yolov10n-HWD.yaml
+
+    使用[Haar wavelet downsampling](https://www.sciencedirect.com/science/article/abs/pii/S0031320323005174)改进yolov8的下采样.(请关闭AMP情况下使用)
+
+6. ultralytics/cfg/models/v8=10/yolov10n-v7DS.yaml
+
+    使用[YOLOV7 CVPR2023](https://arxiv.org/abs/2207.02696)的下采样结构改进YOLOV10中的下采样.
+
+7. ultralytics/cfg/models/v10/yolov10n-ADown.yaml
+
+    使用[YOLOV9](https://github.com/WongKinYiu/yolov9)的下采样结构改进YOLOV10中的下采样.
+
+8. ultralytics/cfg/models/v10/yolov10n-SRFD.yaml
+
+    使用[A Robust Feature Downsampling Module for Remote Sensing Visual Tasks](https://ieeexplore.ieee.org/document/10142024)改进yolov10的下采样.
+
+9. ultralytics/cfg/models/v10/yolov10n-WaveletPool.yaml
+
+    使用[Wavelet Pooling](https://openreview.net/forum?id=rkhlb8lCZ)改进YOLOV10的上采样和下采样。
+
 ### C2f系列
+
+1. ultralytics/cfg/models/v10/yolov10n-C2f-WTConv.yaml
+
+    使用[ECCV2024 Wavelet Convolutions for Large Receptive Fields](https://github.com/BGU-CS-VIL/WTConv)中的WTConv改进C2f-BottleNeck.
+
+2. ultralytics/cfg/models/v10/yolov10n-attention.yaml
+
+    可以看项目视频-如何在yaml配置文件中添加注意力层  
+    多种注意力机制在yolov10中的使用. [多种注意力机制github地址](https://github.com/z1069614715/objectdetection_script/tree/master/cv-attention)  
+    目前内部整合的注意力可看[链接](#c)
+
 ### 组合系列
 
 1. ultralytics/cfg/models/v10/yolov10n-starnet-bifpn.yaml
@@ -827,9 +913,10 @@
 19. MLCA
 20. TransNeXt_AggregatedAttention
 21. LocalWindowAttention(EfficientViT中的CascadedGroupAttention注意力)
-22. Efficient Local Attention
+22. Efficient Local Attention[Efficient Local Attention](https://arxiv.org/abs/2403.01123)
 23. CAA(CVPR2024 PKINet中的注意力)
 24. CAFM
+25. AFGCAttention[Neural Networks ECCV2024](https://www.sciencedirect.com/science/article/abs/pii/S0893608024002387)
 
 # Loss系列
 1. SlideLoss,EMASlideLoss.(可动态调节正负样本的系数,让模型更加注重难分类,错误分类的样本上)
@@ -1252,3 +1339,11 @@
     4. 百度云视频增加20240713更新说明.
     5. 百度云视频更新(断点续训教程、计算COCO指标教程、plot_result.py使用教程、项目使用教程必看系列、YOLOV10版本切换教程一)
     6. 补充了EMSC和EMSCP的结构图.
+
+- **20240720-ultralytics-v1.64**
+    1. 修复一些已知问题.
+    2. 新增自研Context-Guided Spatial Feature Reconstruction Feature Pyramid Network.
+    3. 新增Wavelet Convolutions for Large Receptive Fields中的WTConv改进C2f.
+    4. 新增UBRFC-Net中的Adaptive Fine-Grained Channel Attention.
+    5. 更新使用教程.
+    6. 百度云视频增加20240720更新说明.
