@@ -1347,3 +1347,4 @@
     4. 新增UBRFC-Net中的Adaptive Fine-Grained Channel Attention.
     5. 更新使用教程.
     6. 百度云视频增加20240720更新说明.
+    7. 增加v10多个改进、主要是上下采样系列.
