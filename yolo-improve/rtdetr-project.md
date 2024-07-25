@@ -1,3 +1,5 @@
+# [基于Ultralytics的RT-DETR改进项目.(89.9¥)](https://github.com/z1069614715/objectdetection_script)
+
 # 目前自带的一些改进方案(持续更新)
 
 # 为了感谢各位对RTDETR项目的支持,本项目的赠品是yolov5-PAGCP通道剪枝算法.[具体使用教程](https://www.bilibili.com/video/BV1yh4y1Z7vz/)
@@ -255,7 +257,15 @@
 
 19. ultralytics/cfg/models/rt-detr/rtdetr-C2f-vHeat.yaml
 
-    使用[vHeat](https://github.com/MzeroMiko/vHeat/tree/main)中的HeatBlock和C2f改进backbon.
+    使用[vHeat](https://github.com/MzeroMiko/vHeat/tree/main)中的HeatBlock和C2f改进backbone.
+
+20. ultralytics/cfg/models/rt-detr/rtdetr-C2f-FMB.yaml
+
+    使用[ECCV2024 SMFANet](https://github.com/Zheng-MJ/SMFANet/tree/main)的Feature Modulation block改进C2f.
+
+21. ultralytics/cfg/models/rt-detr/rtdetr-C2f-gConv.yaml
+
+    使用[Rethinking Performance Gains in Image Dehazing Networks](https://arxiv.org/abs/2209.11448)的gConvblock改进C2f.
 
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
@@ -363,6 +373,9 @@
     3. KALNConv2DLayer
     4. KACNConv2DLayer
     5. KAGNConv2DLayer
+9. ultralytics/cfg/models/rt-detr/rtdetr-gConvC3.yaml
+
+    使用[Rethinking Performance Gains in Image Dehazing Networks](https://arxiv.org/abs/2209.11448)的gConvblock改进RepC3.
 
 ### ResNet主干中的BasicBlock/BottleNeck改进系列(以下改进BottleNeck基本都有,就不再重复标注)
 1. ultralytics/cfg/models/rt-detr/rtdetr-Ortho.yaml
@@ -1382,3 +1395,9 @@
     3. 新增UBRFC-Net中的Adaptive Fine-Grained Channel Attention.
     4. 更新使用教程.
     5. 百度云视频增加20240715更新说明.
+
+- **20240725-rtdetr-v1.29**
+    1. 新增ECCV2024-SMFANet中的Feature Modulation block.
+    2. 新增Rethinking Performance Gains in Image Dehazing Networks中的gConvblock.
+    3. 更新使用教程.
+    4. 百度云视频增加20240725更新说明.

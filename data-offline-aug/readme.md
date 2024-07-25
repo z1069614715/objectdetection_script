@@ -12,7 +12,7 @@
 ### 2. segment_data_aug.py
 
     语义分割离线数据增强脚本.
-    视频教程链接:
+    视频教程链接:https://www.bilibili.com/video/BV1xi421a7Gb/
 
 # Reference
 https://github.com/albumentations-team/albumentations  
