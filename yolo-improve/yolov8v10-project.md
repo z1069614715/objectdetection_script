@@ -259,6 +259,20 @@
     2. PyramidContextExtraction Module使用金字塔上下文提取模块（PyramidContextExtraction），有效整合不同层级的特征信息，提升模型的上下文感知能力。
     3. FuseBlockMulti 和 DynamicInterpolationFusion 这些模块用于多尺度特征的融合，通过动态插值和多特征融合，进一步提高了模型的多尺度特征表示能力和提升模型对复杂背景下目标的识别能力。
 
+19. ultralytics/cfg/models/v8/yolov8-FeaturePyramidSharedConv.yaml
+
+    1. 多尺度特征提取
+        通过使用不同膨胀率的卷积层，模块能够提取不同尺度的特征。这对捕捉图像中不同大小和不同上下文的信息非常有利。
+        低膨胀率捕捉局部细节，高膨胀率捕捉全局上下文。
+    2. 参数共享
+        使用共享的卷积层 self.share_conv，大大减少了需要训练的参数数量。相比于每个膨胀率使用独立的卷积层，共享卷积层能够减少冗余，提升模型效率。
+        减少了模型的存储和计算开销，提升了计算效率。
+    3. 高效的通道变换
+        通过1x1卷积层 self.cv1 和 self.cv2，模块能够高效地调整通道数，并进行特征融合。1x1卷积层在减少参数量的同时还能保留重要的特征信息。
+    4. 更细粒度的特征提取
+        FeaturePyramidSharedConv 使用卷积操作进行特征提取，能够捕捉更加细粒度的特征。相比之下，SPPF 的池化操作可能会丢失一些细节信息。
+        卷积操作在特征提取时具有更高的灵活性和表达能力，可以更好地捕捉图像中的细节和复杂模式。
+
 ### BackBone系列
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
     
@@ -654,6 +668,10 @@
 
     使用[ECCV2024 Wavelet Convolutions for Large Receptive Fields](https://github.com/BGU-CS-VIL/WTConv)中的WTConv改进C2f-BottleNeck.
 
+50. ultralytics/cfg/models/v8/yolov8-C2f-FMB.yaml
+
+    使用[ECCV2024 SMFANet](https://github.com/Zheng-MJ/SMFANet/tree/main)的Feature Modulation block改进C2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -724,6 +742,20 @@
     1. 借鉴[ECCV2024-CGRSeg](https://github.com/nizhenliang/CGRSeg)中的Rectangular Self-Calibration Module经过精心设计,用于空间特征重建和金字塔上下文提取,它在水平和垂直方向上捕获全局上下文，并获得轴向全局上下文来显式地建模矩形关键区域.
     2. PyramidContextExtraction Module使用金字塔上下文提取模块（PyramidContextExtraction），有效整合不同层级的特征信息，提升模型的上下文感知能力。
     3. FuseBlockMulti 和 DynamicInterpolationFusion 这些模块用于多尺度特征的融合，通过动态插值和多特征融合，进一步提高了模型的多尺度特征表示能力和提升模型对复杂背景下目标的识别能力。
+
+6. ultralytics/cfg/models/v10/yolov10n-FeaturePyramidSharedConv.yaml
+
+    1. 多尺度特征提取
+        通过使用不同膨胀率的卷积层，模块能够提取不同尺度的特征。这对捕捉图像中不同大小和不同上下文的信息非常有利。
+        低膨胀率捕捉局部细节，高膨胀率捕捉全局上下文。
+    2. 参数共享
+        使用共享的卷积层 self.share_conv，大大减少了需要训练的参数数量。相比于每个膨胀率使用独立的卷积层，共享卷积层能够减少冗余，提升模型效率。
+        减少了模型的存储和计算开销，提升了计算效率。
+    3. 高效的通道变换
+        通过1x1卷积层 self.cv1 和 self.cv2，模块能够高效地调整通道数，并进行特征融合。1x1卷积层在减少参数量的同时还能保留重要的特征信息。
+    4. 更细粒度的特征提取
+        FeaturePyramidSharedConv 使用卷积操作进行特征提取，能够捕捉更加细粒度的特征。相比之下，SPPF 的池化操作可能会丢失一些细节信息。
+        卷积操作在特征提取时具有更高的灵活性和表达能力，可以更好地捕捉图像中的细节和复杂模式。
 
 ### BackBone系列
 
@@ -823,6 +855,10 @@
 
     使用[VoVGSCSP\VoVGSCSPC和GSConv](https://github.com/AlanLi1997/slim-neck-by-gsconv)替换yolov10 neck中的C2f和Conv.
 
+3. ultralytics/cfg/models/v10/yolov10n-goldyolo.yaml
+
+    利用华为2023最新GOLD-YOLO中的Gatherand-Distribute进行改进特征融合模块.
+
 ### Head系列
 ### Label Assign系列
 ### PostProcess系列
@@ -875,6 +911,30 @@
     可以看项目视频-如何在yaml配置文件中添加注意力层  
     多种注意力机制在yolov10中的使用. [多种注意力机制github地址](https://github.com/z1069614715/objectdetection_script/tree/master/cv-attention)  
     目前内部整合的注意力可看[链接](#c)
+
+3. ultralytics/cfg/models/v10/yolov10n-C2f-FMB.yaml
+
+    使用[ECCV2024 SMFANet](https://github.com/Zheng-MJ/SMFANet/tree/main)的Feature Modulation block改进C2f.
+
+4. ultralytics/cfg/models/v10/yolov10n-C2f-Faster.yaml
+
+    使用C2f-Faster替换C2f.(使用FasterNet中的FasterBlock替换C2f中的Bottleneck)
+
+5. ultralytics/cfg/models/v10/yolov10n-C2f-ODConv.yaml
+
+    使用C2f-ODConv替换C2f.(使用ODConv替换C2f中的Bottleneck中的Conv)
+
+6. ultralytics/cfg/models/v10/yolov10n-C2f-Faster-EMA.yaml
+
+    使用C2f-Faster-EMA替换C2f.(C2f-Faster-EMA推荐可以放在主干上,Neck和head部分可以选择C2f-Faster)
+
+7. ultralytics/cfg/models/v10/yolov10n-C2f-DBB.yaml
+
+    使用C2f-DBB替换C2f.(使用DiverseBranchBlock替换C2f中的Bottleneck中的Conv)
+
+8. ultralytics/cfg/models/v10/yolov10n-C2f-CloAtt.yaml
+
+    使用C2f-CloAtt替换C2f.(使用CloFormer中的具有全局和局部特征的注意力机制添加到C2f中的Bottleneck中)(需要看[常见错误和解决方案的第五点](#a))
 
 ### 组合系列
 
@@ -1348,3 +1408,10 @@
     5. 更新使用教程.
     6. 百度云视频增加20240720更新说明.
     7. 增加v10多个改进、主要是上下采样系列.
+
+- **20240729-ultralytics-v1.65**
+    1. 新增自研FeaturePyramidSharedConv.
+    2. 新增ECCV2024-SMFANet中的Feature Modulation block.
+    3. 增加v10多个改进.
+    4. 更新使用教程.
+    5. 百度云视频增加20240729更新说明.
