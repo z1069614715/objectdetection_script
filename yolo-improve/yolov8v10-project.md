@@ -127,6 +127,10 @@
 
     使用[GLSA](https://github.com/Barrett-python/DuAT)模块对bifpn进行二次创新.
 
+34. ultralytics/cfg/models/v8/yolov8-BIMAFPN.yaml
+
+    利用BIFPN的思想对[MAF-YOLO](https://arxiv.org/pdf/2407.04381)的MAFPN进行二次改进得到BIMAFPN.
+
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
 
@@ -407,6 +411,10 @@
 
     使用[[AAAI2022] UCTransNet](https://github.com/McGregorWwww/UCTransNet/tree/main)中的ChannelTransformer改进yolov8-neck.(带有p6版本)(需要看[常见错误和解决方案的第五点](#a))  
 
+18. ultralytics/cfg/models/v8/yolov8-MAFPN.yaml
+
+    使用[MAF-YOLO](https://arxiv.org/pdf/2407.04381)的MAFPN改进Neck.
+
 ### Head系列
 1. ultralytics/cfg/models/v8/yolov8-dyhead.yaml
 
@@ -486,6 +494,10 @@
 9. ultralytics/cfg/models/v8/yolov8-WaveletPool.yaml
 
     使用[Wavelet Pooling](https://openreview.net/forum?id=rkhlb8lCZ)改进YOLOV8的上采样和下采样。
+
+10. ultralytics/cfg/models/v8/yolov8-LDConv.yaml
+
+    使用[LDConv](https://github.com/CV-ZhangXin/LDConv/tree/main)改进下采样.
 
 ### YOLOV8-C2f系列
 1. ultralytics/cfg/models/v8/yolov8-C2f-Faster.yaml
@@ -672,6 +684,10 @@
 
     使用[ECCV2024 SMFANet](https://github.com/Zheng-MJ/SMFANet/tree/main)的Feature Modulation block改进C2f.
 
+51. ultralytics/cfg/models/v8/yolov8-C2f-gConv.yaml
+
+    使用[Rethinking Performance Gains in Image Dehazing Networks](https://arxiv.org/abs/2209.11448)的gConvblock改进C2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -713,6 +729,10 @@
 2. ultralytics/cfg/models/v10/yolov10n-RevCol.yaml
 
     使用[(ICLR2023)Reversible Column Networks](https://github.com/megvii-research/RevCol)对yolov10主干进行重设计,里面的支持更换不同的C2f-Block.
+
+3. ultralytics/cfg/models/v10/yolov10n-BIMAFPN.yaml
+
+    利用BIFPN的思想对[MAF-YOLO](https://arxiv.org/pdf/2407.04381)的MAFPN进行二次改进得到BIMAFPN.
 
 ### 自研系列
 
@@ -859,6 +879,10 @@
 
     利用华为2023最新GOLD-YOLO中的Gatherand-Distribute进行改进特征融合模块.
 
+4. ultralytics/cfg/models/v10/yolov10n-MAFPN.yaml
+
+    使用[MAF-YOLO](https://arxiv.org/pdf/2407.04381)的MAFPN改进Neck.
+
 ### Head系列
 ### Label Assign系列
 ### PostProcess系列
@@ -900,6 +924,10 @@
 
     使用[Wavelet Pooling](https://openreview.net/forum?id=rkhlb8lCZ)改进YOLOV10的上采样和下采样。
 
+10. ultralytics/cfg/models/v10/yolov10n-LDConv.yaml
+
+    使用[LDConv](https://github.com/CV-ZhangXin/LDConv/tree/main)改进下采样.
+
 ### C2f系列
 
 1. ultralytics/cfg/models/v10/yolov10n-C2f-WTConv.yaml
@@ -935,6 +963,28 @@
 8. ultralytics/cfg/models/v10/yolov10n-C2f-CloAtt.yaml
 
     使用C2f-CloAtt替换C2f.(使用CloFormer中的具有全局和局部特征的注意力机制添加到C2f中的Bottleneck中)(需要看[常见错误和解决方案的第五点](#a))
+
+9. ultralytics/cfg/models/v10/yolov10n-C2f-gConv.yaml
+
+    使用[Rethinking Performance Gains in Image Dehazing Networks](https://arxiv.org/abs/2209.11448)的gConvblock改进C2f.
+
+10. ultralytics/cfg/models/v10/yolov10n-C2f-SCConv.yaml
+
+    SCConv(CVPR2020 http://mftp.mmcheng.net/Papers/20cvprSCNet.pdf)与C2f融合.
+
+11. ultralytics/cfg/models/v10/yolov10n-C2f-SCcConv.yaml
+
+    ScConv(CVPR2023 https://openaccess.thecvf.com/content/CVPR2023/papers/Li_SCConv_Spatial_and_Channel_Reconstruction_Convolution_for_Feature_Redundancy_CVPR_2023_paper.pdf)与C2f融合.  
+    (取名为SCcConv的原因是在windows下命名是不区分大小写的)
+
+12. ultralytics/cfg/models/v10/yolov10n-KernelWarehouse.yaml
+
+    使用[Towards Parameter-Efficient Dynamic Convolution](https://github.com/OSVAI/KernelWarehouse)添加到yolov10中.  
+    使用此模块需要注意,在epoch0-20的时候精度会非常低,过了20epoch会正常.
+
+13. ultralytics/cfg/models/v10/yolov10n-C2f-DySnakeConv.yaml
+
+    [DySnakeConv](https://github.com/YaoleiQi/DSCNet)与C2f融合.
 
 ### 组合系列
 
@@ -1415,3 +1465,10 @@
     3. 增加v10多个改进.
     4. 更新使用教程.
     5. 百度云视频增加20240729更新说明.
+
+- **20240803-ultralytics-v1.66**
+    1. 新增LDConv.
+    2. 新增Rethinking Performance Gains in Image Dehazing Networks中的gConv.
+    3. 新增MAF-YOLO中的MAFPN，并利用BIFPN的思想对MAFPN进行二次创新得到BIMAFPN.
+    4. 更新使用教程.
+    5. 百度云视频增加20240803更新说明.

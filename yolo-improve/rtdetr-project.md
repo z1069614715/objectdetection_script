@@ -138,6 +138,10 @@
 
     使用[GLSA](https://github.com/Barrett-python/DuAT)模块对bifpn进行二次创新.
 
+26. ultralytics/cfg/models/rt-detr/rtdetr-BIMAFPN.yaml
+
+    利用BIFPN的思想对[MAF-YOLO](https://arxiv.org/pdf/2407.04381)的MAFPN进行二次改进得到BIMAFPN.
+
 ### 自研系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-PACAPN.yaml
 
@@ -337,6 +341,10 @@
 
     使用[[AAAI2022] UCTransNet](https://github.com/McGregorWwww/UCTransNet/tree/main)中的ChannelTransformer改进rtdetr-neck.(带有p6版本)
 
+14. ultralytics/cfg/models/rt-detr/rtdetr-MAFPN.yaml
+
+    使用[MAF-YOLO](https://arxiv.org/pdf/2407.04381)的MAFPN改进Neck.
+
 ### Head系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-p2.yaml
 
@@ -485,6 +493,10 @@
 6. ultralytics/cfg/models/rt-detr/rtdetr-WaveletPool.yaml
 
     使用[Wavelet Pooling](https://openreview.net/forum?id=rkhlb8lCZ)改进RTDETR的上采样和下采样。
+
+7. ultralytics/cfg/models/rt-detr/rtdetr-LDConv.yaml
+
+    使用[LDConv](https://github.com/CV-ZhangXin/LDConv/tree/main)改进下采样.
 
 ### RT-DETR-L改进系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-l-GhostHGNetV2.yaml
@@ -1401,3 +1413,9 @@
     2. 新增Rethinking Performance Gains in Image Dehazing Networks中的gConvblock.
     3. 更新使用教程.
     4. 百度云视频增加20240725更新说明.
+
+- **20240802-rtdetr-v1.30**
+    1. 新增LDConv.
+    2. 新增MAF-YOLO中的MAFPN，并利用BIFPN的思想对MAFPN进行二次创新得到BIMAFPN.
+    3. 更新使用教程.
+    4. 百度云视频增加20240802更新说明.
