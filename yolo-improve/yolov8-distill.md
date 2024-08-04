@@ -13,6 +13,7 @@
     1. L1
     2. L2
     3. [BCKD](https://link.zhihu.com/?target=https%3A//arxiv.org//pdf/2308.14286)(Bridging Cross-task Protocol Inconsistency for Distillation in Dense Object Detection,ICCV 2023)
+    4. Double distillation strategy.(针对yolov10的结构开发)
 2. Feature
     1. Mimic
     2. [Masked Generative Distillation](https://link.zhihu.com/?target=https%3A//arxiv.org/pdf/2205.01529.pdf) (ECCV 2022)
