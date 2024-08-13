@@ -288,6 +288,10 @@
 
     使用[ICCV2023 SwiftFormer](https://github.com/Amshaker/SwiftFormer/tree/main)中的EfficientAdditiveAttention改进AIFI.
 
+6. ultralytics/cfg/models/rt-detr/rtdetr-AIFIRepBN.yaml
+
+    使用[ICML-2024 SLAB](https://github.com/xinghaochen/SLAB)中的RepBN改进AIFI.
+
 ### Neck系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-ASF.yaml
 
@@ -472,6 +476,14 @@
 25. ultralytics/cfg/models/rt-detr/rtdetr-WTConv.yaml
 
     使用[ECCV2024 Wavelet Convolutions for Large Receptive Fields](https://github.com/BGU-CS-VIL/WTConv)中的WTConv改进BasicBlock.
+
+26. ultralytics/cfg/models/rt-detr/rtdetr-WDBB.yaml
+
+    使用[YOLO-MIF](https://github.com/wandahangFY/YOLO-MIF)中的WDBB改进BasicBlock.
+
+27. ultralytics/cfg/models/rt-detr/rtdetr-DeepDBB.yaml
+
+    使用[YOLO-MIF](https://github.com/wandahangFY/YOLO-MIF)中的DeepDBB改进BasicBlock.
 
 ### 上下采样算子系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-DySample.yaml
@@ -1419,3 +1431,9 @@
     2. 新增MAF-YOLO中的MAFPN，并利用BIFPN的思想对MAFPN进行二次创新得到BIMAFPN.
     3. 更新使用教程.
     4. 百度云视频增加20240802更新说明.
+
+- **20240815-rtdetr-v1.31**
+    1. 新增YOLO-MIF中的WDBB、DeepDBB的重参数化模块.
+    2. 新增SLAB中的RepBN改进AIFI.
+    3. 更新使用教程.
+    4. 百度云视频增加20240815更新说明.

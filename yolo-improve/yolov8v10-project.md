@@ -277,6 +277,10 @@
         FeaturePyramidSharedConv 使用卷积操作进行特征提取，能够捕捉更加细粒度的特征。相比之下，SPPF 的池化操作可能会丢失一些细节信息。
         卷积操作在特征提取时具有更高的灵活性和表达能力，可以更好地捕捉图像中的细节和复杂模式。
 
+20. APT(Adaptive Power Transformation)-TAL.
+
+    为了使不同gt预测对的匹配质量和损失权重更具鉴别性，我们通过自定义的PowerTransformer显著增强高质量预测框的权重，抑制低质量预测框的影响，并使模型在学习的过程可以更关注质量高的预测框。
+
 ### BackBone系列
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
     
@@ -341,6 +345,9 @@
 3. ultralytics/cfg/models/v8/yolov8-AIFI.yaml
 
     使用[RT-DETR](https://arxiv.org/pdf/2304.08069.pdf)中的Attention-based Intrascale Feature Interaction(AIFI)改进yolov8.
+4. ultralytics/cfg/models/v8/yolov8-AIFIRepBN.yaml
+
+    使用[ICML-2024 SLAB](https://github.com/xinghaochen/SLAB)中的RepBN改进AIFI.
 
 ### Neck系列
 1. ultralytics/cfg/models/v8/yolov8-bifpn.yaml
@@ -688,6 +695,14 @@
 
     使用[Rethinking Performance Gains in Image Dehazing Networks](https://arxiv.org/abs/2209.11448)的gConvblock改进C2f.
 
+52. ultralytics/cfg/models/v8/yolov8-C2f-WDBB.yaml
+
+    使用[YOLO-MIF](https://github.com/wandahangFY/YOLO-MIF)中的WDBB改进c2f.
+
+53. ultralytics/cfg/models/v8/yolov8-C2f-DeepDBB.yaml
+
+    使用[YOLO-MIF](https://github.com/wandahangFY/YOLO-MIF)中的DeepDBB改进c2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -777,6 +792,10 @@
         FeaturePyramidSharedConv 使用卷积操作进行特征提取，能够捕捉更加细粒度的特征。相比之下，SPPF 的池化操作可能会丢失一些细节信息。
         卷积操作在特征提取时具有更高的灵活性和表达能力，可以更好地捕捉图像中的细节和复杂模式。
 
+7. APT(Adaptive Power Transformation)-TAL.
+
+    为了使不同gt预测对的匹配质量和损失权重更具鉴别性，我们通过自定义的PowerTransformer显著增强高质量预测框的权重，抑制低质量预测框的影响，并使模型在学习的过程可以更关注质量高的预测框。
+
 ### BackBone系列
 
 1. ultralytics/cfg/models/v10/yolov10n-efficientViT.yaml
@@ -856,6 +875,10 @@
 2. ultralytics/cfg/models/v10/yolov10n-SPPF-LSKA.yaml
 
     使用[LSKA](https://github.com/StevenLauHKHK/Large-Separable-Kernel-Attention)注意力机制改进SPPF,增强多尺度特征提取能力.
+
+3. ultralytics/cfg/models/v10/yolov10n-AIFIRep.yaml
+
+    使用[ICML-2024 SLAB](https://github.com/xinghaochen/SLAB)与AIFI改进yolov10.
 
 ### Neck系列
 
@@ -985,6 +1008,14 @@
 13. ultralytics/cfg/models/v10/yolov10n-C2f-DySnakeConv.yaml
 
     [DySnakeConv](https://github.com/YaoleiQi/DSCNet)与C2f融合.
+
+14. ultralytics/cfg/models/v10/yolov10n-C2f-WDBB.yaml
+
+    使用[YOLO-MIF](https://github.com/wandahangFY/YOLO-MIF)中的WDBB改进c2f.
+
+15. ultralytics/cfg/models/v10/yolov10n-C2f-DeepDBB.yaml
+
+    使用[YOLO-MIF](https://github.com/wandahangFY/YOLO-MIF)中的DeepDBB改进c2f.
 
 ### 组合系列
 
@@ -1472,3 +1503,10 @@
     3. 新增MAF-YOLO中的MAFPN，并利用BIFPN的思想对MAFPN进行二次创新得到BIMAFPN.
     4. 更新使用教程.
     5. 百度云视频增加20240803更新说明.
+
+- **20240813-ultralytics-v1.67**
+    1. 新增APT-TAL标签分配策略.
+    2. 新增YOLO-MIF中的WDBB、DeepDBB的重参数化模块.
+    3. 新增SLAB中的RepBN改进AIFI.
+    4. 更新使用教程.
+    5. 百度云视频增加20240813更新说明.
