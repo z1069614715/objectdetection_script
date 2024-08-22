@@ -131,6 +131,10 @@
 
     利用BIFPN的思想对[MAF-YOLO](https://arxiv.org/pdf/2407.04381)的MAFPN进行二次改进得到BIMAFPN.
 
+35. ultralytics/cfg/models/v8/yolov8-C2f-AdditiveBlock-CGLU.yaml
+
+    使用[CAS-ViT](https://github.com/Tianfang-Zhang/CAS-ViT)中的AdditiveBlock和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进c2f.
+
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
 
@@ -280,6 +284,14 @@
 20. APT(Adaptive Power Transformation)-TAL.
 
     为了使不同gt预测对的匹配质量和损失权重更具鉴别性，我们通过自定义的PowerTransformer显著增强高质量预测框的权重，抑制低质量预测框的影响，并使模型在学习的过程可以更关注质量高的预测框。
+
+21. ultralytics/cfg/models/v8/yolov8-EMBSFPN.yaml
+
+    基于BIFPN、[MAF-YOLO](https://arxiv.org/pdf/2407.04381)、[CVPR2024 EMCAD](https://github.com/SLDGroup/EMCAD)提出全新的Efficient Multi-Branch&Scale FPN.
+    Efficient Multi-Branch&Scale FPN拥有<轻量化>、<多尺度特征加权融合>、<多尺度高效卷积模块>、<高效上采样模块>、<全局异构核选择机制>。
+    1. 具有多尺度高效卷积模块和全局异构核选择机制，Trident网络的研究表明，具有较大感受野的网络更适合检测较大的物体，反之，较小尺度的目标则从较小的感受野中受益，因此我们在FPN阶段，对于不同尺度的特征层选择不同的多尺度卷积核以适应并逐步获得多尺度感知场信息。
+    2. 借鉴BIFPN中的多尺度特征加权融合，能把Concat换成Add来减少参数量和计算量的情况下，还能通过不同尺度特征的重要性进行自适用选择加权融合。
+    3. 高效上采样模块来源于CVPR2024-EMCAD中的EUCB，能够在保证一定效果的同时保持高效性。
 
 ### BackBone系列
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
@@ -703,6 +715,10 @@
 
     使用[YOLO-MIF](https://github.com/wandahangFY/YOLO-MIF)中的DeepDBB改进c2f.
 
+54. ultralytics/cfg/models/v8/yolov8-C2f-AdditiveBlock.yaml
+
+    使用[CAS-ViT](https://github.com/Tianfang-Zhang/CAS-ViT)中的AdditiveBlock改进c2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -748,6 +764,23 @@
 3. ultralytics/cfg/models/v10/yolov10n-BIMAFPN.yaml
 
     利用BIFPN的思想对[MAF-YOLO](https://arxiv.org/pdf/2407.04381)的MAFPN进行二次改进得到BIMAFPN.
+
+4. ultralytics/cfg/models/v10/yolov10n-C2f-AdditiveBlock-CGLU.yaml
+
+    使用[CAS-ViT](https://github.com/Tianfang-Zhang/CAS-ViT)中的AdditiveBlock和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进c2f.
+
+5. ultralytics/cfg/models/v10/yolov10n-ASF-P2.yaml
+
+    在ultralytics/cfg/models/v8/yolov8-ASF.yaml的基础上进行二次创新，引入P2检测层并对网络结构进行优化.
+
+6. ultralytics/cfg/models/v10/yolov10n-ASF-DySample.yaml
+
+    使用[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion与[ICCV2023 DySample](https://arxiv.org/abs/2308.15085)组合得到Dynamic Sample Attentional Scale Sequence Fusion.
+
+7. ultralytics/cfg/models/v10/yolov10n-goldyolo-asf.yaml
+
+    利用华为2023最新GOLD-YOLO中的Gatherand-Distribute与[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion进行二次创新改进yolov10的neck.
+
 
 ### 自研系列
 
@@ -795,6 +828,18 @@
 7. APT(Adaptive Power Transformation)-TAL.
 
     为了使不同gt预测对的匹配质量和损失权重更具鉴别性，我们通过自定义的PowerTransformer显著增强高质量预测框的权重，抑制低质量预测框的影响，并使模型在学习的过程可以更关注质量高的预测框。
+
+8. ultralytics/cfg/models/v10/yolov10n-SOEP.yaml 
+
+    小目标在正常的P3、P4、P5检测层上略显吃力，比较传统的做法是加上P2检测层来提升小目标的检测能力，但是同时也会带来一系列的问题，例如加上P2检测层后计算量过大、后处理更加耗时等问题，日益激发需要开发新的针对小目标有效的特征金字塔，我们基于原本的PAFPN上进行改进，提出SmallObjectEnhancePyramid，相对于传统的添加P2检测层，我们使用P2特征层经过SPDConv得到富含小目标信息的特征给到P3进行融合，然后使用CSP思想和基于[AAAI2024的OmniKernel](https://ojs.aaai.org/index.php/AAAI/article/view/27907)进行改进得到CSP-OmniKernel进行特征整合，OmniKernel模块由三个分支组成，即三个分支，即全局分支、大分支和局部分支、以有效地学习从全局到局部的特征表征，最终从而提高小目标的检测性能。
+
+9. ultralytics/cfg/models/v10/yolov10n-EMBSFPN.yaml
+
+    基于BIFPN、[MAF-YOLO](https://arxiv.org/pdf/2407.04381)、[CVPR2024 EMCAD](https://github.com/SLDGroup/EMCAD)提出全新的Efficient Multi-Branch&Scale FPN.
+    Efficient Multi-Branch&Scale FPN拥有<轻量化>、<多尺度特征加权融合>、<多尺度高效卷积模块>、<高效上采样模块>、<全局异构核选择机制>。
+    1. 具有多尺度高效卷积模块和全局异构核选择机制，Trident网络的研究表明，具有较大感受野的网络更适合检测较大的物体，反之，较小尺度的目标则从较小的感受野中受益，因此我们在FPN阶段，对于不同尺度的特征层选择不同的多尺度卷积核以适应并逐步获得多尺度感知场信息。
+    2. 借鉴BIFPN中的多尺度特征加权融合，能把Concat换成Add来减少参数量和计算量的情况下，还能通过不同尺度特征的重要性进行自适用选择加权融合。
+    3. 高效上采样模块来源于CVPR2024-EMCAD中的EUCB，能够在保证一定效果的同时保持高效性。
 
 ### BackBone系列
 
@@ -906,6 +951,10 @@
 
     使用[MAF-YOLO](https://arxiv.org/pdf/2407.04381)的MAFPN改进Neck.
 
+5. ultralytics/cfg/models/v10/yolov10n-ASF.yaml
+
+    使用[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion改进yolov10.
+
 ### Head系列
 ### Label Assign系列
 ### PostProcess系列
@@ -1016,6 +1065,10 @@
 15. ultralytics/cfg/models/v10/yolov10n-C2f-DeepDBB.yaml
 
     使用[YOLO-MIF](https://github.com/wandahangFY/YOLO-MIF)中的DeepDBB改进c2f.
+
+16. ultralytics/cfg/models/v10/yolov10n-C2f-AdditiveBlock.yaml
+
+    使用[CAS-ViT](https://github.com/Tianfang-Zhang/CAS-ViT)中的AdditiveBlock改进c2f.
 
 ### 组合系列
 
@@ -1510,3 +1563,11 @@
     3. 新增SLAB中的RepBN改进AIFI.
     4. 更新使用教程.
     5. 百度云视频增加20240813更新说明.
+
+- **20240822-ultralytics-v1.68**
+    1. 新增CAS-ViT的AdditiveBlock.
+    2. 新增TransNeXt的Convolutional GLU对CAS-ViT的AdditiveBlock进行二次创新.
+    3. 新增自研Efficient Multi-Branch&Scale FPN.
+    4. 新增v10多个改进.
+    5. 更新使用教程.
+    6. 百度云视频增加20240822更新说明.
