@@ -135,6 +135,10 @@
 
     使用[CAS-ViT](https://github.com/Tianfang-Zhang/CAS-ViT)中的AdditiveBlock和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进c2f.
 
+36. ultralytics/cfg/models/v8/yolov8-C2f-MSMHSA-CGLU.yaml
+
+    使用[CM-UNet](https://github.com/XiaoBuL/CM-UNet)中的Multi-Scale Attention Aggregation和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进c2f.
+
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
 
@@ -293,6 +297,12 @@
     2. 借鉴BIFPN中的多尺度特征加权融合，能把Concat换成Add来减少参数量和计算量的情况下，还能通过不同尺度特征的重要性进行自适用选择加权融合。
     3. 高效上采样模块来源于CVPR2024-EMCAD中的EUCB，能够在保证一定效果的同时保持高效性。
 
+22. ultralytics/cfg/models/v8/yolov8-CSP-PMSFA.yaml
+
+    自研模块:CSP-Partial Multi-Scale Feature Aggregation.
+    1. 部分多尺度特征提取：参考CVPR2020-GhostNet、CVPR2024-FasterNet的思想，采用高效的PartialConv，该模块能够从输入中提取多种尺度的特征信息，但它并不是在所有通道上进行这种操作，而是部分（Partial）地进行，从而提高了计算效率。
+    2. 增强的特征融合: 最后的 1x1 卷积层通过将不同尺度的特征融合在一起，同时使用残差连接将输入特征与处理后的特征相加，有效保留了原始信息并引入了新的多尺度信息，从而提高模型的表达能力。
+
 ### BackBone系列
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
     
@@ -433,6 +443,10 @@
 18. ultralytics/cfg/models/v8/yolov8-MAFPN.yaml
 
     使用[MAF-YOLO](https://arxiv.org/pdf/2407.04381)的MAFPN改进Neck.
+
+19. ultralytics/cfg/models/v8/yolov8-MFMSAtt.yaml
+
+    使用[CVPR2024 MADGNet](https://github.com/Inha-CVAI/MADGNet)中的Multi-Frequency in Multi-Scale Attention改进Neck.
 
 ### Head系列
 1. ultralytics/cfg/models/v8/yolov8-dyhead.yaml
@@ -781,6 +795,10 @@
 
     利用华为2023最新GOLD-YOLO中的Gatherand-Distribute与[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion进行二次创新改进yolov10的neck.
 
+8. ultralytics/cfg/models/v10/yolov10n-C2f-MSMHSA-CGLU.yaml
+
+    使用[CM-UNet](https://github.com/XiaoBuL/CM-UNet)中的Multi-Scale Attention Aggregation和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进c2f.
+    项目视频百度云链接:20240831版本更新说明
 
 ### 自研系列
 
@@ -840,6 +858,12 @@
     1. 具有多尺度高效卷积模块和全局异构核选择机制，Trident网络的研究表明，具有较大感受野的网络更适合检测较大的物体，反之，较小尺度的目标则从较小的感受野中受益，因此我们在FPN阶段，对于不同尺度的特征层选择不同的多尺度卷积核以适应并逐步获得多尺度感知场信息。
     2. 借鉴BIFPN中的多尺度特征加权融合，能把Concat换成Add来减少参数量和计算量的情况下，还能通过不同尺度特征的重要性进行自适用选择加权融合。
     3. 高效上采样模块来源于CVPR2024-EMCAD中的EUCB，能够在保证一定效果的同时保持高效性。
+
+10. ultralytics/cfg/models/v10/yolov10n-CSP-PMSFA.yaml
+
+    自研模块:CSP-Partial Multi-Scale Feature Aggregation.
+    1. 部分多尺度特征提取：参考CVPR2020-GhostNet、CVPR2024-FasterNet的思想，采用高效的PartialConv，该模块能够从输入中提取多种尺度的特征信息，但它并不是在所有通道上进行这种操作，而是部分（Partial）地进行，从而提高了计算效率。
+    2. 增强的特征融合: 最后的 1x1 卷积层通过将不同尺度的特征融合在一起，同时使用残差连接将输入特征与处理后的特征相加，有效保留了原始信息并引入了新的多尺度信息，从而提高模型的表达能力。
 
 ### BackBone系列
 
@@ -954,6 +978,10 @@
 5. ultralytics/cfg/models/v10/yolov10n-ASF.yaml
 
     使用[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion改进yolov10.
+
+6. ultralytics/cfg/models/v10/yolov10n-MFMSAtt.yaml
+
+    使用[CVPR2024 MADGNet](https://github.com/Inha-CVAI/MADGNet)中的Multi-Frequency in Multi-Scale Attention改进Neck.
 
 ### Head系列
 ### Label Assign系列
@@ -1571,3 +1599,10 @@
     4. 新增v10多个改进.
     5. 更新使用教程.
     6. 百度云视频增加20240822更新说明.
+
+- **20240831-ultralytics-v1.69**
+    1. 新增CVPR2024 MADGNet的Multi-Frequency in Multi-Scale Attention.
+    2. 新增CM-UNet和TransNext的二次创新模块.
+    3. 新增自研CSP-Partial Multi-Scale Feature Aggregation.
+    4. 更新使用教程.
+    5. 百度云视频增加20240831更新说明.
