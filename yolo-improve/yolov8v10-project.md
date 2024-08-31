@@ -444,10 +444,6 @@
 
     使用[MAF-YOLO](https://arxiv.org/pdf/2407.04381)的MAFPN改进Neck.
 
-19. ultralytics/cfg/models/v8/yolov8-MFMSAtt.yaml
-
-    使用[CVPR2024 MADGNet](https://github.com/Inha-CVAI/MADGNet)中的Multi-Frequency in Multi-Scale Attention改进Neck.
-
 ### Head系列
 1. ultralytics/cfg/models/v8/yolov8-dyhead.yaml
 
@@ -978,10 +974,6 @@
 5. ultralytics/cfg/models/v10/yolov10n-ASF.yaml
 
     使用[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion改进yolov10.
-
-6. ultralytics/cfg/models/v10/yolov10n-MFMSAtt.yaml
-
-    使用[CVPR2024 MADGNet](https://github.com/Inha-CVAI/MADGNet)中的Multi-Frequency in Multi-Scale Attention改进Neck.
 
 ### Head系列
 ### Label Assign系列
@@ -1601,8 +1593,7 @@
     6. 百度云视频增加20240822更新说明.
 
 - **20240831-ultralytics-v1.69**
-    1. 新增CVPR2024 MADGNet的Multi-Frequency in Multi-Scale Attention.
-    2. 新增CM-UNet和TransNext的二次创新模块.
-    3. 新增自研CSP-Partial Multi-Scale Feature Aggregation.
-    4. 更新使用教程.
-    5. 百度云视频增加20240831更新说明.
+    1. 新增CM-UNet和TransNext的二次创新模块.
+    2. 新增自研CSP-Partial Multi-Scale Feature Aggregation.
+    3. 更新使用教程.
+    4. 百度云视频增加20240831更新说明.
