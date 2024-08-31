@@ -137,7 +137,7 @@
 
 36. ultralytics/cfg/models/v8/yolov8-C2f-MSMHSA-CGLU.yaml
 
-    使用[CM-UNet](https://github.com/XiaoBuL/CM-UNet)中的Multi-Scale Attention Aggregation和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进c2f.
+    使用[CMTFNet](https://github.com/DrWuHonglin/CMTFNet/tree/main)中的M2SA和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进c2f.
 
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
@@ -793,7 +793,7 @@
 
 8. ultralytics/cfg/models/v10/yolov10n-C2f-MSMHSA-CGLU.yaml
 
-    使用[CM-UNet](https://github.com/XiaoBuL/CM-UNet)中的Multi-Scale Attention Aggregation和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进c2f.
+    使用[CMTFNet](https://github.com/DrWuHonglin/CMTFNet/tree/main)中的M2SA和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进c2f.
     项目视频百度云链接:20240831版本更新说明
 
 ### 自研系列
@@ -1593,7 +1593,7 @@
     6. 百度云视频增加20240822更新说明.
 
 - **20240831-ultralytics-v1.69**
-    1. 新增CM-UNet和TransNext的二次创新模块.
+    1. 新增CMTFUnet和TransNext的二次创新模块.
     2. 新增自研CSP-Partial Multi-Scale Feature Aggregation.
     3. 更新使用教程.
     4. 百度云视频增加20240831更新说明.
