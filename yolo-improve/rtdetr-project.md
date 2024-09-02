@@ -146,6 +146,10 @@
 
     使用[CAS-ViT](https://github.com/Tianfang-Zhang/CAS-ViT)中的AdditiveBlock和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU和CSP思想改进backbone.
 
+28. ultralytics/cfg/models/rt-detr/rtdetr-C2f-MSMHSA-CGLU.yaml
+
+    使用[CMTFNet](https://github.com/DrWuHonglin/CMTFNet/tree/main)中的M2SA和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进c2f.
+
 ### 自研系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-PACAPN.yaml
 
@@ -214,6 +218,12 @@
     1. 具有多尺度高效卷积模块和全局异构核选择机制，Trident网络的研究表明，具有较大感受野的网络更适合检测较大的物体，反之，较小尺度的目标则从较小的感受野中受益，因此我们在FPN阶段，对于不同尺度的特征层选择不同的多尺度卷积核以适应并逐步获得多尺度感知场信息。
     2. 借鉴BIFPN中的多尺度特征加权融合，能把Concat换成Add来减少参数量和计算量的情况下，还能通过不同尺度特征的重要性进行自适用选择加权融合。
     3. 高效上采样模块来源于CVPR2024-EMCAD中的EUCB，能够在保证一定效果的同时保持高效性。
+
+11. ultralytics/cfg/models/rt-detr/rtdetr-CSP-PMSFA.yaml
+
+    自研模块:CSP-Partial Multi-Scale Feature Aggregation.
+    1. 部分多尺度特征提取：参考CVPR2020-GhostNet、CVPR2024-FasterNet的思想，采用高效的PartialConv，该模块能够从输入中提取多种尺度的特征信息，但它并不是在所有通道上进行这种操作，而是部分（Partial）地进行，从而提高了计算效率。
+    2. 增强的特征融合: 最后的 1x1 卷积层通过将不同尺度的特征融合在一起，同时使用残差连接将输入特征与处理后的特征相加，有效保留了原始信息并引入了新的多尺度信息，从而提高模型的表达能力。
 
 ### BackBone系列
 1. ultralytics/cfg/models/rt-detr/rt-detr-timm.yaml
@@ -1464,3 +1474,9 @@
     3. 新增自研Efficient Multi-Branch&Scale FPN.
     4. 更新使用教程.
     5. 百度云视频增加20240825更新说明.
+
+- **20240902-rtdetr-v1.33**
+    1. 新增CMTFUnet和TransNext的二次创新模块.
+    2. 新增自研CSP-Partial Multi-Scale Feature Aggregation.
+    3. 更新使用教程.
+    4. 百度云视频增加20240902更新说明.
