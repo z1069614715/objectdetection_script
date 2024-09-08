@@ -444,6 +444,15 @@
 
     使用[MAF-YOLO](https://arxiv.org/pdf/2407.04381)的MAFPN改进Neck.
 
+19. Cross-Layer Feature Pyramid Transformer.   
+
+    P345:ultralytics/cfg/models/v8/yolov8-CFPT.yaml
+    P2345:ultralytics/cfg/models/v8/yolov8-CFPT-P2345.yaml
+    P3456:ultralytics/cfg/models/v8/yolov8-CFPT-P3456.yaml
+    P23456:ultralytics/cfg/models/v8/yolov8-CFPT-P23456.yaml
+
+    使用[CFPT](https://github.com/duzw9311/CFPT/tree/main)改进neck.
+
 ### Head系列
 1. ultralytics/cfg/models/v8/yolov8-dyhead.yaml
 
@@ -729,6 +738,10 @@
 
     使用[CAS-ViT](https://github.com/Tianfang-Zhang/CAS-ViT)中的AdditiveBlock改进c2f.
 
+55. ultralytics/cfg/models/v8/yolov8-C2f-MogaBlock.yaml
+
+    使用[MogaNet ICLR2024](https://github.com/Westlake-AI/MogaNet)中的MogaBlock改进C2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -975,6 +988,26 @@
 
     使用[ASF-YOLO](https://github.com/mkang315/ASF-YOLO)中的Attentional Scale Sequence Fusion改进yolov10.
 
+6. Cross-Layer Feature Pyramid Transformer.   
+
+    P345:ultralytics/cfg/models/v10/yolov10n-CFPT.yaml
+    P2345:ultralytics/cfg/models/v10/yolov10n-CFPT-P2345.yaml
+    P3456:ultralytics/cfg/models/v10/yolov10n-CFPT-P3456.yaml
+    P23456:ultralytics/cfg/models/v10/yolov10n-CFPT-P23456.yaml
+
+    使用[CFPT](https://github.com/duzw9311/CFPT/tree/main)改进neck.
+7. ultralytics/cfg/models/v10/yolov10n-RCSOSA.yaml
+
+    使用[RCS-YOLO](https://github.com/mkang315/RCS-YOLO/tree/main)中的RCSOSA替换C2f.
+
+8. ultralytics/cfg/models/v10/yolov10n-GFPN.yaml
+
+    使用[DAMO-YOLO](https://github.com/tinyvision/DAMO-YOLO)中的RepGFPN改进Neck.
+
+9. ultralytics/cfg/models/v10/yolov10n-EfficientRepBiPAN.yaml
+
+    使用[YOLOV6](https://github.com/meituan/YOLOv6/tree/main)中的EfficientRepBiPAN改进Neck.
+
 ### Head系列
 ### Label Assign系列
 ### PostProcess系列
@@ -1089,6 +1122,10 @@
 16. ultralytics/cfg/models/v10/yolov10n-C2f-AdditiveBlock.yaml
 
     使用[CAS-ViT](https://github.com/Tianfang-Zhang/CAS-ViT)中的AdditiveBlock改进c2f.
+
+17. ultralytics/cfg/models/v10/yolov10n-C2f-MogaBlock.yaml
+
+    使用[MogaNet ICLR2024](https://github.com/Westlake-AI/MogaNet)中的MogaBlock改进C2f.
 
 ### 组合系列
 
@@ -1597,3 +1634,10 @@
     2. 新增自研CSP-Partial Multi-Scale Feature Aggregation.
     3. 更新使用教程.
     4. 百度云视频增加20240831更新说明.
+
+- **20240908-ultralytics-v1.70**
+    1. 新增Cross-Layer Feature Pyramid Transformer for Small Object Detection in Aerial Images中的CFPT.
+    2. 新增ICLR2024中的MogaBlock.
+    3. 新增v10多个改进.
+    4. 更新使用教程.
+    5. 百度云视频增加20240908更新说明.

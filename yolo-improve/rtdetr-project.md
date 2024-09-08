@@ -322,6 +322,10 @@
 
     使用[CAS-ViT](https://github.com/Tianfang-Zhang/CAS-ViT)中的AdditiveBlock改进AIFI.
 
+8. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-MSMHSA.yaml
+
+    使用[CMTFNet](https://github.com/DrWuHonglin/CMTFNet/tree/main)中的M2SA改进AIFI.
+
 ### Neck系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-ASF.yaml
 
