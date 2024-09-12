@@ -297,6 +297,10 @@
 
     使用[CAS-ViT](https://github.com/Tianfang-Zhang/CAS-ViT)中的AdditiveBlock和CSP思想改进backbone.
 
+23. ultralytics/cfg/models/rt-detr/rtdetr-C2f-MogaBlock.yaml
+
+    使用[MogaNet ICLR2024](https://github.com/Westlake-AI/MogaNet)中的MogaBlock与CSP思想结合改进backbone.
+
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -382,6 +386,12 @@
 14. ultralytics/cfg/models/rt-detr/rtdetr-MAFPN.yaml
 
     使用[MAF-YOLO](https://arxiv.org/pdf/2407.04381)的MAFPN改进Neck.
+
+15. Cross-Layer Feature Pyramid Transformer.   
+
+    P345:ultralytics/cfg/models/rt-detr/rtdetr-CFPT.yaml
+    P3456:ultralytics/cfg/models/rt-detr/rtdetr-CFPT-P3456.yaml
+    使用[CFPT](https://github.com/duzw9311/CFPT/tree/main)改进neck.
 
 ### Head系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-p2.yaml
@@ -1484,3 +1494,9 @@
     2. 新增自研CSP-Partial Multi-Scale Feature Aggregation.
     3. 更新使用教程.
     4. 百度云视频增加20240902更新说明.
+
+- **20240902-rtdetr-v1.34**
+    1. 新增Cross-Layer Feature Pyramid Transformer for Small Object Detection in Aerial Images中的CFPT.
+    2. 新增ICLR2024中的MogaBlock.
+    3. 更新使用教程.
+    4. 百度云视频增加20240912更新说明.
