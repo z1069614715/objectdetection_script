@@ -1641,3 +1641,11 @@
     3. 新增v10多个改进.
     4. 更新使用教程.
     5. 百度云视频增加20240908更新说明.
+
+- **20240920-ultralytics-v1.71**
+    1. 新增CVPR2024-SHViT中的SHSABlock和其的二次创新.
+    2. 新增BIBM2024-SMAFormer中的SMAFormerBlock和其的二次创新.
+    3. 新增TPAMI2024-FreqFusion中的FreqFusion改进Neck.
+    4. 新增v10多个改进.
+    5. 更新使用教程.
+    6. 百度云视频增加20240920更新说明.

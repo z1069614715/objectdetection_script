@@ -1495,7 +1495,7 @@
     3. 更新使用教程.
     4. 百度云视频增加20240902更新说明.
 
-- **20240902-rtdetr-v1.34**
+- **20240912-rtdetr-v1.34**
     1. 新增Cross-Layer Feature Pyramid Transformer for Small Object Detection in Aerial Images中的CFPT.
     2. 新增ICLR2024中的MogaBlock.
     3. 更新使用教程.
