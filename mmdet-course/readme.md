@@ -33,6 +33,7 @@ pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https
 
 1. [一库打尽目标检测对比实验！mmdetection环境、训练、测试手把手教程！](https://www.bilibili.com/video/BV1xA4m1c7H8/)
 2. [一库打尽目标检测对比实验！mmdetection参数量、计算量、FPS、绘制logs手把手教程](https://www.bilibili.com/video/BV17C41137dW/)
+3. [一库打尽目标检测对比实验！mmdetection指标转换YOLO指标！]()
 
 ### mmdet实验数据(指标均为COCO指标)
 
