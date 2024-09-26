@@ -150,6 +150,14 @@
 
     使用[CMTFNet](https://github.com/DrWuHonglin/CMTFNet/tree/main)中的M2SA和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进c2f.
 
+29. ultralytics/cfg/models/rt-detr/rtdetr-C2f-SHSA-CGLU.yaml
+
+    使用[SHViT CVPR2024](https://github.com/ysj9909/SHViT)中的SHSABlock与[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的CGLU和CSP思想改进backbone.
+
+30. ultralytics/cfg/models/rt-detr/rtdetr-C2f-SMAFB-CGLU.yaml
+
+    使用[SMAFormer BIBM2024](https://github.com/CXH-Research/SMAFormer)中的SMAFormerBlock与[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的CGLU改进与CSP思想改进backbone.
+
 ### 自研系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-PACAPN.yaml
 
@@ -224,6 +232,12 @@
     自研模块:CSP-Partial Multi-Scale Feature Aggregation.
     1. 部分多尺度特征提取：参考CVPR2020-GhostNet、CVPR2024-FasterNet的思想，采用高效的PartialConv，该模块能够从输入中提取多种尺度的特征信息，但它并不是在所有通道上进行这种操作，而是部分（Partial）地进行，从而提高了计算效率。
     2. 增强的特征融合: 最后的 1x1 卷积层通过将不同尺度的特征融合在一起，同时使用残差连接将输入特征与处理后的特征相加，有效保留了原始信息并引入了新的多尺度信息，从而提高模型的表达能力。
+
+12. ultralytics/cfg/models/rt-detr/rtdetr-MutilBackbone-DAF.yaml
+
+    自研MutilBackbone-DynamicAlignFusion.
+    1. 为了避免在浅层特征图上消耗过多计算资源，设计的MutilBackbone共享一个stem的信息，这个设计有利于避免计算量过大，推理时间过大的问题。
+    2. 为了避免不同Backbone信息融合出现不同来源特征之间的空间差异，我们为此设计了DynamicAlignFusion，其先通过融合来自两个不同模块学习到的特征，然后生成一个名为DynamicAlignWeight去调整各自的特征，最后使用一个可学习的通道权重，其可以根据输入特征动态调整两条路径的权重，从而增强模型对不同特征的适应能力。
 
 ### BackBone系列
 1. ultralytics/cfg/models/rt-detr/rt-detr-timm.yaml
@@ -300,6 +314,14 @@
 23. ultralytics/cfg/models/rt-detr/rtdetr-C2f-MogaBlock.yaml
 
     使用[MogaNet ICLR2024](https://github.com/Westlake-AI/MogaNet)中的MogaBlock与CSP思想结合改进backbone.
+
+24. ultralytics/cfg/models/rt-detr/rtdetr-C2f-SHSA.yaml
+
+    使用[SHViT CVPR2024](https://github.com/ysj9909/SHViT)中的SHSABlock和CSP思想改进backbone.
+
+25. ultralytics/cfg/models/rt-detr/rtdetr-C2f-SMAFB.yaml
+
+    使用[SMAFormer BIBM2024](https://github.com/CXH-Research/SMAFormer)中的SMAFormerBlock与CSP思想改进backbone.
 
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
@@ -392,6 +414,10 @@
     P345:ultralytics/cfg/models/rt-detr/rtdetr-CFPT.yaml
     P3456:ultralytics/cfg/models/rt-detr/rtdetr-CFPT-P3456.yaml
     使用[CFPT](https://github.com/duzw9311/CFPT/tree/main)改进neck.
+
+16. ultralytics/cfg/models/rt-detr/rtdetr-FreqFFPN.yaml
+
+    使用[FreqFusion TPAMI2024](https://github.com/Linwei-Chen/FreqFusion)中的FreqFusion改进Neck.(这个需要python3.10,不然最后保存模型会出错.)
 
 ### Head系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-p2.yaml
@@ -1500,3 +1526,11 @@
     2. 新增ICLR2024中的MogaBlock.
     3. 更新使用教程.
     4. 百度云视频增加20240912更新说明.
+
+- **20240926-rtdetr-v1.35**
+    1. 新增CVPR2024-SHViT中的SHSABlock和其的二次创新.
+    2. 新增BIBM2024-SMAFormer中的SMAFormerBlock和其的二次创新.
+    3. 新增TPAMI2024-FreqFusion中的FreqFusion改进Neck.
+    4. 新增自研MutilBackBone-DynamicAlignFusion.
+    5. 更新使用教程.
+    6. 百度云视频增加20240926更新说明.

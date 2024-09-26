@@ -31,6 +31,10 @@
 18. [深度学习实验部分常见疑问解答三！(怎么判断模型是否收敛？模型过拟合怎么办？)](https://www.bilibili.com/video/BV11S421d76P/)
 19. [YOLO系列模型训练结果详细解答！(训练过程的一些疑问，该放哪个文件运行出来的结果、参数量计算量在哪里看..等等问题)](https://www.bilibili.com/video/BV11b421J7Vx/)
 
+### 必看论文分享系列
+1. [有营养的必看论文分享系列一-RTMDet<考虑到精度、速度、部署的2D目标检测网络>](https://www.bilibili.com/video/BV1ab421J77G/)
+2. [有营养的必看论文分享系列二-MobileNets<轻量化的开山之作>](https://www.bilibili.com/video/BV1hM4m117JW/)
+
 ### YOLOV5,V7-PYQT5项目讲解
 1. [哔哩哔哩合集地址](https://space.bilibili.com/286900343/channel/collectiondetail?sid=917275)
 2. [项目github地址](https://github.com/z1069614715/yolov7-pyqt)
@@ -55,9 +59,11 @@
 5. [预测框粗细颜色修改与精度小数位修改](https://www.bilibili.com/video/BV12K421a7rH/)
 6. [导出改进/剪枝的onnx模型和讲解onnx-opset和onnxsim的作用](https://www.bilibili.com/video/BV1CK421e7Y3/)
 7. [YOLOV8模型详细讲解(包含该如何改进YOLOV8)(刚入门小白，需要改进YOLOV8的同学必看！)](https://www.bilibili.com/video/BV1Ms421u7VH/)
+8. [学习率变化问题](https://www.bilibili.com/video/BV1frnferEL1/)
 
 ### 目标检测干活系列
 1. [深入了解目标检测中的检测头](https://www.bilibili.com/video/BV1AQ4y1j7Cr/)
+2. [目标检测中的标签分配策略做了什么？分配过程中的正负样本又是什么？](https://www.bilibili.com/video/BV1Ek4aeUE2J/)
 
 ### 环境配置系列教程
 1. [保姆式AUTODL-YOLO环境教程(上):从0教你如何配置VSCODE、安装新环境和CUDA和CUDNN、跑通YOLOV8、编译DCNV3](https://www.bilibili.com/video/BV1tT4y1b75q/)
@@ -76,10 +82,12 @@
 10. [输出YOLOV8、RTDETR各个层的计算量和参数量.](https://www.bilibili.com/video/BV1tb421b7aB/)
 11. [YOLOV8-不会把PR曲线的数据保存并绘制到一张图？不用怕，手把手教程来啦~](https://www.bilibili.com/video/BV1uC41177oE/)
 12. [yolov5、v7、v8、v9、v10曲线对比图、推理时间vs精度对比图绘制手把手教程！](https://www.bilibili.com/video/BV1yf421X7t5/)
+13. [YOLOV8-输出每一层的图特征图尺寸和通道数.](https://www.bilibili.com/video/BV1Mz421B7xz/)
 
 ### MMDet系列教程
 1. [一库打尽目标检测对比实验！mmdetection环境、训练、测试手把手教程！](https://www.bilibili.com/video/BV1xA4m1c7H8/)
 2. [一库打尽目标检测对比实验！mmdetection参数量、计算量、FPS、绘制logs手把手教程](https://www.bilibili.com/video/BV17C41137dW/)
+3. [一库打尽目标检测对比实验！mmdetection指标转换YOLO指标！](https://www.bilibili.com/video/BV1AWtCesEc6/)
 
 ### 离线数据增强教程
 1. [目标检测数据集离线数据增强教程，包含对目标框、多种变换、天气变化等等增强！](https://www.bilibili.com/video/BV1bT421k7iq/)
