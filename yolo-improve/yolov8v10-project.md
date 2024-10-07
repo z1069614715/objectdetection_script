@@ -139,6 +139,26 @@
 
     使用[CMTFNet](https://github.com/DrWuHonglin/CMTFNet/tree/main)中的M2SA和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进c2f.
 
+37. ultralytics/cfg/models/v8/yolov8-C2f-IdentityFormer-CGLU.yaml
+
+    使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的IdentityFormer和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的CGLU改进c2f.
+
+38. ultralytics/cfg/models/v8/yolov8-C2f-RandomMixing-CGLU.yaml
+
+    使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的RandomMixing和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的CGLU改进c2f.
+
+39. ultralytics/cfg/models/v8/yolov8-C2f-PoolingFormer-CGLU.yaml
+
+    使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的PoolingFormer和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的CGLU改进c2f.
+
+40. ultralytics/cfg/models/v8/yolov8-C2f-ConvFormer-CGLU.yaml
+
+    使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的ConvFormer和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的CGLU改进c2f.
+
+41. ultralytics/cfg/models/v8/yolov8-C2f-CaFormer-CGLU.yaml
+
+    使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的CaFormer和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的CGLU改进c2f.
+
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
 
@@ -302,6 +322,12 @@
     自研模块:CSP-Partial Multi-Scale Feature Aggregation.
     1. 部分多尺度特征提取：参考CVPR2020-GhostNet、CVPR2024-FasterNet的思想，采用高效的PartialConv，该模块能够从输入中提取多种尺度的特征信息，但它并不是在所有通道上进行这种操作，而是部分（Partial）地进行，从而提高了计算效率。
     2. 增强的特征融合: 最后的 1x1 卷积层通过将不同尺度的特征融合在一起，同时使用残差连接将输入特征与处理后的特征相加，有效保留了原始信息并引入了新的多尺度信息，从而提高模型的表达能力。
+
+23. ultralytics/cfg/models/v8/yolov8-MutilBackbone-DAF.yaml
+
+    自研MutilBackbone-DynamicAlignFusion.
+    1. 为了避免在浅层特征图上消耗过多计算资源，设计的MutilBackbone共享一个stem的信息，这个设计有利于避免计算量过大，推理时间过大的问题。
+    2. 为了避免不同Backbone信息融合出现不同来源特征之间的空间差异，我们为此设计了DynamicAlignFusion，其先通过融合来自两个不同模块学习到的特征，然后生成一个名为DynamicAlignWeight去调整各自的特征，最后使用一个可学习的通道权重，其可以根据输入特征动态调整两条路径的权重，从而增强模型对不同特征的适应能力。
 
 ### BackBone系列
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
@@ -742,6 +768,26 @@
 
     使用[MogaNet ICLR2024](https://github.com/Westlake-AI/MogaNet)中的MogaBlock改进C2f.
 
+56. ultralytics/cfg/models/v8/yolov8-C2f-IdentityFormer.yaml
+
+    使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的IdentityFormer改进c2f.
+
+57. ultralytics/cfg/models/v8/yolov8-C2f-RandomMixing.yaml
+
+    使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的RandomMixingFormer改进c2f.(需要看[常见错误和解决方案的第五点](#a))
+
+58. ultralytics/cfg/models/v8/yolov8-C2f-PoolingFormer.yaml
+
+    使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的PoolingFormer改进c2f.
+
+59. ultralytics/cfg/models/v8/yolov8-C2f-ConvFormer.yaml
+
+    使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的ConvFormer改进c2f.
+
+60. ultralytics/cfg/models/v8/yolov8-C2f-CaFormer.yaml
+
+    使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的CaFormer改进c2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -807,7 +853,26 @@
 8. ultralytics/cfg/models/v10/yolov10n-C2f-MSMHSA-CGLU.yaml
 
     使用[CMTFNet](https://github.com/DrWuHonglin/CMTFNet/tree/main)中的M2SA和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进c2f.
-    项目视频百度云链接:20240831版本更新说明
+
+9. ultralytics/cfg/models/v10/yolov10n-C2f-IdentityFormer-CGLU.yaml
+
+    使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的IdentityFormer和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的CGLU改进c2f.
+
+10. ultralytics/cfg/models/v10/yolov10n-C2f-RandomMixing-CGLU.yaml
+
+    使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的RandomMixing和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的CGLU改进c2f.
+
+11. ultralytics/cfg/models/v10/yolov10n-C2f-PoolingFormer-CGLU.yaml
+
+    使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的PoolingFormer和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的CGLU改进c2f.
+
+12. ultralytics/cfg/models/v10/yolov10n-C2f-ConvFormer-CGLU.yaml
+
+    使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的ConvFormer和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的CGLU改进c2f.
+
+13. ultralytics/cfg/models/v10/yolov10n-C2f-CaFormer-CGLU.yaml
+
+    使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的CaFormer和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的CGLU改进c2f.
 
 ### 自研系列
 
@@ -873,6 +938,12 @@
     自研模块:CSP-Partial Multi-Scale Feature Aggregation.
     1. 部分多尺度特征提取：参考CVPR2020-GhostNet、CVPR2024-FasterNet的思想，采用高效的PartialConv，该模块能够从输入中提取多种尺度的特征信息，但它并不是在所有通道上进行这种操作，而是部分（Partial）地进行，从而提高了计算效率。
     2. 增强的特征融合: 最后的 1x1 卷积层通过将不同尺度的特征融合在一起，同时使用残差连接将输入特征与处理后的特征相加，有效保留了原始信息并引入了新的多尺度信息，从而提高模型的表达能力。
+
+11. ultralytics/cfg/models/v10/yolov10n-MutilBackbone-DAF.yaml
+
+    自研MutilBackbone-DynamicAlignFusion.
+    1. 为了避免在浅层特征图上消耗过多计算资源，设计的MutilBackbone共享一个stem的信息，这个设计有利于避免计算量过大，推理时间过大的问题。
+    2. 为了避免不同Backbone信息融合出现不同来源特征之间的空间差异，我们为此设计了DynamicAlignFusion，其先通过融合来自两个不同模块学习到的特征，然后生成一个名为DynamicAlignWeight去调整各自的特征，最后使用一个可学习的通道权重，其可以根据输入特征动态调整两条路径的权重，从而增强模型对不同特征的适应能力。
 
 ### BackBone系列
 
@@ -1126,6 +1197,26 @@
 17. ultralytics/cfg/models/v10/yolov10n-C2f-MogaBlock.yaml
 
     使用[MogaNet ICLR2024](https://github.com/Westlake-AI/MogaNet)中的MogaBlock改进C2f.
+
+18. ultralytics/cfg/models/v10/yolov10n-C2f-IdentityFormer.yaml
+
+    使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的IdentityFormer改进c2f.
+
+19. ultralytics/cfg/models/v10/yolov10n-C2f-RandomMixing.yaml
+
+    使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的RandomMixingFormer改进c2f.(需要看[常见错误和解决方案的第五点](#a))
+
+20. ultralytics/cfg/models/v10/yolov10n-C2f-PoolingFormer.yaml
+
+    使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的PoolingFormer改进c2f.
+
+21. ultralytics/cfg/models/v10/yolov10n-C2f-ConvFormer.yaml
+
+    使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的ConvFormer改进c2f.
+
+22. ultralytics/cfg/models/v10/yolov10n-C2f-CaFormer.yaml
+
+    使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的CaFormer改进c2f.
 
 ### 组合系列
 
@@ -1649,3 +1740,10 @@
     4. 新增v10多个改进.
     5. 更新使用教程.
     6. 百度云视频增加20240920更新说明.
+
+- **20241007-ultralytics-v1.72**
+    1. 新增自研MutilBackBone-DynamicAlignFusion.
+    2. 新增Metaformer TPAMI2024的IdentityFormer、RandomMixingFormer、PoolingFormer、ConvFormer、CaFormer改进C2f.
+    3. 新增Metaformer TPAMI2024的IdentityFormer、RandomMixingFormer、PoolingFormer、ConvFormer、CaFormer与CVPR2024-TranXNet的二次创新模块改进C2f.
+    4. 更新使用教程.
+    5. 百度云视频增加20241007更新说明.
