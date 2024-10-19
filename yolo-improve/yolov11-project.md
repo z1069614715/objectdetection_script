@@ -470,29 +470,20 @@
 
     使用[MAF-YOLO](https://arxiv.org/pdf/2407.04381)的MAFPN改进Neck.
 
-19. Cross-Layer Feature Pyramid Transformer.   
-
-    P345:ultralytics/cfg/models/11/yolo11-CFPT.yaml
-    P2345:ultralytics/cfg/models/11/yolo11-CFPT-P2345.yaml
-    P3456:ultralytics/cfg/models/11/yolo11-CFPT-P3456.yaml
-    P23456:ultralytics/cfg/models/11/yolo11-CFPT-P23456.yaml
-
-    使用[CFPT](https://github.com/duzw9311/CFPT/tree/main)改进neck.
-
 ### Head系列
 1. ultralytics/cfg/models/11/yolo11-dyhead.yaml
 
     添加基于注意力机制的目标检测头到yolo11中.
 2. ultralytics/cfg/models/11/yolo11-EfficientHead.yaml
 
-    对检测头进行重设计,支持10种轻量化检测头.详细请看ultralytics/nn/extra_modules/head.py中的Detect_Efficient class.
+    对检测头进行重设计,支持2种轻量化检测头.详细请看ultralytics/nn/extra_modules/head.py中的Detect_Efficient class.
 3. ultralytics/cfg/models/11/yolo11-aux.yaml
 
     参考YOLOV7-Aux对YOLO11添加额外辅助训练头,在训练阶段参与训练,在最终推理阶段去掉.  
-    其中辅助训练头的损失权重系数可在ultralytics/utils/loss.py中的class 11DetectionLoss中的__init__函数中的self.aux_loss_ratio设定,默认值参考yolov7为0.25.
+    其中辅助训练头的损失权重系数可在ultralytics/utils/loss.py中的class v8DetectionLoss中的__init__函数中的self.aux_loss_ratio设定,默认值参考yolov7为0.25.
 4. ultralytics/cfg/models/11/yolo11-seg-EfficientHead.yaml(实例分割)
 
-    对检测头进行重设计,支持10种轻量化检测头.详细请看ultralytics/nn/extra_modules/head.py中的Detect_Efficient class. 
+    对检测头进行重设计,支持2种轻量化检测头.详细请看ultralytics/nn/extra_modules/head.py中的Detect_Efficient class. 
 5. ultralytics/cfg/models/11/yolo11-SEAMHead.yaml
 
     使用[YOLO-Face V2](https://arxiv.org/pdf/2208.02019v2.pdf)中的遮挡感知注意力改进Head,使其有效地处理遮挡场景.
@@ -513,7 +504,7 @@
 ### Label Assign系列
 1. Adaptive Training Sample Selection匹配策略.
 
-    在ultralytics/utils/loss.py中的class 11DetectionLoss中自行选择对应的self.assigner即可.
+    在ultralytics/utils/loss.py中的class v8DetectionLoss中自行选择对应的self.assigner即可.
 
 ### PostProcess系列
 1. soft-nms(IoU,GIoU,DIoU,CIoU,EIoU,SIoU,ShapeIoU)
