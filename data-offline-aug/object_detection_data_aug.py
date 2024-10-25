@@ -88,8 +88,10 @@ def show_labels(images_base_path, labels_base_path):
     
     for images_name in tqdm.tqdm(os.listdir(images_base_path)):
         file_heads, _ = os.path.splitext(images_name)
-        images_path = f'{images_base_path}/{images_name}'
-        labels_path = f'{labels_base_path}/{file_heads}.txt'
+        # images_path = f'{images_base_path}/{images_name}'
+        images_path = os.path.join(images_base_path, images_name)
+        # labels_path = f'{labels_base_path}/{file_heads}.txt'
+        labels_path = os.path.join(labels_base_path, f'{file_heads}.txt')
         if os.path.exists(labels_path):
             with open(labels_path) as f:
                 labels = np.array(list(map(lambda x:np.array(x.strip().split(), dtype=np.float64), f.readlines())), dtype=np.float64)
@@ -101,22 +103,27 @@ def show_labels(images_base_path, labels_base_path):
                 w *= width
                 h *= height
                 draw_detections([x_center - w // 2, y_center - h // 2, x_center + w // 2, y_center + h // 2], CLASSES[int(cls)], images)
-            cv2.imwrite(f'{SHOW_SAVE_PATH}/{images_name}', images)
+            # cv2.imwrite(f'{SHOW_SAVE_PATH}/{images_name}', images)
+            cv2.imwrite(os.path.join(SHOW_SAVE_PATH, images_name), images)
             print(f'{SHOW_SAVE_PATH}/{images_name} save success...')
         else:
             print(f'{labels_path} label file not found...')
 
 def data_aug_single(images_name):
     file_heads, postfix = os.path.splitext(images_name)
-    images_path = f'{IMAGE_PATH}/{images_name}'
-    labels_path = f'{LABEL_PATH}/{file_heads}.txt'
+    # images_path = f'{IMAGE_PATH}/{images_name}'
+    images_path = os.path.join(IMAGE_PATH, images_name)
+    # labels_path = f'{LABEL_PATH}/{file_heads}.txt'
+    labels_path = os.path.join(LABEL_PATH, f'{file_heads}.txt')
     if os.path.exists(labels_path):
         with open(labels_path) as f:
             labels = np.array(list(map(lambda x:np.array(x.strip().split(), dtype=np.float64), f.readlines())), dtype=np.float64)
         images = Image.open(images_path)
         for i in range(ENHANCEMENT_LOOP):
-            new_images_name = f'{AUG_IMAGE_PATH}/{file_heads}_{i:0>3}{postfix}'
-            new_labels_name = f'{AUG_LABEL_PATH}/{file_heads}_{i:0>3}.txt'
+            # new_images_name = f'{AUG_IMAGE_PATH}/{file_heads}_{i:0>3}{postfix}'
+            new_images_name = os.path.join(AUG_IMAGE_PATH, f'{file_heads}_{i:0>3}{postfix}')
+            # new_labels_name = f'{AUG_LABEL_PATH}/{file_heads}_{i:0>3}.txt'
+            new_labels_name = os.path.join(AUG_LABEL_PATH, f'{file_heads}_{i:0>3}.txt')
             try:
                 transformed = ENHANCEMENT_STRATEGY(image=np.array(images), bboxes=np.minimum(np.maximum(labels[:, 1:], 0), 1), class_labels=labels[:, 0])
             except:
