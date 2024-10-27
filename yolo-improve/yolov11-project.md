@@ -329,6 +329,14 @@
     1. 为了避免在浅层特征图上消耗过多计算资源，设计的MutilBackbone共享一个stem的信息，这个设计有利于避免计算量过大，推理时间过大的问题。
     2. 为了避免不同Backbone信息融合出现不同来源特征之间的空间差异，我们为此设计了DynamicAlignFusion，其先通过融合来自两个不同模块学习到的特征，然后生成一个名为DynamicAlignWeight去调整各自的特征，最后使用一个可学习的通道权重，其可以根据输入特征动态调整两条路径的权重，从而增强模型对不同特征的适应能力。
 
+24. ultralytics/cfg/models/11/yolo11-C3k2-MutilScaleEdgeInformationEnhance.yaml
+
+    自研CSP-MutilScaleEdgeInformationEnhance.
+    MutilScaleEdgeInformationEnhance模块结合了多尺度特征提取、边缘信息增强和卷积操作。它的主要目的是从不同尺度上提取特征，突出边缘信息，并将这些多尺度特征整合到一起，最后通过卷积层输出增强的特征。这个模块在特征提取和边缘增强的基础上有很好的表征能力.
+    1. 多尺度特征提取：通过 nn.AdaptiveAvgPool2d 进行多尺度的池化，提取不同大小的局部信息，有助于捕捉图像的多层次特征。
+    2. 边缘增强：EdgeEnhancer 模块专门用于提取边缘信息，使得网络对边缘的敏感度增强，这对许多视觉任务（如目标检测、语义分割等）有重要作用。
+    3. 特征融合：将不同尺度下提取的特征通过插值操作对齐到同一尺度，然后将它们拼接在一起，最后经过卷积层融合成统一的特征表示，能够提高模型对多尺度特征的感知。
+
 ### BackBone系列
 1. ultralytics/cfg/models/11/yolo11-efficientViT.yaml
     
@@ -779,6 +787,10 @@
 
     使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的CaFormer改进C3k2.
 
+61. ultralytics/cfg/models/11/yolo11-C3k2-FFCM.yaml
+
+    使用[Efficient Frequency-Domain Image Deraining with Contrastive Regularization ECCV2024](https://github.com/deng-ai-lab/FADformer)中的Fused_Fourier_Conv_Mixer改C3k2.
+
 ### 组合系列
 1. ultralytics/cfg/models/11/yolo11-fasternet-bifpn.yaml
 
@@ -864,3 +876,10 @@
 - **20241018-yolov11-v1.2**
     1. 移植完200+改进点。
     2. 修复已知问题。
+
+- **20241027-yolov11-v1.3**
+    1. 修复已知问题。
+    2. 新增自研CSP-MutilScaleEdgeInformationEnhance.
+    3. 新增Efficient Frequency-Domain Image Deraining with Contrastive Regularization中的Fused_Fourier_Conv_Mixer.
+    4. 更新使用教程.
+    5. 百度云视频增加20241027更新说明.
