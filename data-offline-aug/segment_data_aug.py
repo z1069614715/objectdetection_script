@@ -72,8 +72,10 @@ def show_labels(images_base_path, labels_base_path):
     
     for images_name in tqdm.tqdm(os.listdir(images_base_path)):
         file_heads, _ = os.path.splitext(images_name)
-        images_path = f'{images_base_path}/{images_name}'
-        labels_path = f'{labels_base_path}/{file_heads}.png'
+        # images_path = f'{images_base_path}/{images_name}'
+        images_path = os.path.join(images_base_path, images_name)
+        # labels_path = f'{labels_base_path}/{file_heads}.png'
+        labels_path = os.path.join(labels_base_path, f'{file_heads}.png')
         if os.path.exists(labels_path):
             images = cv2.imread(images_path)
             masks = np.array(Image.open(labels_path))
@@ -86,14 +88,18 @@ def show_labels(images_base_path, labels_base_path):
 
 def data_aug_single(images_name):
     file_heads, postfix = os.path.splitext(images_name)
-    images_path = f'{IMAGE_PATH}/{images_name}'
-    labels_path = f'{LABEL_PATH}/{file_heads}.jpg'
+    # images_path = f'{IMAGE_PATH}/{images_name}'
+    images_path = os.path.join(IMAGE_PATH, images_name)
+    # labels_path = f'{LABEL_PATH}/{file_heads}.jpg'
+    labels_path = os.path.join(LABEL_PATH, f'{file_heads}.jpg')
     if os.path.exists(labels_path):
         images = Image.open(images_path)
         masks = np.array(Image.open(labels_path))
         for i in range(ENHANCEMENT_LOOP):
-            new_images_name = f'{AUG_IMAGE_PATH}/{file_heads}_{i:0>3}{postfix}'
-            new_labels_name = f'{AUG_LABEL_PATH}/{file_heads}_{i:0>3}.png'
+            # new_images_name = f'{AUG_IMAGE_PATH}/{file_heads}_{i:0>3}{postfix}'
+            new_images_name = os.path.join(AUG_IMAGE_PATH, f'{file_heads}_{i:0>3}{postfix}')
+            # new_labels_name = f'{AUG_LABEL_PATH}/{file_heads}_{i:0>3}.png'
+            new_labels_name = os.path.join(AUG_LABEL_PATH, f'{file_heads}_{i:0>3}.png')
             try:
                 transformed = ENHANCEMENT_STRATEGY(image=np.array(images), masks=[masks])
             except:
