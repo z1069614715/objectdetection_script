@@ -329,6 +329,16 @@
     1. 为了避免在浅层特征图上消耗过多计算资源，设计的MutilBackbone共享一个stem的信息，这个设计有利于避免计算量过大，推理时间过大的问题。
     2. 为了避免不同Backbone信息融合出现不同来源特征之间的空间差异，我们为此设计了DynamicAlignFusion，其先通过融合来自两个不同模块学习到的特征，然后生成一个名为DynamicAlignWeight去调整各自的特征，最后使用一个可学习的通道权重，其可以根据输入特征动态调整两条路径的权重，从而增强模型对不同特征的适应能力。
 
+24. Rep Shared Convolutional Detection Head
+
+    自研重参数轻量化检测头.
+    detect:ultralytics/cfg/models/v8/yolov8-RSCD.yaml
+    seg:ultralytics/cfg/models/v8/yolov8-seg-RSCD.yaml
+    pose:ultralytics/cfg/models/v8/yolov8-pose-RSCD.yaml
+    obb:ultralytics/cfg/models/v8/yolov8-obb-RSCD.yaml
+    1. 通过使用共享卷积，可以大幅减少参数数量，这使得模型更轻便，特别是在资源受限的设备上.但由于共享参数可能限制模型的表达能力，因为不同特征可能需要不同的卷积核来捕捉复杂的模式。共享参数可能无法充分捕捉这些差异。为了尽量弥补实现轻量化所采取的共享卷积带来的负面影响，我们使用可重参数化卷积，通过引入更多的可学习参数，网络可以更有效地从数据中提取特征，进而弥补轻量化模型后可能带来的精度丢失问题，并且重参数化卷积可以大大提升参数利用率，并且在推理阶段与普通卷积无差，为模型带来无损的优化方案。
+    2. 在使用共享卷积的同时，为了应对每个检测头所检测的目标尺度不一致的问题，使用Scale层对特征进行缩放.
+
 ### BackBone系列
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
     
@@ -967,6 +977,12 @@
     1. 多尺度特征提取：通过 nn.AdaptiveAvgPool2d 进行多尺度的池化，提取不同大小的局部信息，有助于捕捉图像的多层次特征。
     2. 边缘增强：EdgeEnhancer 模块专门用于提取边缘信息，使得网络对边缘的敏感度增强，这对许多视觉任务（如目标检测、语义分割等）有重要作用。
     3. 特征融合：将不同尺度下提取的特征通过插值操作对齐到同一尺度，然后将它们拼接在一起，最后经过卷积层融合成统一的特征表示，能够提高模型对多尺度特征的感知。
+
+14. ultralytics/cfg/models/v10/yolov10n-RSCD.yaml
+
+    自研重参数轻量化检测头.(Rep Shared Convolutional Detection Head)
+    1. 通过使用共享卷积，可以大幅减少参数数量，这使得模型更轻便，特别是在资源受限的设备上.但由于共享参数可能限制模型的表达能力，因为不同特征可能需要不同的卷积核来捕捉复杂的模式。共享参数可能无法充分捕捉这些差异。为了尽量弥补实现轻量化所采取的共享卷积带来的负面影响，我们使用可重参数化卷积，通过引入更多的可学习参数，网络可以更有效地从数据中提取特征，进而弥补轻量化模型后可能带来的精度丢失问题，并且重参数化卷积可以大大提升参数利用率，并且在推理阶段与普通卷积无差，为模型带来无损的优化方案。
+    2. 在使用共享卷积的同时，为了应对每个检测头所检测的目标尺度不一致的问题，使用Scale层对特征进行缩放.
 
 ### BackBone系列
 
@@ -1786,3 +1802,8 @@
     3. 新增Efficient Frequency-Domain Image Deraining with Contrastive Regularization中的Fused_Fourier_Conv_Mixer.
     4. 更新使用教程.
     5. 百度云视频增加20241024更新说明.
+
+- **20241031-ultralytics-v1.74**
+    1. 新增v8、v10自研Rep Shared Convolutional Detection Head.
+    2. 更新使用教程.
+    3. 百度云视频增加20241031更新说明.
