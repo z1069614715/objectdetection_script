@@ -883,3 +883,9 @@
     3. 新增Efficient Frequency-Domain Image Deraining with Contrastive Regularization中的Fused_Fourier_Conv_Mixer.
     4. 更新使用教程.
     5. 百度云视频增加20241027更新说明.
+
+- **20241103-yolov11-v1.4**
+    1. 新增自研Rep Shared Convolutional Detection Head.
+    2. 修复已知问题。
+    3. 增加实例分割、姿态检测、旋转目标检测怎么用里面的改进视频在使用说明.
+    4. 百度云视频增加20241103更新说明.
