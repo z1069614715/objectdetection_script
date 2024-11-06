@@ -247,6 +247,13 @@
     2. 边缘增强：EdgeEnhancer 模块专门用于提取边缘信息，使得网络对边缘的敏感度增强，这对许多视觉任务（如目标检测、语义分割等）有重要作用。
     3. 特征融合：将不同尺度下提取的特征通过插值操作对齐到同一尺度，然后将它们拼接在一起，最后经过卷积层融合成统一的特征表示，能够提高模型对多尺度特征的感知。
 
+14. ultralytics/cfg/models/rt-detr/rtdetr-CSP-FreqSpatial.yaml
+
+    FreqSpatial 是一个融合时域和频域特征的卷积神经网络（CNN）模块。该模块通过在时域和频域中提取特征，旨在捕捉不同层次的空间和频率信息，以增强模型在处理图像数据时的鲁棒性和表示能力。模块的主要特点是将 Scharr 算子（用于边缘检测）与 时域卷积 和 频域卷积 结合，通过多种视角捕获图像的结构特征。
+    1. 时域特征提取：从原始图像中提取出基于空间结构的特征，主要捕捉图像的细节、边缘信息等。
+    2. 频域特征提取：从频率域中提取出频率相关的模式，捕捉到图像的低频和高频成分，能够帮助模型在全局和局部的尺度上提取信息。
+    3. 特征融合：将时域和频域的特征进行加权相加，得到最终的输出特征图。这种加权融合允许模型同时考虑空间结构信息和频率信息，从而增强模型在多种场景下的表现能力。
+
 ### BackBone系列
 1. ultralytics/cfg/models/rt-detr/rt-detr-timm.yaml
 
@@ -334,6 +341,14 @@
 26. ultralytics/cfg/models/rt-detr/rtdetr-C2f-FFCM.yaml
 
     使用[Efficient Frequency-Domain Image Deraining with Contrastive Regularization ECCV2024](https://github.com/deng-ai-lab/FADformer)中的Fused_Fourier_Conv_Mixer与CSP思想结合改进rtdetr-backbone.
+
+27. ultralytics/cfg/models/rt-detr/rtdetr-C2f-SFHF.yaml
+
+    使用[SFHformer ECCV2024](https://github.com/deng-ai-lab/SFHformer)中的block与CSP思想结合改进 rtdetr-backbone.
+
+28. ultralytics/cfg/models/rt-detr/rtdetr-C2f-MSM.yaml
+
+    使用[Revitalizing Convolutional Network for Image Restoration TPAMI2024](https://zhuanlan.zhihu.com/p/720777160)中的MSM与CSP思想结合改进rtdetr-backbone.
 
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
@@ -1557,3 +1572,10 @@
     3. 新增Efficient Frequency-Domain Image Deraining with Contrastive Regularization ECCV2024中的Fused_Fourier_Conv_Mixer与CSP思想结合改进rtdetr-backbone.
     4. 更新使用教程.
     5. 百度云视频增加20241020更新说明.
+
+- **20241106-rtdetr-v1.37**
+    1. 新增自研CSP-FreqSpatial.
+    2. 新增SFHformer ECCV2024中的block与CSP思想结合改进 rtdetr-backbone.
+    3. 新增Revitalizing Convolutional Network for Image Restoration TPAMI2024中的MSM与CSP思想结合改进rtdetr-backbone.
+    4. 更新使用教程.
+    5. 百度云视频增加20241106更新说明.
