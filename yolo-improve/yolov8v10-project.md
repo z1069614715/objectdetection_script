@@ -339,6 +339,13 @@
     1. 通过使用共享卷积，可以大幅减少参数数量，这使得模型更轻便，特别是在资源受限的设备上.但由于共享参数可能限制模型的表达能力，因为不同特征可能需要不同的卷积核来捕捉复杂的模式。共享参数可能无法充分捕捉这些差异。为了尽量弥补实现轻量化所采取的共享卷积带来的负面影响，我们使用可重参数化卷积，通过引入更多的可学习参数，网络可以更有效地从数据中提取特征，进而弥补轻量化模型后可能带来的精度丢失问题，并且重参数化卷积可以大大提升参数利用率，并且在推理阶段与普通卷积无差，为模型带来无损的优化方案。
     2. 在使用共享卷积的同时，为了应对每个检测头所检测的目标尺度不一致的问题，使用Scale层对特征进行缩放.
 
+25. ultralytics/cfg/models/v8/yolov8-CSP-FreqSpatial.yaml
+
+    FreqSpatial 是一个融合时域和频域特征的卷积神经网络（CNN）模块。该模块通过在时域和频域中提取特征，旨在捕捉不同层次的空间和频率信息，以增强模型在处理图像数据时的鲁棒性和表示能力。模块的主要特点是将 Scharr 算子（用于边缘检测）与 时域卷积 和 频域卷积 结合，通过多种视角捕获图像的结构特征。
+    1. 时域特征提取：从原始图像中提取出基于空间结构的特征，主要捕捉图像的细节、边缘信息等。
+    2. 频域特征提取：从频率域中提取出频率相关的模式，捕捉到图像的低频和高频成分，能够帮助模型在全局和局部的尺度上提取信息。
+    3. 特征融合：将时域和频域的特征进行加权相加，得到最终的输出特征图。这种加权融合允许模型同时考虑空间结构信息和频率信息，从而增强模型在多种场景下的表现能力。
+
 ### BackBone系列
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
     
@@ -798,6 +805,14 @@
 
     使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的CaFormer改进c2f.
 
+61. ultralytics/cfg/models/v8/yolov8-C2f-SFHF.yaml
+
+    使用[SFHformer ECCV2024](https://github.com/deng-ai-lab/SFHformer)中的block改进C2f.
+
+62. ultralytics/cfg/models/v8/yolov8-C2f-MSM.yaml
+
+    使用[Revitalizing Convolutional Network for Image Restoration TPAMI2024](https://zhuanlan.zhihu.com/p/720777160)中的MSM改进C2f.(需要看[常见错误和解决方案的第五点](#a))
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -892,6 +907,30 @@
 
     使用[DCNV4](https://github.com/OpenGVLab/DCNv4)对DyHead进行二次创新.
 
+16. ultralytics/cfg/models/v10/yolov10n-C2f-iRMB-Cascaded.yaml
+
+    使用[EfficientViT CVPR2023](https://github.com/microsoft/Cream/tree/main/EfficientViT)中的CascadedGroupAttention对[EMO ICCV2023](https://github.com/zhangzjn/EMO)中的iRMB进行二次创新来改进C2f.
+
+17. ultralytics/cfg/models/v10/yolov10n-C2f-iRMB-DRB.yaml
+
+    使用[UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的DilatedReparamBlock对[EMO ICCV2023](https://github.com/zhangzjn/EMO)中的iRMB进行二次创新来改进C2f.
+
+18. ultralytics/cfg/models/v10/yolov10n-C2f-iRMB-SWC.yaml
+
+    使用[shift-wise conv](https://arxiv.org/abs/2401.12736)对[EMO ICCV2023](https://github.com/zhangzjn/EMO)中的iRMB进行二次创新来改进C2f.
+
+19. ultralytics/cfg/models/v10/yolov10n-ELA-HSFPN.yaml
+
+    使用[Efficient Local Attention](https://arxiv.org/abs/2403.01123)改进HSFPN.
+
+20. ultralytics/cfg/models/v10/yolov10n-CA-HSFPN.yaml
+
+    使用[Coordinate Attention CVPR2021](https://github.com/houqb/CoordAttention)改进HSFPN.
+
+21. ultralytics/cfg/models/v10/yolov10n-CAA-HSFPN.yaml
+
+    使用[CVPR2024 PKINet](https://github.com/PKINet/PKINet)中的CAA模块HSFPN.
+
 ### 自研系列
 
 1. ultralytics/cfg/models/v10/yolov10n-C2f-EMSC.yaml
@@ -983,6 +1022,13 @@
     自研重参数轻量化检测头.(Rep Shared Convolutional Detection Head)
     1. 通过使用共享卷积，可以大幅减少参数数量，这使得模型更轻便，特别是在资源受限的设备上.但由于共享参数可能限制模型的表达能力，因为不同特征可能需要不同的卷积核来捕捉复杂的模式。共享参数可能无法充分捕捉这些差异。为了尽量弥补实现轻量化所采取的共享卷积带来的负面影响，我们使用可重参数化卷积，通过引入更多的可学习参数，网络可以更有效地从数据中提取特征，进而弥补轻量化模型后可能带来的精度丢失问题，并且重参数化卷积可以大大提升参数利用率，并且在推理阶段与普通卷积无差，为模型带来无损的优化方案。
     2. 在使用共享卷积的同时，为了应对每个检测头所检测的目标尺度不一致的问题，使用Scale层对特征进行缩放.
+
+15. ultralytics/cfg/models/v10/yolov10n-CSP-FreqSpatial.yaml
+
+    FreqSpatial 是一个融合时域和频域特征的卷积神经网络（CNN）模块。该模块通过在时域和频域中提取特征，旨在捕捉不同层次的空间和频率信息，以增强模型在处理图像数据时的鲁棒性和表示能力。模块的主要特点是将 Scharr 算子（用于边缘检测）与 时域卷积 和 频域卷积 结合，通过多种视角捕获图像的结构特征。
+    1. 时域特征提取：从原始图像中提取出基于空间结构的特征，主要捕捉图像的细节、边缘信息等。
+    2. 频域特征提取：从频率域中提取出频率相关的模式，捕捉到图像的低频和高频成分，能够帮助模型在全局和局部的尺度上提取信息。
+    3. 特征融合：将时域和频域的特征进行加权相加，得到最终的输出特征图。这种加权融合允许模型同时考虑空间结构信息和频率信息，从而增强模型在多种场景下的表现能力。
 
 ### BackBone系列
 
@@ -1117,6 +1163,10 @@
 9. ultralytics/cfg/models/v10/yolov10n-EfficientRepBiPAN.yaml
 
     使用[YOLOV6](https://github.com/meituan/YOLOv6/tree/main)中的EfficientRepBiPAN改进Neck.
+
+10. ultralytics/cfg/models/v10/yolov10n-HSFPN.yaml
+
+    使用[MFDS-DETR](https://github.com/JustlfC03/MFDS-DETR)中的HS-FPN改进yolov10的neck.
 
 ### Head系列
 
@@ -1266,11 +1316,27 @@
 
     使用[Efficient Frequency-Domain Image Deraining with Contrastive Regularization ECCV2024](https://github.com/deng-ai-lab/FADformer)中的Fused_Fourier_Conv_Mixer改进C2f.
 
+25. ultralytics/cfg/models/v10/yolov10n-C2f-SFHF.yaml
+
+    使用[SFHformer ECCV2024](https://github.com/deng-ai-lab/SFHformer)中的block改进C2f.
+
+26. ultralytics/cfg/models/v10/yolov10n-C2f-MSM.yaml
+
+    使用[Revitalizing Convolutional Network for Image Restoration TPAMI2024](https://zhuanlan.zhihu.com/p/720777160)中的MSM改进C2f.
+
+27. ultralytics/cfg/models/v10/yolov10n-C2f-iRMB.yaml
+
+    使用[EMO ICCV2023](https://github.com/zhangzjn/EMO)中的iRMB改进C2f.
+
 ### 组合系列
 
 1. ultralytics/cfg/models/v10/yolov10n-starnet-bifpn.yaml
 
     使用[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)和bifpn改进yolov10.
+
+2. ultralytics/cfg/models/v10/yolov10n-ELA-HSFPN-TADDH.yaml
+
+    使用[Efficient Local Attention](https://arxiv.org/abs/2403.01123)改进HSFPN,使用自研动态动态对齐检测头改进Head.
 
 # Mamba-YOLO
 1. [Mamba-YOLO](https://github.com/HZAI-ZJNU/Mamba-YOLO)
@@ -1807,3 +1873,11 @@
     1. 新增v8、v10自研Rep Shared Convolutional Detection Head.
     2. 更新使用教程.
     3. 百度云视频增加20241031更新说明.
+
+- **20241109-ultralytics-v1.75**
+    1. 新增自研CSP-FreqSpatial.
+    2. 新增SFHformer ECCV2024中的block改进C2f.
+    3. 新增Revitalizing Convolutional Network for Image Restoration TPAMI2024中的MSM改进C2f.
+    4. 增加v10多个改进.
+    5. 更新使用教程.
+    6. 百度云视频增加20241109更新说明.
