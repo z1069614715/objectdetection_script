@@ -30,6 +30,9 @@
     ```
 18. [深度学习实验部分常见疑问解答三！(怎么判断模型是否收敛？模型过拟合怎么办？)](https://www.bilibili.com/video/BV11S421d76P/)
 19. [YOLO系列模型训练结果详细解答！(训练过程的一些疑问，该放哪个文件运行出来的结果、参数量计算量在哪里看..等等问题)](https://www.bilibili.com/video/BV11b421J7Vx/)
+20. [细谈目标检测中的小目标检测头和大目标检测检测头，并教懂你怎么加微小目标、极大目标检测头！](https://www.bilibili.com/video/BV1jkDWYFEwx/)
+21. [深度学习炼丹必备必看必须知道的小技巧！](https://www.bilibili.com/video/BV1q3SZYsExc/)
+22. [深度学习实验准备-数据集怎么选？有哪些需要注意的点？](https://www.bilibili.com/video/BV11zySYvEhs/)
 
 ### 必看论文分享系列
 1. [有营养的必看论文分享系列一-RTMDet<考虑到精度、速度、部署的2D目标检测网络>](https://www.bilibili.com/video/BV1ab421J77G/)
@@ -198,3 +201,7 @@
 5. [YOLOV9改进-CVPR2024-StarNet、DRepCSPELAN](https://www.bilibili.com/video/BV1BU411o7rz/)
 6. [YOLOV9改进-CVPR2023-FasterNet以及其FasterBlock、PConv的改进](https://www.bilibili.com/video/BV18y411a74y/)
 7. [YOLOV9改进-DySnakeConv动态蛇形卷积、针对长条形不规则物体！](https://www.bilibili.com/video/BV1gi421S77X/)
+#### YOLOV11
+1. [Ultralytics8.3.0沉浸式讲解-YOLOV11针对代码的详细剖析](https://www.bilibili.com/video/BV19XxxeXEma/)
+2. [保姆级别YOLOV11-环境配置、 数据集介绍、训练、验证、推理 详细教学视频，看了它，跑YOLOV11 没问题~](https://www.bilibili.com/video/BV1VA11YBELB/)
+3. [YOLOV11改进详细分析(改进前必看)，每个部分(Backbone、Neck、Head....)有哪些地方可以改进？改进的时候要避免小白三件套！](https://www.bilibili.com/video/BV1GKCdYbEuz/)
