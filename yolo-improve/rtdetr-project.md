@@ -1579,3 +1579,10 @@
     3. 新增Revitalizing Convolutional Network for Image Restoration TPAMI2024中的MSM与CSP思想结合改进rtdetr-backbone.
     4. 更新使用教程.
     5. 百度云视频增加20241106更新说明.
+
+- **20241118-rtdetr-v1.38**
+    1. 基于自研CSP-MutilScaleEdgeInformationEnhance再次创新得到CSP-MutilScaleEdgeInformationSelect.
+    2. 新增Pattern Recognition 2024|DRANet中的HDRAB和RAB模块与CSP思想结合改进rtdetr-backbone.
+    3. 新增ECCV2022-ELAN中的Local feature extraction改进RepC3.
+    4. 更新使用教程.
+    5. 百度云视频增加20241118更新说明.
