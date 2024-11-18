@@ -254,6 +254,11 @@
     2. 频域特征提取：从频率域中提取出频率相关的模式，捕捉到图像的低频和高频成分，能够帮助模型在全局和局部的尺度上提取信息。
     3. 特征融合：将时域和频域的特征进行加权相加，得到最终的输出特征图。这种加权融合允许模型同时考虑空间结构信息和频率信息，从而增强模型在多种场景下的表现能力。
 
+15. ultralytics/cfg/models/rt-detr/rtdetr-CSP-MutilScaleEdgeInformationSelect.yaml
+
+    基于自研CSP-MutilScaleEdgeInformationEnhance再次创新.
+    我们提出了一个 多尺度边缘信息选择模块（MutilScaleEdgeInformationSelect），其目的是从多尺度边缘信息中高效选择与目标任务高度相关的关键特征。为了实现这一目标，我们引入了一个具有通过聚焦更重要的区域能力的注意力机制[ICCV2023 DualDomainSelectionMechanism, DSM](https://github.com/c-yn/FocalNet)。该机制通过聚焦图像中更重要的区域（如复杂边缘和高频信号区域），在多尺度特征中自适应地筛选具有更高任务相关性的特征，从而显著提升了特征选择的精准度和整体模型性能。
+
 ### BackBone系列
 1. ultralytics/cfg/models/rt-detr/rt-detr-timm.yaml
 
@@ -349,6 +354,14 @@
 28. ultralytics/cfg/models/rt-detr/rtdetr-C2f-MSM.yaml
 
     使用[Revitalizing Convolutional Network for Image Restoration TPAMI2024](https://zhuanlan.zhihu.com/p/720777160)中的MSM与CSP思想结合改进rtdetr-backbone.
+
+29. ultralytics/cfg/models/rt-detr/rtdetr-C2f-HDRAB.yaml
+
+    使用[Pattern Recognition 2024|DRANet](https://github.com/WenCongWu/DRANet)中的HDRAB(hybrid dilated residual attention block)结合CSP思想改进backbone.
+
+30. ultralytics/cfg/models/rt-detr/rtdetr-C2f-RAB.yaml
+
+    使用[Pattern Recognition 2024|DRANet](https://github.com/WenCongWu/DRANet)中的RAB( residual attention block)结合CSP思想改进backbone.
 
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
@@ -489,6 +502,10 @@
 9. ultralytics/cfg/models/rt-detr/rtdetr-gConvC3.yaml
 
     使用[Rethinking Performance Gains in Image Dehazing Networks](https://arxiv.org/abs/2209.11448)的gConvblock改进RepC3.
+
+10. ultralytics/cfg/models/rt-detr/rtdetr-LFEC3.yaml
+
+    使用[Efficient Long-Range Attention Network for Image Super-resolution ECCV2022](https://github.com/xindongzhang/ELAN)中的Local feature extraction改进RepC3.
 
 ### ResNet主干中的BasicBlock/BottleNeck改进系列(以下改进BottleNeck基本都有,就不再重复标注)
 1. ultralytics/cfg/models/rt-detr/rtdetr-Ortho.yaml
