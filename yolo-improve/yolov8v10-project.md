@@ -346,6 +346,11 @@
     2. 频域特征提取：从频率域中提取出频率相关的模式，捕捉到图像的低频和高频成分，能够帮助模型在全局和局部的尺度上提取信息。
     3. 特征融合：将时域和频域的特征进行加权相加，得到最终的输出特征图。这种加权融合允许模型同时考虑空间结构信息和频率信息，从而增强模型在多种场景下的表现能力。
 
+26. ultralytics/cfg/models/v8/yolov8-C2f-MutilScaleEdgeInformationSelect.yaml
+
+    基于自研CSP-MutilScaleEdgeInformationEnhance再次创新.
+    我们提出了一个 多尺度边缘信息选择模块（MutilScaleEdgeInformationSelect），其目的是从多尺度边缘信息中高效选择与目标任务高度相关的关键特征。为了实现这一目标，我们引入了一个具有通过聚焦更重要的区域能力的注意力机制[ICCV2023 DualDomainSelectionMechanism, DSM](https://github.com/c-yn/FocalNet)。该机制通过聚焦图像中更重要的区域（如复杂边缘和高频信号区域），在多尺度特征中自适应地筛选具有更高任务相关性的特征，从而显著提升了特征选择的精准度和整体模型性能。
+
 ### BackBone系列
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
     
@@ -811,7 +816,19 @@
 
 62. ultralytics/cfg/models/v8/yolov8-C2f-MSM.yaml
 
-    使用[Revitalizing Convolutional Network for Image Restoration TPAMI2024](https://zhuanlan.zhihu.com/p/720777160)中的MSM改进C2f.(需要看[常见错误和解决方案的第五点](#a))
+    使用[Revitalizing Convolutional Network for Image Restoration TPAMI2024](https://zhuanlan.zhihu.com/p/720777160)中的MSM改进C2f.
+
+214. ultralytics/cfg/models/v8/yolov8-C2f-RAB.yaml
+
+    使用[Pattern Recognition 2024|DRANet](https://github.com/WenCongWu/DRANet)中的HDRAB(hybrid dilated residual attention block)改进C2f.
+
+215. ultralytics/cfg/models/v8/yolov8-C2f-HDRAB.yaml
+
+    使用[Pattern Recognition 2024|DRANet](https://github.com/WenCongWu/DRANet)中的RAB( residual attention block)改进C2f.
+
+216. ultralytics/cfg/models/v8/yolov8n-C2f-LFE.yaml
+
+    使用[Efficient Long-Range Attention Network for Image Super-resolution ECCV2022](https://github.com/xindongzhang/ELAN)中的Local feature extraction改进C2f.
 
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
@@ -1029,6 +1046,44 @@
     1. 时域特征提取：从原始图像中提取出基于空间结构的特征，主要捕捉图像的细节、边缘信息等。
     2. 频域特征提取：从频率域中提取出频率相关的模式，捕捉到图像的低频和高频成分，能够帮助模型在全局和局部的尺度上提取信息。
     3. 特征融合：将时域和频域的特征进行加权相加，得到最终的输出特征图。这种加权融合允许模型同时考虑空间结构信息和频率信息，从而增强模型在多种场景下的表现能力。
+
+16. ultralytics/cfg/models/v10/yolov10n-C2f-MutilScaleEdgeInformationSelect.yaml
+
+    基于自研CSP-MutilScaleEdgeInformationEnhance再次创新.
+    我们提出了一个 多尺度边缘信息选择模块（MutilScaleEdgeInformationSelect），其目的是从多尺度边缘信息中高效选择与目标任务高度相关的关键特征。为了实现这一目标，我们引入了一个具有通过聚焦更重要的区域能力的注意力机制[ICCV2023 DualDomainSelectionMechanism, DSM](https://github.com/c-yn/FocalNet)。该机制通过聚焦图像中更重要的区域（如复杂边缘和高频信号区域），在多尺度特征中自适应地筛选具有更高任务相关性的特征，从而显著提升了特征选择的精准度和整体模型性能。
+
+17. ultralytics/cfg/models/v10/yolov10n-LSDECD.yaml
+
+    基于自研轻量化检测头上(LSCD)，使用detail-enhanced convolution进一步改进，提高检测头的细节捕获能力，进一步改善检测精度.
+    关于DEConv在运行的时候重参数化后比重参数化前的计算量还要大的问题:是因为重参数化前thop库其计算不准的问题,看重参数化后的参数即可.
+    1. DEA-Net中设计了一个细节增强卷积（DEConv），具体来说DEConv将先验信息整合到普通卷积层，以增强表征和泛化能力。然后，通过使用重参数化技术，DEConv等效地转换为普通卷积，不需要额外的参数和计算成本。
+
+18. ultralytics/cfg/models/v10/yolov10n-ContextGuideFPN.yaml
+
+    Context Guide Fusion Module（CGFM）是一个创新的特征融合模块，旨在改进YOLOv8中的特征金字塔网络（FPN）。该模块的设计考虑了多尺度特征融合过程中上下文信息的引导和自适应调整。
+    1. 上下文信息的有效融合：通过SE注意力机制，模块能够在特征融合过程中捕捉并利用重要的上下文信息，从而增强特征表示的有效性，并有效引导模型学习检测目标的信息，从而提高模型的检测精度。
+    2. 特征增强：通过权重化的特征重组操作，模块能够增强重要特征，同时抑制不重要特征，提升特征图的判别能力。
+    3. 简单高效：模块结构相对简单，不会引入过多的计算开销，适合在实时目标检测任务中应用。
+
+19. Re-CalibrationFPN
+
+    为了加强浅层和深层特征的相互交互能力，推出重校准特征金字塔网络(Re-CalibrationFPN).
+    P2345：ultralytics/cfg/models/v10/yolov10n-ReCalibrationFPN-P2345.yaml(带有小目标检测头的ReCalibrationFPN)
+    P345：ultralytics/cfg/models/v10/yolov10n-ReCalibrationFPN-P345.yaml
+    P3456：ultralytics/cfg/models/v10/yolov10n-ReCalibrationFPN-P3456.yaml(带有大目标检测头的ReCalibrationFPN)
+    1. 浅层语义较少，但细节丰富，有更明显的边界和减少失真。此外，深层蕴藏着丰富的物质语义信息。因此，直接融合低级具有高级特性的特性可能导致冗余和不一致。为了解决这个问题，我们提出了[SBA](https://github.com/Barrett-python/DuAT)模块，它有选择地聚合边界信息和语义信息来描绘更细粒度的物体轮廓和重新校准物体的位置。
+    2. 相比传统的FPN结构，[SBA](https://github.com/Barrett-python/DuAT)模块引入了高分辨率和低分辨率特征之间的双向融合机制，使得特征之间的信息传递更加充分，进一步提升了多尺度特征融合的效果。
+    3. [SBA](https://github.com/Barrett-python/DuAT)模块通过自适应的注意力机制，根据特征图的不同分辨率和内容，自适应地调整特征的权重，从而更好地捕捉目标的多尺度特征。
+
+20. ultralytics/cfg/models/v10/yolov10n-CSP-PTB.yaml
+
+    Cross Stage Partial - Partially Transformer Block
+    在计算机视觉任务中，Transformer结构因其强大的全局特征提取能力而受到广泛关注。然而，由于Transformer结构的计算复杂度较高，直接将其应用于所有通道会导致显著的计算开销。为了在保证高效特征提取的同时降低计算成本，我们设计了一种混合结构，将输入特征图分为两部分，分别由CNN和Transformer处理，结合了卷积神经网络(CNN)和Transformer机制的模块，旨在增强特征提取的能力。
+    我们提出了一种名为CSP_PTB(Cross Stage Partial - Partially Transformer Block)的模块，旨在结合CNN和Transformer的优势，通过对输入通道进行部分分配来优化计算效率和特征提取能力。
+    1. 融合局部和全局特征：多项研究表明，CNN的感受野大小较少，导致其只能提取局部特征，但Transformer的MHSA能够提取全局特征，能够同时利用两者的优势。
+    2. 保证高效特征提取的同时降低计算成本：为了能引入Transformer结构来提取全局特征又不想大幅度增加计算复杂度，因此提出Partially Transformer Block，只对部分通道使用TransformerBlock。
+    3. MHSA_CGLU包含Mutil-Head-Self-Attention和[ConvolutionalGLU(TransNext CVPR2024)](https://github.com/DaiShiResearch/TransNeXt)，其中Mutil-Head-Self-Attention负责提取全局特征，ConvolutionalGLU用于增强非线性特征表达能力，ConvolutionalGLU相比于传统的FFN，具有更强的性能。
+    4. 可以根据不同的模型大小和具体的运行情况调节用于Transformer的通道数。
 
 ### BackBone系列
 
@@ -1327,6 +1382,18 @@
 27. ultralytics/cfg/models/v10/yolov10n-C2f-iRMB.yaml
 
     使用[EMO ICCV2023](https://github.com/zhangzjn/EMO)中的iRMB改进C2f.
+
+30. ultralytics/cfg/models/v10/yolov10n-C2f-RAB.yaml
+
+    使用[Pattern Recognition 2024|DRANet](https://github.com/WenCongWu/DRANet)中的HDRAB(hybrid dilated residual attention block)改进C2f.
+
+31. ultralytics/cfg/models/v10/yolov10n-C2f-HDRAB.yaml
+
+    使用[Pattern Recognition 2024|DRANet](https://github.com/WenCongWu/DRANet)中的RAB( residual attention block)改进C2f.
+
+32. ultralytics/cfg/models/v10/yolov10n-C2f-LFE.yaml
+
+    使用[Efficient Long-Range Attention Network for Image Super-resolution ECCV2022](https://github.com/xindongzhang/ELAN)中的Local feature extraction改进C2f.
 
 ### 组合系列
 
@@ -1881,3 +1948,11 @@
     4. 增加v10多个改进.
     5. 更新使用教程.
     6. 百度云视频增加20241109更新说明.
+
+- **20241122-ultralytics-v1.76**
+    1. 基于自研CSP-MutilScaleEdgeInformationEnhance再次创新得到CSP-MutilScaleEdgeInformationSelect.
+    2. 新增Pattern Recognition 2024|DRANet中的HDRAB和RAB模块改进C2f.
+    3. 新增ECCV2022-ELAN中的Local feature extraction改进C2f.
+    4. 增加v10多个改进.
+    5. 更新使用教程.
+    6. 百度云视频增加20241122更新说明.
