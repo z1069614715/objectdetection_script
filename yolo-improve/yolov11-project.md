@@ -344,6 +344,11 @@
     2. 频域特征提取：从频率域中提取出频率相关的模式，捕捉到图像的低频和高频成分，能够帮助模型在全局和局部的尺度上提取信息。
     3. 特征融合：将时域和频域的特征进行加权相加，得到最终的输出特征图。这种加权融合允许模型同时考虑空间结构信息和频率信息，从而增强模型在多种场景下的表现能力。
 
+26. ultralytics/cfg/models/11/yolo11-C3k2-MutilScaleEdgeInformationSelect.yaml
+
+    基于自研CSP-MutilScaleEdgeInformationEnhance再次创新.
+    我们提出了一个 多尺度边缘信息选择模块（MutilScaleEdgeInformationSelect），其目的是从多尺度边缘信息中高效选择与目标任务高度相关的关键特征。为了实现这一目标，我们引入了一个具有通过聚焦更重要的区域能力的注意力机制[ICCV2023 DualDomainSelectionMechanism, DSM](https://github.com/c-yn/FocalNet)。该机制通过聚焦图像中更重要的区域（如复杂边缘和高频信号区域），在多尺度特征中自适应地筛选具有更高任务相关性的特征，从而显著提升了特征选择的精准度和整体模型性能。
+
 ### BackBone系列
 1. ultralytics/cfg/models/11/yolo11-efficientViT.yaml
     
@@ -806,6 +811,32 @@
 
     使用[Revitalizing Convolutional Network for Image Restoration TPAMI2024](https://zhuanlan.zhihu.com/p/720777160)中的MSM改进C3k2.
 
+64. ultralytics/cfg/models/11/yolo11-C3k2-HDRAB.yaml
+
+    使用[Pattern Recognition 2024|DRANet](https://github.com/WenCongWu/DRANet)中的RAB( residual attention block)改进C3k2.
+
+65. ultralytics/cfg/models/11/yolo11-C3k2-RAB.yaml
+
+    使用[Pattern Recognition 2024|DRANet](https://github.com/WenCongWu/DRANet)中的HDRAB(hybrid dilated residual attention block)改进C3k2.
+
+66. ultralytics/cfg/models/11/yolo11-C3k2-LFE.yaml
+
+    使用[Efficient Long-Range Attention Network for Image Super-resolution ECCV2022](https://github.com/xindongzhang/ELAN)中的Local feature extraction改进C3k2.
+
+### C2PSA系列
+
+1. ultralytics/cfg/models/11/yolo11-C2BRA.yaml
+
+    使用[BIFormer CVPR2023](https://github.com/rayleizhu/BiFormer)中的Bi-Level Routing Attention改进C2PSA.
+
+2. ultralytics/cfg/models/11/yolo11-C2CGA.yaml
+
+    使用[EfficientViT CVPR2023](https://github.com/microsoft/Cream/tree/main/EfficientViT)中的CascadedGroupAttention改进C2PSA.
+
+3. ultralytics/cfg/models/11/yolo11-C2DA.yaml
+
+    使用[Vision Transformer with Deformable Attention(CVPR2022)](https://github.com/LeapLabTHU/DAT)中的DAttention改进C2PSA.
+
 ### 组合系列
 1. ultralytics/cfg/models/11/yolo11-fasternet-bifpn.yaml
 
@@ -912,3 +943,14 @@
     4. 更新使用教程.
     5. 百度云视频增加20241112更新说明.
     6. 修复一些已知问题.
+
+- **20241124-yolov11-v1.6**
+    1. 基于自研CSP-MutilScaleEdgeInformationEnhance再次创新得到CSP-MutilScaleEdgeInformationSelect.
+    2. 新增Pattern Recognition 2024|DRANet中的HDRAB和RAB模块改进C3k2.
+    3. 新增ECCV2022-ELAN中的Local feature extraction改进C3k2.
+    4. 使用Bi-Level Routing Attention改进C2PSA.
+    5. 使用CascadedGroupAttention改进C2PSA.
+    6. 使用DAttention改进C2PSA.
+    7. 更新使用教程.
+    8. 百度云视频增加20241124更新说明.
+    9. 修复一些已知问题.
