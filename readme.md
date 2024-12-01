@@ -15,7 +15,7 @@
     5. 项目因为(价格问题)不附带一对一私人答疑服务,平时私聊问点小问题和群里的问题,有空我都会回复.
     6. 里面配备使用说明(部分改进点使用复杂度高、二次创新、原创的模块都会有对应的视频进行说明)
 
-2. 基于Ultralytics的yolov11改进项目.(69.9¥,购买过项目一的优惠至38.8¥)
+2. 基于Ultralytics的yolov11改进项目.(69.9¥)
     
     [目前已有的改进方案和更新详细公告](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/yolov11-project.md)  
     项目简单介绍，详情请看项目详解.

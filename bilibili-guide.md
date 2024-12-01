@@ -38,6 +38,15 @@
 1. [有营养的必看论文分享系列一-RTMDet<考虑到精度、速度、部署的2D目标检测网络>](https://www.bilibili.com/video/BV1ab421J77G/)
 2. [有营养的必看论文分享系列二-MobileNets<轻量化的开山之作>](https://www.bilibili.com/video/BV1hM4m117JW/)
 
+### 高区论文带读系列
+1. [高区论文带读系列一-40分钟长视频带你分析一篇SCI1区的文章，SCI1区也不是触不可及！](https://www.bilibili.com/video/BV1JESuYxEjn/)
+
+### YOLO系列配置文件系列
+1. [不会把多个改进整合到一个yaml配置文件里面？那来看看这个吧！从简到难手把手带你整合三个yaml](https://www.bilibili.com/video/BV15H4y1Y7a2/)
+2. [细谈目标检测中的小目标检测头和大目标检测检测头，并教懂你怎么加微小目标、极大目标检测头！](https://www.bilibili.com/video/BV1jkDWYFEwx/)
+3. [不会看YOLO的模型yaml配置文件？那你还怎么整合多个配置文件！](https://www.bilibili.com/video/BV1oiBRYnEEw/)
+4. [不会把多个创新点整合到一个yaml配置文件里面？那来看看这个吧！手把手来你整合创新点！](https://www.bilibili.com/video/BV1DUBRYGE3b/)
+
 ### YOLOV5,V7-PYQT5项目讲解
 1. [哔哩哔哩合集地址](https://space.bilibili.com/286900343/channel/collectiondetail?sid=917275)
 2. [项目github地址](https://github.com/z1069614715/yolov7-pyqt)
@@ -53,8 +62,9 @@
 4. [YOLOV8-OBB详细教学视频(包含如何把DOTA数据集分割成小图进行训练)](https://www.bilibili.com/video/BV1xK4y117fg/)
 5. [EfficientTeacher半监督-详细教学和调参注意事项](https://www.bilibili.com/video/BV1494y1v7hF/)
 6. [YOLOV9保姆级别教程来啦~包含环境配置、数据集转换、训练、测试、推理环节~一看就懂！](https://www.bilibili.com/video/BV1d1421z7XW/)
+7. [保姆级别YOLOV11-环境配置、 数据集介绍、训练、验证、推理 详细教学视频，看了它，跑YOLOV11 没问题~](https://www.bilibili.com/video/BV1VA11YBELB/)
 
-### YOLOV8源码常见疑问解答小课堂
+### YOLOV8V11源码常见疑问解答小课堂
 1. [关于配置文件中Optimizer参数为auto的时候，究竟Optimizer会怎么选用呢？](https://www.bilibili.com/video/BV1K34y1w7cZ/)
 2. [best.pt究竟是根据什么指标来保存的?](https://www.bilibili.com/video/BV1jN411M7MA/)
 3. [数据增强在yolov8中的应用](https://www.bilibili.com/video/BV1aQ4y1g7ah/)

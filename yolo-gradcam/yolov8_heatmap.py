@@ -85,16 +85,22 @@ class ActivationsAndGradients:
         output.register_hook(_store_grad)
 
     def post_process(self, result):
-        logits_ = result[:, 4:]
-        boxes_ = result[:, :4]
-        sorted, indices = torch.sort(logits_.max(1)[0], descending=True)
-        return torch.transpose(logits_[0], dim0=0, dim1=1)[indices[0]], torch.transpose(boxes_[0], dim0=0, dim1=1)[indices[0]], xywh2xyxy(torch.transpose(boxes_[0], dim0=0, dim1=1)[indices[0]]).cpu().detach().numpy()
+        if not self.model.end2end:
+            logits_ = result[:, 4:]
+            boxes_ = result[:, :4]
+            sorted, indices = torch.sort(logits_.max(1)[0], descending=True)
+            return torch.transpose(logits_[0], dim0=0, dim1=1)[indices[0]], torch.transpose(boxes_[0], dim0=0, dim1=1)[indices[0]]
+        else:
+            logits_ = result[:, :, 4:]
+            boxes_ = result[:, :, :4]
+            sorted, indices = torch.sort(logits_[:, :, 0], descending=True)
+            return logits_[0][indices[0]], boxes_[0][indices[0]]
   
     def __call__(self, x):
         self.gradients = []
         self.activations = []
         model_output = self.model(x)
-        post_result, pre_post_boxes, post_boxes = self.post_process(model_output[0])
+        post_result, pre_post_boxes = self.post_process(model_output[0])
         return [[post_result, pre_post_boxes]]
 
     def release(self):
@@ -102,20 +108,24 @@ class ActivationsAndGradients:
             handle.remove()
 
 class yolov8_target(torch.nn.Module):
-    def __init__(self, ouput_type, conf, ratio) -> None:
+    def __init__(self, ouput_type, conf, ratio, end2end) -> None:
         super().__init__()
         self.ouput_type = ouput_type
         self.conf = conf
         self.ratio = ratio
+        self.end2end = end2end
     
     def forward(self, data):
         post_result, pre_post_boxes = data
         result = []
         for i in trange(int(post_result.size(0) * self.ratio)):
-            if float(post_result[i].max()) < self.conf:
+            if (self.end2end and float(post_result[i, 0]) < self.conf) or (not self.end2end and float(post_result[i].max()) < self.conf):
                 break
             if self.ouput_type == 'class' or self.ouput_type == 'all':
-                result.append(post_result[i].max())
+                if self.end2end:
+                    result.append(post_result[i, 0])
+                else:
+                    result.append(post_result[i].max())
             elif self.ouput_type == 'box' or self.ouput_type == 'all':
                 for j in range(4):
                     result.append(pre_post_boxes[i, j])
@@ -132,12 +142,15 @@ class yolov8_heatmap:
             p.requires_grad_(True)
         model.eval()
         
-        target = yolov8_target(backward_type, conf_threshold, ratio)
+        if not hasattr(model, 'end2end'):
+            model.end2end = False
+        
+        target = yolov8_target(backward_type, conf_threshold, ratio, model.end2end)
         target_layers = [model.model[l] for l in layer]
         method = eval(method)(model, target_layers, use_cuda=device.type == 'cuda')
         method.activations_and_grads = ActivationsAndGradients(model, target_layers, None)
         
-        colors = np.random.uniform(0, 255, size=(len(model_names), 3)).astype(np.int)
+        colors = np.random.uniform(0, 255, size=(len(model_names), 3)).astype(np.int32)
         self.__dict__.update(locals())
     
     def post_process(self, result):
@@ -179,13 +192,16 @@ class yolov8_heatmap:
         cam_image = show_cam_on_image(img, grayscale_cam, use_rgb=True)
         
         pred = self.model(tensor)[0]
-        pred = self.post_process(pred)
+        if not self.model.end2end:
+            pred = self.post_process(pred)
+        else:
+            pred = pred[0][pred[0, :, 4] > self.conf_threshold]
         if self.renormalize:
             cam_image = self.renormalize_cam_in_bounding_boxes(pred[:, :4].cpu().detach().numpy().astype(np.int32), img, grayscale_cam)
         if self.show_box:
             for data in pred:
                 data = data.cpu().detach().numpy()
-                cam_image = self.draw_detections(data[:4], self.colors[int(data[4:].argmax())], f'{self.model_names[int(data[4:].argmax())]} {float(data[4:].max()):.2f}', cam_image)
+                cam_image = self.draw_detections(data[:4], self.colors[int(data[5])], f'{self.model_names[int(data[5])]} {float(data[4]):.2f}', cam_image)
         
         cam_image = Image.fromarray(cam_image)
         cam_image.save(save_path)
@@ -205,19 +221,21 @@ class yolov8_heatmap:
         
 def get_params():
     params = {
-        'weight': 'runs/train/exp2/weights/best.pt', # 现在只需要指定权重即可,不需要指定cfg
+        'weight': 'runs/train/exp/weights/best.pt', # 现在只需要指定权重即可,不需要指定cfg
         'device': 'cuda:0',
         'method': 'HiResCAM', # GradCAMPlusPlus, GradCAM, XGradCAM, EigenCAM, HiResCAM, LayerCAM, RandomCAM, EigenGradCAM
         'layer': [10, 12, 14, 16, 18],
         'backward_type': 'class', # class, box, all
         'conf_threshold': 0.2, # 0.2
         'ratio': 0.02, # 0.02-0.1
-        'show_box': False,
-        'renormalize': True
+        'show_box': True, # 不需要绘制框请设置为False
+        'renormalize': False # 需要把热力图限制在框内请设置为True
     }
     return params
 
+# 需要安装grad-cam==1.4.8
+
 if __name__ == '__main__':
     model = yolov8_heatmap(**get_params())
-    # model(r'/home/hjj/Desktop/dataset/dataset_visdrone/VisDrone2019-DET-test-dev/images/9999947_00000_d_0000026.jpg', 'result')
-    model(r'/home/hjj/Desktop/dataset/dataset_visdrone/VisDrone2019-DET-test-dev/images', 'result')
+    # model(r'/root/dataset/dataset_visdrone/VisDrone2019-DET-test-dev/images/9999963_00000_d_0000020.jpg', 'result')
+    model(r'/root/dataset/dataset_visdrone/VisDrone2019-DET-test-dev/images', 'result')
