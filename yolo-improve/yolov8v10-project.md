@@ -351,6 +351,16 @@
     基于自研CSP-MutilScaleEdgeInformationEnhance再次创新.
     我们提出了一个 多尺度边缘信息选择模块（MutilScaleEdgeInformationSelect），其目的是从多尺度边缘信息中高效选择与目标任务高度相关的关键特征。为了实现这一目标，我们引入了一个具有通过聚焦更重要的区域能力的注意力机制[ICCV2023 DualDomainSelectionMechanism, DSM](https://github.com/c-yn/FocalNet)。该机制通过聚焦图像中更重要的区域（如复杂边缘和高频信号区域），在多尺度特征中自适应地筛选具有更高任务相关性的特征，从而显著提升了特征选择的精准度和整体模型性能。
 
+27. GlobalEdgeInformationTransfer
+
+    实现版本1：ultralytics/cfg/models/v8/yolov8-GlobalEdgeInformationTransfer1.yaml
+    实现版本2：ultralytics/cfg/models/v8/yolov8-GlobalEdgeInformationTransfer2.yaml
+    实现版本3：ultralytics/cfg/models/v8/yolov8-GlobalEdgeInformationTransfer3.yaml
+    总所周知，物体框的定位非常之依赖物体的边缘信息，但是对于常规的目标检测网络来说，没有任何组件能提高网络对物体边缘信息的关注度，我们需要开发一个能让边缘信息融合到各个尺度所提取的特征中，因此我们提出一个名为GlobalEdgeInformationTransfer(GEIT)的模块，其可以帮助我们把浅层特征中提取到的边缘信息传递到整个backbone上，并与不同尺度的特征进行融合。
+    1. 由于原始图像中含有大量背景信息，因此从原始图像上直接提取边缘信息传递到整个backbone上会给网络的学习带来噪声，而且浅层的卷积层会帮助我们过滤不必要的背景信息，因此我们选择在网络的浅层开发一个名为MutilScaleEdgeInfoGenetator的模块，其会利用网络的浅层特征层去生成多个尺度的边缘信息特征图并投放到主干的各个尺度中进行融合。
+    2. 对于下采样方面的选择，我们需要较为谨慎，我们的目标是保留并增强边缘信息，同时进行下采样，选择MaxPool 会更合适。它能够保留局部区域的最强特征，更好地体现边缘信息。因为 AvgPool 更适用于需要平滑或均匀化特征的场景，但在保留细节和边缘信息方面的表现不如 MaxPool。
+    3. 对于融合部分，ConvEdgeFusion巧妙地结合边缘信息和普通卷积特征，提出了一种新的跨通道特征融合方式。首先，使用conv_channel_fusion进行边缘信息与普通卷积特征的跨通道融合，帮助模型更好地整合不同来源的特征。然后采用conv_3x3_feature_extract进一步提取融合后的特征，以增强模型对局部细节的捕捉能力。最后通过conv_1x1调整输出特征维度。
+
 ### BackBone系列
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
     
@@ -818,17 +828,25 @@
 
     使用[Revitalizing Convolutional Network for Image Restoration TPAMI2024](https://zhuanlan.zhihu.com/p/720777160)中的MSM改进C2f.
 
-214. ultralytics/cfg/models/v8/yolov8-C2f-RAB.yaml
+63. ultralytics/cfg/models/v8/yolov8-C2f-RAB.yaml
 
     使用[Pattern Recognition 2024|DRANet](https://github.com/WenCongWu/DRANet)中的HDRAB(hybrid dilated residual attention block)改进C2f.
 
-215. ultralytics/cfg/models/v8/yolov8-C2f-HDRAB.yaml
+64. ultralytics/cfg/models/v8/yolov8-C2f-HDRAB.yaml
 
     使用[Pattern Recognition 2024|DRANet](https://github.com/WenCongWu/DRANet)中的RAB( residual attention block)改进C2f.
 
-216. ultralytics/cfg/models/v8/yolov8n-C2f-LFE.yaml
+65. ultralytics/cfg/models/v8/yolov8n-C2f-LFE.yaml
 
     使用[Efficient Long-Range Attention Network for Image Super-resolution ECCV2022](https://github.com/xindongzhang/ELAN)中的Local feature extraction改进C2f.
+
+66. ultralytics/cfg/models/v8/yolov8-C2f-SFA.yaml
+
+    使用[FreqFormer](https://github.com/JPWang-CS/FreqFormer)的Frequency-aware Cascade Attention-SFA改进C2f.
+
+67. ultralytics/cfg/models/v8/yolov8-C2f-CTA.yaml
+
+    使用[FreqFormer](https://github.com/JPWang-CS/FreqFormer)的Frequency-aware Cascade Attention-CTA改进C2f.
 
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
@@ -1084,6 +1102,16 @@
     2. 保证高效特征提取的同时降低计算成本：为了能引入Transformer结构来提取全局特征又不想大幅度增加计算复杂度，因此提出Partially Transformer Block，只对部分通道使用TransformerBlock。
     3. MHSA_CGLU包含Mutil-Head-Self-Attention和[ConvolutionalGLU(TransNext CVPR2024)](https://github.com/DaiShiResearch/TransNeXt)，其中Mutil-Head-Self-Attention负责提取全局特征，ConvolutionalGLU用于增强非线性特征表达能力，ConvolutionalGLU相比于传统的FFN，具有更强的性能。
     4. 可以根据不同的模型大小和具体的运行情况调节用于Transformer的通道数。
+
+21. GlobalEdgeInformationTransfer
+
+    实现版本1：ultralytics/cfg/models/v10/yolov10n-GlobalEdgeInformationTransfer1.yaml
+    实现版本3：ultralytics/cfg/models/v10/yolov10n-GlobalEdgeInformationTransfer3.yaml
+    实现版本2：ultralytics/cfg/models/v10/yolov10n-GlobalEdgeInformationTransfer2.yaml
+    总所周知，物体框的定位非常之依赖物体的边缘信息，但是对于常规的目标检测网络来说，没有任何组件能提高网络对物体边缘信息的关注度，我们需要开发一个能让边缘信息融合到各个尺度所提取的特征中，因此我们提出一个名为GlobalEdgeInformationTransfer(GEIT)的模块，其可以帮助我们把浅层特征中提取到的边缘信息传递到整个backbone上，并与不同尺度的特征进行融合。
+    1. 由于原始图像中含有大量背景信息，因此从原始图像上直接提取边缘信息传递到整个backbone上会给网络的学习带来噪声，而且浅层的卷积层会帮助我们过滤不必要的背景信息，因此我们选择在网络的浅层开发一个名为MutilScaleEdgeInfoGenetator的模块，其会利用网络的浅层特征层去生成多个尺度的边缘信息特征图并投放到主干的各个尺度中进行融合。
+    2. 对于下采样方面的选择，我们需要较为谨慎，我们的目标是保留并增强边缘信息，同时进行下采样，选择MaxPool 会更合适。它能够保留局部区域的最强特征，更好地体现边缘信息。因为 AvgPool 更适用于需要平滑或均匀化特征的场景，但在保留细节和边缘信息方面的表现不如 MaxPool。
+    3. 对于融合部分，ConvEdgeFusion巧妙地结合边缘信息和普通卷积特征，提出了一种新的跨通道特征融合方式。首先，使用conv_channel_fusion进行边缘信息与普通卷积特征的跨通道融合，帮助模型更好地整合不同来源的特征。然后采用conv_3x3_feature_extract进一步提取融合后的特征，以增强模型对局部细节的捕捉能力。最后通过conv_1x1调整输出特征维度。
 
 ### BackBone系列
 
@@ -1394,6 +1422,14 @@
 32. ultralytics/cfg/models/v10/yolov10n-C2f-LFE.yaml
 
     使用[Efficient Long-Range Attention Network for Image Super-resolution ECCV2022](https://github.com/xindongzhang/ELAN)中的Local feature extraction改进C2f.
+
+32. ultralytics/cfg/models/v10/yolov10n-C2f-SFA.yaml
+
+    使用[FreqFormer](https://github.com/JPWang-CS/FreqFormer)的Frequency-aware Cascade Attention-SFA改进C2f.
+
+33. ultralytics/cfg/models/v10/yolov10n-C2f-CTA.yaml
+
+    使用[FreqFormer](https://github.com/JPWang-CS/FreqFormer)的Frequency-aware Cascade Attention-CTA改进C2f.
 
 ### 组合系列
 
@@ -1956,3 +1992,9 @@
     4. 增加v10多个改进.
     5. 更新使用教程.
     6. 百度云视频增加20241122更新说明.
+
+- **20241204-ultralytics-v1.77**
+    1. 新增自研GlobalEdgeInformationTransfer.
+    2. 新增FreqFormer的Frequency-aware Cascade Attention改进C2f.
+    3. 更新使用教程.
+    4. 百度云视频增加20241204更新说明.
