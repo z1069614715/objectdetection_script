@@ -991,6 +991,6 @@
     1. 新增自研GlobalEdgeInformationTransfer.
     2. 新增FreqFormer的Frequency-aware Cascade Attention改进C3k2.
     3. 新增CVPR2024InceptionNeXt中的IDWC、IDWB的改进.
-    4. 新增CrossFormer中的DynamicPosBias-Attention改进C3k2.
+    4. 新增CrossFormer中的DynamicPosBias-Attention改进C2PSA.
     5. 更新使用教程.
     6. 百度云视频增加20241207更新说明.

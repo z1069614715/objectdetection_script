@@ -374,6 +374,10 @@
 
     使用[FreqFormer](https://github.com/JPWang-CS/FreqFormer)的Frequency-aware Cascade Attention与CSP结合改进backbone.
 
+32. ultralytics/cfg/models/rt-detr/rtdetr-C2f-CAMixer.yaml
+
+    使用[CAMixerSR CVPR2024](https://github.com/icandle/CAMixerSR)中的CAMixer与CSP结合改进backbone.
+
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -406,6 +410,10 @@
 9. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-DHSA.yaml
 
     使用[Histoformer ECCV2024](https://github.com/sunshangquan/Histoformer)中的Dynamic-range Histogram Self-Attention改进AIFI.
+
+10. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-DPB.yaml
+
+    使用[CrossFormer](https://arxiv.org/pdf/2108.00154)中的DynamicPosBias-Attention改进AIFI.
 
 ### Neck系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-ASF.yaml
@@ -1620,3 +1628,9 @@
     2. 新增FreqFormer的Frequency-aware Cascade Attention与CSP结合改进backbone.
     3. 更新使用教程.
     4. 百度云视频增加20241130更新说明.
+
+- **20241215-rtdetr-v1.40**
+    1. 新增CrossFormer中的DynamicPosBias-Attention改进AIFI.
+    2. 新增CAMixerSR中的CAMixer与CSP结合改进backbone.
+    3. 修改保存模型规则,原本为fp16变成fp32,详细请看本期更新视频.
+    4. 百度云视频增加20241215更新说明.

@@ -62,7 +62,7 @@
     4. 支持yolov8中的目标检测、实例分割、姿态检测、旋转目标检测蒸馏、yolov10目标检测蒸馏、yolo11(目标检测、实例分割、姿态检测、旋转目标检测蒸馏)。
     5. 实例分割、姿态检测、旋转目标检测暂不支持BCKD蒸馏方法.
 
-7. 基于Ultralytics的RT-DETR(CVPR2024)的知识蒸馏项目.[项目详解](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/rtdetr-distill.md)(69.9¥)
+6. 基于Ultralytics的RT-DETR(CVPR2024)的知识蒸馏项目.[项目详解](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/rtdetr-distill.md)(69.9¥)
     1. 模型轻量化,部署必备之一!
     2. 项目里面配套蒸馏示例,并且都配有视频讲解,供大家理解如何进行蒸馏.
     3. 购买后进RTDETR蒸馏交流群(代码视频均在群公告),因为蒸馏操作有一定的难度,所以蒸馏操作问题可以群里提问,我都会群里回复相关问题.
