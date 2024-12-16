@@ -1634,3 +1634,9 @@
     2. 新增CAMixerSR中的CAMixer与CSP结合改进backbone.
     3. 修改保存模型规则,原本为fp16变成fp32,详细请看本期更新视频.
     4. 百度云视频增加20241215更新说明.
+
+- **20241216-rtdetr-v1.41**
+    1. 新增Hyper-YOLO中的Hypergraph Computation in Semantic Space和Mixed Aggregation Network改进rtdetr.
+    2. 修复已知bug.
+    3. 更新使用教程.
+    4. 百度云视频增加20241216更新说明.
