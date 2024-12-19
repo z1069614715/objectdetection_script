@@ -511,6 +511,10 @@
 
     使用[CFPT](https://github.com/duzw9311/CFPT/tree/main)改进neck.
 
+20. ultralytics/cfg/models/v8/yolov8-hyper.yaml
+
+    使用[Hyper-YOLO TPAMI2025](https://www.arxiv.org/pdf/2408.04804)中的Hypergraph Computation in Semantic Space改进yolov8.
+
 ### Head系列
 1. ultralytics/cfg/models/v8/yolov8-dyhead.yaml
 
@@ -847,6 +851,14 @@
 67. ultralytics/cfg/models/v8/yolov8-C2f-CTA.yaml
 
     使用[FreqFormer](https://github.com/JPWang-CS/FreqFormer)的Frequency-aware Cascade Attention-CTA改进C2f.
+
+68. ultralytics/cfg/models/v8/yolov8-C2f-CAMixer.yaml
+
+    使用[CAMixerSR CVPR2024](https://github.com/icandle/CAMixerSR)中的CAMixer改进C2f.
+
+69. ultralytics/cfg/models/v8/yolov8-MAN.yaml
+
+    使用[Hyper-YOLO TPAMI2025](https://www.arxiv.org/pdf/2408.04804)中的Mixed Aggregation Network改进yolov8.
 
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
@@ -1251,6 +1263,10 @@
 
     使用[MFDS-DETR](https://github.com/JustlfC03/MFDS-DETR)中的HS-FPN改进yolov10的neck.
 
+11. ultralytics/cfg/models/v10/yolov10n-hyper.yaml
+
+    使用[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的Hypergraph Computation in Semantic Space改进yolov10.
+
 ### Head系列
 
 1. ultralytics/cfg/models/v10/yolov10n-dyhead.yaml
@@ -1431,6 +1447,14 @@
 
     使用[FreqFormer](https://github.com/JPWang-CS/FreqFormer)的Frequency-aware Cascade Attention-CTA改进C2f.
 
+34. ultralytics/cfg/models/v10/yolov10n-C2f-CAMixer.yaml
+
+    使用[CAMixerSR CVPR2024](https://github.com/icandle/CAMixerSR)中的CAMixer改进C2f.
+
+35. ultralytics/cfg/models/v10/yolov10n-MAN.yaml
+
+    使用[Hyper-YOLO TPAMI2025](https://www.arxiv.org/pdf/2408.04804)中的Mixed Aggregation Network改进yolov10.
+
 ### 组合系列
 
 1. ultralytics/cfg/models/v10/yolov10n-starnet-bifpn.yaml
@@ -1449,6 +1473,12 @@
     ultralytics/cfg/models/mamba-yolo/Mamba-YOLO-B.yaml
     ultralytics/cfg/models/mamba-yolo/Mamba-YOLO-L.yaml
     ultralytics/cfg/models/mamba-yolo/yolo-mamba-seg.yaml
+
+# Hyper-YOLO
+1. ultralytics/cfg/models/hyper-yolo/hyper-yolo.yaml
+2. ultralytics/cfg/models/hyper-yolo/hyper-yolot.yaml
+3. ultralytics/cfg/models/hyper-yolo/hyper-yolo-seg.yaml
+
 
 # 注意力系列
 1. EMA
