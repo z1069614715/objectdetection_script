@@ -1998,3 +1998,10 @@
     2. 新增FreqFormer的Frequency-aware Cascade Attention改进C2f.
     3. 更新使用教程.
     4. 百度云视频增加20241204更新说明.
+
+- **20241219-ultralytics-v1.78**
+    1. 新增CAMixerSR中的CAMixer改进C2f.
+    2. 新增支持Hyper-YOLO，并可以利用项目自带的改进改进Hyper-YOLO.
+    3. 新增Hyper-YOLO中的Hypergraph Computation in Semantic Space和Mixed Aggregation Network的改进.
+    4. 更新使用教程.
+    5. 百度云视频增加20241215更新说明.
