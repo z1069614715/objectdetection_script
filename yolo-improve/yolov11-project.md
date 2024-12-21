@@ -502,6 +502,10 @@
 
     使用[MAF-YOLO](https://arxiv.org/pdf/2407.04381)的MAFPN改进Neck.
 
+19. ultralytics/cfg/models/11/yolo11-hyper.yaml
+
+    使用[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的Hypergraph Computation in Semantic Space改进yolov11.
+
 ### Head系列
 1. ultralytics/cfg/models/11/yolo11-dyhead.yaml
 
@@ -532,6 +536,9 @@
     pose:ultralytics/cfg/models/11/yolo11-pose-LADH.yaml
     obb:ultralytics/cfg/models/11/yolo11-obb-LADH.yaml
     使用[Faster and Lightweight: An Improved YOLOv5 Object Detector for Remote Sensing Images](https://www.mdpi.com/2072-4292/15/20/4974)中的Lightweight Asymmetric Detection Head改进yolo11-head.
+9. ultralytics/cfg/models/11/yolo11-atthead.yaml
+
+    B站注意力教程例子.链接:https://www.bilibili.com/video/BV1mXkVYAEGM/
 
 ### Label Assign系列
 1. Adaptive Training Sample Selection匹配策略.
@@ -851,6 +858,22 @@
 
     使用[InceptionNeXt CVPR2024](https://github.com/sail-sg/inceptionnext)中的InceptionDWBlock改进C3k2.
 
+71. ultralytics/cfg/models/11/yolo11-C3k2-PConv.yaml
+
+    使用[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的PConv改进C3k2.
+
+72. ultralytics/cfg/models/11/yolo11-C3k2-EMA.yaml
+
+    B站注意力教程例子.链接:https://www.bilibili.com/video/BV1mXkVYAEGM/
+
+73. ultralytics/cfg/models/11/yolo11-C3k2-CAMixer.yaml
+
+    使用[CAMixerSR CVPR2024](https://github.com/icandle/CAMixerSR)中的CAMixer改进C3k2.
+
+74. ultralytics/cfg/models/11/yolo11-MAN.yaml
+
+    使用[Hyper-YOLO TPAMI2025](https://www.arxiv.org/pdf/2408.04804)中的Mixed Aggregation Network改进yolov11.
+
 ### C2PSA系列
 
 1. ultralytics/cfg/models/11/yolo11-C2BRA.yaml
@@ -907,6 +930,13 @@
     ultralytics/cfg/models/mamba-yolo/Mamba-YOLO-B.yaml
     ultralytics/cfg/models/mamba-yolo/Mamba-YOLO-L.yaml
     ultralytics/cfg/models/mamba-yolo/yolo-mamba-seg.yaml
+
+# Hyper-YOLO
+1. Hyper-YOLO(TPAMI2025)
+
+    1. ultralytics/cfg/models/hyper-yolo/hyper-yolo.yaml
+    2. ultralytics/cfg/models/hyper-yolo/hyper-yolot.yaml
+    3. ultralytics/cfg/models/hyper-yolo/hyper-yolo-seg.yaml
 
 # 注意力系列
 1. EMA
