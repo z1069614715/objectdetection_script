@@ -994,3 +994,12 @@
     4. 新增CrossFormer中的DynamicPosBias-Attention改进C2PSA.
     5. 更新使用教程.
     6. 百度云视频增加20241207更新说明.
+
+- **20241221-yolov11-v1.8**
+    1. 新增CAMixerSR中的CAMixer改进C3k2.
+    2. 新增支持Hyper-YOLO，并可以利用项目自带的改进改进Hyper-YOLO.
+    3. 新增Hyper-YOLO中的Hypergraph Computation in Semantic Space和Mixed Aggregation Network的改进.
+    4. 新增Fasternet中的PConv改进C3k2.
+    5. 新增一些注意力例子配合B站视频进行学习.
+    6. 更新使用教程.
+    7. 百度云视频增加20241221更新说明.

@@ -2034,4 +2034,4 @@
     2. 新增支持Hyper-YOLO，并可以利用项目自带的改进改进Hyper-YOLO.
     3. 新增Hyper-YOLO中的Hypergraph Computation in Semantic Space和Mixed Aggregation Network的改进.
     4. 更新使用教程.
-    5. 百度云视频增加20241215更新说明.
+    5. 百度云视频增加20241219更新说明.
