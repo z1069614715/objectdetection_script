@@ -1,4 +1,4 @@
-# YOLOV8V10剪枝项目介绍
+# YOLOV8V10V11剪枝项目介绍
 
 ## 对于群里的剪枝相关问题,我基本都会回复,对于一些剪枝问题,我都会给出建议。  
 
@@ -11,12 +11,12 @@
 ### 目前剪枝项目包含以下剪枝方法：
 1. L1 
 2. Random 
-3. Slim 
-4. GroupSlim 
+3. Slim(需要稀疏训练) 
+4. GroupSlim(需要稀疏训练) 
 5. GroupNorm 
 6. LAMP 
-7. GroupSL 
-8. GroupReg
+7. GroupSL(需要稀疏训练) 
+8. GroupReg(需要稀疏训练)
 9. GroupHessian
 10. GroupTaylor
 

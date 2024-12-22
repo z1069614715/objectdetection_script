@@ -33,6 +33,7 @@
 20. [细谈目标检测中的小目标检测头和大目标检测检测头，并教懂你怎么加微小目标、极大目标检测头！](https://www.bilibili.com/video/BV1jkDWYFEwx/)
 21. [深度学习炼丹必备必看必须知道的小技巧！](https://www.bilibili.com/video/BV1q3SZYsExc/)
 22. [深度学习实验准备-数据集怎么选？有哪些需要注意的点？](https://www.bilibili.com/video/BV11zySYvEhs/)
+23. [深度学习论文实验中新手非常容易陷入的一个误区：抱着解决xxx问题的心态去做实验](https://www.bilibili.com/video/BV1kkkvYJEHG/)
 
 ### 必看论文分享系列
 1. [有营养的必看论文分享系列一-RTMDet<考虑到精度、速度、部署的2D目标检测网络>](https://www.bilibili.com/video/BV1ab421J77G/)
