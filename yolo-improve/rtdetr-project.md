@@ -158,6 +158,22 @@
 
     使用[SMAFormer BIBM2024](https://github.com/CXH-Research/SMAFormer)中的SMAFormerBlock与[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的CGLU改进与CSP思想改进backbone.
 
+31. ultralytics/cfg/models/rt-detr/rtdetr-MAN-Faster.yaml
+
+    使用[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的 Mixed Aggregation Network和[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的Faster-Block进行二次创新改进rtdetr.
+
+32. ultralytics/cfg/models/rt-detr/rtdetr-MAN-FasterCGLU.yaml
+
+    使用[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的 Mixed Aggregation Network和[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的Faster-Block和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU进行二次创新改进rtdetr.
+
+33. ultralytics/cfg/models/rt-detr/rtdetr-MAN-Star.yaml
+
+    使用[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的 Mixed Aggregation Network和[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)中的StarBlock进行二次创新改进rtdetr.
+
+34. ultralytics/cfg/models/rt-detr/rtdetr-MutilBackbone-MSGA.yaml
+
+    使用[MSA^2 Net](https://github.com/xmindflow/MSA-2Net)中的Multi-Scale Adaptive Spatial Attention Gate对自研系列MutilBackbone再次创新.
+
 ### 自研系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-PACAPN.yaml
 
@@ -481,6 +497,10 @@
 16. ultralytics/cfg/models/rt-detr/rtdetr-FreqFFPN.yaml
 
     使用[FreqFusion TPAMI2024](https://github.com/Linwei-Chen/FreqFusion)中的FreqFusion改进Neck.(这个需要python3.10,不然最后保存模型会出错.)
+
+17. ultralytics/cfg/models/rt-detr/rtdetr-msga.yaml
+
+    使用[MSA^2 Net](https://github.com/xmindflow/MSA-2Net)中的Multi-Scale Adaptive Spatial Attention Gate改进rtdetr-neck.
 
 ### Head系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-p2.yaml
@@ -1640,3 +1660,10 @@
     2. 修复已知bug.
     3. 更新使用教程.
     4. 百度云视频增加20241216更新说明.
+
+- **20241228-rtdetr-v1.42**
+    1. 新增基于Hyper-YOLO中的Mixed Aggregation Network三个二次改进系列.
+    2. 新增使用MSA^2 Net中的Multi-Scale Adaptive Spatial Attention Gate改进rtdetr-neck.
+    3. 新增使用MSA^2 Net中的Multi-Scale Adaptive Spatial Attention Gate改进自研系列的MutilBackbone.
+    4. 更新使用教程.
+    5. 百度云视频增加20241228更新说明.
