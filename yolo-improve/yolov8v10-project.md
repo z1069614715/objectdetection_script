@@ -159,6 +159,22 @@
 
     使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的CaFormer和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的CGLU改进c2f.
 
+42. ultralytics/cfg/models/v8/yolov8-MAN-Faster.yaml
+
+    使用[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的 Mixed Aggregation Network和[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的Faster-Block进行二次创新改进yolov8.
+
+43. ultralytics/cfg/models/v8/yolov8-MAN-FasterCGLU.yaml
+
+    使用[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的 Mixed Aggregation Network和[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的Faster-Block和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU进行二次创新改进yolov8.
+
+44. ultralytics/cfg/models/v8/yolov8-MAN-Star.yaml
+
+    使用[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的 Mixed Aggregation Network和[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)中的StarBlock进行二次创新改进yolov8.
+
+45. ultralytics/cfg/models/v8/yolov8-MutilBackbone-MSGA.yaml
+
+    使用[MSA^2 Net](https://github.com/xmindflow/MSA-2Net)中的Multi-Scale Adaptive Spatial Attention Gate对自研系列MutilBackbone再次创新.
+
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
 
@@ -514,6 +530,10 @@
 20. ultralytics/cfg/models/v8/yolov8-hyper.yaml
 
     使用[Hyper-YOLO TPAMI2025](https://www.arxiv.org/pdf/2408.04804)中的Hypergraph Computation in Semantic Space改进yolov8.
+
+21. ultralytics/cfg/models/v8/yolov8-msga.yaml
+
+    使用[MSA^2 Net](https://github.com/xmindflow/MSA-2Net)中的Multi-Scale Adaptive Spatial Attention Gate改进yolov8-neck.
 
 ### Head系列
 1. ultralytics/cfg/models/v8/yolov8-dyhead.yaml
@@ -978,6 +998,22 @@
 
     使用[CVPR2024 PKINet](https://github.com/PKINet/PKINet)中的CAA模块HSFPN.
 
+22. ultralytics/cfg/models/v10/yolov10n-MAN-Faster.yaml
+
+    使用[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的 Mixed Aggregation Network和[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的Faster-Block进行二次创新改进yolov10.
+
+23. ultralytics/cfg/models/v10/yolov10n-MAN-FasterCGLU.yaml
+
+    使用[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的 Mixed Aggregation Network和[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的Faster-Block和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU进行二次创新改进yolov10.
+
+24. ultralytics/cfg/models/v10/yolov10n-MAN-Star.yaml
+
+    使用[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的 Mixed Aggregation Network和[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)中的StarBlock进行二次创新改进yolov10.
+
+25. ultralytics/cfg/models/v10/yolov10n-MutilBackbone-MSGA.yaml
+
+    使用[MSA^2 Net](https://github.com/xmindflow/MSA-2Net)中的Multi-Scale Adaptive Spatial Attention Gate对自研系列MutilBackbone再次创新.
+
 ### 自研系列
 
 1. ultralytics/cfg/models/v10/yolov10n-C2f-EMSC.yaml
@@ -1266,6 +1302,14 @@
 11. ultralytics/cfg/models/v10/yolov10n-hyper.yaml
 
     使用[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的Hypergraph Computation in Semantic Space改进yolov10.
+
+12. ultralytics/cfg/models/v10/yolov10n-msga.yaml
+
+    使用[MSA^2 Net](https://github.com/xmindflow/MSA-2Net)中的Multi-Scale Adaptive Spatial Attention Gate改进yolov10-neck.
+
+13. ultralytics/cfg/models/v10/yolov10n-CGAFusion.yaml
+
+    使用[DEA-Net](https://github.com/cecret3350/DEA-Net)中的content-guided attention fusion改进yolov10-neck.
 
 ### Head系列
 
@@ -2035,3 +2079,10 @@
     3. 新增Hyper-YOLO中的Hypergraph Computation in Semantic Space和Mixed Aggregation Network的改进.
     4. 更新使用教程.
     5. 百度云视频增加20241219更新说明.
+
+- **20241231-ultralytics-v1.79**
+    1. 新增基于Hyper-YOLO中的Mixed Aggregation Network三个二次改进系列.
+    2. 新增使用MSA^2 Net中的Multi-Scale Adaptive Spatial Attention Gate改进yolo11-neck.
+    3. 新增使用MSA^2 Net中的Multi-Scale Adaptive Spatial Attention Gate改进自研系列的MutilBackbone.
+    4. 更新使用教程.
+    5. 百度云视频增加20241231更新说明.

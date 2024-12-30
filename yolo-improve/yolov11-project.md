@@ -159,6 +159,22 @@
 
     使用[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)中的CaFormer和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的CGLU改进C3k2.
 
+42. ultralytics/cfg/models/11/yolo11-MAN-Faster.yaml
+
+    使用[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的 Mixed Aggregation Network和[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的Faster-Block进行二次创新改进yolo11.
+
+43. ultralytics/cfg/models/11/yolo11-MAN-FasterCGLU.yaml
+
+    使用[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的 Mixed Aggregation Network和[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的Faster-Block和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU进行二次创新改进yolo11.
+
+44. ultralytics/cfg/models/11/yolo11-MAN-Star.yaml
+
+    使用[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的 Mixed Aggregation Network和[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)中的StarBlock进行二次创新改进yolo11.
+
+45. ultralytics/cfg/models/11/yolo11-MutilBackbone-MSGA.yaml
+
+    使用[MSA^2 Net](https://github.com/xmindflow/MSA-2Net)中的Multi-Scale Adaptive Spatial Attention Gate对自研系列MutilBackbone再次创新.
+
 ### 自研系列
 1. ultralytics/cfg/models/11/yolo11-LAWDS.yaml
 
@@ -505,6 +521,10 @@
 19. ultralytics/cfg/models/11/yolo11-hyper.yaml
 
     使用[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的Hypergraph Computation in Semantic Space改进yolov11.
+
+20. ultralytics/cfg/models/11/yolo11-msga.yaml
+
+    使用[MSA^2 Net](https://github.com/xmindflow/MSA-2Net)中的Multi-Scale Adaptive Spatial Attention Gate改进yolo11-neck.
 
 ### Head系列
 1. ultralytics/cfg/models/11/yolo11-dyhead.yaml
@@ -1033,3 +1053,10 @@
     5. 新增一些注意力例子配合B站视频进行学习.
     6. 更新使用教程.
     7. 百度云视频增加20241221更新说明.
+
+- **20241228-yolov11-v1.9**
+    1. 新增基于Hyper-YOLO中的Mixed Aggregation Network三个二次改进系列.
+    2. 新增使用MSA^2 Net中的Multi-Scale Adaptive Spatial Attention Gate改进yolo11-neck.
+    3. 新增使用MSA^2 Net中的Multi-Scale Adaptive Spatial Attention Gate改进自研系列的MutilBackbone.
+    4. 更新使用教程.
+    5. 百度云视频增加20241228更新说明.
