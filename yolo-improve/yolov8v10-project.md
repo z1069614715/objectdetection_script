@@ -2080,7 +2080,7 @@
     4. 更新使用教程.
     5. 百度云视频增加20241219更新说明.
 
-- **20241231-ultralytics-v1.79**
+- **20250101-ultralytics-v1.79**
     1. 新增基于Hyper-YOLO中的Mixed Aggregation Network三个二次改进系列.
     2. 新增使用MSA^2 Net中的Multi-Scale Adaptive Spatial Attention Gate改进yolo11-neck.
     3. 新增使用MSA^2 Net中的Multi-Scale Adaptive Spatial Attention Gate改进自研系列的MutilBackbone.
