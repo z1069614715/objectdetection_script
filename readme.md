@@ -66,7 +66,7 @@
     注意：
     1. 基于Ultralytics的RT-DETR的剪枝蒸馏项目是基于项目四上进行开发的，所以入手剪枝蒸馏项目也需要项目四才能使用。
 
-    剪枝：[项目详解](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/rtdetr-compress.md)(89.9¥)(2025.1.15发布)
+    剪枝：[项目详解](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/rtdetr-compress.md)(89.9¥)(2025.1.12发布)
     1. 模型轻量化,部署,大论文堆工作量必备之一!
     2. 项目里面配套剪枝示例(包含一些项目四中的改进模型的剪枝教程),并且都配有视频讲解,供大家理解如何进行蒸馏.
     3. 购买后进RTDETR剪枝交流群(代码视频均在群公告),因为剪枝操作有一定的难度,所以剪枝操作问题可以群里提问,我都会群里回复相关问题.
