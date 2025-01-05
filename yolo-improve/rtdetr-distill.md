@@ -11,6 +11,7 @@
 ### 目前蒸馏方法包含：
 1. Logical
     1. RTDETRLogicLoss(根据rtdetr的特点进行开发的逻辑蒸馏)
+    2. RTDETRMutilLogicLoss(根据rtdetr的特点进行开发的逻辑蒸馏)
 2. Feature
     1. Mimic
     2. [Masked Generative Distillation](https://link.zhihu.com/?target=https%3A//arxiv.org/pdf/2205.01529.pdf) (ECCV 2022)
@@ -25,6 +26,7 @@
 4. 过程中会输出Logical和Feature的损失,让用户可以及时调整对应的损失系数.
 5. 支持正常训练模型时候进行蒸馏和剪枝后finetune蒸馏.
 6. 支持自蒸馏.
+7. 可以利用知识蒸馏压缩模型.
 
 # 实验示例结果.(以下示例实验相关命令,视频教程,实验数据都在项目里面)
 #### Dataset:Visdrone(训练集只用了2500张图,验证集和测试集用了全量的数据) 为了加速实验,老师选择了yolov8s-detr,学生选择了yolov8n-detr

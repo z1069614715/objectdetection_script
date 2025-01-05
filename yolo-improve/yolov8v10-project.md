@@ -2085,4 +2085,4 @@
     2. 新增使用MSA^2 Net中的Multi-Scale Adaptive Spatial Attention Gate改进yolo11-neck.
     3. 新增使用MSA^2 Net中的Multi-Scale Adaptive Spatial Attention Gate改进自研系列的MutilBackbone.
     4. 更新使用教程.
-    5. 百度云视频增加20241231更新说明.
+    5. 百度云视频增加20250101更新说明.
