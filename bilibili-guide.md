@@ -41,6 +41,7 @@
 
 ### 高区论文带读系列
 1. [高区论文带读系列一-40分钟长视频带你分析一篇SCI1区的文章，SCI1区也不是触不可及！](https://www.bilibili.com/video/BV1JESuYxEjn/)
+2. [高区论文带读系列二-学会捕捉数据集场景下的要害问题是写好文章的第一步！](https://www.bilibili.com/video/BV1XNqjYNEyg/)
 
 ### YOLO系列配置文件系列
 1. [不会把多个改进整合到一个yaml配置文件里面？那来看看这个吧！从简到难手把手带你整合三个yaml](https://www.bilibili.com/video/BV15H4y1Y7a2/)
