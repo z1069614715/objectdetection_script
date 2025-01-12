@@ -175,6 +175,14 @@
 
     使用[MSA^2 Net](https://github.com/xmindflow/MSA-2Net)中的Multi-Scale Adaptive Spatial Attention Gate对自研系列MutilBackbone再次创新.
 
+46. ultralytics/cfg/models/11/yolo11-slimneck-WFU.yaml
+
+    使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的Wavelet Feature Upgrade改进slimneck.
+
+47. ultralytics/cfg/models/11/yolo11-MAN-FasterCGLU-WFU.yaml
+
+    使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的Wavelet Feature Upgrade和[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的 Mixed Aggregation Network和[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的Faster-Block和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU进行二次创新改进yolo11.
+
 ### 自研系列
 1. ultralytics/cfg/models/11/yolo11-LAWDS.yaml
 
@@ -525,6 +533,10 @@
 20. ultralytics/cfg/models/11/yolo11-msga.yaml
 
     使用[MSA^2 Net](https://github.com/xmindflow/MSA-2Net)中的Multi-Scale Adaptive Spatial Attention Gate改进yolo11-neck.
+
+21. ultralytics/cfg/models/11/yolo11-WFU.yaml
+
+    使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的Wavelet Feature Upgrade改进yolo11-neck.
 
 ### Head系列
 1. ultralytics/cfg/models/11/yolo11-dyhead.yaml
@@ -894,6 +906,26 @@
 
     使用[Hyper-YOLO TPAMI2025](https://www.arxiv.org/pdf/2408.04804)中的Mixed Aggregation Network改进yolov11.
 
+75. ultralytics/cfg/models/11/yolo11-C3k2-HFERB.yaml
+
+    使用[ICCV2023 CRAFT-SR](https://github.com/AVC2-UESTC/CRAFT-SR)中的high-frequency enhancement residual block改进C3k2.
+
+76. ultralytics/cfg/models/11/yolo11-C3k2-DTAB.yaml
+
+    使用[AAAI2025 TBSN](https://github.com/nagejacob/TBSN)中的DTAB改进C3k2.
+
+77. ultralytics/cfg/models/11/yolo11-C3k2-JDPM.yaml
+
+    使用[ECCV2024 FSEL](https://github.com/CSYSI/FSEL)中的joint domain perception module改进C3k2.
+
+78. ultralytics/cfg/models/11/yolo11-C3k2-ETB.yaml
+
+    使用[ECCV2024 FSEL](https://github.com/CSYSI/FSEL)中的entanglement transformer block改进C3k2.
+
+79. ultralytics/cfg/models/11/yolo11-C3k2-FDT.yaml
+
+    使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的Full-domain Transformer改进C3k2.
+
 ### C2PSA系列
 
 1. ultralytics/cfg/models/11/yolo11-C2BRA.yaml
@@ -911,6 +943,18 @@
 4. ultralytics/cfg/models/11/yolo11-C2DPB.yaml
 
     使用[CrossFormer](https://arxiv.org/pdf/2108.00154)中的DynamicPosBias-Attention改进C2PSA.
+
+5. ultralytics/cfg/models/11/yolo11-DTAB.yaml
+
+    使用[AAAI2025 TBSN](https://github.com/nagejacob/TBSN)中的DTAB替换C2PSA.
+
+6. ultralytics/cfg/models/11/yolo11-ETB.yaml
+
+    使用[ECCV2024 FSEL](https://github.com/CSYSI/FSEL)中的entanglement transformer block替换C2PSA.
+
+7. ultralytics/cfg/models/11/yolo11-FDT.yaml
+
+    使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的Full-domain Transformer替换C2PSA.
 
 ### 组合系列
 1. ultralytics/cfg/models/11/yolo11-fasternet-bifpn.yaml
@@ -1060,3 +1104,11 @@
     3. 新增使用MSA^2 Net中的Multi-Scale Adaptive Spatial Attention Gate改进自研系列的MutilBackbone.
     4. 更新使用教程.
     5. 百度云视频增加20241228更新说明.
+
+- **20250112-yolo11-v1.10**
+    1. 新增CRAFT-SR中的high-frequency enhancement residual block.
+    2. 新增AAAI2025-TBSN中的DTAB.
+    3. 新增ECCV2024-FSEL中的多个模块.
+    4. 新增ACMMM2024-WFEN中的多个模块.
+    5. 更新使用教程.
+    6. 百度云视频增加20250112更新说明.
