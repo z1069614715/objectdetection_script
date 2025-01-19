@@ -178,6 +178,10 @@
 
     使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的Wavelet Feature Upgrade对slimneck二次创新.
 
+36. ultralytics/cfg/models/rt-detr/rtdetr-CDFA.yaml
+
+    使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的WaveletConv与[AAAI2025 ConDSeg](https://github.com/Mengqi-Lei/ConDSeg)的ContrastDrivenFeatureAggregation结合改进rtdetr.
+
 ### 自研系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-PACAPN.yaml
 
@@ -417,6 +421,10 @@
 37. ultralytics/cfg/models/rt-detr/rtdetr-C2f-FDT.yaml
 
     使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的Full-domain Transformer与CSP结合改进backbone.
+
+38. ultralytics/cfg/models/rt-detr/rtdetr-C2f-AP.yaml
+
+    使用[AAAI2025 Pinwheel-shaped Convolution and Scale-based Dynamic Loss for Infrared Small Target Detection](https://github.com/JN-Yang/PConv-SDloss-Data)中的Asymmetric Padding bottleneck改进rtdetr.
 
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
@@ -706,6 +714,10 @@
 7. ultralytics/cfg/models/rt-detr/rtdetr-LDConv.yaml
 
     使用[LDConv](https://github.com/CV-ZhangXin/LDConv/tree/main)改进下采样.
+
+8. ultralytics/cfg/models/rt-detr/rtdetr-PSConv.yaml
+
+    使用[AAAI2025 Pinwheel-shaped Convolution and Scale-based Dynamic Loss for Infrared Small Target Detection](https://github.com/JN-Yang/PConv-SDloss-Data)中的Pinwheel-shaped Convolution改进rtdetr.
 
 ### RT-DETR-L改进系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-l-GhostHGNetV2.yaml
@@ -1715,3 +1727,9 @@
     4. 新增ACMMM2024-WFEN中的多个模块改进rtdetr.
     5. 更新使用教程.
     6. 百度云视频增加20250111更新说明.
+
+- **20250119-rtdetr-v1.44**
+    1. 新增AAAI2025 Pinwheel-shaped Convolution and Scale-based Dynamic Loss for Infrared Small Target Detection中的Pinwheel-shaped Convolution类型改进.
+    2. 新增AAAI2025 ConDSeg中的ContrastDrivenFeatureAggregation与ACMMM2024 WFEN中的小波变换进行创新.
+    3. 更新使用教程.
+    4. 百度云视频增加20250119更新说明.

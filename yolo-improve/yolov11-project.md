@@ -183,6 +183,10 @@
 
     使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的Wavelet Feature Upgrade和[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的 Mixed Aggregation Network和[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的Faster-Block和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU进行二次创新改进yolo11.
 
+48. ultralytics/cfg/models/11/yolo11-CDFA.yaml
+
+    使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的WaveletConv与[AAAI2025 ConDSeg](https://github.com/Mengqi-Lei/ConDSeg)的ContrastDrivenFeatureAggregation结合改进yolo11.
+
 ### 自研系列
 1. ultralytics/cfg/models/11/yolo11-LAWDS.yaml
 
@@ -625,6 +629,10 @@
 
     使用[LDConv](https://github.com/CV-ZhangXin/LDConv/tree/main)改进下采样.
 
+11. ultralytics/cfg/models/11/yolo11-PSConv.yaml
+
+    使用[AAAI2025 Pinwheel-shaped Convolution and Scale-based Dynamic Loss for Infrared Small Target Detection](https://github.com/JN-Yang/PConv-SDloss-Data)中的Pinwheel-shaped Convolution改进yolo11.
+
 ### YOLO11-C3k2系列
 1. ultralytics/cfg/models/11/yolo11-C3k2-Faster.yaml
 
@@ -926,6 +934,10 @@
 
     使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的Full-domain Transformer改进C3k2.
 
+80. ultralytics/cfg/models/11/yolo11-C3k2-AP.yaml
+
+    使用[AAAI2025 Pinwheel-shaped Convolution and Scale-based Dynamic Loss for Infrared Small Target Detection](https://github.com/JN-Yang/PConv-SDloss-Data)中的Asymmetric Padding bottleneck改进yolo11.
+
 ### C2PSA系列
 
 1. ultralytics/cfg/models/11/yolo11-C2BRA.yaml
@@ -1112,3 +1124,9 @@
     4. 新增ACMMM2024-WFEN中的多个模块.
     5. 更新使用教程.
     6. 百度云视频增加20250112更新说明.
+
+- **20250119-yolo11-v1.11**
+    1. 新增AAAI2025 Pinwheel-shaped Convolution and Scale-based Dynamic Loss for Infrared Small Target Detection中的Pinwheel-shaped Convolution类型改进.
+    2. 新增AAAI2025 ConDSeg中的ContrastDrivenFeatureAggregation与ACMMM2024 WFEN中的小波变换进行创新.
+    3. 更新使用教程.
+    4. 百度云视频增加20250119更新说明.

@@ -175,6 +175,18 @@
 
     使用[MSA^2 Net](https://github.com/xmindflow/MSA-2Net)中的Multi-Scale Adaptive Spatial Attention Gate对自研系列MutilBackbone再次创新.
 
+46. ultralytics/cfg/models/v8/yolov8-slimneck-WFU.yaml
+
+    使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的Wavelet Feature Upgrade对slimneck二次创新.
+
+47. ultralytics/cfg/models/v8/yolov8-MAN-FasterCGLU-WFU.yaml
+
+    使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的Wavelet Feature Upgrade和[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的 Mixed Aggregation Network和[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的Faster-Block和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU进行二次创新改进yolov8.
+
+48. ultralytics/cfg/models/v8/yolov8-CDFA.yaml
+
+    使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的WaveletConv与[AAAI2025 ConDSeg](https://github.com/Mengqi-Lei/ConDSeg)的ContrastDrivenFeatureAggregation结合改进yolov8.
+
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
 
@@ -535,6 +547,10 @@
 
     使用[MSA^2 Net](https://github.com/xmindflow/MSA-2Net)中的Multi-Scale Adaptive Spatial Attention Gate改进yolov8-neck.
 
+22. ultralytics/cfg/models/v8/yolov8-WFU.yaml
+
+    使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的Wavelet Feature Upgrade改进yolov8-neck.
+
 ### Head系列
 1. ultralytics/cfg/models/v8/yolov8-dyhead.yaml
 
@@ -618,6 +634,10 @@
 10. ultralytics/cfg/models/v8/yolov8-LDConv.yaml
 
     使用[LDConv](https://github.com/CV-ZhangXin/LDConv/tree/main)改进下采样.
+
+11. ultralytics/cfg/models/v8/yolov8-PSConv.yaml
+
+    使用[AAAI2025 Pinwheel-shaped Convolution and Scale-based Dynamic Loss for Infrared Small Target Detection](https://github.com/JN-Yang/PConv-SDloss-Data)中的Pinwheel-shaped Convolution改进yolov8.
 
 ### YOLOV8-C2f系列
 1. ultralytics/cfg/models/v8/yolov8-C2f-Faster.yaml
@@ -880,6 +900,26 @@
 
     使用[Hyper-YOLO TPAMI2025](https://www.arxiv.org/pdf/2408.04804)中的Mixed Aggregation Network改进yolov8.
 
+70. ultralytics/cfg/models/v8/yolov8-C2f-HFERB.yaml
+
+    使用[ICCV2023 CRAFT-SR](https://github.com/AVC2-UESTC/CRAFT-SR)中的high-frequency enhancement residual block改进C2f.
+
+71. ultralytics/cfg/models/v8/yolov8-C2f-DTAB.yaml
+
+    使用[AAAI2025 TBSN](https://github.com/nagejacob/TBSN)中的DTAB改进C2f.
+
+72. ultralytics/cfg/models/v8/yolov8-C2f-JDPM.yaml
+
+    使用[ECCV2024 FSEL](https://github.com/CSYSI/FSEL)中的joint domain perception module改进C2f.
+
+73. ultralytics/cfg/models/v8/yolov8-C2f-ETB.yaml
+
+    使用[ECCV2024 FSEL](https://github.com/CSYSI/FSEL)中的entanglement transformer block改进C2f.
+
+74. ultralytics/cfg/models/v8/yolov8-C2f-AP.yaml
+
+    使用[AAAI2025 Pinwheel-shaped Convolution and Scale-based Dynamic Loss for Infrared Small Target Detection](https://github.com/JN-Yang/PConv-SDloss-Data)中的Asymmetric Padding bottleneck改进C2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -1013,6 +1053,18 @@
 25. ultralytics/cfg/models/v10/yolov10n-MutilBackbone-MSGA.yaml
 
     使用[MSA^2 Net](https://github.com/xmindflow/MSA-2Net)中的Multi-Scale Adaptive Spatial Attention Gate对自研系列MutilBackbone再次创新.
+
+26. ultralytics/cfg/models/v10/yolov10n-slimneck-WFU.yaml
+
+    使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的Wavelet Feature Upgrade对slimneck二次创新.
+
+27. ultralytics/cfg/models/v10/yolov10n-MAN-FasterCGLU-WFU.yaml
+
+    使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的Wavelet Feature Upgrade和[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的 Mixed Aggregation Network和[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的Faster-Block和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU进行二次创新改进yolov10.
+
+28. ultralytics/cfg/models/v10/yolov10n-CDFA.yaml
+
+    使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的WaveletConv与[AAAI2025 ConDSeg](https://github.com/Mengqi-Lei/ConDSeg)的ContrastDrivenFeatureAggregation结合改进yolov10.
 
 ### 自研系列
 
@@ -1311,6 +1363,10 @@
 
     使用[DEA-Net](https://github.com/cecret3350/DEA-Net)中的content-guided attention fusion改进yolov10-neck.
 
+14. ultralytics/cfg/models/v10/yolov10n-WFU.yaml
+
+    使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的Wavelet Feature Upgrade改进yolov10-neck.
+
 ### Head系列
 
 1. ultralytics/cfg/models/v10/yolov10n-dyhead.yaml
@@ -1360,6 +1416,10 @@
 10. ultralytics/cfg/models/v10/yolov10n-LDConv.yaml
 
     使用[LDConv](https://github.com/CV-ZhangXin/LDConv/tree/main)改进下采样.
+
+11. ultralytics/cfg/models/v10/yolov10n-PSConv.yaml
+
+    使用[AAAI2025 Pinwheel-shaped Convolution and Scale-based Dynamic Loss for Infrared Small Target Detection](https://github.com/JN-Yang/PConv-SDloss-Data)中的Pinwheel-shaped Convolution改进yolov10.
 
 ### C2f系列
 
@@ -1498,6 +1558,26 @@
 35. ultralytics/cfg/models/v10/yolov10n-MAN.yaml
 
     使用[Hyper-YOLO TPAMI2025](https://www.arxiv.org/pdf/2408.04804)中的Mixed Aggregation Network改进yolov10.
+
+36. ultralytics/cfg/models/v10/yolov10n-C2f-HFERB.yaml
+
+    使用[ICCV2023 CRAFT-SR](https://github.com/AVC2-UESTC/CRAFT-SR)中的high-frequency enhancement residual block改进C2f.
+
+37. ultralytics/cfg/models/v10/yolov10n-C2f-DTAB.yaml
+
+    使用[AAAI2025 TBSN](https://github.com/nagejacob/TBSN)中的DTAB改进C2f.
+
+38. ultralytics/cfg/models/v10/yolov10n-C2f-JDPM.yaml
+
+    使用[ECCV2024 FSEL](https://github.com/CSYSI/FSEL)中的joint domain perception module改进C2f.
+
+39. ultralytics/cfg/models/v10/yolov10n-C2f-ETB.yaml
+
+    使用[ECCV2024 FSEL](https://github.com/CSYSI/FSEL)中的entanglement transformer block改进C2f.
+
+40. ultralytics/cfg/models/v10/yolov10n-C2f-AP.yaml
+
+    使用[AAAI2025 Pinwheel-shaped Convolution and Scale-based Dynamic Loss for Infrared Small Target Detection](https://github.com/JN-Yang/PConv-SDloss-Data)中的Asymmetric Padding bottleneck改进C2f.
 
 ### 组合系列
 
@@ -2086,3 +2166,13 @@
     3. 新增使用MSA^2 Net中的Multi-Scale Adaptive Spatial Attention Gate改进自研系列的MutilBackbone.
     4. 更新使用教程.
     5. 百度云视频增加20250101更新说明.
+
+- **20250119-ultralytics-v1.80**
+    1. 新增CRAFT-SR中的high-frequency enhancement residual block.
+    2. 新增AAAI2025-TBSN中的DTAB.
+    3. 新增ECCV2024-FSEL中的多个模块.
+    4. 新增ACMMM2024-WFEN中的小波变换特征融合.
+    5. 新增AAAI2025 Pinwheel-shaped Convolution and Scale-based Dynamic Loss for Infrared Small Target Detection中的Pinwheel-shaped Convolution类型改进.
+    6. 新增AAAI2025 ConDSeg中的ContrastDrivenFeatureAggregation与ACMMM2024 WFEN中的小波变换进行创新.
+    7. 更新使用教程.
+    8. 百度云视频增加20250119更新说明.
