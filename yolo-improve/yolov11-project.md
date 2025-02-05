@@ -187,6 +187,18 @@
 
     使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的WaveletConv与[AAAI2025 ConDSeg](https://github.com/Mengqi-Lei/ConDSeg)的ContrastDrivenFeatureAggregation结合改进yolo11.
 
+49. ultralytics/cfg/models/11/yolo11-C3k2-Faster-KAN.yaml
+
+    使用[ICLR2025 Kolmogorov-Arnold Transformer](https://github.com/Adamdad/kat)中的KAN对(CVPR2023)fasternet中的FastetBlock进行二次创新.
+
+50. ultralytics/cfg/models/11/yolo11-C3k2-ELGCACGLU.yaml
+
+    使用[ELGC-Net](https://github.com/techmn/elgcnet)中的ELGCA和和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进C3k2.
+
+51. ultralytics/cfg/models/11/yolo11-C3k2-StripCGLU.yaml
+
+    使用[Strip R-CNN](https://arxiv.org/pdf/2501.03775)中的StripBlock和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进C3k2.
+
 ### 自研系列
 1. ultralytics/cfg/models/11/yolo11-LAWDS.yaml
 
@@ -541,6 +553,14 @@
 21. ultralytics/cfg/models/11/yolo11-WFU.yaml
 
     使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的Wavelet Feature Upgrade改进yolo11-neck.
+
+22. ultralytics/cfg/models/11/yolo11-mpcafsa.yaml
+
+    使用[BIBM2024 Spatial-Frequency Dual Domain Attention Network For Medical Image Segmentation](https://github.com/nkicsl/SF-UNet)的Frequency-Spatial Attention和Multi-scale Progressive Channel Attention改进yolo11-neck.
+
+23. ultralytics/cfg/models/11/yolo11-fsa.yaml
+
+    使用[BIBM2024 Spatial-Frequency Dual Domain Attention Network For Medical Image Segmentation](https://github.com/nkicsl/SF-UNet)的Frequency-Spatial Attention改进yolo11.
 
 ### Head系列
 1. ultralytics/cfg/models/11/yolo11-dyhead.yaml
@@ -938,6 +958,18 @@
 
     使用[AAAI2025 Pinwheel-shaped Convolution and Scale-based Dynamic Loss for Infrared Small Target Detection](https://github.com/JN-Yang/PConv-SDloss-Data)中的Asymmetric Padding bottleneck改进yolo11.
 
+81. ultralytics/cfg/models/11/yolo11-C3k2-Kat.yaml
+
+    使用[ICLR2025 Kolmogorov-Arnold Transformer](https://github.com/Adamdad/kat)中的KAT改进C3k2.
+
+82. ultralytics/cfg/models/11/yolo11-C3k2-ELGCA.yaml
+
+    使用[ELGC-Net](https://github.com/techmn/elgcnet)中的ELGCA改进C3k2.
+
+83. ultralytics/cfg/models/11/yolo11-C3k2-Strip.yaml
+
+    使用[Strip R-CNN](https://arxiv.org/pdf/2501.03775)中的StripBlock改进C3k2.
+
 ### C2PSA系列
 
 1. ultralytics/cfg/models/11/yolo11-C2BRA.yaml
@@ -967,6 +999,10 @@
 7. ultralytics/cfg/models/11/yolo11-FDT.yaml
 
     使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的Full-domain Transformer替换C2PSA.
+
+8. ultralytics/cfg/models/11/yolo11-C2Pola.yaml
+
+    使用[ICLR2025 PolaFormer)](https://github.com/ZacharyMeng/PolaFormer)中的PolaAttention改进C2PSA.
 
 ### 组合系列
 1. ultralytics/cfg/models/11/yolo11-fasternet-bifpn.yaml
@@ -1130,3 +1166,12 @@
     2. 新增AAAI2025 ConDSeg中的ContrastDrivenFeatureAggregation与ACMMM2024 WFEN中的小波变换进行创新.
     3. 更新使用教程.
     4. 百度云视频增加20250119更新说明.
+
+- **20250205-yolo11-v1.12**
+    1. 新增ELGC-Net的改进及其二次创新.
+    2. 新增ICLR2025 PolaFormer中的PolaAttention改进C2PSA.
+    3. 新增遥感目标检测Strip R-CNN中的StripBlock及其二次创新.
+    4. 新增BIBM2024 Spatial-Frequency Dual Domain Attention Network For Medical Image Segmentation中的Frequency-Spatial Attention和Multi-scale Progressive Channel Attention.
+    5. 新增ICLR2025 Kolmogorov-Arnold Transformer中的KAT及其配合FasterBlock的二次创新.<此模块需要编译>
+    6. 更新使用教程.
+    7. 百度云视频增加20250204更新说明.
