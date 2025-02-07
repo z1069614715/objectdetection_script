@@ -191,6 +191,10 @@
 
     使用[ELGC-Net](https://github.com/techmn/elgcnet)中的ELGCA和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU与CSP结合改进backbone.
 
+39. ultralytics/cfg/models/rt-detr/rtdetr-C2f-Faster-KAN.yaml
+
+    使用[ICLR2025 Kolmogorov-Arnold Transformer](https://github.com/Adamdad/kat)中的KAN对(CVPR2023)fasternet中的FastetBlock进行二次创新.
+
 ### 自研系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-PACAPN.yaml
 
@@ -442,6 +446,10 @@
 40. ultralytics/cfg/models/rt-detr/rtdetr-C2f-Strip.yaml
 
     使用[Strip R-CNN](https://arxiv.org/pdf/2501.03775)中的StripBlock与CSP结合改进backbone.
+
+41. ultralytics/cfg/models/rt-detr/rtdetr-C2f-KAT.yaml
+
+    使用[ICLR2025 Kolmogorov-Arnold Transformer](https://github.com/Adamdad/kat)中的KAT与CSP结合改进backbone.
 
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
@@ -1770,3 +1778,8 @@
     4. 新增BIBM2024 Spatial-Frequency Dual Domain Attention Network For Medical Image Segmentation中的Frequency-Spatial Attention和Multi-scale Progressive Channel Attention.
     5. 更新使用教程.
     6. 百度云视频增加20250204更新说明.
+
+- **20250206-rtdetr-v1.46**
+    1. 新增ICLR2025 Kolmogorov-Arnold Transformer中的KAT及其配合FasterBlock的二次创新.<此模块需要编译>
+    2. 更新使用教程.
+    3. 百度云视频增加20250206更新说明.
