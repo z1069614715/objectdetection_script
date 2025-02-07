@@ -187,6 +187,14 @@
 
     使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的WaveletConv与[AAAI2025 ConDSeg](https://github.com/Mengqi-Lei/ConDSeg)的ContrastDrivenFeatureAggregation结合改进yolov8.
 
+49. ultralytics/cfg/models/v8/yolov8-C2f-StripCGLU.yaml
+
+    使用[Strip R-CNN](https://arxiv.org/pdf/2501.03775)中的StripBlock和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进C2f.
+
+50. ultralytics/cfg/models/v8/yolov8-C2f-Faster-KAN.yaml
+
+    使用[ICLR2025 Kolmogorov-Arnold Transformer](https://github.com/Adamdad/kat)中的KAN对(CVPR2023)fasternet中的FastetBlock进行二次创新.
+
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
 
@@ -550,6 +558,14 @@
 22. ultralytics/cfg/models/v8/yolov8-WFU.yaml
 
     使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的Wavelet Feature Upgrade改进yolov8-neck.
+
+23. ultralytics/cfg/models/v8/yolov8-mscafsa.yaml
+
+    使用[BIBM2024 Spatial-Frequency Dual Domain Attention Network For Medical Image Segmentation](https://github.com/nkicsl/SF-UNet)的Frequency-Spatial Attention和Multi-scale Progressive Channel Attention改进yolov8-neck.
+
+24. ultralytics/cfg/models/v8/yolov8-fsa.yaml
+
+    使用[BIBM2024 Spatial-Frequency Dual Domain Attention Network For Medical Image Segmentation](https://github.com/nkicsl/SF-UNet)的Frequency-Spatial Attention改进yolov8.
 
 ### Head系列
 1. ultralytics/cfg/models/v8/yolov8-dyhead.yaml
@@ -920,6 +936,14 @@
 
     使用[AAAI2025 Pinwheel-shaped Convolution and Scale-based Dynamic Loss for Infrared Small Target Detection](https://github.com/JN-Yang/PConv-SDloss-Data)中的Asymmetric Padding bottleneck改进C2f.
 
+75. ultralytics/cfg/models/v8/yolov8-C2f-Strip.yaml
+
+    使用[Strip R-CNN](https://arxiv.org/pdf/2501.03775)中的StripBlock改进C2f.
+
+76. ultralytics/cfg/models/v8/yolov8-C2f-Kat.yaml
+
+    使用[ICLR2025 Kolmogorov-Arnold Transformer](https://github.com/Adamdad/kat)中的KAT改进C2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -1065,6 +1089,14 @@
 28. ultralytics/cfg/models/v10/yolov10n-CDFA.yaml
 
     使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的WaveletConv与[AAAI2025 ConDSeg](https://github.com/Mengqi-Lei/ConDSeg)的ContrastDrivenFeatureAggregation结合改进yolov10.
+
+29. ultralytics/cfg/models/v10/yolov10n-C2f-StripCGLU.yaml
+
+    使用[Strip R-CNN](https://arxiv.org/pdf/2501.03775)中的StripBlock和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进C2f.
+
+30. ultralytics/cfg/models/v10/yolov10n-C2f-Faster-KAN.yaml
+
+    使用[ICLR2025 Kolmogorov-Arnold Transformer](https://github.com/Adamdad/kat)中的KAN对(CVPR2023)fasternet中的FastetBlock进行二次创新.
 
 ### 自研系列
 
@@ -1367,6 +1399,14 @@
 
     使用[ACMMM2024 WFEN](https://github.com/PRIS-CV/WFEN)中的Wavelet Feature Upgrade改进yolov10-neck.
 
+15. ultralytics/cfg/models/v10/yolov10n-fsa.yaml
+
+    使用[BIBM2024 Spatial-Frequency Dual Domain Attention Network For Medical Image Segmentation](https://github.com/nkicsl/SF-UNet)的Frequency-Spatial Attention改进yolov10.
+
+16. ultralytics/cfg/models/v10/yolov10n-mscafsa.yaml
+
+    使用[BIBM2024 Spatial-Frequency Dual Domain Attention Network For Medical Image Segmentation](https://github.com/nkicsl/SF-UNet)的Frequency-Spatial Attention和Multi-scale Progressive Channel Attention改进yolov10-neck.
+
 ### Head系列
 
 1. ultralytics/cfg/models/v10/yolov10n-dyhead.yaml
@@ -1578,6 +1618,10 @@
 40. ultralytics/cfg/models/v10/yolov10n-C2f-AP.yaml
 
     使用[AAAI2025 Pinwheel-shaped Convolution and Scale-based Dynamic Loss for Infrared Small Target Detection](https://github.com/JN-Yang/PConv-SDloss-Data)中的Asymmetric Padding bottleneck改进C2f.
+
+41. ultralytics/cfg/models/v10/yolov10n-C2f-Kat.yaml
+
+    使用[ICLR2025 Kolmogorov-Arnold Transformer](https://github.com/Adamdad/kat)中的KAT改进C2f.
 
 ### 组合系列
 
@@ -2176,3 +2220,10 @@
     6. 新增AAAI2025 ConDSeg中的ContrastDrivenFeatureAggregation与ACMMM2024 WFEN中的小波变换进行创新.
     7. 更新使用教程.
     8. 百度云视频增加20250119更新说明.
+
+- **20250207-ultralytics-v1.81**
+    1. 新增遥感目标检测Strip R-CNN中的StripBlock及其二次创新.
+    2. 新增BIBM2024 Spatial-Frequency Dual Domain Attention Network For Medical Image Segmentation中的Frequency-Spatial Attention和Multi-scale Progressive Channel Attention.
+    3. 新增ICLR2025 Kolmogorov-Arnold Transformer中的KAT及其配合FasterBlock的二次创新.<此模块需要编译>
+    4. 更新使用教程.
+    5. 百度云视频增加20250207更新说明.
