@@ -17,7 +17,7 @@
     3. [BCKD](https://link.zhihu.com/?target=https%3A//arxiv.org//pdf/2308.14286)(Bridging Cross-task Protocol Inconsistency for Distillation in Dense Object Detection,ICCV 2023)
     4. Double distillation strategy.(针对yolov10的结构开发)
 2. Feature
-    1. Mimic
+    1. [Mimic](https://openaccess.thecvf.com/content_cvpr_2017/papers/Li_Mimicking_Very_Efficient_CVPR_2017_paper.pdf)
     2. [Masked Generative Distillation](https://link.zhihu.com/?target=https%3A//arxiv.org/pdf/2205.01529.pdf) (ECCV 2022)
     3. [Channel-wise Distillation](https://arxiv.org/pdf/2011.13256.pdf) (ICCV 2021)
     4. [ChSimLoss Distillation](https://openaccess.thecvf.com/content/ICCV2021/html/Liu_Exploring_Inter-Channel_Correlation_for_Diversity-Preserved_Knowledge_Distillation_ICCV_2021_paper.html) (ICCV2021)
