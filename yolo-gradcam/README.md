@@ -5,8 +5,9 @@ yolo model with gradcam visual.
 ## 哔哩哔哩视频教学地址
 1. yolov5-[哔哩哔哩地址](https://www.bilibili.com/video/BV1F6421V77v/)
 2. yolov7-[哔哩哔哩地址](https://www.bilibili.com/video/BV1F6421V77v/)
-3. yolov8-[哔哩哔哩地址](https://www.bilibili.com/video/BV1fU421o7jH/)
+3. yolov8-[哔哩哔哩地址](https://www.bilibili.com/video/BV1T2N6eaEFD/)
 4. yolov9-[哔哩哔哩地址](https://www.bilibili.com/video/BV14H4y157MP/)
+5. yolov11-[哔哩哔哩地址](https://www.bilibili.com/video/BV1T2N6eaEFD/)
 
 ## 环境
 pip install grad-cam==1.4.8 -i https://pypi.tuna.tsinghua.edu.cn/simple
