@@ -195,6 +195,10 @@
 
     使用[ICLR2025 Kolmogorov-Arnold Transformer](https://github.com/Adamdad/kat)中的KAN对(CVPR2023)fasternet中的FastetBlock进行二次创新.
 
+51. ultralytics/cfg/models/v8/yolov8-C2f-DIMB-KAN.yaml
+
+    在yolov8-C2f-DIMB.yaml的基础上把mlp模块换成[ICLR2025 Kolmogorov-Arnold Transformer](https://github.com/Adamdad/kat)中的KAN.
+
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
 
@@ -396,6 +400,10 @@
     1. 由于原始图像中含有大量背景信息，因此从原始图像上直接提取边缘信息传递到整个backbone上会给网络的学习带来噪声，而且浅层的卷积层会帮助我们过滤不必要的背景信息，因此我们选择在网络的浅层开发一个名为MutilScaleEdgeInfoGenetator的模块，其会利用网络的浅层特征层去生成多个尺度的边缘信息特征图并投放到主干的各个尺度中进行融合。
     2. 对于下采样方面的选择，我们需要较为谨慎，我们的目标是保留并增强边缘信息，同时进行下采样，选择MaxPool 会更合适。它能够保留局部区域的最强特征，更好地体现边缘信息。因为 AvgPool 更适用于需要平滑或均匀化特征的场景，但在保留细节和边缘信息方面的表现不如 MaxPool。
     3. 对于融合部分，ConvEdgeFusion巧妙地结合边缘信息和普通卷积特征，提出了一种新的跨通道特征融合方式。首先，使用conv_channel_fusion进行边缘信息与普通卷积特征的跨通道融合，帮助模型更好地整合不同来源的特征。然后采用conv_3x3_feature_extract进一步提取融合后的特征，以增强模型对局部细节的捕捉能力。最后通过conv_1x1调整输出特征维度。
+
+28. ultralytics/cfg/models/v8/yolov8-C2f-DIMB.yaml
+
+    自研模块DynamicInceptionDWConv2d.(详细请看项目内配置文件.md)
 
 ### BackBone系列
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
@@ -944,6 +952,14 @@
 
     使用[ICLR2025 Kolmogorov-Arnold Transformer](https://github.com/Adamdad/kat)中的KAT改进C2f.
 
+77. ultralytics/cfg/models/v8/yolov8-C2f-GlobalFilter.yaml
+
+    使用[T-PAMI Global Filter Networks for Image Classification](https://github.com/raoyongming/GFNet)中的GlobalFilterBlock和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进C2f.
+
+78. ultralytics/cfg/models/v8/yolov8-C2f-DynamicFilter.yaml
+
+    使用[AAAI2024 FFT-Based Dynamic Token Mixer for Vision](https://github.com/okojoalg/dfformer)中的DynamicFilter改进C2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -1098,6 +1114,10 @@
 
     使用[ICLR2025 Kolmogorov-Arnold Transformer](https://github.com/Adamdad/kat)中的KAN对(CVPR2023)fasternet中的FastetBlock进行二次创新.
 
+31. ultralytics/cfg/models/v10/yolov10n-C2f-DIMB-KAN.yaml
+
+    在yolov10n-C2f-DIMB.yaml的基础上把mlp模块换成[ICLR2025 Kolmogorov-Arnold Transformer](https://github.com/Adamdad/kat)中的KAN.
+
 ### 自研系列
 
 1. ultralytics/cfg/models/v10/yolov10n-C2f-EMSC.yaml
@@ -1244,6 +1264,10 @@
     1. 由于原始图像中含有大量背景信息，因此从原始图像上直接提取边缘信息传递到整个backbone上会给网络的学习带来噪声，而且浅层的卷积层会帮助我们过滤不必要的背景信息，因此我们选择在网络的浅层开发一个名为MutilScaleEdgeInfoGenetator的模块，其会利用网络的浅层特征层去生成多个尺度的边缘信息特征图并投放到主干的各个尺度中进行融合。
     2. 对于下采样方面的选择，我们需要较为谨慎，我们的目标是保留并增强边缘信息，同时进行下采样，选择MaxPool 会更合适。它能够保留局部区域的最强特征，更好地体现边缘信息。因为 AvgPool 更适用于需要平滑或均匀化特征的场景，但在保留细节和边缘信息方面的表现不如 MaxPool。
     3. 对于融合部分，ConvEdgeFusion巧妙地结合边缘信息和普通卷积特征，提出了一种新的跨通道特征融合方式。首先，使用conv_channel_fusion进行边缘信息与普通卷积特征的跨通道融合，帮助模型更好地整合不同来源的特征。然后采用conv_3x3_feature_extract进一步提取融合后的特征，以增强模型对局部细节的捕捉能力。最后通过conv_1x1调整输出特征维度。
+
+22. ultralytics/cfg/models/v10/yolov10n-C2f-DIMB.yaml
+
+    自研模块DynamicInceptionDWConv2d.(详细请看项目内配置文件.md)
 
 ### BackBone系列
 
@@ -1622,6 +1646,14 @@
 41. ultralytics/cfg/models/v10/yolov10n-C2f-Kat.yaml
 
     使用[ICLR2025 Kolmogorov-Arnold Transformer](https://github.com/Adamdad/kat)中的KAT改进C2f.
+
+42. ultralytics/cfg/models/v10/yolov10n-C2f-GlobalFilter.yaml
+
+    使用[T-PAMI Global Filter Networks for Image Classification](https://github.com/raoyongming/GFNet)中的GlobalFilterBlock和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进C2f.
+
+43. ultralytics/cfg/models/v10/yolov10n-C2f-DynamicFilter.yaml
+
+    使用[AAAI2024 FFT-Based Dynamic Token Mixer for Vision](https://github.com/okojoalg/dfformer)中的DynamicFilter改进C2f.
 
 ### 组合系列
 
@@ -2227,3 +2259,9 @@
     3. 新增ICLR2025 Kolmogorov-Arnold Transformer中的KAT及其配合FasterBlock的二次创新.<此模块需要编译>
     4. 更新使用教程.
     5. 百度云视频增加20250207更新说明.
+
+- **20250220-ultralytics-v1.82**
+    1. 新增自研模块DynamicInceptionDWConv2d.
+    2. 新增GlobalFilter和DynamicFilter.
+    3. 更新使用教程.
+    4. 百度云视频增加20250220更新说明.
