@@ -34,10 +34,13 @@
 21. [深度学习炼丹必备必看必须知道的小技巧！](https://www.bilibili.com/video/BV1q3SZYsExc/)
 22. [深度学习实验准备-数据集怎么选？有哪些需要注意的点？](https://www.bilibili.com/video/BV11zySYvEhs/)
 23. [深度学习论文实验中新手非常容易陷入的一个误区：抱着解决xxx问题的心态去做实验](https://www.bilibili.com/video/BV1kkkvYJEHG/)
+24. [小目标检测必看系列 | 除了AP-Small指标，可还有AP-VeryTiny、AP-Tiny的指标喔~手把手带你加！](https://www.bilibili.com/video/BV1CYcUeBEzY/)
+25. [YOLO中的实例分割原来是这样巧妙地实现的！你在做YOLO-Seg但是又不知道的话，那你要进来看看咯～](https://www.bilibili.com/video/BV1SkP1e1EHC/)
 
 ### 必看论文分享系列
 1. [有营养的必看论文分享系列一-RTMDet<考虑到精度、速度、部署的2D目标检测网络>](https://www.bilibili.com/video/BV1ab421J77G/)
 2. [有营养的必看论文分享系列二-MobileNets<轻量化的开山之作>](https://www.bilibili.com/video/BV1hM4m117JW/)
+3. [计算机视觉|YOLO|DETR|2025创新必看的论文之一|MetaFormer(TPAMI2024),选对Baseline是成功的第一步](https://www.bilibili.com/video/BV1W5ATetEg6/)
 
 ### 高区论文带读系列
 1. [高区论文带读系列一-40分钟长视频带你分析一篇SCI1区的文章，SCI1区也不是触不可及！](https://www.bilibili.com/video/BV1JESuYxEjn/)
@@ -217,3 +220,5 @@
 1. [Ultralytics8.3.0沉浸式讲解-YOLOV11针对代码的详细剖析](https://www.bilibili.com/video/BV19XxxeXEma/)
 2. [保姆级别YOLOV11-环境配置、 数据集介绍、训练、验证、推理 详细教学视频，看了它，跑YOLOV11 没问题~](https://www.bilibili.com/video/BV1VA11YBELB/)
 3. [YOLOV11改进详细分析(改进前必看)，每个部分(Backbone、Neck、Head....)有哪些地方可以改进？改进的时候要避免小白三件套！](https://www.bilibili.com/video/BV1GKCdYbEuz/)
+#### D-Fine
+1. [暴打CVPR2024-RTDETR的D-Fine究竟性能如何？我们一起来训练看看~](https://www.bilibili.com/video/BV1aE6aYHEer/)
