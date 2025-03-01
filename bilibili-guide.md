@@ -220,5 +220,8 @@
 1. [Ultralytics8.3.0沉浸式讲解-YOLOV11针对代码的详细剖析](https://www.bilibili.com/video/BV19XxxeXEma/)
 2. [保姆级别YOLOV11-环境配置、 数据集介绍、训练、验证、推理 详细教学视频，看了它，跑YOLOV11 没问题~](https://www.bilibili.com/video/BV1VA11YBELB/)
 3. [YOLOV11改进详细分析(改进前必看)，每个部分(Backbone、Neck、Head....)有哪些地方可以改进？改进的时候要避免小白三件套！](https://www.bilibili.com/video/BV1GKCdYbEuz/)
-#### D-Fine
+#### D-Fine-ICLR2025
 1. [暴打CVPR2024-RTDETR的D-Fine究竟性能如何？我们一起来训练看看~](https://www.bilibili.com/video/BV1aE6aYHEer/)
+#### DEIM-CVPR2025
+1. [CVPR2025-DEIM｜新一代目标检测SOTA｜2025发高区论文必备的baseline｜手把手调试带你跑通DEIM的训练阶段](https://www.bilibili.com/video/BV1yX9VYpEPL/)
+2. [CVPR2025-DEIM｜新一代目标检测SOTA｜2025发高区论文必备的baseline｜手把手调试带你跑通DEIM的测试阶段](https://www.bilibili.com/video/BV1uf9GY8E1h/)

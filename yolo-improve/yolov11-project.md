@@ -407,6 +407,18 @@
 
     自研模块DynamicInceptionDWConv2d.(更详细点说明看项目的配置文件.md)
 
+29. ultralytics/cfg/models/11/yolo11-HAFB-1.yaml
+    
+    自研模块Hierarchical Attention Fusion Block, HAFB.(更详细点说明看项目的配置文件.md)
+
+30. ultralytics/cfg/models/11/yolo11-HAFB-2.yaml
+    
+    自研模块Hierarchical Attention Fusion Block, HAFB.(更详细点说明看项目的配置文件.md)
+
+31. ultralytics/cfg/models/11/yolo11-MutilBackbone-HAFB.yaml
+    
+    在yolo11-MutilBackbone-DAF.yaml的自研创新上引入HAFB.
+
 ### BackBone系列
 1. ultralytics/cfg/models/11/yolo11-efficientViT.yaml
     
@@ -986,6 +998,14 @@
 
     使用[AAAI2024 FFT-Based Dynamic Token Mixer for Vision](https://github.com/okojoalg/dfformer)中的DynamicFilter改进C3k2.
 
+86. ultralytics/cfg/models/11/yolo11-C3k2-TSSA.yaml
+     
+    使用[Token Statistics Transformer](https://github.com/RobinWu218/ToST)中的Token Statistics Self-Attention和[Metaformer TPAMI2024](https://github.com/sail-sg/metaformer)的metaformer改进C3k2.
+
+87. ultralytics/cfg/models/11/yolo11-RepHMS.yaml
+
+    使用[MHAF-YOLO](https://github.com/yang-0201/MHAF-YOLO)中的RepHMS改进yolo11.
+
 ### C2PSA系列
 
 1. ultralytics/cfg/models/11/yolo11-C2BRA.yaml
@@ -1019,6 +1039,23 @@
 8. ultralytics/cfg/models/11/yolo11-C2Pola.yaml
 
     使用[ICLR2025 PolaFormer)](https://github.com/ZacharyMeng/PolaFormer)中的PolaAttention改进C2PSA.
+
+9. ultralytics/cfg/models/11/yolo11-C2TSSA.yaml
+     
+    使用[Token Statistics Transformer](https://github.com/RobinWu218/ToST)中的Token Statistics Self-Attention改进C2PSA.
+
+### A2C2f系列
+1. ultralytics/cfg/models/12/yolo12-A2C2f-CGLU.yaml
+     
+    使用[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进A2C2f.
+
+2. ultralytics/cfg/models/12/yolo12-A2C2f-KAN.yaml
+
+    使用[ICLR2025 Kolmogorov-Arnold Transformer](https://github.com/Adamdad/kat)中的KAN改进A2C2f.
+
+3. ultralytics/cfg/models/12/yolo12-A2C2f-DFFN.yaml
+    
+    使用[FreqFormer](https://github.com/JPWang-CS/FreqFormer)中的DFFN改进A2C2f.
 
 ### 组合系列
 1. ultralytics/cfg/models/11/yolo11-fasternet-bifpn.yaml
@@ -1200,3 +1237,12 @@
 
 - **20250222-yolo11-v1.14**
     1. 新增yolo12配置文件.（包含目标检测、实例分割、姿态检测、旋转目标检测、分类）
+
+- **20250301-yolo11-v1.15**
+    1. 新增自研模块Hierarchical Attention Fusion并提供多种使用方式.
+    2. 新增ICLR2025-Token Statistics Transformer中的TSSA改进C3k2,C2PSA.
+    3. 新增MHAF-YOLO中的RepHMS.<这个是YOLO群内的一个博士新作品>
+    4. 新增对YOLO12的A2C2f结构中的MLP多个改进方案<CGLU、KAN、DFFN>.
+    5. 调整了YOLO12中的注意力实现，会自动检测是否安装好Flash-Attention，没的话自动切换Torch实现.
+    6. 更新使用教程.
+    7. 百度云视频增加20250301更新说明.
