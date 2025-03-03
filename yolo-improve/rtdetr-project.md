@@ -311,6 +311,18 @@
 
     自研模块DynamicInceptionDWConv2d.(更多解释请看项目内的使用教程.md)
 
+18. ultralytics/cfg/models/rt-detr/rtdetr-HAFB-1.yaml
+    
+    自研模块Hierarchical Attention Fusion Block.(更多解释请看项目内的使用教程.md)
+
+19. ultralytics/cfg/models/rt-detr/rtdetr-HAFB-2.yaml
+     
+    HAFB的另外一种使用方式.
+
+20. ultralytics/cfg/models/rt-detr/rtdetr-MutilBackbone-HAFB.yaml
+
+    在rtdetr-MutilBackbone-DAF.yaml上引入HAFB(Hierarchical Attention Fusion Block).
+
 ### BackBone系列
 1. ultralytics/cfg/models/rt-detr/rt-detr-timm.yaml
 
@@ -467,6 +479,10 @@
 
     使用[AAAI2024 FFT-Based Dynamic Token Mixer for Vision](https://github.com/okojoalg/dfformer)中的DynamicFilter与CSP改进rtdetr-backbone.
 
+44. ultralytics/cfg/models/rt-detr/rtdetr-RepHMS.yaml
+     
+     使用[MHAF-YOLO](https://github.com/yang-0201/MHAF-YOLO)中的RepHMS改进rtdetr.
+
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -519,6 +535,10 @@
 14. ultralytics/cfg/models/rt-detr/rtdetr-Pola.yaml
 
     使用[ICLR2025 PolaFormer)](https://github.com/ZacharyMeng/PolaFormer)中的PolaAttention改进AIFI.
+
+15. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-TSSA.yaml
+
+    使用[Token Statistics Transformer](https://github.com/RobinWu218/ToST)中的Token Statistics Self-Attention改进AIFI.
 
 ### Neck系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-ASF.yaml
@@ -1805,3 +1825,10 @@
     2. 新增GlobalFilter和DynamicFilter.
     3. 更新使用教程.
     4. 百度云视频增加20250216更新说明.
+
+- **20250303-rtdetr-v1.48**
+    1. 新增自研模块Hierarchical Attention Fusion并提供多种使用方式.
+    2. 新增ICLR2025-Token Statistics Transformer中的TSSA改进AIFI.
+    3. 新增MHAF-YOLO中的RepHMS.<这个是YOLO群内的一个博士新作品>
+    4. 更新使用教程.
+    5. 百度云视频增加20250303更新说明.
