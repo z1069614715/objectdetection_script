@@ -405,6 +405,18 @@
 
     自研模块DynamicInceptionDWConv2d.(详细请看项目内配置文件.md)
 
+29. ultralytics/cfg/models/v8/yolov8-HAFB-1.yaml
+    
+    自研Hierarchical Attention Fusion Block.(详细请看项目内配置文件.md)
+
+30. ultralytics/cfg/models/v8/yolov8-HAFB-2.yaml
+
+    HAFB另外一种使用方法.
+
+31. ultralytics/cfg/models/v8/yolov8-MutilBackbone-HAFB.yaml
+    
+    yolov8-MutilBackbone-DAF.yaml基础上用上HAFB.
+
 ### BackBone系列
 1. ultralytics/cfg/models/v8/yolov8-efficientViT.yaml
     
@@ -960,6 +972,10 @@
 
     使用[AAAI2024 FFT-Based Dynamic Token Mixer for Vision](https://github.com/okojoalg/dfformer)中的DynamicFilter改进C2f.
 
+79. ultralytics/cfg/models/v8/yolov8-RepHMS.yaml
+    
+    使用[MHAF-YOLO](https://github.com/yang-0201/MHAF-YOLO)中的RepHMS改进yolov8.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -1268,6 +1284,18 @@
 22. ultralytics/cfg/models/v10/yolov10n-C2f-DIMB.yaml
 
     自研模块DynamicInceptionDWConv2d.(详细请看项目内配置文件.md)
+
+23. ultralytics/cfg/models/v10/yolov10n-HAFB-1.yaml
+    
+    自研Hierarchical Attention Fusion Block.(详细请看项目内配置文件.md)
+
+24. ultralytics/cfg/models/v10/yolov10n-HAFB-2.yaml
+
+    HAFB另外一种使用方法.
+
+25. ultralytics/cfg/models/v10/yolov10n-MutilBackbone-HAFB.yaml
+    
+    yolov10n-MutilBackbone-DAF.yaml基础上用上HAFB.
 
 ### BackBone系列
 
@@ -1654,6 +1682,17 @@
 43. ultralytics/cfg/models/v10/yolov10n-C2f-DynamicFilter.yaml
 
     使用[AAAI2024 FFT-Based Dynamic Token Mixer for Vision](https://github.com/okojoalg/dfformer)中的DynamicFilter改进C2f.
+
+
+44. ultralytics/cfg/models/v10/yolov10n-RepHMS.yaml
+
+    使用[MHAF-YOLO](https://github.com/yang-0201/MHAF-YOLO)中的RepHMS改进yolov10.
+
+### PSA系列
+
+1. ultralytics/cfg/models/v10/yolov10n-PTSSA.yaml
+    
+    使用[Token Statistics Transformer](https://github.com/RobinWu218/ToST)中的Token Statistics Self-Attention改进PSA.
 
 ### 组合系列
 
@@ -2265,3 +2304,10 @@
     2. 新增GlobalFilter和DynamicFilter.
     3. 更新使用教程.
     4. 百度云视频增加20250220更新说明.
+
+- **20250303-ultralytics-v1.83**
+    1. 新增自研模块Hierarchical Attention Fusion并提供多种使用方式.
+    2. 新增ICLR2025-Token Statistics Transformer改进PSA.
+    3. 新增MHAF-YOLO中的RepHMS.<这个是YOLO群内的一个博士新作品>
+    4. 更新使用教程.
+    5. 百度云视频增加20250308更新说明.
