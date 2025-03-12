@@ -475,6 +475,13 @@
 18. ultralytics/cfg/models/11/yolo11-inceptionnext.yaml
 
     使用[InceptionNeXt CVPR2024](https://github.com/sail-sg/inceptionnext)替换backbone.
+19. ultralytics/cfg/models/11/yolo11-mambaout.yaml
+     
+    使用[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOut替换BackBone.
+20. ultralytics/cfg/models/11/yolo11-MobileMamba.yaml
+     
+    使用[CVPR2025 MobileMamba](https://github.com/lewandofskee/MobileMamba)中的MobileMamba改进Backbone.
+
 ### SPPF系列
 1. ultralytics/cfg/models/11/yolo11-FocalModulation.yaml
 
@@ -1006,6 +1013,18 @@
 
     使用[MHAF-YOLO](https://github.com/yang-0201/MHAF-YOLO)中的RepHMS改进yolo11.
 
+88. ultralytics/cfg/models/11/yolo11-C3k2-SAVSS.yaml
+
+    使用[CVPR2025 SCSegamba](https://github.com/Karl1109/SCSegamba)中的Structure-Aware Scanning Strategy改进C3k2.
+
+89. ultralytics/cfg/models/11/yolo11-C3k2-MobileMamba.yaml
+     
+    使用[CVPR2025 MobileMamba](https://github.com/lewandofskee/MobileMamba)中的MobileMambaBlock改进C3k2.
+
+90. ultralytics/cfg/models/11/yolo11-C3k2-MambaOut.yaml
+     
+    使用[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOutBlock改进C3k2.
+
 ### C2PSA系列
 
 1. ultralytics/cfg/models/11/yolo11-C2BRA.yaml
@@ -1044,6 +1063,14 @@
      
     使用[Token Statistics Transformer](https://github.com/RobinWu218/ToST)中的Token Statistics Self-Attention改进C2PSA.
 
+10. ultralytics/cfg/models/11/yolo11-C2ASSA.yaml
+     
+    使用[CVPR2024 Adapt or Perish: Adaptive Sparse Transformer with Attentive Feature Refinement for Image Restoration](https://openaccess.thecvf.com/content/CVPR2024/papers/Zhou_Adapt_or_Perish_Adaptive_Sparse_Transformer_with_Attentive_Feature_Refinement_CVPR_2024_paper.pdf)中的Adaptive Sparse Self-Attention改进C2PSA.
+
+11. ultralytics/cfg/models/11/yolo11-ASSR.yaml
+
+    使用[CVPR2025 MambaIR](https://github.com/csguoh/MambaIR)中的Attentive State Space Group改进yolo11.
+
 ### A2C2f系列
 1. ultralytics/cfg/models/12/yolo12-A2C2f-CGLU.yaml
      
@@ -1056,6 +1083,10 @@
 3. ultralytics/cfg/models/12/yolo12-A2C2f-DFFN.yaml
     
     使用[FreqFormer](https://github.com/JPWang-CS/FreqFormer)中的DFFN改进A2C2f.
+
+4. ultralytics/cfg/models/12/yolo12-A2C2f-FRFN.yaml
+     
+    使用[CVPR2024 Adapt or Perish: Adaptive Sparse Transformer with Attentive Feature Refinement for Image Restoration](https://openaccess.thecvf.com/content/CVPR2024/papers/Zhou_Adapt_or_Perish_Adaptive_Sparse_Transformer_with_Attentive_Feature_Refinement_CVPR_2024_paper.pdf)中的feature refinement feed-forward改进A2C2f.
 
 ### 组合系列
 1. ultralytics/cfg/models/11/yolo11-fasternet-bifpn.yaml
@@ -1246,3 +1277,13 @@
     5. 调整了YOLO12中的注意力实现，会自动检测是否安装好Flash-Attention，没的话自动切换Torch实现.
     6. 更新使用教程.
     7. 百度云视频增加20250301更新说明.
+
+- **20250312-yolo11-v1.16**
+    1. 修复yolo11-ReCalibrationFPN-P2345.yaml的序号错误bug.
+    2. 新增CVPR2024-Adaptive Sparse Transformer相关改进yolo11,yolo12.
+    3. 新增CVPR2025-MambaIR的模块.
+    4. 新增CVPR2025-SCSegamba中的模块.
+    5. 新增CVPR2025-MobileMamba中的模块.
+    6. 新增CVPR2025-MambaOut中的模块.
+    7. 更新使用教程.
+    8. 百度云视频增加20250312更新说明.
