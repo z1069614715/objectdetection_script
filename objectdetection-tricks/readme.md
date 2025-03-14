@@ -43,3 +43,6 @@
 - **tricks_13**  
     YOLOV8-输出每一层的图特征图尺寸和通道数.  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1Mz421B7xz/).  
+- **tricks_14**  
+    YOLOV8V10V11V12更详细的输出精度结果.
+    视频教学地址：[哔哩哔哩]().  
