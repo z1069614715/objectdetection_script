@@ -1,5 +1,4 @@
-
-# [基于Ultralytics的RT-DETR改进项目.(89.9¥)](https://github.com/z1069614715/objectdetection_script)
+# [基于Ultralytics的RT-DETR改进详细介绍](https://github.com/z1069614715/objectdetection_script)
 
 # 目前自带的一些改进方案(持续更新)
 
@@ -483,6 +482,18 @@
      
      使用[MHAF-YOLO](https://github.com/yang-0201/MHAF-YOLO)中的RepHMS改进rtdetr.
 
+45. ultralytics/cfg/models/rt-detr/rtdetr-C2f-SAVSS.yaml
+    
+    使用[CVPR2025 SCSegamba](https://github.com/Karl1109/SCSegamba)中的Structure-Aware Scanning Strategy与CSP结合改进backbone.
+
+46. ultralytics/cfg/models/rt-detr/rtdetr-mambaout.yaml
+     
+    使用[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOut替换BackBone.
+
+47. ultralytics/cfg/models/rt-detr/rtdetr-C2f-mambaout.yaml
+
+    使用[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOut与CSP结合改进backbone.
+
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -539,6 +550,14 @@
 15. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-TSSA.yaml
 
     使用[Token Statistics Transformer](https://github.com/RobinWu218/ToST)中的Token Statistics Self-Attention改进AIFI.
+
+16. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-ASSA.yaml
+    
+    使用[CVPR2024 Adapt or Perish: Adaptive Sparse Transformer with Attentive Feature Refinement for Image Restoration](https://openaccess.thecvf.com/content/CVPR2024/papers/Zhou_Adapt_or_Perish_Adaptive_Sparse_Transformer_with_Attentive_Feature_Refinement_CVPR_2024_paper.pdf)中的Adaptive Sparse Self-Attention改进AIFI.
+
+17. ultralytics/cfg/models/rt-detr/rtdetr-ASSR.yaml
+     
+    使用[CVPR2025 MambaIR](https://github.com/csguoh/MambaIR)中的Attentive State Space Group改进rtdetr.
 
 ### Neck系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-ASF.yaml
@@ -852,6 +871,7 @@
 11. Focaler-Wise-IoU(v1,v2,v3)(IoU,WIoU,EIoU,GIoU,DIoU,CIoU,SIoU,MPDIoU,ShapeIoU)[论文链接](https://arxiv.org/abs/2401.10525)(百度云视频-20240128更新说明)
 12. Powerful-IoU,Powerful-IoUV2,Inner-Powerful-IoU,Inner-Powerful-IoUV2,Focaler-Powerful-IoU,Focaler-Powerful-IoUV2,Wise-Powerful-IoU(v1,v2,v3),Wise-Powerful-IoUV2(v1,v2,v3)[论文链接](https://www.sciencedirect.com/science/article/abs/pii/S0893608023006640)
 13. SlideVarifocalLoss,EMASlideVarifocalLoss[创新思路](https://www.bilibili.com/video/BV1W14y1i79U/?vd_source=c8452371e7ca510979593165c8d7ac27).[Yolo-Face V2](https://github.com/Krasjet-Yu/YOLO-FaceV2/blob/master/utils/loss.py)(百度云视频-20240302更新说明)
+14. CVPR2025-DEIM-MAL.(百度云视频-20240315更新说明)
 
 ### 以Yolov8为基准模型的改进方案
 1. ultralytics/cfg/models/yolo-detr/yolov8-detr.yaml
