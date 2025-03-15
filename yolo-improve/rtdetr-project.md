@@ -1852,3 +1852,12 @@
     3. 新增MHAF-YOLO中的RepHMS.<这个是YOLO群内的一个博士新作品>
     4. 更新使用教程.
     5. 百度云视频增加20250303更新说明.
+
+- **20250315-rtdetr-v1.49**
+    1. 新增CVPR2024-Adaptive Sparse Transformer的模块改进aifi.
+    2. 新增CVPR2025-MambaIR的模块.
+    3. 新增CVPR2025-SCSegamba中的模块.
+    4. 新增CVPR2025-MambaOut中的模块.
+    5. 新增CVPR2025-DEIM MAL损失函数.
+    6. 更新使用教程.
+    7. 百度云视频增加20250315更新说明.
