@@ -203,6 +203,22 @@
 
     在ultralytics/cfg/models/11/yolo11-C3k2-DIMB.yaml的基础上把mlp模块换成[ICLR2025 Kolmogorov-Arnold Transformer](https://github.com/Adamdad/kat)中的KAN.
 
+53. ultralytics/cfg/models/11/yolo11-C2TSSA-DYT.yaml
+
+    使用[CVPR2025 DyT](https://github.com/jiachenzhu/DyT)中的DynamicTan和[ICLR2025 Token Statistics Transformer](https://github.com/RobinWu218/ToST)中的Token Statistics Self-Attention改进C2PSA.
+
+54. ultralytics/cfg/models/11/yolo11-C2Pola-DYT.yaml
+
+    使用[CVPR2025 DyT](https://github.com/jiachenzhu/DyT)中的DynamicTan和[ICLR2025 PolaFormer](https://github.com/ZacharyMeng/PolaFormer)中的PolaAttention改进C2PSA.
+
+55. ultralytics/cfg/models/12/yolo12-A2C2f-CGLU-DYT.yaml
+     
+    使用[CVPR2025 DyT](https://github.com/jiachenzhu/DyT)中的DynamicTanh和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进A2C2f.
+
+56. ultralytics/cfg/models/12/yolo12-A2C2f-DFFN-DYT.yaml
+
+    使用[CVPR2025 DyT](https://github.com/jiachenzhu/DyT)中的DynamicTanh和[FreqFormer](https://github.com/JPWang-CS/FreqFormer)中的DFFN改进A2C2f.
+
 ### 自研系列
 1. ultralytics/cfg/models/11/yolo11-LAWDS.yaml
 
@@ -1071,6 +1087,10 @@
 
     使用[CVPR2025 MambaIR](https://github.com/csguoh/MambaIR)中的Attentive State Space Group改进yolo11.
 
+12. ultralytics/cfg/models/11/yolo11-C2PSA-DYT.yaml
+
+    使用[CVPR2025 DyT](https://github.com/jiachenzhu/DyT)中的DynamicTanh改进C2PSA.
+
 ### A2C2f系列
 1. ultralytics/cfg/models/12/yolo12-A2C2f-CGLU.yaml
      
@@ -1087,6 +1107,10 @@
 4. ultralytics/cfg/models/12/yolo12-A2C2f-FRFN.yaml
      
     使用[CVPR2024 Adapt or Perish: Adaptive Sparse Transformer with Attentive Feature Refinement for Image Restoration](https://openaccess.thecvf.com/content/CVPR2024/papers/Zhou_Adapt_or_Perish_Adaptive_Sparse_Transformer_with_Attentive_Feature_Refinement_CVPR_2024_paper.pdf)中的feature refinement feed-forward改进A2C2f.
+
+5. ultralytics/cfg/models/12/yolo12-A2C2f-DYT.yaml
+     
+    使用[CVPR2025 DyT](https://github.com/jiachenzhu/DyT)中的DynamicTanh改进A2C2f.
 
 ### 组合系列
 1. ultralytics/cfg/models/11/yolo11-fasternet-bifpn.yaml
@@ -1287,3 +1311,9 @@
     6. 新增CVPR2025-MambaOut中的模块.
     7. 更新使用教程.
     8. 百度云视频增加20250312更新说明.
+
+- **20250319-yolo11-v1.17**
+    1. 新增CVPR2025-Dynamic-Tanh的的多个改进并于其他模块的二次创新.
+    2. 修复C2PSA部分改进一些问题，详细看本期更新说明.
+    3. 更新使用教程.
+    4. 百度云视频增加20250319更新说明.
