@@ -80,7 +80,11 @@
     3. 购买后进RTDETR蒸馏交流群(代码视频均在群公告),因为蒸馏操作有一定的难度,所以蒸馏操作问题可以群里提问,我都会群里回复相关问题.
     4. 知识蒸馏整体修改难度大，代表少人使用，物以稀为贵，增加文章的创新度！
 
-7. 基于YOLO和RT-DETR的论文全流程指导项目.(原价258¥，若已购买yolo81011或rtdetr项目的则优惠70¥=188¥)[项目详解](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/paper.md)  
+7. 基于CVPR2025-DEIM的改进项目.(268¥)
+    
+    项目详细介绍请看[此处](https://github.com/z1069614715/objectdetection_script/blob/master/cvpr2025-deim-project.md)
+
+8. 基于YOLO和RT-DETR的论文全流程指导项目.(原价258¥，若已购买yolo81011或rtdetr项目的则优惠70¥=188¥)[项目详解](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/paper.md)  
     我们目前有非常多的代码项目，几乎是全网最全价格最优惠性格比最高的一家，但是难免有些同学在做完实验后还是完全不懂应该怎么去写or不想走太多弯路的情况，因此开展这个基于YOLO和RT-DETR的论文全流程指导项目，本项目致力于帮助那些在论文道路上极其困难的同学，基本上配合上述的一些改进项目和此论文全流程指导项目再加上自己的一点努力可以完全实现毕业无忧,项目简介如下：
 
     1. 直播内容涉及到发论文的整个论文框架体系的方方面面，每次直播都会优先讲大家最想听的部分，根据课程目录投票决定。

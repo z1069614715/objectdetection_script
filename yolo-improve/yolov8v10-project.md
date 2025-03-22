@@ -2305,7 +2305,7 @@
     3. 更新使用教程.
     4. 百度云视频增加20250220更新说明.
 
-- **20250303-ultralytics-v1.83**
+- **20250308-ultralytics-v1.83**
     1. 新增自研模块Hierarchical Attention Fusion并提供多种使用方式.
     2. 新增ICLR2025-Token Statistics Transformer改进PSA.
     3. 新增MHAF-YOLO中的RepHMS.<这个是YOLO群内的一个博士新作品>
