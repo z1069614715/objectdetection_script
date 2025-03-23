@@ -470,6 +470,9 @@
 17. ultralytics/cfg/models/v8/yolov8-starnet.yaml
 
     使用[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)改进yolov8-backbone.
+18. ultralytics/cfg/models/v8/yolov8-mambaout.yaml
+     
+    使用[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOut替换BackBone.
 
 ### SPPF系列
 1. ultralytics/cfg/models/v8/yolov8-FocalModulation.yaml
@@ -484,6 +487,9 @@
 4. ultralytics/cfg/models/v8/yolov8-AIFIRepBN.yaml
 
     使用[ICML-2024 SLAB](https://github.com/xinghaochen/SLAB)中的RepBN改进AIFI.
+5. ultralytics/cfg/models/v8/yolov8-ASSR.yaml
+     
+    使用[CVPR2025 MambaIR](https://github.com/csguoh/MambaIR)中的Attentive State Space Group改进yolov8.
 
 ### Neck系列
 1. ultralytics/cfg/models/v8/yolov8-bifpn.yaml
@@ -976,6 +982,14 @@
     
     使用[MHAF-YOLO](https://github.com/yang-0201/MHAF-YOLO)中的RepHMS改进yolov8.
 
+80. ultralytics/cfg/models/v8/yolov8-C2f-SAVSS.yaml
+
+    使用[CVPR2025 SCSegamba](https://github.com/Karl1109/SCSegamba)中的Structure-Aware Scanning Strategy改进C2f.
+
+81. ultralytics/cfg/models/v8/yolov8-C2f-mambaout.yaml
+     
+     使用[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOutBlock改进C2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -1367,6 +1381,10 @@
 
     使用[StarNet CVPR2024](https://github.com/ma-xu/Rewrite-the-Stars/tree/main)改进yolov10-backbone.
 
+18. ultralytics/cfg/models/v10/yolov10n-mambaout.yaml
+     
+    使用[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOut替换BackBone.
+
 ### SPPF系列
 
 1. ultralytics/cfg/models/v10/yolov10n-FocalModulation.yaml
@@ -1683,16 +1701,27 @@
 
     使用[AAAI2024 FFT-Based Dynamic Token Mixer for Vision](https://github.com/okojoalg/dfformer)中的DynamicFilter改进C2f.
 
-
 44. ultralytics/cfg/models/v10/yolov10n-RepHMS.yaml
 
     使用[MHAF-YOLO](https://github.com/yang-0201/MHAF-YOLO)中的RepHMS改进yolov10.
+
+45. ultralytics/cfg/models/v10/yolov10n-C2f-SAVSS.yaml
+
+    使用[CVPR2025 SCSegamba](https://github.com/Karl1109/SCSegamba)中的Structure-Aware Scanning Strategy改进C2f.
+
+46. ultralytics/cfg/models/v10/yolov10n-C2f-mambaout.yaml
+     
+     使用[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOutBlock改进C2f.
 
 ### PSA系列
 
 1. ultralytics/cfg/models/v10/yolov10n-PTSSA.yaml
     
     使用[Token Statistics Transformer](https://github.com/RobinWu218/ToST)中的Token Statistics Self-Attention改进PSA.
+
+2. ultralytics/cfg/models/v10/yolov10n-ASSR.yaml
+     
+    使用[CVPR2025 MambaIR](https://github.com/csguoh/MambaIR)中的Attentive State Space Group改进yolov10.
 
 ### 组合系列
 
@@ -2311,3 +2340,10 @@
     3. 新增MHAF-YOLO中的RepHMS.<这个是YOLO群内的一个博士新作品>
     4. 更新使用教程.
     5. 百度云视频增加20250308更新说明.
+
+- **20250323-ultralytics-v1.84**
+    1. 新增CVPR2025-MambaIR的模块.
+    2. 新增CVPR2025-SCSegamba中的模块.
+    3. 新增CVPR2025-MambaOut中的模块.
+    4. 更新使用教程.
+    5. 百度云视频增加20250323更新说明.
