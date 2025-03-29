@@ -219,6 +219,30 @@
 
     使用[CVPR2025 DyT](https://github.com/jiachenzhu/DyT)中的DynamicTanh和[FreqFormer](https://github.com/JPWang-CS/FreqFormer)中的DFFN改进A2C2f.
 
+57. ultralytics/cfg/models/11/yolo11-C3k2-MambaOut-UniRepLK.yaml
+
+    使用[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOutBlock和[CVPR2024 UniRepLKNet](https://github.com/AILab-CVC/UniRepLKNet/tree/main)中的DilatedReparamBlock二次创新后改进C3k2.
+
+58. ultralytics/cfg/models/11/yolo11-C3k2-EfficientVIM-CGLU.yaml
+
+    使用[CVPR2025 EfficientViM](https://github.com/mlvlab/EfficientViM)中的EfficientViMBlock和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进C3k2.
+
+59. Localization Quality Estimation - Lightweight Shared Convolutional Detection Head
+
+    Localization Quality Estimation模块出自[GFocalV2](https://arxiv.org/abs/2011.12885).
+    detect:ultralytics/cfg/models/11/yolo11-LSCD-LQE.yaml
+    seg:ultralytics/cfg/models/11/yolo11-seg-LSCD-LQE.yaml
+    pose:ultralytics/cfg/models/11/yolo11-pose-LSCD-LQE.yaml
+    obb:ultralytics/cfg/models/11/yolo11-obb-LSCD-LQE.yaml
+
+60. ultralytics/cfg/models/11/yolo11-EUCB-SC.yaml
+
+    使用[CVPR2024 EMCAD](https://github.com/SLDGroup/EMCAD)中的EUCB和[CVPR2025 BHViT](https://github.com/IMRL/BHViT)中的ShiftChannelMix改进yolo11的上采样.
+
+61. ultralytics/cfg/models/11/yolo11-EMBSFPN-SC.yaml
+
+    在ultralytics/cfg/models/11/yolo11-EMBSFPN.yaml方案上引入[CVPR2025 BHViT](https://github.com/IMRL/BHViT)中的ShiftChannelMix.
+
 ### 自研系列
 1. ultralytics/cfg/models/11/yolo11-LAWDS.yaml
 
@@ -638,6 +662,13 @@
 9. ultralytics/cfg/models/11/yolo11-atthead.yaml
 
     B站注意力教程例子.链接:https://www.bilibili.com/video/BV1mXkVYAEGM/
+10. Localization Quality Estimation Head
+
+    此模块出自[GFocalV2](https://arxiv.org/abs/2011.12885).
+    detect:ultralytics/cfg/models/11/yolo11-LQEHead.yaml
+    segmet:ultralytics/cfg/models/11/yolo11-seg-LQE.yaml
+    pose:ultralytics/cfg/models/11/yolo11-pose-LQE.yaml
+    obb:ultralytics/cfg/models/11/yolo11-obb-LQE.yaml
 
 ### Label Assign系列
 1. Adaptive Training Sample Selection匹配策略.
@@ -695,6 +726,10 @@
 11. ultralytics/cfg/models/11/yolo11-PSConv.yaml
 
     使用[AAAI2025 Pinwheel-shaped Convolution and Scale-based Dynamic Loss for Infrared Small Target Detection](https://github.com/JN-Yang/PConv-SDloss-Data)中的Pinwheel-shaped Convolution改进yolo11.
+
+12. ultralytics/cfg/models/11/yolo11-EUCB.yaml
+
+    使用[CVPR2024 EMCAD](https://github.com/SLDGroup/EMCAD)中的EUCB改进yolo11的上采样.
 
 ### YOLO11-C3k2系列
 1. ultralytics/cfg/models/11/yolo11-C3k2-Faster.yaml
@@ -1041,6 +1076,10 @@
      
     使用[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOutBlock改进C3k2.
 
+91. ultralytics/cfg/models/11/yolo11-C3k2-EfficientVIM.yaml
+
+    使用[CVPR2025 EfficientViM](https://github.com/mlvlab/EfficientViM)中的EfficientViMBlock改进C3k2.
+
 ### C2PSA系列
 
 1. ultralytics/cfg/models/11/yolo11-C2BRA.yaml
@@ -1320,3 +1359,14 @@
 
 - **20250322-yolo11-v1.18**
     1. 同步yolo12官方代码最新推出的YOLOv12-turbo.
+
+- **20250329-yolo11-v1.19**
+    1. 新增CVPR2025-MambaOut与CVPR2024-UniRepLKNet二次创新后的模块.
+    2. 新增CVPR2025-EfficientViM和其与CVPR2024-TransNeXt的二次创新后的模块.
+    3. 新增CVPR2025-DEIM中的Localization Quality Estimation改进YOLOHead使其分类头同时具备分类score和预测框质量score.
+    4. 新增Localization Quality Estimation - Lightweight Shared Convolutional Detection Head.
+    5. 新增CVPR2024-EMCAD中的EUCB.
+    6. 新增CVPR2025-BHViT中的ShiftChannelMix和CVPR2024-EMCAD中的EUCB二次创新模块.
+    7. 新增yolo11-EMBSFPN.yaml方案上引入[CVPR2025 BHViT](https://github.com/IMRL/BHViT)中的ShiftChannelMix.
+    8. 更新使用教程.
+    9. 百度云视频增加20250329更新说明.
