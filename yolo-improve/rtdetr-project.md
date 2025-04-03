@@ -198,6 +198,18 @@
 
     在ultralytics/cfg/models/rt-detr/rtdetr-C2f-DIMB.yaml的基础上把mlp模块换成[ICLR2025 Kolmogorov-Arnold Transformer](https://github.com/Adamdad/kat)中的KAN.
 
+41. ultralytics/cfg/models/rt-detr/rtdetr-C2f-EfficientVIM-CGLU.yaml
+
+    使用[CVPR2025 EfficientViM](https://github.com/mlvlab/EfficientViM)中的EfficientViMBlock和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU与CSP结合改进backbone.
+
+42. ultralytics/cfg/models/rt-detr/rtdetr-EUCB-SC.yaml
+
+    使用[CVPR2024 EMCAD](https://github.com/SLDGroup/EMCAD)中的EUCB和[CVPR2025 BHViT](https://github.com/IMRL/BHViT)中的ShiftChannelMix改进rtdetr-r18的上采样.
+
+43. ultralytics/cfg/models/rt-detr/rtdetr-EMBSFPN-SC.yaml
+
+    在ultralytics/cfg/models/rt-detr/rtdetr-EMBSFPN.yaml方案上引入[CVPR2025 BHViT](https://github.com/IMRL/BHViT)中的ShiftChannelMix.
+
 ### 自研系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-PACAPN.yaml
 
@@ -494,6 +506,22 @@
 
     使用[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOut与CSP结合改进backbone.
 
+48. ultralytics/cfg/models/rt-detr/rtdetr-C2f-EfficientVIM.yaml
+
+    使用[CVPR2025 EfficientViM](https://github.com/mlvlab/EfficientViM)中的EfficientViMBlock与CSP结合改进backbone.
+
+49. ultralytics/cfg/models/rt-detr/rtdetr-C2f-IEL.yaml
+
+    使用[CVPR2025 HVI](https://github.com/Fediory/HVI-CIDNet)中的Intensity Enhancement Layer与CSP改进rtdetr中的BackBone.
+
+50. ultralytics/cfg/models/rt-detr/rtdetr-overlock.yaml
+
+    使用[CVPR2025 OverLock](https://arxiv.org/pdf/2502.20087)中的overlock-backbone替换rtdetr-r18的backbone.
+
+51. ultralytics/cfg/models/rt-detr/rtdetr-C2f-RCB.yaml
+
+    使用[CVPR2025 OverLock](https://arxiv.org/pdf/2502.20087)中的RepConvBlock与CSP改进rtdetr-r18的backbone.
+
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -642,6 +670,10 @@
 
     使用[BIBM2024 Spatial-Frequency Dual Domain Attention Network For Medical Image Segmentation](https://github.com/nkicsl/SF-UNet)的Frequency-Spatial Attention改进rtdetr.
 
+21. ultralytics/cfg/models/rt-detr/rtdetr-CAB.yaml
+
+    使用[CVPR2025 HVI](https://github.com/Fediory/HVI-CIDNet)中的CAB改进rtdetr中的特征融合.
+
 ### Head系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-p2.yaml
 
@@ -685,6 +717,10 @@
 10. ultralytics/cfg/models/rt-detr/rtdetr-LFEC3.yaml
 
     使用[Efficient Long-Range Attention Network for Image Super-resolution ECCV2022](https://github.com/xindongzhang/ELAN)中的Local feature extraction改进RepC3.
+
+11. ultralytics/cfg/models/rt-detr/rtdetr-IELC3.yaml
+
+    使用[CVPR2025 HVI](https://github.com/Fediory/HVI-CIDNet)中的Intensity Enhancement Layer改进rtdetr中的RepC3.
 
 ### ResNet主干中的BasicBlock/BottleNeck改进系列(以下改进BottleNeck基本都有,就不再重复标注)
 1. ultralytics/cfg/models/rt-detr/rtdetr-Ortho.yaml
@@ -810,6 +846,10 @@
 8. ultralytics/cfg/models/rt-detr/rtdetr-PSConv.yaml
 
     使用[AAAI2025 Pinwheel-shaped Convolution and Scale-based Dynamic Loss for Infrared Small Target Detection](https://github.com/JN-Yang/PConv-SDloss-Data)中的Pinwheel-shaped Convolution改进rtdetr.
+
+9. ultralytics/cfg/models/rt-detr/rtdetr-EUCB.yaml
+
+    使用[CVPR2024 EMCAD](https://github.com/SLDGroup/EMCAD)中的EUCB改进rtdetr-r18的上采样.
 
 ### RT-DETR-L改进系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-l-GhostHGNetV2.yaml
@@ -1861,3 +1901,14 @@
     5. 新增CVPR2025-DEIM MAL损失函数.
     6. 更新使用教程.
     7. 百度云视频增加20250315更新说明.
+
+- **20250403-rtdetr-v1.50**
+    1. 新增CVPR2025-MambaOut与CVPR2024-UniRepLKNet二次创新后的模块.
+    2. 新增CVPR2025-EfficientViM和其与CVPR2024-TransNeXt的二次创新后的模块.
+    3. 新增CVPR2024-EMCAD中的EUCB.
+    4. 新增CVPR2025-BHViT中的ShiftChannelMix和CVPR2024-EMCAD中的EUCB二次创新模块.
+    5. 新增rtdetr-EMBSFPN.yaml方案上引入[CVPR2025 BHViT](https://github.com/IMRL/BHViT)中的ShiftChannelMix.
+    6. 新增CVPR2025-HVI中的Intensity Enhancement Layer.
+    7. 新增CVPR2025-OverLock中的模块.
+    8. 更新使用教程.
+    9. 百度云视频增加20250403更新说明.
