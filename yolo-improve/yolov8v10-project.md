@@ -199,6 +199,18 @@
 
     在yolov8-C2f-DIMB.yaml的基础上把mlp模块换成[ICLR2025 Kolmogorov-Arnold Transformer](https://github.com/Adamdad/kat)中的KAN.
 
+52. Localization Quality Estimation - Lightweight Shared Convolutional Detection Head
+
+    Localization Quality Estimation模块出自[GFocalV2](https://arxiv.org/abs/2011.12885).
+    detect:ultralytics/cfg/models/v8/yolov8-LSCD-LQE.yaml
+    seg:ultralytics/cfg/models/v8/yolov8-seg-LSCD-LQE.yaml
+    pose:ultralytics/cfg/models/v8/yolov8-pose-LSCD-LQE.yaml
+    obb:ultralytics/cfg/models/v8/yolov8-obb-LSCD-LQE.yaml
+
+53. ultralytics/cfg/models/v8/yolov8-C2f-EfficientVIM-CGLU.yaml
+
+    使用[CVPR2025 EfficientViM](https://github.com/mlvlab/EfficientViM)中的EfficientViMBlock和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进C2f.
+
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
 
@@ -623,6 +635,13 @@
     pose:ultralytics/cfg/models/v8/yolov8-pose-LADH.yaml
     obb:ultralytics/cfg/models/v8/yolov8-obb-LADH.yaml
     使用[Faster and Lightweight: An Improved YOLOv5 Object Detector for Remote Sensing Images](https://www.mdpi.com/2072-4292/15/20/4974)中的Lightweight Asymmetric Detection Head改进yolov8-head.
+9. Localization Quality Estimation Head
+
+    此模块出自[GFocalV2](https://arxiv.org/abs/2011.12885).
+    detect:ultralytics/cfg/models/v8/yolov8-LQEHead.yaml
+    segmet:ultralytics/cfg/models/v8/yolov8-seg-LQE.yaml
+    pose:ultralytics/cfg/models/v8/yolov8-pose-LQE.yaml
+    obb:ultralytics/cfg/models/v8/yolov8-obb-LQE.yaml
 
 ### Label Assign系列
 1. Adaptive Training Sample Selection匹配策略.
@@ -990,6 +1009,10 @@
      
      使用[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOutBlock改进C2f.
 
+82. ultralytics/cfg/models/v8/yolov8-C2f-EfficientVIM.yaml
+
+    使用[CVPR2025 EfficientViM](https://github.com/mlvlab/EfficientViM)中的EfficientViMBlock改进C2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -1147,6 +1170,14 @@
 31. ultralytics/cfg/models/v10/yolov10n-C2f-DIMB-KAN.yaml
 
     在yolov10n-C2f-DIMB.yaml的基础上把mlp模块换成[ICLR2025 Kolmogorov-Arnold Transformer](https://github.com/Adamdad/kat)中的KAN.
+
+32. ultralytics/cfg/models/v10/yolov10n-C2f-EfficientVIM-CGLU.yaml
+
+    使用[CVPR2025 EfficientViM](https://github.com/mlvlab/EfficientViM)中的EfficientViMBlock和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进C2f.
+
+33. ultralytics/cfg/models/v10/yolov10n-LSCD-LQE.yaml
+
+    Localization Quality Estimation Head-LSCD-NMSFree,Localization Quality Estimation此模块出自[GFocalV2](https://arxiv.org/abs/2011.12885).
 
 ### 自研系列
 
@@ -1483,6 +1514,10 @@
 
     添加基于注意力机制的目标检测头到yolov10中.
 
+2. ultralytics/cfg/models/v10/yolov10n-LQE.yaml
+
+    Localization Quality Estimation Head-NMSFree,Localization Quality Estimation此模块出自[GFocalV2](https://arxiv.org/abs/2011.12885).
+
 ### Label Assign系列
 ### PostProcess系列
 ### 上下采样算子
@@ -1712,6 +1747,10 @@
 46. ultralytics/cfg/models/v10/yolov10n-C2f-mambaout.yaml
      
      使用[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOutBlock改进C2f.
+
+47. ultralytics/cfg/models/v10/yolov10n-C2f-EfficientVIM.yaml
+
+    使用[CVPR2025 EfficientViM](https://github.com/mlvlab/EfficientViM)中的EfficientViMBlock改进C2f.
 
 ### PSA系列
 
@@ -2347,3 +2386,10 @@
     3. 新增CVPR2025-MambaOut中的模块.
     4. 更新使用教程.
     5. 百度云视频增加20250323更新说明.
+
+- **20250406-ultralytics-v1.85**
+    1. 新增CVPR2025-DEIM中的Localization Quality Estimation改进YOLOHead使其分类头同时具备分类score和预测框质量score.
+    2. 新增Localization Quality Estimation - Lightweight Shared Convolutional Detection Head.
+    3. 新增CVPR2025-EfficientViM和其与CVPR2024-TransNeXt的二次创新后的模块.
+    4. 更新使用教程.
+    5. 百度云视频增加20250406更新说明.
