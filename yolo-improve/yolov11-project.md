@@ -243,6 +243,22 @@
 
     在ultralytics/cfg/models/11/yolo11-EMBSFPN.yaml方案上引入[CVPR2025 BHViT](https://github.com/IMRL/BHViT)中的ShiftChannelMix.
 
+62. ultralytics/cfg/models/12/yolo12-A2C2f-FMFFN-DYT.yaml
+
+    使用[ICLR2024-FTIC](https://github.com/qingshi9974/ICLR2024-FTIC)中的FMFFN和[CVPR2025 DyT](https://github.com/jiachenzhu/DyT)中的DynamicTan对A2C2f二次创新.
+
+63. ultralytics/cfg/models/11/yolo11-MFMMAFPN.yaml
+
+    使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM对[MAF-YOLO](https://arxiv.org/pdf/2407.04381)的MAFPN进行二次创新.
+
+64. ultralytics/cfg/models/11/yolo11-MBSMFFPN.yaml
+
+    使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM对yolo11-EMBSFPN.yaml再次创新 Multi-Branch&Scale Modulation-Fusion FPN.
+
+65. ultralytics/cfg/models/11/yolo11-hyper-MFM.yaml
+
+    使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM对[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的Hypergraph Computation in Semantic Space进行二次创新.
+
 ### 自研系列
 1. ultralytics/cfg/models/11/yolo11-LAWDS.yaml
 
@@ -521,6 +537,9 @@
 20. ultralytics/cfg/models/11/yolo11-MobileMamba.yaml
      
     使用[CVPR2025 MobileMamba](https://github.com/lewandofskee/MobileMamba)中的MobileMamba改进Backbone.
+21. ultralytics/cfg/models/11/yolo11-overlock.yaml
+
+    使用[CVPR2025 OverLock](https://arxiv.org/pdf/2502.20087)中的overlock-backbone替换backbone.
 
 ### SPPF系列
 1. ultralytics/cfg/models/11/yolo11-FocalModulation.yaml
@@ -628,6 +647,14 @@
 23. ultralytics/cfg/models/11/yolo11-fsa.yaml
 
     使用[BIBM2024 Spatial-Frequency Dual Domain Attention Network For Medical Image Segmentation](https://github.com/nkicsl/SF-UNet)的Frequency-Spatial Attention改进yolo11.
+
+24. ultralytics/cfg/models/11/yolo11-GDSAFusion.yaml
+
+    使用[CVPR2025 OverLock](https://arxiv.org/pdf/2502.20087)中的GDSAFusion改进neck.
+
+25. ultralytics/cfg/models/11/yolo11-MFM.yaml
+
+    使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM改进neck.
 
 ### Head系列
 1. ultralytics/cfg/models/11/yolo11-dyhead.yaml
@@ -1080,6 +1107,18 @@
 
     使用[CVPR2025 EfficientViM](https://github.com/mlvlab/EfficientViM)中的EfficientViMBlock改进C3k2.
 
+92. ultralytics/cfg/models/11/yolo11-C3k2-RCB.yaml
+
+    使用[CVPR2025 OverLock](https://arxiv.org/pdf/2502.20087)中的RepConvBlock改进C3k2.
+
+93. ultralytics/cfg/models/11/yolo11-C3k2-LEGM.yaml
+
+    使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的LEGM改进C3k2.
+
+94. ultralytics/cfg/models/11/yolo11-C3k2-FAT.yaml
+
+    使用[ICLR2024-FTIC](https://github.com/qingshi9974/ICLR2024-FTIC)中的FATBlock改进C3k2.
+
 ### C2PSA系列
 
 1. ultralytics/cfg/models/11/yolo11-C2BRA.yaml
@@ -1130,6 +1169,14 @@
 
     使用[CVPR2025 DyT](https://github.com/jiachenzhu/DyT)中的DynamicTanh改进C2PSA.
 
+13. ultralytics/cfg/models/11/yolo11-C2PSA-FMFFN.yaml
+
+    使用[ICLR2024-FTIC](https://github.com/qingshi9974/ICLR2024-FTIC)中的FMFFN改进C2PSA.
+
+14. ultralytics/cfg/models/11/yolo11-C2PSA-CGLU.yaml
+
+    使用[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进C2PSA.
+
 ### A2C2f系列
 1. ultralytics/cfg/models/12/yolo12-A2C2f-CGLU.yaml
      
@@ -1150,6 +1197,10 @@
 5. ultralytics/cfg/models/12/yolo12-A2C2f-DYT.yaml
      
     使用[CVPR2025 DyT](https://github.com/jiachenzhu/DyT)中的DynamicTanh改进A2C2f.
+
+6. ultralytics/cfg/models/12/yolo12-A2C2f-FMFFN.yaml
+
+    使用[ICLR2024-FTIC](https://github.com/qingshi9974/ICLR2024-FTIC)中的FMFFN改进A2C2f.
 
 ### 组合系列
 1. ultralytics/cfg/models/11/yolo11-fasternet-bifpn.yaml
@@ -1370,3 +1421,11 @@
     7. 新增yolo11-EMBSFPN.yaml方案上引入[CVPR2025 BHViT](https://github.com/IMRL/BHViT)中的ShiftChannelMix.
     8. 更新使用教程.
     9. 百度云视频增加20250329更新说明.
+
+- **20250415-yolo11-v1.20**
+    1. 新增ICLR2024-FTIC中的多个模块.
+    2. 新增CVPR2024-TransNext中的CGLU改进C2PSA.
+    3. 新增CVPR2024-DCMPNet中的多个模块.
+    4. 新增CVPR2025-OverLock中的多个模块.
+    5. 更新使用教程.
+    6. 百度云视频增加20250415更新说明.

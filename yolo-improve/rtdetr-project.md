@@ -210,6 +210,22 @@
 
     在ultralytics/cfg/models/rt-detr/rtdetr-EMBSFPN.yaml方案上引入[CVPR2025 BHViT](https://github.com/IMRL/BHViT)中的ShiftChannelMix.
 
+44. ultralytics/cfg/models/rt-detr/rtdetr-Pola-CGLU.yaml
+
+    使用[ICLR2025 PolaFormer](https://github.com/ZacharyMeng/PolaFormer)中的PolaAttention与[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU进行二次创新.
+
+45. ultralytics/cfg/models/rt-detr/rtdetr-Pola-FMFFN.yaml
+
+    使用[ICLR2025 PolaFormer](https://github.com/ZacharyMeng/PolaFormer)中的PolaAttention与[ICLR2024-FTIC](https://github.com/qingshi9974/ICLR2024-FTIC)中的的FMFFN进行二次创新.
+
+46. ultralytics/cfg/models/rt-detr/rtdetr-MFMMAFPN.yaml
+
+    利用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM对[MAF-YOLO](https://arxiv.org/pdf/2407.04381)的MAFPN进行二次改进得到MFMMAFPN.
+
+47. ultralytics/cfg/models/rt-detr/rtdetr-HyperCompute-MFM.yaml
+
+    利用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM对[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的Hypergraph Computation in Semantic Space进行二次创新.
+
 ### 自研系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-PACAPN.yaml
 
@@ -522,6 +538,14 @@
 
     使用[CVPR2025 OverLock](https://arxiv.org/pdf/2502.20087)中的RepConvBlock与CSP改进rtdetr-r18的backbone.
 
+52. ultralytics/cfg/models/rt-detr/rtdetr-C2f-LEGM.yaml
+
+    使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的LEGM与CSP改进rtdetr-r18的backbone.
+
+53. ultralytics/cfg/models/rt-detr/rtdetr-C2f-FAT.yaml
+
+    使用[ICLR2024-FTIC](https://github.com/qingshi9974/ICLR2024-FTIC)中的FATBlock与CSP改进rtdetr-r18的backbone.
+
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -673,6 +697,14 @@
 21. ultralytics/cfg/models/rt-detr/rtdetr-CAB.yaml
 
     使用[CVPR2025 HVI](https://github.com/Fediory/HVI-CIDNet)中的CAB改进rtdetr中的特征融合.
+
+22. ultralytics/cfg/models/rt-detr/rtdetr-MFM.yaml
+
+    使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM改进neck.
+
+23. ultralytics/cfg/models/rt-detr/rtdetr-GDSAFusion.yaml
+
+    使用[CVPR2025 OverLock](https://arxiv.org/pdf/2502.20087)中的GDSAFusion改进Fusion.
 
 ### Head系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-p2.yaml
@@ -1912,3 +1944,11 @@
     7. 新增CVPR2025-OverLock中的模块.
     8. 更新使用教程.
     9. 百度云视频增加20250403更新说明.
+
+- **20250420-rtdetr-v1.51**
+    1. 新增ICLR2024-FTIC中的多个模块、以及其与ICLR2025-PolaFormer的二次创新模块.
+    2. 新增CVPR2024-DCMPNet中的多个模块.
+    3. 新增ICLR2025-PolaFormer与CVPR2024-TransNext的二次创新模块.
+    4. 新增CVPR2025-OverLock中的GDSAFusion.
+    5. 更新使用教程.
+    6. 百度云视频增加20250403更新说明.
