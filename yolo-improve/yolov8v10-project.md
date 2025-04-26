@@ -211,6 +211,22 @@
 
     使用[CVPR2025 EfficientViM](https://github.com/mlvlab/EfficientViM)中的EfficientViMBlock和[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进C2f.
 
+54. ultralytics/cfg/models/v8/yolov8-EUCB-SC.yaml
+
+    使用[CVPR2024 EMCAD](https://github.com/SLDGroup/EMCAD)中的EUCB和[CVPR2025 BHViT](https://github.com/IMRL/BHViT)中的ShiftChannelMix改进yolov8的上采样.
+
+55. ultralytics/cfg/models/v8/yolov8-EMBSFPN-SC.yaml
+
+    在ultralytics/cfg/models/v8/yolov8-EMBSFPN.yaml方案上引入[CVPR2025 BHViT](https://github.com/IMRL/BHViT)中的ShiftChannelMix.
+
+56. ultralytics/cfg/models/v8/yolov8-MFMMAFPN.yaml
+
+    使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM对[MAF-YOLO](https://arxiv.org/pdf/2407.04381)的MAFPN进行二次创新.
+
+57. ultralytics/cfg/models/v8/yolov8-MBSMFFPN.yaml
+
+    使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM对yolov8-EMBSFPN.yaml再次创新 Multi-Branch&Scale Modulation-Fusion FPN.
+
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
 
@@ -605,6 +621,10 @@
 
     使用[BIBM2024 Spatial-Frequency Dual Domain Attention Network For Medical Image Segmentation](https://github.com/nkicsl/SF-UNet)的Frequency-Spatial Attention改进yolov8.
 
+25. ultralytics/cfg/models/v8/yolov8-MFM.yaml
+
+    使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM改进neck.
+
 ### Head系列
 1. ultralytics/cfg/models/v8/yolov8-dyhead.yaml
 
@@ -699,6 +719,10 @@
 11. ultralytics/cfg/models/v8/yolov8-PSConv.yaml
 
     使用[AAAI2025 Pinwheel-shaped Convolution and Scale-based Dynamic Loss for Infrared Small Target Detection](https://github.com/JN-Yang/PConv-SDloss-Data)中的Pinwheel-shaped Convolution改进yolov8.
+
+12. ultralytics/cfg/models/v8/yolov8-EUCB.yaml
+
+    使用[CVPR2024 EMCAD](https://github.com/SLDGroup/EMCAD)中的EUCB改进yolov8的上采样.
 
 ### YOLOV8-C2f系列
 1. ultralytics/cfg/models/v8/yolov8-C2f-Faster.yaml
@@ -1013,6 +1037,10 @@
 
     使用[CVPR2025 EfficientViM](https://github.com/mlvlab/EfficientViM)中的EfficientViMBlock改进C2f.
 
+83. ultralytics/cfg/models/v8/yolov8-C2f-LEGM.yaml
+
+    使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的LEGM改进C2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -1178,6 +1206,22 @@
 33. ultralytics/cfg/models/v10/yolov10n-LSCD-LQE.yaml
 
     Localization Quality Estimation Head-LSCD-NMSFree,Localization Quality Estimation此模块出自[GFocalV2](https://arxiv.org/abs/2011.12885).
+
+34. ultralytics/cfg/models/v10/yolov10n-EUCB-SC.yaml
+
+    使用[CVPR2024 EMCAD](https://github.com/SLDGroup/EMCAD)中的EUCB和[CVPR2025 BHViT](https://github.com/IMRL/BHViT)中的ShiftChannelMix改进yolov10的上采样.
+
+35. ultralytics/cfg/models/v10/yolov10n-EMBSFPN-SC.yaml
+
+    在ultralytics/cfg/models/v10/yolov10n-EMBSFPN.yaml方案上引入[CVPR2025 BHViT](https://github.com/IMRL/BHViT)中的ShiftChannelMix.
+
+36. ultralytics/cfg/models/v10/yolov10n-MFMMAFPN.yaml
+
+    使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM对[MAF-YOLO](https://arxiv.org/pdf/2407.04381)的MAFPN进行二次创新.
+
+37. ultralytics/cfg/models/v10/yolov10n-MBSMFFPN.yaml
+
+    使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM对yolov10n-EMBSFPN.yaml再次创新 Multi-Branch&Scale Modulation-Fusion FPN.
 
 ### 自研系列
 
@@ -1508,6 +1552,10 @@
 
     使用[BIBM2024 Spatial-Frequency Dual Domain Attention Network For Medical Image Segmentation](https://github.com/nkicsl/SF-UNet)的Frequency-Spatial Attention和Multi-scale Progressive Channel Attention改进yolov10-neck.
 
+17. ultralytics/cfg/models/v10/yolov10n-MFM.yaml
+
+    使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM改进neck.
+
 ### Head系列
 
 1. ultralytics/cfg/models/v10/yolov10n-dyhead.yaml
@@ -1565,6 +1613,10 @@
 11. ultralytics/cfg/models/v10/yolov10n-PSConv.yaml
 
     使用[AAAI2025 Pinwheel-shaped Convolution and Scale-based Dynamic Loss for Infrared Small Target Detection](https://github.com/JN-Yang/PConv-SDloss-Data)中的Pinwheel-shaped Convolution改进yolov10.
+
+12. ultralytics/cfg/models/v10/yolov10n-EUCB.yaml
+
+    使用[CVPR2024 EMCAD](https://github.com/SLDGroup/EMCAD)中的EUCB改进yolov10的上采样.
 
 ### C2f系列
 
@@ -1751,6 +1803,10 @@
 47. ultralytics/cfg/models/v10/yolov10n-C2f-EfficientVIM.yaml
 
     使用[CVPR2025 EfficientViM](https://github.com/mlvlab/EfficientViM)中的EfficientViMBlock改进C2f.
+
+48. ultralytics/cfg/models/v10/yolov10n-C2f-LEGM.yaml
+
+    使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的LEGM改进C2f.
 
 ### PSA系列
 
@@ -2393,3 +2449,11 @@
     3. 新增CVPR2025-EfficientViM和其与CVPR2024-TransNeXt的二次创新后的模块.
     4. 更新使用教程.
     5. 百度云视频增加20250406更新说明.
+
+- **20250426-ultralytics-v1.86**
+    1. 新增CVPR2024-EMCAD中的EUCB上采样.
+    2. 新增CVPR2024-EMCAD与CVPR2025-BHViT的二次创新模块.
+    3. 新增CVPR2024-DCMPNet的多个模块和二次创新的模块.
+    4. 新增统计配置文件的计算量和参数量并排序的脚本.
+    5. 更新使用教程.
+    6. 百度云视频增加20250426更新说明.
