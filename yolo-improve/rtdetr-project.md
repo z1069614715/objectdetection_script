@@ -1,6 +1,6 @@
 # [基于Ultralytics的RT-DETR改进详细介绍](https://github.com/z1069614715/objectdetection_script)
 
-# 目前自带的一些改进方案(持续更新)
+# 目前自带的一些改进方案(目前拥有合计210+个改进点！持续更新！)
 
 # 为了感谢各位对RTDETR项目的支持,本项目的赠品是yolov5-PAGCP通道剪枝算法.[具体使用教程](https://www.bilibili.com/video/BV1yh4y1Z7vz/)
 
@@ -25,6 +25,12 @@
     绘制曲线对比图的脚本
 10. get_model_erf.py
     绘制模型的有效感受野.[视频链接](https://www.bilibili.com/video/BV1Gx4y1v7ZZ/)
+11. export.py
+    导出模型脚本
+12. test_env.py
+    验证一些需要编译的或者难安装的(mmcv)是否成功的代码.[百度云链接](https://pan.baidu.com/s/1sWwvN4UC3blBRVe1twrJAg?pwd=bru5)
+13. get_all_yaml_param_and_flops.py
+    计算所有yaml的计算量并排序.[百度云链接](https://pan.baidu.com/s/1ZDzglU7EIzzfaUDhAhagBA?pwd=kg8k)
 
 # RT-DETR基准模型
 
