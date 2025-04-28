@@ -259,6 +259,22 @@
 
     使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM对[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的Hypergraph Computation in Semantic Space进行二次创新.
 
+66. ultralytics/cfg/models/11/yolo11-C2TSSA-DYT-Mona-SEFN.yaml
+
+    使用[CVPR2025 DyT](https://github.com/jiachenzhu/DyT)中的DynamicTan和[ICLR2025 Token Statistics Transformer](https://github.com/RobinWu218/ToST)中的Token Statistics Self-Attention和[CVPR2025 Mona](https://github.com/Leiyi-Hu/mona)的Mona和[WACV2025 SEM-Net](https://github.com/ChrisChen1023/SEM-Net)的Spatially-Enhanced Feedforward Network (SEFN)改进C2PSA.
+
+67. ultralytics/cfg/models/11/yolo11-C2TSSA-DYT-Mona.yaml
+
+    使用[CVPR2025 DyT](https://github.com/jiachenzhu/DyT)中的DynamicTan和[ICLR2025 Token Statistics Transformer](https://github.com/RobinWu218/ToST)中的Token Statistics Self-Attention和[CVPR2025 Mona](https://github.com/Leiyi-Hu/mona)的Mona改进C2PSA.
+
+68. ultralytics/cfg/models/12/yolo12-A2C2f-DFFN-DYT-Mona.yaml
+
+    使用[CVPR2025 DyT](https://github.com/jiachenzhu/DyT)中的DynamicTanh和[FreqFormer](https://github.com/JPWang-CS/FreqFormer)中的DFFN和[CVPR2025 Mona](https://github.com/Leiyi-Hu/mona)的Mona改进A2C2f.
+
+69. ultralytics/cfg/models/11/yolo11-C3k2-MambaOut-LSConv.yaml
+
+    使用[CVPR2025 LSNet](https://github.com/THU-MIG/lsnet)的LSConv与[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOutBlock二次创新后改进C3k2.
+
 ### 自研系列
 1. ultralytics/cfg/models/11/yolo11-LAWDS.yaml
 
@@ -540,6 +556,9 @@
 21. ultralytics/cfg/models/11/yolo11-overlock.yaml
 
     使用[CVPR2025 OverLock](https://arxiv.org/pdf/2502.20087)中的overlock-backbone替换backbone.
+22. ultralytics/cfg/models/11/yolo11-lsnet.yaml
+
+    使用[CVPR2025 LSNet](https://github.com/THU-MIG/lsnet)的LSNet替换yolo11-backbone.
 
 ### SPPF系列
 1. ultralytics/cfg/models/11/yolo11-FocalModulation.yaml
@@ -757,6 +776,10 @@
 12. ultralytics/cfg/models/11/yolo11-EUCB.yaml
 
     使用[CVPR2024 EMCAD](https://github.com/SLDGroup/EMCAD)中的EUCB改进yolo11的上采样.
+
+13. ultralytics/cfg/models/11/yolo11-LoGStem.yaml
+
+    使用[LEGNet](https://github.com/lwCVer/LEGNet)中的LoGStem改进Stem(第一第二层卷积).
 
 ### YOLO11-C3k2系列
 1. ultralytics/cfg/models/11/yolo11-C3k2-Faster.yaml
@@ -1119,6 +1142,18 @@
 
     使用[ICLR2024-FTIC](https://github.com/qingshi9974/ICLR2024-FTIC)中的FATBlock改进C3k2.
 
+95. ultralytics/cfg/models/11/yolo11-C3k2-LFEM.yaml
+
+    使用[LEGNet](https://github.com/lwCVer/LEGNet)中的LFEModule改进C3k2.
+
+96. ultralytics/cfg/models/11/yolo11-C3k2-SBSM.yaml
+
+    使用[WACV2025 SEM-Net](https://github.com/ChrisChen1023/SEM-Net)的Snake Bi-Directional Sequence Modelling (SBSM)改进C3k2.
+
+97. ultralytics/cfg/models/11/yolo11-C3k2-LSBlock.yaml
+
+    使用[CVPR2025 LSNet](https://github.com/THU-MIG/lsnet)的LSBlock改进C3k2.
+
 ### C2PSA系列
 
 1. ultralytics/cfg/models/11/yolo11-C2BRA.yaml
@@ -1177,6 +1212,14 @@
 
     使用[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的Convolutional GLU改进C2PSA.
 
+15. ultralytics/cfg/models/11/yolo11-C2PSA-SEFN.yaml
+
+    使用[WACV2025 SEM-Net](https://github.com/ChrisChen1023/SEM-Net)的Spatially-Enhanced Feedforward Network (SEFN)改进C2PSA.
+
+16. ultralytics/cfg/models/11/yolo11-C2PSA-Mona.yaml
+
+    使用[CVPR2025 Mona](https://github.com/Leiyi-Hu/mona)的Mona改进C2PSA.
+
 ### A2C2f系列
 1. ultralytics/cfg/models/12/yolo12-A2C2f-CGLU.yaml
      
@@ -1201,6 +1244,14 @@
 6. ultralytics/cfg/models/12/yolo12-A2C2f-FMFFN.yaml
 
     使用[ICLR2024-FTIC](https://github.com/qingshi9974/ICLR2024-FTIC)中的FMFFN改进A2C2f.
+
+7. ultralytics/cfg/models/12/yolo12-A2C2f-SEFN.yaml
+
+    使用[WACV2025 SEM-Net](https://github.com/ChrisChen1023/SEM-Net)的Spatially-Enhanced Feedforward Network (SEFN)改进A2C2f.
+
+8. ultralytics/cfg/models/12/yolo12-A2C2f-Mona.yaml
+
+    使用[CVPR2025 Mona](https://github.com/Leiyi-Hu/mona)的Mona改进A2C2f.
 
 ### 组合系列
 1. ultralytics/cfg/models/11/yolo11-fasternet-bifpn.yaml
@@ -1430,3 +1481,13 @@
     5. 新增统计配置文件的计算量和参数量并排序的脚本.
     6. 更新使用教程.
     7. 百度云视频增加20250415更新说明.
+
+- **20250502-yolo11-v1.21**
+    1. 新增LEGNet的LoGStem和LFEModule.
+    2. 新增WACV2025-SEMNet中的Snake Bi-Directional Sequence Modelling和Spatially-Enhanced Feedforward Network.
+    3. 新增CVPR2025-Mona中的多个改进和二次创新改进.
+    4. 新增新一代轻量化SOTA的CVPR2025-LSNet的LSNet和LSConv的多个改进和二次创新改进.
+    5. 修复MobileMamba训练速度极慢的问题.
+    6. 修改保存权重的逻辑，训练结束(注意是正常训练结束后，手动停止的没有)后统一会保存4个模型，分别是best.pt、last.pt、best_fp32.pt、last_fp32.pt，其中不带fp32后缀的是fp16格式保存的，但由于有些模块对fp16非常敏感，会出现后续使用val.py的时候精度为0的情况，这种情况下可以用后缀带fp32去测试。
+    7. 更新使用教程.
+    8. 百度云视频增加20250502更新说明.
