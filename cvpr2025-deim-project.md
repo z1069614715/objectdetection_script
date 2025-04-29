@@ -77,3 +77,138 @@
     4. 给DataLoader中添加pin_memory参数为True，可以在训练时候如果是数据加载成为瓶颈，可以提高速度。
     5. 修复用户反馈的已知问题。
     6. 新增多个改进模块。
+
+- 20250429
+
+    1. 修复engine/extre_module/custom_nn/attention/SEAM.py模块，应该是MutilSEAM。
+    2. 新增一些进阶课程的视频。
+    3. 新增多个改进模块。
+    4. 修复用户反馈的已知问题。
+    5. 修复续训时候会新增一个保存路径的问题。
+    6. 修复多卡训练Stage2的时候会出现部分进程找不到权重文件的问题。
+
+### 7. 目前已有的模块
+
+- engine/extre_module/custom_nn/attention 
+
+    1. engine/extre_module/custom_nn/attention/SEAM.py
+    2. CVPR2021|engine/extre_module/custom_nn/attention/ca.py
+    3. ICASSP2023|engine/extre_module/custom_nn/attention/ema.py
+    4. ICML2021|engine/extre_module/custom_nn/attention/simam.py
+    5. ICCV2023|engine/extre_module/custom_nn/attention/lsk.py
+    6. WACV2024|engine/extre_module/custom_nn/attention/DeformableLKA.py
+    7. engine/extre_module/custom_nn/attention/mlca.py
+    8. BIBM2024|engine/extre_module/custom_nn/attention/FSA.py
+    9. AAAI2025|engine/extre_module/custom_nn/attention/CDFA.py
+
+- engine/extre_module/custom_nn/block
+
+    1. engine/extre_module/custom_nn/block/RepHMS.py
+    2. 自研模块|engine/extre_module/custom_nn/block/rgcspelan.py
+    3. TPAMI2025|engine/extre_module/custom_nn/block/MANet.py
+
+- engine/extre_module/custom_nn/conv_module
+
+    1. CVPR2021|engine/extre_module/custom_nn/conv_module/dbb.py
+    2. IEEETIP2024|engine/extre_module/custom_nn/conv_module/deconv.py
+    3. ICCV2023|engine/extre_module/custom_nn/conv_module/dynamic_snake_conv.py
+    4. CVPR2023|engine/extre_module/custom_nn/conv_module/pconv.py
+    5. AAAI2025|engine/extre_module/custom_nn/conv_module/psconv.py
+    6. CVPR2025|engine/extre_module/custom_nn/conv_module/ShiftwiseConv.py
+    7. engine/extre_module/custom_nn/conv_module/wdbb.py
+    8. engine/extre_module/custom_nn/conv_module/deepdbb.py
+    9. ECCV2024|engine/extre_module/custom_nn/conv_module/wtconv2d.py
+    10. CVPR2023|engine/extre_module/custom_nn/conv_module/ScConv.py
+    11. engine/extre_module/custom_nn/conv_module/dcnv2.py
+    12. CVPR2024|engine/extre_module/custom_nn/conv_module/DilatedReparamConv.py
+    13. engine/extre_module/custom_nn/conv_module/gConv.py
+
+- engine/extre_module/custom_nn/upsample
+
+    1. CVPR2024|engine/extre_module/custom_nn/upsample/eucb.py
+    2. CVPR2024|engine/extre_module/custom_nn/upsample/eucb_sc.py
+    3. engine/extre_module/custom_nn/upsample/WaveletUnPool.py
+    4. ICCV2019|engine/extre_module/custom_nn/upsample/CARAFE.py
+    5. ICCV2023|engine/extre_module/custom_nn/upsample/DySample.py
+
+- engine/extre_module/custom_nn/downsample
+
+    1. IEEETIP2020|engine/extre_module/custom_nn/downsample/gcnet.py
+    2. 自研模块|engine/extre_module/custom_nn/downsample/lawds.py 
+    3. engine/extre_module/custom_nn/downsample/WaveletPool.py
+    4. engine/extre_module/custom_nn/downsample/ADown.py
+    5. engine/extre_module/custom_nn/downsample/YOLOV7Down.py
+    6. engine/extre_module/custom_nn/downsample/SPDConv.py
+    7. engine/extre_module/custom_nn/downsample/HWD.py
+    8. engine/extre_module/custom_nn/downsample/DRFD.py
+
+- engine/extre_module/custom_nn/stem
+
+    1. engine/extre_module/custom_nn/stem/SRFD.py
+    2. engine/extre_module/custom_nn/stem/LoG.py
+
+- engine/extre_module/custom_nn/featurefusion
+
+    1. 自研模块|engine/extre_module/custom_nn/featurefusion/cgfm.py
+    2. BMVC2024|engine/extre_module/custom_nn/featurefusion/msga.py
+    3. CVPR2024|engine/extre_module/custom_nn/featurefusion/mfm.py
+    4. IEEETIP2023|engine/extre_module/custom_nn/featurefusion/CSFCN.py
+    5. BIBM2024|engine/extre_module/custom_nn/featurefusion/mpca.py
+    6. ACMMM2024|engine/extre_module/custom_nn/featurefusion/wfu.py
+
+- engine/extre_module/custom_nn/module
+
+    1. AAAI2025|engine/extre_module/custom_nn/module/APBottleneck.py
+    2. CVPR2025|engine/extre_module/custom_nn/module/efficientVIM.py
+    3. CVPR2023|engine/extre_module/custom_nn/module/fasterblock.py
+    4. CVPR2024|engine/extre_module/custom_nn/module/starblock.py
+    5. engine/extre_module/custom_nn/module/DWR.py
+    6. CVPR2024|engine/extre_module/custom_nn/module/UniRepLKBlock.py
+    7. CVPR2025|engine/extre_module/custom_nn/module/mambaout.py
+    8. AAAI2024|engine/extre_module/custom_nn/module/DynamicFilter.py
+    9. engine/extre_module/custom_nn/module/StripBlock.py
+    10. IEEETGRS2024|engine/extre_module/custom_nn/module/elgca.py
+    11. CVPR2024|engine/extre_module/custom_nn/module/LEGM.py
+    12. ICCV2023|engine/extre_module/custom_nn/module/iRMB.py
+    13. TPAMI2025|engine/extre_module/custom_nn/module/MSBlock.py
+    14. ICLR2024|engine/extre_module/custom_nn/module/FATBlock.py
+    15. CVPR2024|engine/extre_module/custom_nn/module/MSCB.py
+    16. engine/extre_module/custom_nn/module/LEGBlock.py
+
+- engine/extre_module/custom_nn/neck
+
+    1. 自研模块|engine/extre_module/custom_nn/neck/FDPN.py #TOOD
+
+- engine/extre_module/custom_nn/norm
+
+    1. ICML2024|engine/extre_module/custom_nn/transformer/repbn.py
+    2. CVPR2025|engine/extre_module/custom_nn/transformer/dyt.py
+
+- engine/extre_module/custom_nn/transformer
+
+    1. ICLR2025|engine/extre_module/custom_nn/transformer/PolaLinearAttention.py
+    2. CVPR2023|engine/extre_module/custom_nn/transformer/biformer.py
+    3. CVPR2023|engine/extre_module/custom_nn/transformer/CascadedGroupAttention.py
+    4. CVPR2022|engine/extre_module/custom_nn/transformer/DAttention.py
+    5. ICLR2022|engine/extre_module/custom_nn/transformer/DPBAttention.py
+    6. CVPR2024|engine/extre_module/custom_nn/transformer/AdaptiveSparseSA.py
+    7. engine/extre_module/custom_nn/transformer/GSA.py
+    8. engine/extre_module/custom_nn/transformer/RSA.py
+    9. ECCV2024|engine/extre_module/custom_nn/transformer/FSSA.py
+
+- engine/extre_module/custom_nn/mlp
+
+    1. CVPR2024|engine/extre_module/custom_nn/mlp/ConvolutionalGLU.py
+    2. IJCAI2024|engine/extre_module/custom_nn/mlp/DFFN.py
+    3. ICLR2024|engine/extre_module/custom_nn/mlp/FMFFN.py
+    4. CVPR2024|engine/extre_module/custom_nn/mlp/FRFN.py
+    5. ECCV2024|engine/extre_module/custom_nn/mlp/EFFN.py 
+
+- 积木模块,示例教程engine/extre_module/custom_nn/module/example.py
+
+    1. C3
+    2. C2f
+    3. C3k2
+    4. TPAMI2025|MANet
+    5. TPAMI2024|MetaFormer_Block
+    6. TPAMI2024+CVPR2025|MetaFormer_Mona
