@@ -232,6 +232,34 @@
 
     利用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM对[Hyper-YOLO](https://www.arxiv.org/pdf/2408.04804)中的Hypergraph Computation in Semantic Space进行二次创新.
 
+48. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-ASSA-SEFN.yaml
+
+    使用[CVPR2024 Adapt or Perish: Adaptive Sparse Transformer with Attentive Feature Refinement for Image Restoration](https://openaccess.thecvf.com/content/CVPR2024/papers/Zhou_Adapt_or_Perish_Adaptive_Sparse_Transformer_with_Attentive_Feature_Refinement_CVPR_2024_paper.pdf)中的Adaptive Sparse Self-Attention与[WACV2025 SEM-Net](https://github.com/ChrisChen1023/SEM-Net)的Spatially-Enhanced Feedforward Network (SEFN)改进AIFI.
+
+49. ultralytics/cfg/models/rt-detr/rtdetr-Pola-SEFN.yaml
+
+    使用[ICLR2025 PolaFormer)](https://github.com/ZacharyMeng/PolaFormer)中的PolaAttention与[WACV2025 SEM-Net](https://github.com/ChrisChen1023/SEM-Net)的Spatially-Enhanced Feedforward Network (SEFN)改进AIFI.
+
+50. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-ASSA-SEFN-Mona.yaml
+
+    使用[CVPR2024 Adapt or Perish: Adaptive Sparse Transformer with Attentive Feature Refinement for Image Restoration](https://openaccess.thecvf.com/content/CVPR2024/papers/Zhou_Adapt_or_Perish_Adaptive_Sparse_Transformer_with_Attentive_Feature_Refinement_CVPR_2024_paper.pdf)中的Adaptive Sparse Self-Attention与[WACV2025 SEM-Net](https://github.com/ChrisChen1023/SEM-Net)的Spatially-Enhanced Feedforward Network (SEFN)和[CVPR2025 Mona](https://github.com/Leiyi-Hu/mona)的Mona改进AIFI.
+
+51. ultralytics/cfg/models/rt-detr/rtdetr-Pola-SEFN-Mona.yaml
+
+    使用[ICLR2025 PolaFormer)](https://github.com/ZacharyMeng/PolaFormer)中的PolaAttention与[WACV2025 SEM-Net](https://github.com/ChrisChen1023/SEM-Net)的Spatially-Enhanced Feedforward Network (SEFN)和[CVPR2025 Mona](https://github.com/Leiyi-Hu/mona)的Mona改进AIFI.
+
+52. ultralytics/cfg/models/rt-detr/rtdetr-C2f-mambaout-LSConv.yaml
+
+    使用[CVPR2025 LSNet](https://github.com/THU-MIG/lsnet)的LSConv与[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOutBlock二次创新后改进C2f.
+
+53. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-ASSA-SEFN-Mona-DyT.yaml
+
+    使用[CVPR2024 Adapt or Perish: Adaptive Sparse Transformer with Attentive Feature Refinement for Image Restoration](https://openaccess.thecvf.com/content/CVPR2024/papers/Zhou_Adapt_or_Perish_Adaptive_Sparse_Transformer_with_Attentive_Feature_Refinement_CVPR_2024_paper.pdf)中的Adaptive Sparse Self-Attention与[WACV2025 SEM-Net](https://github.com/ChrisChen1023/SEM-Net)的Spatially-Enhanced Feedforward Network (SEFN)和[CVPR2025 Mona](https://github.com/Leiyi-Hu/mona)的Mona改进和[CVPR2025 DyT](https://github.com/jiachenzhu/DyT)中的DynamicTan改进AIFI.
+
+54. ultralytics/cfg/models/rt-detr/rtdetr-Pola-SEFN-Mona-DyT.yaml
+
+    使用[ICLR2025 PolaFormer)](https://github.com/ZacharyMeng/PolaFormer)中的PolaAttention与[WACV2025 SEM-Net](https://github.com/ChrisChen1023/SEM-Net)的Spatially-Enhanced Feedforward Network (SEFN)和[CVPR2025 Mona](https://github.com/Leiyi-Hu/mona)的Mona改进和[CVPR2025 DyT](https://github.com/jiachenzhu/DyT)中的DynamicTan改进AIFI.
+
 ### 自研系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-PACAPN.yaml
 
@@ -552,6 +580,31 @@
 
     使用[ICLR2024-FTIC](https://github.com/qingshi9974/ICLR2024-FTIC)中的FATBlock与CSP改进rtdetr-r18的backbone.
 
+54. ultralytics/cfg/models/rt-detr/rtdetr-C2f-MobileMamba.yaml
+
+    使用使用[CVPR2025 MobileMamba](https://github.com/lewandofskee/MobileMamba)中的MobileMambaBlock与CSP思想改进backbone.
+
+55. ultralytics/cfg/models/rt-detr/rtdetr-MobileMamba.yaml
+
+    使用[CVPR2025 MobileMamba](https://github.com/lewandofskee/MobileMamba)中的MobileMamba改进Backbone.
+
+56. ultralytics/cfg/models/rt-detr/rtdetr-C2f-LFEM.yaml
+
+    使用[LEGNet](https://github.com/lwCVer/LEGNet)中的LFEModule与CSP思想改进backbone.
+
+57. ultralytics/cfg/models/rt-detr/rtdetr-C2f-SBSM.yaml
+
+    使用[WACV2025 SEM-Net](https://github.com/ChrisChen1023/SEM-Net)的Snake Bi-Directional Sequence Modelling (SBSM)与CSP思想改进backbone.
+
+58. ultralytics/cfg/models/rt-detr/rtdetr-lsnet.yaml
+
+    使用[CVPR2025 LSNet](https://github.com/THU-MIG/lsnet)的LSNet替换backbone.
+
+59. ultralytics/cfg/models/rt-detr/rtdetr-C2f-LSBlock.yaml
+
+    使用[CVPR2025 LSNet](https://github.com/THU-MIG/lsnet)的LSBlock改进C2f.
+
+
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -616,6 +669,14 @@
 17. ultralytics/cfg/models/rt-detr/rtdetr-ASSR.yaml
      
     使用[CVPR2025 MambaIR](https://github.com/csguoh/MambaIR)中的Attentive State Space Group改进rtdetr.
+
+18. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-SEFN.yaml
+
+    使用[WACV2025 SEM-Net](https://github.com/ChrisChen1023/SEM-Net)的Spatially-Enhanced Feedforward Network (SEFN)改进AIFI.
+
+19. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-DyT.yaml
+
+    使用[CVPR2025 DyT](https://github.com/jiachenzhu/DyT)中的DynamicTan改进AIFI.
 
 ### Neck系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-ASF.yaml
@@ -888,6 +949,10 @@
 9. ultralytics/cfg/models/rt-detr/rtdetr-EUCB.yaml
 
     使用[CVPR2024 EMCAD](https://github.com/SLDGroup/EMCAD)中的EUCB改进rtdetr-r18的上采样.
+
+10. ultralytics/cfg/models/rt-detr/rtdetr-LoGStem.yaml
+
+    使用[LEGNet](https://github.com/lwCVer/LEGNet)中的LoGStem改进Stem.
 
 ### RT-DETR-L改进系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-l-GhostHGNetV2.yaml
@@ -1958,4 +2023,13 @@
     4. 新增CVPR2025-OverLock中的GDSAFusion.
     5. 新增统计配置文件的计算量和参数量并排序的脚本.
     6. 更新使用教程.
-    7. 百度云视频增加20250403更新说明.
+    7. 百度云视频增加20250420更新说明.
+
+- **20250508-rtdetr-v1.52**
+    1. 新增CVPR2025-MobileMamba的相关改进.
+    2. 新增LEGNet中的LFEModule和LoGStem改进.
+    3. 新增WACV2025-SEMNet中的Snake Bi-Directional Sequence Modelling (SBSM)和Spatially-Enhanced Feedforward Network (SEFN)的多个改进，并含有二次创新相关内容.
+    4. 新增CVPR2025-LSNet中的多个改进，并含有二次创新相关内容.
+    5. 新增CVPR2025-DynamicTan中的多个改进，并含有二次创新相关内容.
+    6. 更新使用教程.
+    7. 百度云视频增加20250508更新说明.
