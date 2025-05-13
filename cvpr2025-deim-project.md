@@ -87,6 +87,12 @@
     5. 修复续训时候会新增一个保存路径的问题。
     6. 修复多卡训练Stage2的时候会出现部分进程找不到权重文件的问题。
 
+- 20250514
+
+    1. 新增一些进阶课程的视频。
+    2. 新增多个改进模块。
+    3. 修复用户反馈的已知问题。
+
 ### 7. 进阶视频教程
 
 ------------------------------------- 进阶教程 -------------------------------------  
@@ -98,6 +104,7 @@
 3. featuremap脚本使用教程
 4. heatmap脚本使用教程
 5. tools/inference/torch_inf.py
+6. 20250513基础疑问解答直播回放链接
 
 -------------------------------------------- 基础教程补充版 (这部分建议理解完基础课程全部再看) --------------------------------------------  
 1. 如何快速得知每个改进模块的输入输出格式相关信息
@@ -107,6 +114,9 @@
 2. 如何使用engine/extre_module/custom_nn/transformer改进HybridEncoder中的Transformer
 3. engine/extre_module/custom_nn/module.py的搭积木神器(万物皆可融)教程-上集
 3. engine/extre_module/custom_nn/module.py的搭积木神器(万物皆可融)教程-中集
+4. engine/extre_module/custom_nn/module.py的搭积木神器(万物皆可融)教程-下集
+5. engine/extre_module/custom_nn/mlp/SEFN.py
+6. engine/extre_module/custom_nn/neck/FDPN.py
 
 ### 8. 目前已有的模块
 
@@ -176,6 +186,7 @@
     4. IEEETIP2023|engine/extre_module/custom_nn/featurefusion/CSFCN.py
     5. BIBM2024|engine/extre_module/custom_nn/featurefusion/mpca.py
     6. ACMMM2024|engine/extre_module/custom_nn/featurefusion/wfu.py
+    7. CVPR2025|engine/extre_module/custom_nn/featurefusion/GDSAFusion.py
 
 - engine/extre_module/custom_nn/module
 
@@ -195,10 +206,13 @@
     14. ICLR2024|engine/extre_module/custom_nn/module/FATBlock.py
     15. CVPR2024|engine/extre_module/custom_nn/module/MSCB.py
     16. engine/extre_module/custom_nn/module/LEGBlock.py
+    17. CVPR2025|engine/extre_module/custom_nn/module/RCB.py
+    18. ECCV2024|engine/extre_module/custom_nn/module/JDPM.py
+    19. CVPR2025|engine/extre_module/custom_nn/module/vHeat.py
 
 - engine/extre_module/custom_nn/neck
 
-    1. 自研模块|engine/extre_module/custom_nn/neck/FDPN.py #TOOD
+    1. 自研模块|engine/extre_module/custom_nn/neck/FDPN.py
 
 - engine/extre_module/custom_nn/norm
 
@@ -216,6 +230,8 @@
     7. engine/extre_module/custom_nn/transformer/GSA.py
     8. engine/extre_module/custom_nn/transformer/RSA.py
     9. ECCV2024|engine/extre_module/custom_nn/transformer/FSSA.py
+    10. AAAI2025|engine/extre_module/custom_nn/transformer/DilatedGCSA.py
+    11. AAAI2025|engine/extre_module/custom_nn/transformer/DilatedMWSA.py
 
 - engine/extre_module/custom_nn/mlp
 
@@ -224,12 +240,23 @@
     3. ICLR2024|engine/extre_module/custom_nn/mlp/FMFFN.py
     4. CVPR2024|engine/extre_module/custom_nn/mlp/FRFN.py
     5. ECCV2024|engine/extre_module/custom_nn/mlp/EFFN.py 
+    6. WACV2025|engine/extre_module/custom_nn/mlp/SEFN.py
+    7. ICLR2025|engine/extre_module/custom_nn/mlp/KAN.py
+
+- engine/extre_module/custom_nn/mamba
+
+    1. AAAI2025|engine/extre_module/custom_nn/mamba/SS2D.py
+    2. CVPR2025|engine/extre_module/custom_nn/mamba/ASSM.py
+    3. CVPR2025|engine/extre_module/custom_nn/mamba/SAVSS.py
+    4. CVPR2025|engine/extre_module/custom_nn/mamba/MobileMamba/mobilemamba.py
 
 - 积木模块,示例教程engine/extre_module/custom_nn/module/example.py
 
-    1. C3
-    2. C2f
-    3. C3k2
+    1. YOLOV5|C3
+    2. YOLOV8|C2f
+    3. YOLO11|C3k2
     4. TPAMI2025|MANet
     5. TPAMI2024|MetaFormer_Block
     6. TPAMI2024+CVPR2025|MetaFormer_Mona
+    7. TPAMI2024+CVPR2025+WACV2025|MetaFormer_SEFN
+    8. TPAMI2024+CVPR2025+WACV2025|MetaFormer_Mona_SEFN
