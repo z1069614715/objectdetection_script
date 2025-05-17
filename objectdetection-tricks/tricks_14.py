@@ -25,6 +25,7 @@ if __name__ == '__main__':
                         )
     
     if model.task == 'detect': # 仅目标检测任务适用
+        length = result.box.p.size
         model_names = list(result.names.values())
         preprocess_time_per_image = result.speed['preprocess']
         inference_time_per_image = result.speed['inference']
@@ -51,9 +52,9 @@ if __name__ == '__main__':
         model_metrice_table = PrettyTable()
         model_metrice_table.title = "Model Metrice"
         model_metrice_table.field_names = ["Class Name", "Precision", "Recall", "F1-Score", "mAP50", "mAP75", "mAP50-95"]
-        for idx, cls_name in enumerate(model_names):
+        for idx in range(length):
             model_metrice_table.add_row([
-                                        cls_name, 
+                                        model_names[idx], 
                                         f"{result.box.p[idx]:.4f}", 
                                         f"{result.box.r[idx]:.4f}", 
                                         f"{result.box.f1[idx]:.4f}", 
@@ -65,9 +66,9 @@ if __name__ == '__main__':
                                     "all(平均数据)", 
                                     f"{result.results_dict['metrics/precision(B)']:.4f}", 
                                     f"{result.results_dict['metrics/recall(B)']:.4f}", 
-                                    f"{np.mean(result.box.f1):.4f}", 
+                                    f"{np.mean(result.box.f1[:length]):.4f}", 
                                     f"{result.results_dict['metrics/mAP50(B)']:.4f}", 
-                                    f"{np.mean(result.box.all_ap[:, 5]):.4f}", # 50 55 60 65 70 75 80 85 90 95 
+                                    f"{np.mean(result.box.all_ap[:length, 5]):.4f}", # 50 55 60 65 70 75 80 85 90 95 
                                     f"{result.results_dict['metrics/mAP50-95(B)']:.4f}"
                                 ])
         print(model_metrice_table)

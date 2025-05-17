@@ -1,6 +1,6 @@
 # [基于Ultralytics的YOLOV8V10改进项目.(69.9¥)](https://github.com/z1069614715/objectdetection_script)
 
-# 目前自带的一些改进方案(目前拥有合计260+个改进点！持续更新！)
+# 目前自带的一些改进方案(目前拥有合计270+个改进点！持续更新！)
 
 # 为了感谢各位对本项目的支持,本项目的赠品是yolov5-PAGCP通道剪枝算法.[具体使用教程](https://www.bilibili.com/video/BV1yh4y1Z7vz/)
 
@@ -226,6 +226,10 @@
 57. ultralytics/cfg/models/v8/yolov8-MBSMFFPN.yaml
 
     使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM对yolov8-EMBSFPN.yaml再次创新 Multi-Branch&Scale Modulation-Fusion FPN.
+
+58. ultralytics/cfg/models/v8/yolov8-C2f-mambaout-LSConv.yaml
+
+    使用[CVPR2025 LSNet](https://github.com/THU-MIG/lsnet)的LSConv与[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOutBlock二次创新后改进C2f.
 
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
@@ -501,6 +505,12 @@
 18. ultralytics/cfg/models/v8/yolov8-mambaout.yaml
      
     使用[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOut替换BackBone.
+19. ultralytics/cfg/models/v8/yolov8-lsnet.yaml
+
+    使用[CVPR2025 LSNet](https://github.com/THU-MIG/lsnet)中的lsnet替换yolov8的backbone.
+20. ultralytics/cfg/models/v8/yolov8-overlock.yaml
+
+    使用[CVPR2025 OverLock](https://arxiv.org/pdf/2502.20087)中的overlock-backbone替换backbone.
 
 ### SPPF系列
 1. ultralytics/cfg/models/v8/yolov8-FocalModulation.yaml
@@ -625,6 +635,10 @@
 
     使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM改进neck.
 
+26. ultralytics/cfg/models/v8/yolov8-GDSAFusion.yaml
+
+    使用[CVPR2025 OverLock](https://arxiv.org/pdf/2502.20087)中的GDSAFusion改进neck.
+
 ### Head系列
 1. ultralytics/cfg/models/v8/yolov8-dyhead.yaml
 
@@ -723,6 +737,10 @@
 12. ultralytics/cfg/models/v8/yolov8-EUCB.yaml
 
     使用[CVPR2024 EMCAD](https://github.com/SLDGroup/EMCAD)中的EUCB改进yolov8的上采样.
+
+13. ultralytics/cfg/models/v8/yolov8-LoGStem.yaml
+
+    使用[LEGNet](https://github.com/lwCVer/LEGNet)中的LoGStem改进Stem(第一第二层卷积).
 
 ### YOLOV8-C2f系列
 1. ultralytics/cfg/models/v8/yolov8-C2f-Faster.yaml
@@ -1041,6 +1059,18 @@
 
     使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的LEGM改进C2f.
 
+84. ultralytics/cfg/models/v8/yolov8-C2f-LSBlock.yaml
+
+    使用[CVPR2025 LSNet](https://github.com/THU-MIG/lsnet)中的LSBlock改进C2f.
+
+85. ultralytics/cfg/models/v8/yolov8-C2f-LFEM.yaml
+
+    使用[LEGNet](https://github.com/lwCVer/LEGNet)中的LFEModule改进C2f.
+
+86. ultralytics/cfg/models/v8/yolov8-C2f-RCB.yaml
+
+    使用[CVPR2025 OverLock](https://arxiv.org/pdf/2502.20087)中的RepConvBlock改进C2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -1222,6 +1252,10 @@
 37. ultralytics/cfg/models/v10/yolov10n-MBSMFFPN.yaml
 
     使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM对yolov10n-EMBSFPN.yaml再次创新 Multi-Branch&Scale Modulation-Fusion FPN.
+
+38. ultralytics/cfg/models/v10/yolov10n-C2f-mambaout-LSConv.yaml
+
+    使用[CVPR2025 LSNet](https://github.com/THU-MIG/lsnet)的LSConv与[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOutBlock二次创新后改进C2f.
 
 ### 自研系列
 
@@ -1460,6 +1494,14 @@
      
     使用[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOut替换BackBone.
 
+19. ultralytics/cfg/models/v10/yolov10n-lsnet.yaml
+
+    使用[CVPR2025 LSNet](https://github.com/THU-MIG/lsnet)中的lsnet替换yolov10的backbone.
+
+20. ultralytics/cfg/models/v10/yolov10n-overlock.yaml
+
+    使用[CVPR2025 OverLock](https://arxiv.org/pdf/2502.20087)中的overlock-backbone替换backbone.
+
 ### SPPF系列
 
 1. ultralytics/cfg/models/v10/yolov10n-FocalModulation.yaml
@@ -1556,6 +1598,10 @@
 
     使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM改进neck.
 
+18. ultralytics/cfg/models/v10/yolov10n-GDSAFusion.yaml
+
+    使用[CVPR2025 OverLock](https://arxiv.org/pdf/2502.20087)中的GDSAFusion改进neck.
+
 ### Head系列
 
 1. ultralytics/cfg/models/v10/yolov10n-dyhead.yaml
@@ -1617,6 +1663,10 @@
 12. ultralytics/cfg/models/v10/yolov10n-EUCB.yaml
 
     使用[CVPR2024 EMCAD](https://github.com/SLDGroup/EMCAD)中的EUCB改进yolov10的上采样.
+
+13. ultralytics/cfg/models/v10/yolov10n-LoGStem.yaml
+
+    使用[LEGNet](https://github.com/lwCVer/LEGNet)中的LoGStem改进Stem(第一第二层卷积).
 
 ### C2f系列
 
@@ -1807,6 +1857,18 @@
 48. ultralytics/cfg/models/v10/yolov10n-C2f-LEGM.yaml
 
     使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的LEGM改进C2f.
+
+49. ultralytics/cfg/models/v10/yolov10n-C2f-RCB.yaml
+
+    使用[CVPR2025 OverLock](https://arxiv.org/pdf/2502.20087)中的RepConvBlock改进C2f.
+
+50. ultralytics/cfg/models/v10/yolov10n-C2f-LFEM.yaml
+
+    使用[LEGNet](https://github.com/lwCVer/LEGNet)中的LFEModule改进C2f.
+
+51. ultralytics/cfg/models/v10/yolov10n-C2f-LSBlock.yaml
+
+    使用[CVPR2025 LSNet](https://github.com/THU-MIG/lsnet)中的LSBlock改进C2f.
 
 ### PSA系列
 
@@ -2457,3 +2519,11 @@
     4. 新增统计配置文件的计算量和参数量并排序的脚本.
     5. 更新使用教程.
     6. 百度云视频增加20250426更新说明.
+
+- **20250514-ultralytics-v1.87**
+    1. 新增LEGNet的LoGStem和LFEModule.
+    2. 新增新一代轻量化SOTA的CVPR2025-LSNet的LSNet和LSConv的多个改进和二次创新改进.
+    3. 新增CVPR2025-OverLock中的多个模块.
+    4. 修改保存权重的逻辑，训练结束(注意是正常训练结束后，手动停止的没有)后统一会保存4个模型，分别是best.pt、last.pt、best_fp32.pt、last_fp32.pt，其中不带fp32后缀的是fp16格式保存的，但由于有些模块对fp16非常敏感，会出现后续使用val.py的时候精度为0的情况，这种情况下可以用后缀带fp32去测试。
+    5. 更新使用教程.
+    6. 百度云视频增加20250514更新说明.
