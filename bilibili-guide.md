@@ -110,6 +110,7 @@
 ### 离线数据增强教程
 1. [目标检测数据集离线数据增强教程，包含对目标框、多种变换、天气变化等等增强！](https://www.bilibili.com/video/BV1bT421k7iq/)
 2. [语义分割数据集离线数据增强教程，包含对mask、多种变换、天气变化等等增强！](https://www.bilibili.com/video/BV1xi421a7Gb/)
+3. [CVPR2025-SaMam｜手把手带你用以Mamba为核心的任意风格迁移网络去做数据集扩充！(一个小创新点有了！)](https://www.bilibili.com/video/BV1gWE4z4Eqq/)
 
 ### YOLO系列(YOLOV5,YOLOV7,YOLOV8)模型改进大合集
 #### YOLOV5(主干系列修改V7同样也适用)
