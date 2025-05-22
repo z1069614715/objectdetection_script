@@ -1,7 +1,7 @@
 # [基于Ultralytics的YOLO11|YOLO12改进项目.(69.9¥)](https://github.com/z1069614715/objectdetection_script)
 #### 因为YOLO11和YOLO12的结构高度相似，所以YOLO12的配置文件都可以从YOLO11修改过去，项目内有标注视频链接！
 
-# 目前自带的一些改进方案(目前拥有合计320+个改进点！持续更新！)
+# 目前自带的一些改进方案(目前拥有合计330+个改进点！持续更新！)
 
 # 为了感谢各位对本项目的支持,本项目的赠品是yolov5-PAGCP通道剪枝算法.[具体使用教程](https://www.bilibili.com/video/BV1yh4y1Z7vz/)
 
@@ -275,6 +275,14 @@
 69. ultralytics/cfg/models/11/yolo11-C3k2-MambaOut-LSConv.yaml
 
     使用[CVPR2025 LSNet](https://github.com/THU-MIG/lsnet)的LSConv与[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOutBlock二次创新后改进C3k2.
+
+70. ultralytics/cfg/models/11/yolo11-C2TSSA-DYT-Mona-SEFFN.yaml
+
+    使用[CVPR2025 DyT](https://github.com/jiachenzhu/DyT)中的DynamicTan和[ICLR2025 Token Statistics Transformer](https://github.com/RobinWu218/ToST)中的Token Statistics Self-Attention和[CVPR2025 Mona](https://github.com/Leiyi-Hu/mona)的Mona和[TransMamba](https://github.com/sunshangquan/TransMamba)的SpectralEnhancedFFN改进C2PSA.
+
+71. ultralytics/cfg/models/11/yolo11-C2TSSA-DYT-Mona-EDFFN.yaml
+
+    使用[CVPR2025 DyT](https://github.com/jiachenzhu/DyT)中的DynamicTan和[ICLR2025 Token Statistics Transformer](https://github.com/RobinWu218/ToST)中的Token Statistics Self-Attention和[CVPR2025 Mona](https://github.com/Leiyi-Hu/mona)的Mona和[CVPR2025 EVSSM](https://github.com/kkkls/EVSSM)中的EDFFN改进C2PSA.
 
 ### 自研系列
 1. ultralytics/cfg/models/11/yolo11-LAWDS.yaml
@@ -1155,6 +1163,22 @@
 
     使用[CVPR2025 LSNet](https://github.com/THU-MIG/lsnet)的LSBlock改进C3k2.
 
+98. ultralytics/cfg/models/11/yolo11-C3k2-TransMamba.yaml
+
+    使用[TransMamba](https://github.com/sunshangquan/TransMamba)的TransMamba改进C3k2.
+
+99. ultralytics/cfg/models/11/yolo11-C3k2-EVS.yaml
+
+    使用[CVPR2025 EVSSM](https://github.com/kkkls/EVSSM)中的EVS改进C3k2.
+
+100. ultralytics/cfg/models/11/yolo11-C3k2-EBlock.yaml
+
+    使用[CVPR2025 DarkIR](https://github.com/cidautai/DarkIR)中的EBlock改进C3k2.
+
+101. ultralytics/cfg/models/11/yolo11-C3k2-DBlock.yaml
+
+    使用[CVPR2025 DarkIR](https://github.com/cidautai/DarkIR)中的DBlock改进C3k2.
+
 ### C2PSA系列
 
 1. ultralytics/cfg/models/11/yolo11-C2BRA.yaml
@@ -1221,6 +1245,14 @@
 
     使用[CVPR2025 Mona](https://github.com/Leiyi-Hu/mona)的Mona改进C2PSA.
 
+17. ultralytics/cfg/models/11/yolo11-C2PSA-SEFFN.yaml
+
+    使用[TransMamba](https://github.com/sunshangquan/TransMamba)的SpectralEnhancedFFN改进C2PSA.
+
+18. ultralytics/cfg/models/11/yolo11-C2PSA-EDFFN.yaml
+
+    使用[CVPR2025 EVSSM](https://github.com/kkkls/EVSSM)中的EDFFN改进C2PSA.
+
 ### A2C2f系列
 1. ultralytics/cfg/models/12/yolo12-A2C2f-CGLU.yaml
      
@@ -1253,6 +1285,14 @@
 8. ultralytics/cfg/models/12/yolo12-A2C2f-Mona.yaml
 
     使用[CVPR2025 Mona](https://github.com/Leiyi-Hu/mona)的Mona改进A2C2f.
+
+9. ultralytics/cfg/models/12/yolo12-A2C2f-SEFFN.yaml
+
+    使用[TransMamba](https://github.com/sunshangquan/TransMamba)的SpectralEnhancedFFN改进A2C2f.
+
+10. ultralytics/cfg/models/12/yolo12-A2C2f-EDFFN.yaml
+
+    使用[CVPR2025 EVSSM](https://github.com/kkkls/EVSSM)中的EDFFN改进A2C2f.
 
 ### 组合系列
 1. ultralytics/cfg/models/11/yolo11-fasternet-bifpn.yaml
@@ -1492,3 +1532,10 @@
     6. 修改保存权重的逻辑，训练结束(注意是正常训练结束后，手动停止的没有)后统一会保存4个模型，分别是best.pt、last.pt、best_fp32.pt、last_fp32.pt，其中不带fp32后缀的是fp16格式保存的，但由于有些模块对fp16非常敏感，会出现后续使用val.py的时候精度为0的情况，这种情况下可以用后缀带fp32去测试。
     7. 更新使用教程.
     8. 百度云视频增加20250502更新说明.
+
+- **20250518-yolo11-v1.22**
+    1. 新增TransMamba中的多个改进.
+    2. 新增CVPR2025-EVSSM中的多个改进.
+    3. 新增CVPR2025-DarkIR中的多个改进.
+    4. 更新使用教程.
+    5. 百度云视频增加20250518更新说明.
