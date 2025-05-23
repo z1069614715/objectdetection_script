@@ -260,6 +260,14 @@
 
     使用[ICLR2025 PolaFormer)](https://github.com/ZacharyMeng/PolaFormer)中的PolaAttention与[WACV2025 SEM-Net](https://github.com/ChrisChen1023/SEM-Net)的Spatially-Enhanced Feedforward Network (SEFN)和[CVPR2025 Mona](https://github.com/Leiyi-Hu/mona)的Mona改进和[CVPR2025 DyT](https://github.com/jiachenzhu/DyT)中的DynamicTan改进AIFI.
 
+55. ultralytics/cfg/models/rt-detr/rtdetr-Pola-SEFFN-Mona-DyT.yaml
+
+    使用[ICLR2025 PolaFormer)](https://github.com/ZacharyMeng/PolaFormer)中的PolaAttention与[TransMamba](https://github.com/sunshangquan/TransMamba)的SpectralEnhancedFFN和[CVPR2025 Mona](https://github.com/Leiyi-Hu/mona)的Mona改进和[CVPR2025 DyT](https://github.com/jiachenzhu/DyT)中的DynamicTan改进AIFI.
+
+56. ultralytics/cfg/models/rt-detr/rtdetr-Pola-EDFFN-Mona-DyT.yaml
+
+    使用[ICLR2025 PolaFormer)](https://github.com/ZacharyMeng/PolaFormer)中的PolaAttention与[CVPR2025 EVSSM](https://github.com/kkkls/EVSSM)中的EDFFN和[CVPR2025 Mona](https://github.com/Leiyi-Hu/mona)的Mona改进和[CVPR2025 DyT](https://github.com/jiachenzhu/DyT)中的DynamicTan改进AIFI.
+
 ### 自研系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-PACAPN.yaml
 
@@ -604,6 +612,21 @@
 
     使用[CVPR2025 LSNet](https://github.com/THU-MIG/lsnet)的LSBlock改进C2f.
 
+60. ultralytics/cfg/models/rt-detr/rtdetr-C2f-TransMamba.yaml
+
+    使用[TransMamba](https://github.com/sunshangquan/TransMamba)的TransMamba与CSP思想改进backbone.
+
+61. ultralytics/cfg/models/rt-detr/rtdetr-C2f-EVS.yaml 
+
+    使用[CVPR2025 EVSSM](https://github.com/kkkls/EVSSM)中的EVS与CSP思想改进backbone.
+
+62. ultralytics/cfg/models/rt-detr/rtdetr-C2f-EBlock.yaml
+
+    使用[CVPR2025 DarkIR](https://github.com/cidautai/DarkIR)中的EVS与CSP思想改进backbone.
+
+63. ultralytics/cfg/models/rt-detr/rtdetr-C2f-DBlock.yaml
+
+    使用[CVPR2025 DarkIR](https://github.com/cidautai/DarkIR)中的EVS与CSP思想改进backbone.
 
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
@@ -677,6 +700,14 @@
 19. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-DyT.yaml
 
     使用[CVPR2025 DyT](https://github.com/jiachenzhu/DyT)中的DynamicTan改进AIFI.
+
+20. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-SEFFN.yaml
+
+    使用[TransMamba](https://github.com/sunshangquan/TransMamba)的SpectralEnhancedFFN改进AIFI.
+
+21. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-EDFFN.yaml
+
+    使用[CVPR2025 EVSSM](https://github.com/kkkls/EVSSM)中的EDFFN改进AIFI.
 
 ### Neck系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-ASF.yaml
@@ -2033,3 +2064,10 @@
     5. 新增CVPR2025-DynamicTan中的多个改进，并含有二次创新相关内容.
     6. 更新使用教程.
     7. 百度云视频增加20250508更新说明.
+
+- **20250523-rtdetr-v1.53**
+    1. 新增TransMamba中的多个改进.
+    2. 新增CVPR2025-EVSSM中的多个改进.
+    3. 新增CVPR2025-DarkIR中的多个改进.
+    4. 更新使用教程.
+    5. 百度云视频增加20250523更新说明.
