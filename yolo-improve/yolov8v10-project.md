@@ -1071,6 +1071,22 @@
 
     使用[CVPR2025 OverLock](https://arxiv.org/pdf/2502.20087)中的RepConvBlock改进C2f.
 
+87. ultralytics/cfg/models/v8/yolov8-C2f-TransMamba.yaml
+
+    使用[TransMamba](https://github.com/sunshangquan/TransMamba)的TransMamba改进C2f
+
+88. ultralytics/cfg/models/v8/yolov8-C2f-EVS.yaml
+
+    使用[CVPR2025 EVSSM](https://github.com/kkkls/EVSSM)中的EVS改进C2f
+
+89. ultralytics/cfg/models/v8/yolov8-C2f-EBlock.yaml
+
+    使用[CVPR2025 DarkIR](https://github.com/cidautai/DarkIR)中的EBlock改进C2f.
+
+90. ultralytics/cfg/models/v8/yolov8-C2f-DBlock.yaml
+
+    使用[CVPR2025 DarkIR](https://github.com/cidautai/DarkIR)中的DBlock改进C2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -1870,6 +1886,22 @@
 
     使用[CVPR2025 LSNet](https://github.com/THU-MIG/lsnet)中的LSBlock改进C2f.
 
+52. ultralytics/cfg/models/v10/yolov10n-C2f-TransMamba.yaml
+
+    使用[TransMamba](https://github.com/sunshangquan/TransMamba)的TransMamba改进C2f
+
+53. ultralytics/cfg/models/v10/yolov10n-C2f-EVS.yaml
+
+    使用[CVPR2025 EVSSM](https://github.com/kkkls/EVSSM)中的EVS改进C2f.(编译教程请看:20240219版本更新说明)
+
+54. ultralytics/cfg/models/v10/yolov10n-C2f-EBlock.yaml
+
+    使用[CVPR2025 DarkIR](https://github.com/cidautai/DarkIR)中的EBlock改进C2f.
+
+55. ultralytics/cfg/models/v10/yolov10n-C2f-DBlock.yaml
+
+    使用[CVPR2025 DarkIR](https://github.com/cidautai/DarkIR)中的DBlock改进C2f.
+
 ### PSA系列
 
 1. ultralytics/cfg/models/v10/yolov10n-PTSSA.yaml
@@ -2527,3 +2559,10 @@
     4. 修改保存权重的逻辑，训练结束(注意是正常训练结束后，手动停止的没有)后统一会保存4个模型，分别是best.pt、last.pt、best_fp32.pt、last_fp32.pt，其中不带fp32后缀的是fp16格式保存的，但由于有些模块对fp16非常敏感，会出现后续使用val.py的时候精度为0的情况，这种情况下可以用后缀带fp32去测试。
     5. 更新使用教程.
     6. 百度云视频增加20250514更新说明.
+
+- **20250514-ultralytics-v1.88**
+    1. 新增TransMamba的改进.
+    2. 新增CVPR2025-DarkIR的改进.
+    3. 新增CVPR2025-EVSSM的改进.
+    4. 更新使用教程.
+    5. 百度云视频增加20250601更新说明.
