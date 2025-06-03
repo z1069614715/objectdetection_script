@@ -93,6 +93,13 @@
     2. 新增多个改进模块。
     3. 修复用户反馈的已知问题。
 
+- 20250526
+
+    1. 新增一些进阶课程的视频。
+    2. 新增多个改进模块。
+    3. 新增cache_ram参数，详细可以看userguide。
+    4. 修复在torch2.7.0下出现的NotImplementedError问题。
+
 ### 7. 进阶视频教程
 
 ------------------------------------- 进阶教程 -------------------------------------  
@@ -108,6 +115,9 @@
 
 -------------------------------------------- 基础教程补充版 (这部分建议理解完基础课程全部再看) --------------------------------------------  
 1. 如何快速得知每个改进模块的输入输出格式相关信息
+2. 这个项目内的通道数是怎么传递的？特别是backbone与encoder部分，对后续的改进很重要！
+3. 主干进阶改进方案一-给每个stage设定不同的参数
+4. 主干进阶改进方案二-给每个stage使用不同的改进结构
 
 -------------------------------------------- 特殊配置文件-进阶教程(这部分必须要看完理解完基础课程全部才能看，不然百分百不看懂) <这部分没有观看顺序>  --------------------------------------------  
 1. engine/extre_module/custom_nn/featurefusion/mpca.py
@@ -153,6 +163,7 @@
     11. engine/extre_module/custom_nn/conv_module/dcnv2.py
     12. CVPR2024|engine/extre_module/custom_nn/conv_module/DilatedReparamConv.py
     13. engine/extre_module/custom_nn/conv_module/gConv.py
+    14. CVPR2024|engine/extre_module/custom_nn/conv_module/IDWC.py
 
 - engine/extre_module/custom_nn/upsample
 
@@ -209,6 +220,12 @@
     17. CVPR2025|engine/extre_module/custom_nn/module/RCB.py
     18. ECCV2024|engine/extre_module/custom_nn/module/JDPM.py
     19. CVPR2025|engine/extre_module/custom_nn/module/vHeat.py
+    20. CVPR2025|engine/extre_module/custom_nn/module/EBlock.py
+    21. CVPR2025|engine/extre_module/custom_nn/module/DBlock.py
+    22. ECCV2024|engine/extre_module/custom_nn/module/FMB.py
+    23. CVPR2024|engine/extre_module/custom_nn/module/IDWB.py
+    24. ECCV2022|engine/extre_module/custom_nn/module/LFE.py
+    25. AAAI2025|engine/extre_module/custom_nn/module/FCM.py
 
 - engine/extre_module/custom_nn/neck
 
@@ -232,6 +249,9 @@
     9. ECCV2024|engine/extre_module/custom_nn/transformer/FSSA.py
     10. AAAI2025|engine/extre_module/custom_nn/transformer/DilatedGCSA.py
     11. AAAI2025|engine/extre_module/custom_nn/transformer/DilatedMWSA.py
+    12. CVPR2024|engine/extre_module/custom_nn/transformer/SHSA.py
+    13. IJCAI2024|engine/extre_module/custom_nn/transformer/CTA.py
+    13. IJCAI2024|engine/extre_module/custom_nn/transformer/SFA.py
 
 - engine/extre_module/custom_nn/mlp
 
@@ -242,6 +262,7 @@
     5. ECCV2024|engine/extre_module/custom_nn/mlp/EFFN.py 
     6. WACV2025|engine/extre_module/custom_nn/mlp/SEFN.py
     7. ICLR2025|engine/extre_module/custom_nn/mlp/KAN.py
+    8. CVPR2025|engine/extre_module/custom_nn/mlp/EDFFN.py
 
 - engine/extre_module/custom_nn/mamba
 
