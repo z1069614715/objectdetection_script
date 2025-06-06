@@ -1581,4 +1581,4 @@
     2. 新增DSA: Deformable Spatial Attention的改进及其多个二次创新模块.
     3. 新增CVPR2025-MaIR中的Residual Mamba Block.
     4. 更新使用教程.
-    5. 百度云视频增加20250601`更新说明.
+    5. 百度云视频增加20250601更新说明.

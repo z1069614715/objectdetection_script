@@ -1,6 +1,6 @@
 # [基于Ultralytics的RT-DETR改进详细介绍](https://github.com/z1069614715/objectdetection_script)
 
-# 目前自带的一些改进方案(目前拥有合计210+个改进点！持续更新！)
+# 目前自带的一些改进方案(目前拥有合计240+个改进点！持续更新！)
 
 # 为了感谢各位对RTDETR项目的支持,本项目的赠品是yolov5-PAGCP通道剪枝算法.[具体使用教程](https://www.bilibili.com/video/BV1yh4y1Z7vz/)
 
@@ -267,6 +267,26 @@
 56. ultralytics/cfg/models/rt-detr/rtdetr-Pola-EDFFN-Mona-DyT.yaml
 
     使用[ICLR2025 PolaFormer)](https://github.com/ZacharyMeng/PolaFormer)中的PolaAttention与[CVPR2025 EVSSM](https://github.com/kkkls/EVSSM)中的EDFFN和[CVPR2025 Mona](https://github.com/Leiyi-Hu/mona)的Mona改进和[CVPR2025 DyT](https://github.com/jiachenzhu/DyT)中的DynamicTan改进AIFI.
+
+57. ultralytics/cfg/models/rt-detr/rtdetr-C2f-mambaout-FDConv.yaml
+
+    使用[CVPR2025 Frequency Dynamic Convolution for Dense Image Prediction](https://github.com/Linwei-Chen/FDConv)的FDConv和[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOutBlock二次创新后改进BackBone.
+
+58. ultralytics/cfg/models/rt-detr/rtdetr-C2f-PFDConv.yaml
+
+    使用[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的PConv与[CVPR2025 Frequency Dynamic Convolution for Dense Image Prediction](https://github.com/Linwei-Chen/FDConv)的FDConv二次创新后改进BackBone.
+
+59. ultralytics/cfg/models/rt-detr/rtdetr-C2f-FasterFDConv.yaml
+
+    使用[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的FasterBlock与[CVPR2025 Frequency Dynamic Convolution for Dense Image Prediction](https://github.com/Linwei-Chen/FDConv)的FDConv二次创新后改进BackBone.
+
+60. ultralytics/cfg/models/rt-detr/rtdetr-C2f-DSAN-EDFFN.yaml
+
+    使用[DSA: Deformable Spatial Attention](https://www.techrxiv.org/users/628671/articles/775010-deformable-spatial-attention-networks-enhancing-lightweight-convolutional-models-for-vision-tasks)中的Deformable Spatial Attention Block和[CVPR2025 EVSSM](https://github.com/kkkls/EVSSM)中的EDFFN进行二次创新后改进BackBone.
+
+61. ultralytics/cfg/models/rt-detr/rtdetr-C2f-mambaout-DSA.yaml
+
+    使用[DSA: Deformable Spatial Attention](https://www.techrxiv.org/users/628671/articles/775010-deformable-spatial-attention-networks-enhancing-lightweight-convolutional-models-for-vision-tasks)中的Deformable Spatial Attention Block与[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOutBlock二次创新后改进BackBone.
 
 ### 自研系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-PACAPN.yaml
@@ -628,6 +648,22 @@
 
     使用[CVPR2025 DarkIR](https://github.com/cidautai/DarkIR)中的EVS与CSP思想改进backbone.
 
+64. ultralytics/cfg/models/rt-detr/rtdetr-C2f-FDConv.yaml
+
+    使用[CVPR2025 Frequency Dynamic Convolution for Dense Image Prediction](https://github.com/Linwei-Chen/FDConv)的FDConv与CSP思想改进BackBone.
+
+65. ultralytics/cfg/models/rt-detr/rtdetr-C2f-DSAN.yaml
+
+    使用[DSA: Deformable Spatial Attention](https://www.techrxiv.org/users/628671/articles/775010-deformable-spatial-attention-networks-enhancing-lightweight-convolutional-models-for-vision-tasks)中的Deformable Spatial Attention Block与CSP改进BackBone.
+
+66. ultralytics/cfg/models/rt-detr/rtdetr-C2f-DSA.yaml
+
+    使用[DSA: Deformable Spatial Attention](https://www.techrxiv.org/users/628671/articles/775010-deformable-spatial-attention-networks-enhancing-lightweight-convolutional-models-for-vision-tasks)中的Deformable Spatial Attention与CSP改进BackBone.
+
+67. ultralytics/cfg/models/rt-detr/rtdetr-C2f-RMB.yaml
+
+    使用[CVPR2025 MaIR](https://github.com/XLearning-SCU/2025-CVPR-MaIR)中的Residual Mamba Block与CSP思想改进BackBone.
+
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -851,6 +887,10 @@
 11. ultralytics/cfg/models/rt-detr/rtdetr-IELC3.yaml
 
     使用[CVPR2025 HVI](https://github.com/Fediory/HVI-CIDNet)中的Intensity Enhancement Layer改进rtdetr中的RepC3.
+
+12. ultralytics/cfg/models/rt-detr/rtdetr-FDConvC3.yaml
+
+    使用[CVPR2025 Frequency Dynamic Convolution for Dense Image Prediction](https://github.com/Linwei-Chen/FDConv)的FDConv改进RepC3.
 
 ### ResNet主干中的BasicBlock/BottleNeck改进系列(以下改进BottleNeck基本都有,就不再重复标注)
 1. ultralytics/cfg/models/rt-detr/rtdetr-Ortho.yaml
@@ -2071,3 +2111,10 @@
     3. 新增CVPR2025-DarkIR中的多个改进.
     4. 更新使用教程.
     5. 百度云视频增加20250523更新说明.
+
+- **20250606-rtdetr-v1.54**
+    1. 新增CVPR2025-FDConv的改进及其多个二次创新模块.
+    2. 新增DSA: Deformable Spatial Attention的改进及其多个二次创新模块.
+    3. 新增CVPR2025-MaIR中的Residual Mamba Block.
+    4. 更新使用教程.
+    5. 百度云视频增加20250606更新说明.
