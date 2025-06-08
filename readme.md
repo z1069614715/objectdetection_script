@@ -84,7 +84,7 @@
     
     项目详细介绍请看[此处](https://github.com/z1069614715/objectdetection_script/blob/master/cvpr2025-deim-project.md)
 
-8. 基于YOLO|RTDETR多模态目标检测项目.(原价288¥,若已购买yolo8101112或rtdetr项目的则优惠50¥=238¥)(项目正在开发、预计20250607发布)
+8. 基于YOLO|RTDETR多模态目标检测项目.(原价288¥,若已购买yolo8101112或rtdetr项目的则优惠50¥=238¥)
 
     项目详细介绍请看[此处](https://github.com/z1069614715/objectdetection_script/blob/master/mutilmodel-project.md)
 
