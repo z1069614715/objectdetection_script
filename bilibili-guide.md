@@ -36,7 +36,7 @@
 23. [深度学习论文实验中新手非常容易陷入的一个误区：抱着解决xxx问题的心态去做实验](https://www.bilibili.com/video/BV1kkkvYJEHG/)
 24. [小目标检测必看系列 | 除了AP-Small指标，可还有AP-VeryTiny、AP-Tiny的指标喔~手把手带你加！](https://www.bilibili.com/video/BV1CYcUeBEzY/)
 25. [YOLO中的实例分割原来是这样巧妙地实现的！你在做YOLO-Seg但是又不知道的话，那你要进来看看咯～](https://www.bilibili.com/video/BV1SkP1e1EHC/)
-26. [我不提倡优化！but 非常时期非常手段！特别做YOLO版本迭代快的一定要看看！](https://www.bilibili.com/video/BV1KC5KzEEN2)
+26. [长达30分钟的吐血讲解！为什么别人的纯YOLO小目标检测能上AAAI2025，你的连个最差的都费劲！看看差距在哪里，怎么改善！](https://www.bilibili.com/video/BV14DJazTEtV)
 
 ### 服务器租用系列
 1. [|DAModel|竟然有一个"不需要装环境就能跑YOLO代码"的服务器平台？让我们一起来看看！](https://www.bilibili.com/video/BV1mg2SYGEGF)
@@ -108,6 +108,7 @@
 12. [yolov5、v7、v8、v9、v10曲线对比图、推理时间vs精度对比图绘制手把手教程！](https://www.bilibili.com/video/BV1yf421X7t5/)
 13. [YOLOV8-输出每一层的图特征图尺寸和通道数.](https://www.bilibili.com/video/BV1Mz421B7xz/)
 14. [YOLOV8V10V11V12更详细的输出精度结果](https://www.bilibili.com/video/BV1dBQDY6Ec5/)
+15. [关于数据集的可视化脚本]()
 
 ### MMDet系列教程
 1. [一库打尽目标检测对比实验！mmdetection环境、训练、测试手把手教程！](https://www.bilibili.com/video/BV1xA4m1c7H8/)
