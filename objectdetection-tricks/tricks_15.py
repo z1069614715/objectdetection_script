@@ -10,8 +10,8 @@ images_folder_path = ['/home/dataset/dataset_visdrone/VisDrone2019-DET-train/ima
 labels_folder_path = ['/home/dataset/dataset_visdrone/VisDrone2019-DET-train/labels',
                       '/home/dataset/dataset_visdrone/VisDrone2019-DET-val/labels',
                       '/home/dataset/dataset_visdrone/VisDrone2019-DET-test-dev/labels']
-# classes = ['pedestrian', 'people', 'bicycle', 'car', 'van', 'truck', 'tricycle', 'awning-tricycle', 'bus', 'motor']
-classes = ['people', 'bicycle', 'van', 'truck', 'tricycle', 'awning-tricycle', 'bus', 'motor']
+classes = ['pedestrian', 'people', 'bicycle', 'car', 'van', 'truck', 'tricycle', 'awning-tricycle', 'bus', 'motor']
+# classes = ['people', 'bicycle', 'van', 'truck', 'tricycle', 'awning-tricycle', 'bus', 'motor']
 object_info = [32*32, 96*96]
 COLOR_LIST = [
     (255, 0, 0),         # 红色 (person)

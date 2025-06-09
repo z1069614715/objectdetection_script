@@ -108,7 +108,7 @@
 12. [yolov5、v7、v8、v9、v10曲线对比图、推理时间vs精度对比图绘制手把手教程！](https://www.bilibili.com/video/BV1yf421X7t5/)
 13. [YOLOV8-输出每一层的图特征图尺寸和通道数.](https://www.bilibili.com/video/BV1Mz421B7xz/)
 14. [YOLOV8V10V11V12更详细的输出精度结果](https://www.bilibili.com/video/BV1dBQDY6Ec5/)
-15. [关于数据集的可视化脚本]()
+15. [关于数据集的可视化脚本](https://www.bilibili.com/video/BV1k2TizGEnH/)
 
 ### MMDet系列教程
 1. [一库打尽目标检测对比实验！mmdetection环境、训练、测试手把手教程！](https://www.bilibili.com/video/BV1xA4m1c7H8/)
