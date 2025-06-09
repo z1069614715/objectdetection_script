@@ -30,6 +30,7 @@
 1. 20250402-基础问题解答
 2. 20250416-基础问题解答
 3. 20250508-基础问题解答
+4. 20250612-基础问题解答
 
 ### 3. 入手本项目需要注意些什么？
 
@@ -100,6 +101,14 @@
     3. 新增cache_ram参数，详细可以看userguide。
     4. 修复在torch2.7.0下出现的NotImplementedError问题。
 
+- 20250609
+
+    1. 修复新增了cache_ram功能后训练COCO数据集精度不正常的问题。
+    2. 修复在训练COCO数据集中数据增强的绘制BUG。
+    3. 新增多个改进模块。
+    4. 新增一些进阶课程的视频。
+    5. 修复用户反馈的已知问题。
+
 ### 7. 进阶视频教程
 
 ------------------------------------- 进阶教程 -------------------------------------  
@@ -118,6 +127,7 @@
 2. 这个项目内的通道数是怎么传递的？特别是backbone与encoder部分，对后续的改进很重要！
 3. 主干进阶改进方案一-给每个stage设定不同的参数
 4. 主干进阶改进方案二-给每个stage使用不同的改进结构
+5. 改进模型后参数量和计算量变得非常大怎么办？为什么会这样？怎么解决？
 
 -------------------------------------------- 特殊配置文件-进阶教程(这部分必须要看完理解完基础课程全部才能看，不然百分百不看懂) <这部分没有观看顺序>  --------------------------------------------  
 1. engine/extre_module/custom_nn/featurefusion/mpca.py
@@ -164,6 +174,10 @@
     12. CVPR2024|engine/extre_module/custom_nn/conv_module/DilatedReparamConv.py
     13. engine/extre_module/custom_nn/conv_module/gConv.py
     14. CVPR2024|engine/extre_module/custom_nn/conv_module/IDWC.py
+    15. engine/extre_module/custom_nn/conv_module/DSA.py
+    16. CVPR2025|engine/extre_module/custom_nn/conv_module/FDConv.py
+    17. CVPR2023|engine/extre_module/custom_nn/conv_module/dcnv3.py
+    18. CVPR2024|engine/extre_module/custom_nn/conv_module/dcnv4.py
 
 - engine/extre_module/custom_nn/upsample
 
@@ -270,6 +284,7 @@
     2. CVPR2025|engine/extre_module/custom_nn/mamba/ASSM.py
     3. CVPR2025|engine/extre_module/custom_nn/mamba/SAVSS.py
     4. CVPR2025|engine/extre_module/custom_nn/mamba/MobileMamba/mobilemamba.py
+    5. CVPR2025|engine/extre_module/custom_nn/mamba/MaIR.py
 
 - 积木模块,示例教程engine/extre_module/custom_nn/module/example.py
 
