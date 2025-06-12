@@ -304,6 +304,30 @@
 
     使用[DSA: Deformable Spatial Attention](https://www.techrxiv.org/users/628671/articles/775010-deformable-spatial-attention-networks-enhancing-lightweight-convolutional-models-for-vision-tasks)中的Deformable Spatial Attention Block和[CVPR2025 EVSSM](https://github.com/kkkls/EVSSM)中的EDFFN进行二次创新后改进C3k2.
 
+77. ultralytics/cfg/models/11/yolo11-SOEP-RFPN.yaml
+
+    使用[ECCV2024 rethinking-fpn](https://github.com/AlanLi1997/rethinking-fpn)的SNI和GSConvE对原创改进SOEP再次创新.
+
+78. ultralytics/cfg/models/11/yolo11-SOEP-MFM.yaml
+
+    使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM对原创改进SOEP再次创新.
+
+79. ultralytics/cfg/models/11/yolo11-SOEP-RFPN-MFM.yaml
+
+    使用[ECCV2024 rethinking-fpn](https://github.com/AlanLi1997/rethinking-fpn)的SNI和GSConvE和[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM对原创改进SOEP再次创新.
+
+80. ultralytics/cfg/models/11/yolo11-C3k2-MambaOut-SFSC.yaml
+
+    使用[CVPR2024 SFSConv](https://github.com/like413/SFS-Conv)的SFSConv与[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOutBlock二次创新后改进C3k2.
+
+81. ultralytics/cfg/models/11/yolo11-C3k2-PSFSConv.yaml
+
+    使用[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的PConv与[CVPR2024 SFSConv](https://github.com/like413/SFS-Conv)的SFSConv二次创新后改进C3k2.
+
+82. ultralytics/cfg/models/11/yolo11-C3k2-FasterSFSC.yaml
+
+    使用[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的FasterBlock与[CVPR2024 SFSConv](https://github.com/like413/SFS-Conv)的SFSConv二次创新后改进C3k2.
+
 ### 自研系列
 1. ultralytics/cfg/models/11/yolo11-LAWDS.yaml
 
@@ -703,6 +727,10 @@
 25. ultralytics/cfg/models/11/yolo11-MFM.yaml
 
     使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM改进neck.
+
+26. ultralytics/cfg/models/11/yolo11-RFPN.yaml
+
+    使用[ECCV2024 rethinking-fpn](https://github.com/AlanLi1997/rethinking-fpn)的SNI和GSConvE改进YOLO11-neck.
 
 ### Head系列
 1. ultralytics/cfg/models/11/yolo11-dyhead.yaml
@@ -1215,6 +1243,30 @@
 
     使用[CVPR2025 MaIR](https://github.com/XLearning-SCU/2025-CVPR-MaIR)中的Residual Mamba Block改进C3k2.
 
+106. ultralytics/cfg/models/11/yolo11-C3k2-SFSConv.yaml
+
+    使用[CVPR2024 SFSConv](https://github.com/like413/SFS-Conv)的SFSConv改进C3k2.
+
+107. ultralytics/cfg/models/11/yolo11-C3k2-GroupMamba.yaml
+
+    使用[CVPR2025 GroupMamba](https://github.com/Amshaker/GroupMamba)中的GroupMambaLayer改进C3k2.
+
+108. ultralytics/cfg/models/11/yolo11-C3k2-GroupMambaBlock.yaml
+
+    使用[CVPR2025 GroupMamba](https://github.com/Amshaker/GroupMamba)中的GroupMambaBlock改进C3k2.
+
+109. ultralytics/cfg/models/11/yolo11-C3k2-MambaVision.yaml
+
+    使用[CVPR2025 MambaVision](https://github.com/NVlabs/MambaVision)中的MambaVision改进C3k2.
+
+110. ultralytics/cfg/models/11/yolo11-FCM.yaml
+
+    使用[AAAI2025 FBRT-YOLO](https://github.com/galaxy-oss/FCM)的模块改进yolo11.
+
+111. ultralytics/cfg/models/12/yolo12-FCM.yaml
+
+    使用[AAAI2025 FBRT-YOLO](https://github.com/galaxy-oss/FCM)的模块改进yolo12.
+
 ### C2PSA系列
 
 1. ultralytics/cfg/models/11/yolo11-C2BRA.yaml
@@ -1582,3 +1634,12 @@
     3. 新增CVPR2025-MaIR中的Residual Mamba Block.
     4. 更新使用教程.
     5. 百度云视频增加20250601更新说明.
+
+- **20250612-yolo11-v1.24**
+    1. 新增ECCV2024-rethinkingfpn中的模块，并对原创改进SOEP再次创新。
+    2. 新增CVPR2024-SFSConv的改进及其多个二次创新模块.
+    3. 新增CVPR2025-GroupMamba中的模块.
+    4. 新增CVPR2025-MambaVision中的模块.
+    5. 新增AAAI2025-FBRTYOLO中的模块.
+    6. 更新使用教程.
+    7. 百度云视频增加20250612更新说明.
