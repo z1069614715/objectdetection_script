@@ -30,7 +30,7 @@
 1. 20250402-基础问题解答
 2. 20250416-基础问题解答
 3. 20250508-基础问题解答
-4. 20250612-基础问题解答
+4. 20250618-基础问题解答
 
 ### 3. 入手本项目需要注意些什么？
 
@@ -109,6 +109,12 @@
     4. 新增一些进阶课程的视频。
     5. 修复用户反馈的已知问题。
 
+- 20250614
+
+    1. 新增Ultralytics的配置文件方式，大大降低改进难度。
+    2. 新增一些<Ultralytics的配置文件方式>进阶课程的视频。
+    3. 新增多个改进模块。
+
 ### 7. 进阶视频教程
 
 ------------------------------------- 进阶教程 -------------------------------------  
@@ -138,6 +144,14 @@
 5. engine/extre_module/custom_nn/mlp/SEFN.py
 6. engine/extre_module/custom_nn/neck/FDPN.py
 
+-------------------------------------------- Ultralytics配置文件版本教程 <即使你使用配置文件方式去跑也建议B站的基础视频和项目内的其他视频都看一下，对后面做二次创新时候的代码有帮助> --------------------------------------------
+1. 原始配置文件讲解
+2. 怎么使用预训练权重
+3. Ultralytics配置文件版本的热力图和特征图脚本使用教程
+4. 注册模块示例教程一
+5. 注册模块示例教程二(Conv、attention部分)
+6. 注册模块示例教程三(module、block部分)
+
 ### 8. 目前已有的模块
 
 - engine/extre_module/custom_nn/attention 
@@ -151,6 +165,7 @@
     7. engine/extre_module/custom_nn/attention/mlca.py
     8. BIBM2024|engine/extre_module/custom_nn/attention/FSA.py
     9. AAAI2025|engine/extre_module/custom_nn/attention/CDFA.py
+    10. engine/extre_module/custom_nn/attention/GLSA.py
 
 - engine/extre_module/custom_nn/block
 
@@ -178,6 +193,8 @@
     16. CVPR2025|engine/extre_module/custom_nn/conv_module/FDConv.py
     17. CVPR2023|engine/extre_module/custom_nn/conv_module/dcnv3.py
     18. CVPR2024|engine/extre_module/custom_nn/conv_module/dcnv4.py
+    19. CVPR2024|engine/extre_module/custom_nn/conv_module/DynamicConv.py
+    20. CVPR2024|engine/extre_module/custom_nn/conv_module/FADC.py
 
 - engine/extre_module/custom_nn/upsample
 
@@ -240,6 +257,8 @@
     23. CVPR2024|engine/extre_module/custom_nn/module/IDWB.py
     24. ECCV2022|engine/extre_module/custom_nn/module/LFE.py
     25. AAAI2025|engine/extre_module/custom_nn/module/FCM.py
+    26. CVPR2024|engine/extre_module/custom_nn/module/RepViTBlock.py
+    27. CVPR2024|engine/extre_module/custom_nn/module/PKIModule.py
 
 - engine/extre_module/custom_nn/neck
 
