@@ -49,5 +49,8 @@
 - **tricks_15** 
     1. 统计YOLO格式数据集中每个类别的实例数和对应小中大目标的实例数。
     2. 可视化YOLO格式数据集中的标签。
-    3. 去掉YOLO格式数据集中的部分类别并类别重新排序。
+    3. 去掉YOLO格式数据集中的部分类别并类别重新排序。  
     视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1k2TizGEnH). 
+- **tricks_16**  
+    用于调试生成COCO指标的文件.  
+    视频教学地址：[哔哩哔哩](https://www.bilibili.com/video/BV1SdNizEE4X/).  
