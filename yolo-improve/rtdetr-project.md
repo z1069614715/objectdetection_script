@@ -288,6 +288,30 @@
 
     使用[DSA: Deformable Spatial Attention](https://www.techrxiv.org/users/628671/articles/775010-deformable-spatial-attention-networks-enhancing-lightweight-convolutional-models-for-vision-tasks)中的Deformable Spatial Attention Block与[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOutBlock二次创新后改进BackBone.
 
+62. ultralytics/cfg/models/rt-detr/rtdetr-SOEP-RFPN.yaml
+
+    使用[ECCV2024 rethinking-fpn](https://github.com/AlanLi1997/rethinking-fpn)的SNI和GSConvE对原创改进SOEP再次创新.
+
+63. ultralytics/cfg/models/rt-detr/rtdetr-SOEP-MFM.yaml
+
+    使用[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM对原创改进SOEP再次创新.
+
+64. ultralytics/cfg/models/rt-detr/rtdetr-SOEP-MFM-RFPN.yaml
+
+    使用[ECCV2024 rethinking-fpn](https://github.com/AlanLi1997/rethinking-fpn)的SNI和GSConvE和[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM对原创改进SOEP再次创新.
+
+65. ultralytics/cfg/models/rt-detr/rtdetr-C2f-mambaout-SFSC.yaml
+
+    使用[CVPR2024 SFSConv](https://github.com/like413/SFS-Conv)的SFSConv与[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOutBlock二次创新后改进C2f.
+
+66. ultralytics/cfg/models/rt-detr/rtdetr-C2f-PSFSConv.yaml
+
+    使用[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的PConv与[CVPR2024 SFSConv](https://github.com/like413/SFS-Conv)的SFSConv二次创新后改进C2f.
+
+67. ultralytics/cfg/models/rt-detr/rtdetr-C2f-FasterSFSConv.yaml
+
+    使用[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的FasterBlock与[CVPR2024 SFSConv](https://github.com/like413/SFS-Conv)的SFSConv二次创新后改进C2f.
+
 ### 自研系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-PACAPN.yaml
 
@@ -411,6 +435,10 @@
 20. ultralytics/cfg/models/rt-detr/rtdetr-MutilBackbone-HAFB.yaml
 
     在rtdetr-MutilBackbone-DAF.yaml上引入HAFB(Hierarchical Attention Fusion Block).
+
+21. ultralytics/cfg/models/rt-detr/rtdetr-RFPN.yaml
+
+    使用[ECCV2024 rethinking-fpn](https://github.com/AlanLi1997/rethinking-fpn)的SNI和GSConvE改进rtdetr-neck.
 
 ### BackBone系列
 1. ultralytics/cfg/models/rt-detr/rt-detr-timm.yaml
@@ -663,6 +691,26 @@
 67. ultralytics/cfg/models/rt-detr/rtdetr-C2f-RMB.yaml
 
     使用[CVPR2025 MaIR](https://github.com/XLearning-SCU/2025-CVPR-MaIR)中的Residual Mamba Block与CSP思想改进BackBone.
+
+68. ultralytics/cfg/models/rt-detr/rtdetr-C2f-SFSConv.yaml
+
+    使用[CVPR2024 SFSConv](https://github.com/like413/SFS-Conv)的SFSConv改进C2f.
+
+69. ultralytics/cfg/models/rt-detr/rtdetr-C2f-GroupMamba.yaml
+
+    使用[CVPR2025 GroupMamba](https://github.com/Amshaker/GroupMamba)中的GroupMambaLayer与CSP思想改进Backbone.
+
+70. ultralytics/cfg/models/rt-detr/rtdetr-C2f-GroupMambaBlock.yaml
+
+    使用[CVPR2025 GroupMamba](https://github.com/Amshaker/GroupMamba)中的GroupMambaBlock与CSP思想改进Backbone.
+
+71. ultralytics/cfg/models/rt-detr/rtdetr-C2f-MambaVision.yaml
+
+    使用[CVPR2025 MambaVision](https://github.com/NVlabs/MambaVision)中的MambaVision与CSP思想改进Backbone.
+
+72. ultralytics/cfg/models/rt-detr/rtdetr-FCM.yaml
+
+    使用[AAAI2025 FBRT-YOLO](https://github.com/galaxy-oss/FCM)的模块改进rtdetr.
 
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
@@ -2118,3 +2166,12 @@
     3. 新增CVPR2025-MaIR中的Residual Mamba Block.
     4. 更新使用教程.
     5. 百度云视频增加20250606更新说明.
+
+- **20250622-rtdetr-v1.55**
+    1. 新增ECCV2024-rethinkingfpn中的模块，并对原创改进SOEP再次创新。
+    2. 新增CVPR2024-SFSConv的改进及其多个二次创新模块.
+    3. 新增CVPR2025-GroupMamba中的模块.
+    4. 新增CVPR2025-MambaVision中的模块.
+    5. 新增AAAI2025-FBRTYOLO中的模块.
+    5. 更新使用教程.
+    6. 百度云视频增加20250622更新说明.
