@@ -117,6 +117,22 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     2. 新增一些<Ultralytics的配置文件方式>进阶课程的视频。
     3. 新增多个改进模块。
 
+- 20250617
+
+    1. 修复配置文件中层序号有误的问题。
+
+- 20250619
+
+    1. 修复配置文件中层序号有误的问题。
+    2. 新增多个改进模块。
+    3. 新增一些<Ultralytics的配置文件方式>进阶课程的视频。
+
+- 20250625
+
+    1. 修复best_stg2保存异常的问题。
+    2. 新增YOLOV13中的HyperACE模块。
+    3. 新增多个关于<Ultralytics的配置文件方式>进阶课程的视频。
+
 ### 7. 进阶视频教程
 
 ------------------------------------- 进阶教程 -------------------------------------  
@@ -129,6 +145,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
 4. heatmap脚本使用教程
 5. tools/inference/torch_inf.py
 6. 20250513基础疑问解答直播回放链接
+7. 20250618基础疑问解答直播回放链接
 
 -------------------------------------------- 基础教程补充版 (这部分建议理解完基础课程全部再看) --------------------------------------------  
 1. 如何快速得知每个改进模块的输入输出格式相关信息
@@ -153,6 +170,11 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
 4. 注册模块示例教程一
 5. 注册模块示例教程二(Conv、attention部分)
 6. 注册模块示例教程三(module、block部分)
+7. 注册模块示例教程四(搭积木神器(万物皆可融)部分)
+8. 注册模块示例教程五(HyperACE)
+9. 注册模块示例教程六(featurefusion部分)
+10. 自研模块FDPN在配置文件中的实现讲解
+11. YOLO13中的HyperACE在DEIM中的应用
 
 ### 8. 目前已有的模块
 
@@ -197,6 +219,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     18. CVPR2024|engine/extre_module/custom_nn/conv_module/dcnv4.py
     19. CVPR2024|engine/extre_module/custom_nn/conv_module/DynamicConv.py
     20. CVPR2024|engine/extre_module/custom_nn/conv_module/FADC.py
+    21. CVPR2023|engine/extre_module/custom_nn/conv_module/SMPConv.py
 
 - engine/extre_module/custom_nn/upsample
 
@@ -265,6 +288,11 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
 - engine/extre_module/custom_nn/neck
 
     1. 自研模块|engine/extre_module/custom_nn/neck/FDPN.py
+
+- engine/extre_module/custom_nn/neck_module
+
+    1. TPAMI2025|engine/extre_module/custom_nn/neck_module/HyperCompute.py
+    2. engine/extre_module/custom_nn/neck_module/HyperACE.py
 
 - engine/extre_module/custom_nn/norm
 
