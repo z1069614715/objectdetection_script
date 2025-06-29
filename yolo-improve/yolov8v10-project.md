@@ -1,6 +1,6 @@
 # [基于Ultralytics的YOLOV8V10改进项目.(69.9¥)](https://github.com/z1069614715/objectdetection_script)
 
-# 目前自带的一些改进方案(目前拥有合计270+个改进点！持续更新！)
+# 目前自带的一些改进方案(目前拥有合计280+个改进点！持续更新！)
 
 # 为了感谢各位对本项目的支持,本项目的赠品是yolov5-PAGCP通道剪枝算法.[具体使用教程](https://www.bilibili.com/video/BV1yh4y1Z7vz/)
 
@@ -230,6 +230,10 @@
 58. ultralytics/cfg/models/v8/yolov8-C2f-mambaout-LSConv.yaml
 
     使用[CVPR2025 LSNet](https://github.com/THU-MIG/lsnet)的LSConv与[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOutBlock二次创新后改进C2f.
+
+59. ultralytics/cfg/models/v8/yolov8-SOEP-RFPN-MFM.yaml
+
+    使用[ECCV2024 rethinking-fpn](https://github.com/AlanLi1997/rethinking-fpn)的SNI和GSConvE和[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM对原创改进SOEP再次创新.
 
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
@@ -638,6 +642,10 @@
 26. ultralytics/cfg/models/v8/yolov8-GDSAFusion.yaml
 
     使用[CVPR2025 OverLock](https://arxiv.org/pdf/2502.20087)中的GDSAFusion改进neck.
+
+27. ultralytics/cfg/models/v8/yolov8-RFPN.yaml
+
+    使用[ECCV2024 rethinking-fpn](https://github.com/AlanLi1997/rethinking-fpn)的SNI和GSConvE改进YOLOV8-neck.
 
 ### Head系列
 1. ultralytics/cfg/models/v8/yolov8-dyhead.yaml
@@ -1087,6 +1095,22 @@
 
     使用[CVPR2025 DarkIR](https://github.com/cidautai/DarkIR)中的DBlock改进C2f.
 
+91. ultralytics/cfg/models/v8/yolov8-C2f-SFSConv.yaml
+
+    使用[CVPR2024 SFSConv](https://github.com/like413/SFS-Conv)的SFSConv改进C2f.
+
+92. ultralytics/cfg/models/v8/yolov8-FCM.yaml
+
+    使用[AAAI2025 FBRT-YOLO](https://github.com/galaxy-oss/FCM)的模块改进yolov8.
+
+93. ultralytics/cfg/models/v8/yolov8-C2f-GroupMamba.yaml
+
+    使用[CVPR2025 GroupMamba](https://github.com/Amshaker/GroupMamba)中的GroupMambaBlock改进C2f.
+
+94. ultralytics/cfg/models/v8/yolov8-C2f-MambaVision.yaml
+
+    使用[CVPR2025 MambaVision](https://github.com/NVlabs/MambaVision)中的MambaVision改进C2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -1272,6 +1296,10 @@
 38. ultralytics/cfg/models/v10/yolov10n-C2f-mambaout-LSConv.yaml
 
     使用[CVPR2025 LSNet](https://github.com/THU-MIG/lsnet)的LSConv与[CVPR2025 MambaOut](https://github.com/yuweihao/MambaOut)中的MambaOutBlock二次创新后改进C2f.
+
+39. ultralytics/cfg/models/v10/yolov10n-SOEP-RFPN-MFM.yaml
+
+    使用[ECCV2024 rethinking-fpn](https://github.com/AlanLi1997/rethinking-fpn)的SNI和GSConvE和[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM对原创改进SOEP再次创新.
 
 ### 自研系列
 
@@ -1618,6 +1646,10 @@
 
     使用[CVPR2025 OverLock](https://arxiv.org/pdf/2502.20087)中的GDSAFusion改进neck.
 
+19. ultralytics/cfg/models/v10/yolov10n-RFPN.yaml
+
+    使用[ECCV2024 rethinking-fpn](https://github.com/AlanLi1997/rethinking-fpn)的SNI和GSConvE改进YOLOV10n-neck.
+
 ### Head系列
 
 1. ultralytics/cfg/models/v10/yolov10n-dyhead.yaml
@@ -1901,6 +1933,22 @@
 55. ultralytics/cfg/models/v10/yolov10n-C2f-DBlock.yaml
 
     使用[CVPR2025 DarkIR](https://github.com/cidautai/DarkIR)中的DBlock改进C2f.
+
+56. ultralytics/cfg/models/v10/yolov10n-C2f-SFSConv.yaml
+
+    使用[CVPR2024 SFSConv](https://github.com/like413/SFS-Conv)的SFSConv改进C2f.
+
+57. ultralytics/cfg/models/v10/yolov10n-FCM.yaml
+
+    使用[AAAI2025 FBRT-YOLO](https://github.com/galaxy-oss/FCM)的模块改进yolov10.
+
+58. ultralytics/cfg/models/v10/yolov10n-C2f-GroupMamba.yaml
+
+    使用[CVPR2025 GroupMamba](https://github.com/Amshaker/GroupMamba)中的GroupMambaBlock改进C2f.
+
+59. ultralytics/cfg/models/v10/yolov10n-C2f-MambaVision.yaml
+
+    使用[CVPR2025 MambaVision](https://github.com/NVlabs/MambaVision)中的MambaVision改进C2f.
 
 ### PSA系列
 
@@ -2566,3 +2614,13 @@
     3. 新增CVPR2025-EVSSM的改进.
     4. 更新使用教程.
     5. 百度云视频增加20250601更新说明.
+
+- **20250629-ultralytics-v1.89**
+    1. 新增ECCV2024-rethinkingfpn中的模块，并对原创改进SOEP再次创新。
+    2. 新增CVPR2024-SFSConv的模块.
+    3. 新增CVPR2025-GroupMamba中的模块.
+    4. 新增CVPR2025-MambaVision中的模块.
+    5. 新增AAAI2025-FBRTYOLO中的模块.
+    6. 更新使用教程.
+    7. 百度云视频增加20250629更新说明.
+    8. 修复在torch2.6.0以及以上的版本会出现模型读取失败的问题.
