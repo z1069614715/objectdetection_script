@@ -133,6 +133,12 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     2. 新增YOLOV13中的HyperACE模块。
     3. 新增多个关于<Ultralytics的配置文件方式>进阶课程的视频。
 
+- 20250705
+
+    1. 新增多个改进模块。
+    2. 新增多个关于<Ultralytics的配置文件方式>进阶课程的视频。
+    3. 新增20250704基础疑问解答直播回放链接。
+
 ### 7. 进阶视频教程
 
 ------------------------------------- 进阶教程 -------------------------------------  
@@ -146,6 +152,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
 5. tools/inference/torch_inf.py
 6. 20250513基础疑问解答直播回放链接
 7. 20250618基础疑问解答直播回放链接
+8. 20250704基础疑问解答直播回放链接
 
 -------------------------------------------- 基础教程补充版 (这部分建议理解完基础课程全部再看) --------------------------------------------  
 1. 如何快速得知每个改进模块的输入输出格式相关信息
@@ -175,6 +182,9 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
 9. 注册模块示例教程六(featurefusion部分)
 10. 自研模块FDPN在配置文件中的实现讲解
 11. YOLO13中的HyperACE在DEIM中的应用
+12. 注册模块示例教程七(transformer部分)
+13. 注册模块示例教程八(GOLD-YOLO)
+14. GOLO-YOLO在DEIM中的应用(包含怎么对其二次创新)
 
 ### 8. 目前已有的模块
 
@@ -220,6 +230,8 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     19. CVPR2024|engine/extre_module/custom_nn/conv_module/DynamicConv.py
     20. CVPR2024|engine/extre_module/custom_nn/conv_module/FADC.py
     21. CVPR2023|engine/extre_module/custom_nn/conv_module/SMPConv.py
+    22. MIA2025|engine/extre_module/custom_nn/conv_module/FourierConv.py
+    23. CVPR2024|engine/extre_module/custom_nn/conv_module/SFSConv.py
 
 - engine/extre_module/custom_nn/upsample
 
@@ -254,6 +266,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     5. BIBM2024|engine/extre_module/custom_nn/featurefusion/mpca.py
     6. ACMMM2024|engine/extre_module/custom_nn/featurefusion/wfu.py
     7. CVPR2025|engine/extre_module/custom_nn/featurefusion/GDSAFusion.py
+    8. engine/extre_module/custom_nn/featurefusion/PST.py
 
 - engine/extre_module/custom_nn/module
 
@@ -284,6 +297,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     25. AAAI2025|engine/extre_module/custom_nn/module/FCM.py
     26. CVPR2024|engine/extre_module/custom_nn/module/RepViTBlock.py
     27. CVPR2024|engine/extre_module/custom_nn/module/PKIModule.py
+    28. CVPR2024|engine/extre_module/custom_nn/module/camixer.py
 
 - engine/extre_module/custom_nn/neck
 
@@ -293,6 +307,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
 
     1. TPAMI2025|engine/extre_module/custom_nn/neck_module/HyperCompute.py
     2. engine/extre_module/custom_nn/neck_module/HyperACE.py
+    3. engine/extre_module/custom_nn/neck_module/GoldYOLO.py
 
 - engine/extre_module/custom_nn/norm
 
