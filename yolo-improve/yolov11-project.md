@@ -1,7 +1,7 @@
 # [基于Ultralytics的YOLO11|YOLO12改进项目.(69.9¥)](https://github.com/z1069614715/objectdetection_script)
 #### 因为YOLO11和YOLO12的结构高度相似，所以YOLO12的配置文件都可以从YOLO11修改过去，项目内有标注视频链接！
 
-# 目前自带的一些改进方案(目前拥有合计350+个改进点！持续更新！)
+# 目前自带的一些改进方案(目前拥有合计360+个改进点！持续更新！)
 
 # 为了感谢各位对本项目的支持,本项目的赠品是yolov5-PAGCP通道剪枝算法.[具体使用教程](https://www.bilibili.com/video/BV1yh4y1Z7vz/)
 
@@ -327,6 +327,10 @@
 82. ultralytics/cfg/models/11/yolo11-C3k2-FasterSFSC.yaml
 
     使用[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的FasterBlock与[CVPR2024 SFSConv](https://github.com/like413/SFS-Conv)的SFSConv二次创新后改进C3k2.
+
+83. ultralytics/cfg/models/11/yolo11-SOEP-PST.yaml
+
+    使用[Pyramid Sparse Transformer](https://arxiv.org/abs/2505.12772)中的Pyramid Sparse Transformer对原创改进SOEP进行创新.
 
 ### 自研系列
 1. ultralytics/cfg/models/11/yolo11-LAWDS.yaml
@@ -732,6 +736,18 @@
 
     使用[ECCV2024 rethinking-fpn](https://github.com/AlanLi1997/rethinking-fpn)的SNI和GSConvE改进YOLO11-neck.
 
+27. ultralytics/cfg/models/11/yolo11-PST.yaml
+
+    使用[Pyramid Sparse Transformer](https://arxiv.org/abs/2505.12772)中的Pyramid Sparse Transformer改进yolo11-neck.
+
+28. ultralytics/cfg/models/11/yolo11-HS-FPN.yaml
+
+    使用[AAAI2025 HS-FPN](https://github.com/ShiZican/HS-FPN/tree/main)中的HFP和SDP改进yolo11-neck.
+
+29. ultralytics/cfg/models/11/yolo11-MSAM.yaml
+
+    使用[TGRS2025 UMFormer](https://github.com/takeyoutime/UMFormer)中的MSAM和yolo13的扩散机制改进yolo11-neck.
+
 ### Head系列
 1. ultralytics/cfg/models/11/yolo11-dyhead.yaml
 
@@ -837,6 +853,14 @@
 13. ultralytics/cfg/models/11/yolo11-LoGStem.yaml
 
     使用[LEGNet](https://github.com/lwCVer/LEGNet)中的LoGStem改进Stem(第一第二层卷积).
+
+14. ultralytics/cfg/models/11/yolo11-wConv.yaml
+
+    使用[weightedConvolution2.0](https://github.com/cammarasana123/weightedConvolution2.0)中的wConv2d改进yolo11.
+
+15. ultralytics/cfg/models/11/yolo11-FourierConv.yaml
+
+    使用[MIA2025 Fourier Convolution Block with global receptive field for MRI reconstruction](https://www.sciencedirect.com/science/article/abs/pii/S1361841524002743)中的FourierConv改进Conv.
 
 ### YOLO11-C3k2系列
 1. ultralytics/cfg/models/11/yolo11-C3k2-Faster.yaml
@@ -1267,6 +1291,18 @@
 
     使用[AAAI2025 FBRT-YOLO](https://github.com/galaxy-oss/FCM)的模块改进yolo12.
 
+112. ultralytics/cfg/models/11/yolo11-C3k2-wConv.yaml
+
+    使用[weightedConvolution2.0](https://github.com/cammarasana123/weightedConvolution2.0)中的wConv2d改进C3k2.
+
+113. ultralytics/cfg/models/11/yolo11-C3k2-FourierConv.yaml
+
+    使用[MIA2025 Fourier Convolution Block with global receptive field for MRI reconstruction](https://www.sciencedirect.com/science/article/abs/pii/S1361841524002743)中的FourierConv改进C3k2.
+
+114. ultralytics/cfg/models/11/yolo11-C3k2-GLVSS.yaml
+
+    使用[TGRS2025 UMFormer](https://github.com/takeyoutime/UMFormer)中的GLVSS改进C3k2.
+
 ### C2PSA系列
 
 1. ultralytics/cfg/models/11/yolo11-C2BRA.yaml
@@ -1647,3 +1683,13 @@
 - **20250624-yolo11-v1.25**
     1. 新增YOLOV13配置文件(包含detect、seg、pose、obb)。
     2. 更新使用教程.
+
+- **20250706-yolo11-v1.26**
+    1. 新增Pyramid Sparse Transformer改进yolo11-neck.
+    2. 新增Pyramid Sparse Transformer对SOEP再创新.
+    3. 新增weightedConvolution2.0.
+    4. 新增MIA2025-FourierConv.
+    5. 新增AAAI2025的HS-FPN.
+    6. 新增TGRS2025-UMFormer多个模块改进.
+    7. 更新使用教程.
+    8. 百度云视频增加20250706更新说明.
