@@ -37,6 +37,8 @@
 24. [小目标检测必看系列 | 除了AP-Small指标，可还有AP-VeryTiny、AP-Tiny的指标喔~手把手带你加！](https://www.bilibili.com/video/BV1CYcUeBEzY/)
 25. [YOLO中的实例分割原来是这样巧妙地实现的！你在做YOLO-Seg但是又不知道的话，那你要进来看看咯～](https://www.bilibili.com/video/BV1SkP1e1EHC/)
 26. [长达30分钟的吐血讲解！为什么别人的纯YOLO小目标检测能上AAAI2025，你的连个最差的都费劲！看看差距在哪里，怎么改善！](https://www.bilibili.com/video/BV14DJazTEtV)
+27. [深度学习论文中的基础实验、改进实验、 消融实验、对比实验、泛化实验｜这些究竟是什么？](https://www.bilibili.com/video/BV1NYKUz2E6b/)
+28. [深度学习论文中的推理结果图、热力图、特征图究竟应该怎么放？需要注意什么？有什么作用？](https://www.bilibili.com/video/BV1s5gQzcEPh/)
 
 ### 服务器租用系列
 1. [|DAModel|竟然有一个"不需要装环境就能跑YOLO代码"的服务器平台？让我们一起来看看！](https://www.bilibili.com/video/BV1mg2SYGEGF)
@@ -229,6 +231,8 @@
 1. [Ultralytics8.3.0沉浸式讲解-YOLOV11针对代码的详细剖析](https://www.bilibili.com/video/BV19XxxeXEma/)
 2. [保姆级别YOLOV11-环境配置、 数据集介绍、训练、验证、推理 详细教学视频，看了它，跑YOLOV11 没问题~](https://www.bilibili.com/video/BV1VA11YBELB/)
 3. [YOLOV11改进详细分析(改进前必看)，每个部分(Backbone、Neck、Head....)有哪些地方可以改进？改进的时候要避免小白三件套！](https://www.bilibili.com/video/BV1GKCdYbEuz/)
+#### YOLOV13
+1. [哎哟你干嘛！YOLO又又又又出新版本了，YOLOV13来了！我们来看看YOLOV13改进了什么，对正在做YOLO改进的同学有什么影响？](https://www.bilibili.com/video/BV1jqKbzGEua/)
 #### D-Fine-ICLR2025
 1. [暴打CVPR2024-RTDETR的D-Fine究竟性能如何？我们一起来训练看看~](https://www.bilibili.com/video/BV1aE6aYHEer/)
 #### DEIM-CVPR2025
