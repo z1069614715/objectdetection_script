@@ -312,6 +312,10 @@
 
     使用[FasterNet CVPR2023](https://github.com/JierunChen/FasterNet)中的FasterBlock与[CVPR2024 SFSConv](https://github.com/like413/SFS-Conv)的SFSConv二次创新后改进C2f.
 
+68. ultralytics/cfg/models/rt-detr/rtdetr-SOEP-PST.yaml 
+
+    使用[Pyramid Sparse Transformer](https://arxiv.org/abs/2505.12772)中的Pyramid Sparse Transformer对原创改进SOEP进行创新.
+
 ### 自研系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-PACAPN.yaml
 
@@ -712,6 +716,14 @@
 
     使用[AAAI2025 FBRT-YOLO](https://github.com/galaxy-oss/FCM)的模块改进rtdetr.
 
+73. ultralytics/cfg/models/rt-detr/rtdetr-C2f-FourierConv.yaml
+
+    使用[MIA2025 Fourier Convolution Block with global receptive field for MRI reconstruction](https://www.sciencedirect.com/science/article/abs/pii/S1361841524002743)中的FourierConv改进C2f.
+
+74. ultralytics/cfg/models/rt-detr/rtdetr-C2f-wConv.yaml
+
+    使用[weightedConvolution2.0](https://github.com/cammarasana123/weightedConvolution2.0)中的wConv2d改进C2f.
+
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -887,6 +899,18 @@
 23. ultralytics/cfg/models/rt-detr/rtdetr-GDSAFusion.yaml
 
     使用[CVPR2025 OverLock](https://arxiv.org/pdf/2502.20087)中的GDSAFusion改进Fusion.
+
+24. ultralytics/cfg/models/rt-detr/rtdetr-PST.yaml 
+
+    使用[Pyramid Sparse Transformer](https://arxiv.org/abs/2505.12772)中的Pyramid Sparse Transformer改进rtdetr-r18.
+
+25. ultralytics/cfg/models/rt-detr/rtdetr-HS-FPN.yaml
+
+    使用[AAAI2025 HS-FPN](https://github.com/ShiZican/HS-FPN/tree/main)中的HFP和SDP改进rtdetr-neck.
+
+26. ultralytics/cfg/models/rt-detr/rtdetr-HyperACE.yaml
+
+    使用[yolo13](https://github.com/iMoonLab/yolov13)中的HyperACE改进rtdetr-neck.
 
 ### Head系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-p2.yaml
@@ -1072,6 +1096,14 @@
 10. ultralytics/cfg/models/rt-detr/rtdetr-LoGStem.yaml
 
     使用[LEGNet](https://github.com/lwCVer/LEGNet)中的LoGStem改进Stem.
+
+11. ultralytics/cfg/models/rt-detr/rtdetr-FourierConv.yaml
+
+    使用[MIA2025 Fourier Convolution Block with global receptive field for MRI reconstruction](https://www.sciencedirect.com/science/article/abs/pii/S1361841524002743)中的FourierConv改进Conv.
+
+12. ultralytics/cfg/models/rt-detr/rtdetr-wConv.yaml
+
+    使用[weightedConvolution2.0](https://github.com/cammarasana123/weightedConvolution2.0)中的wConv2d改进rtdetr.
 
 ### RT-DETR-L改进系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-l-GhostHGNetV2.yaml
@@ -2176,3 +2208,12 @@
     5. 更新使用教程.
     6. 百度云视频增加20250622更新说明.
     7. 修复在torch2.6.0以及以上的版本会出现模型读取失败的问题.
+
+- **20250711-rtdetr-v1.56**
+    1. 新增Pyramid Sparse Transformer改进rtdetr-neck.
+    2. 新增Pyramid Sparse Transformer对SOEP再创新.
+    3. 新增weightedConvolution2.0.
+    4. 新增MIA2025-FourierConv.
+    5. 新增AAAI2025的HS-FPN.
+    6. 更新使用教程.
+    7. 百度云视频增加20250711更新说明.
