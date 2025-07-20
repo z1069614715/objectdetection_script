@@ -748,6 +748,10 @@
 
     使用[TGRS2025 UMFormer](https://github.com/takeyoutime/UMFormer)中的MSAM和yolo13的扩散机制改进yolo11-neck.
 
+30. ultralytics/cfg/models/11/yolo11-DPCF.yaml
+
+    使用[INFFUS2025 SAMamba](https://arxiv.org/pdf/2505.23214)中的DPCF改进neck.
+
 ### Head系列
 1. ultralytics/cfg/models/11/yolo11-dyhead.yaml
 
@@ -1303,6 +1307,30 @@
 
     使用[TGRS2025 UMFormer](https://github.com/takeyoutime/UMFormer)中的GLVSS改进C3k2.
 
+115. ultralytics/cfg/models/11/yolo11-C3k2-ESC.yaml
+
+    使用[ICCV2025 ESC: Emulating Self-attention with Convolution for Efficient Image Super-Resolution](https://github.com/dslisleedh/ESC)中的ESC改进C3k2.
+
+116. ultralytics/cfg/models/11/yolo11-C3k2-MBRConv3.yaml
+
+    使用[ICCV2025 MobileIE](https://github.com/AVC2-UESTC/MobileIE)中的MBRConv3改进C3k2.
+
+117. ultralytics/cfg/models/11/yolo11-C3k2-MBRConv5.yaml
+
+    使用[ICCV2025 MobileIE](https://github.com/AVC2-UESTC/MobileIE)中的MBRConv5改进C3k2.
+
+118. ultralytics/cfg/models/11/yolo11-C3k2-VSSD.yaml
+
+    使用[ICCV2025 VSSD](https://github.com/YuHengsss/VSSD)中的VSSD改进C3k2.
+
+119. ultralytics/cfg/models/11/yolo11-C3k2-TinyVIM.yaml
+
+    使用[ICCV2025 TinyVIM](https://arxiv.org/abs/2411.17473)中的TinyVIMBlock改进C3k2.
+
+120. ultralytics/cfg/models/11/yolo11-C3k2-CSI.yaml
+
+    使用[INFFUS2025 SAMamba](https://arxiv.org/pdf/2505.23214)中的CSI改进C3k2.
+
 ### C2PSA系列
 
 1. ultralytics/cfg/models/11/yolo11-C2BRA.yaml
@@ -1376,6 +1404,10 @@
 18. ultralytics/cfg/models/11/yolo11-C2PSA-EDFFN.yaml
 
     使用[CVPR2025 EVSSM](https://github.com/kkkls/EVSSM)中的EDFFN改进C2PSA.
+
+19. ultralytics/cfg/models/11/yolo11-C2MSLA.yaml
+
+    使用[MSLA](https://arxiv.org/pdf/2505.18823)改进C2PSA.
 
 ### A2C2f系列
 1. ultralytics/cfg/models/12/yolo12-A2C2f-CGLU.yaml
@@ -1693,3 +1725,13 @@
     6. 新增TGRS2025-UMFormer多个模块改进.
     7. 更新使用教程.
     8. 百度云视频增加20250706更新说明.
+
+- **20250721-yolo11-v1.27**
+    1. 新增ICCV2025-ESC中的模块.
+    2. 新增ICCV2025-MobileIE中的模块.
+    3. 新增ICCV2025-VSSD中的模块.
+    4. 新增ICCV2025-TinyVIM中的模块.
+    5. 新增MSLA.
+    6. 新增INFFUS2025-SAMamba中的模块.
+    7. 更新使用教程.
+    8. 百度云视频增加20250721更新说明.
