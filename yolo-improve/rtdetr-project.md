@@ -316,6 +316,10 @@
 
     使用[Pyramid Sparse Transformer](https://arxiv.org/abs/2505.12772)中的Pyramid Sparse Transformer对原创改进SOEP进行创新.
 
+69. ultralytics/cfg/models/rt-detr/rtdetr-C2f-DIMB-HyperACE.yaml
+
+    使用[yolo13](https://github.com/iMoonLab/yolov13)中的HyperACE与自研模块DynamicInceptionDWConv2d的结合.
+
 ### 自研系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-PACAPN.yaml
 
@@ -724,6 +728,38 @@
 
     使用[weightedConvolution2.0](https://github.com/cammarasana123/weightedConvolution2.0)中的wConv2d改进C2f.
 
+75. ultralytics/cfg/models/rt-detr/rtdetr-C2f-GLVSS.yaml
+
+    使用[TGRS2025 UMFormer](https://github.com/takeyoutime/UMFormer)中的GLVSS与CSP改进backbone.
+
+76. ultralytics/cfg/models/rt-detr/rtdetr-C2f-ESC.yaml
+
+    使用[ICCV2025 ESC: Emulating Self-attention with Convolution for Efficient Image Super-Resolution](https://github.com/dslisleedh/ESC)中的ESC与CSP改进backbone.
+
+77. ultralytics/cfg/models/rt-detr/rtdetr-C2f-MBRConv3.yaml
+
+    使用[ICCV2025 MobileIE](https://github.com/AVC2-UESTC/MobileIE)中的MBRConv3与CSP改进backbone.
+
+78. ultralytics/cfg/models/rt-detr/rtdetr-C2f-MBRConv5.yaml
+
+    使用[ICCV2025 MobileIE](https://github.com/AVC2-UESTC/MobileIE)中的MBRConv5与CSP改进backbone.
+
+79. ultralytics/cfg/models/rt-detr/rtdetr-C2f-MBRConv3.yaml
+
+    使用[ICCV2025 MobileIE](https://github.com/AVC2-UESTC/MobileIE)中的MBRConv3与CSP改进backbone.
+
+80. ultralytics/cfg/models/rt-detr/rtdetr-C2f-VSSD.yaml
+
+    使用[ICCV2025 VSSD](https://github.com/YuHengsss/VSSD)中的VSSD与CSP改进backbone.
+
+81. ultralytics/cfg/models/rt-detr/rtdetr-C2f-TVIM.yaml    
+
+    使用[ICCV2025 TinyVIM](https://arxiv.org/abs/2411.17473)中的TinyVIMBlock与CSP改进backbone.
+
+82. ultralytics/cfg/models/rt-detr/rtdetr-C2f-CSI.yaml
+
+    使用[INFFUS2025 SAMamba](https://arxiv.org/pdf/2505.23214)中的CSI与C2f改进Backbone.
+
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -804,6 +840,10 @@
 21. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-EDFFN.yaml
 
     使用[CVPR2025 EVSSM](https://github.com/kkkls/EVSSM)中的EDFFN改进AIFI.
+
+22. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-MSLA.yaml
+
+    使用[MSLA](https://arxiv.org/pdf/2505.18823)改进AIFI.
 
 ### Neck系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-ASF.yaml
@@ -912,6 +952,10 @@
 
     使用[yolo13](https://github.com/iMoonLab/yolov13)中的HyperACE改进rtdetr-neck.
 
+27. ultralytics/cfg/models/rt-detr/rtdetr-DPCF.yaml
+
+    使用[INFFUS2025 SAMamba](https://arxiv.org/pdf/2505.23214)中的DPCF改进rtdetr-neck.
+
 ### Head系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-p2.yaml
 
@@ -963,6 +1007,14 @@
 12. ultralytics/cfg/models/rt-detr/rtdetr-FDConvC3.yaml
 
     使用[CVPR2025 Frequency Dynamic Convolution for Dense Image Prediction](https://github.com/Linwei-Chen/FDConv)的FDConv改进RepC3.
+
+13. ultralytics/cfg/models/rt-detr/rtdetr-MBRConv3C3.yaml
+
+    使用[ICCV2025 MobileIE](https://github.com/AVC2-UESTC/MobileIE)中的MBRConv3改进RepC3.
+
+14. ultralytics/cfg/models/rt-detr/rtdetr-MBRConv5C3.yaml
+
+    使用[ICCV2025 MobileIE](https://github.com/AVC2-UESTC/MobileIE)中的MBRConv5改进RepC3.
 
 ### ResNet主干中的BasicBlock/BottleNeck改进系列(以下改进BottleNeck基本都有,就不再重复标注)
 1. ultralytics/cfg/models/rt-detr/rtdetr-Ortho.yaml
@@ -2217,3 +2269,14 @@
     5. 新增AAAI2025的HS-FPN.
     6. 更新使用教程.
     7. 百度云视频增加20250711更新说明.
+
+- **20250727-rtdetr-v1.57**
+    1. 新增ICCV2025-ESC中的模块.
+    2. 新增ICCV2025-MobileIE中的模块.
+    3. 新增ICCV2025-VSSD中的模块.
+    4. 新增ICCV2025-TinyVIM中的模块.
+    5. 新增MSLA.
+    6. 新增INFFUS2025-SAMamba中的模块.
+    7. 新增TGRS2025-UMFormer中模块.
+    8. 更新使用教程.
+    9. 百度云视频增加20250727更新说明.
