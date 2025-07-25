@@ -1,6 +1,6 @@
 # [基于Ultralytics的RT-DETR改进详细介绍](https://github.com/z1069614715/objectdetection_script)
 
-# 目前自带的一些改进方案(目前拥有合计250+个改进点！持续更新！)
+# 目前自带的一些改进方案(目前拥有合计270+个改进点！持续更新！)
 
 # 为了感谢各位对RTDETR项目的支持,本项目的赠品是yolov5-PAGCP通道剪枝算法.[具体使用教程](https://www.bilibili.com/video/BV1yh4y1Z7vz/)
 

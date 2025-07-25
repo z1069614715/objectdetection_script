@@ -1,6 +1,6 @@
 # [基于Ultralytics的YOLOV8V10改进项目.(69.9¥)](https://github.com/z1069614715/objectdetection_script)
 
-# 目前自带的一些改进方案(目前拥有合计280+个改进点！持续更新！)
+# 目前自带的一些改进方案(目前拥有合计290+个改进点！持续更新！)
 
 # 为了感谢各位对本项目的支持,本项目的赠品是yolov5-PAGCP通道剪枝算法.[具体使用教程](https://www.bilibili.com/video/BV1yh4y1Z7vz/)
 
@@ -234,6 +234,10 @@
 59. ultralytics/cfg/models/v8/yolov8-SOEP-RFPN-MFM.yaml
 
     使用[ECCV2024 rethinking-fpn](https://github.com/AlanLi1997/rethinking-fpn)的SNI和GSConvE和[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM对原创改进SOEP再次创新.
+
+60. ultralytics/cfg/models/v8/yolov8-SOEP-PST.yaml
+
+    使用[Pyramid Sparse Transformer](https://arxiv.org/abs/2505.12772)中的Pyramid Sparse Transformer对SOEP进行二次创新.
 
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
@@ -647,6 +651,14 @@
 
     使用[ECCV2024 rethinking-fpn](https://github.com/AlanLi1997/rethinking-fpn)的SNI和GSConvE改进YOLOV8-neck.
 
+28. ultralytics/cfg/models/v8/yolov8-PST.yaml
+
+    使用[Pyramid Sparse Transformer](https://arxiv.org/abs/2505.12772)中的Pyramid Sparse Transformer改进neck.
+
+29. ultralytics/cfg/models/v8/yolov8-HS-FPN.yaml
+
+    使用[AAAI2025 HS-FPN](https://github.com/ShiZican/HS-FPN/tree/main)中的HFP和SDP改进yolo-neck.
+
 ### Head系列
 1. ultralytics/cfg/models/v8/yolov8-dyhead.yaml
 
@@ -749,6 +761,10 @@
 13. ultralytics/cfg/models/v8/yolov8-LoGStem.yaml
 
     使用[LEGNet](https://github.com/lwCVer/LEGNet)中的LoGStem改进Stem(第一第二层卷积).
+
+14. ultralytics/cfg/models/v8/yolov8-FourierConv.yaml
+
+    使用[MIA2025 Fourier Convolution Block with global receptive field for MRI reconstruction](https://www.sciencedirect.com/science/article/abs/pii/S1361841524002743)中的FourierConv改进Conv.
 
 ### YOLOV8-C2f系列
 1. ultralytics/cfg/models/v8/yolov8-C2f-Faster.yaml
@@ -1111,6 +1127,14 @@
 
     使用[CVPR2025 MambaVision](https://github.com/NVlabs/MambaVision)中的MambaVision改进C2f.
 
+95. ultralytics/cfg/models/v8/yolov8-C2f-FourierConv.yaml
+
+    使用[MIA2025 Fourier Convolution Block with global receptive field for MRI reconstruction](https://www.sciencedirect.com/science/article/abs/pii/S1361841524002743)中的FourierConv改进C2f.
+
+96. ultralytics/cfg/models/v8/yolov8-C2f-GLVSS.yaml
+
+    使用[TGRS2025 UMFormer](https://github.com/takeyoutime/UMFormer)中的GLVSS改进C2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -1300,6 +1324,10 @@
 39. ultralytics/cfg/models/v10/yolov10n-SOEP-RFPN-MFM.yaml
 
     使用[ECCV2024 rethinking-fpn](https://github.com/AlanLi1997/rethinking-fpn)的SNI和GSConvE和[CVPR2024 DCMPNet](https://github.com/zhoushen1/DCMPNet)中的MFM对原创改进SOEP再次创新.
+
+40. ultralytics/cfg/models/v10/yolov10n-SOEP-PST.yaml
+
+    使用[Pyramid Sparse Transformer](https://arxiv.org/abs/2505.12772)中的Pyramid Sparse Transformer改进SOEP.
 
 ### 自研系列
 
@@ -1650,6 +1678,14 @@
 
     使用[ECCV2024 rethinking-fpn](https://github.com/AlanLi1997/rethinking-fpn)的SNI和GSConvE改进YOLOV10n-neck.
 
+20. ultralytics/cfg/models/v10/yolov10n-PST.yaml
+
+    使用[Pyramid Sparse Transformer](https://arxiv.org/abs/2505.12772)中的Pyramid Sparse Transformer改进neck.
+
+21. ultralytics/cfg/models/v10/yolov10n-HS-FPN.yaml
+
+    使用[AAAI2025 HS-FPN](https://github.com/ShiZican/HS-FPN/tree/main)中的HFP和SDP改进yolo-neck.
+
 ### Head系列
 
 1. ultralytics/cfg/models/v10/yolov10n-dyhead.yaml
@@ -1662,6 +1698,7 @@
 
 ### Label Assign系列
 ### PostProcess系列
+
 ### 上下采样算子
 
 1. ultralytics/cfg/models/v10/yolov10n-ContextGuidedDown.yaml
@@ -1715,6 +1752,10 @@
 13. ultralytics/cfg/models/v10/yolov10n-LoGStem.yaml
 
     使用[LEGNet](https://github.com/lwCVer/LEGNet)中的LoGStem改进Stem(第一第二层卷积).
+
+14. ultralytics/cfg/models/v10/yolov10n-FourierConv.yaml
+
+    使用[MIA2025 Fourier Convolution Block with global receptive field for MRI reconstruction](https://www.sciencedirect.com/science/article/abs/pii/S1361841524002743)中的FourierConv改进Conv.
 
 ### C2f系列
 
@@ -1949,6 +1990,14 @@
 59. ultralytics/cfg/models/v10/yolov10n-C2f-MambaVision.yaml
 
     使用[CVPR2025 MambaVision](https://github.com/NVlabs/MambaVision)中的MambaVision改进C2f.
+
+60. ultralytics/cfg/models/v10/yolov10n-C2f-FourierConv.yaml
+
+    使用[MIA2025 Fourier Convolution Block with global receptive field for MRI reconstruction](https://www.sciencedirect.com/science/article/abs/pii/S1361841524002743)中的FourierConv改进C2f.
+
+61. ultralytics/cfg/models/v10/yolov10n-C2f-GLVSS.yaml
+
+    使用[TGRS2025 UMFormer](https://github.com/takeyoutime/UMFormer)中的GLVSS改进C2f.
 
 ### PSA系列
 
@@ -2624,3 +2673,12 @@
     6. 更新使用教程.
     7. 百度云视频增加20250629更新说明.
     8. 修复在torch2.6.0以及以上的版本会出现模型读取失败的问题.
+
+- **20250727-ultralytics-v1.90**
+    1. 新增Pyramid Sparse Transformer改进yolo11-neck.
+    2. 新增Pyramid Sparse Transformer对SOEP再创新.
+    3. 新增MIA2025-FourierConv.
+    4. 新增AAAI2025的HS-FPN.
+    5. 新增TGRS2025-UMFormer中的模块.
+    6. 更新使用教程.
+    7. 百度云视频增加20250727更新说明.
