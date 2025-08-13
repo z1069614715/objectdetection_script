@@ -332,6 +332,14 @@
 
     使用[Pyramid Sparse Transformer](https://arxiv.org/abs/2505.12772)中的Pyramid Sparse Transformer对原创改进SOEP进行创新.
 
+84. ultralytics/cfg/models/11/yolo11-C3k2-SHSA-EPGO.yaml
+
+    使用[ACM MM 2025 CPRAformer](https://github.com/zs1314/CPRAformer)中的EPGO改进[SHViT CVPR2024](https://github.com/ysj9909/SHViT)中的SHSABlock.
+
+85. ultralytics/cfg/models/11/yolo11-C3k2-SHSA-EPGO-CGLU.yaml
+
+    使用[SHViT CVPR2024](https://github.com/ysj9909/SHViT)中的SHSABlock与[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的CGLU与[ACM MM 2025 CPRAformer](https://github.com/zs1314/CPRAformer)中的EPGO联合创新.
+
 ### 自研系列
 1. ultralytics/cfg/models/11/yolo11-LAWDS.yaml
 
@@ -1331,6 +1339,10 @@
 
     使用[INFFUS2025 SAMamba](https://arxiv.org/pdf/2505.23214)中的CSI改进C3k2.
 
+121. ultralytics/cfg/models/11/yolo11-C3k2-ConvAttn.yaml    
+
+    使用[ICCV2025 ESC: Emulating Self-attention with Convolution for Efficient Image Super-Resolution](https://github.com/dslisleedh/ESC)中的ConvAttn改进C3k2.
+
 ### C2PSA系列
 
 1. ultralytics/cfg/models/11/yolo11-C2BRA.yaml
@@ -1408,6 +1420,10 @@
 19. ultralytics/cfg/models/11/yolo11-C2MSLA.yaml
 
     使用[MSLA](https://arxiv.org/pdf/2505.18823)改进C2PSA.
+
+20. ultralytics/cfg/models/11/yolo11-C2PSA-EPGO.yaml   
+
+    使用[ACM MM 2025 CPRAformer](https://github.com/zs1314/CPRAformer)中的EPGO改进C2PSA中的self-attention.
 
 ### A2C2f系列
 1. ultralytics/cfg/models/12/yolo12-A2C2f-CGLU.yaml
@@ -1735,3 +1751,9 @@
     6. 新增INFFUS2025-SAMamba中的模块.
     7. 更新使用教程.
     8. 百度云视频增加20250721更新说明.
+
+- **20250813-yolo11-v1.28**
+    1. 新增CPRAformer中的EPGO多个改进。
+    2. 新增ICCV2025-ESC中的ConvAttn改进。
+    3. 更新使用教程.
+    4. 百度云视频增加20250813更新说明.
