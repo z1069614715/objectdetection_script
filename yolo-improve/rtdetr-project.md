@@ -1,6 +1,6 @@
 # [基于Ultralytics的RT-DETR改进详细介绍](https://github.com/z1069614715/objectdetection_script)
 
-# 目前自带的一些改进方案(目前拥有合计270+个改进点！持续更新！)
+# 目前自带的一些改进方案(目前拥有合计280+个改进点！持续更新！)
 
 # 为了感谢各位对RTDETR项目的支持,本项目的赠品是yolov5-PAGCP通道剪枝算法.[具体使用教程](https://www.bilibili.com/video/BV1yh4y1Z7vz/)
 
@@ -319,6 +319,18 @@
 69. ultralytics/cfg/models/rt-detr/rtdetr-C2f-DIMB-HyperACE.yaml
 
     使用[yolo13](https://github.com/iMoonLab/yolov13)中的HyperACE与自研模块DynamicInceptionDWConv2d的结合.
+
+70. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-SHSA-EPGO.yaml
+
+    使用[ACM MM 2025 CPRAformer](https://github.com/zs1314/CPRAformer)中的EPGO和[SHViT CVPR2024](https://github.com/ysj9909/SHViT)中的SHSA改进AIFI.
+
+71. ultralytics/cfg/models/rt-detr/rtdetr-C2f-SHSA-EPGO.yaml
+
+    使用[SHViT CVPR2024](https://github.com/ysj9909/SHViT)中的SHSABlock与[ACM MM 2025 CPRAformer](https://github.com/zs1314/CPRAformer)中的EPGO和CSP思想改进backbone.
+
+72. ultralytics/cfg/models/rt-detr/rtdetr-C2f-SHSA-EPGO-CGLU.yaml
+
+    使用[SHViT CVPR2024](https://github.com/ysj9909/SHViT)中的SHSABlock与[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的CGLU与[ACM MM 2025 CPRAformer](https://github.com/zs1314/CPRAformer)中的EPGO和CSP思想改进backbone.
 
 ### 自研系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-PACAPN.yaml
@@ -760,6 +772,10 @@
 
     使用[INFFUS2025 SAMamba](https://arxiv.org/pdf/2505.23214)中的CSI与C2f改进Backbone.
 
+83. ultralytics/cfg/models/rt-detr/rtdetr-C2f-ConvAttn.yaml
+
+    使用[ICCV2025 ESC: Emulating Self-attention with Convolution for Efficient Image Super-Resolution](https://github.com/dslisleedh/ESC)中的ConvAttn与CSP改进Backbone.
+
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -844,6 +860,14 @@
 22. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-MSLA.yaml
 
     使用[MSLA](https://arxiv.org/pdf/2505.18823)改进AIFI.
+
+23. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-EPGO.yaml
+
+    使用[ACM MM 2025 CPRAformer](https://github.com/zs1314/CPRAformer)中的EPGO改进AIFI.
+
+24. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-SHSA.yaml
+
+    使用[SHViT CVPR2024](https://github.com/ysj9909/SHViT)中的SHSA改进AIFI.
 
 ### Neck系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-ASF.yaml
@@ -2280,3 +2304,9 @@
     7. 新增TGRS2025-UMFormer中模块.
     8. 更新使用教程.
     9. 百度云视频增加20250727更新说明.
+
+- **20250815-rtdetr-v1.58**
+    1. 新增CPRAformer中的EPGO多个改进。
+    2. 新增ICCV2025-ESC中的ConvAttn改进。
+    3. 更新使用教程.
+    4. 百度云视频增加20250815更新说明.
