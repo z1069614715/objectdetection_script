@@ -146,6 +146,17 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     3. 修复用户反馈的已知问题。
     4. 新增一个JSON格式数据集脚本。(输出类别数和类别id、输出每个类别的实例数量)
 
+- 20250817
+
+    1. 新增支持蒸馏学习，蒸馏学习支持断点续训使用方法跟正常训练一样。
+    2. 蒸馏学习支持特征蒸馏、逻辑蒸馏、特征+逻辑蒸馏 这三种方式。
+    3. 无论是Ultralytics配置文件方式、还是原始的代码方式都支持相互蒸馏。
+    4. 蒸馏学习支持控制epoch，例如只有前50epoch进行蒸馏学习，后50epoch关闭蒸馏学习。
+    5. 更多细节请看关于<知识蒸馏教学视频>的进阶课程。
+    6. 支持输出YOLO指标(Precision、Recall、F1-Score、mAP50、mAP75、mAP50-95)，详细请看userguide。
+    7. 新增多个改进模块。
+    8. 新增小目标检测网络架构专题二链接。
+
 ### 7. 进阶视频教程
 
 ------------------------------------- 进阶教程 -------------------------------------  
@@ -161,6 +172,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
 7. 20250618基础疑问解答直播回放链接
 8. 20250704基础疑问解答直播回放链接
 9. 小目标检测网络架构专题一群课题直播回放链接
+10. 小目标检测网络架构专题二
 
 -------------------------------------------- 基础教程补充版 (这部分建议理解完基础课程全部再看) --------------------------------------------  
 1. 如何快速得知每个改进模块的输入输出格式相关信息
@@ -196,6 +208,12 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
 15. HS-FPN怎么融合到DEIM？
 16. 怎么用module、block中的模块去改进主干网络？
 17. 从0搭建一个yaml！以CVPR2025-nnWNet为例.
+
+-------------------------------------------- 知识蒸馏 --------------------------------------------
+1. 知识蒸馏原理讲解
+2. 知识蒸馏使用教程
+3. 逻辑蒸馏的讲解<下期更新>
+4. 一些关于蒸馏的注意点(蒸馏实验前必看)
 
 ### 8. 目前已有的模块
 
@@ -245,6 +263,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     22. MIA2025|engine/extre_module/custom_nn/conv_module/FourierConv.py
     23. CVPR2024|engine/extre_module/custom_nn/conv_module/SFSConv.py
     24. ICCV2025|engine/extre_module/custom_nn/conv_module/MBRConv.py
+    25. ICCV2025|engine/extre_module/custom_nn/conv_module/ConvAttn.py
 
 - engine/extre_module/custom_nn/upsample
 
@@ -350,6 +369,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     13. IJCAI2024|engine/extre_module/custom_nn/transformer/CTA.py
     13. IJCAI2024|engine/extre_module/custom_nn/transformer/SFA.py
     14. engine/extre_module/custom_nn/transformer/MSLA.py
+    15. ACMMM2025|engine/extre_module/custom_nn/transformer/CPIA_SA.py
 
 - engine/extre_module/custom_nn/mlp
 
