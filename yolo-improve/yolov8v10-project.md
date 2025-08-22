@@ -1135,6 +1135,18 @@
 
     使用[TGRS2025 UMFormer](https://github.com/takeyoutime/UMFormer)中的GLVSS改进C2f.
 
+97. ultralytics/cfg/models/v8/yolov8-C2f-ESC.yaml
+
+    使用[ICCV2025 ESC: Emulating Self-attention with Convolution for Efficient Image Super-Resolution](https://github.com/dslisleedh/ESC)中的ESC改进C2f.
+
+98. ultralytics/cfg/models/v8/yolov8-C2f-ConvAttn.yaml
+
+    使用[ICCV2025 ESC: Emulating Self-attention with Convolution for Efficient Image Super-Resolution](https://github.com/dslisleedh/ESC)中的ConvAttn改进C2f.
+
+99. ultralytics/cfg/models/v8/yolov8-C2f-UniConv.yaml
+
+    使用[ICCV2025 UniConvBlock](https://github.com/ai-paperwithcode/UniConvNet)中的UniConvBlock改进C2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -1999,6 +2011,18 @@
 
     使用[TGRS2025 UMFormer](https://github.com/takeyoutime/UMFormer)中的GLVSS改进C2f.
 
+62. ultralytics/cfg/models/v10/yolov10n-C2f-ESC.yaml
+
+    使用[ICCV2025 ESC: Emulating Self-attention with Convolution for Efficient Image Super-Resolution](https://github.com/dslisleedh/ESC)中的ESC改进C2f.
+
+63. ultralytics/cfg/models/v10/yolov10n-C2f-ConvAttn.yaml
+
+    使用[ICCV2025 ESC: Emulating Self-attention with Convolution for Efficient Image Super-Resolution](https://github.com/dslisleedh/ESC)中的ConvAttn改进C2f.
+
+64. ultralytics/cfg/models/v10/yolov10n-C2f-UniConv.yaml
+
+    使用[ICCV2025 UniConvBlock](https://github.com/ai-paperwithcode/UniConvNet)中的UniConvBlock改进C2f.
+
 ### PSA系列
 
 1. ultralytics/cfg/models/v10/yolov10n-PTSSA.yaml
@@ -2682,3 +2706,9 @@
     5. 新增TGRS2025-UMFormer中的模块.
     6. 更新使用教程.
     7. 百度云视频增加20250727更新说明.
+
+- **20250822-ultralytics-v1.91**
+    1. 新增ICCV2025-ESC中的多个改进。
+    2. 新增ICCV2025-UniConvBlock中的改进。
+    3. 更新使用教程.
+    4. 百度云视频增加20250822更新说明.
