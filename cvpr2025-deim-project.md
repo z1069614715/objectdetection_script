@@ -157,6 +157,13 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     7. 新增多个改进模块。
     8. 新增小目标检测网络架构专题二链接。
 
+- 20250823
+
+    1. 修复YOLO指标在一些图片没真实标签的时候报错的bug。
+    2. 开放逻辑蒸馏，在项目内有对应的课程。
+    3. 新增多个改进模块。
+    4. 新增<知识蒸馏教学视频>的进阶课程。
+
 ### 7. 进阶视频教程
 
 ------------------------------------- 进阶教程 -------------------------------------  
@@ -212,8 +219,10 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
 -------------------------------------------- 知识蒸馏 --------------------------------------------
 1. 知识蒸馏原理讲解
 2. 知识蒸馏使用教程
-3. 逻辑蒸馏的讲解<下期更新>
-4. 一些关于蒸馏的注意点(蒸馏实验前必看)
+3. 逻辑蒸馏的讲解1-DETR检测头大白话讲解
+4. 逻辑蒸馏的讲解2-逻辑蒸馏的讲解
+5. 一些关于蒸馏的注意点(蒸馏实验前必看)
+6. 蒸馏中出现教师模型和配置文件一直显示不匹配的问题解决思路
 
 ### 8. 目前已有的模块
 
@@ -264,6 +273,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     23. CVPR2024|engine/extre_module/custom_nn/conv_module/SFSConv.py
     24. ICCV2025|engine/extre_module/custom_nn/conv_module/MBRConv.py
     25. ICCV2025|engine/extre_module/custom_nn/conv_module/ConvAttn.py
+    26. ICCV2025|engine/extre_module/custom_nn/conv_module/Converse2D.py
 
 - engine/extre_module/custom_nn/upsample
 
@@ -272,6 +282,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     3. engine/extre_module/custom_nn/upsample/WaveletUnPool.py
     4. ICCV2019|engine/extre_module/custom_nn/upsample/CARAFE.py
     5. ICCV2023|engine/extre_module/custom_nn/upsample/DySample.py
+    6. ICCV2025|engine/extre_module/custom_nn/upsample/Converse2D_Up.py
 
 - engine/extre_module/custom_nn/downsample
 
