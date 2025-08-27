@@ -874,6 +874,10 @@
 
     使用[MIA2025 Fourier Convolution Block with global receptive field for MRI reconstruction](https://www.sciencedirect.com/science/article/abs/pii/S1361841524002743)中的FourierConv改进Conv.
 
+16. ultralytics/cfg/models/11/yolo11-Converse2D.yaml
+
+    使用[ICCV2025 ConverseBNet](https://github.com/cszn/ConverseNet)中的Converse2D改进neck中的上采样.
+
 ### YOLO11-C3k2系列
 1. ultralytics/cfg/models/11/yolo11-C3k2-Faster.yaml
 
@@ -1343,6 +1347,22 @@
 
     使用[ICCV2025 ESC: Emulating Self-attention with Convolution for Efficient Image Super-Resolution](https://github.com/dslisleedh/ESC)中的ConvAttn改进C3k2.
 
+122. ultralytics/cfg/models/11/yolo11-C3k2-UniConv.yaml
+
+    使用[ICCV2025 UniConvBlock](https://github.com/ai-paperwithcode/UniConvNet)中的UniConvBlock改进C3k2.
+
+123. ultralytics/cfg/models/11/yolo11-C3k2-LGLB.yaml
+
+    使用[ACM MM 2025 Mobile U-ViT](https://github.com/FengheTan9/Mobile-U-ViT)中的LGLBBlock改进C3k2.
+
+124. ultralytics/cfg/models/11/yolo11-C3k2-ConverseB.yaml
+
+    使用[ICCV2025 ConverseBNet](https://github.com/cszn/ConverseNet)中的ConverseBlock改进C3k2.
+
+125. ultralytics/cfg/models/11/yolo11-C3k2-Converse.yaml
+
+    使用[ICCV2025 ConverseBNet](https://github.com/cszn/ConverseNet)中的Converse2D改进C3k2.
+
 ### C2PSA系列
 
 1. ultralytics/cfg/models/11/yolo11-C2BRA.yaml
@@ -1757,3 +1777,10 @@
     2. 新增ICCV2025-ESC中的ConvAttn改进。
     3. 更新使用教程.
     4. 百度云视频增加20250813更新说明.
+
+- **20250827-yolo11-v1.29**
+    1. 新增ICCV2025-UniConvBlock中的模块.
+    2. 新增ICCV2025-ConverseBNet中的模块.
+    3. 新增ACM MM 2025-Mobile U-ViT中的模块.
+    4. 更新使用教程.
+    5. 百度云视频增加20250827更新说明.
