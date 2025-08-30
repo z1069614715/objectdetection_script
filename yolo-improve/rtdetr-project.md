@@ -776,6 +776,22 @@
 
     使用[ICCV2025 ESC: Emulating Self-attention with Convolution for Efficient Image Super-Resolution](https://github.com/dslisleedh/ESC)中的ConvAttn与CSP改进Backbone.
 
+84. ultralytics/cfg/models/rt-detr/rtdetr-C2f-UniConvBlock.yaml
+
+    使用[ICCV2025 UniConvBlock](https://github.com/ai-paperwithcode/UniConvNet)中的UniConvBlock与CSP思想改进backbone.
+
+85. ultralytics/cfg/models/rt-detr/rtdetr-C2f-LGLB.yaml
+
+    使用[ACM MM 2025 Mobile U-ViT](https://github.com/FengheTan9/Mobile-U-ViT)中的LGLBBlock与CSP思想改进backbone.
+
+86. ultralytics/cfg/models/rt-detr/rtdetr-C2f-ConverseB.yaml
+
+    使用[ICCV2025 ConverseBNet](https://github.com/cszn/ConverseNet)中的ConverseBlock与CSP思想改进backbone.
+
+87. ultralytics/cfg/models/rt-detr/rtdetr-C2f-Converse2D.yaml
+
+    使用[ICCV2025 ConverseBNet](https://github.com/cszn/ConverseNet)中的Converse2D与CSP思想改进backbone.
+
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -1040,6 +1056,10 @@
 
     使用[ICCV2025 MobileIE](https://github.com/AVC2-UESTC/MobileIE)中的MBRConv5改进RepC3.
 
+15. ultralytics/cfg/models/rt-detr/rtdetr-Converse2DC3.yaml
+
+    使用[ICCV2025 ConverseBNet](https://github.com/cszn/ConverseNet)中的Converse2D改进RepC3.
+
 ### ResNet主干中的BasicBlock/BottleNeck改进系列(以下改进BottleNeck基本都有,就不再重复标注)
 1. ultralytics/cfg/models/rt-detr/rtdetr-Ortho.yaml
 
@@ -1180,6 +1200,10 @@
 12. ultralytics/cfg/models/rt-detr/rtdetr-wConv.yaml
 
     使用[weightedConvolution2.0](https://github.com/cammarasana123/weightedConvolution2.0)中的wConv2d改进rtdetr.
+
+13. ultralytics/cfg/models/rt-detr/rtdetr-Converse2D.yaml
+
+    使用[ICCV2025 ConverseBNet](https://github.com/cszn/ConverseNet)中的Converse2D改进neck中的上采样.
 
 ### RT-DETR-L改进系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-l-GhostHGNetV2.yaml
@@ -2310,3 +2334,10 @@
     2. 新增ICCV2025-ESC中的ConvAttn改进。
     3. 更新使用教程.
     4. 百度云视频增加20250815更新说明.
+
+- **20250829-rtdetr-v1.59**
+    1. 新增ICCV2025-UniConvBlock中的模块.
+    2. 新增ICCV2025-ConverseBNet中的模块.
+    3. 新增ACM MM 2025-Mobile U-ViT中的模块.
+    4. 更新使用教程.
+    5. 百度云视频增加20250829更新说明.
