@@ -164,6 +164,11 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     3. 新增多个改进模块。
     4. 新增<知识蒸馏教学视频>的进阶课程。
 
+- 20250907
+
+    1. 新增多个改进模块。
+    2. 修复蒸馏学习中教师信息输出错误的问题。
+
 ### 7. 进阶视频教程
 
 ------------------------------------- 进阶教程 -------------------------------------  
@@ -239,6 +244,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     9. AAAI2025|engine/extre_module/custom_nn/attention/CDFA.py
     10. engine/extre_module/custom_nn/attention/GLSA.py
     11. TGRS2025|engine/extre_module/custom_nn/attention/MCA.py
+    12. CVPR2025|engine/extre_module/custom_nn/attention/CASAB.py 
 
 - engine/extre_module/custom_nn/block
 
@@ -274,6 +280,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     24. ICCV2025|engine/extre_module/custom_nn/conv_module/MBRConv.py
     25. ICCV2025|engine/extre_module/custom_nn/conv_module/ConvAttn.py
     26. ICCV2025|engine/extre_module/custom_nn/conv_module/Converse2D.py
+    27. CVPR2025|engine/extre_module/custom_nn/conv_module/gcconv.py
 
 - engine/extre_module/custom_nn/upsample
 
@@ -283,6 +290,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     4. ICCV2019|engine/extre_module/custom_nn/upsample/CARAFE.py
     5. ICCV2023|engine/extre_module/custom_nn/upsample/DySample.py
     6. ICCV2025|engine/extre_module/custom_nn/upsample/Converse2D_Up.py
+    7. CVPR2025|engine/extre_module/custom_nn/upsample/DSUB.py
 
 - engine/extre_module/custom_nn/downsample
 
@@ -299,6 +307,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
 
     1. engine/extre_module/custom_nn/stem/SRFD.py
     2. engine/extre_module/custom_nn/stem/LoG.py
+    3. ICCV2023|engine/extre_module/custom_nn/stem/RepStem.py
 
 - engine/extre_module/custom_nn/featurefusion
 
@@ -346,6 +355,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     29. ICCV2025|engine/extre_module/custom_nn/module/ESC.py
     30. CVPR2025|engine/extre_module/custom_nn/module/nnWNet.py
     31. TGRS2025|engine/extre_module/custom_nn/module/ARF.py
+    32. AAAI2024|engine/extre_module/custom_nn/module/CFBlock.py
 
 - engine/extre_module/custom_nn/neck
 

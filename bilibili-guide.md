@@ -39,6 +39,7 @@
 26. [长达30分钟的吐血讲解！为什么别人的纯YOLO小目标检测能上AAAI2025，你的连个最差的都费劲！看看差距在哪里，怎么改善！](https://www.bilibili.com/video/BV14DJazTEtV)
 27. [深度学习论文中的基础实验、改进实验、 消融实验、对比实验、泛化实验｜这些究竟是什么？](https://www.bilibili.com/video/BV1NYKUz2E6b/)
 28. [深度学习论文中的推理结果图、热力图、特征图究竟应该怎么放？需要注意什么？有什么作用？](https://www.bilibili.com/video/BV1s5gQzcEPh/)
+29. [YOLO｜RTDETR｜我会跑Ultralytics了！但是输出的这些都怎么看呀？论文中的结果写什么呀？需要注意什么呀？](https://www.bilibili.com/video/BV1VfbVzHEGM/)
 
 ### 服务器租用系列
 1. [|DAModel|竟然有一个"不需要装环境就能跑YOLO代码"的服务器平台？让我们一起来看看！](https://www.bilibili.com/video/BV1mg2SYGEGF)
