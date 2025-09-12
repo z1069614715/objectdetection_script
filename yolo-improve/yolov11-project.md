@@ -340,6 +340,10 @@
 
     使用[SHViT CVPR2024](https://github.com/ysj9909/SHViT)中的SHSABlock与[TransNeXt CVPR2024](https://github.com/DaiShiResearch/TransNeXt)中的CGLU与[ACM MM 2025 CPRAformer](https://github.com/zs1314/CPRAformer)中的EPGO联合创新.
 
+86. ultralytics/cfg/models/11/yolo11-MAN-GCConv.yaml
+
+    使用[CVPR2025 Golden Cudgel Network](https://github.com/gyyang23/GCNet)中的GCConv改进[Hyper-YOLO TPAMI2025](https://www.arxiv.org/pdf/2408.04804)中的Mixed Aggregation Network.
+
 ### 自研系列
 1. ultralytics/cfg/models/11/yolo11-LAWDS.yaml
 
@@ -878,6 +882,14 @@
 
     使用[ICCV2025 ConverseBNet](https://github.com/cszn/ConverseNet)中的Converse2D改进neck中的上采样.
 
+17. ultralytics/cfg/models/11/yolo11-GCConv.yaml
+
+    使用[CVPR2025 Golden Cudgel Network](https://github.com/gyyang23/GCNet)中的GCConv改进下采样.
+
+18. ultralytics/cfg/models/11/yolo11-RepStem.yaml
+
+    使用[ICCV2023 FastVit](https://arxiv.org/pdf/2303.14189)中的RepStem改进yolo11下采样.
+
 ### YOLO11-C3k2系列
 1. ultralytics/cfg/models/11/yolo11-C3k2-Faster.yaml
 
@@ -1363,6 +1375,14 @@
 
     使用[ICCV2025 ConverseBNet](https://github.com/cszn/ConverseNet)中的Converse2D改进C3k2.
 
+126. ultralytics/cfg/models/11/yolo11-C3k2-GCConv.yaml
+
+    使用[CVPR2025 Golden Cudgel Network](https://github.com/gyyang23/GCNet)中的GCConv改进C3k2.
+
+127. ultralytics/cfg/models/11/yolo11-C3k2-CFBlock.yaml
+
+    使用[AAAI2024 SCTNet](https://arxiv.org/pdf/2312.17071)中的CFBlock改进C3k2.
+
 ### C2PSA系列
 
 1. ultralytics/cfg/models/11/yolo11-C2BRA.yaml
@@ -1784,3 +1804,10 @@
     3. 新增ACM MM 2025-Mobile U-ViT中的模块.
     4. 更新使用教程.
     5. 百度云视频增加20250827更新说明.
+
+- **20250912-yolo11-v1.30**
+    1. 新增CVPR2025-GCConv模块.
+    2. 新增AAAI2024-CFBlock模块.
+    3. 新增ICCV2023-FastViT中的RepStem模块.
+    4. 更新使用教程.
+    5. 百度云视频增加20250912更新说明.
