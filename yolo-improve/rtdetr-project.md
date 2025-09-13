@@ -1,6 +1,6 @@
 # [基于Ultralytics的RT-DETR改进详细介绍](https://github.com/z1069614715/objectdetection_script)
 
-# 目前自带的一些改进方案(目前拥有合计280+个改进点！持续更新！)
+# 目前自带的一些改进方案(目前拥有合计290+个改进点！持续更新！)
 
 # 为了感谢各位对RTDETR项目的支持,本项目的赠品是yolov5-PAGCP通道剪枝算法.[具体使用教程](https://www.bilibili.com/video/BV1yh4y1Z7vz/)
 
@@ -792,6 +792,14 @@
 
     使用[ICCV2025 ConverseBNet](https://github.com/cszn/ConverseNet)中的Converse2D与CSP思想改进backbone.
 
+88. ultralytics/cfg/models/rt-detr/rtdetr-C2f-GCConv.yaml
+
+    使用[CVPR2025 Golden Cudgel Network](https://github.com/gyyang23/GCNet)中的GCConv与CSP改进backbone.
+
+89. ultralytics/cfg/models/rt-detr/rtdetr-C2f-CFBlock.yaml
+
+    使用[AAAI2024 SCTNet](https://arxiv.org/pdf/2312.17071)中的CFBlock与CSP改进backbone.
+
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -1156,6 +1164,10 @@
 
     使用[YOLO-MIF](https://github.com/wandahangFY/YOLO-MIF)中的DeepDBB改进BasicBlock.
 
+28. ultralytics/cfg/models/rt-detr/rtdetr-GCConvC3.yaml
+
+    使用[CVPR2025 Golden Cudgel Network](https://github.com/gyyang23/GCNet)中的GCConv改进RepC3.
+
 ### 上下采样算子系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-DySample.yaml
 
@@ -1204,6 +1216,14 @@
 13. ultralytics/cfg/models/rt-detr/rtdetr-Converse2D.yaml
 
     使用[ICCV2025 ConverseBNet](https://github.com/cszn/ConverseNet)中的Converse2D改进neck中的上采样.
+
+14. ultralytics/cfg/models/rt-detr/rtdetr-RepStem.yaml
+
+    使用[ICCV2023 FastVit](https://arxiv.org/pdf/2303.14189)中的RepStem改进rtdetr下采样.
+
+15. ultralytics/cfg/models/rt-detr/rtdetr-GCConv.yaml
+
+    使用[CVPR2025 Golden Cudgel Network](https://github.com/gyyang23/GCNet)中的GCConv改进下采样.
 
 ### RT-DETR-L改进系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-l-GhostHGNetV2.yaml
@@ -2341,3 +2361,10 @@
     3. 新增ACM MM 2025-Mobile U-ViT中的模块.
     4. 更新使用教程.
     5. 百度云视频增加20250829更新说明.
+
+- **20250914-rtdetr-v1.60**
+    1. 新增CVPR2025-GCConv模块.
+    2. 新增AAAI2024-CFBlock模块.
+    3. 新增ICCV2023-FastViT中的RepStem模块.
+    4. 更新使用教程.
+    5. 百度云视频增加20250914更新说明.
