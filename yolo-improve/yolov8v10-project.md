@@ -1,6 +1,6 @@
 # [基于Ultralytics的YOLOV8V10改进项目.(69.9¥)](https://github.com/z1069614715/objectdetection_script)
 
-# 目前自带的一些改进方案(目前拥有合计290+个改进点！持续更新！)
+# 目前自带的一些改进方案(目前拥有合计300+个改进点！持续更新！)
 
 # 为了感谢各位对本项目的支持,本项目的赠品是yolov5-PAGCP通道剪枝算法.[具体使用教程](https://www.bilibili.com/video/BV1yh4y1Z7vz/)
 
@@ -238,6 +238,10 @@
 60. ultralytics/cfg/models/v8/yolov8-SOEP-PST.yaml
 
     使用[Pyramid Sparse Transformer](https://arxiv.org/abs/2505.12772)中的Pyramid Sparse Transformer对SOEP进行二次创新.
+
+61. ultralytics/cfg/models/v8/yolov8-MAN-GCConv.yaml
+
+    使用[CVPR2025 Golden Cudgel Network](https://github.com/gyyang23/GCNet)中的GCConv改进[Hyper-YOLO TPAMI2025](https://www.arxiv.org/pdf/2408.04804)中的Mixed Aggregation Network.
 
 ### 自研系列
 1. ultralytics/cfg/models/v8/yolov8-LAWDS.yaml
@@ -766,6 +770,14 @@
 
     使用[MIA2025 Fourier Convolution Block with global receptive field for MRI reconstruction](https://www.sciencedirect.com/science/article/abs/pii/S1361841524002743)中的FourierConv改进Conv.
 
+15. ultralytics/cfg/models/v8/yolov8-GCConv.yaml
+
+    使用[CVPR2025 Golden Cudgel Network](https://github.com/gyyang23/GCNet)中的GCConv改进下采样.
+
+16. ultralytics/cfg/models/v8/yolov8-RepStem.yaml
+
+    使用[ICCV2023 FastVit](https://arxiv.org/pdf/2303.14189)中的RepStem改进yolov8下采样.
+
 ### YOLOV8-C2f系列
 1. ultralytics/cfg/models/v8/yolov8-C2f-Faster.yaml
 
@@ -1147,6 +1159,14 @@
 
     使用[ICCV2025 UniConvBlock](https://github.com/ai-paperwithcode/UniConvNet)中的UniConvBlock改进C2f.
 
+100. ultralytics/cfg/models/v8/yolov8-C2f-GCConv.yaml
+
+    使用[CVPR2025 Golden Cudgel Network](https://github.com/gyyang23/GCNet)中的GCConv改进C2f.
+
+101. ultralytics/cfg/models/v8/yolov8-C2f-CFBlock.yaml
+
+    使用[AAAI2024 SCTNet](https://arxiv.org/pdf/2312.17071)中的CFBlock改进C2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -1340,6 +1360,10 @@
 40. ultralytics/cfg/models/v10/yolov10n-SOEP-PST.yaml
 
     使用[Pyramid Sparse Transformer](https://arxiv.org/abs/2505.12772)中的Pyramid Sparse Transformer改进SOEP.
+
+41. ultralytics/cfg/models/v10/yolov10n-MAN-GCConv.yaml
+
+    使用[CVPR2025 Golden Cudgel Network](https://github.com/gyyang23/GCNet)中的GCConv改进[Hyper-YOLO TPAMI2025](https://www.arxiv.org/pdf/2408.04804)中的Mixed Aggregation Network.
 
 ### 自研系列
 
@@ -1769,6 +1793,14 @@
 
     使用[MIA2025 Fourier Convolution Block with global receptive field for MRI reconstruction](https://www.sciencedirect.com/science/article/abs/pii/S1361841524002743)中的FourierConv改进Conv.
 
+15. ultralytics/cfg/models/v10/yolov10n-RepStem.yaml
+
+    使用[ICCV2023 FastVit](https://arxiv.org/pdf/2303.14189)中的RepStem改进yolov10下采样.
+
+16. ultralytics/cfg/models/v10/yolov10n-C2f-GCConv.yaml
+
+    使用[CVPR2025 Golden Cudgel Network](https://github.com/gyyang23/GCNet)中的GCConv改进C2f.
+
 ### C2f系列
 
 1. ultralytics/cfg/models/v10/yolov10n-C2f-WTConv.yaml
@@ -2022,6 +2054,14 @@
 64. ultralytics/cfg/models/v10/yolov10n-C2f-UniConv.yaml
 
     使用[ICCV2025 UniConvBlock](https://github.com/ai-paperwithcode/UniConvNet)中的UniConvBlock改进C2f.
+
+65. ultralytics/cfg/models/v10/yolov10n-C2f-GCConv.yaml
+
+    使用[CVPR2025 Golden Cudgel Network](https://github.com/gyyang23/GCNet)中的GCConv改进C2f.
+
+66. ultralytics/cfg/models/v10/yolov10n-C2f-CFBlock.yaml
+
+    使用[AAAI2024 SCTNet](https://arxiv.org/pdf/2312.17071)中的CFBlock改进C2f.
 
 ### PSA系列
 
@@ -2712,3 +2752,10 @@
     2. 新增ICCV2025-UniConvBlock中的改进。
     3. 更新使用教程.
     4. 百度云视频增加20250822更新说明.
+
+- **20250919-ultralytics-v1.92**
+    1. 新增CVPR2025-GCConv模块.
+    2. 新增AAAI2024-CFBlock模块.
+    3. 新增ICCV2023-FastViT中的RepStem模块.
+    4. 更新使用教程.
+    5. 百度云视频增加20250919更新说明.
