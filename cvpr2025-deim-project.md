@@ -169,6 +169,18 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     1. 新增多个改进模块。
     2. 修复蒸馏学习中教师信息输出错误的问题。
 
+- 20250921
+
+    1. 新增导出脚本(export.py)，支持导出onnx、tensorrt模型。
+    2. 重构大部分输出，增加输出对应的时间、文件、函数、行数，以便用户快速定位。
+    3. 新增20250910直播回放链接。
+    4. 修复一些已知BUG。
+    5. 完善onnx、tensorrt模型推理脚本。
+    6. 支持在train.py test-only状态下中使用onnx、tensorrt模型进行验证。
+    7. 新增<模型导出>相关教程视频。
+    8. 新增多个改进模块。
+    9. 支持DINOV3(ConvNext、ViT)作为主干进行微调。<教程在百度云创新课题的第五点>
+
 ### 7. 进阶视频教程
 
 ------------------------------------- 进阶教程 -------------------------------------  
@@ -183,8 +195,14 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
 6. 20250513基础疑问解答直播回放链接
 7. 20250618基础疑问解答直播回放链接
 8. 20250704基础疑问解答直播回放链接
-9. 小目标检测网络架构专题一群课题直播回放链接
-10. 小目标检测网络架构专题二
+9. 20250910基础疑问解答直播回放链接
+
+-------------------------------------------- 创新课题 --------------------------------------------
+1. 小目标检测网络架构专题一群课题直播回放链接
+2. 小目标检测网络架构专题二链接
+3. 顶会中的Partial创新思想课程链接
+4. CVPR2025-MobileMamba中的Long-Range WTB-Mamba二次创新直播回放链接
+5. 自监督最强巨兽DINOV3在DEIM、DFine中的配置文件说明和注意点链接
 
 -------------------------------------------- 基础教程补充版 (这部分建议理解完基础课程全部再看) --------------------------------------------  
 1. 如何快速得知每个改进模块的输入输出格式相关信息
@@ -229,6 +247,11 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
 5. 一些关于蒸馏的注意点(蒸馏实验前必看)
 6. 蒸馏中出现教师模型和配置文件一直显示不匹配的问题解决思路
 
+-------------------------------------------- 模型导出(onnx,tensorrt-engine) --------------------------------------------
+1. 模型导出教程(onnx,tensorrt-engine)
+2. onnx,engine版本模型推理教程
+3. onnx,engine版本模型精度测试教程
+
 ### 8. 目前已有的模块
 
 - engine/extre_module/custom_nn/attention 
@@ -245,6 +268,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     10. engine/extre_module/custom_nn/attention/GLSA.py
     11. TGRS2025|engine/extre_module/custom_nn/attention/MCA.py
     12. CVPR2025|engine/extre_module/custom_nn/attention/CASAB.py 
+    13. NN2025|engine/extre_module/custom_nn/attention/KSFA.py
 
 - engine/extre_module/custom_nn/block
 
@@ -333,7 +357,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     7. CVPR2025|engine/extre_module/custom_nn/module/mambaout.py
     8. AAAI2024|engine/extre_module/custom_nn/module/DynamicFilter.py
     9. engine/extre_module/custom_nn/module/StripBlock.py
-    10. IEEETGRS2024|engine/extre_module/custom_nn/module/elgca.py
+    10. TGRS2024|engine/extre_module/custom_nn/module/elgca.py
     11. CVPR2024|engine/extre_module/custom_nn/module/LEGM.py
     12. ICCV2023|engine/extre_module/custom_nn/module/iRMB.py
     13. TPAMI2025|engine/extre_module/custom_nn/module/MSBlock.py
@@ -391,6 +415,8 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     13. IJCAI2024|engine/extre_module/custom_nn/transformer/SFA.py
     14. engine/extre_module/custom_nn/transformer/MSLA.py
     15. ACMMM2025|engine/extre_module/custom_nn/transformer/CPIA_SA.py
+    16. NN2025|engine/extre_module/custom_nn/transformer/TokenSelectAttention.py
+    17. CVPR2025|engine/extre_module/custom_nn/transformer/TAB.py
 
 - engine/extre_module/custom_nn/mlp
 
@@ -425,3 +451,9 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     6. TPAMI2024+CVPR2025|MetaFormer_Mona
     7. TPAMI2024+CVPR2025+WACV2025|MetaFormer_SEFN
     8. TPAMI2024+CVPR2025+WACV2025|MetaFormer_Mona_SEFN
+
+- 创新课程代码<标识着是那个课程中的代码，详细可以去看对应的课程视频>
+
+    1. 顶会中的Partial创新思想课程|engine/extre_module/innovate/CVPR2020_GhostConv.py
+    2. 顶会中的Partial创新思想课程|engine/extre_module/innovate/CVPR2023_PartialConv.py
+    3. CVPR2025-MobileMamba中的Long-Range WTB-Mamba二次创新|engine/extre_module/innovate/CVPR2025_MobileMamba.py
