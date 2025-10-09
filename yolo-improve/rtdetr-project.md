@@ -800,6 +800,14 @@
 
     使用[AAAI2024 SCTNet](https://arxiv.org/pdf/2312.17071)中的CFBlock与CSP改进backbone.
 
+90. ultralytics/cfg/models/rt-detr/rtdetr-C2f-FMABlock.yaml
+
+    使用[IJCV2024 SRConvNet](https://github.com/lifengcs/SRConvNet)中的FMABlock与CSP思想改进backbone.
+
+91. ultralytics/cfg/models/rt-detr/rtdetr-C2f-LWGA.yaml
+
+    使用[LWGANet](https://github.com/lwCVer/LWGANet)中的LWGABlock与CSP思想改进backbone.
+
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -892,6 +900,10 @@
 24. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-SHSA.yaml
 
     使用[SHViT CVPR2024](https://github.com/ysj9909/SHViT)中的SHSA改进AIFI.
+
+25. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-DML.yaml
+
+    使用[IJCV2024 SRConvNet](https://github.com/lifengcs/SRConvNet)中的DMI改进AIFI.
 
 ### Neck系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-ASF.yaml
@@ -2368,3 +2380,9 @@
     3. 新增ICCV2023-FastViT中的RepStem模块.
     4. 更新使用教程.
     5. 百度云视频增加20250914更新说明.
+
+- **20251008-rtdetr-v1.61**
+    1. 新增IJCV2024-SRConvNet中的模块.
+    2. 新增LWGANet中的模块.
+    3. 更新使用教程.
+    4. 百度云视频增加20251008更新说明.

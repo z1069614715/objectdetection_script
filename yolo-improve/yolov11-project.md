@@ -1383,6 +1383,14 @@
 
     使用[AAAI2024 SCTNet](https://arxiv.org/pdf/2312.17071)中的CFBlock改进C3k2.
 
+128. ultralytics/cfg/models/11/yolo11-C3k2-FMABlock.yaml
+
+    使用[IJCV2024 SRConvNet](https://github.com/lifengcs/SRConvNet)中的FMABlock改进C3k2.
+
+129. ultralytics/cfg/models/11/yolo11-C3k2-LWGA.yaml
+
+    使用[LWGANet](https://github.com/lwCVer/LWGANet)中的LWGABlock改进C3k2.
+
 ### C2PSA系列
 
 1. ultralytics/cfg/models/11/yolo11-C2BRA.yaml
@@ -1464,6 +1472,10 @@
 20. ultralytics/cfg/models/11/yolo11-C2PSA-EPGO.yaml   
 
     使用[ACM MM 2025 CPRAformer](https://github.com/zs1314/CPRAformer)中的EPGO改进C2PSA中的self-attention.
+
+21. ultralytics/cfg/models/11/yolo11-C2PSA-DML.yaml
+
+    使用[IJCV2024 SRConvNet](https://github.com/lifengcs/SRConvNet)中的DMI改进C2PSA.
 
 ### A2C2f系列
 1. ultralytics/cfg/models/12/yolo12-A2C2f-CGLU.yaml
@@ -1811,3 +1823,9 @@
     3. 新增ICCV2023-FastViT中的RepStem模块.
     4. 更新使用教程.
     5. 百度云视频增加20250912更新说明.
+
+- **20251008-yolo11-v1.31**
+    1. 新增IJCV2024-SRConvNet中的模块.
+    2. 新增LWGANet中的模块.
+    3. 更新使用教程.
+    4. 百度云视频增加20251008更新说明.
