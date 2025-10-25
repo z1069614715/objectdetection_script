@@ -189,6 +189,13 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     3. 新增<DEIMV2说明视频>。
     4. 修复一些已知问题。
 
+- 20251025
+
+    1. 新增DQ-DETR的模块。
+    2. 新增多个改进模块。
+    3. 新增<DQ-DETR改进点>的相关教程视频。
+    4. 修复一些已知问题。
+
 ### 7. 进阶视频教程
 
 ------------------------------------- 进阶教程 -------------------------------------  
@@ -212,6 +219,8 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
 3. 顶会中的Partial创新思想课程链接
 4. CVPR2025-MobileMamba中的Long-Range WTB-Mamba二次创新直播回放链接
 5. 自监督最强巨兽DINOV3在DEIM、DFine中的配置文件说明和注意点链接
+6. DQ-DETR的创新系列一｜如何在自己的yml上使用DQ-DETR的思想链接
+7. DQ-DETR的创新系列二｜如何拆解Dynamic-Query和Counting-Guided Feature Enhancement链接
 
 -------------------------------------------- 基础教程补充版 (这部分建议理解完基础课程全部再看) --------------------------------------------  
 1. 如何快速得知每个改进模块的输入输出格式相关信息
@@ -228,6 +237,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
 4. engine/extre_module/custom_nn/module.py的搭积木神器(万物皆可融)教程-下集
 5. engine/extre_module/custom_nn/mlp/SEFN.py
 6. engine/extre_module/custom_nn/neck/FDPN.py
+7. engine/extre_module/custom_nn/module/LWGA.py
 
 -------------------------------------------- Ultralytics配置文件版本教程 <即使你使用配置文件方式去跑也建议B站的基础视频和项目内的其他视频都看一下，对后面做二次创新时候的代码有帮助> --------------------------------------------
 1. 原始配置文件讲解
@@ -389,6 +399,12 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     30. CVPR2025|engine/extre_module/custom_nn/module/nnWNet.py
     31. TGRS2025|engine/extre_module/custom_nn/module/ARF.py
     32. AAAI2024|engine/extre_module/custom_nn/module/CFBlock.py
+    33. IJCV2024|engine/extre_module/custom_nn/module/FMA.py
+    34. engine/extre_module/custom_nn/module/LWGA.py
+    35. TGRS2025|engine/extre_module/custom_nn/module/CSSC.py
+    35. TGRS2025|engine/extre_module/custom_nn/module/CNCM.py
+    36. ICCV2025|engine/extre_module/custom_nn/module/HFRB.py
+    37. ICIP2025|engine/extre_module/custom_nn/module/EVA.py
 
 - engine/extre_module/custom_nn/neck
 
@@ -426,6 +442,8 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     15. ACMMM2025|engine/extre_module/custom_nn/transformer/CPIA_SA.py
     16. NN2025|engine/extre_module/custom_nn/transformer/TokenSelectAttention.py
     17. CVPR2025|engine/extre_module/custom_nn/transformer/TAB.py
+    19. TPAMI2025|engine/extre_module/custom_nn/transformer/LRSA.py
+    20. ICCV2025|engine/extre_module/custom_nn/transformer/MALA.py
 
 - engine/extre_module/custom_nn/mlp
 
@@ -437,6 +455,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     6. WACV2025|engine/extre_module/custom_nn/mlp/SEFN.py
     7. ICLR2025|engine/extre_module/custom_nn/mlp/KAN.py
     8. CVPR2025|engine/extre_module/custom_nn/mlp/EDFFN.py
+    9. ICVJ2024|engine/extre_module/custom_nn/mlp/DML.py
 
 - engine/extre_module/custom_nn/mamba
 

@@ -456,10 +456,6 @@
 
     在rtdetr-MutilBackbone-DAF.yaml上引入HAFB(Hierarchical Attention Fusion Block).
 
-21. ultralytics/cfg/models/rt-detr/rtdetr-RFPN.yaml
-
-    使用[ECCV2024 rethinking-fpn](https://github.com/AlanLi1997/rethinking-fpn)的SNI和GSConvE改进rtdetr-neck.
-
 ### BackBone系列
 1. ultralytics/cfg/models/rt-detr/rt-detr-timm.yaml
 
@@ -1015,6 +1011,10 @@
 27. ultralytics/cfg/models/rt-detr/rtdetr-DPCF.yaml
 
     使用[INFFUS2025 SAMamba](https://arxiv.org/pdf/2505.23214)中的DPCF改进rtdetr-neck.
+
+28. ultralytics/cfg/models/rt-detr/rtdetr-RFPN.yaml
+
+    使用[ECCV2024 rethinking-fpn](https://github.com/AlanLi1997/rethinking-fpn)的SNI和GSConvE改进rtdetr-neck.
 
 ### Head系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-p2.yaml
