@@ -1,7 +1,7 @@
 # [基于Ultralytics的YOLO11|YOLO12改进项目.(69.9¥)](https://github.com/z1069614715/objectdetection_script)
 #### 因为YOLO11和YOLO12的结构高度相似，所以YOLO12的配置文件都可以从YOLO11修改过去，项目内有标注视频链接！
 
-# 目前自带的一些改进方案(目前拥有合计380+个改进点！持续更新！)
+# 目前自带的一些改进方案(目前拥有合计390+个改进点！持续更新！)
 
 # 为了感谢各位对本项目的支持,本项目的赠品是yolov5-PAGCP通道剪枝算法.[具体使用教程](https://www.bilibili.com/video/BV1yh4y1Z7vz/)
 
@@ -1391,6 +1391,22 @@
 
     使用[LWGANet](https://github.com/lwCVer/LWGANet)中的LWGABlock改进C3k2.
 
+130. ultralytics/cfg/models/11/yolo11-C3k2-CSSC.yaml
+
+    使用[TGRS2025 ASCNet](https://ieeexplore.ieee.org/document/10855453)中的CSSC改进C3k2.
+
+131. ultralytics/cfg/models/11/yolo11-C3k2-CNCM.yaml
+
+    使用[TGRS2025 ASCNet](https://ieeexplore.ieee.org/document/10855453)中的CNCM改进C3k2.
+
+132. ultralytics/cfg/models/11/yolo11-C3k2-HFRB.yaml
+
+    使用[ICCV2025 HFRB](https://arxiv.org/pdf/2507.10689)中的HFRB改进C3k2.
+
+133. ultralytics/cfg/models/11/yolo11-C3k2-EVA.yaml
+
+    使用[ICIP2025 BEVANET](https://arxiv.org/pdf/2508.07300)中的EVA改进C3k2.
+
 ### C2PSA系列
 
 1. ultralytics/cfg/models/11/yolo11-C2BRA.yaml
@@ -1476,6 +1492,14 @@
 21. ultralytics/cfg/models/11/yolo11-C2PSA-DML.yaml
 
     使用[IJCV2024 SRConvNet](https://github.com/lifengcs/SRConvNet)中的DMI改进C2PSA.
+
+22. ultralytics/cfg/models/11/yolo11-C2PSA-LRSA.yaml
+
+    使用[TPAMI2025 LRFormer](https://mmcheng.net/wp-content/uploads/2025/06/25PAMI_LRFormer.pdf)中的LRSA改进C2PSA.
+
+23. ultralytics/cfg/models/11/yolo11-C2PSA-MALA.yaml
+
+    使用[ICCV2025 Rectifying Magnitude Neglect in Linear Attention](https://arxiv.org/pdf/2507.00698)中的MALA改进C2PSA.
 
 ### A2C2f系列
 1. ultralytics/cfg/models/12/yolo12-A2C2f-CGLU.yaml
@@ -1829,3 +1853,12 @@
     2. 新增LWGANet中的模块.
     3. 更新使用教程.
     4. 百度云视频增加20251008更新说明.
+
+- **20251028-yolo11-v1.32**
+    1. 新增TGRS2025-ASCNet中的模块.
+    2. 新增ICCV2025-HFRB模块.
+    3. 新增ICIP2025-BEVANET中的模块.
+    4. 新增TPAMI2025-LRFormer中的模块.
+    5. 新增ICCV2025-Rectifying Magnitude Neglect in Linear Attention的模块.
+    6. 更新使用教程.
+    7. 百度云视频增加20251028更新说明.

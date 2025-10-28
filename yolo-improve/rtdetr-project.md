@@ -1,6 +1,6 @@
 # [基于Ultralytics的RT-DETR改进详细介绍](https://github.com/z1069614715/objectdetection_script)
 
-# 目前自带的一些改进方案(目前拥有合计290+个改进点！持续更新！)
+# 目前自带的一些改进方案(目前拥有合计300+个改进点！持续更新！)
 
 # 为了感谢各位对RTDETR项目的支持,本项目的赠品是yolov5-PAGCP通道剪枝算法.[具体使用教程](https://www.bilibili.com/video/BV1yh4y1Z7vz/)
 
@@ -804,6 +804,22 @@
 
     使用[LWGANet](https://github.com/lwCVer/LWGANet)中的LWGABlock与CSP思想改进backbone.
 
+92. ultralytics/cfg/models/rt-detr/rtdetr-C2f-CSSC.yaml
+
+    使用[TGRS2025 ASCNet](https://ieeexplore.ieee.org/document/10855453)中的CSSC与CSP改进backbone.
+
+93. ultralytics/cfg/models/rt-detr/rtdetr-C2f-CNCM.yaml
+
+    使用[TGRS2025 ASCNet](https://ieeexplore.ieee.org/document/10855453)中的CNCM与CSP改进backbone.
+
+94. ultralytics/cfg/models/rt-detr/rtdetr-C2f-HFRB.yaml
+
+    使用[ICCV2025 HFRB](https://arxiv.org/pdf/2507.10689)中的HFRB与CSP改进backbone.
+
+95. ultralytics/cfg/models/rt-detr/rtdetr-C2f-EVA.yaml
+
+    使用[ICIP2025 BEVANET](https://arxiv.org/pdf/2508.07300)中的EVA与CSP改进backbone.
+
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -900,6 +916,14 @@
 25. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-DML.yaml
 
     使用[IJCV2024 SRConvNet](https://github.com/lifengcs/SRConvNet)中的DMI改进AIFI.
+
+26. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LRSA.yaml 
+
+    使用[TPAMI2025 LRFormer](https://mmcheng.net/wp-content/uploads/2025/06/25PAMI_LRFormer.pdf)中的LRSA改进AIFI.
+
+27. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-MALA.yaml
+
+    使用[ICCV2025 Rectifying Magnitude Neglect in Linear Attention](https://arxiv.org/pdf/2507.00698)中的MALA改进AIFI.
 
 ### Neck系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-ASF.yaml
@@ -2386,3 +2410,12 @@
     2. 新增LWGANet中的模块.
     3. 更新使用教程.
     4. 百度云视频增加20251008更新说明.
+
+- **20251028-rtdetr-v1.62**
+    1. 新增TGRS2025-ASCNet中的模块.
+    2. 新增ICCV2025-HFRB模块.
+    3. 新增ICIP2025-BEVANET中的模块.
+    4. 新增TPAMI2025-LRFormer中的模块.
+    5. 新增ICCV2025-Rectifying Magnitude Neglect in Linear Attention的模块.
+    6. 更新使用教程.
+    7. 百度云视频增加20251028更新说明.

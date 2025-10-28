@@ -1167,6 +1167,22 @@
 
     使用[AAAI2024 SCTNet](https://arxiv.org/pdf/2312.17071)中的CFBlock改进C2f.
 
+102. ultralytics/cfg/models/v8/yolov8-C2f-CSSC.yaml
+
+    使用[TGRS2025 ASCNet](https://ieeexplore.ieee.org/document/10855453)中的CSSC改进C2f.
+
+103. ultralytics/cfg/models/v8/yolov8-C2f-CNCM.yaml
+
+    使用[TGRS2025 ASCNet](https://ieeexplore.ieee.org/document/10855453)中的CNCM改进C2f.
+
+104. ultralytics/cfg/models/v8/yolov8-C2f-HFRB.yaml
+
+    使用[ICCV2025 HFRB](https://arxiv.org/pdf/2507.10689)中的HFRB改进C2f.
+
+105. ultralytics/cfg/models/v8/yolov8-C2f-EVA.yaml
+
+    使用[ICIP2025 BEVANET](https://arxiv.org/pdf/2508.07300)中的EVA改进C2f.
+
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
 
@@ -2063,6 +2079,22 @@
 
     使用[AAAI2024 SCTNet](https://arxiv.org/pdf/2312.17071)中的CFBlock改进C2f.
 
+67. ultralytics/cfg/models/v10/yolov10n-C2f-CSSC.yaml
+
+    使用[TGRS2025 ASCNet](https://ieeexplore.ieee.org/document/10855453)中的CSSC改进C2f.
+
+68. ultralytics/cfg/models/v10/yolov10n-C2f-CNCM.yaml
+
+    使用[TGRS2025 ASCNet](https://ieeexplore.ieee.org/document/10855453)中的CNCM改进C2f.
+
+69. ultralytics/cfg/models/v10/yolov10n-C2f-HFRB.yaml
+
+    使用[ICCV2025 HFRB](https://arxiv.org/pdf/2507.10689)中的HFRB改进C2f.
+
+70. ultralytics/cfg/models/v10/yolov10n-C2f-EVA.yaml
+
+    使用[ICIP2025 BEVANET](https://arxiv.org/pdf/2508.07300)中的EVA改进C2f.
+
 ### PSA系列
 
 1. ultralytics/cfg/models/v10/yolov10n-PTSSA.yaml
@@ -2759,3 +2791,10 @@
     3. 新增ICCV2023-FastViT中的RepStem模块.
     4. 更新使用教程.
     5. 百度云视频增加20250919更新说明.
+
+- **20251028-ultralytics-v1.93**
+    1. 新增TGRS2025-ASCNet中的模块.
+    2. 新增ICCV2025-HFRB模块.
+    3. 新增ICIP2025-BEVANET中的模块.
+    4. 更新使用教程.
+    5. 百度云视频增加20251028更新说明.
