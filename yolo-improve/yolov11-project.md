@@ -1407,6 +1407,14 @@
 
     使用[ICIP2025 BEVANET](https://arxiv.org/pdf/2508.07300)中的EVA改进C3k2.
 
+134. ultralytics/cfg/models/11/yolo11-C3k2-RMBC.yaml
+
+    使用[PlainUSR](https://arxiv.org/pdf/2409.13435)中的RepMBConv改进C3k2.
+
+135. ultralytics/cfg/models/11/yolo11-C3k2-RMBC-LA.yaml
+
+    使用[PlainUSR](https://arxiv.org/pdf/2409.13435)中的RepMBConv和Local Importance-based Attention改进C3k2.
+
 ### C2PSA系列
 
 1. ultralytics/cfg/models/11/yolo11-C2BRA.yaml
@@ -1625,6 +1633,7 @@
 7. Focaler-IoU系列(IoU,GIoU,DIoU,CIoU,EIoU,SIoU,WIoU,MPDIoU,ShapeIoU)
 8. Powerful-IoU,Powerful-IoUV2,Inner-Powerful-IoU,Inner-Powerful-IoUV2,Focaler-Powerful-IoU,Focaler-Powerful-IoUV2,Wise-Powerful-IoU(v1,v2,v3),Wise-Powerful-IoUV2(v1,v2,v3)[论文链接](https://www.sciencedirect.com/science/article/abs/pii/S0893608023006640)
 9. Normalized Gaussian Wasserstein Distance.
+10. Gaussian Combined Distance.
 
 # 更新公告
 
@@ -1862,3 +1871,9 @@
     5. 新增ICCV2025-Rectifying Magnitude Neglect in Linear Attention的模块.
     6. 更新使用教程.
     7. 百度云视频增加20251028更新说明.
+
+- **20251122-yolo11-v1.33**
+    1. 新增GRSL2025-Gaussian Combined Distance,支持在目标框损失和标签分配策略上更改，详细请看LOSS改进系列.md
+    2. 新增ACCV2024-PlainUSR中的模块.
+    3. 更新使用教程.
+    4. 百度云视频增加20251122更新说明.

@@ -820,6 +820,14 @@
 
     使用[ICIP2025 BEVANET](https://arxiv.org/pdf/2508.07300)中的EVA与CSP改进backbone.
 
+96. ultralytics/cfg/models/rt-detr/rtdetr-C2f-RMBC.yaml
+
+    使用[PlainUSR](https://arxiv.org/pdf/2409.13435)中的RepMBConv与CSP改进backbone.
+
+97. ultralytics/cfg/models/rt-detr/rtdetr-C2f-RMBC-LA.yaml
+
+    使用[PlainUSR](https://arxiv.org/pdf/2409.13435)中的RepMBConv、Local Importance-based Attention与CSP改进backbone.
+
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -1322,6 +1330,7 @@
 12. Powerful-IoU,Powerful-IoUV2,Inner-Powerful-IoU,Inner-Powerful-IoUV2,Focaler-Powerful-IoU,Focaler-Powerful-IoUV2,Wise-Powerful-IoU(v1,v2,v3),Wise-Powerful-IoUV2(v1,v2,v3)[论文链接](https://www.sciencedirect.com/science/article/abs/pii/S0893608023006640)
 13. SlideVarifocalLoss,EMASlideVarifocalLoss[创新思路](https://www.bilibili.com/video/BV1W14y1i79U/?vd_source=c8452371e7ca510979593165c8d7ac27).[Yolo-Face V2](https://github.com/Krasjet-Yu/YOLO-FaceV2/blob/master/utils/loss.py)(百度云视频-20240302更新说明)
 14. CVPR2025-DEIM-MAL.(百度云视频-20240315更新说明)
+15. Gaussian Combined Distance[论文链接](https://arxiv.org/pdf/2510.27649)(百度云视频-20251122更新说明)
 
 ### 以Yolov8为基准模型的改进方案
 1. ultralytics/cfg/models/yolo-detr/yolov8-detr.yaml
@@ -2419,3 +2428,9 @@
     5. 新增ICCV2025-Rectifying Magnitude Neglect in Linear Attention的模块.
     6. 更新使用教程.
     7. 百度云视频增加20251028更新说明.
+
+- **20251122-rtdetr-v1.63**
+    1. 新增GRSL2025-Gaussian Combined Distance,详细请看LOSS改进系列.md.
+    2. 新增ACCV2024-PlainUSR中的模块.
+    3. 更新使用教程.
+    4. 百度云视频增加20251122更新说明.
