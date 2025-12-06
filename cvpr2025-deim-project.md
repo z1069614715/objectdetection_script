@@ -206,6 +206,17 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     1. 新增以DensityMap为主导的创新课程[DFINE with Density-aware Query Selection]。
     2. 修复一些已知问题。
 
+- 20251207
+
+    1. 新增在test-only状态下，yolo-metrice支持保存混淆矩阵。
+    2. 新增DFine、DEIM实例分割的实现，使用相关请看进阶教程实例分割部分。
+    3. 更新dataset/coco_analyzer.py脚本，支持输出数据集中更多的内容，以便分析数据集的特点。
+    4. 新增tools/visualization/tp_fp_fn_analysis.py脚本，用于分析检测结果中的tp、fp、fn。
+    5. 新增多个改进模块。
+    6. 修复一些已知问题。
+    7. 新增<TGRS2025-HighFrequencyDirectionInjection创新思想课程>。
+    8. 新增基于ByteTrack的目标跟踪，教程请看进阶教程内的<目标跟踪ByteTrack的使用教程>。
+
 ### 7. 进阶视频教程
 
 ------------------------------------- 进阶教程 -------------------------------------  
@@ -222,6 +233,8 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
 8. 20250704基础疑问解答直播回放链接
 9. 20250910基础疑问解答直播回放链接
 10. DEIMV2移植代码说明链接
+11. tp_fp_fn_analysis脚本使用教程
+12. 目标跟踪ByteTrack的使用教程
 
 -------------------------------------------- 创新课题 --------------------------------------------
 1. 小目标检测网络架构专题一群课题直播回放链接
@@ -235,6 +248,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
 9. DQ-DETR的创新系列四｜CGFE是什么？怎么去创新？链接
 10. DQS-DETR的创新系列一｜如何在自己的yml上使用DQS 链接
 11. DQS-DETR的创新系列二｜DQS流程讲解 链接
+12. TGRS2025-HighFrequencyDirectionInjection创新思想课程 链接
 
 -------------------------------------------- 基础教程补充版 (这部分建议理解完基础课程全部再看) --------------------------------------------  
 1. 如何快速得知每个改进模块的输入输出格式相关信息
@@ -284,6 +298,11 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
 1. 模型导出教程(onnx,tensorrt-engine)
 2. onnx,engine版本模型推理教程
 3. onnx,engine版本模型精度测试教程
+
+-------------------------------------------- 实例分割 --------------------------------------------
+1. 实例分割训练使用教程一
+2. 实例分割训练使用教程二-Ultralytics配置文件版本教程
+3. 实例分割实现讲解
 
 ### 8. 目前已有的模块
 
@@ -338,6 +357,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     25. ICCV2025|engine/extre_module/custom_nn/conv_module/ConvAttn.py
     26. ICCV2025|engine/extre_module/custom_nn/conv_module/Converse2D.py
     27. CVPR2025|engine/extre_module/custom_nn/conv_module/gcconv.py
+    28. ACCV2024|engine/extre_module/custom_nn/conv_module/RMBC.py
 
 - engine/extre_module/custom_nn/upsample
 
@@ -458,6 +478,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     17. CVPR2025|engine/extre_module/custom_nn/transformer/TAB.py
     19. TPAMI2025|engine/extre_module/custom_nn/transformer/LRSA.py
     20. ICCV2025|engine/extre_module/custom_nn/transformer/MALA.py
+    21. ICML2023|engine/extre_module/custom_nn/transformer/MUA.py
 
 - engine/extre_module/custom_nn/mlp
 
@@ -499,3 +520,4 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     1. 顶会中的Partial创新思想课程|engine/extre_module/innovate/CVPR2020_GhostConv.py
     2. 顶会中的Partial创新思想课程|engine/extre_module/innovate/CVPR2023_PartialConv.py
     3. CVPR2025-MobileMamba中的Long-Range WTB-Mamba二次创新|engine/extre_module/innovate/CVPR2025_MobileMamba.py
+    4. TGRS2025-HighFrequencyDirectionInjection创新思想课程|engine/extre_module/innovate/TGRS2025_HFDI.py
