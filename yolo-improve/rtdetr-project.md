@@ -828,6 +828,10 @@
 
     使用[PlainUSR](https://arxiv.org/pdf/2409.13435)中的RepMBConv、Local Importance-based Attention与CSP改进backbone.
 
+98. ultralytics/cfg/models/rt-detr/rtdetr-C2f-SFMB.yaml
+
+    使用[TIP2025 SFMB](https://arxiv.org/pdf/2511.06593v1)中的SFMB与CSP改进backbone.
+
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -1047,6 +1051,14 @@
 28. ultralytics/cfg/models/rt-detr/rtdetr-RFPN.yaml
 
     使用[ECCV2024 rethinking-fpn](https://github.com/AlanLi1997/rethinking-fpn)的SNI和GSConvE改进rtdetr-neck.
+
+29. ultralytics/cfg/models/rt-detr/rtdetr-LCA.yaml
+
+    使用[CVPR2025 HVI](https://arxiv.org/pdf/2502.20272)中的LCA改进rtdetr-neck.
+
+30. ultralytics/cfg/models/rt-detr/rtdetr-HFFE.yaml
+
+    使用[TGRS2025 HAFNet](https://ieeexplore.ieee.org/document/11154006)中的HFFE改进rtdetr-neck.
 
 ### Head系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-p2.yaml
@@ -2434,3 +2446,10 @@
     2. 新增ACCV2024-PlainUSR中的模块.
     3. 更新使用教程.
     4. 百度云视频增加20251122更新说明.
+
+- **20251219-rtdetr-v1.64**
+    1. 新增CVPR2025-HVI中的LCA模块.
+    2. 新增TIP2025-SFMB模块.
+    3. 新增TGRS2025-HAFNet中的HFFE模块.
+    4. 更新使用教程.
+    5. 百度云视频增加20251219更新说明.

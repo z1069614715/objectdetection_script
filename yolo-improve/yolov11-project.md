@@ -1,7 +1,7 @@
 # [基于Ultralytics的YOLO11|YOLO12改进项目.(69.9¥)](https://github.com/z1069614715/objectdetection_script)
 #### 因为YOLO11和YOLO12的结构高度相似，所以YOLO12的配置文件都可以从YOLO11修改过去，项目内有标注视频链接！
 
-# 目前自带的一些改进方案(目前拥有合计390+个改进点！持续更新！)
+# 目前自带的一些改进方案(目前拥有合计400+个改进点！持续更新！)
 
 # 为了感谢各位对本项目的支持,本项目的赠品是yolov5-PAGCP通道剪枝算法.[具体使用教程](https://www.bilibili.com/video/BV1yh4y1Z7vz/)
 
@@ -764,6 +764,14 @@
 
     使用[INFFUS2025 SAMamba](https://arxiv.org/pdf/2505.23214)中的DPCF改进neck.
 
+31. ultralytics/cfg/models/11/yolo11-LCA.yaml
+
+    使用[CVPR2025 HVI](https://arxiv.org/pdf/2502.20272)中的LCA改进yolo11-neck.
+
+32. ultralytics/cfg/models/11/yolo11-HFFE.yaml
+
+    使用[TGRS2025 HAFNet](https://ieeexplore.ieee.org/document/11154006)中的HFFE改进yolo11-neck.
+
 ### Head系列
 1. ultralytics/cfg/models/11/yolo11-dyhead.yaml
 
@@ -1415,6 +1423,14 @@
 
     使用[PlainUSR](https://arxiv.org/pdf/2409.13435)中的RepMBConv和Local Importance-based Attention改进C3k2.
 
+136. ultralytics/cfg/models/11/yolo11-C3k2-IEL.yaml
+
+    使用[CVPR2025 HVI](https://arxiv.org/pdf/2502.20272)中的IEL改进C3k2.
+
+137. ultralytics/cfg/models/11/yolo11-C3k2-SFMB.yaml
+
+    使用[TIP2025 SFMB](https://arxiv.org/pdf/2511.06593v1)中的SFMB改进C3k2.
+
 ### C2PSA系列
 
 1. ultralytics/cfg/models/11/yolo11-C2BRA.yaml
@@ -1877,3 +1893,10 @@
     2. 新增ACCV2024-PlainUSR中的模块.
     3. 更新使用教程.
     4. 百度云视频增加20251122更新说明.
+
+- **20251219-yolo11-v1.34**
+    1. 新增CVPR2025-HVI中的LCA模块.
+    2. 新增TIP2025-SFMB模块.
+    3. 新增TGRS2025-HAFNet中的HFFE模块.
+    4. 更新使用教程.
+    5. 百度云视频增加20251219更新说明.
