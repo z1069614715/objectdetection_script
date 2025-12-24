@@ -223,6 +223,14 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     2. 修复在ram_cache状态下实例分割数据集部分存在的BUG。
     3. 重新录制实例分割部分的进阶视频。
 
+- 20251224
+
+    1. 新增多个改进模块。
+    2. 修复实例分割部分已知的问题。
+    3. 新增以DensityMap为主导的实例分割检测头内容[DFINESeg with Density-aware Query Selection]。
+    4. 新增[DFINESeg with Density-aware Query Selection]的使用视频教程。
+    5. 更新实例分割实现讲解。
+
 ### 7. 进阶视频教程
 
 ------------------------------------- 进阶教程 -------------------------------------  
@@ -310,6 +318,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
 2. 实例分割训练使用教程二-Ultralytics配置文件版本教程
 3. 实例分割实现讲解
 4. 实例分割训练、测试过程可视化
+5. DQS-DETR在实例分割中的应用
 
 ### 8. 目前已有的模块
 
@@ -405,6 +414,8 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     8. engine/extre_module/custom_nn/featurefusion/PST.py
     9. TGRS2025|engine/extre_module/custom_nn/featurefusion/MSAM.py
     10. INFFUS2025|engine/extre_module/custom_nn/featurefusion/DPCF.py
+    11. CVRP2025|engine/extre_module/custom_nn/featurefusion/LCA.py
+    12. TGRS2025|engine/extre_module/custom_nn/featurefusion/HFFE.py
 
 - engine/extre_module/custom_nn/module
 
@@ -446,6 +457,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     35. TGRS2025|engine/extre_module/custom_nn/module/CNCM.py
     36. ICCV2025|engine/extre_module/custom_nn/module/HFRB.py
     37. ICIP2025|engine/extre_module/custom_nn/module/EVA.py
+    38. CVPR2025|engine/extre_module/custom_nn/module/IEL.py
 
 - engine/extre_module/custom_nn/neck
 
@@ -510,6 +522,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     7. ICCV2025|engine/extre_module/custom_nn/mamba/VSSD.py
     8. ICCV2025|engine/extre_module/custom_nn/mamba/TinyViM.py
     9. INFFUS2025|engine/extre_module/custom_nn/mamba/CSI.py
+    10. TIP2025|engine/extre_module/custom_nn/mamba/SFMB.py
 
 - 积木模块,示例教程engine/extre_module/custom_nn/module/example.py
 
