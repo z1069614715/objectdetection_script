@@ -236,96 +236,13 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     1. 修复一些已知问题。
     2. 新增基于COCO-Tiny指标，并支持输出每类COCO-Tiny指标，详细请看UserGuide.md中的<项目内yml一些额外参数说明>。
 
-### 7. 进阶视频教程
+- 20260109
 
-------------------------------------- 进阶教程 -------------------------------------  
+    1. 修复一些已知问题。
+    2. 新增<ES-MoE>动态路由网络模块。
+    3. 更新视频链接。
 
--------------------------------------------- 基础疑问直播回放和一些功能性文件的使用教程 <这部分没有观看顺序> --------------------------------------------  
-其中基础疑问解答系列的视频可以在群文件中的群在线文档查看这期讲了什么问题。
-1. 20250402基础疑问解答直播回放
-2. 20250416基础疑问解答直播回放
-3. featuremap脚本使用教程
-4. heatmap脚本使用教程
-5. tools/inference/torch_inf.py
-6. 20250513基础疑问解答直播回放链接
-7. 20250618基础疑问解答直播回放链接
-8. 20250704基础疑问解答直播回放链接
-9. 20250910基础疑问解答直播回放链接
-10. DEIMV2移植代码说明链接
-11. tp_fp_fn_analysis脚本使用教程
-12. 目标跟踪ByteTrack的使用教程
-
--------------------------------------------- 创新课题 --------------------------------------------
-1. 小目标检测网络架构专题一群课题直播回放链接
-2. 小目标检测网络架构专题二链接
-3. 顶会中的Partial创新思想课程链接
-4. CVPR2025-MobileMamba中的Long-Range WTB-Mamba二次创新直播回放链接
-5. 自监督最强巨兽DINOV3在DEIM、DFine中的配置文件说明和注意点链接
-6. DQ-DETR的创新系列一｜如何在自己的yml上使用DQ-DETR的思想链接
-7. DQ-DETR的创新系列二｜如何拆解Dynamic-Query和Counting-Guided Feature Enhancement链接
-8. DQ-DETR的创新系列三｜DQDFineTransformer计算量太大了？怎么去分析？怎么去降？怎么去创新？链接
-9. DQ-DETR的创新系列四｜CGFE是什么？怎么去创新？链接
-10. DQS-DETR的创新系列一｜如何在自己的yml上使用DQS 链接
-11. DQS-DETR的创新系列二｜DQS流程讲解 链接
-12. TGRS2025-HighFrequencyDirectionInjection创新思想课程 链接
-
--------------------------------------------- 基础教程补充版 (这部分建议理解完基础课程全部再看) --------------------------------------------  
-1. 如何快速得知每个改进模块的输入输出格式相关信息
-2. 这个项目内的通道数是怎么传递的？特别是backbone与encoder部分，对后续的改进很重要！
-3. 主干进阶改进方案一-给每个stage设定不同的参数
-4. 主干进阶改进方案二-给每个stage使用不同的改进结构
-5. 改进模型后参数量和计算量变得非常大怎么办？为什么会这样？怎么解决？
-
--------------------------------------------- 特殊配置文件-进阶教程(这部分必须要看完理解完基础课程全部才能看，不然百分百不看懂) <这部分没有观看顺序>  --------------------------------------------  
-1. engine/extre_module/custom_nn/featurefusion/mpca.py
-2. 如何使用engine/extre_module/custom_nn/transformer改进HybridEncoder中的Transformer
-3. engine/extre_module/custom_nn/module.py的搭积木神器(万物皆可融)教程-上集
-3. engine/extre_module/custom_nn/module.py的搭积木神器(万物皆可融)教程-中集
-4. engine/extre_module/custom_nn/module.py的搭积木神器(万物皆可融)教程-下集
-5. engine/extre_module/custom_nn/mlp/SEFN.py
-6. engine/extre_module/custom_nn/neck/FDPN.py
-7. engine/extre_module/custom_nn/module/LWGA.py
-
--------------------------------------------- Ultralytics配置文件版本教程 <即使你使用配置文件方式去跑也建议B站的基础视频和项目内的其他视频都看一下，对后面做二次创新时候的代码有帮助> --------------------------------------------
-1. 原始配置文件讲解
-2. 怎么使用预训练权重
-3. Ultralytics配置文件版本的热力图和特征图脚本使用教程
-4. 注册模块示例教程一
-5. 注册模块示例教程二(Conv、attention部分)
-6. 注册模块示例教程三(module、block部分)
-7. 注册模块示例教程四(搭积木神器(万物皆可融)部分)
-8. 注册模块示例教程五(HyperACE)
-9. 注册模块示例教程六(featurefusion部分)
-10. 自研模块FDPN在配置文件中的实现讲解
-11. YOLO13中的HyperACE在DEIM中的应用
-12. 注册模块示例教程七(transformer部分)
-13. 注册模块示例教程八(GOLD-YOLO)
-14. GOLO-YOLO在DEIM中的应用(包含怎么对其二次创新)
-15. HS-FPN怎么融合到DEIM？
-16. 怎么用module、block中的模块去改进主干网络？
-17. 从0搭建一个yaml！以CVPR2025-nnWNet为例.
-
--------------------------------------------- 知识蒸馏 --------------------------------------------
-1. 知识蒸馏原理讲解
-2. 知识蒸馏使用教程
-3. 逻辑蒸馏的讲解1-DETR检测头大白话讲解
-4. 逻辑蒸馏的讲解2-逻辑蒸馏的讲解
-5. 一些关于蒸馏的注意点(蒸馏实验前必看)
-6. 蒸馏中出现教师模型和配置文件一直显示不匹配的问题解决思路
-
--------------------------------------------- 模型导出(onnx,tensorrt-engine) --------------------------------------------
-1. 模型导出教程(onnx,tensorrt-engine)
-2. onnx,engine版本模型推理教程
-3. onnx,engine版本模型精度测试教程
-
--------------------------------------------- 实例分割 --------------------------------------------
-1. 实例分割训练使用教程一
-2. 实例分割训练使用教程二-Ultralytics配置文件版本教程
-3. 实例分割实现讲解
-4. 实例分割训练、测试过程可视化
-5. DQS-DETR在实例分割中的应用
-
-### 8. 目前已有的模块
+### 7. 目前已有的模块
 
 - engine/extre_module/custom_nn/attention 
 
@@ -528,6 +445,10 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     8. ICCV2025|engine/extre_module/custom_nn/mamba/TinyViM.py
     9. INFFUS2025|engine/extre_module/custom_nn/mamba/CSI.py
     10. TIP2025|engine/extre_module/custom_nn/mamba/SFMB.py
+
+- engine/extre_module/custom_nn/moe
+
+    1. engine/extre_module/custom_nn/moe/moe_module.py
 
 - 积木模块,示例教程engine/extre_module/custom_nn/module/example.py
 
