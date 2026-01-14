@@ -628,6 +628,9 @@
 22. ultralytics/cfg/models/11/yolo11-lsnet.yaml
 
     使用[CVPR2025 LSNet](https://github.com/THU-MIG/lsnet)的LSNet替换yolo11-backbone.
+23. ultralytics/cfg/models/11/yolo11-ESMoE.yaml
+
+    使用[YOLO-Master](https://github.com/isLinXu/YOLO-Master)中的ES-MoE模块改进Yolo11.
 
 ### SPPF系列
 1. ultralytics/cfg/models/11/yolo11-FocalModulation.yaml
@@ -1525,6 +1528,14 @@
 
     使用[ICCV2025 Rectifying Magnitude Neglect in Linear Attention](https://arxiv.org/pdf/2507.00698)中的MALA改进C2PSA.
 
+24. ultralytics/cfg/models/11/yolo11-C2PSA-SWSA.yaml
+
+    使用[ACMMM2025 FlickCD](https://dl.acm.org/doi/epdf/10.1145/3746027.3755657)中的SWSA改进C2PSA.
+
+25. ultralytics/cfg/models/11/yolo11-C2PSA-EGSA.yaml
+
+    使用[ACMMM2025 FlickCD](https://dl.acm.org/doi/epdf/10.1145/3746027.3755657)中的EGSA改进C2PSA.
+
 ### A2C2f系列
 1. ultralytics/cfg/models/12/yolo12-A2C2f-CGLU.yaml
      
@@ -1900,3 +1911,9 @@
     3. 新增TGRS2025-HAFNet中的HFFE模块.
     4. 更新使用教程.
     5. 百度云视频增加20251219更新说明.
+
+- **20260114-yolo11-v1.35**
+    1. 新增YOLO-Master中的MoE模块.
+    2. 新增ACMMM2025-FlickCD中的模块.
+    3. 更新使用教程.
+    4. 百度云视频增加20260114更新说明.

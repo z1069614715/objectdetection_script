@@ -832,6 +832,10 @@
 
     使用[TIP2025 SFMB](https://arxiv.org/pdf/2511.06593v1)中的SFMB与CSP改进backbone.
 
+99. ultralytics/cfg/models/rt-detr/rtdetr-ESMoE.yaml
+
+    使用[YOLO-Master](https://github.com/isLinXu/YOLO-Master)中的ES-MoE模块改进RTDETR.
+
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -936,6 +940,14 @@
 27. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-MALA.yaml
 
     使用[ICCV2025 Rectifying Magnitude Neglect in Linear Attention](https://arxiv.org/pdf/2507.00698)中的MALA改进AIFI.
+
+28. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-EGSA.yaml
+
+    使用[ACMMM2025 FlickCD](https://dl.acm.org/doi/epdf/10.1145/3746027.3755657)中的EGSA改进AIFI.
+
+29. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-SWSA.yaml
+
+    使用[ACMMM2025 FlickCD](https://dl.acm.org/doi/epdf/10.1145/3746027.3755657)中的SWSA改进AIFI.
 
 ### Neck系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-ASF.yaml
@@ -2453,3 +2465,9 @@
     3. 新增TGRS2025-HAFNet中的HFFE模块.
     4. 更新使用教程.
     5. 百度云视频增加20251219更新说明.
+
+- **20260114-rtdetr-v1.65**
+    1. 新增YOLO-Master中的MoE模块.
+    2. 新增ACMMM2025-FlickCD中的模块.
+    3. 更新使用教程.
+    4. 百度云视频增加20260114更新说明.
