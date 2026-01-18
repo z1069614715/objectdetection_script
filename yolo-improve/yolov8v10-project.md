@@ -663,6 +663,14 @@
 
     使用[AAAI2025 HS-FPN](https://github.com/ShiZican/HS-FPN/tree/main)中的HFP和SDP改进yolo-neck.
 
+30. ultralytics/cfg/models/v8/yolov8-LCA.yaml
+
+    使用[CVPR2025 HVI](https://arxiv.org/pdf/2502.20272)中的LCA改进yolov8-neck.
+
+31. ultralytics/cfg/models/v8/yolov8-HFFE.yaml
+
+    使用[TGRS2025 HAFNet](https://ieeexplore.ieee.org/document/11154006)中的HFFE改进yolov8-neck.
+
 ### Head系列
 1. ultralytics/cfg/models/v8/yolov8-dyhead.yaml
 
@@ -1190,6 +1198,10 @@
 107. ultralytics/cfg/models/v8/yolov8-C2f-RMBC-LA.yaml
 
     使用[PlainUSR](https://arxiv.org/pdf/2409.13435)中的RepMBConv和Local Importance-based Attention改进C2f.
+
+108. ultralytics/cfg/models/v8/yolov8-C2f-IEL.yaml
+
+    使用[CVPR2025 HVI](https://arxiv.org/pdf/2502.20272)中的IEL改进C2f.
 
 ### 组合系列
 1. ultralytics/cfg/models/v8/yolov8-fasternet-bifpn.yaml
@@ -1746,6 +1758,14 @@
 
     使用[AAAI2025 HS-FPN](https://github.com/ShiZican/HS-FPN/tree/main)中的HFP和SDP改进yolo-neck.
 
+22. ultralytics/cfg/models/v10/yolov10n-LCA.yaml
+
+    使用[CVPR2025 HVI](https://arxiv.org/pdf/2502.20272)中的LCA改进yolov10-neck.
+
+23. ultralytics/cfg/models/v10/yolov10n-HFFE.yaml
+
+    使用[TGRS2025 HAFNet](https://ieeexplore.ieee.org/document/11154006)中的HFFE改进yolov10-neck.
+
 ### Head系列
 
 1. ultralytics/cfg/models/v10/yolov10n-dyhead.yaml
@@ -2110,6 +2130,10 @@
 72. ultralytics/cfg/models/v10/yolov10n-C2f-RMBC-LA.yaml
 
     使用[PlainUSR](https://arxiv.org/pdf/2409.13435)中的RepMBConv和Local Importance-based Attention改进C2f.
+
+73. ultralytics/cfg/models/v10/yolov10n-C2f-IEL.yaml
+
+    使用[CVPR2025 HVI](https://arxiv.org/pdf/2502.20272)中的IEL改进C2f.
 
 ### PSA系列
 
@@ -2821,3 +2845,9 @@
     2. 新增ACCV2024-PlainUSR中的模块.
     3. 更新使用教程.
     4. 百度云视频增加20251129更新说明.
+
+- **20260118-ultralytics-v1.95**
+    1. 新增CVPR2025-HVI中的LCA、IEL模块.
+    2. 新增TGRS2025-HAFNet中的HFFE模块.
+    3. 更新使用教程.
+    4. 百度云视频增加20260118更新说明.
