@@ -110,24 +110,9 @@
     9. 项目公开课试听B站链接2：[长达60分钟的<实验向论文过渡指导+论文写作顺序+创新性评估+公开答疑>直播回放来啦~](https://www.bilibili.com/video/BV1oJPueREfR/)
     10. 项目公开课试听B站链接3：[长达2小时的论文高效画图专题全面剖析：数据可视化+模型图绘制+实验数据分析图+答疑直播，全程高能！！！！](https://www.bilibili.com/video/BV1xEEEzZEUs)
 
-# 导购指南
 ![导购指南](https://github.com/z1069614715/objectdetection_script/blob/master/PurchaseGuide.png)
 
-# Advertising Board
-人工智能-工作室长期对外接单，范围主要是:
-1. 目标检测.
-2. 图像分类.
-3. 图像分割.
-4. NLP领域.
-5. 图像超分辨.
-6. 图像去噪.
-7. GAN.
-8. 模型部署.
-9. 模型创新. 
-10. 目标跟踪.
-
-等等. 硕博团队为您服务,四年TB老店,TB付款安全可靠.  
-有需要的可加企鹅(1615905974/1069614715)后直接提供(具体需求+时间+预算,我们会根据您的需求安排最适合您的工程师).  
+![Advertising Board](https://github.com/z1069614715/objectdetection_script/blob/master/Customization.png)
 
 # Explanation
 - **yolo**  
