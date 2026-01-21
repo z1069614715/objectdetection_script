@@ -110,10 +110,10 @@
     9. 项目公开课试听B站链接2：[长达60分钟的<实验向论文过渡指导+论文写作顺序+创新性评估+公开答疑>直播回放来啦~](https://www.bilibili.com/video/BV1oJPueREfR/)
     10. 项目公开课试听B站链接3：[长达2小时的论文高效画图专题全面剖析：数据可视化+模型图绘制+实验数据分析图+答疑直播，全程高能！！！！](https://www.bilibili.com/video/BV1xEEEzZEUs)
 
-![导购指南](https://github.com/z1069614715/objectdetection_script/PurchaseGuide.png)
+![导购指南](https://github.com/z1069614715/objectdetection_script/blob/master/PurchaseGuide.png)
 
 ## 如果上述项目还不能满足您的需求，我们这里还有专业AI算法定制～
-![Advertising Board](https://github.com/z1069614715/objectdetection_script/Customization.png)
+![Advertising Board](https://github.com/z1069614715/objectdetection_script/blob/master/Customization.png)
 
 # Explanation
 - **yolo**  
