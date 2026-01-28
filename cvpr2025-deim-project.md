@@ -1,4 +1,4 @@
-# 2025-SOTA目标检测模型项目(2025发论文必备项目)
+# 2025-SOTA目标检测模型项目(2026发论文必备项目)
 
 鉴于目前YOLO系列模型反映的拒稿率越来越高且YOLO模型确实非常泛滥，无论是不是计算机专业、是不是小白都基本可以快速上手YOLO模型，导致计算机专业和有期刊级别要求的小伙伴日益难受，简单来说就是YOLO在学术界的红利已经基本吃透，目前开始越来越多人转CVPR2024-RTDETR，而且目前研究生毕业一年比一年难，不像以前随便结合点深度学习就可以毕业，就像越来越多人反馈，导师已经明确禁止不能用YOLO，再加上这么多年来YOLO对学术的灌水已经让审稿人出现视觉疲劳，带上了”有色”眼镜看待YOLO，所以结合以上众多原因，因此我们需要一个有一定上手难度且是顶会的模型来支撑我们后续的大小论文的工作。
 PS:20250614版本更新后，本项目的dfine和cvpr2025-deimv1已经支持Ultralytics同款的配置文件形式，大大降低上手难度！[B站介绍链接](https://www.bilibili.com/video/BV1Q4MHzXEdd/)
@@ -12,7 +12,7 @@ PS:20250614版本更新后，本项目的dfine和cvpr2025-deimv1已经支持Ultr
 3. RTDETRV2
 4. DEIMV2
 
-选择这个课程，这些模型都可以改进，不限于DEIM，这些都是顶会的模型，不要说2025，就算是2026都不落后！还有一个重点就是像CVPR2024-RTDETR，最小的模型也有50GFLOPs，但是现在的DEIM和DFine都有像YOLO一样的Nano大小版本的模型，变相降低了训练成本和设备要求！(建议最低12G显存的显卡起步)
+选择这个课程，这些模型都可以改进，不限于DEIM，这些都是顶会的模型，不要说2025，就算是2026、2027都不落后！还有一个重点就是像CVPR2024-RTDETR，最小的模型也有50GFLOPs，但是现在的DEIM和DFine都有像YOLO一样的Nano大小版本的模型，变相降低了训练成本和设备要求！(建议最低12G显存的显卡起步)
 
 ### 2. 这个项目会以什么形式开展？
 
@@ -242,6 +242,13 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     2. 新增<ES-MoE>动态路由网络模块。
     3. 更新视频链接。
 
+- 20260128
+
+    1. 修复一些已知问题。
+    2. 新增多个改进模块。
+    3. 新增<ES-MoE>动态路由网络教程视频。
+    4. 新增<TPAMI2025 YOLO-MS>的MSBlock和GQL的教程视频。
+
 ### 7. 目前已有的模块
 
 - engine/extre_module/custom_nn/attention 
@@ -259,6 +266,7 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     11. TGRS2025|engine/extre_module/custom_nn/attention/MCA.py
     12. CVPR2025|engine/extre_module/custom_nn/attention/CASAB.py 
     13. NN2025|engine/extre_module/custom_nn/attention/KSFA.py
+    14. TPAMI2025|engine/extre_module/custom_nn/attention/GQL.py
 
 - engine/extre_module/custom_nn/block
 
@@ -420,6 +428,8 @@ PS:20250614版本更新后，本项目的dfine和deim已经支持Ultralytics同�
     19. TPAMI2025|engine/extre_module/custom_nn/transformer/LRSA.py
     20. ICCV2025|engine/extre_module/custom_nn/transformer/MALA.py
     21. ICML2023|engine/extre_module/custom_nn/transformer/MUA.py
+    22. ACMMM2025|engine/extre_module/custom_nn/transformer/EGSA.py
+    23. ACMMM2025|engine/extre_module/custom_nn/transformer/SWSA.py
 
 - engine/extre_module/custom_nn/mlp
 
