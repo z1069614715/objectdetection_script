@@ -836,6 +836,10 @@
 
     使用[YOLO-Master](https://github.com/isLinXu/YOLO-Master)中的ES-MoE模块改进RTDETR.
 
+100. ultralytics/cfg/models/rt-detr/rtdetr-FAENet.yaml
+
+    使用[TGRS2025 MASFNet](https://ieeexplore.ieee.org/document/10955257)中的FAENet增强输入图像的特征.
+
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -1072,6 +1076,14 @@
 
     使用[TGRS2025 HAFNet](https://ieeexplore.ieee.org/document/11154006)中的HFFE改进rtdetr-neck.
 
+31. ultralytics/cfg/models/rt-detr/rtdetr-MFPM.yaml
+
+    使用[TGRS2025 ISGLNet](https://ieeexplore.ieee.org/document/11232501)中的MFPM改进特征融合.
+
+32. ultralytics/cfg/models/rt-detr/rtdetr-ERM.yaml
+
+    使用[TGRS2025 ISGLNet](https://ieeexplore.ieee.org/document/11232501)中的ERM改进特征融合.
+
 ### Head系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-p2.yaml
 
@@ -1292,6 +1304,10 @@
 15. ultralytics/cfg/models/rt-detr/rtdetr-GCConv.yaml
 
     使用[CVPR2025 Golden Cudgel Network](https://github.com/gyyang23/GCNet)中的GCConv改进下采样.
+
+16. ultralytics/cfg/models/rt-detr/rtdetr-FSConv.yaml
+
+    使用[TGRS2025 Think Locally and Act Globally](https://ieeexplore.ieee.org/document/11175146)中的FSConv改进下采样.
 
 ### RT-DETR-L改进系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-l-GhostHGNetV2.yaml
@@ -2471,3 +2487,10 @@
     2. 新增ACMMM2025-FlickCD中的模块.
     3. 更新使用教程.
     4. 百度云视频增加20260114更新说明.
+
+- **20260203-rtdetr-v1.66**
+    1. 新增TGRS2025-Think Locally and Act Globally中的模块.
+    2. 新增TGRS2025-ISGLNet中的多个模块.
+    3. 新增TGRS2025-MASFNet中的模块.
+    4. 更新使用教程.
+    5. 百度云视频增加20260203更新说明.

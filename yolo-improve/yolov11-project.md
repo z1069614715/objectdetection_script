@@ -631,6 +631,9 @@
 23. ultralytics/cfg/models/11/yolo11-ESMoE.yaml
 
     使用[YOLO-Master](https://github.com/isLinXu/YOLO-Master)中的ES-MoE模块改进Yolo11.
+24. ultralytics/cfg/models/11/yolo11-FAENet.yaml
+
+    使用[TGRS2025 MASFNet](https://ieeexplore.ieee.org/document/10955257)中的FAENet增强输入图像的特征.
 
 ### SPPF系列
 1. ultralytics/cfg/models/11/yolo11-FocalModulation.yaml
@@ -775,6 +778,14 @@
 
     使用[TGRS2025 HAFNet](https://ieeexplore.ieee.org/document/11154006)中的HFFE改进yolo11-neck.
 
+33. ultralytics/cfg/models/11/yolo11-MFPM.yaml
+
+    使用[TGRS2025 ISGLNet](https://ieeexplore.ieee.org/document/11232501)中的MFPM改进特征融合.
+
+34. ultralytics/cfg/models/11/yolo11-ERM.yaml
+
+    使用[TGRS2025 ISGLNet](https://ieeexplore.ieee.org/document/11232501)中的ERM改进特征融合.
+
 ### Head系列
 1. ultralytics/cfg/models/11/yolo11-dyhead.yaml
 
@@ -900,6 +911,10 @@
 18. ultralytics/cfg/models/11/yolo11-RepStem.yaml
 
     使用[ICCV2023 FastVit](https://arxiv.org/pdf/2303.14189)中的RepStem改进yolo11下采样.
+
+19. ultralytics/cfg/models/11/yolo11-FSConv.yaml
+
+    使用[TGRS2025 Think Locally and Act Globally](https://ieeexplore.ieee.org/document/11175146)中的FSConv改进下采样.
 
 ### YOLO11-C3k2系列
 1. ultralytics/cfg/models/11/yolo11-C3k2-Faster.yaml
@@ -1917,3 +1932,10 @@
     2. 新增ACMMM2025-FlickCD中的模块.
     3. 更新使用教程.
     4. 百度云视频增加20260114更新说明.
+
+- **20260203-yolo11-v1.36**
+    1. 新增TGRS2025-Think Locally and Act Globally中的模块.
+    2. 新增TGRS2025-ISGLNet中的多个模块.
+    3. 新增TGRS2025-MASFNet中的模块.
+    4. 更新使用教程.
+    5. 百度云视频增加20260203更新说明.
