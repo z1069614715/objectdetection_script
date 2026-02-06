@@ -25,7 +25,7 @@ if __name__ == '__main__':
                         # iou=0.7,
                         project='val',
                         name='exp',
-                        end2end=False # 如果是nmsfree的模型可以设置True,如果不是nms-free的模型记得设置False
+                        # end2end=False # 如果训练的是NMSFree类型的模型，不想用一对一的头可以设置False
                         )
     
     if model.task == 'detect': # 仅目标检测任务适用 需要改别的任务可以看：https://www.bilibili.com/video/BV1dBQDY6Ec5/
