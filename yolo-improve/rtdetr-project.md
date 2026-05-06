@@ -1,6 +1,6 @@
 # [基于Ultralytics的RT-DETR改进详细介绍](https://github.com/z1069614715/objectdetection_script)
 
-# 目前自带的一些改进方案(目前拥有合计330+个改进点！持续更新！)
+# 目前自带的一些改进方案(目前拥有合计340+个改进点！持续更新！)
 
 # 为了感谢各位对RTDETR项目的支持,本项目的赠品是yolov5-PAGCP通道剪枝算法.[具体使用教程](https://www.bilibili.com/video/BV1yh4y1Z7vz/)
 
@@ -892,6 +892,26 @@
     
     使用[CVPR2026 Scan Clusters, Not Pixels](https://arxiv.org/pdf/2602.21917)中的SparseStateSpace模块与CSP改进RTDETR.
 
+114. ultralytics/cfg/models/rt-detr/rtdetr-C2f-DSEBlock.yaml
+
+    使用[TGRS2025 DSEBlock](https://arxiv.org/pdf/2601.16428)中的DSEBlock与CSP改进rtdetr-backbone.
+
+115. ultralytics/cfg/models/rt-detr/rtdetr-C2f-FourierSR.yaml
+
+    使用[TIP2026 FourierSR](https://arxiv.org/pdf/2503.10043)中的FourierSR与CSP改进rtdetr-backbone.
+
+116. ultralytics/cfg/models/rt-detr/rtdetr-C2f-FrequencyCM.yaml
+
+    使用[CVPR2026 UCMNet](https://arxiv.org/abs/2604.00381)中的FrequencyCM与CSP改进rtdetr-backbone.
+
+117. ultralytics/cfg/models/rt-detr/rtdetr-C2f-LaSEA.yaml
+
+    使用[TGRS2025 LaSEA](https://arxiv.org/pdf/2601.16428)中的LaSEA与CSP改进rtdetr-backbone.
+
+118. ultralytics/cfg/models/rt-detr/rtdetr-C2f-SFEB.yaml
+
+    使用[CVPR2026 Statistical Characteristic-Guided Denoising for Rapid High-Resolution Transmission Electron Microscopy Imaging](https://arxiv.org/pdf/2603.18834)中的SFEB与CSP改进rtdetr-backbone.
+
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
 
@@ -1024,6 +1044,18 @@
 34. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LCGA.yaml
     
     使用[TGRS2026 CGA](https://ieeexplore.ieee.org/document/11373098)中的LCGA改进AIFI.
+
+35. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-AFFN.yaml
+     
+    使用[CVPR2026 It Takes Two: A Duet of Periodicity and Directionality for Burst Flicker Removal](https://arxiv.org/pdf/2603.22794)中的AFFN改进AIFI.
+
+36. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-CirculantAttn.yaml
+
+    使用[AAAI2026 CirculantAttention](https://arxiv.org/pdf/2512.21542)中的CirculantAttention改进AIFI.
+
+37. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-WDAM.yaml
+
+    使用[CVPR2026 WDAM](https://arxiv.org/pdf/2603.22794)中的WDAM改进AIFI.
 
 ### Neck系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-ASF.yaml
@@ -1167,6 +1199,10 @@
 35. ultralytics/cfg/models/rt-detr/rtdetr-FAAFusion.yaml
     
     使用[CVPR2026 Fourier Angle Alignment for Oriented Object Detection in Remote Sensing](https://arxiv.org/pdf/2602.23790)中的FAAFusion模块改进RTDETR-neck.
+
+36. ultralytics/cfg/models/rt-detr/rtdetr-HAFFormer.yaml
+
+    使用[PR2026 HAFFormer](https://www.sciencedirect.com/science/article/pii/S0031320326003158)中的HAFFormer改进rtdetr-neck.
 
 ### Head系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-p2.yaml

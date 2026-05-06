@@ -1,7 +1,7 @@
 # [基于Ultralytics的YOLO11|YOLO12改进项目.(69.9¥)](https://github.com/z1069614715/objectdetection_script)
 #### 因为YOLO11和YOLO12的结构高度相似，所以YOLO12的配置文件都可以从YOLO11修改过去，项目内有标注视频链接！
 
-# 目前自带的一些改进方案(目前拥有合计420+个改进点！持续更新！)
+# 目前自带的一些改进方案(目前拥有合计430+个改进点！持续更新！)
 
 # 为了感谢各位对本项目的支持,本项目的赠品是yolov5-PAGCP通道剪枝算法.[具体使用教程](https://www.bilibili.com/video/BV1yh4y1Z7vz/)
 
@@ -798,6 +798,10 @@
      
     使用[CVPR2026 Fourier Angle Alignment for Oriented Object Detection in Remote Sensing](https://arxiv.org/pdf/2602.23790)中的FAAFusion模块改进yolo11-neck.
 
+38. ultralytics/cfg/models/11/yolo11-HAFFormer.yaml
+    
+    使用[PR2026 HAFFormer](https://www.sciencedirect.com/science/article/pii/S0031320326003158)中的HAFFormer改进yolo11-neck.
+
 ### Head系列
 1. ultralytics/cfg/models/11/yolo11-dyhead.yaml
 
@@ -1513,6 +1517,26 @@
     
     使用[CVPR2026 Scan Clusters, Not Pixels](https://arxiv.org/pdf/2602.21917)中的SparseMambaBlock改进C3k2.
 
+161. ultralytics/cfg/models/11/yolo11-C3k2-SMB.yaml
+    
+    使用[CVPR2026 Scan Clusters, Not Pixels](https://arxiv.org/pdf/2602.21917)中的SparseMambaBlock改进C3k2.
+
+162. ultralytics/cfg/models/11/yolo11-C3k2-DSEBlock.yaml
+    
+    使用[TGRS2025 DSEBlock](https://arxiv.org/pdf/2601.16428)中的DSEBlock改进C3k2.
+
+163. ultralytics/cfg/models/11/yolo11-C3k2-LaSEA.yaml
+    
+    使用[TGRS2025 LaSEA](https://arxiv.org/pdf/2601.16428)中的LaSEA改进C3k2.
+
+164. ultralytics/cfg/models/11/yolo11-C3k2-SFEB.yaml
+    
+    使用[CVPR2026 Statistical Characteristic-Guided Denoising for Rapid High-Resolution Transmission Electron Microscopy Imaging](https://arxiv.org/pdf/2603.18834)中的SFEB改进C3k2.
+
+165. ultralytics/cfg/models/11/yolo11-C3k2-FrequencyCM.yaml
+    
+    使用[CVPR2026 UCMNet](https://arxiv.org/abs/2604.00381)中的FrequencyCM改进C3k2.
+
 ### C2PSA系列
 
 1. ultralytics/cfg/models/11/yolo11-C2BRA.yaml
@@ -1634,6 +1658,18 @@
 30. ultralytics/cfg/models/11/yolo11-C2CGTA.yaml
      
     使用[TGRS2026 CGA](https://ieeexplore.ieee.org/document/11373098)中的CGTA改进C2PSA.
+
+31. ultralytics/cfg/models/11/yolo11-C2PSA-AFFN.yaml
+    
+    使用[CVPR2026 It Takes Two: A Duet of Periodicity and Directionality for Burst Flicker Removal](https://arxiv.org/pdf/2603.22794)中的AFFN改进C2PSA.
+
+32. ultralytics/cfg/models/11/yolo11-C2PSA-WDAM.yaml
+    
+    使用[CVPR2026 WDAM](https://arxiv.org/pdf/2603.22794)中的WDAM改进C2PSA.
+
+33. ultralytics/cfg/models/11/yolo11-C2CirculantAttn.yaml
+    
+    使用[AAAI2026 CirculantAttention](https://arxiv.org/pdf/2512.21542)中的CirculantAttention改进C2PSA.
 
 ### A2C2f系列
 1. ultralytics/cfg/models/12/yolo12-A2C2f-CGLU.yaml

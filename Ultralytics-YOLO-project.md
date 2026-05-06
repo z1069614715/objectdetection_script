@@ -1,6 +1,6 @@
 # Ultralytics-YOLO项目详细说明
 
-1. 本项目集成了YOLOv8、v10、v11、v12乃至前沿的YOLO26等全系列基础模型。 无论是做横向对比实验，还是纵向的版本改进，无需到处找资源，一个项目就能满足你所有的实验需求！
+1. 本项目集成了YOLOv8、v10、11、12乃至前沿的YOLO26等全系列基础模型。 无论是做横向对比实验，还是纵向的版本改进，无需到处找资源，一个项目就能满足你所有的实验需求！
 2. 核心代码已实现高度模块化与解耦，专为新手优化。 你完全不需要死磕底层复杂代码，只需像搭积木一样简单修改YAML配置文件，就能轻松实现各种改进模块的自由组合。
 3. 在YOLO研究日趋饱和的今天，简单的模块堆砌已难以支撑一篇高质量的毕业论文。我们深知你的痛点——这里不只是给你现成方案，更配套独家「二次创新」系统课程，手把手拆解模块设计的底层逻辑，带你完成从模仿者到创造者的真正蜕变，打造出独属于你、真正有价值的创新成果。担心自己基础薄弱、看不懂怎么创新？完全不用怕，项目内持续更新团队自研的高创新度模块，即便是零基础小白也能直接上手、开箱即用，让你的论文创新度稳稳在线，轻松应对答辩！
 4. 针对有代码基础但受困于Ultralytics复杂架构的同学， 本项目引入了来自DFine、DEIM项目中成熟的“万物皆可融”架构思想。你无需纠结模块注册等信息，只需遵循我所提供的标准接口规范，即可将自定义魔改模块无缝融入YAML配置，与各类CSP变种灵活结合。
@@ -8,8 +8,6 @@
 6. 毕业设计缺少高大上的展示界面？ 别担心，项目会内置基于HTML的通用可视化界面，开箱即用，完美补齐毕业论文的最后一块拼图，助你从容应对答辩！
 7. 项目内有CVPR2026-Does YOLO Really Need to See Every Training Image in Every Epoch中的AFSS加速训练机制，助你在有限的设备内训练速度更快！
 8. 购买即享专属技术交流群， 这里有业内公认的高效答疑服务，以及志同道合的伙伴互助交流。拒绝闭门造车，让我们带你避开深坑，高效通关！  
-
-**注意：部分功能在项目初期可能尚未实现，将随着项目的持续开发逐步补齐完善。**
 
 ## 针对于已经入手了yolov8/yolo11项目的同学来说，如果你有以下几点需求，可以考虑追加入手！
 1. 想用最新的YOLO26做实验！而且本项目支持v8、v10、11、12、26全系列版本！
@@ -39,6 +37,7 @@
     13. TGRS2025|ultralytics/nn/extra_modules/attention/ACA.py
     14. TGRS2025|ultralytics/nn/extra_modules/attention/DHPF.py
     15. TGRS2025|ultralytics/nn/extra_modules/attention/ACAB.py
+    16. 自研模块|ultralytics/nn/extra_modules/attention/FSDA.py
 
 - ultralytics/nn/extra_modules/conv_module(此部分内容教程可以看GuideVideo-MG.md中的改进模块-使用教程的第五节,支持与attention部分联合改进CSP模块中的残差块)
 
@@ -76,6 +75,9 @@
     1. ultralytics/nn/extra_modules/stem/SRFD.py
     2. ultralytics/nn/extra_modules/stem/LoG.py
     3. ICCV2023|ultralytics/nn/extra_modules/stem/RepStem.py
+    4. 自研模块|ultralytics/nn/extra_modules/stem/ODALStem.py
+    5. 自研模块|ultralytics/nn/extra_modules/stem/DPAS.py
+    6. 自研模块|ultralytics/nn/extra_modules/stem/WGFS.py
 
 - ultralytics/nn/extra_modules/upsample(配置文件在ultralytics/cfg/models/improve/upsample)
 
@@ -166,6 +168,8 @@
     59. TGRS2025|ultralytics/nn/extra_modules/module/DSEBlock.py
     60. TGRS2025|ultralytics/nn/extra_modules/module/LaSEA.py
     61. CVPR2026|ultralytics/nn/extra_modules/module/SFEB.py
+    62. TIP2026|ultralytics/nn/extra_modules/module/FourierSR.py
+    63. CVPR2026|ultralytics/nn/extra_modules/module/FrequencyCM.py
 
 - ultralytics/nn/extra_modules/block (此部分内容教程可以看GuideVideo-MG.md中的改进模块-使用教程的第一和四节)
     
@@ -207,6 +211,7 @@
     30. TGRS2026|ultralytics/nn/extra_modules/transformer/CGTA.py
     31. TGRS2026|ultralytics/nn/extra_modules/transformer/LCGA.py
     32. AAAI2026|ultralytics/nn/extra_modules/transformer/CirculantAttention.py
+    33. CVPR2026|ultralytics/nn/extra_modules/transformer/WDAM.py
 
 - ultralytics/nn/extra_modules/mamba(此部分内容教程可以看GuideVideo-MG.md中的改进模块-使用教程的第一和四节)
 
@@ -237,6 +242,9 @@
     8. CVPR2025|ultralytics/nn/extra_modules/mlp/EDFFN.py
     9. ICVJ2024|ultralytics/nn/extra_modules/mlp/DML.py
     10. AAAI2026|ultralytics/nn/extra_modules/mlp/DIFF.py
+    11. 自研模块|ultralytics/nn/extra_modules/mlp/MCCG.py
+    12. 自研模块|ultralytics/nn/extra_modules/mlp/DSRG.py
+    13. CVPR2026|ultralytics/nn/extra_modules/mlp/AFFN.py
 
 - ultralytics/nn/extra_modules/neck(配置文件在ultralytics/cfg/models/improve/neck)
 
@@ -252,6 +260,7 @@
     10. ultralytics/nn/extra_modules/neck/GoldYOLO.py
     11. ultralytics/nn/extra_modules/neck/EMBSFPN.py
     12. ultralytics/nn/extra_modules/neck/FDPN.py((里面有三个自研模块FocusFeature、DynamicFrequencyFocusFeature、AlignmentGuidedFocusFeature))
+    13. PR2026|ultralytics/nn/extra_modules/neck/A3FPN.py
 
 - ultralytics/nn/extra_modules/featurefusion(配置文件在ultralytics/cfg/models/improve/featurefusion)
 
@@ -279,6 +288,9 @@
     22. CVPR2026|ultralytics/nn/extra_modules/featurefusion/SFSFusion.py
     23. CVPR2026|ultralytics/nn/extra_modules/featurefusion/FAAFusion.py
     24. PR2026|ultralytics/nn/extra_modules/featurefusion/HAFFormer.py
+    25. 自研模块|ultralytics/nn/extra_modules/featurefusion/LowFrequencyFeatureFusion.py
+    26. 自研模块|ultralytics/nn/extra_modules/featurefusion/DCGRM.py
+    27. 自研模块|ultralytics/nn/extra_modules/featurefusion/MSCRM.py
 
 - ultralytics/nn/extra_modules/norm(此部分内容教程可以看GuideVideo-MG.md中的改进模块-使用教程的第一和四节)
 
@@ -420,3 +432,23 @@
     15. 新增TGRS2025-LaSEA模块。
     16. 新增CVPR2026-SFEB模块。
     17. 新增论文系列讲解视频-<用YOLO可以，但你的论文名字不能出现YOLO！>
+
+- 20260505
+  
+    1. 新增自研模块-FSDA模块。
+    2. 新增自研模块-ODALStem模块。
+    3. 新增TIP2026-FourierSR模块。
+    4. 新增自研模块-MCCG模块。
+    5. 新增自研模块-DSRG模块。
+    6. 新增CVPR2026-AFFN模块。
+    7. 新增CVPR2026-WDAM模块。
+    8. 新增自研模块-LowFrequencyFeatureFusion模块。
+    9. 新增自研模块-DPAS模块。
+    10. 新增自研模块-WGFS模块。
+    11. 新增自研模块-MSCRM模块。
+    12. 新增自研模块-DCGRM模块。
+    13. 新增CVPR2026-FrequencyCM模块。
+    14. 新增PR2026-A3FPN。
+    15. 修复一些已知问题。
+    16. 新增通用二次创新课程-PartialBlock，里面包含原理说明，论文怎么写，实验怎么设计，怎么改代码的流程。
+    17. 新增论文系列讲解视频-论文精读｜ESWA2026-ETO-DFGR。
