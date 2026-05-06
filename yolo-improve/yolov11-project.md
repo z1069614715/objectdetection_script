@@ -2096,3 +2096,16 @@
     8. 新增CVPR2026-FAAFusion模块。
     9. 更新使用教程。
     10. 百度云视频增加20260410更新说明.
+
+- **20260505-yolo11-v1.41**
+    1. 新增PR2026-HAFFormer模块。
+    2. 新增AAAI2026-CirculantAttention模块。
+    3. 新增TGRS2025-DSEBlock模块。
+    4. 新增TGRS2025-LaSEA模块。
+    5. 新增CVPR2026-Statistical Characteristic-Guided Denoising for Rapid High-Resolution Transmission Electron Microscopy Imaging中的SFEB模块。
+    6. 新增TIP2026-FourierSR模块。
+    7. 新增CVPR2026-UCMNet的FrequencyCM模块。
+    8. 新增CVPR2026-It Takes Two: A Duet of Periodicity and Directionality for Burst Flicker Removal的AFFN模块。
+    9. 新增CVPR2026It Takes Two: A Duet of Periodicity and Directionality for Burst Flicker Removal的WDAM模块。
+    10. 更新使用教程。
+    11. 百度云视频增加20260505更新说明.
