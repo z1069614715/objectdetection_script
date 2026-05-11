@@ -80,7 +80,7 @@
     3. 购买后进RTDETR蒸馏交流群(代码视频均在群公告),因为蒸馏操作有一定的难度,所以蒸馏操作问题可以群里提问,我都会群里回复相关问题.
     4. 知识蒸馏整体修改难度大，代表少人使用，物以稀为贵，增加文章的创新度！
 
-7. 基于CVPR2025-DEIM的改进项目.(288¥)
+7. 基于CVPR2025-DEIM｜ICLR2025-DFine的改进项目.(348¥)
     
     项目详细介绍请看[此处](https://github.com/z1069614715/objectdetection_script/blob/master/cvpr2025-deim-project.md)
     1. 相比官方有更多分析的图表，基本论文常用到的都有.(YOLO指标、FPS、模型大小、COCO指标中的每类tsml等等指标、热力图、特征图、漏检误检可视化....)
@@ -90,10 +90,10 @@
     5. 目前包含学生-教师类型的知识蒸馏、模型导出(onnx、tensorrt)、ByteTrack目标跟踪等凑工作量的内容，大小论文一网打尽～
     6. 支持实例分割，给实例分割的同学们多了一个非常nice的选择～
     7. 支持DINOV3主干，即使数据量少，得益于DINOV3性能依然抗打～
-    8. DFine/DEIM 支持图像多模态联合训练，为创新研究与论文工作量的双重提升注入强劲动力～
+    8. DFine/DEIM 支持**图像多模态**和**图文多模态**和**图图文三模态**联合训练，为创新研究与论文工作量的双重提升注入强劲动力～<图文多模态和图图文多模态将于2026/5/15推送>
     9. 更多请点击上述链接进行查看～
 
-8. 基于YOLO|RTDETR多模态目标检测项目.(原价288¥,若已购买yolo8101112或rtdetr项目的则优惠50¥=238¥)
+8. 基于YOLO|RTDETR图图多模态目标检测项目.(原价328¥,若已购买yolo或rtdetr项目的则优惠50¥=278¥)
 
     项目详细介绍请看[此处](https://github.com/z1069614715/objectdetection_script/blob/master/mutilmodel-project.md)
 
@@ -109,9 +109,12 @@
    7. 项目内有CVPR2026-Does YOLO Really Need to See Every Training Image in Every Epoch中的AFSS加速训练机制，助你在有限的设备内训练速度更快！
    8. 购买即享专属技术交流群， 这里有业内公认的高效答疑服务，以及志同道合的伙伴互助交流。拒绝闭门造车，让我们带你避开深坑，高效通关！  
 
-    **注意：部分功能在项目初期可能尚未实现，将随着项目的持续开发逐步补齐完善。**
+10. 2026-YOLOVO｜图文多模态目标检测项目.(原价368¥,若已购买yolo或rtdetr或多模态项目的则优惠30¥=338¥)
+    
+    项目详细介绍请看[此处](https://github.com/z1069614715/objectdetection_script/blob/master/yolovo-mutilmodel-project.md)  
+    **项目预售中，预计最迟发布日期2026/5/25**
 
-10. 基于YOLO和RT-DETR的论文全流程指导项目.(原价238¥，若已购买yolo8101112或rtdetr项目或deim项目的则优惠50¥=188¥)[项目详解](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/paper.md)  
+11. 基于YOLO和RT-DETR的论文全流程指导项目.(原价238¥，若已购买yolo8101112或rtdetr项目或deim项目的则优惠50¥=188¥)[项目详解](https://github.com/z1069614715/objectdetection_script/blob/master/yolo-improve/paper.md)  
     我们目前有非常多的代码项目，几乎是全网最全价格最优惠性格比最高的一家，但是难免有些同学在做完实验后还是完全不懂应该怎么去写or不想走太多弯路的情况，因此开展这个基于YOLO和RT-DETR的论文全流程指导项目，本项目致力于帮助那些在论文道路上极其困难的同学，基本上配合上述的一些改进项目和此论文全流程指导项目再加上自己的一点努力可以完全实现毕业无忧,项目简介如下：
 
     1. 直播内容涉及到发论文的整个论文框架体系的方方面面，每次直播都会优先讲大家最想听的部分，根据课程目录投票决定。
