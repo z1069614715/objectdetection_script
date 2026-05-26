@@ -1,7 +1,7 @@
 # [基于Ultralytics的YOLO11|YOLO12改进项目.(69.9¥)](https://github.com/z1069614715/objectdetection_script)
 #### 因为YOLO11和YOLO12的结构高度相似，所以YOLO12的配置文件都可以从YOLO11修改过去，项目内有标注视频链接！
 
-# 目前自带的一些改进方案(目前拥有合计430+个改进点！持续更新！)
+# 目前自带的一些改进方案(目前拥有合计440+个改进点！持续更新！)
 
 # 为了感谢各位对本项目的支持,本项目的赠品是yolov5-PAGCP通道剪枝算法.[具体使用教程](https://www.bilibili.com/video/BV1yh4y1Z7vz/)
 
@@ -1537,6 +1537,30 @@
     
     使用[CVPR2026 UCMNet](https://arxiv.org/abs/2604.00381)中的FrequencyCM改进C3k2.
 
+166. ultralytics/cfg/models/11/yolo11-C3k2-CKConv.yaml
+    
+    使用[TGRS2026 CKConv](https://ieeexplore.ieee.org/document/11320952)中的CKConv改进C3k2.
+
+167. ultralytics/cfg/models/11/yolo11-C3k2-RFGM.yaml
+     
+    使用[AAAI2026 RFGM](https://arxiv.org/pdf/2508.03336)中的RFGM改进C3k2.
+
+168. ultralytics/cfg/models/11/yolo11-C3k2-IRA.yaml
+     
+    使用[CVPR2026 IRA](https://arxiv.org/pdf/2512.08441)中的IRA改进C3k2.
+
+169. ultralytics/cfg/models/11/yolo11-C3k2-PatchMamba.yaml
+     
+    使用[AAAI2026 PatchMamba](https://arxiv.org/pdf/2508.03336)中的PatchMamba改进C3k2.
+
+170. ultralytics/cfg/models/11/yolo11-C3k2-GradMamba.yaml
+     
+    使用[AAAI2026 GradMamba](https://arxiv.org/pdf/2508.03336)中的GradMamba改进C3k2.
+
+171. ultralytics/cfg/models/11/yolo11-C3k2-GLCDM.yaml
+    
+    使用[TGRS2026 GLCDM](https://ieeexplore.ieee.org/document/11397410)中的GLCDM改进C3k2.
+
 ### C2PSA系列
 
 1. ultralytics/cfg/models/11/yolo11-C2BRA.yaml
@@ -2109,3 +2133,13 @@
     9. 新增CVPR2026It Takes Two: A Duet of Periodicity and Directionality for Burst Flicker Removal的WDAM模块。
     10. 更新使用教程。
     11. 百度云视频增加20260505更新说明.
+
+- **20260526-yolo11-v1.42**
+    1. 新增TGRS2026-CKConv模块。
+    2. 新增AAAI2026-RFGM模块。
+    3. 新增AAAI2026-PatchMamba模块。
+    4. 新增AAAI2026-GradMamba模块。
+    5. 新增CVPR2026-IRA模块。
+    6. 新增TGRS2026-GLCDM模块。
+    7. 更新使用教程。
+    8. 百度云视频增加20260526更新说明.

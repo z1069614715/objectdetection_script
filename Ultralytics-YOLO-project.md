@@ -69,6 +69,7 @@
     26. CVPR2025|ultralytics/nn/extra_modules/conv_module/gcconv.py
     27. ACCV2024|ultralytics/nn/extra_modules/conv_module/RMBC.py
     28. CVPR2026|ultralytics/nn/extra_modules/conv_module/DEGConv.py
+    29. TGRS2026|ultralytics/nn/extra_modules/conv_module/CKConv.py
 
 - engine/extre_module/custom_nn/stem(配置文件在ultralytics/cfg/models/improve/stem)
 
@@ -170,6 +171,8 @@
     61. CVPR2026|ultralytics/nn/extra_modules/module/SFEB.py
     62. TIP2026|ultralytics/nn/extra_modules/module/FourierSR.py
     63. CVPR2026|ultralytics/nn/extra_modules/module/FrequencyCM.py
+    64. AAAI2026|ultralytics/nn/extra_modules/module/RFGM.py
+    65. CVPR2026|ultralytics/nn/extra_modules/module/IRA.py
 
 - ultralytics/nn/extra_modules/block (此部分内容教程可以看GuideVideo-MG.md中的改进模块-使用教程的第一和四节)
     
@@ -212,6 +215,7 @@
     31. TGRS2026|ultralytics/nn/extra_modules/transformer/LCGA.py
     32. AAAI2026|ultralytics/nn/extra_modules/transformer/CirculantAttention.py
     33. CVPR2026|ultralytics/nn/extra_modules/transformer/WDAM.py
+    34. TGRS2026|ultralytics/nn/extra_modules/transformer/GLCDM.py
 
 - ultralytics/nn/extra_modules/mamba(此部分内容教程可以看GuideVideo-MG.md中的改进模块-使用教程的第一和四节)
 
@@ -229,6 +233,8 @@
     12. TGRS2025|ultralytics/nn/extra_modules/mamba/GLSS2D.py
     13. CVPR2026|ultralytics/nn/extra_modules/mamba/TransMixer.py
     14. CVPR2026|ultralytics/nn/extra_modules/mamba/sparse_state_space.py
+    15. AAAI2026|ultralytics/nn/extra_modules/mamba/GradMamba.py
+    16. AAAI2026|ultralytics/nn/extra_modules/mamba/PatchMamba.py
 
 - ultralytics/nn/extra_modules/mlp(此部分内容教程可以看GuideVideo-MG.md中的改进模块-使用教程的第一和四节)
 
@@ -452,3 +458,13 @@
     15. 修复一些已知问题。
     16. 新增通用二次创新课程-PartialBlock，里面包含原理说明，论文怎么写，实验怎么设计，怎么改代码的流程。
     17. 新增论文系列讲解视频-论文精读｜ESWA2026-ETO-DFGR。
+
+- 20260526
+    
+    1. 新增TGRS2026-CKConv模块。
+    2. 新增AAAI2026-RFGM模块。
+    3. 新增AAAI2026-PatchMamba模块。
+    4. 新增AAAI2026-GradMamba模块。
+    5. 新增CVPR2026-IRA模块。
+    6. 新增TGRS2026-GLCDM模块。
+    7. 修复一些已知问题。

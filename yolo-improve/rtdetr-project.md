@@ -1,6 +1,6 @@
 # [基于Ultralytics的RT-DETR改进详细介绍](https://github.com/z1069614715/objectdetection_script)
 
-# 目前自带的一些改进方案(目前拥有合计340+个改进点！持续更新！)
+# 目前自带的一些改进方案(目前拥有合计350+个改进点！持续更新！)
 
 # 为了感谢各位对RTDETR项目的支持,本项目的赠品是yolov5-PAGCP通道剪枝算法.[具体使用教程](https://www.bilibili.com/video/BV1yh4y1Z7vz/)
 
@@ -911,6 +911,30 @@
 118. ultralytics/cfg/models/rt-detr/rtdetr-C2f-SFEB.yaml
 
     使用[CVPR2026 Statistical Characteristic-Guided Denoising for Rapid High-Resolution Transmission Electron Microscopy Imaging](https://arxiv.org/pdf/2603.18834)中的SFEB与CSP改进rtdetr-backbone.
+
+119. ultralytics/cfg/models/rt-detr/rtdetr-C2f-CKConv.yaml
+     
+    使用[TGRS2026 CKConv](https://ieeexplore.ieee.org/document/11320952)中的CKConv与CSP改进rtdetr-backbone.
+
+120. ultralytics/cfg/models/rt-detr/rtdetr-C2f-GLCDM.yaml
+     
+    使用[TGRS2026 GLCDM](https://ieeexplore.ieee.org/document/11397410)中的GLCDM与CSP改进rtdetr-backbone.
+
+121. ultralytics/cfg/models/rt-detr/rtdetr-C2f-IRA.yaml
+     
+    使用[CVPR2026 IRA](https://arxiv.org/pdf/2512.08441)中的IRA与CSP改进rtdetr-backbone.
+
+122. ultralytics/cfg/models/rt-detr/rtdetr-C2f-RFGM.yaml
+
+    使用[AAAI2026 RFGM](https://arxiv.org/pdf/2508.03336)中的RFGM与CSP改进rtdetr-backbone.
+
+123. ultralytics/cfg/models/rt-detr/rtdetr-C2f-GradMamba.yaml
+     
+    使用[AAAI2026 GradMamba](https://arxiv.org/pdf/2508.03336)中的GradMamba与CSP改进rtdetr-backbone.
+
+124. ultralytics/cfg/models/rt-detr/rtdetr-C2f-PatchMamba.yaml
+
+    使用[AAAI2026 PatchMamba](https://arxiv.org/pdf/2508.03336)中的PatchMamba与CSP改进rtdetr-backbone.
 
 ### AIFI系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-LPE.yaml
@@ -2665,3 +2689,13 @@
     9. 新增CVPR2026It Takes Two: A Duet of Periodicity and Directionality for Burst Flicker Removal的WDAM模块。
     10. 更新使用教程。
     11. 百度云视频增加20260505更新说明.
+
+- **20260526-rtdetr-v1.63**
+    1. 新增TGRS2026-CKConv模块。
+    2. 新增AAAI2026-RFGM模块。
+    3. 新增AAAI2026-PatchMamba模块。
+    4. 新增AAAI2026-GradMamba模块。
+    5. 新增CVPR2026-IRA模块。
+    6. 新增TGRS2026-GLCDM模块。
+    7. 更新使用教程。
+    8. 百度云视频增加20260526更新说明.
