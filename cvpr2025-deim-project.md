@@ -353,6 +353,21 @@ PS:
     16. 新增论文精度课程ESWA2026-ETO-DFGR。
     17. 修复一些已知BUG。
 
+- 20260530
+    
+    1. 新增use-amp-fallback-fp32参数，开启这个参数会使用amp进行训练，但是如果检测到有nan，当前epoch会回退到fp32训练，然后下个epoch还是amp进行训练，其是一个根据训练过程的信息动态调节amp训练还是fp32训练。针对于训练DINOV3为主干的DFine，训练可以加速百分之13，显存节约百分之30。具体使用可以看UserGuide中的**普通训练命令**部分说明。
+    2. 新增UserGuide-Easy版本，专门针对不想花太多时间慢慢学的同学定制，大大降低学习时长。
+    3. 新增train_auto.py，详细可以看UserGuide.md的<普通训练命令>部分说明。
+    4. tools/benchmark/get_info.py 支持直接指定除了带OV部分的Ultralytics-YOLO的Yaml配置文件。
+    5. 优化实例分割后处理部分耗时。
+    6. 新增雷达图和雷达图的绘制说明，docs/RadarMap_雷达图绘制说明.md。
+    7. 新增CVPR2026-IRA模块。
+    8. 新增TGRS2026-GLCDM模块。
+    9. 新增ICIP2026-SDTA模块。
+    10. 新增自研模块-MSAFFN模块。
+    11. 新增自研模块-GLSFFN模块。
+    12. 修复一些已知BUG。
+
 ### 7. 目前已有的模块
 
 - engine/extre_module/custom_nn/attention 
@@ -539,6 +554,7 @@ PS:
     64. TIP2026|engine/extre_module/custom_nn/module/FourierSR.py
     65. CVPR2026｜engine/extre_module/custom_nn/module/FrequencyCM.py
     66. AAAI2026|engine/extre_module/custom_nn/module/RFGM.py
+    67. CVPR2026｜engine/extre_module/custom_nn/module/IRA.py
 
 - engine/extre_module/custom_nn/neck
 
@@ -594,6 +610,8 @@ PS:
     30. 自研模块|engine/extre_module/custom_nn/transformer/ADHOGSA.py
     31. AAAI2026|engine/extre_module/custom_nn/transformer/CirculantAttention.py
     32. CVPR2026|engine/extre_module/custom_nn/transformer/WDAM.py
+    33. TGRS2026｜engine/extre_module/custom_nn/transformer/GLCDM.py
+    34. ICIP2026|engine/extre_module/custom_nn/transformer/SDTA.py
 
 - engine/extre_module/custom_nn/mlp
 
@@ -610,6 +628,8 @@ PS:
     11. 自研模块|engine/extre_module/custom_nn/mlp/MCCG.py
     12. 自研模块|engine/extre_module/custom_nn/mlp/DSRG.py
     13. CVPR2026｜engine/extre_module/custom_nn/mlp/AFFN.py
+    14. 自研模块｜engine/extre_module/custom_nn/mlp/MSAFFN.py
+    15. 自研模块｜engine/extre_module/custom_nn/mlp/GLSFFN.py
 
 - engine/extre_module/custom_nn/mamba
 
@@ -708,6 +728,7 @@ PS:
 4. 主干进阶改进方案二-给每个stage使用不同的改进结构
 5. 改进模型后参数量和计算量变得非常大怎么办？为什么会这样？怎么解决？
 6. 如何使用其他的IOU-Loss
+7. UserGuide-Easy.md版本使用教程
 
 -------------------------------------------- 特殊配置文件-进阶教程(这部分必须要看完理解完基础课程全部才能看，不然百分百不看懂) <这部分没有观看顺序> --------------------------------------------
 
@@ -739,7 +760,8 @@ PS:
 15. HS-FPN怎么融合到DEIM？
 16. 怎么用module、block中的模块去改进主干网络？
 17. 从0搭建一个yaml！以CVPR2025-nnWNet为例.
-18. TIMM、DINOV3在Ultralytics中如何使用
+18. 如何使用项目内的conv_module和attention部分去改进CSP里面的残差块.
+19. TIMM、DINOV3在Ultralytics中如何使用
 
 -------------------------------------------- 知识蒸馏 --------------------------------------------
 
