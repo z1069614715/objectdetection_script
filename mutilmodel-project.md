@@ -50,6 +50,36 @@
 
 ## 7. 更新日志
 
+  2026年6月
+
+  - RTDETRMM OBB任务支持：新增RTDETRMM旋转目标检测全链路支持（训练/验证/推理），
+    含RTDETROBB Head与YAML配置
+  - Mamba模块系列支持：迁移Mamba/SSM模块到独立nn/mamba/体系，
+  - 新增模块（25个）：
+    注意力类 —
+    ChannelTransformerAttention (CVPR 2022 Oral)、FCAttention (Neural Networks 2024)、
+    ChannelReductionAttention (WACV 2024)、FSAS (CVPR 2023)、EASA (ECCV 2024)、
+    CAFM (IEEE GRSL 2024)、DRHSA (ECCV 2024)、SHSA (CVPR 2024)、
+    LSKNetAttention (ICCV 2023)、MLKA (CVPRW 2024)
+    特征提取类 —
+    ChannelReallocationFFN (ICLR 2024)、HFFE (CVPR 2024)、StarBlock (CVPR 2024)、
+    LDE (ECCV 2024)、PCFNBlock (ECCV 2024)、CED (ICLR 2024)、LRCED (ICLR 2024)、
+    MSFFN (IEEE GRSL 2024)
+    Mamba类 —
+    GatedCNNBlock/MambaOut、MobileMamba、MambaVision (CVPR 2024)、
+    TransMamba、VSSBlock/VMamba (NeurIPS 2024)、Mamba2Block、EVSSM
+  - 配置文件结构树优化：多模态YAML按任务重新组织，删除旧扁平结构
+  - 提高模型稳定性：FP16溢出检测与FP32安全回退
+  - 修复若干bug
+
+  2026年5月
+
+  - 语义分割支持：新增YOLOMM多模态语义分割全栈支持（训练/验证/推理/可视化），
+  - 单模态训练：YOLOMM/RTDETRMM支持single_modal参数，兼容 YOLO 以及 RTDETR 单模态 YAML
+  - 训练管线优化：计算速度显著提高
+  - 新增若干模块
+  - 修复若干bug
+
   2026年3月
 
   - 特征蒸馏系统：实现家族化output蒸馏、跨scale通道适配器与DFL分布蒸馏

@@ -12,7 +12,8 @@
 5. YOLOVO目前支持目标检测任务（后续根据大家反馈和需求考虑跟进实例分割、旋转目标检测等任务）。
 6. 本项目不提供数据集，也无需额外准备文本标注——项目内自带方式生成，拿来就用，零额外成本。
 7. 本项目主要以代码+答疑群形式展开，属于进阶项目，想要发表高水平期刊CCF会议的可以考虑本项目。
-8. 蒸馏和剪枝功能计划后续开放（图文多模态的蒸馏与纯视觉不同，方案正在设计中）。
+8. 蒸馏功能已经更新
+9. 剪枝功能计划后续开放（图文多模态的蒸馏与纯视觉不同，方案正在设计中）。
 
 ## 2. 这个项目会以什么形式开展？
 
@@ -42,9 +43,16 @@
 ## 5. 项目使用问题
 
 1. 购买本项目的使用者都会得到一个独一无二的用于解压7z的密码，到时候用于解压对应的压缩包，此密码自己妥善保管，请勿告诉他人。
-2. 本项目的视频统一都是加密视频，每个购买者都可以得到一个激活码，激活码在每个人专属的7z压缩文件内。
+2. 本项目相关的视频大部分在我的 B 站账号中：汤圆圆圆圆圆圆圆不圆，https://space.bilibili.com/3546905915165116
 
 ## 6. 更新日志
+
+  2026年6月
+
+  - 新增YOLOVO蒸馏功能：完成图文多模态知识蒸馏全链路搭建，包括蒸馏训练脚本（输出蒸馏/特征蒸馏/联合蒸馏三种模式）、YOLOVODetectDistillAdapter适配器、输出KD与特征引导模块、教师模型前向分支，支持以YOLO11等纯视觉检测器作为教师来源
+  - 修复若干bug：蒸馏损失数值稳定性修复、模型复杂度计算修复、Checkpoint序列化兼容性修复（解决跨版本加载问题）
+  - 单模态训练配置：新增single_modal配置项与配套元信息检测，训练器层统一迁移single_modal构建逻辑，为图文多模态/纯视觉模式灵活切换提供基础
+  - 新增模块：49个注意力机制模块YAML配置模板全部上线，按机制分为四族——通道注意力（ACA, CASAB, MCA, SimAM, BinaryAttention, CascadedGroupAtt, CBSA, MaskUnitAttention, DHPF, ChannelTransformerAttention, FCAttention, ChannelReductionAttention）、频率注意力（ContrastDrivenFeatureAggregation, CTA, SFA, FSSA, CPIA_SA, KSFA, FSA, FSAS）、窗口注意力（BiLevelRoutingAttention, DilatedGCSA, DilatedMWSA, DPWA, DWM_MSA, DHOGSA, PatchSA, TokenSelectiveAttention）、全局注意力（EfficientGlobalSA, LRSA, MALA, TAB, GLSA, CFBlock, LWGA, EASA, CAFM, DynamicRangeHistogramSelfAttention, SHSA, LSKNetAttention, MLKA）；同步上线特征提取模块（ChannelReallocationFFN, HFFE, StarBlock, LDE, PCFNBlock, CED, LRCED, MultiScaleFeedForwardNetwork）、YOLOVOSegment实例分割头，以及Mamba/SSM模块族（VSSBlock、Mamba2Block、MambaVisionBlock、TransMambaBlock、EVSSM、GatedCNNBlock、MobileMambaModule）
 
   2026年5月
 
