@@ -802,6 +802,14 @@
     
     使用[PR2026 HAFFormer](https://www.sciencedirect.com/science/article/pii/S0031320326003158)中的HAFFormer改进yolo11-neck.
 
+39. ultralytics/cfg/models/11/yolo11-LPRMAlignUpModule.yaml
+     
+    使用[TPAMI2025 LPRM](https://arxiv.org/pdf/2507.11893)中的LPRMAlignUpModule改进YOLO11-Neck.
+
+40. ultralytics/cfg/models/11/yolo11-MAFusion.yaml
+
+    使用[TCSVT2026 MAFusion](https://ieeexplore.ieee.org/document/11218867)中的MAFusion改进YOLO11-Neck.
+
 ### Head系列
 1. ultralytics/cfg/models/11/yolo11-dyhead.yaml
 
@@ -931,6 +939,10 @@
 19. ultralytics/cfg/models/11/yolo11-FSConv.yaml
 
     使用[TGRS2025 Think Locally and Act Globally](https://ieeexplore.ieee.org/document/11175146)中的FSConv改进下采样.
+
+20. ultralytics/cfg/models/11/yolo11-DMSSP.yaml
+
+    使用[TGRS2026 DMSSP](https://ieeexplore.ieee.org/document/11305181)中的DMSSP改进下采样.
 
 ### YOLO11-C3k2系列
 1. ultralytics/cfg/models/11/yolo11-C3k2-Faster.yaml
@@ -1695,6 +1707,10 @@
     
     使用[AAAI2026 CirculantAttention](https://arxiv.org/pdf/2512.21542)中的CirculantAttention改进C2PSA.
 
+34. ultralytics/cfg/models/11/yolo11-C2PSA-SDTA.yaml
+
+    使用[ICIP2026 SDTA](https://arxiv.org/pdf/2605.10148v1)中的SDTA改进C2PSA.
+
 ### A2C2f系列
 1. ultralytics/cfg/models/12/yolo12-A2C2f-CGLU.yaml
      
@@ -2143,3 +2159,11 @@
     6. 新增TGRS2026-GLCDM模块。
     7. 更新使用教程。
     8. 百度云视频增加20260526更新说明.
+
+- **20260623-yolo11-v1.43**
+    1. 新增ICIP2026-SDTA模块。
+    2. 新增TPAMI2025-LPRM模块。
+    3. 新增TCSVT2026-MAFusion模块。
+    4. 新增TGRS2026-DMSSP模块。
+    5. 更新使用教程。
+    6. 百度云视频增加20260623更新说明.

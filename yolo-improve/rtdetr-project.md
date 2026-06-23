@@ -1081,6 +1081,10 @@
 
     使用[CVPR2026 WDAM](https://arxiv.org/pdf/2603.22794)中的WDAM改进AIFI.
 
+38. ultralytics/cfg/models/rt-detr/rtdetr-AIFI-SDTA.yaml
+
+    使用[ICIP2026 SDTA](https://arxiv.org/pdf/2605.10148v1)中的SDTA改进AIFI.
+
 ### Neck系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-ASF.yaml
 
@@ -1227,6 +1231,14 @@
 36. ultralytics/cfg/models/rt-detr/rtdetr-HAFFormer.yaml
 
     使用[PR2026 HAFFormer](https://www.sciencedirect.com/science/article/pii/S0031320326003158)中的HAFFormer改进rtdetr-neck.
+
+37. ultralytics/cfg/models/rt-detr/rtdetr-LPRMAlignUpModule.yaml
+
+    使用[TPAMI2025 LPRM](https://arxiv.org/pdf/2507.11893)中的LPRMAlignUpModule改进rtdetr-neck.
+
+38. ultralytics/cfg/models/rt-detr/rtdetr-MAFusion.yaml
+
+    使用[TCSVT2026 MAFusion](https://ieeexplore.ieee.org/document/11218867)中的MAFusion改进rtdetr-neck.
 
 ### Head系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-p2.yaml
@@ -1452,6 +1464,10 @@
 16. ultralytics/cfg/models/rt-detr/rtdetr-FSConv.yaml
 
     使用[TGRS2025 Think Locally and Act Globally](https://ieeexplore.ieee.org/document/11175146)中的FSConv改进下采样.
+
+17. ultralytics/cfg/models/rt-detr/rtdetr-DMSSP.yaml
+     
+    使用[TGRS2026 DMSSP](https://ieeexplore.ieee.org/document/11305181)中的DMSSP改进下采样.
 
 ### RT-DETR-L改进系列
 1. ultralytics/cfg/models/rt-detr/rtdetr-l-GhostHGNetV2.yaml
@@ -2699,3 +2715,11 @@
     6. 新增TGRS2026-GLCDM模块。
     7. 更新使用教程。
     8. 百度云视频增加20260526更新说明.
+
+- **20260623-rtdetr-v1.64**
+    1. 新增ICIP2026-SDTA模块。
+    2. 新增TPAMI2025-LPRM模块。
+    3. 新增TCSVT2026-MAFusion模块。
+    4. 新增TGRS2026-DMSSP模块。
+    5. 更新使用教程。
+    6. 百度云视频增加20260623更新说明.
