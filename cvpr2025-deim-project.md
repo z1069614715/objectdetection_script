@@ -5,12 +5,12 @@
 ### 1. 这个项目包含什么模型？
 
 这个项目的源代码来自：[DEIM](https://github.com/ShihuaHuang95/DEIM)  
-其内部可以跑以下模型(以下模型支持目标检测，DFine、DEIM支持实例分割，不支持姿态检测、旋转目标检测)：
+其内部可以跑以下模型(以下模型支持目标检测，DFine、DEIM支持实例分割，RTDETRV2、DFine、DEIM支持旋转目标检测，均不支持姿态检测)：
 1. CVPR2025-DEIM
 2. ICLR2025-DFine
 3. RTDETRV2
 4. DEIMV2
-5. 基于DFine/DEIM的图图多模态，图文多模态，图图文多模态
+5. 基于DFine/DEIM的图图多模态，图文多模态，图图文多模态(支持目标检测、实例分割、旋转目标检测)
 
 选择这个课程，这些模型都可以改进，不限于DEIM，这些都是顶会的模型，不要说2025，就算是2026、2027都不落后！还有一个重点就是像CVPR2024-RTDETR，最小的模型也有50GFLOPs，但是现在的DEIM和DFine都有像YOLO一样的Nano大小版本的模型，变相降低了训练成本和设备要求！(建议最低12G显存的显卡起步)
 
@@ -363,6 +363,31 @@ PS:
     11. 新增自研模块-GLSFFN模块。
     12. 修复一些已知BUG。
 
+- 20260625
+  
+    1. 新增 docs/plot_coco_eval_bbox_使用教程.md，这个仅建议用于看ap曲线走势使用，不建议放到论文中。
+    2. 新增DFINE/DEIM实例分割部分的图文多模态，图图文多模态系列。
+    3. 针对实例分割任务，HungarianMatcher 现在支持在一对一匹配时把 mask 质量也考虑进去。可以理解为模型分配正样本时不再只看类别和边界框，还可以参考预测 mask 和真实 mask 的匹配程度。具体说明见 docs/matcher_seg_assignment.md。
+    4. 针对目标检测/实例分割的图图多模态相关的配置文件，新增可以支持导入hgnetv2预训练权重的yaml，具体可以看configs/mutilmodality/yaml内带hgnetv2的配置文件。
+    5. 新增基于RTDETRV2、ICLR2025-DFine、CVPR2025-DEIM的旋转目标检测，并且支持图图多模态、图图文多模态。(可以提供UAVROB，CoDrone、DroneVehicle<此数据集原生支持图图多模态>，有需要私聊我)
+    6. 优化在 --use-amp-fallback-fp32 状态下出现NAN的处理逻辑。
+    7. 图图多模态部分另外一个模态的数据也支持是图片格式，但仅支持是单通道，详细教程请看<图图多模态使用教程二>的视频教程。
+    8. 更新pycocoeval库，使其支持YOLO-OBB指标计算。
+    9. 新增 docs/OBBDEIM_流程与公式说明.md，针对OBB部分实现可以看此文档。
+    10. 更新featuremap.py和heatmap.py，支持实例分割、旋转目标检测、图图多模态、图文多模态系列，详细可以看 docs/heatmap_使用说明.md 和 docs/featuremap_使用说明.md。
+    11. 新增TMAPI2025-LPRM模块。
+    12. 新增TCSVT2026-MAFusion模块。
+    13. 新增ECCV2026-PKINetV2Block模块。
+    14. 新增自研模块-BCIM模块。
+    15. 新增自研模块-DGCM模块。
+    16. 新增自研模块-EFCM模块。
+    17. 新增深度学习常见对比实验问题QA视频讲解。
+    18. 新增深度学习常见泛化实验问题QA视频讲解。
+    19. 新增深度学习常见基础模型、改进模型实验问题QA视频讲解。
+    20. 新增深度学习常见数据集问题QA视频讲解。
+    21. 新增深度学习常见消融实验问题QA视频讲解。
+    22. 修复一些已知BUG。
+
 ### 7. 目前已有的模块
 
 - engine/extre_module/custom_nn/attention 
@@ -390,6 +415,7 @@ PS:
     1. engine/extre_module/custom_nn/block/RepHMS.py
     2. 自研模块|engine/extre_module/custom_nn/block/rgcspelan.py
     3. TPAMI2025|engine/extre_module/custom_nn/block/MANet.py
+    4. 自研模块｜engine/extre_module/custom_nn/block/CBIMS.py
 
 - engine/extre_module/custom_nn/conv_module
 
@@ -423,6 +449,8 @@ PS:
     28. ACCV2024|engine/extre_module/custom_nn/conv_module/RMBC.py
     29. CVPR2026|engine/extre_module/custom_nn/conv_module/DEGConv.py
     30. TGRS2026|engine/extre_module/custom_nn/conv_module/CKConv.py
+    31. 自研模块｜engine/extre_module/custom_nn/conv_module/AGIDWC.py
+    32. 自研模块｜engine/extre_module/custom_nn/conv_module/MSIDWC.py
 
 - engine/extre_module/custom_nn/upsample
 
@@ -480,6 +508,8 @@ PS:
     20. 自研模块｜engine/extre_module/custom_nn/featurefusion/LowFrequencyFeatureFusion.py
     21. 自研模块｜engine/extre_module/custom_nn/featurefusion/DCGRM.py
     22. 自研模块｜engine/extre_module/custom_nn/featurefusion/MSCRM.py
+    23. TPAMI2025|engine/extre_module/custom_nn/featurefusion/LPRM.py
+    24. TCSVT2026|engine/extre_module/custom_nn/featurefusion/MAFusion.py
 
 - engine/extre_module/custom_nn/module
 
@@ -550,6 +580,11 @@ PS:
     65. CVPR2026｜engine/extre_module/custom_nn/module/FrequencyCM.py
     66. AAAI2026|engine/extre_module/custom_nn/module/RFGM.py
     67. CVPR2026｜engine/extre_module/custom_nn/module/IRA.py
+    68. TGRS2026|engine/extre_module/custom_nn/module/DMSSP.py
+    69. ECCV2026｜engine/extre_module/custom_nn/module/PKIBlockV2.py
+    70. 自研模块｜engine/extre_module/custom_nn/module/BCIM.py
+    71. 自研模块｜engine/extre_module/custom_nn/module/DGCM.py
+    72. 自研模块｜engine/extre_module/custom_nn/module/EFCM.py
 
 - engine/extre_module/custom_nn/neck
 
@@ -781,9 +816,14 @@ PS:
 4. 实例分割训练、测试过程可视化
 5. DQS-DETR在实例分割中的应用
 
+-------------------------------------------- 旋转目标检测 --------------------------------------------
+
+1. 旋转目标检测使用教程一
+
 -------------------------------------------- DFine/DEIM 图图多模态教程 --------------------------------------------
 
 1. 图图多模态使用教程一
+2. 图图多模态使用教程二
 
 -------------------------------------------- DFine/DEIM 图文/图图文多模态教程 --------------------------------------------
 
@@ -792,3 +832,8 @@ PS:
 -------------------------------------------- 论文解读系列 --------------------------------------------
 
 1. 论文精读｜ESWA2026-ETO-DFGR
+2. 深度学习常见对比实验问题QA
+3. 深度学习常见泛化实验问题QA
+4. 深度学习常见基础模型、改进模型实验问题QA
+5. 深度学习常见数据集问题QA
+6. 深度学习常见消融实验问题QA

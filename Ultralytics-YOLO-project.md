@@ -70,6 +70,8 @@
     27. ACCV2024|ultralytics/nn/extra_modules/conv_module/RMBC.py
     28. CVPR2026|ultralytics/nn/extra_modules/conv_module/DEGConv.py
     29. TGRS2026|ultralytics/nn/extra_modules/conv_module/CKConv.py
+    30. 自研模块|ultralytics/nn/extra_modules/conv_module/AGIDWC.py
+    31. 自研模块|ultralytics/nn/extra_modules/conv_module/MSIDWC.py
 
 - engine/extre_module/custom_nn/stem(配置文件在ultralytics/cfg/models/improve/stem)
 
@@ -105,6 +107,7 @@
     11. 自研模块|ultralytics/nn/extra_modules/downsample/FreqLAWDS.py
     12. 自研模块|ultralytics/nn/extra_modules/downsample/RouterLAWDS.py
     13. 自研模块|ultralytics/nn/extra_modules/downsample/FSCGD.py
+    14. TGRS2026|ultralytics/nn/extra_modules/downsample/DMSSP.py
 
 - ultralytics/nn/extra_modules/module(此部分内容教程可以看GuideVideo-MG.md中的改进模块-使用教程的第一和四节)
 
@@ -173,12 +176,18 @@
     63. CVPR2026|ultralytics/nn/extra_modules/module/FrequencyCM.py
     64. AAAI2026|ultralytics/nn/extra_modules/module/RFGM.py
     65. CVPR2026|ultralytics/nn/extra_modules/module/IRA.py
+    66. ECCV2026|ultralytics/nn/extra_modules/module/PKIBlockV2.py
+    67. 自研模块|ultralytics/nn/extra_modules/module/BCIM.py
+    68. 自研模块|ultralytics/nn/extra_modules/module/DGCM.py
+    69. 自研模块|ultralytics/nn/extra_modules/module/EFCM.py
 
 - ultralytics/nn/extra_modules/block (此部分内容教程可以看GuideVideo-MG.md中的改进模块-使用教程的第一和四节)
     
     1. ultralytics/nn/extra_modules/block/CSPBlock.py
     2. TPAMI2025|ultralytics/nn/extra_modules/block/MANet.py
     3. TPAMI2024|ultralytics/nn/extra_modules/block/MetaFormer.py
+    4. ultralytics/nn/extra_modules/block/RepHMS.py
+    5. 自研模块|ultralytics/nn/extra_modules/block/CBIMS.py
 
 - ultralytics/nn/extra_modules/transformer(此部分内容教程可以看GuideVideo-MG.md中的改进模块-使用教程的第一和四节)
 
@@ -216,6 +225,7 @@
     32. AAAI2026|ultralytics/nn/extra_modules/transformer/CirculantAttention.py
     33. CVPR2026|ultralytics/nn/extra_modules/transformer/WDAM.py
     34. TGRS2026|ultralytics/nn/extra_modules/transformer/GLCDM.py
+    35. ICIP2026|ultralytics/nn/extra_modules/transformer/SDTA.py
 
 - ultralytics/nn/extra_modules/mamba(此部分内容教程可以看GuideVideo-MG.md中的改进模块-使用教程的第一和四节)
 
@@ -251,6 +261,8 @@
     11. 自研模块|ultralytics/nn/extra_modules/mlp/MCCG.py
     12. 自研模块|ultralytics/nn/extra_modules/mlp/DSRG.py
     13. CVPR2026|ultralytics/nn/extra_modules/mlp/AFFN.py
+    14. 自研模块|ultralytics/nn/extra_modules/mlp/MSAFFN.py
+    15. 自研模块|ultralytics/nn/extra_modules/mlp/GLSFFN.py
 
 - ultralytics/nn/extra_modules/neck(配置文件在ultralytics/cfg/models/improve/neck)
 
@@ -297,6 +309,8 @@
     25. 自研模块|ultralytics/nn/extra_modules/featurefusion/LowFrequencyFeatureFusion.py
     26. 自研模块|ultralytics/nn/extra_modules/featurefusion/DCGRM.py
     27. 自研模块|ultralytics/nn/extra_modules/featurefusion/MSCRM.py
+    28. TPAMI2025|ultralytics/nn/extra_modules/featurefusion/LPRM.py
+    29. TCSVT2026|ultralytics/nn/extra_modules/featurefusion/MAFusion.py
 
 - ultralytics/nn/extra_modules/norm(此部分内容教程可以看GuideVideo-MG.md中的改进模块-使用教程的第一和四节)
 
@@ -312,6 +326,8 @@
 
     1. ultralytics/nn/extra_modules/head/LSPCD.py
     2. ultralytics/nn/extra_modules/head/LQE.py
+    3. ultralytics/nn/extra_modules/head/DyHead.py(需要安装好mmcv)
+
 
 ## Loss 列表
 
@@ -468,3 +484,24 @@
     5. 新增CVPR2026-IRA模块。
     6. 新增TGRS2026-GLCDM模块。
     7. 修复一些已知问题。
+
+- 20260623
+    
+    1. 新增train_auto.py，用于指定多个yaml训练，支持"基线提前淘汰"功能，使用教程在docs/train-auto-baseline-monitor-使用说明.md。
+    2. 新增docs/legacy-parameter-guide.md文档，做YOLO11、12、26的同学强烈建议看看。
+    3. 新增ICIP2026-SDTA模块。
+    4. 新增TPAMI2025-LPRM模块。
+    5. 新增TCSVT2026-MAFusion模块。
+    6. 新增ECCV2026-PKIBlockV2模块。
+    7. 新增DyHead检测头。
+    8. 新增自研模块-MSAFFN模块。
+    9. 新增自研模块-GLSFFN模块。
+    10. 新增自研模块-BCIM模块。
+    11. 新增自研模块-DGCM模块。
+    12. 新增自研模块-EFCM模块。
+    13. 新增深度学习常见对比实验问题QA视频讲解。
+    14. 新增深度学习常见泛化实验问题QA视频讲解。
+    15. 新增深度学习常见基础模型、改进模型实验问题QA视频讲解。
+    16. 新增深度学习常见数据集问题QA视频讲解。
+    17. 新增深度学习常见消融实验问题QA视频讲解。
+    18. 修复一些已知问题。
