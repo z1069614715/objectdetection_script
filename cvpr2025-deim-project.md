@@ -420,6 +420,18 @@ PS:
     8. 新增ICML2026-AMCM模块。
     9. 新增TGRS2026-MSAM模块。
 
+- 20260916
+
+    1. 修复test-only下参数量异常的bug。
+    2. 新增TGRS2026-MSAD模块。
+    3. 新增TCSVT2026-ACE模块。
+    4. 新增CVPR2026-WaveletDownsample模块。
+    5. 新增CVPR2026-SpatialEnhancedAttention模块。
+    6. 新增CVPR2026-WACGA模块。
+    7. 新增自研-DTPGC模块。
+    8. 新增自研-GAMSDG模块。
+    9. 新增自研-SCPGA模块。
+
 ### 7. 目前已有的模块
 
 - engine/extre_module/custom_nn/attention 
@@ -511,6 +523,8 @@ PS:
     8. engine/extre_module/custom_nn/downsample/DRFD.py
     9. TGRS2025|engine/extre_module/custom_nn/conv_module/FSConv.py
     10. 自研模块|engine/extre_module/custom_nn/downsample/FSCGD.py
+    11. TGRS2026|engine/extre_module/custom_nn/downsample/MSAD.py
+    12. CVPR2026|engine/extre_module/custom_nn/downsample/WaveletDownsample.py
 
 - engine/extre_module/custom_nn/stem
 
@@ -684,6 +698,9 @@ PS:
     34. ICIP2026|engine/extre_module/custom_nn/transformer/SDTA.py
     35. CVPR2026F|engine/extre_module/custom_nn/transformer/SAA.py
     36. TGRS2026|engine/extre_module/custom_nn/transformer/MSAM.py
+    37. TCSVT2026|engine/extre_module/custom_nn/transformer/ACE.py
+    38. CVPR2026|engine/extre_module/custom_nn/transformer/SpatialEnhancedAttention.py
+    39. CVPR2026|engine/extre_module/custom_nn/transformer/WACGA.py
 
 - engine/extre_module/custom_nn/mlp
 
@@ -730,6 +747,12 @@ PS:
 - engine/extre_module/custom_nn/featurepreprocess
 
     1. TGRS2025|engine/extre_module/custom_nn/featurepreprocess/FAENet.py
+
+- engine/extre_module/custom_nn/text_fusion
+
+    1. 自研模块|engine/extre_module/custom_nn/text_fusion/DTPGC.py
+    2. 自研模块|engine/extre_module/custom_nn/text_fusion/GAMSDG.py
+    3. 自研模块|engine/extre_module/custom_nn/text_fusion/SCPGA.py
 
 - iou
     
