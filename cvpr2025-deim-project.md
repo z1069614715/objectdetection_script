@@ -423,14 +423,15 @@ PS:
 - 20260916
 
     1. 修复test-only下参数量异常的bug。
-    2. 新增TGRS2026-MSAD模块。
-    3. 新增TCSVT2026-ACE模块。
-    4. 新增CVPR2026-WaveletDownsample模块。
-    5. 新增CVPR2026-SpatialEnhancedAttention模块。
-    6. 新增CVPR2026-WACGA模块。
-    7. 新增自研-DTPGC模块。
-    8. 新增自研-GAMSDG模块。
-    9. 新增自研-SCPGA模块。
+    2. 修复用于反馈的剪枝bug。
+    3. 新增TGRS2026-MSAD模块。
+    4. 新增TCSVT2026-ACE模块。
+    5. 新增CVPR2026-WaveletDownsample模块。
+    6. 新增CVPR2026-SpatialEnhancedAttention模块。
+    7. 新增CVPR2026-WACGA模块。
+    8. 新增自研-DTPGC模块。
+    9. 新增自研-GAMSDG模块。
+    10. 新增自研-SCPGA模块。
 
 ### 7. 目前已有的模块
 
