@@ -439,6 +439,15 @@ PS:
     2. 新增text-encoder(SigLIP2和PE-Core)。
     3. 新增论文视频-实验设计的7个亮点。
 
+- 20261012
+
+    1. compress.py 新增 剪枝后绘制 剪枝前后-计算量/参数量 的对比图。
+    2. train.py AMP 自动优先使用 BF16，不支持时回退 FP16，并输出实际混合精度。
+    3. 修复 configs/segment/dqsdfine_hgnetv2_s_seg.yml 忘记添加 densitycount 的bug。
+    4. 适配Density-aware Query Selection检测头到OBB部分，详细文档在 docs/DQS-OBB_方法差异与论文写作说明.md。
+    5. 新增WACV2026-SimConv模块。
+    6. 新增ECCV2026-SCAGate模块。
+
 ### 7. 目前已有的模块
 
 - engine/extre_module/custom_nn/attention 
@@ -505,6 +514,7 @@ PS:
     33. ICML2026|engine/extre_module/custom_nn/conv_module/PolyConv.py
     34. 自研模块｜engine/extre_module/custom_nn/conv_module/FAKConv.py
     35. TGRS2026|engine/extre_module/custom_nn/conv_module/EDDConv.py
+    36. WACV2026|engine/extre_module/custom_nn/conv_module/SimConv.py
 
 - engine/extre_module/custom_nn/upsample
 
@@ -570,6 +580,7 @@ PS:
     24. TCSVT2026|engine/extre_module/custom_nn/featurefusion/MAFusion.py
     25. TGRS2026|engine/extre_module/custom_nn/featurefusion/CFDM.py
     26. TGRS2026|engine/extre_module/custom_nn/featurefusion/WFAM.py
+    27. ECCV2026|engine/extre_module/custom_nn/featurefusion/SCAGate.py
 
 - engine/extre_module/custom_nn/module
 

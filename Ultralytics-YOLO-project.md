@@ -75,6 +75,7 @@
     32. ICML2026|ultralytics/nn/extra_modules/conv_module/PolyConv.py
     33. 自研模块|ultralytics/nn/extra_modules/conv_module/FAKConv.py
     34. TGRS2026|ultralytics/nn/extra_modules/conv_module/EDDConv.py
+    35. WACV2026|ultralytics/nn/extra_modules/conv_module/SimConv.py
 
 - engine/extre_module/custom_nn/stem(配置文件在ultralytics/cfg/models/improve/stem)
 
@@ -327,6 +328,7 @@
     29. TCSVT2026|ultralytics/nn/extra_modules/featurefusion/MAFusion.py
     30. TGRS2026|ultralytics/nn/extra_modules/featurefusion/CFDM.py
     31. TGRS2026|ultralytics/nn/extra_modules/featurefusion/WFAM.py
+    32. ECCV2026|ultralytics/nn/extra_modules/featurefusion/SCAGate.py
 
 - ultralytics/nn/extra_modules/norm(此部分内容教程可以看GuideVideo-MG.md中的改进模块-使用教程的第一和四节)
 
@@ -556,3 +558,9 @@
     4. 新增CVPR2026-SpatialEnhancedAttention模块。
     5. 新增CVPR2026-WACGA模块。
     6. 新增论文视频-实验设计的7个亮点。
+
+- 20261012
+    
+    1. 新增WACV2026-SimConv模块。
+    2. 新增ECCV2026-SCAGate模块。
+    3. 优化混合精度训练逻辑，会先判断机器是否支持BF16训练，不支持再切换回FP16。(BF16会比FP16训练更稳定)
