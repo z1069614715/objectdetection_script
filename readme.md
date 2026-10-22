@@ -92,7 +92,8 @@
     7. 支持DINOV3主干，即使数据量少，得益于DINOV3性能依然抗打～
     8. DFine/DEIM(目标检测，实例分割，旋转目标检测) 支持**图像多模态**和**图文多模态**和**图图文三模态**联合训练，为创新研究与论文工作量的双重提升注入强劲动力～
     9. 支持以Ultralytics-Yaml方式搭建模型，大大降低改进难度，使小白也可以花一两天的时间就可以着手改进实验～
-    10. 更多请点击上述链接进行查看～
+    10. 支持**共享FPN的特征给VLM进行辅助训练**，共同优化BackBone、FPN部分！推理期间去掉，白嫖精度！
+    11. 更多请点击上述链接进行查看～
 
 8. 基于YOLO|RTDETR图图多模态目标检测项目.(原价328¥,若已购买yolo或rtdetr项目的则优惠50¥=278¥)
 
@@ -134,7 +135,7 @@
     
     项目详细介绍请看[此处](https://github.com/z1069614715/objectdetection_script/blob/master/Ultralytics-YOLO-DLC-Compress-Distill.md)
 
-13. 基于CVPR2026-YOLO-Master的单/多模态项目.
+13. 基于CVPR2026-YOLO-Master的单/多模态项目.[详细内容请看此处](https://github.com/z1069614715/objectdetection_script/blob/master/YOLO-Master-Project.md)
     
     这次我们的售卖方式是按功能分开售卖，这样方便各位只取所需，类似于游戏售卖一样，分标准版和dlc，dlc需要依赖标准版，不能单独购买dlc，dlc会分base和pro版本，但互不依赖(例如我可以直接买dlc的pro版本，不需要买dlc的base版本)，如果入手了图文dlc和图图dlc，即可扩展成图图文使用！所有任务都支持目标检测、实例分割、姿态检测、旋转目标检测。
 
