@@ -386,6 +386,14 @@
     2. 新增使用教程、模块改进使用教程视频。
     3. 项目新增280个模块。
 
+- 20261101
+    
+    1. 新增三个逐空间路由模块，详细可以看新增视频-空间路由MoE(SpatialDepthMoE、SpatialKernelMoE、SpatialDilationMoE)讲解视频。
+    2. 新增analyze_moe_routing.py脚本，用于分析空间路由，详细可以看新增视频-空间路由MoE(SpatialDepthMoE、SpatialKernelMoE、SpatialDilationMoE)讲解视频。
+    3. 新增docs/skills/spatial-routing-analysis，用于使用ai结合分析脚本和数据集情况来做论文论点分析，详细可以看新增视频-空间路由MoE(SpatialDepthMoE、SpatialKernelMoE、SpatialDilationMoE)讲解视频。
+    4. 新增视频-深度学习改进实验思路指南(推荐刚入门小白看看)。
+    5. 补全训练脚本中的 baseline_monitor 参数。
+
 ### YOLO-Master-图文多模态base内容说明
 
 ##### 模块列表(这些模块均已在代码中注册好，只需要修改yaml可以直接实验)

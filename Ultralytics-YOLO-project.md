@@ -76,6 +76,8 @@
     33. 自研模块|ultralytics/nn/extra_modules/conv_module/FAKConv.py
     34. TGRS2026|ultralytics/nn/extra_modules/conv_module/EDDConv.py
     35. WACV2026|ultralytics/nn/extra_modules/conv_module/SimConv.py
+    36. 自研模块|ultralytics/nn/extra_modules/conv_module/EPSConv.py
+    37. 自研模块|ultralytics/nn/extra_modules/conv_module/ODSConv.py
 
 - engine/extre_module/custom_nn/stem(配置文件在ultralytics/cfg/models/improve/stem)
 
@@ -189,6 +191,9 @@
     68. 自研模块|ultralytics/nn/extra_modules/module/DGCM.py
     69. 自研模块|ultralytics/nn/extra_modules/module/EFCM.py
     70. ICML2026|ultralytics/nn/extra_modules/module/AMCM.py
+    71. TGRS2026|ultralytics/nn/extra_modules/module/CDBR.py
+    72. 自研模块|ultralytics/nn/extra_modules/module/HPKAB.py
+    73. 自研模块|ultralytics/nn/extra_modules/module/SDLKB.py
 
 - ultralytics/nn/extra_modules/block (此部分内容教程可以看GuideVideo-MG.md中的改进模块-使用教程的第一和四节)
     
@@ -329,6 +334,7 @@
     30. TGRS2026|ultralytics/nn/extra_modules/featurefusion/CFDM.py
     31. TGRS2026|ultralytics/nn/extra_modules/featurefusion/WFAM.py
     32. ECCV2026|ultralytics/nn/extra_modules/featurefusion/SCAGate.py
+    33. 自研模块|ultralytics/nn/extra_modules/featurefusion/WHFF.py
 
 - ultralytics/nn/extra_modules/norm(此部分内容教程可以看GuideVideo-MG.md中的改进模块-使用教程的第一和四节)
 
@@ -564,3 +570,15 @@
     1. 新增WACV2026-SimConv模块。
     2. 新增ECCV2026-SCAGate模块。
     3. 优化混合精度训练逻辑，会先判断机器是否支持BF16训练，不支持再切换回FP16。(BF16会比FP16训练更稳定)
+
+- 20261101
+
+    1. 补全train.py中的baseline_monitor相关参数。
+    2. 修复已知一些改进模块在MuSGD中的会报错的BUG。
+    3. 新增TGRS2026-CDBR模块。
+    4. 新增自研模块-WHFF模块。
+    5. 新增自研模块-EPSConv模块。
+    6. 新增自研模块-ODSConv模块。
+    7. 新增自研模块-HPKAB模块。
+    8. 新增自研模块-SDLKB模块。
+    9. 新增视频-深度学习改进实验思路指南(推荐刚入门小白看看)。

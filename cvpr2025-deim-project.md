@@ -455,6 +455,20 @@ PS:
     3. 新增图图图三模态、图图图文四模态配置文件，具体可以参考 configs_easy 中带 3modality 的配置文件，并且提供两个三模态的数据集,具体请看configs/mutilmodality/BaiDuYunPan.txt。
     4. 新增<图图图/图图图文多模态使用教程三>的视频教程。
 
+- 20261101
+    
+    1. 新增早停设置，详细可以看 docs/early_stop_使用说明.md。
+    2. 图图多模态部分新增RGB法线模态的生成教程，并演示生成depth、rgb-normal模态做图图图三模态训练的视频教程。
+    3. 更新UserGuide中的训练建议。
+    4. 新增TGRS2026-CDBR模块。
+    5. 新增自研模块-WHFF模块。
+    6. 新增自研模块-EPSConv模块。
+    7. 新增自研模块-ODSConv模块。
+    8. 新增自研模块-HPKAB模块。
+    9. 新增自研模块-SDLKB模块。
+    10. 热力图、特征图、多模态推理脚本支持三图模态。
+    11. 新增视频-深度学习改进实验思路指南(推荐刚入门小白看看)。
+
 ### 7. 目前已有的模块
 
 - engine/extre_module/custom_nn/attention 
@@ -522,6 +536,8 @@ PS:
     34. 自研模块｜engine/extre_module/custom_nn/conv_module/FAKConv.py
     35. TGRS2026|engine/extre_module/custom_nn/conv_module/EDDConv.py
     36. WACV2026|engine/extre_module/custom_nn/conv_module/SimConv.py
+    37. 自研模块｜engine/extre_module/custom_nn/conv_module/EPSConv.py
+    38. 自研模块｜engine/extre_module/custom_nn/conv_module/ODSConv.py
 
 - engine/extre_module/custom_nn/upsample
 
@@ -588,6 +604,7 @@ PS:
     25. TGRS2026|engine/extre_module/custom_nn/featurefusion/CFDM.py
     26. TGRS2026|engine/extre_module/custom_nn/featurefusion/WFAM.py
     27. ECCV2026|engine/extre_module/custom_nn/featurefusion/SCAGate.py
+    28. 自研模块｜engine/extre_module/custom_nn/featurefusion/WHFF.py
 
 - engine/extre_module/custom_nn/module
 
@@ -664,6 +681,9 @@ PS:
     71. 自研模块｜engine/extre_module/custom_nn/module/DGCM.py
     72. 自研模块｜engine/extre_module/custom_nn/module/EFCM.py
     73. ICML2026|engine/extre_module/custom_nn/module/AMCM.py
+    74. TGRS2026|engine/extre_module/custom_nn/module/CDBR.py
+    75. 自研模块｜engine/extre_module/custom_nn/module/HPKAB.py
+    76. 自研模块｜engine/extre_module/custom_nn/module/SDLKB.py
 
 - engine/extre_module/custom_nn/neck
 
@@ -918,6 +938,7 @@ PS:
 1. 图图多模态使用教程一
 2. 图图多模态使用教程二
 3. 图图图/图图图文多模态使用教程三
+4. 如何使用一个库生成深度模态、RGB法线模态，并使用三模态进行训练？ <需要看的时候，统一私聊魔鬼面具领取新账号>
 
 -------------------------------------------- DFine/DEIM 图文/图图文多模态教程 --------------------------------------------
 
