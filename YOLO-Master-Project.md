@@ -418,8 +418,23 @@
 
 ### YOLO-Master-图图多模态base内容说明
 
-###### 待补充。
+##### 更新说明
+
+- 20261108
+
+    1. 新增 早/中/晚融合 + mid-p2/p3/p3p4 baseline 配置文件选择。
+    2. 新增 深度模态、RGB法线模态、红外模态生成内容。
+    3. 新增 YOLO-Master 图图Base-DLC 使用教程一。
 
 ### YOLO-Master-图图多模态pro内容说明
+
+##### 更新说明
+
+- 20261108
+    
+    1. 新增 fusion-routing-analysis skill(用于分析模态专家逐空间路由的skill)、unimodal-to-mmpro-lora skill(用于根据单模态配置文件转换为lora微调的配置文件skill)。
+    2. 新增 图图多模态LoRA部分大论文思路讲解。
+    3. 新增 YOLO-Master 图图Pro-DLC 使用教程一。
+    4. 新增 模态专家逐空间路由(MMProSpatialFusion) 模块。
 
 ###### 待补充。
