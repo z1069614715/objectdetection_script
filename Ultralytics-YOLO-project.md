@@ -582,3 +582,9 @@
     7. 新增自研模块-HPKAB模块。
     8. 新增自研模块-SDLKB模块。
     9. 新增视频-深度学习改进实验思路指南(推荐刚入门小白看看)。
+
+- 20261111
+    
+    1. 新增 auto-ai-improve-exp(ai帮你做实验) 和 merge-model-yamls(ai帮你整合yaml) skills，详细可以看 docs/skills/skills-readme.md。
+    2. 修复数个模块在amp训练下会失败的bug。
+    3. 修复train_auto.py中的优化器选择策略的bug。
