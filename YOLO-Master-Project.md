@@ -10,7 +10,7 @@
 
 ##### 模块列表(这些模块均已在代码中注册好，只需要修改yaml可以直接实验)
 
-- ultralytics/nn/extra_modules/attention(配置文件在ultralytics/cfg/models/improve/attention)
+- ultralytics/nn/extra_modules/attention(配置文件在ultralytics/cfg/models/master/v0_10/improve/attention)
 
     1. ultralytics/nn/extra_modules/attention/SEAM.py
     2. CVPR2021|ultralytics/nn/extra_modules/attention/ca.py
@@ -29,7 +29,7 @@
     15. TGRS2025|ultralytics/nn/extra_modules/attention/ACAB.py
     16. 自研模块|ultralytics/nn/extra_modules/attention/FSDA.py
 
-- ultralytics/nn/extra_modules/conv_module(此部分内容教程可以看GuideVideo-MG.md中的改进模块-使用教程的第五节,支持与attention部分联合改进CSP模块中的残差块)
+- ultralytics/nn/extra_modules/conv_module(此部分内容教程可以看GuideVideo-Project.md中的改进模块-使用教程的第一节)
 
     1. CVPR2021|ultralytics/nn/extra_modules/conv_module/dbb.py
     2. TIP2024|ultralytics/nn/extra_modules/conv_module/deconv.py
@@ -66,8 +66,10 @@
     33. 自研模块|ultralytics/nn/extra_modules/conv_module/FAKConv.py
     34. TGRS2026|ultralytics/nn/extra_modules/conv_module/EDDConv.py
     35. WACV2026|ultralytics/nn/extra_modules/conv_module/SimConv.py
+    36. 自研模块|ultralytics/nn/extra_modules/conv_module/EPSConv.py
+    37. 自研模块|ultralytics/nn/extra_modules/conv_module/ODSConv.py
 
-- engine/extre_module/custom_nn/stem(配置文件在ultralytics/cfg/models/improve/stem)
+- ultralytics/nn/extra_modules/stem(配置文件在ultralytics/cfg/models/master/v0_10/improve/stem)
 
     1. ultralytics/nn/extra_modules/stem/SRFD.py
     2. ultralytics/nn/extra_modules/stem/LoG.py
@@ -76,7 +78,7 @@
     5. 自研模块|ultralytics/nn/extra_modules/stem/DPAS.py
     6. 自研模块|ultralytics/nn/extra_modules/stem/WGFS.py
 
-- ultralytics/nn/extra_modules/upsample(配置文件在ultralytics/cfg/models/improve/upsample)
+- ultralytics/nn/extra_modules/upsample(配置文件在ultralytics/cfg/models/master/v0_10/improve/upsample)
 
     1. CVPR2024|ultralytics/nn/extra_modules/upsample/eucb.py
     2. CVPR2024|ultralytics/nn/extra_modules/upsample/eucb_sc.py
@@ -88,7 +90,7 @@
     8. 自研模块|ultralytics/nn/extra_modules/upsample/FEUCB.py
     9. 自研模块|ultralytics/nn/extra_modules/upsample/DOGEUCB.py
 
-- ultralytics/nn/extra_modules/downsample(配置文件在ultralytics/cfg/models/improve/downsample)
+- ultralytics/nn/extra_modules/downsample(配置文件在ultralytics/cfg/models/master/v0_10/improve/downsample)
 
     1. TIP2020|ultralytics/nn/extra_modules/downsample/gcnet.py
     2. 自研模块|ultralytics/nn/extra_modules/downsample/lawds.py 
@@ -107,7 +109,7 @@
     15. TGRS2026|ultralytics/nn/extra_modules/downsample/MSAD.py
     16. CVPR2026|ultralytics/nn/extra_modules/downsample/WaveletDownsample.py
 
-- ultralytics/nn/extra_modules/module(此部分内容教程可以看GuideVideo-MG.md中的改进模块-使用教程的第一和四节)
+- ultralytics/nn/extra_modules/module(此部分内容教程可以看GuideVideo-Project.md中的改进模块-使用教程的第一和三节)
 
     1. AAAI2025|ultralytics/nn/extra_modules/module/APBottleneck.py
     2. CVPR2025|ultralytics/nn/extra_modules/module/efficientVIM.py
@@ -179,8 +181,11 @@
     68. 自研模块|ultralytics/nn/extra_modules/module/DGCM.py
     69. 自研模块|ultralytics/nn/extra_modules/module/EFCM.py
     70. ICML2026|ultralytics/nn/extra_modules/module/AMCM.py
+    71. TGRS2026|ultralytics/nn/extra_modules/module/CDBR.py
+    72. 自研模块|ultralytics/nn/extra_modules/module/HPKAB.py
+    73. 自研模块|ultralytics/nn/extra_modules/module/SDLKB.py
 
-- ultralytics/nn/extra_modules/block (此部分内容教程可以看GuideVideo-MG.md中的改进模块-使用教程的第一和四节)
+- ultralytics/nn/extra_modules/block (此部分内容教程可以看GuideVideo-Project.md中的改进模块-使用教程的第一、第三和第六节)
     
     1. ultralytics/nn/extra_modules/block/CSPBlock.py
     2. TPAMI2025|ultralytics/nn/extra_modules/block/MANet.py
@@ -188,7 +193,7 @@
     4. ultralytics/nn/extra_modules/block/RepHMS.py
     5. 自研模块|ultralytics/nn/extra_modules/block/CBIMS.py
 
-- ultralytics/nn/extra_modules/transformer(此部分内容教程可以看GuideVideo-MG.md中的改进模块-使用教程的第一和四节)
+- ultralytics/nn/extra_modules/transformer(此部分内容教程可以看GuideVideo-Project.md中的改进模块-使用教程的第一和三节)
 
     1. ICLR2025|ultralytics/nn/extra_modules/transformer/PolaLinearAttention.py
     2. CVPR2023|ultralytics/nn/extra_modules/transformer/biformer.py
@@ -231,7 +236,7 @@
     39. CVPR2026|ultralytics/nn/extra_modules/transformer/SpatialEnhancedAttention.py
     40. CVPR2026|ultralytics/nn/extra_modules/transformer/WACGA.py
 
-- ultralytics/nn/extra_modules/mamba(此部分内容教程可以看GuideVideo-MG.md中的改进模块-使用教程的第一和四节)
+- ultralytics/nn/extra_modules/mamba(此部分内容教程可以看GuideVideo-Project.md中的改进模块-使用教程的第一课和第三课)
 
     1. AAAI2025|ultralytics/nn/extra_modules/mamba/SS2D.py
     2. CVPR2025|ultralytics/nn/extra_modules/mamba/ASSM.py
@@ -250,7 +255,7 @@
     15. AAAI2026|ultralytics/nn/extra_modules/mamba/GradMamba.py
     16. AAAI2026|ultralytics/nn/extra_modules/mamba/PatchMamba.py
 
-- ultralytics/nn/extra_modules/mlp(此部分内容教程可以看GuideVideo-MG.md中的改进模块-使用教程的第一和四节)
+- ultralytics/nn/extra_modules/mlp(此部分内容教程可以看GuideVideo-Project.md中的改进模块-使用教程的第三课)
 
     1. CVPR2024|ultralytics/nn/extra_modules/mlp/ConvolutionalGLU.py
     2. IJCAI2024|ultralytics/nn/extra_modules/mlp/DFFN.py
@@ -269,7 +274,7 @@
     15. 自研模块|ultralytics/nn/extra_modules/mlp/GLSFFN.py
     16. ICML2026|ultralytics/nn/extra_modules/mlp/PolyMLP.py
 
-- ultralytics/nn/extra_modules/neck(配置文件在ultralytics/cfg/models/improve/neck)
+- ultralytics/nn/extra_modules/neck(配置文件在ultralytics/cfg/models/master/v0_10/improve/neck)
 
     1. ultralytics/nn/extra_modules/neck/ASF.py
     2. ultralytics/nn/extra_modules/neck/BiFPN.py
@@ -285,7 +290,7 @@
     12. ultralytics/nn/extra_modules/neck/FDPN.py((里面有三个自研模块FocusFeature、DynamicFrequencyFocusFeature、AlignmentGuidedFocusFeature))
     13. PR2026|ultralytics/nn/extra_modules/neck/A3FPN.py
 
-- ultralytics/nn/extra_modules/featurefusion(配置文件在ultralytics/cfg/models/improve/featurefusion)
+- ultralytics/nn/extra_modules/featurefusion(配置文件在ultralytics/cfg/models/master/v0_10/improve/featurefusion)
 
     1. 自研模块|ultralytics/nn/extra_modules/featurefusion/cgfm.py
     2. BMVC2024|ultralytics/nn/extra_modules/featurefusion/msga.py
@@ -319,18 +324,19 @@
     30. TGRS2026|ultralytics/nn/extra_modules/featurefusion/CFDM.py
     31. TGRS2026|ultralytics/nn/extra_modules/featurefusion/WFAM.py
     32. ECCV2026|ultralytics/nn/extra_modules/featurefusion/SCAGate.py
+    33. 自研模块|ultralytics/nn/extra_modules/featurefusion/WHFF.py
 
-- ultralytics/nn/extra_modules/norm(此部分内容教程可以看GuideVideo-MG.md中的改进模块-使用教程的第一和四节)
+- ultralytics/nn/extra_modules/norm(此部分内容教程可以看GuideVideo-Project.md中的改进模块-使用教程的第三节)
 
-    1. ICML2024|engine/extre_module/custom_nn/transformer/repbn.py
-    2. CVPR2025|engine/extre_module/custom_nn/transformer/dyt.py
-    3. engine/extre_module/custom_nn/norm/derf.py
+    1. ICML2024|ultralytics/nn/extra_modules/norm/repbn.py
+    2. CVPR2025|ultralytics/nn/extra_modules/norm/dyt.py
+    3. ultralytics/nn/extra_modules/norm/derf.py
 
-- ultralytics/nn/extra_modules/featurepreprocess(配置文件在ultralytics/cfg/models/improve/featurepreprocess)
+- ultralytics/nn/extra_modules/featurepreprocess(配置文件在ultralytics/cfg/models/master/v0_10/improve/featurepreprocess)
 
     1. TGRS2025|ultralytics/nn/extra_modules/featurepreprocess/FAENet.py
 
-- ultralytics/nn/extra_modules/head(配置文件在ultralytics/cfg/models/improve/head)
+- ultralytics/nn/extra_modules/head(配置文件在ultralytics/cfg/models/master/v0_10/improve/head)
 
     1. ultralytics/nn/extra_modules/head/LSPCD.py
     2. ultralytics/nn/extra_modules/head/LQE.py
@@ -393,6 +399,19 @@
     3. 新增docs/skills/spatial-routing-analysis，用于使用ai结合分析脚本和数据集情况来做论文论点分析，详细可以看新增视频-空间路由MoE(SpatialDepthMoE、SpatialKernelMoE、SpatialDilationMoE)讲解视频。
     4. 新增视频-深度学习改进实验思路指南(推荐刚入门小白看看)。
     5. 补全训练脚本中的 baseline_monitor 参数。
+
+- 20261116
+
+    1. 新增 auto-ai-improve-exp(ai帮你做实验) 和 merge-model-yamls(ai帮你整合yaml) skills，详细可以看 docs/skills/skills-readme.md。
+    2. 修复数个模块在amp训练下会失败的bug。
+    3. 新增TGRS2026-CDBR模块。
+    4. 新增自研模块-WHFF模块。
+    5. 新增自研模块-EPSConv模块。
+    6. 新增自研模块-ODSConv模块。
+    7. 新增自研模块-HPKAB模块。
+    8. 新增自研模块-SDLKB模块。
+    9. 新增WACV2026-SimConv模块。
+    10. 新增ECCV2026-SCAGate模块。
 
 ### YOLO-Master-图文多模态base内容说明
 
