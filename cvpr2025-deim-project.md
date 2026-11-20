@@ -469,6 +469,12 @@ PS:
     10. 热力图、特征图、多模态推理脚本支持三图模态。
     11. 新增视频-深度学习改进实验思路指南(推荐刚入门小白看看)。
 
+- 20261119
+    
+    1. 新增Mr.DETR++的decoder，示例配置文件在configs_easy/dfine-mrdetrpp.yml、configs/ultralytics-yaml/cfg-improve/decoder/dfine-s-mrdetrpp.yaml，使用说明在docs/MrDETRPP_使用说明.md。
+    2. 修复部分模块在amp下会报错的bug。
+    3. 图图多模态部分新增early、mid、mid-p2、mid-p3、mid-p3p4、late的模型yaml配置文件，详细可以看 configs/mutilmodality/yaml-other-version。
+
 ### 7. 目前已有的模块
 
 - engine/extre_module/custom_nn/attention 
